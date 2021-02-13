@@ -1,0 +1,651 @@
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} ID Mods
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## WEAPONS
+var ws_cast_speed = "of Finesse" "of Sortilege" "of Prestidigitation" "of Legerdemain";
+var ws_attack_speed = "of Celebration" "of Infamy" "of Fame" "of Acclaim";
+var ws_attack_speed_smol = "of Acclaim" "of Renown" "of Mastery";
+var ws_attack_crit = "of Incision" "of Penetrating" "of Puncturing";
+var ws_critmulti = "of Destruction" "of Ferocity" "of Fury" "of Rage";
+var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster"; 
+
+var ws_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
+var ws_burn = "of Conflagrating" "of Combusting" "of Burning";
+
+var ws_fire = "of Ashes" "of Immolation" "of Flames";
+var ws_cold = "of Glaciation" "of Floe" "of Rime";
+var ws_light = "of Arcing" "of Discharge" "of Voltage";
+
+var w_t1res = "of Tzteosh" "of Haast" "of Ephij" "of Bameth";
+
+var ws_manaregen = "of Nirvana" "of Euphoria";
+
+var wcast_spell = "Runic" "Glyphic" "Incanter's" "Occultist's"; 
+var wcast_hspell = "Lich's" "Archmage's" "Mage's" "Warlock's";
+var wcast_fire = "Xoph's" "Pyroclastic" "Magmatic" "Volcanic";
+var wcast_cold = "Tul's" "Cryomancer's" "Crystalline" "Hailing";
+var wcast_light = "Esh's" "Ionising" "Smiting" "Striking";
+var wsdmg_fire = "Electrocuting" "Discharging" "Shocking" "Arcing";
+var wsdmg_cold = "Entombing" "Polar" "Glaciated" "Frozen";
+var wsdmg_light = "Cremating" "Blasting" "Incinerating" "Scorching";
+
+var wdot_fire = "Fanatical" "Zealous" "Ardent";
+var wdot_cold = "Heartstopping" "Gelid" "Boreal";
+var wdot_chaos = "Disintegrating" "Atrophying" "Deteriorating";
+
+var w_extrachaos_phys = "Baleful" "Inimical";
+var w_extrachaos_light = "Excruciating" "Harrowing";
+var w_extrachaos_cold = "Mortifying" "Festering";
+var w_extrachaos_fire = "Corrosive" "Dissolving";
+
+var wgems_alllevels_global = "Magister's";
+var wgems_alllevels = "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's";
+var wgems_alllevels_staff = "Lava Conjurer's" "Winter Beckoner's" "Tempest Master's" "Splintermind's" "Tecton's";
+
+var wgems_locallevelbow = "Paragon's" "Sharpshooter's";
+
+## WEAPON DAMAGE
+var wdmg_phys = "Flaring" "Tempered" "Razor-sharp" "Annealed";
+var wdmg_fire = "Carbonising" "Cremating" "Blasting" "Incinerating";
+var wdmg_cold = "Crystalising" "Entombing" "Polar" "Glaciated";
+var wdmg_light = "Vapourising" "Electrocuting" "Discharging" "Shocking";
+var wdmg_pphys = "Merciless" "Tyrannical" "Cruel" "Bloodthirsty";
+var wdmg_hphys = "Dictator's" "Emperor's" "Conqueror's" "Champion's";
+var wdmg_chaos = "Malicious";
+var wmana = "Zaffre" "Blue" "Mazarine" "Chalybeous";
+
+var w_cheatmods = "of the Underground" "Subterranean" "of Many";
+var w_temple_Phys = "of Tacati" "Tacati's";
+var w_temple_Sumonner = "Citaqualotl's";
+var w_temple_Caster = "Matatl's" "Tacati" "Topotante's";
+
+## ARMORS
+ 
+var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
+var gloves_fdmg = "Honed" "Crackling" "Burning" "Frigid";
+var gloves_leech = "Thirsty" "Remora's";
+var gloves_accu = "of Lioneye" "of the Ranger" "of the Marksman";
+var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
+
+## 86/81/73
+var life = "Prime" "Rapturous" "Vigorous" "Fecund" "Athlete's" "Virile" "Rotund" "Robust";
+var lifeShort = "Athlete's" "Virile" "Rotund" "Robust";
+var movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
+## armor
+var a_arp = "Impenetrable" "Impregnable" "Girded" "Thickened";
+var a_arf = "Carapaced";
+var a_arlife = "Crocodile's" "Nautilus's" "Urchin's" "Oyster's";
+## ES
+var a_esf = "Resplendent" "Incandescent" "Scintillating" "Blazing" "Seething" "Pulsing" "Radiating";
+var a_esp = "Unfaltering" "Unassailable" "Indomitable" "Dauntless" "Fearless";
+var a_esh = "Seraphim's" "Djinn's" "Naga's";
+var a_esmana = "Bishop's" "Priest's";
+var a_eslife = "Exarch's" "Abbot's";
+## evasion ES
+var a_evesp = "Incorporeal" "Illusory" "Unreal";
+var a_evesf = "Eidolon's" "Spirit's" "Cherub's";
+var a_evesh = "Hummingbird's" "Dragonfly's";
+## evasion
+var a_evlife = "Ibex's" "Ram's";
+var a_evp = "Illusion's" "Mirage's" "Nightmare's" "Phantasm's";
+var a_evf = "Phased" "Blurred" "Fleet";
+## armor energy shield
+var a_aresp = "Interpermeated" "Inspired" "Interpolated" "Inculcated";
+var a_aresf = "Consecrated" "Beatified" "Hallowed" "Sanctified";
+
+## HELMETS
+var helm_life = "Fecund" "Athlete's" "Virile";
+var minionGems = "Necromancer's" "Summoner's";
+var helmLifeHybrid = "Nautilus's" "Urchin's" "Ram's" "Fawn's" "Abbot's" "Prior's";
+var helmES = "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable"
+var helmEsHybrid = "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Naga's";
+
+## AMULETS/GENERAL
+var amu_life = "Athlete's" "Virile" "Rotund" "Robust";
+var amu_evp = "Vaporous" "Phased";
+var amu_arp = "Impregnable" "Girded";
+
+var res_fire = "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of the Kiln";
+var res_light = "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Thunderhead";
+var res_cold = "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of the Yeti";
+var res_chaos = "of Bameth" "of Exile" "of Expulsion" "of Eviction";
+var res_omni = "of the Span" "of the Rainbow" "of Variegation" "of the Kaleidoscope";
+var str = "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Goliath" "of the Gorilla";
+var int = "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of the Sage" "of the Philosopher";
+var dex = "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Leopard" "of the Panther";
+var amu_allat = "of the Multiverse" "of the Infinite" "of the Universe" "of the Galaxy" "of the Heavens";
+var amu_castspeed = "of Expertise" "of Nimbleness";
+
+var amu_dmg_spell = "Wizard's" "Thaumaturgist's";
+var amu_dmg_wed = "Devastating" "Overpowering" "Unleashed" "Empowering";
+var amu_dmg_firep = "of Immolation" "of Flames" "of Cinders";
+var amu_dmg_coldp = "of Floe" "of Rime" "of Ice";
+var amu_dmg_lightp = "of Discharge" "of Voltage" "of Electricity";
+
+var amu_dmg_firef = "Cremating" "Blasting" "Incinerating";
+var amu_dmg_coldf = "Entombing" "Polar" "Glaciated";
+var amu_dmg_lightf = "Electrocuting" "Discharging" "Shocking";
+
+var amu_accu = "of the Ranger" "of the Marksman" "of the Sniper";
+var amu_manaregen = "of Nirvana" "of Euphoria" "of Bliss";
+
+var top2base = res_fire[2] + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int[3];
+var top3base = res_fire[3] + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4];
+
+var merged_amu_attack2 = amu_accu[2] + amu_dmg_wed[3] + amu_dmg_firef[2] + amu_dmg_coldf[2] + amu_dmg_lightp[2] + "Flaring" "Tempered";
+var merged_amu_attack3 = amu_accu[3] + amu_dmg_wed[4] + amu_dmg_firef[3] + amu_dmg_coldf[3] + amu_dmg_lightp[3] + "Flaring" "Tempered" "Razor-sharp";
+
+var merged_amu_caster2 = amu_castspeed + wmana[2] + amu_manaregen[2] + amu_dmg_spell[2] + amu_dmg_firef[2] + amu_dmg_coldf[2] + amu_dmg_lightp[2];
+var merged_amu_caster3 = amu_castspeed + wmana[3] + amu_manaregen[3] + amu_dmg_spell[3] + amu_dmg_firef[3] + amu_dmg_coldf[3] + amu_dmg_lightp[3];
+
+var universal2 = res_omni[2] + amu_allat[2] + ws_attack_crit[2] + ws_critmulti[2];
+var universal3 = res_omni[3] + amu_allat[3] + ws_attack_crit[3] + ws_critmulti[3];
+
+var amu_esp = "Unassailable" "Indomitable" "Dauntless";
+
+## RINGS
+var ring_life = "Virile" "Rotund" "Robust";
+var ring_mana = "Ultramarine" "Zaffre" "Blue";
+var ring_es = "Resplendent" "Incandescent" "Scintillating";
+var ring_wed = "Overpowering" "Unleashed" "Empowering";
+var ring_fire_d = "Cremating" "Blasting" "Incinerating";
+var ring_cold_d = "Entombing" "Polar" "Glaciated";
+var ring_light_d = "Electrocuting" "Discharging" "Shocking";
+var ring_phys_d = "Annealed" "Gleaming" "Honed";
+
+var ring_ias = "of Skill";
+var ring_fcr = "of Talent";
+var ring_leech = "Thirsty" "Remora's";
+var ring_res_prism = "of the Rainbow" "of Variegation" "of the Kaleidoscope";
+var ring_all_atr = "of the Comet" "of the Meteor";
+var ring_accu = "of the Ranger" "of the Marksman" "of the Sniper";
+var ring_mana_regen = "of Nirvana" "of Euphoria" "of Bliss";
+var ring_ele_dmg = "of Flames" "of Rime" "of Voltage";
+var ring_unset = "Quintessential" "Flawless";
+
+var merged_ring_attack2 = ring_wed[2] + ring_fire_d[2] + ring_cold_d[2] + ring_light_d[2] + ring_phys_d[2] + ring_ias + ring_leech + ring_accu[2] + ring_ele_dmg;
+var merged_ring_attack3 = ring_wed[3] + ring_fire_d[3] + ring_cold_d[3] + ring_light_d[3] + ring_phys_d[3] + ring_ias + ring_leech + ring_accu[3] + ring_ele_dmg;
+
+var merged_ring_caster2 = ring_mana[2] + ring_ias + ring_fcr + ring_mana_regen[2] + ring_ele_dmg;
+var merged_ring_caster3 = ring_mana[3] + ring_ias + ring_fcr + ring_mana_regen[3] + ring_ele_dmg;
+
+var top4base = res_fire[4] + res_fire[4] + res_light[4] + res_cold[4] + res_chaos + str[4] + dex[4] + int[4];
+
+var merged_ring_universal2 = ring_res_prism[2] + ring_all_atr[1] + top2base + ring_unset;
+var merged_ring_universal3 = ring_res_prism[3] + ring_all_atr[2] + top3base + ring_unset;
+var merged_ring_universal4 = ring_res_prism[3] + ring_all_atr[2] + top4base + ring_unset;
+
+## BELTS
+var belt_life = "Fecund" "Athlete's"  "Virile" "Rotund" "Robust";
+var belt_mana = "Blue" "Mazarine";
+var belt_es = "Dazzling" "Resplendent" "Incandescent" "Scintillating";
+var belt_wed = "Devastating" "Overpowering" "Unleashed" "Empowering";
+var belt_arm = "Enveloped" "Encased" "Carapaced";
+var flasks = "of Overflowing" "of Sipping" "of Savouring" "of Refilling";
+
+## Quivers
+var quiver_dmg = "Honed" "Burning" "Frigid" "Crackling";
+var quiver_leech = "Remora's" "Thirsty";
+var quiver_ias = "of Mastery" "of Ease" "of Skill";
+var quiver_critc = "of Rending" "of Incision" "of Penetrating" "of Rupturing";
+var quiver_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
+var projSpeed = "of the Gale" "of the Zephyr" "of Propulsion";
+
+var quivermods2 = amu_accu[2] + quiver_leech + quiver_ias[2] + quiver_critc[2] + ws_critmulti[3] + quiver_dot[2] + projSpeed[2];
+var quivermods3 = amu_accu[3] + quiver_leech + quiver_ias[3] + quiver_critc[4] + ws_critmulti[4] + quiver_dot[3] + projSpeed[3] + quiver_dmg;
+
+## Shields
+var shields_life = "Vigorous" "Fecund" "Athlete's" "Virile" "Rotund" "Robust";
+var shields_es = "Incandescent" "Scintillating" "Blazing" "Seething" "Pulsing" "Radiating";
+var shield_esp = "Unfaltering" "Unassailable" "Indomitable" "Dauntless";
+var shieldCastSpeed = "of Expertise" "of Nimbleness";
+
+var casterShieldStats2 = wcast_spell[3] + wcast_fire[2] + wcast_cold[2] + wcast_light[2] + wgems_alllevels + w_extrachaos_phys[1] + w_extrachaos_light[1] + w_extrachaos_cold[1] + w_extrachaos_fire[1] + shieldCastSpeed[1] + ws_cast_crit[2] + amu_manaregen[2] + wmana[1];
+var casterShieldStats3 = wcast_spell[4] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wgems_alllevels + w_extrachaos_phys + w_extrachaos_light + w_extrachaos_cold + w_extrachaos_fire + shieldCastSpeed[2] + ws_cast_crit[3] + amu_manaregen[3] + wmana[2];
+var universalShieldStats = "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization";
+var shields_highDefense = "Impenetrable" "Impregnable" "Carapaced" "Plated" "Phased" "Blurred" "Illusion's" "Mirage's" "Interpermeated" "Inspired" "Consecrated" "Beatified" "Incorporeal" "Illusory" "Eidolon's" "Spirit's" + shields_es[2] + shield_esp[2];
+
+## Jewels
+var jewels_priority = "Vivid" "Shimmering" "of Potency";
+var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Resistance" "of Combat" "of Archery" "of Wounding" "of Enchanting";
+var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking";
+var jewels_minion = "Master's" "of Resilience" "Leadership";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} CLASSES AND BASES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var classes_armor = "Body Armour" "Gloves" "Boots" "Helmets" "Shields"
+var classes_attack = "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves" "Wands";
+var classes_2hcast = "Staves";
+var classes_1hcast = "Rune Daggers" "Sceptre" "Wand";
+
+var classes_nonJwlryEquip = classes_armor + classes_attack + classes_2hcast + classes_1hcast + "Quivers";
+var classes_jwlry = "Rings" "Amulets" "Belts"
+
+var classes_synth = "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands";
+var classes_fract = "Amulets" "Belt" "Jewel" "Rings";
+var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "Jewel" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
+
+var quickWeapons = "Grove Bow" "Thicket Bow" "Imperial Bow" "Maraketh Bow" "Corsair Sword" "Gemini Claw" "Imperial Claw" "Hellion's Paw" "Eye Gouger" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Fancy Foil";
+
+var bases_exoticHeistLower = "Assembler Wand" "Blasting Blade" "Blunt Force Condenser" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Subsuming Spirit Shield" "Transformer Staff";
+var bases_exoticHeistHigher = "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Boom Mace" "Cogwork Ring" "Cold-attuned Buckler" "Eventuality Rod" "Geodesic Ring" "Heat-attuned Tower Shield" "Impact Force Propagator" "Infernal Blade" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Psychotic Axe" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Transfer-attuned Spirit Shield" "Void Fangs";
+
+var bases_exoticRitual = "Aetherwind Gloves" "Archdemon Crown" "Atonement Mask" "Basemetal Treads" "Blizzard Crown" "Brimstone Treads" "Cloudwhisper Boots" "Darksteel Treads" "Debilitation Gauntlets" "Demon Crown" "Dreamquest Slippers" "Duskwalk Slippers" "Gale Crown" "Gauche Gloves" "Gruelling Gauntlets" "Imp Crown" "Leyline Gloves" "Nexus Gloves" "Nightwind Slippers" "Penitent Mask" "Sinistral Gloves" "Sorrow Mask" "Southswing Gloves" "Stormrider Boots" "Taxing Gauntlets" "Windbreak Boots" "Winter Crown";
+
+var bases_exoticSynthesised = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Grove Bow" "Harbinger Bow" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Short Bow" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather";
+var bases_exoticFractured = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather";
+
+var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} FUNCTIONS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Func IdMods(){ Identified True;  }
+Func Clean(){ Corrupted False; }
+
+#===============================================================================================================
+# [[0200]] Global overriding rules
+#===============================================================================================================
+
+Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
+{
+	Show arm { Corrupted False; Class "Body Armour"; }
+	Show wep { Empty(); }
+}
+
+#===============================================================================================================
+# [[0200]] High tier influenced items
+#===============================================================================================================
+
+Section Influenced : Rarity <= Rare
+{
+#------------------------------------
+#   [1234] ASPECTS
+#------------------------------------
+	Cont aspect_corruptedInfluenced { HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord; Corrupted True; }
+#------------------------------------
+#   [1234] Crusader
+#------------------------------------
+	Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
+	{
+		Show t11 { ItemLevel >= 82; BaseType "asd"; }
+		Show t12 { ItemLevel >= 84; BaseType "asd"; }
+		Show t13 { ItemLevel >= 86; BaseType "asd"; }
+		Show t21 { ItemLevel >= 80; BaseType "asd"; }
+		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+	}
+#------------------------------------
+#   [1234] Warlord
+#------------------------------------
+	Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
+	{
+		Show t11 { ItemLevel >= 82; BaseType "asd"; }
+		Show t12 { ItemLevel >= 84; BaseType "asd"; }
+		Show t13 { ItemLevel >= 86; BaseType "asd"; }
+		Show t21 { ItemLevel >= 80; BaseType "asd"; }
+		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+	}
+#------------------------------------
+#   [1234] Redeemer
+#------------------------------------
+	Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
+	{
+		Show t11 { ItemLevel >= 82; BaseType "asd"; }
+		Show t12 { ItemLevel >= 84; BaseType "asd"; }
+		Show t13 { ItemLevel >= 86; BaseType "asd"; }
+		Show t21 { ItemLevel >= 80; BaseType "asd"; }
+		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+	}
+#------------------------------------
+#   [1234] Hunter
+#------------------------------------
+	Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
+	{
+		Show t11 { ItemLevel >= 82; BaseType "asd"; }
+		Show t12 { ItemLevel >= 84; BaseType "asd"; }
+		Show t13 { ItemLevel >= 86; BaseType "asd"; }
+		Show t21 { ItemLevel >= 80; BaseType "asd"; }
+		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+	}
+#------------------------------------
+#   [1234] Shaper
+#------------------------------------
+	Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
+	{
+		Show t11 { ItemLevel >= 82; BaseType "asd"; }
+		Show t12 { ItemLevel >= 84; BaseType "asd"; }
+		Show t13 { ItemLevel >= 86; BaseType "asd"; }
+		Show t21 { ItemLevel >= 80; BaseType "asd"; }
+		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+	}
+#------------------------------------
+#   [1234] Elder
+#------------------------------------
+	Section Elder : HasInfluence Elder, Auto("rare->elder")
+	{
+		Show t11 { ItemLevel >= 82; BaseType "asd"; }
+		Show t12 { ItemLevel >= 84; BaseType "asd"; }
+		Show t13 { ItemLevel >= 86; BaseType "asd"; }
+		Show t21 { ItemLevel >= 80; BaseType "asd"; }
+		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Exotic Bases
+#===============================================================================================================
+
+# These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
+# These are bases such as heist and ritual bases.
+
+Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
+{
+	## TODO: == and + together mess up parsing
+	Show ExoticHeistBases { BaseType == bases_exoticHeistLower bases_exoticHeistHigher }
+	Show ExoticRitualBases { BaseType == bases_exoticRitual }
+}
+
+#===============================================================================================================
+# [[9999]] IDENTIFIED MOD FILTERING
+#===============================================================================================================
+
+Section IdModSection : IdMods
+{
+#------------------------------------
+#   [1234] Physical
+#------------------------------------
+	Section Rare : Rarity "Rare", Auto("RareID")
+	{
+		Section Weapons : Class classes_attack, DropLevel >= 50
+		{
+			Show 2HighPhys { Mod >=2 w_cheatmods + w_temple_Phys + wdmg_phys[2] + wdmg_pphys[2] + wdmg_hphys[2] + ws_attack_speed[1] }
+			Show 3HighPhys { Mod >=3 w_cheatmods + w_temple_Phys + wdmg_phys[3] + wdmg_pphys[3] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[1] + ws_critmulti[1] }
+			Show 4HighPhys { Mod >=4 w_cheatmods + w_temple_Phys + wdmg_phys[4] + wdmg_pphys[4] + wdmg_hphys[4] + ws_attack_speed[3] + ws_attack_crit[2] + ws_critmulti[2] }
+		}
+#------------------------------------
+#   [1234] Elemental
+#------------------------------------
+		Section FastEleWeapons : BaseType == quickWeapons
+		{
+			Show 3HighEle { Mod >=3 w_cheatmods + w_temple_Caster + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + ws_attack_speed[1] + ws_attack_crit[2] + ws_critmulti[1] }
+			Show 4HighEle { Mod >=4 w_cheatmods + w_temple_Caster + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + ws_attack_speed[2] + ws_attack_crit[3] + ws_critmulti[2] }
+		}
+#------------------------------------
+#   [1234] Gembased
+#------------------------------------
+		Section GemLevels
+		{
+			Show GemModsBow { Class "Bows"; Mod >=2 wgems_locallevelbow }
+			Show GemModsCaster { Class classes_1hcast; Mod >=2 w_cheatmods + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
+			Show GemModsStaves { Class classes_2hcast; Mod >=2 w_cheatmods + w_temple_Caster + wgems_alllevels_staff }
+		}
+#------------------------------------
+#   [1234] Caster and Spellslinger
+#------------------------------------
+		Section Caster : Class == classes_1hcast
+		{
+			Show 3HighCaster { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_cast_speed[1] + ws_critmulti[1] + wmana[1] + wcast_hspell[1] }
+			Show 4HighCaster { Mod >= 4 w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + wcast_hspell[2] }
+			Show FireCaster { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wsdmg_fire[3] + "Lava Conjurer's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2] + ws_burn[2] + wdmg_fire[2] + wdot_fire[2] + w_extrachaos_phys[2] + w_extrachaos_fire[2] + wdot_fire[3] + wcast_hspell[1] }
+			Show ColdCaster { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_cold[3] + wsdmg_cold[3] + "Winter Beckoner's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2] + wdmg_cold[2] + w_extrachaos_phys[2] + w_extrachaos_cold[2] + wdot_cold[3] + wcast_hspell[1] }
+			Show LightCaster { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_light[3] + wsdmg_light[3] + "Tempest Master's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2]  + wdmg_light[2] + w_extrachaos_phys[2] + w_extrachaos_light[2] + wcast_hspell[1] }
+			Show ChaosCaster { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[3] + "Mad Lord's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[2] + wmana[3] + ws_dot[2] + w_extrachaos_phys[2] + wcast_hspell[1] + wdot_chaos[3] }
+			Show 3SpellSlinger { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_critmulti[1] + w_extrachaos_phys[1] + wcast_hspell[1] + wcast_fire[2] + wcast_cold[2] + wcast_light[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wdmg_phys[1] + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + wdmg_pphys[3] + wdmg_chaos }
+			Show 4SpellSlinger { Mod >= 4 w_temple_Caster + w_cheatmods + wcast_spell[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_critmulti[3] + w_extrachaos_phys[2] + wcast_hspell[1] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wdmg_phys[2] + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg_pphys[3] + wdmg_chaos + ws_attack_speed_smol[1] }
+		}
+#------------------------------------
+#   [1234] Boots
+#------------------------------------
+		Section Boots : Class "Boots"
+		{
+			Show 3LifeBoots { Mod movespeed[2]; Mod >=2 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + wmana[1] }
+			Show 4LifeBoots { Mod movespeed[3]; Mod >=3 res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[3] + str[4] + dex[4] + int [4] + wmana[2] }
+			Show 3ESBoots {  DropLevel >= 55; Mod movespeed[3]; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + str[3] + dex[3] + int [3] }
+			Show 4ESBoots {  DropLevel >= 55; Mod movespeed[3]; Mod >= 3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] }
+			Show HighStatBoots { Mod >= 3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[1] + str[2] + dex[2] + int[2] }
+		}
+#------------------------------------
+#   [1234] Gloves
+#------------------------------------
+		Section Gloves : Class "Gloves"
+		{
+			Show 3LifeGloves { Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_hybridlife }
+			Show 4LifeGloves { Mod >=3 res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[4] + str[4] + dex[4] + int [4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + gloves_hybridlife + wmana[2] }
+			Show 3ESGloves { DropLevel >= 55; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" }
+			Show 4ESGloves { DropLevel >= 55; Mod >= 4 "Prior's" "Deacon's" "Seraphim's" "Seething" "Pulsing" "Radiating" "Unassailable" "Indomitable" "Dauntless" + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + wmana[2] }
+		}
+#------------------------------------
+#   [1234] Helmets
+#------------------------------------
+		Section Helmets : Class "Helmets"
+		{
+			Show 3LifeHelmet { Mod helm_life[2]; Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int [3] + gloves_accu[2] + minionGems + helmLifeHybrid + wmana[2] }
+			Show 4LifeGloves { Mod helm_life[3]; Mod >=3 res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int [4] + gloves_accu[3] + minionGems + helmLifeHybrid + wmana[3] }
+			Show 3ESHelm { Mod >= 2 helmES; DropLevel >= 55; }
+			Show 4ESHelm { Mod >= 4 "Prior's" "Deacon's" "Seraphim's" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] + gloves_accu[2] + helmEsHybrid + minionGems + wmana[2] }
+		}
+#------------------------------------
+#   [1234] Amulets
+#------------------------------------
+		Section Amulets : Class "Amulets"
+		{
+			Show 3ModAttackAmu { Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=2 top2base + merged_amu_attack2 + universal2 + amu_esp[1] + amu_evp[1] + amu_arp[1] }
+			Show 4ModAttackAmu { Mod amu_life[3] + "Dazzling" "Resplendent" "Incandescent"; Mod >=3 top3base + merged_amu_attack3 + universal3 + amu_esp[2] + amu_evp[2] + amu_arp[2] }
+			Show 3ModCasterAmu { Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=2 top2base + merged_amu_caster2 + universal2 + amu_esp[2] }
+			Show 4ModCasterAmu { Mod amu_life[3] + "Dazzling" "Resplendent" "Incandescent"; Mod >=3 top3base + merged_amu_caster3 + universal3 + amu_esp[3] }
+			Show 4HighStatAmu { Mod >= 4 amu_life[3] + top2base + merged_amu_attack2 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent" }
+		}
+#------------------------------------
+#   [1234] Rings
+#------------------------------------		
+		Section Rings : Class "Rings"
+		{
+			Show 2ModRingAttack { Mod ring_life[2] + ring_es[1]; Mod >=2 merged_ring_attack2 + merged_ring_universal2 }
+			Show 3ModRingAttack { Mod ring_life[3] + ring_es[2]; Mod >=3 merged_ring_attack3 + merged_ring_universal3 }
+			Show 2ModRingCaster { Mod ring_life[2] + ring_es[2]; Mod >=2 merged_ring_caster2 + merged_ring_universal2 }
+			Show 3ModRingCaster { Mod ring_life[3] + ring_es[3]; Mod >=3 merged_ring_caster3 + merged_ring_universal3 }
+		}
+#------------------------------------
+#   [1234] Quivers
+#------------------------------------	
+		Section Quivers : Class "Quivers"
+		{
+			Show 4ModQuiver { Mod belt_life[2]; Mod >=3 quivermods2 + dex[3] + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] }
+			Show 5ModQuiver { Mod belt_life[4]; Mod >=4 quivermods3 + dex[4] + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] }
+		}
+#------------------------------------
+#   [1234] Belts
+#------------------------------------	
+		Section Belts : Class "Belts"
+		{
+			Show 4ModBelt { Mod belt_life[2] + belt_es[1]; Mod >=3 belt_mana[1] + belt_wed[2] + belt_arm[2] + flasks + top2base }
+			Show 5ModBelt { Mod belt_life[3] + belt_es[2]; Mod >=4 belt_mana[1] + belt_wed[3] + belt_arm[3] + flasks + top3base }
+		}
+#------------------------------------
+#   [1234] Shields
+#------------------------------------			
+		Section Shields : Class "Shields"
+		{
+			Show 2LifeCasterShield { Mod shields_life[2] + shields_es[2] + shield_esp[2]; Mod >=2 casterShieldStats2 + universalShieldStats + top2base; }
+			Show 2ESCasterShield { Mod >=2 shields_es[3] + shield_esp[3]; Mod casterShieldStats2 + universalShieldStats + top2base; }
+			Show 3LifeCasterShield { Mod shields_life[3] + shields_es[3] + shield_esp[3]; Mod >=3 casterShieldStats3 + universalShieldStats + top3base; }
+			Show 3ESCasterShield { Mod shields_es[4] + shield_esp[4]; Mod >=2 casterShieldStats3 + universalShieldStats + top3base; }
+			Show 3DamageCasterShield { Mod >= 3 casterShieldStats2 }
+			Show 4DamageCasterShield { Mod >= 4 casterShieldStats3 + universalShieldStats + top2base }
+			Show HighDefShields { Mod >= 2 shields_highDefense; DropLevel >= 50; }
+			Show HighStatShield { Mod >= 4 shields_highDefense + universalShieldStats + shields_life[2] + top2base; DropLevel >= 50; }
+		}
+#------------------------------------
+#   [1234] Jewels
+#------------------------------------	
+		Section Jewels : Class "Jewels"
+		{
+			Show PotentiallyValuableJewel { Mod >= 3 jewels_priority + jewels_general + jewels_mult + jewels_minion }
+		}
+#------------------------------------
+#   [1234] Misc
+#------------------------------------
+		Show HighResStat { Mod >= 3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[2] + dex[2] + int[2] + res_omni[2]  }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Exotic Mods Filtering
+#===============================================================================================================
+
+var exotic_incursion = "Citaqualotl" "Guatelitzi" "Matatl" "Puhuarte" "Tacati" "Topotante" "Xopec";
+var exotic_delve = "of the Underground" "Subterranean";
+var exotic_warband = "Betrayer's" "Brinerot" "Deceiver's" "Mutewind" "Redblade" "Turncoat's";
+
+var exotic_bestiary_t1 = "of Farrul" "of Fenumus";
+var exotic_bestiary_t2 = "of Craiceann" "of Saqawal";
+
+var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
+var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
+
+Section IdModSection : IdMods
+{
+	Section Rare : Rarity "Rare", Auto("ExoticMods")
+	{
+#------------------------------------
+#   [1234] Veiled/Betrayal
+#------------------------------------
+		Show t1veil     { Mod t1veiled; }
+		Show t2veil     { Mod t2veiled; }
+		Show DuoVeil    { Mod "Veiled"; Mod "of the Veil"; }
+		Show SmallVeil1 { Mod "Veil"; Width <= 2; Height <= 2; } 
+		Show SmallVeil2 { Mod "Veil"; Width <= 1; Height <= 4; }
+		Show VeilRest   { Mod "Veil"; }
+#------------------------------------
+#   [1234] Incursion/Temple Mods
+#------------------------------------
+		Show IncursionSpeedTraps { Mod "Matatl's"; Class "Boots"; }
+		Show IncursionLifeChest  { Mod "Guatelitzi's"; Class "Body Armour"; }
+		Show IncursionSumonner   { Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptre" "Staves" "Wand"; }
+		Show IncursionCaster     { Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptre" "Staves" "Wand"; }
+		Show IncursionElemental  { Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
+		Show IncursionAttack     { Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
+		Show IncursionGloveHelm  { Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
+		Show IncursionJwlry		 { Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
+		Show IncursionRandom     { Mod exotic_incursion; }
+#------------------------------------
+#   [1234] Bestiary
+#------------------------------------
+		Show BestiaryValuable { Mod exotic_bestiary_t1 }
+		Show BestiaryOther    { Mod exotic_bestiary_t2 }
+#------------------------------------
+#   [1234] Other
+#------------------------------------
+		Show Delve { Mod exotic_delve };
+		Show Warband { Mod exotic_warband };
+		Show Essence { Mod "of the Essence" };
+		Show Crafting { Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Exotic Item Classes
+#===============================================================================================================
+Section ExoticItemClasses
+{	
+#------------------------------------
+#   [1234] Trinkets
+#------------------------------------	
+	Section Trinkets : Class Trinket, Auto("Trinkets")
+	{
+		Show AnyTrinket { Empty(); }
+	}
+#------------------------------------
+#   [1234] Magic Watchstones
+#------------------------------------	
+	Section Watchstones : Rarity <= Rare, Auto("Watchstones")
+	{
+		Show MagicWatchstone { BaseType bases_watchstones }
+	}
+#------------------------------------
+#   [1234] Secret Society Equipment
+#------------------------------------
+	Section Fishing : Class "Fishing Rod", Auto("Redacted")
+	{
+		Show SCP3889 { Empty(); }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Exotic Item Variations
+#===============================================================================================================
+Section ExoticVariations
+{	
+#------------------------------------
+#   [1234] Double Corruptions
+#------------------------------------	
+	Section RExoticVariations : Rarity Rare
+	{
+		Section DoubleCorrupted : Rarity Rare, Corrupted True, CorruptedMods >= 2, Auto("DoubleCorruptedRare")
+		{
+			Show DoubleCorruptedJwlry { Class "Amulet" "Belt" "Jewel" "Ring"; }
+			Show DoubleCorruptedJwlry { Empty(); }
+		}
+	}
+#------------------------------------
+#   [1234] Abyss Jeweled Rares
+#------------------------------------	
+	Section NMRExoticVariations : Rarity <= Rare
+	{
+		Section AbyssJewelItems : SocketGroup "A", Auto("AbyssJewelRare")
+		{
+			Show AnyNonBelt { Class classes_nonJwlryEquip; }
+		}
+#------------------------------------
+#   [1234] Synthesised
+#------------------------------------
+		Section Synthesised : SynthesisedItem True, Auto("Synthesised")
+		{
+			Show SynthSelected { BaseType bases_exoticSynthesised }
+			Show SynthClasses { Class classes_synth }
+			Show SynthRandom { Empty(); }
+		}
+#------------------------------------
+#   [1234] Fractured
+#------------------------------------		
+		Section Fractured : FracturedItem True, Auto("Fractured")
+		{
+			Show FractSelected { BaseType bases_exoticFractured }
+			Show FractClasses { Class classes_fract }
+			Show FractRandom { Empty(); }
+		}
+#------------------------------------
+#   [1234] Enchanted
+#------------------------------------
+		Section Enchanted : AnyEnchantment True, Auto("EnchantedGear")
+		{
+			Show Exotic { Class classes_exoticEnch }
+			Show Helmets { Class "Helmets" }
+			Show GlovesBoots { Class "Gloves" "Boots" }
+		}
+	}
+}
+
+#------------------------------------
+#   [1234] Incubator
+#------------------------------------
+
+# >> Checkpoint: Incubators / Before incubators.
+
+Func IncubatorBase(){ Class Incubator; Tierlist("incubators"); AutoTier(); }
+Section Incubator : IncubatorBase
+{
+	var IncuHiLevel = 81;
+	var HiLevelIncus = "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator";
+
+	Show leveledex { ItemLevel >= IncuHiLevel; BaseType HiLevelIncus; %HS5  }
+	Show t1 { BaseType auto; }
+	Show t2 { BaseType auto; }
+	Show t3 { BaseType auto; }
+	Show t4 { BaseType auto; %HS3 }
+	Show restex { Empty(); }
+}

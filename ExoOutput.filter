@@ -1,0 +1,926 @@
+#===============================================================================================================
+# [[0200]] Global overriding rules
+#===============================================================================================================
+
+Show # $type->6l $tier->arm
+	Corrupted False
+	LinkedSockets 6
+	Rarity <= Rare
+	Class "Body Armour"
+
+Show # $type->6l $tier->wep
+	LinkedSockets 6
+	Rarity <= Rare
+
+#===============================================================================================================
+# [[0200]] High tier influenced items
+#===============================================================================================================
+
+#------------------------------------
+# [1234] ASPECTS
+#------------------------------------
+
+Show
+	Corrupted True
+	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	Rarity <= Rare
+	Continue
+
+#------------------------------------
+# [1234] Crusader
+#------------------------------------
+
+Show # $type->rare->crusader $tier->t11
+	HasInfluence Crusader
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->crusader $tier->t12
+	HasInfluence Crusader
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->crusader $tier->t13
+	HasInfluence Crusader
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->crusader $tier->t21
+	HasInfluence Crusader
+	ItemLevel >= 80
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->crusader $tier->t22
+	HasInfluence Crusader
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "asd"
+
+#------------------------------------
+# [1234] Warlord
+#------------------------------------
+
+Show # $type->rare->warlord $tier->t11
+	HasInfluence Warlord
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->warlord $tier->t12
+	HasInfluence Warlord
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->warlord $tier->t13
+	HasInfluence Warlord
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->warlord $tier->t21
+	HasInfluence Warlord
+	ItemLevel >= 80
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->warlord $tier->t22
+	HasInfluence Warlord
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "asd"
+
+#------------------------------------
+# [1234] Redeemer
+#------------------------------------
+
+Show # $type->rare->redeemer $tier->t11
+	HasInfluence Redeemer
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->redeemer $tier->t12
+	HasInfluence Redeemer
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->redeemer $tier->t13
+	HasInfluence Redeemer
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->redeemer $tier->t21
+	HasInfluence Redeemer
+	ItemLevel >= 80
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->redeemer $tier->t22
+	HasInfluence Redeemer
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "asd"
+
+#------------------------------------
+# [1234] Hunter
+#------------------------------------
+
+Show # $type->rare->hunter $tier->t11
+	HasInfluence Hunter
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->hunter $tier->t12
+	HasInfluence Hunter
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->hunter $tier->t13
+	HasInfluence Hunter
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->hunter $tier->t21
+	HasInfluence Hunter
+	ItemLevel >= 80
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->hunter $tier->t22
+	HasInfluence Hunter
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "asd"
+
+#------------------------------------
+# [1234] Shaper
+#------------------------------------
+
+Show # $type->rare->shaper $tier->t11
+	HasInfluence Shaper
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->shaper $tier->t12
+	HasInfluence Shaper
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->shaper $tier->t13
+	HasInfluence Shaper
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->shaper $tier->t21
+	HasInfluence Shaper
+	ItemLevel >= 80
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->shaper $tier->t22
+	HasInfluence Shaper
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "asd"
+
+#------------------------------------
+# [1234] Elder
+#------------------------------------
+
+Show # $type->rare->elder $tier->t11
+	HasInfluence Elder
+	ItemLevel >= 82
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->elder $tier->t12
+	HasInfluence Elder
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->elder $tier->t13
+	HasInfluence Elder
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->elder $tier->t21
+	HasInfluence Elder
+	ItemLevel >= 80
+	Rarity <= Rare
+	BaseType "asd"
+
+Show # $type->rare->elder $tier->t22
+	HasInfluence Elder
+	ItemLevel >= 85
+	Rarity <= Rare
+	BaseType "asd"
+
+#===============================================================================================================
+# [[0200]] Exotic Bases
+#===============================================================================================================
+# These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
+# These are bases such as heist and ritual bases.
+
+Show # $type->exoticbases $tier->exoticheistbases
+	Rarity <= Rare
+	BaseType == "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Assembler Wand" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Blasting Blade" "Blunt Force Condenser" "Boom Mace" "Capacity Rod" "Capricious Spiritblade" "Cogwork Ring" "Cold-attuned Buckler" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Eventuality Rod" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Geodesic Ring" "Heat-attuned Tower Shield" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Impact Force Propagator" "Infernal Blade" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Psychotic Axe" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Subsuming Spirit Shield" "Transfer-attuned Spirit Shield" "Transformer Staff" "Void Fangs"
+
+Show # $type->exoticbases $tier->exoticritualbases
+	Rarity <= Rare
+	BaseType == "Aetherwind Gloves" "Archdemon Crown" "Atonement Mask" "Basemetal Treads" "Blizzard Crown" "Brimstone Treads" "Cloudwhisper Boots" "Darksteel Treads" "Debilitation Gauntlets" "Demon Crown" "Dreamquest Slippers" "Duskwalk Slippers" "Gale Crown" "Gauche Gloves" "Gruelling Gauntlets" "Imp Crown" "Leyline Gloves" "Nexus Gloves" "Nightwind Slippers" "Penitent Mask" "Sinistral Gloves" "Sorrow Mask" "Southswing Gloves" "Stormrider Boots" "Taxing Gauntlets" "Windbreak Boots" "Winter Crown"
+
+#===============================================================================================================
+# [[9999]] IDENTIFIED MOD FILTERING
+#===============================================================================================================
+
+#------------------------------------
+# [1234] Physical
+#------------------------------------
+
+Show # $type->rareid $tier->2highphys
+	Identified True
+	DropLevel >= 50
+	Rarity Rare
+	Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Wands" "Warstaves"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's" "Flaring" "Tempered" "Merciless" "Tyrannical" "Dictator's" "Emperor's" "of Celebration"
+
+Show # $type->rareid $tier->3highphys
+	Identified True
+	DropLevel >= 50
+	Rarity Rare
+	Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Wands" "Warstaves"
+	HasExplicitMod >=3 "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's" "Flaring" "Tempered" "Razor-sharp" "Merciless" "Tyrannical" "Cruel" "Dictator's" "Emperor's" "Conqueror's" "of Celebration" "of Infamy" "of Incision" "of Destruction"
+
+Show # $type->rareid $tier->4highphys
+	Identified True
+	DropLevel >= 50
+	Rarity Rare
+	Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Wands" "Warstaves"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's" "Flaring" "Tempered" "Razor-sharp" "Annealed" "Merciless" "Tyrannical" "Cruel" "Bloodthirsty" "Dictator's" "Emperor's" "Conqueror's" "Champion's" "of Celebration" "of Infamy" "of Fame" "of Incision" "of Penetrating" "of Destruction" "of Ferocity"
+
+#------------------------------------
+# [1234] Elemental
+#------------------------------------
+
+Show # $type->rareid $tier->3highele
+	Identified True
+	Rarity Rare
+	BaseType == "Ambusher" "Corsair Sword" "Eye Gouger" "Fancy Foil" "Gemini Claw" "Grove Bow" "Hellion's Paw" "Imperial Bow" "Imperial Claw" "Jewelled Foil" "Maraketh Bow" "Spiraled Foil" "Thicket Bow"
+	HasExplicitMod >=3 "of the Underground" "Subterranean" "of Many" "Matatl's" "Tacati" "Topotante's" "Carbonising" "Cremating" "Crystalising" "Entombing" "Vapourising" "Electrocuting" "of Celebration" "of Incision" "of Penetrating" "of Destruction"
+
+Show # $type->rareid $tier->4highele
+	Identified True
+	Rarity Rare
+	BaseType == "Ambusher" "Corsair Sword" "Eye Gouger" "Fancy Foil" "Gemini Claw" "Grove Bow" "Hellion's Paw" "Imperial Bow" "Imperial Claw" "Jewelled Foil" "Maraketh Bow" "Spiraled Foil" "Thicket Bow"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "of Many" "Matatl's" "Tacati" "Topotante's" "Carbonising" "Cremating" "Blasting" "Crystalising" "Entombing" "Polar" "Vapourising" "Electrocuting" "Discharging" "of Celebration" "of Infamy" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity"
+
+#------------------------------------
+# [1234] Gembased
+#------------------------------------
+
+Show # $type->rareid $tier->gemmodsbow
+	Identified True
+	Rarity Rare
+	Class "Bows"
+	HasExplicitMod >=2 "Paragon's" "Sharpshooter's"
+
+Show # $type->rareid $tier->gemmodscaster
+	Identified True
+	Rarity Rare
+	Class "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "of Many" "Matatl's" "Tacati" "Topotante's" "Magister's"
+
+Show # $type->rareid $tier->gemmodsstaves
+	Identified True
+	Rarity Rare
+	Class "Staves"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "of Many" "Matatl's" "Tacati" "Topotante's" "Lava Conjurer's" "Winter Beckoner's" "Tempest Master's" "Splintermind's" "Tecton's"
+
+#------------------------------------
+# [1234] Caster and Spellslinger
+#------------------------------------
+
+Show # $type->rareid $tier->3highcaster
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Finesse" "of Destruction" "Zaffre" "Lich's"
+
+Show # $type->rareid $tier->4highcaster
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=4 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Shocking" "Entombing" "Polar" "Glaciated" "Cremating" "Blasting" "Incinerating" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "Zaffre" "Blue" "Mazarine" "Lich's" "Archmage's"
+
+Show # $type->rareid $tier->firecaster
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Electrocuting" "Discharging" "Shocking" "Lava Conjurer's" "Tecton's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "Zaffre" "Blue" "Mazarine" "of Liquefaction" "of Dispersion" "of Conflagrating" "of Combusting" "Carbonising" "Cremating" "Fanatical" "Zealous" "Baleful" "Inimical" "Corrosive" "Dissolving" "Ardent" "Lich's"
+
+Show # $type->rareid $tier->coldcaster
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Tul's" "Cryomancer's" "Crystalline" "Entombing" "Polar" "Glaciated" "Winter Beckoner's" "Tecton's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "Zaffre" "Blue" "Mazarine" "of Liquefaction" "of Dispersion" "Crystalising" "Baleful" "Inimical" "Mortifying" "Festering" "Heartstopping" "Gelid" "Boreal" "Lich's"
+
+Show # $type->rareid $tier->lightcaster
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Esh's" "Ionising" "Smiting" "Cremating" "Blasting" "Incinerating" "Tempest Master's" "Tecton's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "Zaffre" "Blue" "Mazarine" "of Liquefaction" "of Dispersion" "Vapourising" "Electrocuting" "Baleful" "Inimical" "Excruciating" "Harrowing" "Lich's"
+
+Show # $type->rareid $tier->chaoscaster
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Mad Lord's" "Tecton's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "of Euphoria" "Zaffre" "Blue" "Mazarine" "of Liquefaction" "of Dispersion" "Baleful" "Inimical" "Lich's" "Disintegrating" "Atrophying" "Deteriorating"
+
+Show # $type->rareid $tier->3spellslinger
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Destruction" "Baleful" "Lich's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "Flaring" "Carbonising" "Crystalising" "Vapourising" "Merciless" "Tyrannical" "Cruel" "Malicious"
+
+Show # $type->rareid $tier->4spellslinger
+	Identified True
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptre" "Wand"
+	HasExplicitMod >=4 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Destruction" "of Ferocity" "of Fury" "Baleful" "Inimical" "Lich's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Shocking" "Entombing" "Polar" "Glaciated" "Cremating" "Blasting" "Incinerating" "Flaring" "Tempered" "Carbonising" "Crystalising" "Vapourising" "Merciless" "Tyrannical" "Cruel" "Malicious" "of Acclaim"
+
+#------------------------------------
+# [1234] Boots
+#------------------------------------
+
+Show # $type->rareid $tier->3lifeboots
+	Identified True
+	Rarity Rare
+	Class "Boots"
+	HasExplicitMod "Hellion's" "Cheetah's"
+	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "Virile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "Zaffre"
+
+Show # $type->rareid $tier->4lifeboots
+	Identified True
+	Rarity Rare
+	Class "Boots"
+	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "Athlete's" "Virile" "Rotund" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "Zaffre" "Blue"
+
+Show # $type->rareid $tier->3esboots
+	Identified True
+	DropLevel >= 55
+	Rarity Rare
+	Class "Boots"
+	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's"
+	HasExplicitMod >=2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+Show # $type->rareid $tier->4esboots
+	Identified True
+	DropLevel >= 55
+	Rarity Rare
+	Class "Boots"
+	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's"
+	HasExplicitMod >=3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
+
+Show # $type->rareid $tier->highstatboots
+	Identified True
+	Rarity Rare
+	Class "Boots"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius"
+
+#------------------------------------
+# [1234] Gloves
+#------------------------------------
+
+Show # $type->rareid $tier->3lifegloves
+	Identified True
+	Rarity Rare
+	Class "Gloves"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "Virile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Thirsty" "Remora's" "Prior's" "Urchin's" "Fawn's"
+
+Show # $type->rareid $tier->4lifegloves
+	Identified True
+	Rarity Rare
+	Class "Gloves"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "Athlete's" "Virile" "Rotund" "Robust" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Thirsty" "Remora's" "Honed" "Crackling" "Burning" "Frigid" "Prior's" "Urchin's" "Fawn's" "Zaffre" "Blue"
+
+Show # $type->rareid $tier->3esgloves
+	Identified True
+	DropLevel >= 55
+	Rarity Rare
+	Class "Gloves"
+	HasExplicitMod >=2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless"
+
+Show # $type->rareid $tier->4esgloves
+	Identified True
+	DropLevel >= 55
+	Rarity Rare
+	Class "Gloves"
+	HasExplicitMod >=4 "Prior's" "Deacon's" "Seraphim's" "Seething" "Pulsing" "Radiating" "Unassailable" "Indomitable" "Dauntless" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Thirsty" "Remora's" "Honed" "Crackling" "Burning" "Frigid" "Zaffre" "Blue"
+
+#------------------------------------
+# [1234] Helmets
+#------------------------------------
+
+Show # $type->rareid $tier->3lifehelmet
+	Identified True
+	Rarity Rare
+	Class "Helmets"
+	HasExplicitMod "Fecund" "Athlete's"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Lioneye" "of the Ranger" "Necromancer's" "Summoner's" "Nautilus's" "Urchin's" "Ram's" "Fawn's" "Abbot's" "Prior's" "Zaffre" "Blue"
+
+Show # $type->rareid $tier->4lifegloves
+	Identified True
+	Rarity Rare
+	Class "Helmets"
+	HasExplicitMod "Fecund" "Athlete's" "Virile"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Lioneye" "of the Ranger" "of the Marksman" "Necromancer's" "Summoner's" "Nautilus's" "Urchin's" "Ram's" "Fawn's" "Abbot's" "Prior's" "Zaffre" "Blue" "Mazarine"
+
+Show # $type->rareid $tier->3eshelm
+	Identified True
+	DropLevel >= 55
+	Rarity Rare
+	Class "Helmets"
+	HasExplicitMod >=2 "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable"
+
+Show # $type->rareid $tier->4eshelm
+	Identified True
+	Rarity Rare
+	Class "Helmets"
+	HasExplicitMod >=4 "Prior's" "Deacon's" "Seraphim's" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Lioneye" "of the Ranger" "Priest's" "Abbot's" "Djinn's" "Naga's" "Necromancer's" "Summoner's" "Zaffre" "Blue"
+
+#------------------------------------
+# [1234] Amulets
+#------------------------------------
+
+Show # $type->rareid $tier->3modattackamu
+	Identified True
+	Rarity Rare
+	Class "Amulets"
+	HasExplicitMod "Athlete's" "Virile" "Dazzling" "Resplendent"
+	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Blasting" "Entombing" "Polar" "of Discharge" "of Voltage" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Vaporous" "Impregnable"
+
+Show # $type->rareid $tier->4modattackamu
+	Identified True
+	Rarity Rare
+	Class "Amulets"
+	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "Incandescent"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of the Ranger" "of the Marksman" "of the Sniper" "Devastating" "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Incinerating" "Entombing" "Polar" "Glaciated" "of Discharge" "of Voltage" "of Electricity" "Flaring" "Tempered" "Razor-sharp" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable" "Vaporous" "Phased" "Impregnable" "Girded"
+
+Show # $type->rareid $tier->3modcasteramu
+	Identified True
+	Rarity Rare
+	Class "Amulets"
+	HasExplicitMod "Athlete's" "Virile" "Dazzling" "Resplendent"
+	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "of Nirvana" "of Euphoria" "Wizard's" "Thaumaturgist's" "Cremating" "Blasting" "Entombing" "Polar" "of Discharge" "of Voltage" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Indomitable"
+
+Show # $type->rareid $tier->4modcasteramu
+	Identified True
+	Rarity Rare
+	Class "Amulets"
+	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "Incandescent"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "Mazarine" "of Nirvana" "of Euphoria" "of Bliss" "Wizard's" "Thaumaturgist's" "Cremating" "Blasting" "Incinerating" "Entombing" "Polar" "Glaciated" "of Discharge" "of Voltage" "of Electricity" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable" "Dauntless"
+
+Show # $type->rareid $tier->4highstatamu
+	Identified True
+	Rarity Rare
+	Class "Amulets"
+	HasExplicitMod >=4 "Athlete's" "Virile" "Rotund" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Blasting" "Entombing" "Polar" "of Discharge" "of Voltage" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Impregnable" "Vaporous" "Dazzling" "Resplendent"
+
+#------------------------------------
+# [1234] Rings
+#------------------------------------ 	
+
+Show # $type->rareid $tier->2modringattack
+	Identified True
+	Rarity Rare
+	Class "Rings"
+	HasExplicitMod "Virile" "Rotund" "Resplendent"
+	HasExplicitMod >=2 "Overpowering" "Unleashed" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Annealed" "Gleaming" "of Skill" "Thirsty" "Remora's" "of the Ranger" "of the Marksman" "of Flames" "of Rime" "of Voltage" "of the Rainbow" "of Variegation" "of the Comet" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "Quintessential" "Flawless"
+
+Show # $type->rareid $tier->3modringattack
+	Identified True
+	Rarity Rare
+	Class "Rings"
+	HasExplicitMod "Virile" "Rotund" "Robust" "Resplendent" "Incandescent"
+	HasExplicitMod >=3 "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Incinerating" "Entombing" "Polar" "Glaciated" "Electrocuting" "Discharging" "Shocking" "Annealed" "Gleaming" "Honed" "of Skill" "Thirsty" "Remora's" "of the Ranger" "of the Marksman" "of the Sniper" "of Flames" "of Rime" "of Voltage" "of the Rainbow" "of Variegation" "of the Kaleidoscope" "of the Comet" "of the Meteor" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "Quintessential" "Flawless"
+
+Show # $type->rareid $tier->2modringcaster
+	Identified True
+	Rarity Rare
+	Class "Rings"
+	HasExplicitMod "Virile" "Rotund" "Resplendent" "Incandescent"
+	HasExplicitMod >=2 "Ultramarine" "Zaffre" "of Skill" "of Talent" "of Nirvana" "of Euphoria" "of Flames" "of Rime" "of Voltage" "of the Rainbow" "of Variegation" "of the Comet" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "Quintessential" "Flawless"
+
+Show # $type->rareid $tier->3modringcaster
+	Identified True
+	Rarity Rare
+	Class "Rings"
+	HasExplicitMod "Virile" "Rotund" "Robust" "Resplendent" "Incandescent" "Scintillating"
+	HasExplicitMod >=3 "Ultramarine" "Zaffre" "Blue" "of Skill" "of Talent" "of Nirvana" "of Euphoria" "of Bliss" "of Flames" "of Rime" "of Voltage" "of the Rainbow" "of Variegation" "of the Kaleidoscope" "of the Comet" "of the Meteor" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "Quintessential" "Flawless"
+
+#------------------------------------
+# [1234] Quivers
+#------------------------------------
+
+Show # $type->rareid $tier->4modquiver
+	Identified True
+	Rarity Rare
+	Class "Quivers"
+	HasExplicitMod "Fecund" "Athlete's"
+	HasExplicitMod >=3 "of the Ranger" "of the Marksman" "Remora's" "Thirsty" "of Mastery" "of Ease" "of Rending" "of Incision" "of Destruction" "of Ferocity" "of Fury" "of Liquefaction" "of Dispersion" "of the Gale" "of the Zephyr" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile"
+
+Show # $type->rareid $tier->5modquiver
+	Identified True
+	Rarity Rare
+	Class "Quivers"
+	HasExplicitMod "Fecund" "Athlete's" "Virile" "Rotund"
+	HasExplicitMod >=4 "of the Ranger" "of the Marksman" "of the Sniper" "Remora's" "Thirsty" "of Mastery" "of Ease" "of Skill" "of Rending" "of Incision" "of Penetrating" "of Rupturing" "of Destruction" "of Ferocity" "of Fury" "of Rage" "of Liquefaction" "of Dispersion" "of Acrimony" "of the Gale" "of the Zephyr" "of Propulsion" "Honed" "Burning" "Frigid" "Crackling" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion"
+
+#------------------------------------
+# [1234] Belts
+#------------------------------------
+
+Show # $type->rareid $tier->4modbelt
+	Identified True
+	Rarity Rare
+	Class "Belts"
+	HasExplicitMod "Fecund" "Athlete's" "Dazzling"
+	HasExplicitMod >=3 "Blue" "Devastating" "Overpowering" "Enveloped" "Encased" "of Overflowing" "of Sipping" "of Savouring" "of Refilling" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+Show # $type->rareid $tier->5modbelt
+	Identified True
+	Rarity Rare
+	Class "Belts"
+	HasExplicitMod "Fecund" "Athlete's" "Virile" "Dazzling" "Resplendent"
+	HasExplicitMod >=4 "Blue" "Devastating" "Overpowering" "Unleashed" "Enveloped" "Encased" "Carapaced" "of Overflowing" "of Sipping" "of Savouring" "of Refilling" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
+
+#------------------------------------
+# [1234] Shields
+#------------------------------------ 		
+
+Show # $type->rareid $tier->2lifecastershield
+	Identified True
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod "Vigorous" "Fecund" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+	HasExplicitMod >=2 "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+Show # $type->rareid $tier->2escastershield
+	Identified True
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod >=2 "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Indomitable"
+	HasExplicitMod "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+Show # $type->rareid $tier->3lifecastershield
+	Identified True
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod "Vigorous" "Fecund" "Athlete's" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Indomitable"
+	HasExplicitMod >=3 "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
+
+Show # $type->rareid $tier->3escastershield
+	Identified True
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod "Incandescent" "Scintillating" "Blazing" "Seething" "Unfaltering" "Unassailable" "Indomitable" "Dauntless"
+	HasExplicitMod >=2 "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
+
+Show # $type->rareid $tier->3damagecastershield
+	Identified True
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod >=3 "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre"
+
+Show # $type->rareid $tier->4damagecastershield
+	Identified True
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod >=4 "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+Show # $type->rareid $tier->highdefshields
+	Identified True
+	DropLevel >= 50
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod >=2 "Impenetrable" "Impregnable" "Carapaced" "Plated" "Phased" "Blurred" "Illusion's" "Mirage's" "Interpermeated" "Inspired" "Consecrated" "Beatified" "Incorporeal" "Illusory" "Eidolon's" "Spirit's" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+
+Show # $type->rareid $tier->highstatshield
+	Identified True
+	DropLevel >= 50
+	Rarity Rare
+	Class "Shields"
+	HasExplicitMod >=4 "Impenetrable" "Impregnable" "Carapaced" "Plated" "Phased" "Blurred" "Illusion's" "Mirage's" "Interpermeated" "Inspired" "Consecrated" "Beatified" "Incorporeal" "Illusory" "Eidolon's" "Spirit's" "Incandescent" "Scintillating" "Unfaltering" "Unassailable" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "Vigorous" "Fecund" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+#------------------------------------
+# [1234] Jewels
+#------------------------------------
+
+Show # $type->rareid $tier->potentiallyvaluablejewel
+	Identified True
+	Rarity Rare
+	Class "Jewels"
+	HasExplicitMod >=3 "Vivid" "Shimmering" "of Potency" "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Resistance" "of Combat" "of Archery" "of Wounding" "of Enchanting" "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking" "Master's" "of Resilience" "Leadership"
+
+#------------------------------------
+# [1234] Misc
+#------------------------------------
+
+Show # $type->rareid $tier->highresstat
+	Identified True
+	Rarity Rare
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of the Span" "of the Rainbow"
+
+#===============================================================================================================
+# [[0200]] Exotic Mods Filtering
+#===============================================================================================================
+
+#------------------------------------
+# [1234] Veiled/Betrayal
+#------------------------------------
+
+Show # $type->exoticmods $tier->t1veil
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled"
+
+Show # $type->exoticmods $tier->t2veil
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled"
+
+Show # $type->exoticmods $tier->duoveil
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Veiled"
+	HasExplicitMod "of the Veil"
+
+Show # $type->exoticmods $tier->smallveil1
+	Identified True
+	Width <= 2
+	Height <= 2
+	Rarity Rare
+	HasExplicitMod "Veil"
+
+Show # $type->exoticmods $tier->smallveil2
+	Identified True
+	Width <= 1
+	Height <= 4
+	Rarity Rare
+	HasExplicitMod "Veil"
+
+Show # $type->exoticmods $tier->veilrest
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Veil"
+
+#------------------------------------
+# [1234] Incursion/Temple Mods
+#------------------------------------
+
+Show # $type->exoticmods $tier->incursionspeedtraps
+	Identified True
+	Rarity Rare
+	Class "Boots"
+	HasExplicitMod "Matatl's"
+
+Show # $type->exoticmods $tier->incursionlifechest
+	Identified True
+	Rarity Rare
+	Class "Body Armour"
+	HasExplicitMod "Guatelitzi's"
+
+Show # $type->exoticmods $tier->incursionsumonner
+	Identified True
+	Rarity Rare
+	Class "Claws" "Daggers" "One Hand" "Sceptre" "Staves" "Wand"
+	HasExplicitMod "Citaqualotl's"
+
+Show # $type->exoticmods $tier->incursioncaster
+	Identified True
+	Rarity Rare
+	Class "Rune Dagger" "Sceptre" "Shields" "Staves" "Wand"
+	HasExplicitMod "Matatl's" "Tacati" "Topotante's"
+
+Show # $type->exoticmods $tier->incursionelemental
+	Identified True
+	Rarity Rare
+	Class "Bows" "Claws" "Daggers" "Thrusting"
+	HasExplicitMod "Topotante's"
+
+Show # $type->exoticmods $tier->incursionattack
+	Identified True
+	Rarity Rare
+	Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"
+	HasExplicitMod "of Tacati" "Tacati's"
+
+Show # $type->exoticmods $tier->incursionglovehelm
+	Identified True
+	Rarity Rare
+	Class "Gloves" "Helmets"
+	HasExplicitMod "Puhuarte" "Topotante"
+
+Show # $type->exoticmods $tier->incursionjwlry
+	Identified True
+	Rarity Rare
+	Class "Amulets" "Belts" "Rings"
+	HasExplicitMod "Citaqualotl" "Guatelitzi" "Matatl" "Puhuarte" "Tacati" "Topotante" "Xopec"
+
+Show # $type->exoticmods $tier->incursionrandom
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Citaqualotl" "Guatelitzi" "Matatl" "Puhuarte" "Tacati" "Topotante" "Xopec"
+
+#------------------------------------
+# [1234] Bestiary
+#------------------------------------
+
+Show # $type->exoticmods $tier->bestiaryvaluable
+	Identified True
+	Rarity Rare
+	HasExplicitMod "of Farrul" "of Fenumus"
+
+Show # $type->exoticmods $tier->bestiaryother
+	Identified True
+	Rarity Rare
+	HasExplicitMod "of Craiceann" "of Saqawal"
+
+#------------------------------------
+# [1234] Other
+#------------------------------------
+
+Show # $type->exoticmods $tier->delve
+	Identified True
+	Rarity Rare
+	HasExplicitMod "of the Underground" "Subterranean"
+
+Show # $type->exoticmods $tier->warband
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Betrayer's" "Brinerot" "Deceiver's" "Mutewind" "Redblade" "Turncoat's"
+
+Show # $type->exoticmods $tier->essence
+	Identified True
+	Rarity Rare
+	HasExplicitMod "of the Essence"
+
+Show # $type->exoticmods $tier->crafting
+	Identified True
+	Rarity Rare
+	HasExplicitMod "of Crafting" "of Spellcraft" "of Weaponcraft"
+
+#===============================================================================================================
+# [[0200]] Exotic Item Classes
+#===============================================================================================================
+
+#------------------------------------
+# [1234] Trinkets
+#------------------------------------
+
+Show # $type->trinkets $tier->anytrinket
+	Class Trinket
+
+#------------------------------------
+# [1234] Magic Watchstones
+#------------------------------------
+
+Show # $type->watchstones $tier->magicwatchstone
+	Rarity <= Rare
+	BaseType "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone"
+
+#------------------------------------
+# [1234] Secret Society Equipment
+#------------------------------------
+
+Show # $type->redacted $tier->scp3889
+	Class "Fishing Rod"
+
+#===============================================================================================================
+# [[0200]] Exotic Item Variations
+#===============================================================================================================
+
+#------------------------------------
+# [1234] Double Corruptions
+#------------------------------------
+
+Show # $type->doublecorruptedrare $tier->doublecorruptedjwlry
+	Corrupted True
+	CorruptedMods >= 2
+	Rarity Rare
+	Rarity Rare
+	Class "Amulet" "Belt" "Jewel" "Ring"
+
+Show # $type->doublecorruptedrare $tier->doublecorruptedjwlry
+	Corrupted True
+	CorruptedMods >= 2
+	Rarity Rare
+	Rarity Rare
+
+#------------------------------------
+# [1234] Abyss Jeweled Rares
+#------------------------------------
+
+Show # $type->abyssjewelrare $tier->anynonbelt
+	Rarity <= Rare
+	SocketGroup "A"
+	Class "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rune Daggers" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Wands" "Warstaves"
+
+#------------------------------------
+# [1234] Synthesised
+#------------------------------------
+
+Show # $type->synthesised $tier->synthselected
+	SynthesisedItem True
+	Rarity <= Rare
+	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Grove Bow" "Harbinger Bow" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Short Bow" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather"
+
+Show # $type->synthesised $tier->synthclasses
+	SynthesisedItem True
+	Rarity <= Rare
+	Class "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands"
+
+Show # $type->synthesised $tier->synthrandom
+	SynthesisedItem True
+	Rarity <= Rare
+
+#------------------------------------
+# [1234] Fractured
+#------------------------------------ 	
+
+Show # $type->fractured $tier->fractselected
+	FracturedItem True
+	Rarity <= Rare
+	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather"
+
+Show # $type->fractured $tier->fractclasses
+	FracturedItem True
+	Rarity <= Rare
+	Class "Amulets" "Belt" "Jewel" "Rings"
+
+Show # $type->fractured $tier->fractrandom
+	FracturedItem True
+	Rarity <= Rare
+
+#------------------------------------
+# [1234] Enchanted
+#------------------------------------
+
+Show # $type->enchantedgear $tier->exotic
+	AnyEnchantment True
+	Rarity <= Rare
+	Class "Body Armours" "Bows" "Claws" "Daggers" "Jewel" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
+
+Show # $type->enchantedgear $tier->helmets
+	AnyEnchantment True
+	Rarity <= Rare
+	Class "Helmets"
+
+Show # $type->enchantedgear $tier->glovesboots
+	AnyEnchantment True
+	Rarity <= Rare
+	Class "Boots" "Gloves"
+
+#------------------------------------
+# [1234] Incubator
+#------------------------------------
+# >> Checkpoint: Incubators / Before incubators.
+
+Show # %HS5 $type->incubators $tier->leveledex
+	ItemLevel >= 81
+	Class Incubator
+	BaseType "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator"
+
+Show # $type->incubators $tier->t1
+	Class Incubator
+	BaseType auto
+
+Show # $type->incubators $tier->t2
+	Class Incubator
+	BaseType auto
+
+Show # $type->incubators $tier->t3
+	Class Incubator
+	BaseType auto
+
+Show # %HS3 $type->incubators $tier->t4
+	Class Incubator
+	BaseType auto
+
+Show # $type->incubators $tier->restex
+	Class Incubator
