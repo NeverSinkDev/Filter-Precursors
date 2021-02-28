@@ -793,14 +793,14 @@ Show # $type->exoticmods $tier->crafting
 # [1234] Trinkets
 #------------------------------------
 
-Show # $type->trinkets $tier->anytrinket
+Show # $type->exotic->trinkets $tier->anytrinket
 	Class Trinket
 
 #------------------------------------
 # [1234] Magic Watchstones
 #------------------------------------
 
-Show # $type->watchstones $tier->magicwatchstone
+Show # $type->exotic->watchstones $tier->magicwatchstone
 	Rarity <= Rare
 	BaseType "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone"
 
@@ -808,7 +808,7 @@ Show # $type->watchstones $tier->magicwatchstone
 # [1234] Secret Society Equipment
 #------------------------------------
 
-Show # $type->redacted $tier->scp3889
+Show # $type->exotic->redacted $tier->scp3889
 	Class "Fishing Rod"
 
 #===============================================================================================================
@@ -819,14 +819,14 @@ Show # $type->redacted $tier->scp3889
 # [1234] Double Corruptions
 #------------------------------------
 
-Show # $type->doublecorruptedrare $tier->doublecorruptedjwlry
+Show # $type->exotic->corruptions $tier->doublecorruptedjwlry
 	Corrupted True
 	CorruptedMods >= 2
 	Rarity Rare
 	Rarity Rare
 	Class "Amulet" "Belt" "Jewel" "Ring"
 
-Show # $type->doublecorruptedrare $tier->doublecorruptedjwlry
+Show # $type->exotic->corruptions $tier->doublecorruptedjwlry
 	Corrupted True
 	CorruptedMods >= 2
 	Rarity Rare
@@ -836,7 +836,7 @@ Show # $type->doublecorruptedrare $tier->doublecorruptedjwlry
 # [1234] Abyss Jeweled Rares
 #------------------------------------
 
-Show # $type->abyssjewelrare $tier->anynonbelt
+Show # $type->exotic->sockets $tier->anynonbelt
 	Rarity <= Rare
 	SocketGroup "A"
 	Class "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rune Daggers" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Wands" "Warstaves"
@@ -845,17 +845,17 @@ Show # $type->abyssjewelrare $tier->anynonbelt
 # [1234] Synthesised
 #------------------------------------
 
-Show # $type->synthesised $tier->synthselected
+Show # $type->exotic->synthesised $tier->synthselected
 	SynthesisedItem True
 	Rarity <= Rare
 	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Grove Bow" "Harbinger Bow" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Short Bow" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather"
 
-Show # $type->synthesised $tier->synthclasses
+Show # $type->exotic->synthesised $tier->synthclasses
 	SynthesisedItem True
 	Rarity <= Rare
 	Class "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands"
 
-Show # $type->synthesised $tier->synthrandom
+Show # $type->exotic->synthesised $tier->synthrandom
 	SynthesisedItem True
 	Rarity <= Rare
 
@@ -863,17 +863,17 @@ Show # $type->synthesised $tier->synthrandom
 # [1234] Fractured
 #------------------------------------ 	
 
-Show # $type->fractured $tier->fractselected
+Show # $type->exotic->fractured $tier->fractselected
 	FracturedItem True
 	Rarity <= Rare
 	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather"
 
-Show # $type->fractured $tier->fractclasses
+Show # $type->exotic->fractured $tier->fractclasses
 	FracturedItem True
 	Rarity <= Rare
 	Class "Amulets" "Belt" "Jewel" "Rings"
 
-Show # $type->fractured $tier->fractrandom
+Show # $type->exotic->fractured $tier->fractrandom
 	FracturedItem True
 	Rarity <= Rare
 
@@ -881,20 +881,172 @@ Show # $type->fractured $tier->fractrandom
 # [1234] Enchanted
 #------------------------------------
 
-Show # $type->enchantedgear $tier->exotic
+Show # $type->exotic->enchanted $tier->exotic
 	AnyEnchantment True
 	Rarity <= Rare
-	Class "Body Armours" "Bows" "Claws" "Daggers" "Jewel" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
+	Class "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
 
-Show # $type->enchantedgear $tier->helmets
+Show # $type->exotic->enchanted $tier->helmets
 	AnyEnchantment True
 	Rarity <= Rare
 	Class "Helmets"
 
-Show # $type->enchantedgear $tier->glovesboots
+Show # $type->exotic->enchanted $tier->glovesboots
 	AnyEnchantment True
 	Rarity <= Rare
 	Class "Boots" "Gloves"
+
+#===============================================================================================================
+# [[0200]] Jewels
+#===============================================================================================================
+
+#------------------------------------
+# [1234] Special Cases
+#------------------------------------
+
+Show # $type->jewels->special $tier->1modcorrupted
+	Corrupted True
+	Identified True
+	CorruptedMods >= 1
+	Rarity Rare
+	BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
+	HasExplicitMod "of Combat" "of Archery" "of Mysticism" "of Blasting" "of Wounding" "Surging" "Arctic" "Infernal" "Puncturing" "Rupturing" "Piercing" "Vivid" "Shimmering" "of Potency" "of Demolishing" "of Unmaking" "of the Elements" "of Exsanguinating" "of Atrophy" "of Order" "Leadership"
+
+Show # $type->jewels->special $tier->1modcorrupted
+	Corrupted False
+	Identified True
+	CorruptedMods >= 1
+	Rarity <= Rare
+	HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"
+
+#------------------------------------
+# [1234] Cluster Jewels
+#------------------------------------
+
+Show
+	ItemLevel >= 82
+	Rarity <= Rare
+	EnchantmentPassiveNum <= 8
+	Class $tier->optimalhighlarge $type->jewels->cluster
+	BaseType "Large Cluster Jewel"
+
+Show
+	Rarity <= Rare
+	EnchantmentPassiveNum <= 8
+	Class $tier->highlarge $type->jewels->cluster
+	BaseType "Large Cluster Jewel"
+
+Show
+	Rarity <= Rare
+	Class $tier->large $type->jewels->cluster
+	BaseType "Large Cluster Jewel"
+
+Show
+	ItemLevel >= 84
+	Rarity <= Rare
+	EnchantmentPassiveNum <= 5
+	Class $tier->optimalhighmedium $type->jewels->cluster
+	BaseType "Medium Cluster Jewel"
+
+Show
+	Rarity <= Rare
+	EnchantmentPassiveNum <= 5
+	Class $tier->highmedium $type->jewels->cluster
+	BaseType "Medium Cluster Jewel"
+
+Show
+	Rarity <= Rare
+	Class $tier->medium $type->jewels->cluster
+	BaseType "Medium Cluster Jewel"
+
+Show
+	ItemLevel >= 82
+	Rarity <= Rare
+	Class $tier->highsmall $type->jewels->cluster
+	BaseType "Small Cluster Jewel"
+
+Show
+	Rarity <= Rare
+	Class $tier->small $type->jewels->cluster
+	BaseType "Small Cluster Jewel"
+
+#------------------------------------
+# [1234] Abyss Jewels
+#------------------------------------
+
+Show # $type->jewels->abyss $tier->highrare
+	ItemLevel >= 82
+	Rarity Rare
+	Class "Abyss Jewel"
+
+Show # $type->jewels->abyss $tier->highmagic
+	ItemLevel >= 82
+	Rarity Magic
+	Class "Abyss Jewel"
+
+Show # $type->jewels->abyss $tier->anyrare
+	Rarity Rare
+	Class "Abyss Jewel"
+
+Show # $type->jewels->abyss $tier->anymagic
+	Rarity Rare
+	Class "Abyss Jewel"
+
+#------------------------------------
+# [1234] Generic Jewels
+#------------------------------------
+
+Show # $type->jewels->generic $tier->anyrare
+	Rarity Rare
+	Class "Jewel"
+	BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
+
+Show # $type->jewels->generic $tier->anymagic
+	Rarity <= Magic
+	Class "Jewel"
+	BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
+
+#===============================================================================================================
+# [[0200]] Recipes
+#===============================================================================================================
+
+Show # $type->socketslinks $tier->5linksleveling
+	LinkedSockets >= 5
+	AreaLevel <= 67
+	Rarity <= Rare
+
+Show # $type->socketslinks $tier->5link6sockets
+	LinkedSockets >= 5
+	Sockets >= 6
+	Rarity <= Rare
+
+Show # $type->socketslinks $tier->5links
+	LinkedSockets >= 5
+	AreaLevel >= 67
+	Rarity <= Rare
+
+Show # $type->socketslinks $tier->6sockets
+	Sockets >= 6
+	Rarity <= Rare
+
+Show # $type->socketslinks $tier->rgbsmall1
+	Width <= 2
+	Rarity < Rare
+	SocketGroup RGB
+
+Show # $type->socketslinks $tier->rgbsmall2
+	Width <= 1
+	Rarity < Rare
+	SocketGroup RGB
+
+Show # $type->socketslinks $tier->rgblarge
+	Width >= 2
+	Rarity < Rare
+	SocketGroup RGB
+
+Show # $type->socketslinks $tier->rgbmedium
+	Rarity < Rare
+	SocketGroup RGB
 
 #------------------------------------
 # [1234] Incubator

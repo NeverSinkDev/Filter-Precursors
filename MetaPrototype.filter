@@ -213,6 +213,12 @@ var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surgi
 var jewels_minion = "Master's" "of Resilience" "Leadership";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} IDENTIFIED MODS FOR OTHER SECTIONS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Blasting" "of Wounding" "Surging" "Arctic" "Infernal" "Puncturing" "Rupturing" "Piercing" "Vivid" "Shimmering" "of Potency" "of Demolishing" "of Unmaking" "of the Elements" "of Exsanguinating" "of Atrophy" "of Order" "Leadership";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} CLASSES AND BASES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -226,7 +232,7 @@ var classes_jwlry = "Rings" "Amulets" "Belts"
 
 var classes_synth = "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands";
 var classes_fract = "Amulets" "Belt" "Jewel" "Rings";
-var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "Jewel" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
+var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
 
 var quickWeapons = "Grove Bow" "Thicket Bow" "Imperial Bow" "Maraketh Bow" "Corsair Sword" "Gemini Claw" "Imperial Claw" "Hellion's Paw" "Eye Gouger" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Fancy Foil";
 
@@ -546,7 +552,6 @@ Section IdModSection : IdMods
 		Show Crafting { Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
-
 #===============================================================================================================
 # [[0200]] Exotic Item Classes
 #===============================================================================================================
@@ -555,21 +560,21 @@ Section ExoticItemClasses
 #------------------------------------
 #   [1234] Trinkets
 #------------------------------------	
-	Section Trinkets : Class Trinket, Auto("Trinkets")
+	Section Trinkets : Class Trinket, Auto("exotic->trinkets")
 	{
 		Show AnyTrinket { Empty(); }
 	}
 #------------------------------------
 #   [1234] Magic Watchstones
 #------------------------------------	
-	Section Watchstones : Rarity <= Rare, Auto("Watchstones")
+	Section Watchstones : Rarity <= Rare, Auto("exotic->watchstones")
 	{
 		Show MagicWatchstone { BaseType bases_watchstones }
 	}
 #------------------------------------
 #   [1234] Secret Society Equipment
 #------------------------------------
-	Section Fishing : Class "Fishing Rod", Auto("Redacted")
+	Section Fishing : Class "Fishing Rod", Auto("exotic->redacted")
 	{
 		Show SCP3889 { Empty(); }
 	}
@@ -585,7 +590,7 @@ Section ExoticVariations
 #------------------------------------	
 	Section RExoticVariations : Rarity Rare
 	{
-		Section DoubleCorrupted : Rarity Rare, Corrupted True, CorruptedMods >= 2, Auto("DoubleCorruptedRare")
+		Section DoubleCorrupted : Rarity Rare, Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
 			Show DoubleCorruptedJwlry { Class "Amulet" "Belt" "Jewel" "Ring"; }
 			Show DoubleCorruptedJwlry { Empty(); }
@@ -596,14 +601,14 @@ Section ExoticVariations
 #------------------------------------	
 	Section NMRExoticVariations : Rarity <= Rare
 	{
-		Section AbyssJewelItems : SocketGroup "A", Auto("AbyssJewelRare")
+		Section AbyssJewelItems : SocketGroup "A", Auto("exotic->sockets")
 		{
 			Show AnyNonBelt { Class classes_nonJwlryEquip; }
 		}
 #------------------------------------
 #   [1234] Synthesised
 #------------------------------------
-		Section Synthesised : SynthesisedItem True, Auto("Synthesised")
+		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
 			Show SynthSelected { BaseType bases_exoticSynthesised }
 			Show SynthClasses { Class classes_synth }
@@ -612,7 +617,7 @@ Section ExoticVariations
 #------------------------------------
 #   [1234] Fractured
 #------------------------------------		
-		Section Fractured : FracturedItem True, Auto("Fractured")
+		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
 			Show FractSelected { BaseType bases_exoticFractured }
 			Show FractClasses { Class classes_fract }
@@ -621,7 +626,7 @@ Section ExoticVariations
 #------------------------------------
 #   [1234] Enchanted
 #------------------------------------
-		Section Enchanted : AnyEnchantment True, Auto("EnchantedGear")
+		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
 			Show Exotic { Class classes_exoticEnch }
 			Show Helmets { Class "Helmets" }
@@ -629,7 +634,81 @@ Section ExoticVariations
 		}
 	}
 }
+#===============================================================================================================
+# [[0200]] Jewels
+#===============================================================================================================
+Section Jewels
+{
+#------------------------------------
+# [1234] Special Cases
+#------------------------------------
+	Section IdentifiedJewels : Identified True, Auto("jewels->special")
+	{
+		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1
+		{
+			Show 1modcorrupted { Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+		}
 
+		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, CorruptedMods >= 1
+		{
+			Show 1modcorrupted { HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+		}
+	}
+#------------------------------------
+# [1234] Cluster Jewels
+#------------------------------------
+	Section ClusterJewels : Class Auto("jewels->cluster"), Rarity <= Rare
+	{
+		Show OptimalHighLarge { BaseType "Large Cluster Jewel"; ItemLevel >= 82; EnchantmentPassiveNum <= 8; }
+		Show HighLarge { BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
+		Show Large { BaseType "Large Cluster Jewel"; }
+
+		Show OptimalHighMedium { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
+		Show HighMedium { BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
+		Show Medium { BaseType "Medium Cluster Jewel"; }
+
+		Show HighSmall { BaseType "Small Cluster Jewel"; ItemLevel >= 82; }
+		Show Small { BaseType "Small Cluster Jewel"; }
+	}
+#------------------------------------
+# [1234] Abyss Jewels
+#------------------------------------
+	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
+	{
+		Show HighRare { Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic { Rarity Magic; ItemLevel >= 82; }
+		Show AnyRare { Rarity Rare; }
+		Show AnyMagic { Rarity Rare; }
+	}
+#------------------------------------
+# [1234] Generic Jewels
+#------------------------------------
+	Section GenericJewels : Class "Jewel", BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
+	{
+		Show AnyRare { Rarity Rare; }
+		Show AnyMagic { Rarity <= Magic; }
+	}
+}
+#===============================================================================================================
+# [[0200]] Recipes
+#===============================================================================================================
+Section SocketsLinks : Auto("SocketsLinks")
+{
+	Section HighSocketLink : Rarity <= Rare
+	{
+		Show 5LinksLeveling	{ LinkedSockets >= 5; AreaLevel <= 67; }
+		Show 5Link6Sockets	{ Sockets >= 6; LinkedSockets >= 5; }
+		Show 5Links			{ LinkedSockets >= 5; AreaLevel >= 67; }
+		Show 6Sockets		{ Sockets >= 6; }
+	}
+	Section RGB : SocketGroup RGB, Rarity < Rare
+	{
+		Show RGBSmall1	{ Width <=2 Height <=2 }
+		Show RGBSmall2	{ Width <=1 Height <=4 }
+		Show RGBLarge	{ Width >=2 Height >=4 }
+		Show RGBMedium	{ Empty(); }
+	}
+}
 #------------------------------------
 #   [1234] Incubator
 #------------------------------------
