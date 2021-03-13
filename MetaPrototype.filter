@@ -230,11 +230,17 @@ var classes_1hcast = "Rune Daggers" "Sceptre" "Wand";
 var classes_nonJwlryEquip = classes_armor + classes_attack + classes_2hcast + classes_1hcast + "Quivers";
 var classes_jwlry = "Rings" "Amulets" "Belts"
 
+var classes_equip = "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
+
 var classes_synth = "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands";
 var classes_fract = "Amulets" "Belt" "Jewel" "Rings";
 var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
 
 var quickWeapons = "Grove Bow" "Thicket Bow" "Imperial Bow" "Maraketh Bow" "Corsair Sword" "Gemini Claw" "Imperial Claw" "Hellion's Paw" "Eye Gouger" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Fancy Foil";
+
+var bases_crafting_t1 = "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring";
+var bases_crafting_t2 = "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring";
+var bases_crafting_t3 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre";
 
 var bases_exoticHeistLower = "Assembler Wand" "Blasting Blade" "Blunt Force Condenser" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Subsuming Spirit Shield" "Transformer Staff";
 var bases_exoticHeistHigher = "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Boom Mace" "Cogwork Ring" "Cold-attuned Buckler" "Eventuality Rod" "Geodesic Ring" "Heat-attuned Tower Shield" "Impact Force Propagator" "Infernal Blade" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Psychotic Axe" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Transfer-attuned Spirit Shield" "Void Fangs";
@@ -245,6 +251,9 @@ var bases_exoticSynthesised = "Ambusher" "Archon Kite Shield" "Assassin's Garb" 
 var bases_exoticFractured = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather";
 
 var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
+
+var bases_utilityflasksasorted = "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask";
+var bases_flaskslifemanaasorted = "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} FUNCTIONS
@@ -437,7 +446,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Amulets
 #------------------------------------
-		Section Amulets : Class "Amulets"
+		Section Amulets : Class "Amulets", Corrupted False
 		{
 			Show 3ModAttackAmu { Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=2 top2base + merged_amu_attack2 + universal2 + amu_esp[1] + amu_evp[1] + amu_arp[1] }
 			Show 4ModAttackAmu { Mod amu_life[3] + "Dazzling" "Resplendent" "Incandescent"; Mod >=3 top3base + merged_amu_attack3 + universal3 + amu_esp[2] + amu_evp[2] + amu_arp[2] }
@@ -466,7 +475,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
-		Section Belts : Class "Belts"
+		Section Belts : Class "Belts", Corrupted False
 		{
 			Show 4ModBelt { Mod belt_life[2] + belt_es[1]; Mod >=3 belt_mana[1] + belt_wed[2] + belt_arm[2] + flasks + top2base }
 			Show 5ModBelt { Mod belt_life[3] + belt_es[2]; Mod >=4 belt_mana[1] + belt_wed[3] + belt_arm[3] + flasks + top3base }
@@ -474,7 +483,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
-		Section Shields : Class "Shields"
+		Section Shields : Class "Shields", Corrupted False
 		{
 			Show 2LifeCasterShield { Mod shields_life[2] + shields_es[2] + shield_esp[2]; Mod >=2 casterShieldStats2 + universalShieldStats + top2base; }
 			Show 2ESCasterShield { Mod >=2 shields_es[3] + shield_esp[3]; Mod casterShieldStats2 + universalShieldStats + top2base; }
@@ -593,7 +602,7 @@ Section ExoticVariations
 		Section DoubleCorrupted : Rarity Rare, Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
 			Show DoubleCorruptedJwlry { Class "Amulet" "Belt" "Jewel" "Ring"; }
-			Show DoubleCorruptedJwlry { Empty(); }
+			Show DoubleCorruptedAny { Empty(); }
 		}
 	}
 #------------------------------------
@@ -690,41 +699,137 @@ Section Jewels
 	}
 }
 #===============================================================================================================
-# [[0200]] Recipes
+# [[0200]] Recipes and 5links
 #===============================================================================================================
-Section SocketsLinks : Auto("SocketsLinks")
+
+#------------------------------------
+# [1234] Link Based
+#------------------------------------
+Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 {
-	Section HighSocketLink : Rarity <= Rare
-	{
-		Show 5LinksLeveling	{ LinkedSockets >= 5; AreaLevel <= 67; }
-		Show 5Link6Sockets	{ Sockets >= 6; LinkedSockets >= 5; }
-		Show 5Links			{ LinkedSockets >= 5; AreaLevel >= 67; }
-		Show 6Sockets		{ Sockets >= 6; }
-	}
-	Section RGB : SocketGroup RGB, Rarity < Rare
-	{
-		Show RGBSmall1	{ Width <=2 Height <=2 }
-		Show RGBSmall2	{ Width <=1 Height <=4 }
-		Show RGBLarge	{ Width >=2 Height >=4 }
-		Show RGBMedium	{ Empty(); }
-	}
+	Show 5LinksLeveling	{ LinkedSockets >= 5; AreaLevel <= 67; }
+	Show 5Link6Sockets	{ Sockets >= 6; LinkedSockets >= 5; }
+	Show 5Links			{ LinkedSockets >= 5; AreaLevel >= 67; }
+	Show 6Sockets		{ Sockets >= 6; }
 }
 #------------------------------------
-#   [1234] Incubator
+# [1234] RGB Endgame
 #------------------------------------
-
-# >> Checkpoint: Incubators / Before incubators.
-
-Func IncubatorBase(){ Class Incubator; Tierlist("incubators"); AutoTier(); }
-Section Incubator : IncubatorBase
+Section RGBendgame : SocketGroup RGB, Rarity < Rare, AreaLevel >= 67, Auto("EndgameRGB")
 {
-	var IncuHiLevel = 81;
-	var HiLevelIncus = "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator";
+	Show RGBSmall1	{ Width <=2 Height <=2; }
+	Show RGBSmall2	{ Width <=1 Height <=4; }
+	Show RGBLarge	{ Width >=2 Height >=4; }
+	Show RGBMedium	{ Empty(); }
+}
+#------------------------------------
+# [1234] Chisel Recipes
+#------------------------------------
+Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("ChiselRecipe")
+{
+	Show Chisel20 { Quality >= 20; Rarity < Unique; }
+	Show ChiselHighQualNormal { Corrupted False; Quality > 14; Rarity Normal; }
+	Show ChiselHighQualMagic  { Corrupted False; Quality > 17; Rarity Magic; }
+	Show ChiselAnyQualMagic  { Corrupted False; Rarity Magic; }
+	Show ChiselAnyQualNormal { Corrupted False; Rarity Normal; }
+}
 
-	Show leveledex { ItemLevel >= IncuHiLevel; BaseType HiLevelIncus; %HS5  }
-	Show t1 { BaseType auto; }
-	Show t2 { BaseType auto; }
-	Show t3 { BaseType auto; }
-	Show t4 { BaseType auto; %HS3 }
-	Show restex { Empty(); }
+#===============================================================================================================
+# [[0200]] High Level Crafting Bases
+#===============================================================================================================
+Section EndgameCraftingBases : Rarity < Rare, Clean()
+{
+	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
+	{
+		Show t1 { BaseType bases_crafting_t1; }
+		Show t2 { BaseType bases_crafting_t2; }
+		Show t3 { BaseType bases_crafting_t3; }
+	}
+
+	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84
+	{
+		Show t1 { BaseType bases_crafting_t1; }
+		Show t2 { BaseType bases_crafting_t2; }
+		Show t3 { BaseType bases_crafting_t3; }
+	}
+
+	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 60
+	{
+		Show t1 { BaseType bases_crafting_t1; }
+		Show t2 { BaseType bases_crafting_t2; }
+		Show t3 { BaseType bases_crafting_t3; }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Additional Endgame Crafting Bases
+#===============================================================================================================
+
+# Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
+# Having this list too long will lead to being too flooded with these drops.
+
+Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Rare, ItemLevel >= 68, ItemLevel <= 83
+{
+	Show t1 { BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"; }
+}
+
+#===============================================================================================================
+# [[0200]] Chancing Bases
+#===============================================================================================================
+
+Section Chancing : Clean(), Rarity Normal, Auto("chancing")
+{
+	Show hh { BaseType == "Leather Belt"; }
+	Show t2 { BaseType == "Ezomyte Dagger" "Occultist's Vestment" "Prophecy Wand" "Sadist Garb" "Two-Stone Ring"; }
+}
+
+#===============================================================================================================
+# [[0200]] Endgame Flasks
+#===============================================================================================================
+Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 66
+{
+#------------------------------------
+# [2701] High quality assorted flasks
+#------------------------------------
+	Section HighQualityEndgameFlasks : Quality >= 15
+	{
+		Show HighQualUtility { AreaLevel <= 77; BaseType bases_utilityflasksasorted; }
+		Show HighQUalLifeMana { AreaLevel <= 72; BaseType bases_flaskslifemanaasorted; }
+	}
+
+	Section 20QualEndgameFlasks : Quality >= 20
+	{
+		Show Any20QualFlask { BaseType "Flask"; }
+	}
+#------------------------------------
+# [2701] Utility OR quality flasks
+#------------------------------------
+	Section UtilityEndgameFlasks
+	{
+		Show AsortedUtility { BaseType bases_utilityflasksasorted; AreaLevel <= 77; }
+		Show AnyUtility { Class "Utility Flasks"; AreaLevel <= 72; }
+	}
+
+	Section QualityEndgameFlasks
+	{
+		Show AsortedUtility { BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
+		Show AnyUtility { BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
+	}
+#------------------------------------
+# [2705] Early mapping life/mana/utility flasks
+#------------------------------------
+	Section EarlyMappingLifeManaFlasks : BaseType bases_flaskslifemanaasorted
+	{
+		Show EarlyMappingLifeMana { AreaLevel <= 69; }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Misc Rules
+#===============================================================================================================
+
+Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
+{
+	Show Overquality { Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
+	Show EarlyEndgame4Link { LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armour" "Boots" "Gloves" "Helmets"; }
 }
