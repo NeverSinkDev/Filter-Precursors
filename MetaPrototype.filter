@@ -737,6 +737,11 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 #===============================================================================================================
 # [[0200]] High Level Crafting Bases
 #===============================================================================================================
+
+#------------------------------------
+# [1234] ILVL 86
+#------------------------------------
+
 Section EndgameCraftingBases : Rarity < Rare, Clean()
 {
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
@@ -746,12 +751,20 @@ Section EndgameCraftingBases : Rarity < Rare, Clean()
 		Show t3 { BaseType bases_crafting_t3; }
 	}
 
+#------------------------------------
+# [1234] ILVL 84
+#------------------------------------
+
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84
 	{
 		Show t1 { BaseType bases_crafting_t1; }
 		Show t2 { BaseType bases_crafting_t2; }
 		Show t3 { BaseType bases_crafting_t3; }
 	}
+
+#------------------------------------
+# [1234] ILVL ANY
+#------------------------------------
 
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 60
 	{
@@ -760,10 +773,6 @@ Section EndgameCraftingBases : Rarity < Rare, Clean()
 		Show t3 { BaseType bases_crafting_t3; }
 	}
 }
-
-#===============================================================================================================
-# [[0200]] Additional Endgame Crafting Bases
-#===============================================================================================================
 
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
@@ -832,4 +841,60 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
 {
 	Show Overquality { Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armour" "Boots" "Gloves" "Helmets"; }
+}
+
+#===============================================================================================================
+# [[0200]] Hide Layer 1 - Normal and Magic Endgame Gear
+#===============================================================================================================
+
+Section HideLayer1 : Auto("HideLayer")
+{
+	Show NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class classes_equip; }
+}
+
+#===============================================================================================================
+# [[0200]] Rare Items
+#===============================================================================================================
+
+# Decorator Section - Random Rares
+# Decorator Section - Small Rares
+# Decorator Section - Tiny Rares
+# Decorator Section - RGBs?
+# Decorator Section - Corrupted Rares
+# Decorator Section - Synthesized Rares
+
+# Decorator Section - ILVL 85+
+# Decorator Section - ILVL 75+
+# Decorator Section - ILVL 68+
+
+# Special rare bases: Breach Rings
+# Special rare bases: Talisman
+
+# Rare Section: Belts T1+T2
+# Rare Section: Amulets/Rings T1+T2+T3
+
+# T1 Handpicked Section - weapons, armors
+# T2 Handpicked Section - weapons, armors
+
+# T3 DropLevel based sections PER class
+# T4 General section
+
+# Hide Section
+
+#===============================================================================================================
+# [[0200]] Rare Item Decorators
+#===============================================================================================================
+
+Section RareDecorators : Auto("Rare->Decorators"), Rarity Rare
+{
+	Cont LargeRares { Height >= 3; Width >= 2; }
+	Cont MediumRares1 { Height >= 3; Width = 1; }
+	Cont MediumRares2 { Height = 2; Width = 2; }
+	Cont TinyRares { Height = 1; Width <= 2; }
+
+	Cont ILVL68 { ItemLevel >= 68; }
+	Cont ILVL75 { ItemLevel >= 75; }
+	Cont ILVL85 { ItemLevel >= 85; }
+
+	Cont CorruptedRares { Corrupted True; }
 }
