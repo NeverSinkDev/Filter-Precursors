@@ -133,11 +133,11 @@ var amu_manaregen = "of Nirvana" "of Euphoria" "of Bliss";
 var top2base = res_fire[2] + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int[3];
 var top3base = res_fire[3] + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4];
 
-var merged_amu_attack2 = amu_accu[2] + amu_dmg_wed[3] + amu_dmg_firef[2] + amu_dmg_coldf[2] + amu_dmg_lightp[2] + "Flaring" "Tempered";
-var merged_amu_attack3 = amu_accu[3] + amu_dmg_wed[4] + amu_dmg_firef[3] + amu_dmg_coldf[3] + amu_dmg_lightp[3] + "Flaring" "Tempered" "Razor-sharp";
+var merged_amu_attack2 = amu_accu[2] + amu_dmg_wed[3] + amu_dmg_firef[1] + amu_dmg_coldf[1] + amu_dmg_lightf[1] + "Flaring" "Tempered";
+var merged_amu_attack3 = amu_accu[3] + amu_dmg_wed[4] + amu_dmg_firef[2] + amu_dmg_coldf[2] + amu_dmg_lightf[2] + "Flaring" "Tempered" "Razor-sharp";
 
-var merged_amu_caster2 = amu_castspeed + wmana[2] + amu_manaregen[2] + amu_dmg_spell[2] + amu_dmg_firef[2] + amu_dmg_coldf[2] + amu_dmg_lightp[2];
-var merged_amu_caster3 = amu_castspeed + wmana[3] + amu_manaregen[3] + amu_dmg_spell[3] + amu_dmg_firef[3] + amu_dmg_coldf[3] + amu_dmg_lightp[3];
+var merged_amu_caster2 = amu_castspeed + wmana[2] + amu_manaregen[2] + amu_dmg_spell[2] + amu_dmg_firep[2] + amu_dmg_coldp[2] + amu_dmg_lightp[2];
+var merged_amu_caster3 = amu_castspeed + wmana[3] + amu_manaregen[3] + amu_dmg_spell[3] + amu_dmg_firep[3] + amu_dmg_coldp[3] + amu_dmg_lightp[3];
 
 var universal2 = res_omni[2] + amu_allat[2] + ws_attack_crit[2] + ws_critmulti[2];
 var universal3 = res_omni[3] + amu_allat[3] + ws_attack_crit[3] + ws_critmulti[3];
@@ -238,10 +238,6 @@ var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Qui
 
 var quickWeapons = "Grove Bow" "Thicket Bow" "Imperial Bow" "Maraketh Bow" "Corsair Sword" "Gemini Claw" "Imperial Claw" "Hellion's Paw" "Eye Gouger" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Fancy Foil";
 
-var bases_crafting_t1 = "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring";
-var bases_crafting_t2 = "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring";
-var bases_crafting_t3 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre";
-
 var bases_exoticHeistLower = "Assembler Wand" "Blasting Blade" "Blunt Force Condenser" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Subsuming Spirit Shield" "Transformer Staff";
 var bases_exoticHeistHigher = "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Boom Mace" "Cogwork Ring" "Cold-attuned Buckler" "Eventuality Rod" "Geodesic Ring" "Heat-attuned Tower Shield" "Impact Force Propagator" "Infernal Blade" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Psychotic Axe" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Transfer-attuned Spirit Shield" "Void Fangs";
 
@@ -252,8 +248,66 @@ var bases_exoticFractured = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "A
 
 var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
 
+var bases_talismans_damagetypes = "Ashscale Talisman" "Breakrib Talisman" "Deadhand Talisman" "Deep One Talisman" "Lone Antler Talisman"
+var bases_talismans_universal = "Mandible Talisman" "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Wereclaw Talisman" "Longtooth Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman"
+var bases_talismans_attack = "Writhing Talisman"
+var bases_talismans_caster = "Chrysalis Talisman" "Clutching Talisman" "Bonespire Talisman"
+var bases_talismans_summon = "Black Maw Talisman" "Undying Flesh Talisman"
+## Bonespire Talisman -> mana
+## Horned Talisman -> pierce 2, Primal Skull Talisman, 
+
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} CLASSES AND BASES (TIERED)
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var bases_crafting_t1 = "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring";
+var bases_crafting_t2 = "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring";
+var bases_crafting_t3 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre";
+
 var bases_utilityflasksasorted = "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask";
 var bases_flaskslifemanaasorted = "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask";
+
+var bases_eg_rares_talismans_stats = "Avian Twins Talisman" "Three Rat Talisman"
+
+var bases_eg_rares_ringsamu_t1 = "Agate Amulet" "Citrine Amulet" "Coral Ring" "Diamond Ring" "Onyx Amulet" "Prismatic Ring" "Turquoise Amulet" "Two-Stone Ring" "Unset Ring";
+var bases_eg_rares_ringsamu_t2 = "Amber Amulet" "Amethyst Ring" "Jade Amulet" "Lapis Amulet" "Moonstone Ring" "Ruby Ring" "Sapphire Ring" "Topaz Ring";
+var bases_eg_rares_ringsamu_t3 = "Coral Amulet" "Gold Amulet" "Gold Ring" "Iron Ring" "Paua Amulet" "Paua Ring";
+
+var bases_eg_rares_belts_t1 = "Stygian Vise";
+var bases_eg_rares_belts_t2 = "Heavy Belt" "Leather Belt" "Rustic Sash";
+var bases_eg_rares_belts_t3 = "Chain Belt" "Cloth Belt" "Studded Belt";
+
+var bases_eg_rares_t1_weapons = "TODO";
+var bases_eg_rares_t1_armours = "TODO";
+
+var bases_eg_rares_t2_weapons = "TODO";
+var bases_eg_rares_t2_armours = "TODO";
+
+var t3runedaggers = 55;
+var t3daggers = 56;
+var t3claws = 64;
+var t3wands = 45;
+var t3foils = 60;
+var t3swords1h = 66;
+var t3maces1h = 66;
+var t3axes1h = 61;
+var t3sceptres = 56;
+var t3warstaves = 64;
+var t3staves = 60;
+var t3swords2h = 65;
+var t3axes2h = 62;
+var t3maces2h = 61;
+var t3bows = 60;
+var t3boots = 23;
+var t3gloves = 23;
+var t3helmets = 35;
+var t3body = 56;
+var t3shields = 55;
+var t3shieldsl = 60;
+var t3quivers = 30;
+
+var rare_gear_classes =  "Rune Daggers" "Daggers" "Claws" "Wands" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Sceptres" "Warstaves" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows" "Boots" "Gloves" "Helmets" "Body Armours" "Shields" "Shields" "Quivers";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} FUNCTIONS
@@ -362,6 +416,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	## TODO: == and + together mess up parsing
 	Show ExoticHeistBases { BaseType == bases_exoticHeistLower bases_exoticHeistHigher }
 	Show ExoticRitualBases { BaseType == bases_exoticRitual }
+	Show ExoticTalismanBases { BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 }
 
 #===============================================================================================================
@@ -849,37 +904,8 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
 
 Section HideLayer1 : Auto("HideLayer")
 {
-	Show NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class classes_equip; }
+	Hide NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class classes_equip; }
 }
-
-#===============================================================================================================
-# [[0200]] Rare Items
-#===============================================================================================================
-
-# Decorator Section - Random Rares
-# Decorator Section - Small Rares
-# Decorator Section - Tiny Rares
-# Decorator Section - RGBs?
-# Decorator Section - Corrupted Rares
-# Decorator Section - Synthesized Rares
-
-# Decorator Section - ILVL 85+
-# Decorator Section - ILVL 75+
-# Decorator Section - ILVL 68+
-
-# Special rare bases: Breach Rings
-# Special rare bases: Talisman
-
-# Rare Section: Belts T1+T2
-# Rare Section: Amulets/Rings T1+T2+T3
-
-# T1 Handpicked Section - weapons, armors
-# T2 Handpicked Section - weapons, armors
-
-# T3 DropLevel based sections PER class
-# T4 General section
-
-# Hide Section
 
 #===============================================================================================================
 # [[0200]] Rare Item Decorators
@@ -898,3 +924,152 @@ Section RareDecorators : Auto("Rare->Decorators"), Rarity Rare
 
 	Cont CorruptedRares { Corrupted True; }
 }
+
+Section EndgameRares : Rarity Rare, ItemLevel >= 68
+{
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Exotic Corrupted Items
+#===============================================================================================================
+	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
+	{
+		Show Any { Empty(); }
+	}
+
+	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman")
+	{
+		Show T1_AttackTalisman { BaseType bases_talismans_attack + bases_talismans_universal; Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=3 top2base + merged_amu_attack2 + universal2 }
+		Show T1_CasterTalisman { BaseType bases_talismans_caster + bases_talismans_universal; Mod amu_life[2] + "Dazzling" "Resplendent";  Mod >=3 top2base + merged_amu_caster2 + universal2 + amu_esp[2]; }
+		Show T2_AttackTalisman { BaseType bases_talismans_attack + bases_talismans_universal + bases_talismans_damagetypes; Mod amu_life[3] + "Dazzling" "Resplendent"; Mod >=3 top3base + merged_amu_attack3 + universal3 }
+		Show T2_CasterTalisman { BaseType bases_talismans_caster + bases_talismans_universal + bases_talismans_damagetypes; Mod amu_life[3] + "Dazzling" "Resplendent";  Mod >=3 top3base + merged_amu_caster3 + universal3 + amu_esp[2]; }
+
+		Show T1StatTalisman { BaseType bases_eg_rares_talismans_stats; Mod amu_life[2]; Mod amu_allat[3]; Mod str[2] + dex[2] + int[2]; }
+		Show T2StatTalisman { BaseType bases_eg_rares_talismans_stats; Mod amu_allat[3]; Mod str[3] + dex[3] + int[3]; }
+
+		Show T3DecentModsTalisman { BaseType "Talisman"; Mod >= 3 amu_life[3] + top2base + merged_amu_attack3 + merged_amu_caster3 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent"; }
+		Show T3DecentTypeTalisman { BaseType bases_talismans_universal + bases_talismans_attack + bases_talismans_caster };
+
+		Show Any { BaseType "Talisman"; Empty(); }
+	}
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Accessoires
+#===============================================================================================================
+	Section EndgameRareRingsAmulets : Class "Rings" "Amulets", Auto("rr->amuring")
+	{
+		Show T1 { BaseType bases_eg_rares_ringsamu_t1; }
+		Show T2 { BaseType bases_eg_rares_ringsamu_t2; }
+		Show T3 { BaseType bases_eg_rares_ringsamu_t3; }
+	}
+
+	Section EndgameRareRingsAmulets : Class "Belts", Auto("rr->amuring")
+	{
+		Show T1 { BaseType bases_eg_rares_belts_t1; }
+		Show T2 { BaseType bases_eg_rares_belts_t2; }
+		Show T3 { BaseType bases_eg_rares_belts_t3; }
+	}
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T1 - handpicked
+#===============================================================================================================
+	Section EndgameRareGear : Auto("rr")
+	{
+		Show T1weapons { BaseType bases_eg_rares_t1_weapons }
+		Show T1armours { BaseType bases_eg_rares_t1_armours }
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T2 - handpicked
+#===============================================================================================================
+		Show T2weapons { BaseType bases_eg_rares_t2_weapons }
+		Show T2armours { BaseType bases_eg_rares_t2_armours }
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
+#===============================================================================================================
+		Show t3runedaggers { DropLevel >= t3runedaggers; Class "Rune Daggers"; }
+		Show t3daggers { DropLevel >= t3daggers; Class "Daggers"; }
+		Show t3claws { DropLevel >= t3claws; Class "Claws"; }
+		Show t3wands { DropLevel >= t3wands; Class "Wands"; }
+		Show t3foils { DropLevel >= t3foils; Class "Thrusting One Hand Swords"; Height 4; }
+		Show t3swords1h { DropLevel >= t3swords1h; Class "One Hand Swords"; Height < 4 }
+		Show t3maces1h { DropLevel >= t3maces1h; Class "One Hand Maces"; }
+		Show t3axes1h { DropLevel >= t3axes1h; Class "One Hand Axes"; }
+		Show t3sceptres { DropLevel >= t3sceptres; Class "Sceptres"; }
+		Show t3warstaves { DropLevel >= t3warstaves; Class "Warstaves"; }
+		Show t3staves { DropLevel >= t3staves; Class "Staves"; }
+		Show t3swords2h { DropLevel >= t3swords2h; Class "Two Hand Swords"; }
+		Show t3axes2h { DropLevel >= t3axes2h; Class "Two Hand Axes"; }
+		Show t3maces2h { DropLevel >= t3maces2h; Class "Two Hand Maces"; }
+		Show t3bows { DropLevel >= t3bows; Class "Bows"; }
+		Show t3boots { DropLevel >= t3boots; Class "Boots"; }
+		Show t3gloves { DropLevel >= t3gloves; Class "Gloves"; }
+		Show t3helmets { DropLevel >= t3helmets; Class "Helmets"; }
+		Show t3body { DropLevel >= t3body; Class "Body Armours"; }
+		Show t3shields { DropLevel >= t3shields; Class "Shields"; Height <= 2; }
+		Show t3shieldsl { DropLevel >= t3shieldsl; Class "Shields"; Height >= 3; }
+		Show t3quivers { DropLevel >= t3quivers; Class "Quivers"; }
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T4 - rest
+#===============================================================================================================
+		Show t4endgamerares { Class rare_gear_classes; }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Hide Layer 2 - Rare Gear
+#===============================================================================================================
+Section HideLayer2 : Auto("HideLayer")
+{
+	Hide RaresEndgame { ItemLevel >= 68; Rarity Rare; Class classes_equip; }
+}
+
+#===============================================================================================================
+# [[0200]] Heist Gear
+#===============================================================================================================
+Section HeistFollowerGear : Rarity <= Rare
+{
+#------------------------------------
+# [3001] Heist Cloak
+#------------------------------------
+	Section HeistCloak : Class "Heist Cloak", Auto("Heist->Cloak")
+	{
+		Show t1highlevel { BaseType bases_t1_heist_cloak; ItemLevel >= levels_t1_heist_cloak; }
+		Show t1 { BaseType bases_t1_heist_cloak; }
+		Show t2 { BaseType bases_t2_heist_cloak; }
+		Show t3any { Empty(); }
+	}
+#------------------------------------
+# [3002] Heist Brooch
+#------------------------------------
+	Section HeistBrooch : Class "Heist Brooch", Auto("Heist->Brooch")
+	{
+		Show t1highlevel { BaseType bases_t1_heist_brooch; ItemLevel >= levels_t1_heist_brooch; }
+		Show t1 { BaseType bases_t1_heist_brooch; }
+		Show t2 { BaseType bases_t2_heist_brooch; }
+		Show t3any { Empty(); }
+	}
+#------------------------------------
+# [3003] Heist Gear
+#------------------------------------
+	Section HeistGear : Class "Heist Gear", Auto("Heist->Gear")
+	{
+		Show t1highlevel { BaseType bases_t1_heist_gear; ItemLevel >= levels_t1_heist_gear; }
+		Show t1 { BaseType bases_t1_heist_gear; }
+		Show t2 { BaseType bases_t2_heist_gear; }
+		Show t3any { Empty(); }
+	}
+#------------------------------------
+# [3004] Heist Tool
+#------------------------------------
+	Section HeistTools : Class "Heist Tool", Auto("Heist->Tool")
+	{
+		Show t1highlevel { BaseType bases_t1_heist_tool; ItemLevel >= levels_t1_heist_tool; }
+		Show t1 { BaseType bases_t1_heist_tool; }
+		Show t2 { BaseType bases_t2_heist_tool; }
+		Show t3any { Empty(); }
+	}
+}
+
+#===============================================================================================================
+# [[3900]] Gem Tierlists
+#===============================================================================================================
