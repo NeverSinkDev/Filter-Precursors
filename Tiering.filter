@@ -1,15 +1,74 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##   {META} CLASSES AND BASES (TIERED)
+##   {META} TIERED BASES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## This file needs to be clean for FilterPolishZ to work correctly
+## Only direct assignments can be used here, no operators like + or - or functions
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} CHANCING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var bases_chancing = "Ezomyte Dagger" "Occultist's Vestment" "Prophecy Wand" "Sadist Garb" "Two-Stone Ring";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} CRAFTING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var bases_exoticSynthesised = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Grove Bow" "Harbinger Bow" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Short Bow" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather";
+var bases_exoticFractured = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather";
+
+var quickWeapons = "Grove Bow" "Thicket Bow" "Imperial Bow" "Maraketh Bow" "Corsair Sword" "Gemini Claw" "Imperial Claw" "Hellion's Paw" "Eye Gouger" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Fancy Foil";
+
+var bases_exoticHeistLower = "Assembler Wand" "Blasting Blade" "Blunt Force Condenser" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Subsuming Spirit Shield" "Transformer Staff";
+var bases_exoticHeistHigher = "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Boom Mace" "Cogwork Ring" "Cold-attuned Buckler" "Eventuality Rod" "Geodesic Ring" "Heat-attuned Tower Shield" "Impact Force Propagator" "Infernal Blade" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Psychotic Axe" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Transfer-attuned Spirit Shield" "Void Fangs";
+
+var bases_exoticRitual = "Aetherwind Gloves" "Archdemon Crown" "Atonement Mask" "Basemetal Treads" "Blizzard Crown" "Brimstone Treads" "Cloudwhisper Boots" "Darksteel Treads" "Debilitation Gauntlets" "Demon Crown" "Dreamquest Slippers" "Duskwalk Slippers" "Gale Crown" "Gauche Gloves" "Gruelling Gauntlets" "Imp Crown" "Leyline Gloves" "Nexus Gloves" "Nightwind Slippers" "Penitent Mask" "Sinistral Gloves" "Sorrow Mask" "Southswing Gloves" "Stormrider Boots" "Taxing Gauntlets" "Windbreak Boots" "Winter Crown";
 
 var bases_crafting_t1 = "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring";
 var bases_crafting_t2 = "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring";
 var bases_crafting_t3 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre";
 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} HEIST
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var levels_t1_heist_cloak = 83;
+var bases_t1_heist_cloak = "Whisper-woven Cloak";
+var bases_t2_heist_cloak = "Hooded Cloak";
+
+var levels_t1_heist_brooch = 84;
+var bases_t1_heist_brooch = "Foliate Brooch";
+var bases_t2_heist_brooch = "Enamel Brooch";
+
+var levels_t1_heist_gear = 81;
+var bases_t1_heist_gear = "Burst Band" "Obsidian Sharpening Stone" "Precise Arrowhead";
+var bases_t2_heist_gear = "Aggregator Charm" "Fine Sharpening Stone" "Fragmenting Arrowhead";
+
+var levels_t1_heist_tool = 83;
+var bases_t1_heist_tool = "Grandmaster Keyring" "Master Lockpick" "Regicide Disguise Kit" "Silkweave Sole" "Steel Bracers" "Thaumaturgical Sensing Charm" "Thaumaturgical Ward" "Thaumetic Blowtorch" "Thaumetic Flashpowder";
+var bases_t2_heist_tool = "Azurite Flashpowder" "Espionage Disguise Kit" "Fine Lockpick" "Polished Sensing Charm" "Runed Bracers" "Shining Ward" "Skeleton Keyring" "Sulphur Blowtorch" "Winged Sole";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} FLASKS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 var bases_utilityflasksasorted = "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask";
 var bases_flaskslifemanaasorted = "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask";
 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} TALISMANS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 var bases_eg_rares_talismans_stats = "Avian Twins Talisman" "Three Rat Talisman"
+var bases_talismans_damagetypes = "Ashscale Talisman" "Breakrib Talisman" "Deadhand Talisman" "Deep One Talisman" "Lone Antler Talisman"
+var bases_talismans_universal = "Mandible Talisman" "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Wereclaw Talisman" "Longtooth Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman"
+var bases_talismans_attack = "Writhing Talisman"
+var bases_talismans_caster = "Chrysalis Talisman" "Clutching Talisman" "Bonespire Talisman"
+var bases_talismans_summon = "Black Maw Talisman" "Undying Flesh Talisman"
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} RARE TIERING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var bases_eg_rares_ringsamu_t1 = "Agate Amulet" "Citrine Amulet" "Coral Ring" "Diamond Ring" "Onyx Amulet" "Prismatic Ring" "Turquoise Amulet" "Two-Stone Ring" "Unset Ring";
 var bases_eg_rares_ringsamu_t2 = "Amber Amulet" "Amethyst Ring" "Jade Amulet" "Lapis Amulet" "Moonstone Ring" "Ruby Ring" "Sapphire Ring" "Topaz Ring";
@@ -19,11 +78,11 @@ var bases_eg_rares_belts_t1 = "Stygian Vise";
 var bases_eg_rares_belts_t2 = "Heavy Belt" "Leather Belt" "Rustic Sash";
 var bases_eg_rares_belts_t3 = "Chain Belt" "Cloth Belt" "Studded Belt";
 
-var bases_eg_rares_t1_weapons = "TODO";
-var bases_eg_rares_t1_armours = "TODO";
+var bases_eg_rares_t1_weapons = "Opal Sceptre" "Imbued Wand" "Opal Wand";
+var bases_eg_rares_t1_armours = "Arcanist Gloves" "Arcanist Slippers" "Assassin's Boots" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Eternal Burgonet" "Fossilised Spirit Shield" "Goliath Greaves" "Harmonic Spirit Shield" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Praetor Crown" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Vaal Gauntlets" "Vaal Greaves" "Astral Plate" "Vaal Regalia";
 
-var bases_eg_rares_t2_weapons = "TODO";
-var bases_eg_rares_t2_armours = "TODO";
+var bases_eg_rares_t2_weapons = "Copper Kris" "Corsair Sword" "Gemini Claw" "Jewelled Foil" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Tornado Wand" "Broadhead Arrow Quiver" "Citadel Bow" "Eclipse Staff" "Exquisite Blade" "Grove Bow" "Karui Chopper" "Karui Maul" "Runic Hatchet" "Sambar Sceptre" "Short Bow" "Siege Axe" "Spike-Point Arrow Quiver" "Thicket Bow" "Vaal Axe" "Void Sceptre";
+var bases_eg_rares_t2_armours = "Ambush Boots" "Ancient Greaves" "Antique Greaves" "Assassin's Mitts" "Carnal Boots" "Conjurer Boots" "Conjurer Gloves" "Crusader Buckler" "Dragonscale Gauntlets" "Ezomyte Burgonet" "Goliath Gauntlets" "Hydrascale Boots" "Legion Boots" "Legion Gloves" "Mind Cage" "Nightmare Bascinet" "Prophet Crown" "Samite Gloves" "Samite Slippers" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Sinner Tricorne" "Solaris Circlet" "Soldier Boots" "Stealth Gloves" "Supreme Spiked Shield" "Vaal Mask" "Vaal Spirit Shield" "Wyrmscale Boots" "Archon Kite Shield" "Assassin's Garb" "Colossal Tower Shield" "Ezomyte Tower Shield" "Mosaic Kite Shield" "Pinnacle Tower Shield" "Sadist Garb";
 
 var t3runedaggers = 55;
 var t3daggers = 56;
@@ -47,3 +106,42 @@ var t3body = 56;
 var t3shields = 55;
 var t3shieldsl = 60;
 var t3quivers = 30;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} GEMS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var specialEGems = "Empower" "Enlighten" "Enhance";
+var leveledGems6 = "Blood and Sand" "Brand Recall";
+var overleveledGems4 = "Empower" "Enhance" "Enlighten";
+var specialGems = "Empower" "Enhance" "Enlighten" "Item Quantity" "Portal" "Vaal Breach";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} GEMS - TIERING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var gems.t1awa = "Awakened Added Cold Damage Support" "Awakened Added Lightning Damage Support" "Awakened Ancestral Call Support" "Awakened Brutality Support" "Awakened Burning Damage Support" "Awakened Cast On Critical Strike Support" "Awakened Chain Support" "Awakened Cold Penetration Support" "Awakened Controlled Destruction Support" "Awakened Deadly Ailments Support" "Awakened Elemental Damage with Attacks Support" "Awakened Elemental Focus Support" "Awakened Fork Support" "Awakened Generosity Support" "Awakened Greater Multiple Projectiles Support" "Awakened Hextouch Support" "Awakened Increased Area of Effect Support" "Awakened Lightning Penetration Support" "Awakened Melee Physical Damage Support" "Awakened Minion Damage Support" "Awakened Multistrike Support" "Awakened Spell Cascade Support" "Awakened Spell Echo Support" "Awakened Swift Affliction Support" "Awakened Unbound Ailments Support" "Awakened Unleash Support" "Awakened Vicious Projectiles Support" "Awakened Void Manipulation Support";
+var gems.t1div = "Added Cold Damage Support" "Added Fire Damage Support" "Arc" "Arcane Cloak" "Armageddon Brand" "Ball Lightning" "Berserk" "Blade Vortex" "Blood Rage" "Bonechill Support" "Brutality Support" "Burning Damage Support" "Cast when Damage Taken Support" "Charged Traps Support" "Clarity" "Cobra Lash" "Cold Penetration Support" "Combustion Support" "Conductivity" "Consecrated Path" "Controlled Destruction Support" "Cremation" "Culling Strike Support" "Cyclone" "Damage on Full Life Support" "Dash" "Desecrate" "Determination" "Divine Ire" "Dominating Blow" "Dread Banner" "Enduring Cry" "Ethereal Knives" "Faster Casting Support" "Faster Projectiles Support" "Flameblast" "Flammability" "Flesh and Stone" "Flicker Strike" "Fortify Support" "Frost Bomb" "Frost Shield" "Frost Wall" "Frostbite" "General's Cry" "Haste" "Hatred" "Hypothermia Support" "Ice Nova" "Impale Support" "Increased Critical Damage Support" "Infused Channelling Support" "Inspiration Support" "Kinetic Blast" "Minefield Support" "Mirage Archer Support" "Molten Strike" "Multiple Totems Support" "Multistrike Support" "Onslaught Support" "Perforate" "Pierce Support" "Plague Bearer" "Poacher's Mark" "Poison Support" "Precision" "Pride" "Pulverise Support" "Purifying Flame" "Purity of Fire" "Purity of Ice" "Purity of Lightning" "Pyroclast Mine" "Raise Zombie" "Reckoning" "Righteous Fire" "Scourge Arrow" "Shield Charge" "Shrapnel Ballista" "Soulrend" "Spark" "Spell Echo Support" "Spellslinger" "Split Arrow" "Storm Brand" "Summon Carrion Golem" "Summon Lightning Golem" "Summon Skitterbots" "Swiftbrand Support" "Tempest Shield" "Toxic Rain" "Trap and Mine Damage Support" "Trinity Support" "Unbound Ailments Support" "Vile Toxins Support" "Vitality" "Vulnerability" "Wave of Conviction" "Zealotry";
+var gems.t1pha = "Ancestral Warchief" "Bladestorm" "Desecrate" "Discharge" "Frost Bomb" "Haste" "Ice Nova" "Infernal Blow" "Leap Slam" "Lightning Warp" "Seismic Cry" "Shattering Steel" "Toxic Rain" "Wave of Conviction";
+var gems.t1ano = "Added Cold Damage Support" "Animate Guardian" "Arc" "Arcane Cloak" "Arcane Surge Support" "Arctic Armour" "Assassin's Mark" "Ball Lightning" "Berserk" "Blade Blast" "Blade Vortex" "Blasphemy Support" "Burning Damage Support" "Chance to Flee Support" "Combustion Support" "Concentrated Effect Support" "Contagion" "Controlled Destruction Support" "Convocation" "Cyclone" "Dash" "Despair" "Determination" "Discharge" "Earthshatter" "Efficacy Support" "Elemental Damage with Attacks Support" "Energy Leech Support" "Enlighten Support" "Firestorm" "Fist of War Support" "Flame Dash" "Flammability" "Flesh and Stone" "Fork Support" "Freezing Pulse" "Frenzy" "Glacial Cascade" "Grace" "Ground Slam" "Herald of Agony" "Herald of Purity" "Hydrosphere" "Icicle Mine" "Immortal Call" "Increased Critical Damage Support" "Increased Critical Strikes Support" "Infused Channelling Support" "Inspiration Support" "Kinetic Blast" "Less Duration Support" "Lesser Multiple Projectiles Support" "Lightning Tendrils" "Maim Support" "Malevolence" "Minefield Support" "Minion Damage Support" "Mirage Archer Support" "Multiple Totems Support" "Phase Run" "Physical to Lightning Support" "Pierce Support" "Pinpoint Support" "Plague Bearer" "Precision" "Puncture" "Purity of Lightning" "Rage Support" "Second Wind Support" "Spark" "Spectral Shield Throw" "Split Arrow" "Summon Carrion Golem" "Summon Chaos Golem" "Summon Lightning Golem" "Summon Phantasm Support" "Summon Skitterbots" "Summon Stone Golem" "Swift Affliction Support" "Swiftbrand Support" "Tempest Shield" "Tornado Shot" "Toxic Rain" "Trap and Mine Damage Support" "Unbound Ailments Support" "Unleash Support" "Venom Gyre" "Vile Toxins Support" "Vitality" "Void Manipulation Support" "Vortex";
+var gems.t1_2020z = "Advanced Traps Support" "Arcane Surge Support" "Barrage Support" "Berserk" "Blight" "Blood Magic Support" "Charged Traps Support" "Concentrated Effect Support" "Culling Strike Support" "Damage on Full Life Support" "Desecrate" "Determination" "Discharge" "Discipline" "Dread Banner" "Elemental Hit" "Elemental Penetration Support" "Elemental Proliferation Support" "Ethereal Knives" "Explosive Trap" "Flameblast" "Fortify Support" "Frostbolt" "Glacial Cascade" "Haste" "Hatred" "Herald of Ash" "Herald of Thunder" "Hexblast" "High-Impact Mine Support" "Hypothermia Support" "Increased Duration Support" "Infused Channelling Support" "Inspiration Support" "Kinetic Blast" "Lesser Multiple Projectiles Support" "Life Gain on Hit Support" "Lightning Strike" "Lightning Tendrils" "Minion Life Support" "Multistrike Support" "Nightblade Support" "Perforate" "Power Charge On Critical Support" "Precision" "Predator Support" "Pride" "Pulverise Support" "Purity of Elements" "Purity of Ice" "Purity of Lightning" "Raise Spectre" "Reave" "Searing Bond" "Splitting Steel" "Summon Carrion Golem" "Swiftbrand Support" "Temporal Chains" "Trap Support" "Vile Toxins Support" "Warlord's Mark" "Wintertide Brand" "Zealotry";
+var gems.t1_2120z = "Anger" "Animate Guardian" "Arc" "Arcane Cloak" "Archmage Support" "Ball Lightning" "Ballista Totem Support" "Barrage" "Blade Blast" "Blade Vortex" "Bladefall" "Blazing Salvo" "Blood Rage" "Brutality Support" "Cast On Critical Strike Support" "Cast when Damage Taken Support" "Caustic Arrow" "Chain Support" "Chance to Bleed Support" "Charged Mines Support" "Close Combat Support" "Combustion Support" "Controlled Destruction Support" "Cyclone" "Dash" "Despair" "Divine Ire" "Efficacy Support" "Elemental Damage with Attacks Support" "Elemental Focus Support" "Elemental Weakness" "Enduring Cry" "Energy Leech Support" "Essence Drain" "Faster Attacks Support" "Faster Casting Support" "Fist of War Support" "Flame Dash" "Flame Wall" "Freezing Pulse" "Frost Blades" "Frostbite" "General's Cry" "Generosity Support" "Greater Multiple Projectiles Support" "Herald of Ice" "Herald of Purity" "Hydrosphere" "Ice Crash" "Ice Nova" "Ice Shot" "Ice Spear" "Impale Support" "Increased Area of Effect Support" "Increased Critical Strikes Support" "Intensify Support" "Lacerate" "Less Duration Support" "Malevolence" "Meat Shield Support" "Melee Physical Damage Support" "Minefield Support" "Minion Damage Support" "Multiple Totems Support" "Penance Brand" "Pestilent Strike" "Pierce Support" "Pinpoint Support" "Plague Bearer" "Poison Support" "Puncture" "Purity of Fire" "Raise Zombie" "Ruthless Support" "Scorching Ray" "Second Wind Support" "Shockwave Support" "Slower Projectiles Support" "Spell Cascade Support" "Spell Echo Support" "Spellslinger" "Split Arrow" "Steelskin" "Storm Brand" "Summon Ice Golem" "Summon Phantasm Support" "Summon Skitterbots" "Summon Stone Golem" "Swift Affliction Support" "Swift Assembly Support" "Toxic Rain" "Trap and Mine Damage Support" "Trinity Support" "Unleash Support" "Vaal Ancestral Warchief" "Vaal Blade Vortex" "Vaal Cyclone" "Vaal Detonate Dead" "Vaal Discipline" "Vaal Grace" "Vaal Haste" "Vaal Molten Shell" "Vaal Righteous Fire" "Vaal Summon Skeletons" "Vitality" "Volatile Dead" "Vortex" "Withering Touch Support" "Wrath";
+var gems.t1_2123z = "Ancestral Protector" "Blade Flurry" "Blastchain Mine Support" "Cluster Traps Support" "Deadly Ailments Support" "Feeding Frenzy Support" "Flamethrower Trap" "Flammability" "Flesh and Stone" "Flicker Strike" "Herald of Agony" "Hextouch Support" "Ice Trap" "Item Rarity Support" "Maim Support" "Mirage Archer Support" "Phase Run" "Physical to Lightning Support" "Purifying Flame" "Sigil of Power" "Sniper's Mark" "Summon Chaos Golem" "Summon Raging Spirit" "Unbound Ailments Support" "Vaal Arc" "Vaal Ice Nova" "Vaal Impurity of Fire" "Vicious Projectiles Support" "Void Manipulation Support";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} REPLICAS - TIERING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var uniquereplicas.t1 = "Blood Raiment" "Chain Belt" "Cloth Belt" "Glorious Plate" "Great Crown" "Lacquered Buckler" "Leather Belt" "Maelström Staff" "Ornate Quiver" "Paua Amulet" "Relic Chambers Map" "Ruby Ring" "Soldier Boots" "Temple Map" "Triumphant Lamellar" "Vaal Gauntlets";
+var uniquereplicas.t2 = "Ebony Tower Shield" "Elegant Ringmail" "Ezomyte Burgonet" "Ezomyte Dagger" "Granite Flask" "Great Mallet" "Heavy Belt" "Imperial Bow" "Jade Amulet" "Siege Axe" "Terror Maul" "Vaal Rapier" "Void Sceptre";
+var uniquereplicas.multi = "Carnal Armour";
+var uniquereplicas.t3 = "Arcanist Gloves" "Arcanist Slippers" "Assassin's Boots" "Boot Knife" "Bronzescale Boots" "Crusader Chainmail" "Death Bow" "Decimation Bow" "Dunes Map" "Elder Sword" "Engraved Wand" "Eternal Sword" "Ezomyte Axe" "Festival Mask" "Gnarled Branch" "Gold Amulet" "Great Helmet" "Grinning Fetish" "Gut Ripper" "Infernal Sword" "Jasper Chopper" "Laminated Kite Shield" "Murder Boots" "Nailed Fist" "Ornate Mace" "Paua Ring" "Royal Skean" "Rustic Sash" "Sage Wand" "Samite Gloves" "Sanctified Mana Flask" "Sapphire Ring" "Shadow Sceptre" "Shagreen Boots" "Short Bow" "Silk Slippers" "Sinner Tricorne" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Stiletto" "Sulphur Flask" "Titan Greaves" "Tornado Wand" "Unset Ring" "Vaal Claw" "War Sword" "Zealot Gloves" "Zodiac Leather";
+
+var UMaps.ex = "Harbinger Map";
+var UMaps.t1 = "Basilica Map" "Chateau Map" "Courthouse Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map";
+var UMaps.t2 = "Courtyard Map" "Cursed Crypt Map" "Harbinger Map" "Museum Map";
+var UMaps.t3 = "Cemetery Map" "Moon Temple Map" "Necropolis Map" "Overgrown Shrine Map" "Primordial Blocks Map" "Promenade Map" "Shore Map" "Temple Map" "Underground River Map" "Vaal Pyramid Map";
+var UMaps.t4 = "Atoll Map" "Bone Crypt Map" "Dunes Map" "Strand Map" "Underground Sea Map";
+
+var Maps.Blighted.HighTier = 15;
+var Maps.Enchanted.HighTier = 11;

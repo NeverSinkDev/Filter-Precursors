@@ -1,4 +1,26 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} CLASSES AND BASES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var classes_armor = "Body Armour" "Gloves" "Boots" "Helmets" "Shields"
+var classes_attack = "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves" "Wands";
+var classes_2hcast = "Staves";
+var classes_1hcast = "Rune Daggers" "Sceptre" "Wand";
+
+var classes_nonJwlryEquip = classes_armor + classes_attack + classes_2hcast + classes_1hcast + "Quivers";
+var classes_jwlry = "Rings" "Amulets" "Belts"
+
+var classes_equip = "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
+
+var classes_synth = "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands";
+var classes_fract = "Amulets" "Belt" "Jewel" "Rings";
+var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
+
+var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
+
+var rare_gear_classes =  "Rune Daggers" "Daggers" "Claws" "Wands" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Sceptres" "Warstaves" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows" "Boots" "Gloves" "Helmets" "Body Armours" "Shields" "Shields" "Quivers";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} ID Mods
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -61,7 +83,6 @@ var w_temple_Sumonner = "Citaqualotl's";
 var w_temple_Caster = "Matatl's" "Tacati" "Topotante's";
 
 ## ARMORS
- 
 var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
 var gloves_fdmg = "Honed" "Crackling" "Burning" "Frigid";
 var gloves_leech = "Thirsty" "Remora's";
@@ -217,41 +238,3 @@ var jewels_minion = "Master's" "of Resilience" "Leadership";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Blasting" "of Wounding" "Surging" "Arctic" "Infernal" "Puncturing" "Rupturing" "Piercing" "Vivid" "Shimmering" "of Potency" "of Demolishing" "of Unmaking" "of the Elements" "of Exsanguinating" "of Atrophy" "of Order" "Leadership";
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##   {META} CLASSES AND BASES
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-var classes_armor = "Body Armour" "Gloves" "Boots" "Helmets" "Shields"
-var classes_attack = "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves" "Wands";
-var classes_2hcast = "Staves";
-var classes_1hcast = "Rune Daggers" "Sceptre" "Wand";
-
-var classes_nonJwlryEquip = classes_armor + classes_attack + classes_2hcast + classes_1hcast + "Quivers";
-var classes_jwlry = "Rings" "Amulets" "Belts"
-
-var classes_equip = "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
-
-var classes_synth = "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands";
-var classes_fract = "Amulets" "Belt" "Jewel" "Rings";
-var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves";
-
-var quickWeapons = "Grove Bow" "Thicket Bow" "Imperial Bow" "Maraketh Bow" "Corsair Sword" "Gemini Claw" "Imperial Claw" "Hellion's Paw" "Eye Gouger" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Fancy Foil";
-
-var bases_exoticHeistLower = "Assembler Wand" "Blasting Blade" "Blunt Force Condenser" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crushing Force Magnifier" "Disapprobation Axe" "Endothermic Buckler" "Exhausting Spirit Shield" "Exothermic Tower Shield" "Fickle Spiritblade" "Flare Mace" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Magmatic Tower Shield" "Malign Fangs" "Maltreatment Axe" "Polar Buckler" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Rebuking Blade" "Reciprocation Staff" "Shadow Fangs" "Subsuming Spirit Shield" "Transformer Staff";
-var bases_exoticHeistHigher = "Accumulator Wand" "Alternating Sceptre" "Anarchic Spiritblade" "Apex Cleaver" "Astrolabe Amulet" "Banishing Blade" "Battery Staff" "Boom Mace" "Cogwork Ring" "Cold-attuned Buckler" "Eventuality Rod" "Geodesic Ring" "Heat-attuned Tower Shield" "Impact Force Propagator" "Infernal Blade" "Mechalarm Belt" "Micro-Distillery Belt" "Oscillating Sceptre" "Pneumatic Dagger" "Psychotic Axe" "Simplex Amulet" "Solarine Bow" "Stabilising Sceptre" "Transfer-attuned Spirit Shield" "Void Fangs";
-
-var bases_exoticRitual = "Aetherwind Gloves" "Archdemon Crown" "Atonement Mask" "Basemetal Treads" "Blizzard Crown" "Brimstone Treads" "Cloudwhisper Boots" "Darksteel Treads" "Debilitation Gauntlets" "Demon Crown" "Dreamquest Slippers" "Duskwalk Slippers" "Gale Crown" "Gauche Gloves" "Gruelling Gauntlets" "Imp Crown" "Leyline Gloves" "Nexus Gloves" "Nightwind Slippers" "Penitent Mask" "Sinistral Gloves" "Sorrow Mask" "Southswing Gloves" "Stormrider Boots" "Taxing Gauntlets" "Windbreak Boots" "Winter Crown";
-
-var bases_exoticSynthesised = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Grove Bow" "Harbinger Bow" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Short Bow" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather";
-var bases_exoticFractured = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather";
-
-var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
-
-var bases_talismans_damagetypes = "Ashscale Talisman" "Breakrib Talisman" "Deadhand Talisman" "Deep One Talisman" "Lone Antler Talisman"
-var bases_talismans_universal = "Mandible Talisman" "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Wereclaw Talisman" "Longtooth Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman"
-var bases_talismans_attack = "Writhing Talisman"
-var bases_talismans_caster = "Chrysalis Talisman" "Clutching Talisman" "Bonespire Talisman"
-var bases_talismans_summon = "Black Maw Talisman" "Undying Flesh Talisman"
-
-var rare_gear_classes =  "Rune Daggers" "Daggers" "Claws" "Wands" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Sceptres" "Warstaves" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows" "Boots" "Gloves" "Helmets" "Body Armours" "Shields" "Shields" "Quivers";

@@ -314,7 +314,7 @@ Section ExoticItemClasses
 #------------------------------------
 #   [1234] Trinkets
 #------------------------------------	
-	Section Trinkets : Class Trinket, Auto("exotic->trinkets")
+	Section Trinkets : Class "Trinket", Auto("exotic->trinkets")
 	{
 		Show AnyTrinket { Empty(); }
 	}
@@ -403,7 +403,7 @@ Section Jewels
 			Show 1modcorrupted { Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
-		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, CorruptedMods >= 1
+		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare
 		{
 			Show 1modcorrupted { HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
@@ -457,27 +457,6 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 	Show 5Links			{ LinkedSockets >= 5; AreaLevel >= 67; }
 	Show 6Sockets		{ Sockets >= 6; }
 }
-#------------------------------------
-# [1234] RGB Endgame
-#------------------------------------
-Section RGBendgame : SocketGroup RGB, Rarity < Rare, AreaLevel >= 67, Auto("EndgameRGB")
-{
-	Show RGBSmall1	{ Width <=2 Height <=2; }
-	Show RGBSmall2	{ Width <=1 Height <=4; }
-	Show RGBLarge	{ Width >=2 Height >=4; }
-	Show RGBMedium	{ Empty(); }
-}
-#------------------------------------
-# [1234] Chisel Recipes
-#------------------------------------
-Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("ChiselRecipe")
-{
-	Show Chisel20 { Quality >= 20; Rarity < Unique; }
-	Show ChiselHighQualNormal { Corrupted False; Quality > 14; Rarity Normal; }
-	Show ChiselHighQualMagic  { Corrupted False; Quality > 17; Rarity Magic; }
-	Show ChiselAnyQualMagic  { Corrupted False; Rarity Magic; }
-	Show ChiselAnyQualNormal { Corrupted False; Rarity Normal; }
-}
 
 #===============================================================================================================
 # [[0200]] High Level Crafting Bases
@@ -487,8 +466,10 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 # [1234] ILVL 86
 #------------------------------------
 
-Section EndgameCraftingBases : Rarity < Rare, Clean()
+Section EndgameCraftingBases : Rarity <= Rare, Clean()
 {
+	Cont RareDecorator { Empty(); }
+
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
 	{
 		Show t1 { BaseType bases_crafting_t1; }
@@ -517,6 +498,8 @@ Section EndgameCraftingBases : Rarity < Rare, Clean()
 		Show t2 { BaseType bases_crafting_t2; }
 		Show t3 { BaseType bases_crafting_t3; }
 	}
+
+	Cont RareDecoratorRemover { Empty(); }
 }
 
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
@@ -527,6 +510,28 @@ Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Rare, ItemLeve
 	Show t1 { BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"; }
 }
 
+#------------------------------------
+# [1234] RGB Endgame
+#------------------------------------
+Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 67, Auto("EndgameRGB")
+{
+	Show RGBSmall1	{ Width <=2; Height <=2; }
+	Show RGBSmall2	{ Width <=1; Height <=4; }
+	Show RGBLarge	{ Width >=2; Height >=4; }
+	Show RGBMedium	{ Empty(); }
+}
+#------------------------------------
+# [1234] Chisel Recipes
+#------------------------------------
+Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("ChiselRecipe")
+{
+	Show Chisel20 { Quality >= 20; Rarity < Unique; }
+	Show ChiselHighQualNormal { Corrupted False; Quality > 14; Rarity Normal; }
+	Show ChiselHighQualMagic  { Corrupted False; Quality > 17; Rarity Magic; }
+	Show ChiselAnyQualMagic  { Corrupted False; Rarity Magic; }
+	Show ChiselAnyQualNormal { Corrupted False; Rarity Normal; }
+}
+
 #===============================================================================================================
 # [[0200]] Chancing Bases
 #===============================================================================================================
@@ -534,7 +539,7 @@ Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Rare, ItemLeve
 Section Chancing : Clean(), Rarity Normal, Auto("chancing")
 {
 	Show hh { BaseType == "Leather Belt"; }
-	Show t2 { BaseType == "Ezomyte Dagger" "Occultist's Vestment" "Prophecy Wand" "Sadist Garb" "Two-Stone Ring"; }
+	Show t2 { BaseType == bases_chancing; }
 }
 
 #===============================================================================================================
@@ -651,7 +656,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show T3 { BaseType bases_eg_rares_ringsamu_t3; }
 	}
 
-	Section EndgameRareRingsAmulets : Class "Belts", Auto("rr->amuring")
+	Section EndgameRareBelts : Class "Belts", Auto("rr->belts")
 	{
 		Show T1 { BaseType bases_eg_rares_belts_t1; }
 		Show T2 { BaseType bases_eg_rares_belts_t2; }
@@ -763,3 +768,144 @@ Section HeistFollowerGear : Rarity <= Rare
 #===============================================================================================================
 # [[3900]] Gem Tierlists
 #===============================================================================================================
+
+Section Gems : Class "Gems"
+{
+#------------------------------------
+# [3901] Exceptional Gems - Awakened and AltQuality
+#------------------------------------
+	Section GemsExceptional : Auto("gems-exceptional")
+	{
+		Show AwaT1 { BaseType gems.t1awa; }
+		Show AwaAny { BaseType "Awakened"; }
+		Show DivT1 { GemQualityType Divergent; BaseType gems.t1div; }
+		Show PhaT1 { GemQualityType Phantasmal; BaseType gems.t1pha; }
+		Show AnoT1 { GemQualityType Anomalous; BaseType gems.t1ano; }
+		Show AltAny { AlternateQuality True; }
+		Show 2020z { Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
+		Show 2120z { Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120z }
+		Show 2123z { Quality >= 23; GemLevel >= 21; BaseType gems.t1_2123z }
+	}
+
+#------------------------------------
+# [3901] Exceptional Gems - Special gems
+#------------------------------------
+	Section GemsSpecial : Auto("gems-special")
+	{
+		Show ex6lvlgems { BaseType leveledGems6; GemLevel >= 6; }
+
+		Show exSpecialE4 { BaseType specialEGems; GemLevel >= 4; }
+		Show exSpecialE2 { BaseType specialEGems; GemLevel >= 2; }
+		Show exSpecialEQ { BaseType specialEGems; Quality >= 15; Corrupted False; }
+		Show exSpecial { BaseType specialGems; }
+	}
+#------------------------------------
+# [3902] Gems during leveling
+#------------------------------------
+	Section Gems-Leveling : Auto("gems-leveling")
+	{
+		Show FirstZone { AreaLevel 1; }
+		Show LevelingVaal { AreaLevel < 65; BaseType "Vaal"; Quality <= 5; GemLevel <= 5; }
+		Show Leveling { AreaLevel < 65; Quality = 0; GemLevel <= 5; }
+	}
+#------------------------------------
+# [3902] High Quality and Leveled Gems
+#------------------------------------
+	Section GemsGeneric : Auto("gems-generic")
+	{
+		Show LT1 { GemLevel >= 21 }
+		Show QT1 { Quality >= 23 }
+
+		Cont DecoGemsVaalBgDrop { BaseType "Vaal"; }
+
+		Show QT2 { Quality >= 20 }
+		Show LT2 { GemLevel >= 19 }
+
+		Show QT3 { Quality >= 14 }
+		Show LT3 { GemLevel >= 17 }
+
+		Show QT4 { Quality >= 1 }	
+		Show LT4 { GemLevel >= 1 }
+
+		Show CorruptedVaalAny { BaseType "Vaal"; Corrupted True; }
+
+		Show any { Empty(); }
+	}
+}
+
+#===============================================================================================================
+# [[3900]] REPLICA UNIQUES
+#===============================================================================================================
+Section Replicas : Auto("unique->replicas"), Replica True, Rarity Unique
+{
+	Show t1 { BaseType uniquereplicas.t1; }
+	Show t2 { BaseType uniquereplicas.t2; }
+	Show multi { BaseType uniquereplicas.multi; }
+	Show t3 { BaseType uniquereplicas.t3; }
+	Show restex { Empty(); }
+}
+
+#===============================================================================================================
+# [[4400]] Special Maps
+#===============================================================================================================
+Section Maps : Class "Maps"
+{
+#------------------------------------
+# [4402] Unique Maps
+#------------------------------------
+	Section UniqueMaps : Rarity Unique, Auto("unique->maps")
+	{
+		Show ex { BaseType UMaps.ex; MapTier 16; }
+		Show t1 { BaseType UMaps.t1; }
+		Show t2 { BaseType UMaps.t2; }
+		Show t3 { BaseType UMaps.t3; }
+		Show t4 { BaseType UMaps.t4; }
+		Show restex { Empty(); }
+	}
+
+#------------------------------------
+# [4404] Blighted maps
+#------------------------------------
+	Section BlightedMaps : BlightedMap True, Auto("maps->blighted")
+	{
+		Show t1 { MapTier >= Maps.Blighted.HighTier }
+		Show Any { Empty(); }
+	}
+
+#------------------------------------
+# [4405] Delirium/Blight/Enchanted Maps!
+#------------------------------------
+	Section EnchantedMaps : AnyEnchantment True, Auto("maps->enchanted")
+	{
+		Show t1 { MapTier >= Maps.Enchanted.HighTier }
+		Show Any { Empty(); }
+	}
+
+#------------------------------------
+# [4406] Beyond-Nemesis Maps, for those juicy sextants.
+#------------------------------------
+	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
+	{
+		Show NemesisBeyond { HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
+	}
+
+#===============================================================================================================
+# [[0200]] Normal Map Progression
+#===============================================================================================================
+
+}
+
+#------------------------------------
+# [4403] Labyrinth items, Offerings
+#------------------------------------
+
+Section Labyrinth : Auto("LabyrinthItems")
+{
+	Show Offerings { BaseType "Offering to the Goddess"; }
+	Show OfferingsUpgraded { BaseType "Dedication to the Goddess" "Gift to the Goddess" "Tribute to the Goddess"; }
+	Show LabyrinthConsumables { Class "Labyrinth"; }
+}
+
+#------------------------------------
+# [4404] Blighted maps
+#------------------------------------
