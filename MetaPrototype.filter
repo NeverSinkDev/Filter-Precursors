@@ -892,7 +892,43 @@ Section Maps : Class "Maps"
 #===============================================================================================================
 # [[0200]] Normal Map Progression
 #===============================================================================================================
+	Section GenericMaps : Auto("maps")
+	{
+		Cont deco_mapup_t16 { MapTier >= 16; AreaLevel < 83; }
+		Show maps_a_t16 { MapTier >= 16; }
+		Cont deco_mapup_t15 { MapTier > 15; AreaLevel < 82; }
+		Show maps_a_t15 { MapTier = 15; }
+		Cont deco_mapup_t14 { MapTier > 14; AreaLevel < 81; }
+		Show maps_a_t14 { MapTier = 14; }
+		Cont deco_mapup_t13 { MapTier > 13; AreaLevel < 80; }
+		Show maps_b_t13 { MapTier = 13; }
+		Cont deco_mapup_t12 { MapTier > 12; AreaLevel < 79; }
+		Show maps_b_t12 { MapTier = 12; }
+		Cont deco_mapup_t11 { MapTier > 11; AreaLevel < 78; }
+		Show maps_b_t11 { MapTier = 11; }
+		Cont deco_mapup_t10 { MapTier > 10; AreaLevel < 77; }
+		Show maps_c_t10 { MapTier = 10; }
+		Cont deco_mapup_t9  { MapTier > 9; AreaLevel < 76; }
+		Show maps_c_t9  { MapTier = 9; }
+		Cont deco_mapup_t8  { MapTier > 8; AreaLevel < 75; }
+		Show maps_c_t8  { MapTier = 8; }
+		Cont deco_mapup_t7  { MapTier > 7; AreaLevel < 74; }
+		Show maps_c_t7  { MapTier = 7; }
+		Cont deco_mapup_t6  { MapTier > 6; AreaLevel < 73; }
+		Show maps_c_t6  { MapTier = 6; }
+		Cont deco_mapup_t5  { MapTier > 5; AreaLevel < 72; }
+		Show maps_d_t5  { MapTier = 5; }
+		Cont deco_mapup_t4  { MapTier > 4; AreaLevel < 71; }
+		Show maps_d_t4  { MapTier = 4; }
+		Cont deco_mapup_t3  { MapTier > 3; AreaLevel < 70; }
+		Show maps_d_t3  { MapTier = 3; }
+		Cont deco_mapup_t2  { MapTier > 2; AreaLevel < 69; }
+		Show maps_d_t2  { MapTier = 2; }
+		Cont deco_mapup_t1  { MapTier > 1; AreaLevel < 68; }
+		Show maps_d_t1  { MapTier = 1; }
+	}
 
+	Show restex { Empty(); }
 }
 
 #------------------------------------
@@ -906,6 +942,257 @@ Section Labyrinth : Auto("LabyrinthItems")
 	Show LabyrinthConsumables { Class "Labyrinth"; }
 }
 
+#===============================================================================================================
+# [[4500]] Heist Contracts and Blueprints
+#===============================================================================================================
+
+Section HeistUniques : Rarity Unique, Class "Blueprint" "Contract", Auto("Unique->Heist")
+{
+	Show Any { Empty(); }
+}
+
+Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
+{
+	Show HandPicked { BaseType Heist.Contract.Handpicked; }
+	Show Any { Empty(); }
+}
+
+Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
+{
+	Show HandPicked { BaseType Heist.Blueprint.Handpicked; }
+	Show Any { Empty(); }
+}
+
+#===============================================================================================================
+# [[4500]] Fragments
+#===============================================================================================================
+
+Section MapFragments : Class "Map Fragments"
+{
 #------------------------------------
-# [4404] Blighted maps
+# [4701] Scarabs
 #------------------------------------
+	Section Scarabs : Auto("Fragments->scarabs")
+	{
+		Show t1 { BaseType fragments.scarabs.t1; }
+		Show t2 { BaseType fragments.scarabs.t2; }
+		Show t3 { BaseType fragments.scarabs.t3; }
+		Show t4 { BaseType fragments.scarabs.t4; }
+		Show restex { BaseType "Scarab;"; }
+	}
+
+#------------------------------------
+# [4702] Regular Fragment Tiering
+#------------------------------------
+	Section FragsGeneric : Auto("Fragments")
+	{
+		Show t1 { BaseType fragments.t1; }
+		Show t1p{ BaseType fragments.t1p;}
+		Show t2 { BaseType fragments.t2; }
+		Show t3 { BaseType fragments.t3; }
+		Show t4 { BaseType fragments.t4; }
+		Show restex { Empty(); }
+	}
+}
+
+#===============================================================================================================
+# [[4800]] Currency - Exceptions - Stacked Currency
+#===============================================================================================================
+
+Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency"
+{
+	Show splinters_t1	{ StackSize >= 3; BaseType currency.stacked.splinters1; }
+	Show splinters_t2	{ StackSize >= 3; BaseType currency.stacked.splinters2; }
+	Show orbs_chaos		{ StackSize >= 3; BaseType currency.stacked.chaos; }
+	Show orbs_alchemy	{ StackSize >= 3; BaseType currency.stacked.alch; }
+	Show orbs_alt		{ StackSize >= 3; BaseType currency.stacked.alt; }
+	Show orbs_transmute	{ StackSize >= 3; BaseType currency.stacked.trans; }
+	Show orbs_wisdom	{ StackSize >= 3; BaseType currency.stacked.scroll; }
+}
+
+#===============================================================================================================
+# [[4900]] Currency - Exceptions - Leveling Currencies
+#===============================================================================================================
+
+Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67
+{
+	Show essences { BaseType == currency.leveling.essences; }
+	Show trans { BaseType == currency.leveling.trans; }
+	Show aug { BaseType == currency.leveling.aug; }
+	Show portal { BaseType == currency.leveling.portal; }
+	Show wisdom { BaseType == currency.leveling.wisdom; }
+}
+
+#===============================================================================================================
+# [[4900]] Currency - Regular Currency Tiering
+#===============================================================================================================
+
+Section CurrencyTiering : Auto("Currency"), Class "Currency"
+{
+	Show t11 { BaseType == currency.generic.t11; }
+	Show t12 { BaseType == currency.generic.t12; }
+	Show t21 { BaseType == currency.generic.t21; }
+	Show t22 { BaseType == currency.generic.t22; }
+	Show t23 { BaseType == currency.generic.t23; }
+	Show t31 { BaseType == currency.generic.t31; }
+	Show t32 { BaseType == currency.generic.t32; }
+	Show t33 { BaseType == currency.generic.t33; }
+	Show t41 { BaseType == currency.generic.t41; }
+	Show t42 { BaseType == currency.generic.t42; }
+	Show t43 { BaseType == currency.generic.t43; }
+}
+
+#===============================================================================================================
+# [[4900]] Currency - SPECIAL
+#===============================================================================================================
+
+#------------------------------------
+# [5103] Incursion - Vials
+#------------------------------------
+
+Section CurrencyVials : Auto("vials"), Class "Currency"
+{
+	Show t1 { BaseType currency.vials.t1; }
+	Show t2 { BaseType currency.vials.t2; }
+	Show t3 { BaseType currency.vials.t3; }
+	Show restex { BaseType "Vial of"; }
+}
+
+#------------------------------------
+# [5104] Delirum Orbs
+#------------------------------------
+
+Section CurrencyVials : Auto("currency->deliriumorbs"), Class "Currency"
+{
+	Show t1 { BaseType currency.deliriumorb.t1; }
+	Show t2 { BaseType currency.deliriumorb.t2; }
+	Show t3 { BaseType currency.deliriumorb.t3; }
+	Show restex { BaseType "Vial of"; }
+}
+
+#------------------------------------
+# [5104] Delve - Resonators
+#------------------------------------
+
+Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stackable Socketable Currency"
+{
+	Show t1 { BaseType == currency.resonator.t1; }
+	Show t2 { BaseType == currency.resonator.t2; }
+	Show t3 { BaseType == currency.resonator.t3; }
+	Show restex { Empty(); }
+}
+
+#------------------------------------
+# [5104] Delve - Fossils
+#------------------------------------
+
+Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency"
+{
+	Show t1 { BaseType == currency.fossil.t1; }
+	Show t2 { BaseType == currency.fossil.t2; }
+	Show t3 { BaseType == currency.fossil.t3; }
+	Show t4 { BaseType == currency.fossil.t4; }
+	Show restex { BaseType "Fossil"; }
+}
+
+#------------------------------------
+# [5104] Blight - Oils
+#------------------------------------
+
+Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency"
+{
+	Show t1 { BaseType == currency.oil.t1; }
+	Show t2 { BaseType == currency.oil.t2; }
+	Show t3 { BaseType == currency.oil.t3; }
+	Show t4 { BaseType == currency.oil.t4; }
+	Show restex { BaseType "Oil"; }
+}
+
+#------------------------------------
+# [5104] Essences
+#------------------------------------
+
+Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
+{
+	Show t1 { BaseType == currency.essence.t1; }
+	Show t2 { BaseType == currency.essence.t2; }
+	Show t3 { BaseType == currency.essence.t3; }
+	Show t4 { BaseType == currency.essence.t4; }
+	Show t5 { BaseType == currency.essence.t5; }
+	Show t6 { BaseType == currency.essence.t6; }
+}
+
+#------------------------------------
+# [5104] Incubators
+#------------------------------------
+
+Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator"
+{
+	Show leveledex { ItemLevel >= 81; BaseType = currency.incubators.leveledex; }
+
+	Show t1 { BaseType == currency.incubators.t1; }
+	Show t2 { BaseType == currency.incubators.t2; }
+	Show t3 { BaseType == currency.incubators.t3; }
+	Show t4 { BaseType == currency.incubators.t4; }
+	Show restex { Empty(); }
+}
+
+#------------------------------------
+# [5104] Others
+#------------------------------------
+
+Section CurrencyExotic : Auto("currency->others"), Class "Currency"
+{
+	Show harbinger { BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
+	Show misc { BaseType == "Cartographer's Seal" "Imprint" "Unshaping Orb"; }
+}
+
+
+#===============================================================================================================
+# [[4900]] Currency - Splinters and Coins
+#===============================================================================================================
+
+#------------------------------------
+# [5112] Perandus Coins
+#------------------------------------
+
+Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency", BaseType "Perandus Coin"
+{
+	Show t1 { StackSize >= stacksize.perandus.t1; }
+	Show t2 { StackSize >= stacksize.perandus.t2; }
+	Show t3 { StackSize >= stacksize.perandus.t3; }
+	Show t4 { Empty(); }
+}
+
+#------------------------------------
+# [5104] Heist Coins
+#------------------------------------
+
+Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
+{
+	Show Any { BaseType == "Rogue's Marker"; }
+}
+
+#------------------------------------
+# [5112] Breach and Legion Splinters
+#------------------------------------
+
+Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency"
+{
+	Show t1 { BaseType == currency.splinters.t1; }
+	Show t2 { BaseType == currency.splinters.t2; }
+	Show t3 { BaseType == currency.splinters.t3; }
+}
+
+#------------------------------------
+# [5112] Simulacrum Splinters
+#------------------------------------
+
+Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Class "Currency", BaseType "Simulacrum Splinter"
+{
+	Show t1 { StackSize >= stacksize.simulacrum.t1; }
+	Show t2 { StackSize >= stacksize.simulacrum.t2; }
+	Show t3 { StackSize >= stacksize.simulacrum.t3; }
+	Show t4 { StackSize >= stacksize.simulacrum.t4; }
+	Show t5 { Empty(); }
+}
