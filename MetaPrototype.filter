@@ -31,66 +31,66 @@ Section Influenced : Rarity <= Rare
 #------------------------------------
 	Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
 	{
-		Show t11 { ItemLevel >= 82; BaseType "asd"; }
-		Show t12 { ItemLevel >= 84; BaseType "asd"; }
-		Show t13 { ItemLevel >= 86; BaseType "asd"; }
-		Show t21 { ItemLevel >= 80; BaseType "asd"; }
-		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+		Show t11 { ItemLevel >= 82; BaseType Influenced.Crusader.t11; }
+		Show t12 { ItemLevel >= 84; BaseType Influenced.Crusader.t12; }
+		Show t13 { ItemLevel >= 86; BaseType Influenced.Crusader.t13; }
+		Show t21 { ItemLevel >= 80; BaseType Influenced.Crusader.t21; }
+		Show t22 { ItemLevel >= 85; BaseType Influenced.Crusader.t22; }
 	}
 #------------------------------------
 #   [1234] Warlord
 #------------------------------------
 	Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
 	{
-		Show t11 { ItemLevel >= 82; BaseType "asd"; }
-		Show t12 { ItemLevel >= 84; BaseType "asd"; }
-		Show t13 { ItemLevel >= 86; BaseType "asd"; }
-		Show t21 { ItemLevel >= 80; BaseType "asd"; }
-		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+		Show t11 { ItemLevel >= 82; BaseType Influenced.Warlord.t11; }
+		Show t12 { ItemLevel >= 84; BaseType Influenced.Warlord.t12; }
+		Show t13 { ItemLevel >= 86; BaseType Influenced.Warlord.t13; }
+		Show t21 { ItemLevel >= 80; BaseType Influenced.Warlord.t21; }
+		Show t22 { ItemLevel >= 85; BaseType Influenced.Warlord.t22; }
 	}
 #------------------------------------
 #   [1234] Redeemer
 #------------------------------------
 	Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
 	{
-		Show t11 { ItemLevel >= 82; BaseType "asd"; }
-		Show t12 { ItemLevel >= 84; BaseType "asd"; }
-		Show t13 { ItemLevel >= 86; BaseType "asd"; }
-		Show t21 { ItemLevel >= 80; BaseType "asd"; }
-		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+		Show t11 { ItemLevel >= 82; BaseType Influenced.Redeemer.t11; }
+		Show t12 { ItemLevel >= 84; BaseType Influenced.Redeemer.t12; }
+		Show t13 { ItemLevel >= 86; BaseType Influenced.Redeemer.t13; }
+		Show t21 { ItemLevel >= 80; BaseType Influenced.Redeemer.t21; }
+		Show t22 { ItemLevel >= 85; BaseType Influenced.Redeemer.t22; }
 	}
 #------------------------------------
 #   [1234] Hunter
 #------------------------------------
 	Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
 	{
-		Show t11 { ItemLevel >= 82; BaseType "asd"; }
-		Show t12 { ItemLevel >= 84; BaseType "asd"; }
-		Show t13 { ItemLevel >= 86; BaseType "asd"; }
-		Show t21 { ItemLevel >= 80; BaseType "asd"; }
-		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+		Show t11 { ItemLevel >= 82; BaseType Influenced.Hunter.t11; }
+		Show t12 { ItemLevel >= 84; BaseType Influenced.Hunter.t12; }
+		Show t13 { ItemLevel >= 86; BaseType Influenced.Hunter.t13; }
+		Show t21 { ItemLevel >= 80; BaseType Influenced.Hunter.t21; }
+		Show t22 { ItemLevel >= 85; BaseType Influenced.Hunter.t22; }
 	}
 #------------------------------------
 #   [1234] Shaper
 #------------------------------------
 	Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
 	{
-		Show t11 { ItemLevel >= 82; BaseType "asd"; }
-		Show t12 { ItemLevel >= 84; BaseType "asd"; }
-		Show t13 { ItemLevel >= 86; BaseType "asd"; }
-		Show t21 { ItemLevel >= 80; BaseType "asd"; }
-		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+		Show t11 { ItemLevel >= 82; BaseType Influenced.Shaper.t11; }
+		Show t12 { ItemLevel >= 84; BaseType Influenced.Shaper.t12; }
+		Show t13 { ItemLevel >= 86; BaseType Influenced.Shaper.t13; }
+		Show t21 { ItemLevel >= 80; BaseType Influenced.Shaper.t21; }
+		Show t22 { ItemLevel >= 85; BaseType Influenced.Shaper.t22; }
 	}
 #------------------------------------
 #   [1234] Elder
 #------------------------------------
 	Section Elder : HasInfluence Elder, Auto("rare->elder")
 	{
-		Show t11 { ItemLevel >= 82; BaseType "asd"; }
-		Show t12 { ItemLevel >= 84; BaseType "asd"; }
-		Show t13 { ItemLevel >= 86; BaseType "asd"; }
-		Show t21 { ItemLevel >= 80; BaseType "asd"; }
-		Show t22 { ItemLevel >= 85; BaseType "asd"; }
+		Show t11 { ItemLevel >= 82; BaseType Influenced.Elder.t11; }
+		Show t12 { ItemLevel >= 84; BaseType Influenced.Elder.t12; }
+		Show t13 { ItemLevel >= 86; BaseType Influenced.Elder.t13; }
+		Show t21 { ItemLevel >= 80; BaseType Influenced.Elder.t21; }
+		Show t22 { ItemLevel >= 85; BaseType Influenced.Elder.t22; }
 	}
 }
 
@@ -862,11 +862,11 @@ Section Maps : Class "Maps"
 #------------------------------------
 	Section UniqueMaps : Rarity Unique, Auto("unique->maps")
 	{
-		Show ex { BaseType UMaps.ex; MapTier 16; }
-		Show t1 { BaseType UMaps.t1; }
-		Show t2 { BaseType UMaps.t2; }
-		Show t3 { BaseType UMaps.t3; }
-		Show t4 { BaseType UMaps.t4; }
+		Show ex { BaseType unique.maps.ex; MapTier 16; }
+		Show t1 { BaseType unique.maps.t1; }
+		Show t2 { BaseType unique.maps.t2; }
+		Show t3 { BaseType unique.maps.t3; }
+		Show t4 { BaseType unique.maps.t4; }
 		Show restex { Empty(); }
 	}
 
@@ -992,11 +992,11 @@ Section MapFragments : Class "Map Fragments"
 #------------------------------------
 	Section FragsGeneric : Auto("Fragments")
 	{
-		Show t1 { BaseType fragments.t1; }
-		Show t1p{ BaseType fragments.t1p;}
-		Show t2 { BaseType fragments.t2; }
-		Show t3 { BaseType fragments.t3; }
-		Show t4 { BaseType fragments.t4; }
+		Show t1 { BaseType fragments.generic.t1; }
+		Show t1p{ BaseType fragments.generic.t1p;}
+		Show t2 { BaseType fragments.generic.t2; }
+		Show t3 { BaseType fragments.generic.t3; }
+		Show t4 { BaseType fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
 }
@@ -1277,7 +1277,7 @@ Section Unique : Rarity Unique, Auto("unique")
 #------------------------------------
 # [5702] Tier 1 uniques
 #------------------------------------
-	Show t1 { BaseType == uniques.t1; }
+	Show t1 { BaseType == uniques.generic.t1; }
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
@@ -1287,26 +1287,26 @@ Section Unique : Rarity Unique, Auto("unique")
 #------------------------------------
 # [5704] Tier 2 uniques
 #------------------------------------
-	Show t2 { BaseType == uniques.t2; }
+	Show t2 { BaseType == uniques.generic.t2; }
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
 # These bases have multiple uniques. One of the uniques, is a high value one
 # While others are cheap. We give them a high quality display, while making a normal unique
 # Sound to prevent false excitement.
-	Show multispecial { BaseType == uniques.multispecial; }
-	Show highvinktar { BaseType == uniques.highvinktar; ItemLevel >= 82; }
-	Show exjewels { BaseType == uniques.exjewels; Class "Jewel"; }
+	Show multispecial { BaseType == uniques.generic.multispecial; }
+	Show highvinktar { BaseType == "Imperial Staff"; ItemLevel >= 82; }
+	Show exjewels { BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Class "Jewel"; }
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss { BaseType == uniques.t3boss; }
-	Show t3 { BaseType == uniques.t3; }
+	Show t3boss { BaseType == uniques.generic.t3boss; }
+	Show t3 { BaseType == uniques.generic.t3; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
-	Show hideable2 { BaseType == uniques.hideable2; }
-	Show hideable { BaseType == uniques.hideable; }
+	Show hideable2 { BaseType == uniques.generic.hideable2; }
+	Show hideable { BaseType == uniques.generic.hideable; }
 	Show restex { Empty(); }
 }
 
