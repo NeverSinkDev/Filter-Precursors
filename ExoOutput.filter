@@ -244,6 +244,10 @@ Show # $type->exoticbases $tier->exoticritualbases
 	Rarity <= Rare
 	BaseType == "Aetherwind Gloves" "Archdemon Crown" "Atonement Mask" "Basemetal Treads" "Blizzard Crown" "Brimstone Treads" "Cloudwhisper Boots" "Darksteel Treads" "Debilitation Gauntlets" "Demon Crown" "Dreamquest Slippers" "Duskwalk Slippers" "Gale Crown" "Gauche Gloves" "Gruelling Gauntlets" "Imp Crown" "Leyline Gloves" "Nexus Gloves" "Nightwind Slippers" "Penitent Mask" "Sinistral Gloves" "Sorrow Mask" "Southswing Gloves" "Stormrider Boots" "Taxing Gauntlets" "Windbreak Boots" "Winter Crown"
 
+Show # $type->exoticbases $tier->exotictalismanbases
+	Rarity <= Rare
+	BaseType == "Greatwolf Talisman" "Rot Head Talisman"
+
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING
 #===============================================================================================================
@@ -469,38 +473,43 @@ Show # $type->rareid $tier->4eshelm
 #------------------------------------
 
 Show # $type->rareid $tier->3modattackamu
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Dazzling" "Resplendent"
-	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Blasting" "Entombing" "Polar" "of Discharge" "of Voltage" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Vaporous" "Impregnable"
+	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Entombing" "Electrocuting" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Vaporous" "Impregnable"
 
 Show # $type->rareid $tier->4modattackamu
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "Incandescent"
-	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of the Ranger" "of the Marksman" "of the Sniper" "Devastating" "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Incinerating" "Entombing" "Polar" "Glaciated" "of Discharge" "of Voltage" "of Electricity" "Flaring" "Tempered" "Razor-sharp" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable" "Vaporous" "Phased" "Impregnable" "Girded"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of the Ranger" "of the Marksman" "of the Sniper" "Devastating" "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Flaring" "Tempered" "Razor-sharp" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable" "Vaporous" "Phased" "Impregnable" "Girded"
 
 Show # $type->rareid $tier->3modcasteramu
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Dazzling" "Resplendent"
-	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "of Nirvana" "of Euphoria" "Wizard's" "Thaumaturgist's" "Cremating" "Blasting" "Entombing" "Polar" "of Discharge" "of Voltage" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Indomitable"
+	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "of Nirvana" "of Euphoria" "Wizard's" "Thaumaturgist's" "of Immolation" "of Flames" "of Floe" "of Rime" "of Discharge" "of Voltage" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Indomitable"
 
 Show # $type->rareid $tier->4modcasteramu
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "Incandescent"
-	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "Mazarine" "of Nirvana" "of Euphoria" "of Bliss" "Wizard's" "Thaumaturgist's" "Cremating" "Blasting" "Incinerating" "Entombing" "Polar" "Glaciated" "of Discharge" "of Voltage" "of Electricity" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable" "Dauntless"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "Mazarine" "of Nirvana" "of Euphoria" "of Bliss" "Wizard's" "Thaumaturgist's" "of Immolation" "of Flames" "of Cinders" "of Floe" "of Rime" "of Ice" "of Discharge" "of Voltage" "of Electricity" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable" "Dauntless"
 
 Show # $type->rareid $tier->4highstatamu
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Amulets"
-	HasExplicitMod >=4 "Athlete's" "Virile" "Rotund" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Blasting" "Entombing" "Polar" "of Discharge" "of Voltage" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Impregnable" "Vaporous" "Dazzling" "Resplendent"
+	HasExplicitMod >=4 "Athlete's" "Virile" "Rotund" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Entombing" "Electrocuting" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Impregnable" "Vaporous" "Dazzling" "Resplendent"
 
 #------------------------------------
 # [1234] Rings
@@ -557,6 +566,7 @@ Show # $type->rareid $tier->5modquiver
 #------------------------------------
 
 Show # $type->rareid $tier->4modbelt
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Belts"
@@ -564,6 +574,7 @@ Show # $type->rareid $tier->4modbelt
 	HasExplicitMod >=3 "Blue" "Devastating" "Overpowering" "Enveloped" "Encased" "of Overflowing" "of Sipping" "of Savouring" "of Refilling" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
 
 Show # $type->rareid $tier->5modbelt
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Belts"
@@ -575,6 +586,7 @@ Show # $type->rareid $tier->5modbelt
 #------------------------------------ 		
 
 Show # $type->rareid $tier->2lifecastershield
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Shields"
@@ -582,6 +594,7 @@ Show # $type->rareid $tier->2lifecastershield
 	HasExplicitMod >=2 "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
 
 Show # $type->rareid $tier->2escastershield
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Shields"
@@ -589,6 +602,7 @@ Show # $type->rareid $tier->2escastershield
 	HasExplicitMod "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
 
 Show # $type->rareid $tier->3lifecastershield
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Shields"
@@ -596,6 +610,7 @@ Show # $type->rareid $tier->3lifecastershield
 	HasExplicitMod >=3 "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
 
 Show # $type->rareid $tier->3escastershield
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Shields"
@@ -603,18 +618,21 @@ Show # $type->rareid $tier->3escastershield
 	HasExplicitMod >=2 "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
 
 Show # $type->rareid $tier->3damagecastershield
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod >=3 "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre"
 
 Show # $type->rareid $tier->4damagecastershield
+	Corrupted False
 	Identified True
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod >=4 "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
 
 Show # $type->rareid $tier->highdefshields
+	Corrupted False
 	Identified True
 	DropLevel >= 50
 	Rarity Rare
@@ -622,6 +640,7 @@ Show # $type->rareid $tier->highdefshields
 	HasExplicitMod >=2 "Impenetrable" "Impregnable" "Carapaced" "Plated" "Phased" "Blurred" "Illusion's" "Mirage's" "Interpermeated" "Inspired" "Consecrated" "Beatified" "Incorporeal" "Illusory" "Eidolon's" "Spirit's" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
 
 Show # $type->rareid $tier->highstatshield
+	Corrupted False
 	Identified True
 	DropLevel >= 50
 	Rarity Rare
@@ -794,15 +813,23 @@ Show # $type->exoticmods $tier->crafting
 #------------------------------------
 
 Show # $type->exotic->trinkets $tier->anytrinket
-	Class Trinket
+	Class "Trinket"
 
 #------------------------------------
 # [1234] Magic Watchstones
 #------------------------------------
 
-Show # $type->exotic->watchstones $tier->magicwatchstone
+Show # $type->exotic->watchstones $tier->craftablewatchstone
 	Rarity <= Rare
-	BaseType "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone"
+	BaseType == "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone"
+
+#------------------------------------
+# [1234] Craftable Invitations
+#------------------------------------
+
+Show # $type->exotic->invitation $tier->craftableinvitation
+	Rarity <= Rare
+	BaseType == "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone"
 
 #------------------------------------
 # [1234] Secret Society Equipment
@@ -823,13 +850,11 @@ Show # $type->exotic->corruptions $tier->doublecorruptedjwlry
 	Corrupted True
 	CorruptedMods >= 2
 	Rarity Rare
-	Rarity Rare
 	Class "Amulet" "Belt" "Jewel" "Ring"
 
-Show # $type->exotic->corruptions $tier->doublecorruptedjwlry
+Show # $type->exotic->corruptions $tier->doublecorruptedany
 	Corrupted True
 	CorruptedMods >= 2
-	Rarity Rare
 	Rarity Rare
 
 #------------------------------------
@@ -915,7 +940,6 @@ Show # $type->jewels->special $tier->1modcorrupted
 Show # $type->jewels->special $tier->1modcorrupted
 	Corrupted False
 	Identified True
-	CorruptedMods >= 1
 	Rarity <= Rare
 	HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"
 
@@ -923,51 +947,43 @@ Show # $type->jewels->special $tier->1modcorrupted
 # [1234] Cluster Jewels
 #------------------------------------
 
-Show
+Show # $type->jewels->cluster $tier->optimalhighlarge
 	ItemLevel >= 82
 	Rarity <= Rare
 	EnchantmentPassiveNum <= 8
-	Class $tier->optimalhighlarge $type->jewels->cluster
 	BaseType "Large Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->highlarge
 	Rarity <= Rare
 	EnchantmentPassiveNum <= 8
-	Class $tier->highlarge $type->jewels->cluster
 	BaseType "Large Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->large
 	Rarity <= Rare
-	Class $tier->large $type->jewels->cluster
 	BaseType "Large Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->optimalhighmedium
 	ItemLevel >= 84
 	Rarity <= Rare
 	EnchantmentPassiveNum <= 5
-	Class $tier->optimalhighmedium $type->jewels->cluster
 	BaseType "Medium Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->highmedium
 	Rarity <= Rare
 	EnchantmentPassiveNum <= 5
-	Class $tier->highmedium $type->jewels->cluster
 	BaseType "Medium Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->medium
 	Rarity <= Rare
-	Class $tier->medium $type->jewels->cluster
 	BaseType "Medium Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->highsmall
 	ItemLevel >= 82
 	Rarity <= Rare
-	Class $tier->highsmall $type->jewels->cluster
 	BaseType "Small Cluster Jewel"
 
-Show
+Show # $type->jewels->cluster $tier->small
 	Rarity <= Rare
-	Class $tier->small $type->jewels->cluster
 	BaseType "Small Cluster Jewel"
 
 #------------------------------------
@@ -1007,8 +1023,11 @@ Show # $type->jewels->generic $tier->anymagic
 	BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
 
 #===============================================================================================================
-# [[0200]] Recipes
+# [[0200]] Recipes and 5links
 #===============================================================================================================
+#------------------------------------
+# [1234] Link Based
+#------------------------------------
 
 Show # $type->socketslinks $tier->5linksleveling
 	LinkedSockets >= 5
@@ -1029,50 +1048,1849 @@ Show # $type->socketslinks $tier->6sockets
 	Sockets >= 6
 	Rarity <= Rare
 
-Show # $type->socketslinks $tier->rgbsmall1
+#===============================================================================================================
+# [[0200]] High Level Crafting Bases
+#===============================================================================================================
+#------------------------------------
+# [1234] ILVL 86
+#------------------------------------
+
+Show
+	Corrupted False
+	Rarity <= Rare
+	Continue
+
+Show # $type->normalcraft->i86 $tier->t1
+	Corrupted False
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
+
+Show # $type->normalcraft->i86 $tier->t2
+	Corrupted False
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring"
+
+Show # $type->normalcraft->i86 $tier->t3
+	Corrupted False
+	ItemLevel >= 86
+	Rarity <= Rare
+	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre"
+
+#------------------------------------
+# [1234] ILVL 84
+#------------------------------------
+
+Show # $type->normalcraft->i84 $tier->t1
+	Corrupted False
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
+
+Show # $type->normalcraft->i84 $tier->t2
+	Corrupted False
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring"
+
+Show # $type->normalcraft->i84 $tier->t3
+	Corrupted False
+	ItemLevel >= 84
+	Rarity <= Rare
+	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre"
+
+#------------------------------------
+# [1234] ILVL ANY
+#------------------------------------
+
+Show # $type->normalcraft->rest $tier->t1
+	Corrupted False
+	ItemLevel <= 83
+	ItemLevel >= 60
+	Rarity <= Rare
+	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring"
+
+Show # $type->normalcraft->rest $tier->t2
+	Corrupted False
+	ItemLevel <= 83
+	ItemLevel >= 60
+	Rarity <= Rare
+	BaseType "Diamond Ring" "Eternal Burgonet" "Hubris Circlet" "Lion Pelt" "Onyx Amulet" "Royal Burgonet" "Sacrificial Garb" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring"
+
+Show # $type->normalcraft->rest $tier->t3
+	Corrupted False
+	ItemLevel <= 83
+	ItemLevel >= 60
+	Rarity <= Rare
+	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Colossal Tower Shield" "Coronal Maul" "Deicide Mask" "Demon Dagger" "Exquisite Blade" "Fossilised Spirit Shield" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Harpy Rapier" "Heavy Belt" "Imbued Wand" "Imperial Maul" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Kris" "Lion Sword" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Profane Wand" "Sadist Garb" "Saintly Chainmail" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Spine Bow" "Spiraled Foil" "Sundering Axe" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Vaal Axe" "Vaal Regalia" "Void Sceptre"
+
+Show
+	Corrupted False
+	Rarity <= Rare
+	Continue
+
+# Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
+# Having this list too long will lead to being too flooded with these drops.
+
+Show # $type->normalcraft->extra $tier->t1
+	ItemLevel >= 68
+	ItemLevel <= 83
+	Rarity < Rare
+	BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"
+
+#------------------------------------
+# [1234] RGB Endgame
+#------------------------------------
+
+Show # $type->endgamergb $tier->rgbsmall1
 	Width <= 2
+	Height <= 2
+	AreaLevel >= 67
 	Rarity < Rare
-	SocketGroup RGB
+	SocketGroup "RGB"
 
-Show # $type->socketslinks $tier->rgbsmall2
+Show # $type->endgamergb $tier->rgbsmall2
 	Width <= 1
+	Height <= 4
+	AreaLevel >= 67
 	Rarity < Rare
-	SocketGroup RGB
+	SocketGroup "RGB"
 
-Show # $type->socketslinks $tier->rgblarge
+Show # $type->endgamergb $tier->rgblarge
 	Width >= 2
+	Height >= 4
+	AreaLevel >= 67
 	Rarity < Rare
-	SocketGroup RGB
+	SocketGroup "RGB"
 
-Show # $type->socketslinks $tier->rgbmedium
+Show # $type->endgamergb $tier->rgbmedium
+	AreaLevel >= 67
 	Rarity < Rare
-	SocketGroup RGB
+	SocketGroup "RGB"
 
 #------------------------------------
-# [1234] Incubator
+# [1234] Chisel Recipes
 #------------------------------------
-# >> Checkpoint: Incubators / Before incubators.
 
-Show # %HS5 $type->incubators $tier->leveledex
+Show # $type->chiselrecipe $tier->chisel20
+	Quality >= 20
+	Rarity < Unique
+	BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+
+Show # $type->chiselrecipe $tier->chiselhighqualnormal
+	Corrupted False
+	Quality > 14
+	Rarity Normal
+	BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+
+Show # $type->chiselrecipe $tier->chiselhighqualmagic
+	Corrupted False
+	Quality > 17
+	Rarity Magic
+	BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+
+Show # $type->chiselrecipe $tier->chiselanyqualmagic
+	Corrupted False
+	Rarity Magic
+	BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+
+Show # $type->chiselrecipe $tier->chiselanyqualnormal
+	Corrupted False
+	Rarity Normal
+	BaseType "Gavel" "Rock Breaker" "Stone Hammer"
+
+#===============================================================================================================
+# [[0200]] Chancing Bases
+#===============================================================================================================
+
+Show # $type->chancing $tier->hh
+	Corrupted False
+	Rarity Normal
+	BaseType == "Leather Belt"
+
+Show # $type->chancing $tier->t2
+	Corrupted False
+	Rarity Normal
+	BaseType == "Ezomyte Dagger" "Occultist's Vestment" "Prophecy Wand" "Sadist Garb" "Two-Stone Ring"
+
+#===============================================================================================================
+# [[0200]] Endgame Flasks
+#===============================================================================================================
+
+#------------------------------------
+# [2701] High quality assorted flasks
+#------------------------------------
+
+Show # $type->endgameflasks $tier->highqualutility
+	Quality >= 15
+	AreaLevel >= 66
+	AreaLevel <= 77
+	Rarity <= Magic
+	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
+
+Show # $type->endgameflasks $tier->highquallifemana
+	Quality >= 15
+	AreaLevel >= 66
+	AreaLevel <= 72
+	Rarity <= Magic
+	BaseType "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"
+
+Show # $type->endgameflasks $tier->any20qualflask
+	Quality >= 20
+	AreaLevel >= 66
+	Rarity <= Magic
+	BaseType "Flask"
+
+#------------------------------------
+# [2701] Utility OR quality flasks
+#------------------------------------
+
+Show # $type->endgameflasks $tier->asortedutility
+	AreaLevel >= 66
+	AreaLevel <= 77
+	Rarity <= Magic
+	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
+
+Show # $type->endgameflasks $tier->anyutility
+	AreaLevel >= 66
+	AreaLevel <= 72
+	Rarity <= Magic
+	Class "Utility Flasks"
+
+Show # $type->endgameflasks $tier->asortedutility
+	Quality >= 15
+	AreaLevel >= 66
+	AreaLevel <= 77
+	Rarity <= Magic
+	BaseType "Flask"
+
+Show # $type->endgameflasks $tier->anyutility
+	Quality >= 1
+	AreaLevel >= 66
+	AreaLevel <= 77
+	Rarity <= Magic
+	BaseType "Flask"
+
+#------------------------------------
+# [2705] Early mapping life/mana/utility flasks
+#------------------------------------
+
+Show # $type->endgameflasks $tier->earlymappinglifemana
+	AreaLevel >= 66
+	AreaLevel <= 69
+	Rarity <= Magic
+	BaseType "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"
+
+#===============================================================================================================
+# [[0200]] Misc Rules
+#===============================================================================================================
+
+Show # $type->miscendgamerules $tier->overquality
+	Corrupted False
+	Quality >= 29
+	ItemLevel >= 75
+	DropLevel >= 50
+	Rarity <= Rare
+	Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
+
+Show # $type->miscendgamerules $tier->earlyendgame4link
+	Corrupted False
+	LinkedSockets >= 4
+	AreaLevel <= 72
+	AreaLevel >= 68
+	Class "Body Armour" "Boots" "Gloves" "Helmets"
+
+#===============================================================================================================
+# [[0200]] Hide Layer 1 - Normal and Magic Endgame Gear
+#===============================================================================================================
+
+Hide # $type->hidelayer $tier->normalmagicendgame
+	AreaLevel >= 68
+	Rarity < Rare
+	Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
+
+#===============================================================================================================
+# [[0200]] Rare Item Decorators
+#===============================================================================================================
+
+Show # $type->rare->decorators $tier->largerares
+	Width >= 2
+	Height >= 3
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->mediumrares1
+	Width 1
+	Height >= 3
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->mediumrares2
+	Width 2
+	Height 2
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->tinyrares
+	Width <= 2
+	Height 1
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->ilvl68
+	ItemLevel >= 68
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->ilvl75
+	ItemLevel >= 75
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->ilvl85
+	ItemLevel >= 85
+	Rarity Rare
+	Continue
+
+Show # $type->rare->decorators $tier->corruptedrares
+	Corrupted True
+	Rarity Rare
+	Continue
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Exotic Corrupted Items
+#===============================================================================================================
+
+Show # $type->rare->exotic->breachrings $tier->any
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Rings"
+	BaseType "Breach"
+
+Show # $type->rare->exotic->talisman $tier->t1attacktalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman" "Writhing Talisman"
+	HasExplicitMod "Athlete's" "Virile" "Dazzling" "Resplendent"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Cremating" "Entombing" "Electrocuting" "Flaring" "Tempered" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity"
+
+Show # $type->rare->exotic->talisman $tier->t1castertalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Avian Twins Talisman" "Bonespire Talisman" "Chrysalis Talisman" "Clutching Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman"
+	HasExplicitMod "Athlete's" "Virile" "Dazzling" "Resplendent"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "of Nirvana" "of Euphoria" "Wizard's" "Thaumaturgist's" "of Immolation" "of Flames" "of Floe" "of Rime" "of Discharge" "of Voltage" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Indomitable"
+
+Show # $type->rare->exotic->talisman $tier->t2attacktalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Ashscale Talisman" "Avian Twins Talisman" "Breakrib Talisman" "Deadhand Talisman" "Deep One Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Lone Antler Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman" "Writhing Talisman"
+	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of the Ranger" "of the Marksman" "of the Sniper" "Devastating" "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Flaring" "Tempered" "Razor-sharp" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury"
+
+Show # $type->rare->exotic->talisman $tier->t2castertalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Ashscale Talisman" "Avian Twins Talisman" "Bonespire Talisman" "Breakrib Talisman" "Chrysalis Talisman" "Clutching Talisman" "Deadhand Talisman" "Deep One Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Lone Antler Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman"
+	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
+	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "Mazarine" "of Nirvana" "of Euphoria" "of Bliss" "Wizard's" "Thaumaturgist's" "of Immolation" "of Flames" "of Cinders" "of Floe" "of Rime" "of Ice" "of Discharge" "of Voltage" "of Electricity" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Unassailable" "Indomitable"
+
+Show # $type->rare->exotic->talisman $tier->t1stattalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Avian Twins Talisman" "Three Rat Talisman"
+	HasExplicitMod "Athlete's" "Virile"
+	HasExplicitMod "of the Multiverse" "of the Infinite" "of the Universe"
+	HasExplicitMod "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius"
+
+Show # $type->rare->exotic->talisman $tier->t2stattalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Avian Twins Talisman" "Three Rat Talisman"
+	HasExplicitMod "of the Multiverse" "of the Infinite" "of the Universe"
+	HasExplicitMod "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
+
+Show # $type->rare->exotic->talisman $tier->t3decentmodstalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Talisman"
+	HasExplicitMod >=3 "Athlete's" "Virile" "Rotund" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "of the Sniper" "Devastating" "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Flaring" "Tempered" "Razor-sharp" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "Mazarine" "of Nirvana" "of Euphoria" "of Bliss" "Wizard's" "Thaumaturgist's" "of Immolation" "of Flames" "of Cinders" "of Floe" "of Rime" "of Ice" "of Discharge" "of Voltage" "of Electricity" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Impregnable" "Vaporous" "Dazzling" "Resplendent"
+
+Show # $type->rare->exotic->talisman $tier->t3decenttypetalisman
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Avian Twins Talisman" "Bonespire Talisman" "Chrysalis Talisman" "Clutching Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman" "Writhing Talisman"
+
+Show # $type->rare->exotic->talisman $tier->any
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Talisman"
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Accessoires
+#===============================================================================================================
+
+Show # $type->rr->amuring $tier->t1
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets" "Rings"
+	BaseType "Agate Amulet" "Citrine Amulet" "Coral Ring" "Diamond Ring" "Onyx Amulet" "Prismatic Ring" "Turquoise Amulet" "Two-Stone Ring" "Unset Ring"
+
+Show # $type->rr->amuring $tier->t2
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets" "Rings"
+	BaseType "Amber Amulet" "Amethyst Ring" "Jade Amulet" "Lapis Amulet" "Moonstone Ring" "Ruby Ring" "Sapphire Ring" "Topaz Ring"
+
+Show # $type->rr->amuring $tier->t3
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets" "Rings"
+	BaseType "Coral Amulet" "Gold Amulet" "Gold Ring" "Iron Ring" "Paua Amulet" "Paua Ring"
+
+Show # $type->rr->belts $tier->t1
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Belts"
+	BaseType "Stygian Vise"
+
+Show # $type->rr->belts $tier->t2
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Belts"
+	BaseType "Heavy Belt" "Leather Belt" "Rustic Sash"
+
+Show # $type->rr->belts $tier->t3
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Belts"
+	BaseType "Chain Belt" "Cloth Belt" "Studded Belt"
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T1 - handpicked
+#===============================================================================================================
+
+Show # $type->rr $tier->t1weapons
+	ItemLevel >= 68
+	Rarity Rare
+	BaseType "Imbued Wand" "Opal Sceptre" "Opal Wand"
+
+Show # $type->rr $tier->t1armours
+	ItemLevel >= 68
+	Rarity Rare
+	BaseType "Arcanist Gloves" "Arcanist Slippers" "Assassin's Boots" "Astral Plate" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Eternal Burgonet" "Fossilised Spirit Shield" "Goliath Greaves" "Harmonic Spirit Shield" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Praetor Crown" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Vaal Gauntlets" "Vaal Greaves" "Vaal Regalia"
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T2 - handpicked
+#===============================================================================================================
+
+Show # $type->rr $tier->t2weapons
+	ItemLevel >= 68
+	Rarity Rare
+	BaseType "Broadhead Arrow Quiver" "Citadel Bow" "Copper Kris" "Corsair Sword" "Eclipse Staff" "Exquisite Blade" "Gemini Claw" "Grove Bow" "Jewelled Foil" "Karui Chopper" "Karui Maul" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Runic Hatchet" "Sambar Sceptre" "Short Bow" "Siege Axe" "Spike-Point Arrow Quiver" "Thicket Bow" "Tornado Wand" "Vaal Axe" "Void Sceptre"
+
+Show # $type->rr $tier->t2armours
+	ItemLevel >= 68
+	Rarity Rare
+	BaseType "Ambush Boots" "Ancient Greaves" "Antique Greaves" "Archon Kite Shield" "Assassin's Garb" "Assassin's Mitts" "Carnal Boots" "Colossal Tower Shield" "Conjurer Boots" "Conjurer Gloves" "Crusader Buckler" "Dragonscale Gauntlets" "Ezomyte Burgonet" "Ezomyte Tower Shield" "Goliath Gauntlets" "Hydrascale Boots" "Legion Boots" "Legion Gloves" "Mind Cage" "Mosaic Kite Shield" "Nightmare Bascinet" "Pinnacle Tower Shield" "Prophet Crown" "Sadist Garb" "Samite Gloves" "Samite Slippers" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Sinner Tricorne" "Solaris Circlet" "Soldier Boots" "Stealth Gloves" "Supreme Spiked Shield" "Vaal Mask" "Vaal Spirit Shield" "Wyrmscale Boots"
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
+#===============================================================================================================
+
+Show # $type->rr $tier->t3runedaggers
+	ItemLevel >= 68
+	DropLevel >= 55
+	Rarity Rare
+	Class "Rune Daggers"
+
+Show # $type->rr $tier->t3daggers
+	ItemLevel >= 68
+	DropLevel >= 56
+	Rarity Rare
+	Class "Daggers"
+
+Show # $type->rr $tier->t3claws
+	ItemLevel >= 68
+	DropLevel >= 64
+	Rarity Rare
+	Class "Claws"
+
+Show # $type->rr $tier->t3wands
+	ItemLevel >= 68
+	DropLevel >= 45
+	Rarity Rare
+	Class "Wands"
+
+Show # $type->rr $tier->t3foils
+	Height 4
+	ItemLevel >= 68
+	DropLevel >= 60
+	Rarity Rare
+	Class "Thrusting One Hand Swords"
+
+Show # $type->rr $tier->t3swords1h
+	Height < 4
+	ItemLevel >= 68
+	DropLevel >= 66
+	Rarity Rare
+	Class "One Hand Swords"
+
+Show # $type->rr $tier->t3maces1h
+	ItemLevel >= 68
+	DropLevel >= 66
+	Rarity Rare
+	Class "One Hand Maces"
+
+Show # $type->rr $tier->t3axes1h
+	ItemLevel >= 68
+	DropLevel >= 61
+	Rarity Rare
+	Class "One Hand Axes"
+
+Show # $type->rr $tier->t3sceptres
+	ItemLevel >= 68
+	DropLevel >= 56
+	Rarity Rare
+	Class "Sceptres"
+
+Show # $type->rr $tier->t3warstaves
+	ItemLevel >= 68
+	DropLevel >= 64
+	Rarity Rare
+	Class "Warstaves"
+
+Show # $type->rr $tier->t3staves
+	ItemLevel >= 68
+	DropLevel >= 60
+	Rarity Rare
+	Class "Staves"
+
+Show # $type->rr $tier->t3swords2h
+	ItemLevel >= 68
+	DropLevel >= 65
+	Rarity Rare
+	Class "Two Hand Swords"
+
+Show # $type->rr $tier->t3axes2h
+	ItemLevel >= 68
+	DropLevel >= 62
+	Rarity Rare
+	Class "Two Hand Axes"
+
+Show # $type->rr $tier->t3maces2h
+	ItemLevel >= 68
+	DropLevel >= 61
+	Rarity Rare
+	Class "Two Hand Maces"
+
+Show # $type->rr $tier->t3bows
+	ItemLevel >= 68
+	DropLevel >= 60
+	Rarity Rare
+	Class "Bows"
+
+Show # $type->rr $tier->t3boots
+	ItemLevel >= 68
+	DropLevel >= 23
+	Rarity Rare
+	Class "Boots"
+
+Show # $type->rr $tier->t3gloves
+	ItemLevel >= 68
+	DropLevel >= 23
+	Rarity Rare
+	Class "Gloves"
+
+Show # $type->rr $tier->t3helmets
+	ItemLevel >= 68
+	DropLevel >= 35
+	Rarity Rare
+	Class "Helmets"
+
+Show # $type->rr $tier->t3body
+	ItemLevel >= 68
+	DropLevel >= 56
+	Rarity Rare
+	Class "Body Armours"
+
+Show # $type->rr $tier->t3shields
+	Height <= 2
+	ItemLevel >= 68
+	DropLevel >= 55
+	Rarity Rare
+	Class "Shields"
+
+Show # $type->rr $tier->t3shieldsl
+	Height >= 3
+	ItemLevel >= 68
+	DropLevel >= 60
+	Rarity Rare
+	Class "Shields"
+
+Show # $type->rr $tier->t3quivers
+	ItemLevel >= 68
+	DropLevel >= 30
+	Rarity Rare
+	Class "Quivers"
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T4 - rest
+#===============================================================================================================
+
+Show # $type->rr $tier->t4endgamerares
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rune Daggers" "Sceptres" "Shields" "Staves" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
+
+#===============================================================================================================
+# [[0200]] Hide Layer 2 - Rare Gear
+#===============================================================================================================
+
+Hide # $type->hidelayer $tier->raresendgame
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
+
+#===============================================================================================================
+# [[0200]] Heist Gear
+#===============================================================================================================
+
+#------------------------------------
+# [3001] Heist Cloak
+#------------------------------------
+
+Show # $type->heist->cloak $tier->t1highlevel
+	ItemLevel >= 83
+	Rarity <= Rare
+	Class "Heist Cloak"
+	BaseType "Whisper-woven Cloak"
+
+Show # $type->heist->cloak $tier->t1
+	Rarity <= Rare
+	Class "Heist Cloak"
+	BaseType "Whisper-woven Cloak"
+
+Show # $type->heist->cloak $tier->t2
+	Rarity <= Rare
+	Class "Heist Cloak"
+	BaseType "Hooded Cloak"
+
+Show # $type->heist->cloak $tier->t3any
+	Rarity <= Rare
+	Class "Heist Cloak"
+
+#------------------------------------
+# [3002] Heist Brooch
+#------------------------------------
+
+Show # $type->heist->brooch $tier->t1highlevel
+	ItemLevel >= 84
+	Rarity <= Rare
+	Class "Heist Brooch"
+	BaseType "Foliate Brooch"
+
+Show # $type->heist->brooch $tier->t1
+	Rarity <= Rare
+	Class "Heist Brooch"
+	BaseType "Foliate Brooch"
+
+Show # $type->heist->brooch $tier->t2
+	Rarity <= Rare
+	Class "Heist Brooch"
+	BaseType "Enamel Brooch"
+
+Show # $type->heist->brooch $tier->t3any
+	Rarity <= Rare
+	Class "Heist Brooch"
+
+#------------------------------------
+# [3003] Heist Gear
+#------------------------------------
+
+Show # $type->heist->gear $tier->t1highlevel
 	ItemLevel >= 81
-	Class Incubator
-	BaseType "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator"
+	Rarity <= Rare
+	Class "Heist Gear"
+	BaseType "Burst Band" "Obsidian Sharpening Stone" "Precise Arrowhead"
 
-Show # $type->incubators $tier->t1
-	Class Incubator
-	BaseType auto
+Show # $type->heist->gear $tier->t1
+	Rarity <= Rare
+	Class "Heist Gear"
+	BaseType "Burst Band" "Obsidian Sharpening Stone" "Precise Arrowhead"
 
-Show # $type->incubators $tier->t2
-	Class Incubator
-	BaseType auto
+Show # $type->heist->gear $tier->t2
+	Rarity <= Rare
+	Class "Heist Gear"
+	BaseType "Aggregator Charm" "Fine Sharpening Stone" "Fragmenting Arrowhead"
 
-Show # $type->incubators $tier->t3
-	Class Incubator
-	BaseType auto
+Show # $type->heist->gear $tier->t3any
+	Rarity <= Rare
+	Class "Heist Gear"
 
-Show # %HS3 $type->incubators $tier->t4
-	Class Incubator
-	BaseType auto
+#------------------------------------
+# [3004] Heist Tool
+#------------------------------------
 
-Show # $type->incubators $tier->restex
-	Class Incubator
+Show # $type->heist->tool $tier->t1highlevel
+	ItemLevel >= 83
+	Rarity <= Rare
+	Class "Heist Tool"
+	BaseType "Grandmaster Keyring" "Master Lockpick" "Regicide Disguise Kit" "Silkweave Sole" "Steel Bracers" "Thaumaturgical Sensing Charm" "Thaumaturgical Ward" "Thaumetic Blowtorch" "Thaumetic Flashpowder"
+
+Show # $type->heist->tool $tier->t1
+	Rarity <= Rare
+	Class "Heist Tool"
+	BaseType "Grandmaster Keyring" "Master Lockpick" "Regicide Disguise Kit" "Silkweave Sole" "Steel Bracers" "Thaumaturgical Sensing Charm" "Thaumaturgical Ward" "Thaumetic Blowtorch" "Thaumetic Flashpowder"
+
+Show # $type->heist->tool $tier->t2
+	Rarity <= Rare
+	Class "Heist Tool"
+	BaseType "Azurite Flashpowder" "Espionage Disguise Kit" "Fine Lockpick" "Polished Sensing Charm" "Runed Bracers" "Shining Ward" "Skeleton Keyring" "Sulphur Blowtorch" "Winged Sole"
+
+Show # $type->heist->tool $tier->t3any
+	Rarity <= Rare
+	Class "Heist Tool"
+
+#===============================================================================================================
+# [[3900]] Gem Tierlists
+#===============================================================================================================
+
+#------------------------------------
+# [3901] Exceptional Gems - Awakened and AltQuality
+#------------------------------------
+
+Show # $type->gems-exceptional $tier->awat1
+	Class "Gems"
+	BaseType "Awakened Added Cold Damage Support" "Awakened Added Lightning Damage Support" "Awakened Ancestral Call Support" "Awakened Brutality Support" "Awakened Burning Damage Support" "Awakened Cast On Critical Strike Support" "Awakened Chain Support" "Awakened Cold Penetration Support" "Awakened Controlled Destruction Support" "Awakened Deadly Ailments Support" "Awakened Elemental Damage with Attacks Support" "Awakened Elemental Focus Support" "Awakened Fork Support" "Awakened Generosity Support" "Awakened Greater Multiple Projectiles Support" "Awakened Hextouch Support" "Awakened Increased Area of Effect Support" "Awakened Lightning Penetration Support" "Awakened Melee Physical Damage Support" "Awakened Minion Damage Support" "Awakened Multistrike Support" "Awakened Spell Cascade Support" "Awakened Spell Echo Support" "Awakened Swift Affliction Support" "Awakened Unbound Ailments Support" "Awakened Unleash Support" "Awakened Vicious Projectiles Support" "Awakened Void Manipulation Support"
+
+Show # $type->gems-exceptional $tier->awaany
+	Class "Gems"
+	BaseType "Awakened"
+
+Show # $type->gems-exceptional $tier->divt1
+	GemQualityType Divergent
+	Class "Gems"
+	BaseType "Added Cold Damage Support" "Added Fire Damage Support" "Arc" "Arcane Cloak" "Armageddon Brand" "Ball Lightning" "Berserk" "Blade Vortex" "Blood Rage" "Bonechill Support" "Brutality Support" "Burning Damage Support" "Cast when Damage Taken Support" "Charged Traps Support" "Clarity" "Cobra Lash" "Cold Penetration Support" "Combustion Support" "Conductivity" "Consecrated Path" "Controlled Destruction Support" "Cremation" "Culling Strike Support" "Cyclone" "Damage on Full Life Support" "Dash" "Desecrate" "Determination" "Divine Ire" "Dominating Blow" "Dread Banner" "Enduring Cry" "Ethereal Knives" "Faster Casting Support" "Faster Projectiles Support" "Flameblast" "Flammability" "Flesh and Stone" "Flicker Strike" "Fortify Support" "Frost Bomb" "Frost Shield" "Frost Wall" "Frostbite" "General's Cry" "Haste" "Hatred" "Hypothermia Support" "Ice Nova" "Impale Support" "Increased Critical Damage Support" "Infused Channelling Support" "Inspiration Support" "Kinetic Blast" "Minefield Support" "Mirage Archer Support" "Molten Strike" "Multiple Totems Support" "Multistrike Support" "Onslaught Support" "Perforate" "Pierce Support" "Plague Bearer" "Poacher's Mark" "Poison Support" "Precision" "Pride" "Pulverise Support" "Purifying Flame" "Purity of Fire" "Purity of Ice" "Purity of Lightning" "Pyroclast Mine" "Raise Zombie" "Reckoning" "Righteous Fire" "Scourge Arrow" "Shield Charge" "Shrapnel Ballista" "Soulrend" "Spark" "Spell Echo Support" "Spellslinger" "Split Arrow" "Storm Brand" "Summon Carrion Golem" "Summon Lightning Golem" "Summon Skitterbots" "Swiftbrand Support" "Tempest Shield" "Toxic Rain" "Trap and Mine Damage Support" "Trinity Support" "Unbound Ailments Support" "Vile Toxins Support" "Vitality" "Vulnerability" "Wave of Conviction" "Zealotry"
+
+Show # $type->gems-exceptional $tier->phat1
+	GemQualityType Phantasmal
+	Class "Gems"
+	BaseType "Ancestral Warchief" "Bladestorm" "Desecrate" "Discharge" "Frost Bomb" "Haste" "Ice Nova" "Infernal Blow" "Leap Slam" "Lightning Warp" "Seismic Cry" "Shattering Steel" "Toxic Rain" "Wave of Conviction"
+
+Show # $type->gems-exceptional $tier->anot1
+	GemQualityType Anomalous
+	Class "Gems"
+	BaseType "Added Cold Damage Support" "Animate Guardian" "Arc" "Arcane Cloak" "Arcane Surge Support" "Arctic Armour" "Assassin's Mark" "Ball Lightning" "Berserk" "Blade Blast" "Blade Vortex" "Blasphemy Support" "Burning Damage Support" "Chance to Flee Support" "Combustion Support" "Concentrated Effect Support" "Contagion" "Controlled Destruction Support" "Convocation" "Cyclone" "Dash" "Despair" "Determination" "Discharge" "Earthshatter" "Efficacy Support" "Elemental Damage with Attacks Support" "Energy Leech Support" "Enlighten Support" "Firestorm" "Fist of War Support" "Flame Dash" "Flammability" "Flesh and Stone" "Fork Support" "Freezing Pulse" "Frenzy" "Glacial Cascade" "Grace" "Ground Slam" "Herald of Agony" "Herald of Purity" "Hydrosphere" "Icicle Mine" "Immortal Call" "Increased Critical Damage Support" "Increased Critical Strikes Support" "Infused Channelling Support" "Inspiration Support" "Kinetic Blast" "Less Duration Support" "Lesser Multiple Projectiles Support" "Lightning Tendrils" "Maim Support" "Malevolence" "Minefield Support" "Minion Damage Support" "Mirage Archer Support" "Multiple Totems Support" "Phase Run" "Physical to Lightning Support" "Pierce Support" "Pinpoint Support" "Plague Bearer" "Precision" "Puncture" "Purity of Lightning" "Rage Support" "Second Wind Support" "Spark" "Spectral Shield Throw" "Split Arrow" "Summon Carrion Golem" "Summon Chaos Golem" "Summon Lightning Golem" "Summon Phantasm Support" "Summon Skitterbots" "Summon Stone Golem" "Swift Affliction Support" "Swiftbrand Support" "Tempest Shield" "Tornado Shot" "Toxic Rain" "Trap and Mine Damage Support" "Unbound Ailments Support" "Unleash Support" "Venom Gyre" "Vile Toxins Support" "Vitality" "Void Manipulation Support" "Vortex"
+
+Show # $type->gems-exceptional $tier->altany
+	AlternateQuality True
+	Class "Gems"
+
+Show # $type->gems-exceptional $tier->2020z
+	Quality >= 20
+	GemLevel >= 20
+	Class "Gems"
+	BaseType "Advanced Traps Support" "Arcane Surge Support" "Barrage Support" "Berserk" "Blight" "Blood Magic Support" "Charged Traps Support" "Concentrated Effect Support" "Culling Strike Support" "Damage on Full Life Support" "Desecrate" "Determination" "Discharge" "Discipline" "Dread Banner" "Elemental Hit" "Elemental Penetration Support" "Elemental Proliferation Support" "Ethereal Knives" "Explosive Trap" "Flameblast" "Fortify Support" "Frostbolt" "Glacial Cascade" "Haste" "Hatred" "Herald of Ash" "Herald of Thunder" "Hexblast" "High-Impact Mine Support" "Hypothermia Support" "Increased Duration Support" "Infused Channelling Support" "Inspiration Support" "Kinetic Blast" "Lesser Multiple Projectiles Support" "Life Gain on Hit Support" "Lightning Strike" "Lightning Tendrils" "Minion Life Support" "Multistrike Support" "Nightblade Support" "Perforate" "Power Charge On Critical Support" "Precision" "Predator Support" "Pride" "Pulverise Support" "Purity of Elements" "Purity of Ice" "Purity of Lightning" "Raise Spectre" "Reave" "Searing Bond" "Splitting Steel" "Summon Carrion Golem" "Swiftbrand Support" "Temporal Chains" "Trap Support" "Vile Toxins Support" "Warlord's Mark" "Wintertide Brand" "Zealotry"
+
+Show # $type->gems-exceptional $tier->2120z
+	Quality >= 20
+	GemLevel >= 21
+	Class "Gems"
+	BaseType "Anger" "Animate Guardian" "Arc" "Arcane Cloak" "Archmage Support" "Ball Lightning" "Ballista Totem Support" "Barrage" "Blade Blast" "Blade Vortex" "Bladefall" "Blazing Salvo" "Blood Rage" "Brutality Support" "Cast On Critical Strike Support" "Cast when Damage Taken Support" "Caustic Arrow" "Chain Support" "Chance to Bleed Support" "Charged Mines Support" "Close Combat Support" "Combustion Support" "Controlled Destruction Support" "Cyclone" "Dash" "Despair" "Divine Ire" "Efficacy Support" "Elemental Damage with Attacks Support" "Elemental Focus Support" "Elemental Weakness" "Enduring Cry" "Energy Leech Support" "Essence Drain" "Faster Attacks Support" "Faster Casting Support" "Fist of War Support" "Flame Dash" "Flame Wall" "Freezing Pulse" "Frost Blades" "Frostbite" "General's Cry" "Generosity Support" "Greater Multiple Projectiles Support" "Herald of Ice" "Herald of Purity" "Hydrosphere" "Ice Crash" "Ice Nova" "Ice Shot" "Ice Spear" "Impale Support" "Increased Area of Effect Support" "Increased Critical Strikes Support" "Intensify Support" "Lacerate" "Less Duration Support" "Malevolence" "Meat Shield Support" "Melee Physical Damage Support" "Minefield Support" "Minion Damage Support" "Multiple Totems Support" "Penance Brand" "Pestilent Strike" "Pierce Support" "Pinpoint Support" "Plague Bearer" "Poison Support" "Puncture" "Purity of Fire" "Raise Zombie" "Ruthless Support" "Scorching Ray" "Second Wind Support" "Shockwave Support" "Slower Projectiles Support" "Spell Cascade Support" "Spell Echo Support" "Spellslinger" "Split Arrow" "Steelskin" "Storm Brand" "Summon Ice Golem" "Summon Phantasm Support" "Summon Skitterbots" "Summon Stone Golem" "Swift Affliction Support" "Swift Assembly Support" "Toxic Rain" "Trap and Mine Damage Support" "Trinity Support" "Unleash Support" "Vaal Ancestral Warchief" "Vaal Blade Vortex" "Vaal Cyclone" "Vaal Detonate Dead" "Vaal Discipline" "Vaal Grace" "Vaal Haste" "Vaal Molten Shell" "Vaal Righteous Fire" "Vaal Summon Skeletons" "Vitality" "Volatile Dead" "Vortex" "Withering Touch Support" "Wrath"
+
+Show # $type->gems-exceptional $tier->2123z
+	Quality >= 23
+	GemLevel >= 21
+	Class "Gems"
+	BaseType "Ancestral Protector" "Blade Flurry" "Blastchain Mine Support" "Cluster Traps Support" "Deadly Ailments Support" "Feeding Frenzy Support" "Flamethrower Trap" "Flammability" "Flesh and Stone" "Flicker Strike" "Herald of Agony" "Hextouch Support" "Ice Trap" "Item Rarity Support" "Maim Support" "Mirage Archer Support" "Phase Run" "Physical to Lightning Support" "Purifying Flame" "Sigil of Power" "Sniper's Mark" "Summon Chaos Golem" "Summon Raging Spirit" "Unbound Ailments Support" "Vaal Arc" "Vaal Ice Nova" "Vaal Impurity of Fire" "Vicious Projectiles Support" "Void Manipulation Support"
+
+#------------------------------------
+# [3901] Exceptional Gems - Special gems
+#------------------------------------
+
+Show # $type->gems-special $tier->ex6lvlgems
+	GemLevel >= 6
+	Class "Gems"
+	BaseType "Blood and Sand" "Brand Recall"
+
+Show # $type->gems-special $tier->exspeciale4
+	GemLevel >= 4
+	Class "Gems"
+	BaseType "Empower" "Enhance" "Enlighten"
+
+Show # $type->gems-special $tier->exspeciale2
+	GemLevel >= 2
+	Class "Gems"
+	BaseType "Empower" "Enhance" "Enlighten"
+
+Show # $type->gems-special $tier->exspecialeq
+	Corrupted False
+	Quality >= 15
+	Class "Gems"
+	BaseType "Empower" "Enhance" "Enlighten"
+
+Show # $type->gems-special $tier->exspecial
+	Class "Gems"
+	BaseType "Empower" "Enhance" "Enlighten" "Item Quantity" "Portal" "Vaal Breach"
+
+#------------------------------------
+# [3902] Gems during leveling
+#------------------------------------
+
+Show # $type->gems-leveling $tier->firstzone
+	AreaLevel 1
+	Class "Gems"
+
+Show # $type->gems-leveling $tier->levelingvaal
+	Quality <= 5
+	GemLevel <= 5
+	AreaLevel < 65
+	Class "Gems"
+	BaseType "Vaal"
+
+Show # $type->gems-leveling $tier->leveling
+	Quality 0
+	GemLevel <= 5
+	AreaLevel < 65
+	Class "Gems"
+
+#------------------------------------
+# [3902] High Quality and Leveled Gems
+#------------------------------------
+
+Show # $type->gems-generic $tier->lt1
+	GemLevel >= 21
+	Class "Gems"
+
+Show # $type->gems-generic $tier->qt1
+	Quality >= 23
+	Class "Gems"
+
+Show # $type->gems-generic $tier->decogemsvaalbgdrop
+	Class "Gems"
+	BaseType "Vaal"
+	Continue
+
+Show # $type->gems-generic $tier->qt2
+	Quality >= 20
+	Class "Gems"
+
+Show # $type->gems-generic $tier->lt2
+	GemLevel >= 19
+	Class "Gems"
+
+Show # $type->gems-generic $tier->qt3
+	Quality >= 14
+	Class "Gems"
+
+Show # $type->gems-generic $tier->lt3
+	GemLevel >= 17
+	Class "Gems"
+
+Show # $type->gems-generic $tier->qt4
+	Quality >= 1
+	Class "Gems"
+
+Show # $type->gems-generic $tier->lt4
+	GemLevel >= 1
+	Class "Gems"
+
+Show # $type->gems-generic $tier->corruptedvaalany
+	Corrupted True
+	Class "Gems"
+	BaseType "Vaal"
+
+Show # $type->gems-generic $tier->any
+	Class "Gems"
+
+#===============================================================================================================
+# [[3900]] REPLICA UNIQUES
+#===============================================================================================================
+
+Show # $type->unique->replicas $tier->t1
+	Replica True
+	Rarity Unique
+	BaseType "Blood Raiment" "Chain Belt" "Cloth Belt" "Glorious Plate" "Great Crown" "Lacquered Buckler" "Leather Belt" "Maelström Staff" "Ornate Quiver" "Paua Amulet" "Relic Chambers Map" "Ruby Ring" "Soldier Boots" "Temple Map" "Triumphant Lamellar" "Vaal Gauntlets"
+
+Show # $type->unique->replicas $tier->t2
+	Replica True
+	Rarity Unique
+	BaseType "Ebony Tower Shield" "Elegant Ringmail" "Ezomyte Burgonet" "Ezomyte Dagger" "Granite Flask" "Great Mallet" "Heavy Belt" "Imperial Bow" "Jade Amulet" "Siege Axe" "Terror Maul" "Vaal Rapier" "Void Sceptre"
+
+Show # $type->unique->replicas $tier->multi
+	Replica True
+	Rarity Unique
+	BaseType "Carnal Armour"
+
+Show # $type->unique->replicas $tier->t3
+	Replica True
+	Rarity Unique
+	BaseType "Arcanist Gloves" "Arcanist Slippers" "Assassin's Boots" "Boot Knife" "Bronzescale Boots" "Crusader Chainmail" "Death Bow" "Decimation Bow" "Dunes Map" "Elder Sword" "Engraved Wand" "Eternal Sword" "Ezomyte Axe" "Festival Mask" "Gnarled Branch" "Gold Amulet" "Great Helmet" "Grinning Fetish" "Gut Ripper" "Infernal Sword" "Jasper Chopper" "Laminated Kite Shield" "Murder Boots" "Nailed Fist" "Ornate Mace" "Paua Ring" "Royal Skean" "Rustic Sash" "Sage Wand" "Samite Gloves" "Sanctified Mana Flask" "Sapphire Ring" "Shadow Sceptre" "Shagreen Boots" "Short Bow" "Silk Slippers" "Sinner Tricorne" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Stiletto" "Sulphur Flask" "Titan Greaves" "Tornado Wand" "Unset Ring" "Vaal Claw" "War Sword" "Zealot Gloves" "Zodiac Leather"
+
+Show # $type->unique->replicas $tier->restex
+	Replica True
+	Rarity Unique
+
+#===============================================================================================================
+# [[4400]] Special Maps
+#===============================================================================================================
+
+#------------------------------------
+# [4402] Unique Maps
+#------------------------------------
+
+Show # $type->unique->maps $tier->ex
+	MapTier 16
+	Rarity Unique
+	Class "Maps"
+	BaseType "Harbinger Map"
+
+Show # $type->unique->maps $tier->t1
+	Rarity Unique
+	Class "Maps"
+	BaseType "Basilica Map" "Chateau Map" "Courthouse Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
+
+Show # $type->unique->maps $tier->t2
+	Rarity Unique
+	Class "Maps"
+	BaseType "Courtyard Map" "Cursed Crypt Map" "Harbinger Map" "Museum Map"
+
+Show # $type->unique->maps $tier->t3
+	Rarity Unique
+	Class "Maps"
+	BaseType "Cemetery Map" "Moon Temple Map" "Necropolis Map" "Overgrown Shrine Map" "Primordial Blocks Map" "Promenade Map" "Shore Map" "Temple Map" "Underground River Map" "Vaal Pyramid Map"
+
+Show # $type->unique->maps $tier->t4
+	Rarity Unique
+	Class "Maps"
+	BaseType "Atoll Map" "Bone Crypt Map" "Dunes Map" "Strand Map" "Underground Sea Map"
+
+Show # $type->unique->maps $tier->restex
+	Rarity Unique
+	Class "Maps"
+
+#------------------------------------
+# [4404] Blighted maps
+#------------------------------------
+
+Show # $type->maps->blighted $tier->t1
+	BlightedMap True
+	MapTier >= 15
+	Class "Maps"
+
+Show # $type->maps->blighted $tier->any
+	BlightedMap True
+	Class "Maps"
+
+#------------------------------------
+# [4405] Delirium/Blight/Enchanted Maps!
+#------------------------------------
+
+Show # $type->maps->enchanted $tier->t1
+	AnyEnchantment True
+	MapTier >= 11
+	Class "Maps"
+
+Show # $type->maps->enchanted $tier->any
+	AnyEnchantment True
+	Class "Maps"
+
+#------------------------------------
+# [4406] Beyond-Nemesis Maps, for those juicy sextants.
+#------------------------------------
+
+Show # $type->maps->identified $tier->nemesisbeyond
+	Identified True
+	Class "Maps"
+	HasExplicitMod "Otherworldly"
+	HasExplicitMod "Antagonist's"
+
+#===============================================================================================================
+# [[0200]] Normal Map Progression
+#===============================================================================================================
+
+Show # $type->maps $tier->deco_mapup_t16
+	MapTier >= 16
+	AreaLevel < 83
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_a_t16
+	MapTier >= 16
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t15
+	MapTier > 15
+	AreaLevel < 82
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_a_t15
+	MapTier 15
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t14
+	MapTier > 14
+	AreaLevel < 81
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_a_t14
+	MapTier 14
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t13
+	MapTier > 13
+	AreaLevel < 80
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_b_t13
+	MapTier 13
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t12
+	MapTier > 12
+	AreaLevel < 79
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_b_t12
+	MapTier 12
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t11
+	MapTier > 11
+	AreaLevel < 78
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_b_t11
+	MapTier 11
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t10
+	MapTier > 10
+	AreaLevel < 77
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_c_t10
+	MapTier 10
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t9
+	MapTier > 9
+	AreaLevel < 76
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_c_t9
+	MapTier 9
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t8
+	MapTier > 8
+	AreaLevel < 75
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_c_t8
+	MapTier 8
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t7
+	MapTier > 7
+	AreaLevel < 74
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_c_t7
+	MapTier 7
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t6
+	MapTier > 6
+	AreaLevel < 73
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_c_t6
+	MapTier 6
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t5
+	MapTier > 5
+	AreaLevel < 72
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_d_t5
+	MapTier 5
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t4
+	MapTier > 4
+	AreaLevel < 71
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_d_t4
+	MapTier 4
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t3
+	MapTier > 3
+	AreaLevel < 70
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_d_t3
+	MapTier 3
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t2
+	MapTier > 2
+	AreaLevel < 69
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_d_t2
+	MapTier 2
+	Class "Maps"
+
+Show # $type->maps $tier->deco_mapup_t1
+	MapTier > 1
+	AreaLevel < 68
+	Class "Maps"
+	Continue
+
+Show # $type->maps $tier->maps_d_t1
+	MapTier 1
+	Class "Maps"
+
+Show
+	Class "Maps"
+
+#------------------------------------
+# [4403] Labyrinth items, Offerings
+#------------------------------------
+
+Show # $type->labyrinthofferings $tier->offerings
+	BaseType "Offering to the Goddess"
+
+Show # $type->labyrinthofferings $tier->offeringsupgraded
+	BaseType "Dedication to the Goddess" "Gift to the Goddess" "Tribute to the Goddess"
+
+#===============================================================================================================
+# [[4500]] Heist Contracts and Blueprints
+#===============================================================================================================
+
+Show # $type->unique->heist $tier->any
+	Rarity Unique
+	Class "Blueprint" "Contract"
+
+Show # $type->heist->contract $tier->handpicked
+	Class "Contract"
+	BaseType "Contract: Bunker" "Contract: Laboratory" "Contract: Mansion" "Contract: Prohibited Library" "Contract: Records Office" "Contract: Repository" "Contract: Smuggler's Den" "Contract: Tunnels" "Contract: Underbelly"
+
+Show # $type->heist->contract $tier->any
+	Class "Contract"
+
+Show # $type->heist->blueprint $tier->handpicked
+	Class "Blueprint"
+	BaseType "Blueprint: Bunker" "Blueprint: Laboratory" "Blueprint: Mansion" "Blueprint: Prohibited Library" "Blueprint: Records Office" "Blueprint: Repository" "Blueprint: Smuggler's Den" "Blueprint: Tunnels" "Blueprint: Underbelly"
+
+Show # $type->heist->blueprint $tier->any
+	Class "Blueprint"
+
+#===============================================================================================================
+# [[4500]] Fragments
+#===============================================================================================================
+
+#------------------------------------
+# [4701] Scarabs
+#------------------------------------
+
+Show # $type->fragments->scarabs $tier->t1
+	Class "Map Fragments"
+	BaseType empty
+
+Show # $type->fragments->scarabs $tier->t2
+	Class "Map Fragments"
+	BaseType "Craicic Lure" "Farric Lure" "Fenumal Lure" "Gilded Divination Scarab" "Gilded Legion Scarab" "Gilded Sulphite Scarab" "Saqawine Lure" "Winged Ambush Scarab" "Winged Bestiary Scarab" "Winged Breach Scarab" "Winged Cartography Scarab" "Winged Divination Scarab" "Winged Harbinger Scarab" "Winged Legion Scarab" "Winged Reliquary Scarab" "Winged Sulphite Scarab"
+
+Show # $type->fragments->scarabs $tier->t3
+	Class "Map Fragments"
+	BaseType "Gilded Ambush Scarab" "Gilded Bestiary Scarab" "Gilded Breach Scarab" "Gilded Cartography Scarab" "Gilded Elder Scarab" "Gilded Harbinger Scarab" "Gilded Metamorph Scarab" "Gilded Perandus Scarab" "Gilded Reliquary Scarab" "Gilded Shaper Scarab" "Gilded Torment Scarab" "Polished Ambush Scarab" "Polished Bestiary Scarab" "Polished Breach Scarab" "Polished Cartography Scarab" "Polished Divination Scarab" "Polished Elder Scarab" "Polished Harbinger Scarab" "Polished Legion Scarab" "Polished Metamorph Scarab" "Polished Sulphite Scarab" "Rusted Bestiary Scarab" "Rusted Legion Scarab" "Rusted Sulphite Scarab" "Winged Elder Scarab" "Winged Metamorph Scarab" "Winged Perandus Scarab" "Winged Shaper Scarab" "Winged Torment Scarab"
+
+Show # $type->fragments->scarabs $tier->t4
+	Class "Map Fragments"
+	BaseType "Polished Perandus Scarab" "Polished Reliquary Scarab" "Polished Shaper Scarab" "Polished Torment Scarab" "Rusted Ambush Scarab" "Rusted Breach Scarab" "Rusted Cartography Scarab" "Rusted Divination Scarab" "Rusted Elder Scarab" "Rusted Harbinger Scarab" "Rusted Metamorph Scarab" "Rusted Perandus Scarab" "Rusted Reliquary Scarab" "Rusted Shaper Scarab" "Rusted Torment Scarab"
+
+Show # $type->fragments->scarabs $tier->restex
+	Class "Map Fragments"
+	BaseType "Scarab;"
+
+#------------------------------------
+# [4702] Regular Fragment Tiering
+#------------------------------------
+
+Show # $type->fragments $tier->t1
+	Class "Map Fragments"
+	BaseType "Chayula's Pure Breachstone" "Simulacrum" "The Maven's Writ" "Uul-Netol's Pure Breachstone"
+
+Show # $type->fragments $tier->t1p
+	Class "Map Fragments"
+	BaseType "Fragment of Shape"
+
+Show # $type->fragments $tier->t2
+	Class "Map Fragments"
+	BaseType "Chayula's Breachstone" "Chayula's Charged Breachstone" "Chayula's Enriched Breachstone" "Eber's Key" "Esh's Enriched Breachstone" "Esh's Pure Breachstone" "Fragment of Constriction" "Fragment of Emptiness" "Fragment of Enslavement" "Fragment of Eradication" "Fragment of Knowledge" "Fragment of Purification" "Fragment of Terror" "Fragment of the Chimera" "Fragment of the Hydra" "Fragment of the Minotaur" "Fragment of the Phoenix" "Inya's Key" "Timeless Maraketh Emblem" "Timeless Templar Emblem" "Timeless Vaal Emblem" "Tul's Enriched Breachstone" "Tul's Pure Breachstone" "Uul-Netol's Breachstone" "Uul-Netol's Charged Breachstone" "Uul-Netol's Enriched Breachstone" "Volkuur's Key" "Xoph's Enriched Breachstone" "Xoph's Pure Breachstone" "Yriel's Key"
+
+Show # $type->fragments $tier->t3
+	Class "Map Fragments"
+	BaseType "Blood-filled Vessel" "Esh's Breachstone" "Esh's Charged Breachstone" "Mortal Grief" "Mortal Hope" "Mortal Ignorance" "Mortal Rage" "Timeless Eternal Emblem" "Timeless Karui Emblem" "Tul's Breachstone" "Tul's Charged Breachstone" "Xoph's Breachstone" "Xoph's Charged Breachstone"
+
+Show # $type->fragments $tier->t4
+	Class "Map Fragments"
+	BaseType "Divine Vessel" "Sacrifice at Dawn" "Sacrifice at Dusk" "Sacrifice at Midnight" "Sacrifice at Noon"
+
+Show # $type->fragments $tier->restex
+	Class "Map Fragments"
+
+#===============================================================================================================
+# [[4800]] Currency - Exceptions - Stacked Currency
+#===============================================================================================================
+
+Show # $type->currency->stacked $tier->splinters_t1
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Splinter of Chayula" "Timeless Maraketh Splinter" "Timeless Templar Splinter"
+
+Show # $type->currency->stacked $tier->splinters_t2
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Splinter of Esh" "Splinter of Tul" "Splinter of Uul-Netol" "Splinter of Xoph" "Timeless Eternal Empire Splinter" "Timeless Karui Splinter" "Timeless Vaal Splinter"
+
+Show # $type->currency->stacked $tier->orbs_chaos
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Awakened Sextant" "Chaos Orb" "Facetor's Lens" "Fertile Catalyst" "Gemcutter's Prism" "Harbinger's Orb" "Prime Sextant" "Prismatic Catalyst" "Ritual Splinter" "Stacked Deck" "Tempering Catalyst" "Vaal Orb"
+
+Show # $type->currency->stacked $tier->orbs_alchemy
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Abrasive Catalyst" "Cartographer's Chisel" "Imbued Catalyst" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Turbulent Catalyst"
+
+Show # $type->currency->stacked $tier->orbs_alt
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Blessed Orb" "Chromatic Orb" "Glassblower's Bauble" "Jeweller's Orb" "Orb of Augmentation" "Orb of Chance" "Silver Coin" "Simple Sextant"
+
+Show # $type->currency->stacked $tier->orbs_transmute
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Blacksmith's Whetstone" "Orb of Transmutation"
+
+Show # $type->currency->stacked $tier->orbs_wisdom
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Armourer's Scrap" "Portal Scroll" "Scroll of Wisdom"
+
+#===============================================================================================================
+# [[4900]] Currency - Exceptions - Leveling Currencies
+#===============================================================================================================
+
+Show # $type->currency->leveling $tier->essences
+	AreaLevel <= 67
+	Class "Currency"
+	BaseType == "Muttering Essence of" "Wailing Essence of" "Weeping Essence of" "Whispering Essence of"
+
+Show # $type->currency->leveling $tier->trans
+	AreaLevel <= 67
+	Class "Currency"
+	BaseType == "Blacksmith's Whetstone" "Orb of Transmutation"
+
+Show # $type->currency->leveling $tier->aug
+	AreaLevel <= 67
+	Class "Currency"
+	BaseType == "Armourer's Scrap" "Orb of Augmentation"
+
+Show # $type->currency->leveling $tier->portal
+	AreaLevel <= 67
+	Class "Currency"
+	BaseType == "Portal Scroll"
+
+Show # $type->currency->leveling $tier->wisdom
+	AreaLevel <= 67
+	Class "Currency"
+	BaseType == "Scroll of Wisdom"
+
+#===============================================================================================================
+# [[4900]] Currency - Regular Currency Tiering
+#===============================================================================================================
+
+Show # $type->currency $tier->t11
+	Class "Currency"
+	BaseType == "Albino Rhoa Feather" "Awakener's Orb" "Crusader's Exalted Orb" "Eternal Orb" "Exalted Orb" "Hunter's Exalted Orb" "Maven's Orb" "Mirror of Kalandra" "Mirror Shard" "Prime Regrading Lens" "Redeemer's Exalted Orb" "Tempering Orb" "Warlord's Exalted Orb"
+
+Show # $type->currency $tier->t12
+	Class "Currency"
+	BaseType == "Ancient Orb" "Blessing of Chayula" "Crescent Splinter" "Divine Orb" "Elevated Sextant" "Secondary Regrading Lens" "Tailoring Orb"
+
+Show # $type->currency $tier->t21
+	Class "Currency"
+	BaseType == "Blessing of Esh" "Blessing of Tul" "Blessing of Uul-Netol" "Blessing of Xoph" "Exalted Shard" "Fertile Catalyst" "Harbinger's Orb" "Infused Engineer's Orb" "Orb of Annulment" "Orb of Unmaking" "Prismatic Catalyst" "Ritual Vessel" "Tempering Catalyst"
+
+Show # $type->currency $tier->t22
+	Class "Currency"
+	BaseType == "Ancient Shard" "Awakened Sextant" "Chaos Orb" "Gemcutter's Prism" "Orb of Regret" "Orb of Scouring" "Prime Sextant" "Regal Orb" "Ritual Splinter" "Simple Sextant" "Stacked Deck" "Turbulent Catalyst" "Vaal Orb"
+
+Show # $type->currency $tier->t23
+	Class "Currency"
+	BaseType == "Abrasive Catalyst" "Annulment Shard" "Bestiary Orb" "Blessed Orb" "Cartographer's Chisel" "Facetor's Lens" "Glassblower's Bauble" "Harbinger's Shard" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Fusing" "Orb of Horizons"
+
+Show # $type->currency $tier->t31
+	Class "Currency"
+	BaseType == "Chromatic Orb" "Imbued Catalyst" "Orb of Binding"
+
+Show # $type->currency $tier->t32
+	Class "Currency"
+	BaseType == "Chaos Shard" "Engineer's Orb" "Horizon Shard" "Jeweller's Orb" "Orb of Chance" "Silver Coin"
+
+Show # $type->currency $tier->t33
+	Class "Currency"
+	BaseType == "Alchemy Shard" "Binding Shard" "Blacksmith's Whetstone" "Engineer's Shard" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
+
+Show # $type->currency $tier->t41
+	Class "Currency"
+	BaseType == "Alteration Shard" "Armourer's Scrap" "Transmutation Shard"
+
+Show # $type->currency $tier->t42
+	Class "Currency"
+	BaseType == "Portal Scroll"
+
+Show # $type->currency $tier->t43
+	Class "Currency"
+	BaseType == "Scroll of Wisdom"
+
+#===============================================================================================================
+# [[4900]] Currency - SPECIAL
+#===============================================================================================================
+#------------------------------------
+# [5103] Incursion - Vials
+#------------------------------------
+
+Show # $type->vials $tier->t1
+	Class "Currency"
+	BaseType "Vial of Consequence" "Vial of Summoning" "Vial of the Ghost" "Vial of Transcendence"
+
+Show # $type->vials $tier->t2
+	Class "Currency"
+	BaseType "Vial of Awakening" "Vial of Dominance" "Vial of Sacrifice"
+
+Show # $type->vials $tier->t3
+	Class "Currency"
+	BaseType "Vial of Fate" "Vial of the Ritual"
+
+Show # $type->vials $tier->restex
+	Class "Currency"
+	BaseType "Vial of"
+
+#------------------------------------
+# [5104] Delirum Orbs
+#------------------------------------
+
+Show # $type->currency->deliriumorbs $tier->t1
+	Class "Currency"
+	BaseType empty
+
+Show # $type->currency->deliriumorbs $tier->t2
+	Class "Currency"
+	BaseType "Blighted Delirium Orb" "Cartographer's Delirium Orb" "Diviner's Delirium Orb" "Fine Delirium Orb" "Foreboding Delirium Orb" "Fossilised Delirium Orb" "Obscured Delirium Orb" "Skittering Delirium Orb" "Thaumaturge's Delirium Orb"
+
+Show # $type->currency->deliriumorbs $tier->t3
+	Class "Currency"
+	BaseType "Abyssal Delirium Orb" "Amorphous Delirium Orb" "Armoursmith's Delirium Orb" "Blacksmith's Delirium Orb" "Decadent Delirium Orb" "Delirium Orb" "Fragmented Delirium Orb" "Imperial Delirium Orb" "Jeweller's Delirium Orb" "Portentous Delirium Orb" "Primal Delirium Orb" "Singular Delirium Orb" "Timeless Delirium Orb" "Whispering Delirium Orb"
+
+Show # $type->currency->deliriumorbs $tier->restex
+	Class "Currency"
+	BaseType "Vial of"
+
+#------------------------------------
+# [5104] Delve - Resonators
+#------------------------------------
+
+Show # $type->currency->resonator $tier->t1
+	Class "Delve Stackable Socketable Currency"
+	BaseType == "Prime Alchemical Resonator" "Prime Chaotic Resonator"
+
+Show # $type->currency->resonator $tier->t2
+	Class "Delve Stackable Socketable Currency"
+	BaseType == "Potent Chaotic Resonator" "Powerful Chaotic Resonator" "Primitive Chaotic Resonator"
+
+Show # $type->currency->resonator $tier->t3
+	Class "Delve Stackable Socketable Currency"
+	BaseType == "Potent Alchemical Resonator" "Powerful Alchemical Resonator" "Primitive Alchemical Resonator"
+
+Show # $type->currency->resonator $tier->restex
+	Class "Delve Stackable Socketable Currency"
+
+#------------------------------------
+# [5104] Delve - Fossils
+#------------------------------------
+
+Show # $type->currency->fossil $tier->t1
+	Class "Currency"
+	BaseType == "Faceted Fossil" "Fractured Fossil"
+
+Show # $type->currency->fossil $tier->t2
+	Class "Currency"
+	BaseType == "Bloodstained Fossil" "Corroded Fossil" "Hollow Fossil"
+
+Show # $type->currency->fossil $tier->t3
+	Class "Currency"
+	BaseType == "Aberrant Fossil" "Aetheric Fossil" "Bound Fossil" "Dense Fossil" "Enchanted Fossil" "Encrusted Fossil" "Gilded Fossil" "Glyphic Fossil" "Jagged Fossil" "Lucent Fossil" "Perfect Fossil" "Prismatic Fossil" "Pristine Fossil" "Sanctified Fossil" "Serrated Fossil" "Shuddering Fossil" "Tangled Fossil"
+
+Show # $type->currency->fossil $tier->t4
+	Class "Currency"
+	BaseType == "Frigid Fossil" "Metallic Fossil" "Scorched Fossil"
+
+Show # $type->currency->fossil $tier->restex
+	Class "Currency"
+	BaseType "Fossil"
+
+#------------------------------------
+# [5104] Blight - Oils
+#------------------------------------
+
+Show # $type->currency->oil $tier->t1
+	Class "Currency"
+	BaseType == "Golden Oil"
+
+Show # $type->currency->oil $tier->t2
+	Class "Currency"
+	BaseType == "Opalescent Oil" "Silver Oil"
+
+Show # $type->currency->oil $tier->t3
+	Class "Currency"
+	BaseType == "Azure Oil" "Black Oil" "Crimson Oil" "Indigo Oil" "Teal Oil" "Verdant Oil" "Violet Oil"
+
+Show # $type->currency->oil $tier->t4
+	Class "Currency"
+	BaseType == "Amber Oil" "Clear Oil" "Sepia Oil"
+
+Show # $type->currency->oil $tier->restex
+	Class "Currency"
+	BaseType "Oil"
+
+#------------------------------------
+# [5104] Essences
+#------------------------------------
+
+Show # $type->currency->essence $tier->t1
+	Class "Currency"
+	BaseType == "Deafening Essence of" "Essence of Delirium" "Essence of Horror" "Essence of Hysteria" "Essence of Insanity"
+
+Show # $type->currency->essence $tier->t2
+	Class "Currency"
+	BaseType == "Remnant of Corruption" "Shrieking Essence of"
+
+Show # $type->currency->essence $tier->t3
+	Class "Currency"
+	BaseType == "Screaming Essence of"
+
+Show # $type->currency->essence $tier->t4
+	Class "Currency"
+	BaseType == "Wailing Essence of"
+
+Show # $type->currency->essence $tier->t5
+	Class "Currency"
+	BaseType == "Weeping Essence of"
+
+Show # $type->currency->essence $tier->t6
+	Class "Currency"
+	BaseType == "Muttering Essence of" "Whispering Essence of"
+
+#------------------------------------
+# [5104] Incubators
+#------------------------------------
+
+Show # $type->currency->incubators $tier->leveledex
+	ItemLevel >= 81
+	Class "Incubator"
+	BaseType = "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator"
+
+Show # $type->currency->incubators $tier->t1
+	Class "Incubator"
+	BaseType == empty
+
+Show # $type->currency->incubators $tier->t2
+	Class "Incubator"
+	BaseType == "Geomancer's Incubator" "Time-Lost Incubator"
+
+Show # $type->currency->incubators $tier->t3
+	Class "Incubator"
+	BaseType == "Diviner's Incubator" "Enchanted Incubator" "Foreboding Incubator" "Fossilised Incubator" "Gemcutter's Incubator" "Infused Incubator" "Obscured Incubator" "Ornate Incubator" "Otherworldly Incubator" "Singular Incubator" "Skittering Incubator" "Thaumaturge's Incubator"
+
+Show # $type->currency->incubators $tier->t4
+	Class "Incubator"
+	BaseType == "Abyssal Incubator" "Cartographer's Incubator" "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Decadent Incubator" "Fine Incubator" "Fragmented Incubator" "Mysterious Incubator" "Primal Incubator" "Whispering Incubator"
+
+Show # $type->currency->incubators $tier->restex
+	Class "Incubator"
+
+#------------------------------------
+# [5104] Others
+#------------------------------------
+
+Show # $type->currency->others $tier->harbinger
+	Class "Currency"
+	BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"
+
+Show # $type->currency->others $tier->misc
+	Class "Currency"
+	BaseType == "Cartographer's Seal" "Imprint" "Unshaping Orb"
+
+#===============================================================================================================
+# [[4900]] Currency - Prophecies
+#===============================================================================================================
+
+Show # $type->currency->prophecy $tier->t1
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "Deadly Rivalry III" "Deadly Rivalry IV" "Deadly Rivalry V" "Fated Connections" "Song of the Sekhema" "The Queen's Sacrifice" "The Unbreathing Queen IV" "The Warmongers IV" "Trash to Treasure"
+
+Show # $type->currency->prophecy $tier->t2
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "A Prodigious Hand" "Anarchy's End III" "Anarchy's End IV" "Beyond Sight IV" "Darktongue's Shriek" "Day of Sacrifice IV" "Deadly Rivalry II" "Lost in the Pages" "The Ambitious Bandit III" "The Feral Lord III" "The Feral Lord IV" "The Hollow Pledge" "The Plaguemaw III" "The Plaguemaw IV" "The Unbreathing Queen III" "Unbearable Whispers III" "Unbearable Whispers IV"
+
+Show # $type->currency->prophecy $tier->t3
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "A Dishonourable Death" "A Rift in Time" "A Vision of Ice and Fire" "Battle Hardened" "Cleanser of Sins" "Deadly Rivalry I" "Fire and Brimstone" "Fire and Ice" "Fire, Wood and Stone" "Flesh of the Beast" "Kalandra's Craft" "Last of the Wildmen" "Strong as a Bull" "Thaumaturgical History II" "The Apex Predator" "The Bowstring's Music" "The Dream Trial" "The Great Leader of the North" "The Great Mind of the North" "The Jeweller's Touch" "The King and the Brambles" "The King's Path" "The Mentor" "The Misunderstood Queen" "The Servant's Heart" "The Silverwood" "The Soulless Beast" "The Watcher's Watcher" "Twice Enchanted" "Unbearable Whispers II" "Weeping Death" "Wind and Thunder"
+
+Show # $type->currency->prophecy $tier->t3mapping
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "A Master Seeks Help" "Beyond Sight III" "Bountiful Traps" "Crushing Squall" "Deadly Twins" "Fire from the Sky" "Hidden Reinforcements" "Hidden Vaal Pathways" "Ice from Above" "Lightning Falls" "Monstrous Treasure" "Mysterious Invaders" "Overflowing Riches" "Plague of Frogs" "Plague of Rats" "Possessed Foe" "Reforged Bonds" "The Beautiful Guide" "The Cursed Choir" "The Dreamer's Dream" "The Fortune Teller's Collection" "The Four Feral Exiles" "The Hungering Swarm" "The Trembling Earth" "The Twins" "The Undead Storm" "The Warmongers III" "Vaal Winds" "Waiting in Ambush"
+
+Show # $type->currency->prophecy $tier->t3council
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "The Feral Lord V" "The Plaguemaw V" "The Unbreathing Queen V" "Unbearable Whispers V"
+
+Show # $type->currency->prophecy $tier->t4upgrade
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "A Forest of False Idols" "Agony at Dusk" "Ancient Doom" "Black Devotion" "Blind Faith" "Blinding Light" "Burning Dread" "Cold Blooded Fury" "Cold Greed" "Crimson Hues" "Dance of Steel" "Dark Instincts" "Dying Cry" "End of the Light" "Faith Exhumed" "From The Void" "Greed's Folly" "Mouth of Horrors" "Nature's Resilience" "Pleasure and Pain" "Power Magnified" "Severed Limbs" "Sun's Punishment" "The Beginning and the End" "The Bishop's Legacy" "The Bloody Flowers Redux" "The Dreaded Rhoa" "The Fall of an Empire" "The Flow of Energy" "The Karui Rebellion" "The Malevolent Witch" "The Nightmare Awakens" "The Snuffed Flame" "The Storm Spire" "Trapped in the Tower" "Winter's Mournful Melodies"
+
+Show # $type->currency->prophecy $tier->t4drop
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "A Call into the Void" "A Firm Foothold" "A Whispered Prayer" "Abnormal Effulgence" "Against the Tide" "Baptism by Death" "Blood in the Eyes" "Blood of the Betrayed" "Custodians of Silence" "Erasmus' Gift" "Fear's Wide Reach" "From Death Springs Life" "Graceful Flames" "Heart of the Fire" "Notched Flesh" "Roth's Legacy" "Storm on the Horizon" "Storm on the Reef" "Thaumaturgical History IV" "The Brutal Enforcer" "The Eagle's Cry" "The Flayed Man" "The God of Misfortune" "The Lady in Black" "The Last Watch" "The Lost Maps" "The Lost Undying" "The Mysterious Gift" "The Nest" "The Petrified" "The Prison Guard" "The Prison Key" "The Queen's Vaults" "The Sinner's Stone" "The Sword King's Passion" "The Vanguard" "The Walking Mountain" "The Ward's Ward"
+
+Show # $type->currency->prophecy $tier->t4
+	Class "Currency"
+	BaseType "Prophecy"
+	Prophecy == "A Regal Death" "A Valuable Combination" "An Unseen Peril" "Anarchy's End I" "Anarchy's End II" "Beyond Sight I" "Beyond Sight II" "Day of Sacrifice I" "Day of Sacrifice II" "Day of Sacrifice III" "Defiled in the Sceptre" "Echoes of Witchcraft" "Ending the Torment" "Erased from Memory" "Fallow At Last" "Forceful Exorcism" "Gilded Within" "Golden Touch" "Heavy Blows" "Holding the Bridge" "Hunter's Lesson" "In the Grasp of Corruption" "Lasting Impressions" "Living Fires" "Nemesis of Greed" "Path of Betrayal" "Pools of Wealth" "Rebirth" "Resistant to Change" "Risen Blood" "Smothering Tendrils" "Soil, Worms and Blood" "Thaumaturgical History I" "Thaumaturgical History III" "The Alchemist" "The Ambitious Bandit I" "The Ambitious Bandit II" "The Brothers of Necromancy" "The Child of Lunaris" "The Corrupt" "The Feral Lord I" "The Feral Lord II" "The Forgotten Garrison" "The Forgotten Soldiers" "The Hardened Armour" "The Invader" "The Plaguemaw I" "The Plaguemaw II" "The Scout" "The Sharpened Blade" "The Singular Spirit" "The Stockkeeper" "The Unbreathing Queen I" "The Unbreathing Queen II" "The Undead Brutes" "The Warmongers I" "The Warmongers II" "The Wealthy Exile" "Touched by the Wind" "Unbearable Whispers I" "Undead Uprising" "Unnatural Energy" "Vaal Invasion" "Visions of the Drowned" "Vital Transformation"
+
+Show # $type->currency->prophecy $tier->restex
+	Class "Currency"
+	BaseType "Prophecy"
+
+#===============================================================================================================
+# [[4900]] Currency - Splinters and Coins
+#===============================================================================================================
+#------------------------------------
+# [5112] Perandus Coins
+#------------------------------------
+
+Show # $type->currency->peranduscoins $tier->t1
+	StackSize >= 150
+	Class "Currency"
+	BaseType "Perandus Coin"
+
+Show # $type->currency->peranduscoins $tier->t2
+	StackSize >= 17
+	Class "Currency"
+	BaseType "Perandus Coin"
+
+Show # $type->currency->peranduscoins $tier->t3
+	StackSize >= 7
+	Class "Currency"
+	BaseType "Perandus Coin"
+
+Show # $type->currency->peranduscoins $tier->t4
+	Class "Currency"
+	BaseType "Perandus Coin"
+
+#------------------------------------
+# [5104] Heist Coins
+#------------------------------------
+
+Show # $type->currency->heist $tier->any
+	Class "Currency"
+	BaseType == "Rogue's Marker"
+
+#------------------------------------
+# [5112] Breach and Legion Splinters
+#------------------------------------
+
+Show # $type->currency->splinter $tier->t1
+	Class "Currency"
+	BaseType == "Splinter of Chayula" "Timeless Maraketh Splinter" "Timeless Templar Splinter" "Timeless Vaal Splinter"
+
+Show # $type->currency->splinter $tier->t2
+	Class "Currency"
+	BaseType == "Timeless Eternal Empire Splinter" "Timeless Karui Splinter"
+
+Show # $type->currency->splinter $tier->t3
+	Class "Currency"
+	BaseType == "Splinter of Esh" "Splinter of Tul" "Splinter of Uul-Netol" "Splinter of Xoph"
+
+#------------------------------------
+# [5112] Simulacrum Splinters
+#------------------------------------
+
+Show # $type->currency->splinter->simulacrum $tier->t1
+	StackSize >= 100
+	Class "Currency"
+	BaseType "Simulacrum Splinter"
+
+Show # $type->currency->splinter->simulacrum $tier->t2
+	StackSize >= 30
+	Class "Currency"
+	BaseType "Simulacrum Splinter"
+
+Show # $type->currency->splinter->simulacrum $tier->t3
+	StackSize >= 12
+	Class "Currency"
+	BaseType "Simulacrum Splinter"
+
+Show # $type->currency->splinter->simulacrum $tier->t4
+	StackSize >= 3
+	Class "Currency"
+	BaseType "Simulacrum Splinter"
+
+Show # $type->currency->splinter->simulacrum $tier->t5
+	Class "Currency"
+	BaseType "Simulacrum Splinter"
+
+#===============================================================================================================
+# [[4900]] Divination Cards
+#===============================================================================================================
+
+Show # $type->divination $tier->t1
+	Class "Divination"
+	BaseType == "Abandoned Wealth" "Alluring Bounty" "Beauty Through Death" "Brother's Stash" "Desecrated Virtue" "Gift of Asenath" "House of Mirrors" "Immortal Resolve" "Love Through Ice" "Nook's Crown" "Pride of the First Ones" "Seven Years Bad Luck" "Succor of the Sinless" "The Cheater" "The Demon" "The Doctor" "The Fiend" "The Hive of Knowledge" "The Immortal" "The Iron Bard" "The Nurse" "The Price of Loyalty" "The Progeny of Lunaris" "The Samurai's Eye" "Unrequited Love"
+
+Show # $type->divination $tier->t2
+	Class "Divination"
+	BaseType == "A Note in the Wind" "Azyran's Reward" "Blessing of God" "Burning Blood" "Chaotic Disposition" "Council of Cats" "Hunter's Reward" "Keeper's Corruption" "The Academic" "The Astromancer" "The Damned" "The Dragon's Heart" "The Enlightened" "The Escape" "The Eye of Terror" "The Greatest Intentions" "The Gulf" "The Long Con" "The Offering" "The Patient" "The Queen" "The Saint's Treasure" "The Spark and the Flame" "The Strategist" "The Sustenance" "The Void" "The White Knight" "The World Eater" "Void of the Elements" "Wealth and Power"
+
+Show # $type->divination $tier->t3
+	Class "Divination"
+	BaseType == "A Familiar Call" "Boon of the First Ones" "Brotherhood in Exile" "Dark Dreams" "Draped in Dreams" "Dying Light" "Etched in Blood" "Fateful Meeting" "Humility" "Mawr Blaidd" "Peaceful Moments" "Pride Before the Fall" "Reckless Ambition" "Remembrance" "Squandered Prosperity" "The Artist" "The Awakened" "The Bargain" "The Bitter Blossom" "The Cartographer" "The Celestial Justicar" "The Celestial Stone" "The Chosen" "The Craving" "The Dapper Prodigy" "The Dark Mage" "The Dreamer" "The Eldritch Decay" "The Endless Darkness" "The Ethereal" "The Hoarder" "The Landing" "The Life Thief" "The Mayor" "The Old Man" "The Pact" "The Polymath" "The Porcupine" "The Primordial" "The Professor" "The Risk" "The Sacrifice" "The Sephirot" "The Soul" "The Tinkerer's Table" "The Undaunted" "The Undisputed" "The Valkyrie" "The Warlord" "The Wolven King's Bite" "Vanity"
+
+Show # $type->divination $tier->tnew
+	Class "Divination"
+	BaseType == empty
+
+Show # $type->divination $tier->t4c
+	Class "Divination"
+	BaseType == "Acclimatisation" "Boon of Justice" "Bowyer's Dream" "Buried Treasure" "Coveted Possession" "Demigod's Wager" "Emperor of Purity" "Emperor's Luck" "Harmony of Souls" "Imperial Legacy" "Last Hope" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "More is Never Enough" "No Traces" "Sambodhi's Vow" "Society's Remorse" "The Cacophony" "The Chains that Bind" "The Deal" "The Fool" "The Gemcutter" "The Heroic Shot" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Seeker" "The Side Quest" "The Survivalist" "The Union" "The Wrath" "Three Faces in the Dark" "Three Voices" "Vinia's Token"
+
+Show # $type->divination $tier->t5c
+	Class "Divination"
+	BaseType == "Her Mask" "Rain of Chaos" "The Catalyst" "The Flora's Gift" "The Gambler" "The Puzzle" "The Scholar"
+
+Show # $type->divination $tier->t4
+	Class "Divination"
+	BaseType == "A Dab of Ink" "Akil's Prophecy" "Alone in the Darkness" "Arrogance of the Vaal" "Assassin's Favour" "Atziri's Arsenal" "Baited Expectations" "Blind Venture" "Boundless Realms" "Cameria's Cut" "Cursed Words" "Deathly Designs" "Dialla's Subjugation" "Divine Justice" "Doedre's Madness" "Earth Drinker" "Echoes of Love" "Forbidden Power" "Friendship" "Gemcutter's Promise" "Gift of the Gemling Queen" "Glimmer of Hope" "Grave Knowledge" "Haunting Shadows" "Heterochromia" "Hope" "Hubris" "Hunter's Resolve" "Jack in the Box" "Left to Fate" "Lingering Remnants" "Lost Worlds" "Lysah's Respite" "Merciless Armament" "Mitts" "Perfection" "Prometheus' Armoury" "Rebirth" "Scholar of the Seas" "Shard of Fate" "The Admirer" "The Aesthete" "The Arena Champion" "The Avenger" "The Battle Born" "The Bear Woman" "The Beast" "The Betrayal" "The Body" "The Bones" "The Breach" "The Brittle Emperor" "The Cache" "The Calling" "The Cataclysm" "The Cursed King" "The Darkest Dream" "The Deep Ones" "The Doppelganger" "The Dragon" "The Dreamland" "The Drunken Aristocrat" "The Easy Stroll" "The Encroaching Darkness" "The Endurance" "The Explorer" "The Eye of the Dragon" "The Feast" "The Fishmonger" "The Fletcher" "The Formless Sea" "The Forsaken" "The Fox" "The Garish Power" "The Gentleman" "The Gladiator" "The Hale Heart" "The Hunger" "The Insatiable" "The Jeweller's Boon" "The King's Heart" "The Last One Standing" "The Lion" "The Long Watch" "The Lord of Celebration" "The Mad King" "The Master" "The Mercenary" "The Messenger" "The Mountain" "The Obscured" "The One With All" "The Pack Leader" "The Penitent" "The Poet" "The Price of Protection" "The Realm" "The Rite of Elements" "The Road to Power" "The Scavenger" "The Skeleton" "The Standoff" "The Stormcaller" "The Summoner" "The Surveyor" "The Sword King's Salute" "The Thaumaturgist" "The Throne" "The Tower" "The Traitor" "The Trial" "The Tumbleweed" "The Twilight Moon" "The Tyrant" "The Unexpected Prize" "The Valley of Steel Boxes" "The Vast" "The Visionary" "The Watcher" "The Whiteout" "The Wilted Rose" "The Wind" "The Wolf" "The Wolf's Legacy" "The Wolverine" "The Wretched" "Thirst for Knowledge" "Time-Lost Relic" "Treasure Hunter" "Triskaidekaphobia" "Unchained" "Underground Forest" "Vile Power" "Volatile Power"
+
+Show # $type->divination $tier->t5
+	Class "Divination"
+	BaseType == "A Mother's Parting Gift" "Anarchy's Price" "Audacity" "Birth of the Three" "Call to the First Ones" "Cartographer's Delight" "Dark Temptation" "Death" "Destined to Crumble" "Dying Anguish" "Lantador's Lost Love" "Light and Truth" "Might is Right" "Prosperity" "Rain Tempter" "Rats" "Struck by Lightning" "The Archmage's Right Hand" "The Army of Blood" "The Blazing Fire" "The Carrion Crow" "The Coming Storm" "The Conduit" "The Deceiver" "The Demoness" "The Fathomless Depths" "The Golden Era" "The Harvester" "The Hermit" "The Incantation" "The Inoculated" "The Jester" "The Journalist" "The King's Blade" "The Lich" "The Lord in Black" "The Lover" "The Lunaris Priestess" "The Metalsmith's Gift" "The Oath" "The Opulent" "The Rabid Rhoa" "The Ruthless Ceinture" "The Scarred Meadow" "The Sigil" "The Siren" "The Spoiled Prince" "The Sun" "The Surgeon" "The Twins" "The Warden" "The Web" "The Witch" "The Wolf's Shadow" "Thunderous Skies" "Tranquillity" "Turn the Other Cheek"
+
+Show # $type->divination $tier->restex
+	Class "Divination"
+
+#===============================================================================================================
+# [[4900]] Remaining Currency
+#===============================================================================================================
+
+Hide # $type->currency $tier->scrollfragments
+	Class "Currency"
+	BaseType "Scroll Fragment"
+
+Show # $type->currency $tier->restex
+	Class "Currency"
+
+#===============================================================================================================
+# [[4900]] Questlike-Items1 (override uniques)
+#===============================================================================================================
+
+Show # $type->metamorph $tier->ilvl80
+	ItemLevel >= 80
+	Class "Metamorph"
+
+Show # $type->metamorph $tier->any
+	Class "Metamorph"
+
+Show
+	Class "Heist Target"
+
+#===============================================================================================================
+# [[4900]] Uniques
+#===============================================================================================================
+
+#------------------------------------
+# [5701] Exceptions #1
+#------------------------------------
+
+Show # $type->unique $tier->extabula
+	Rarity Unique
+	SocketGroup "WWWWWW"
+	BaseType == "Simple Robe"
+
+Show # $type->unique $tier->exsynth
+	SynthesisedItem True
+	Rarity Unique
+	Class "Rings"
+
+Show # $type->unique $tier->ex6link
+	LinkedSockets 6
+	Rarity Unique
+
+Show # $type->unique $tier->exharby
+	Rarity Unique
+	Class "Piece"
+
+#------------------------------------
+# [5702] Tier 1 uniques
+#------------------------------------
+
+Show # $type->unique $tier->t1
+	Rarity Unique
+	BaseType == "Arcanist Gloves" "Blood Raiment" "Crusader Boots" "Deerskin Gloves" "Ezomyte Tower Shield" "Fluted Bascinet" "Gemstone Sword" "Greatwolf Talisman" "Jingling Spirit Shield" "Large Cluster Jewel" "Occultist's Vestment" "Ornate Quiver" "Prismatic Jewel" "Prophecy Wand" "Rawhide Boots" "Riveted Gloves" "Ruby Flask" "Sapphire Flask" "Siege Axe" "Silk Gloves" "Timeless Jewel" "Vaal Rapier" "Wyrmscale Doublet"
+
+#------------------------------------
+# [5703] Exceptions #2
+#------------------------------------
+
+Show # $type->unique $tier->2xcorrupteduniques
+	Corrupted True
+	CorruptedMods >= 2
+	Rarity Unique
+
+Show # $type->unique $tier->2xabyss
+	Sockets >= AA
+	Rarity Unique
+	Class "Boots" "Gloves" "Helmets"
+
+Show # $type->unique $tier->5link
+	LinkedSockets 5
+	Rarity Unique
+
+#------------------------------------
+# [5704] Tier 2 uniques
+#------------------------------------
+
+Show # $type->unique $tier->t2
+	Rarity Unique
+	BaseType == "Archon Kite Shield Piece" "Assassin's Boots" "Butcher Axe" "Crimson Round Shield" "Crusader Helmet" "Exquisite Leather" "Gladiator Plate" "Hydrascale Gauntlets" "Ivory Watchstone" "Jewelled Foil" "Slink Boots" "Steel Circlet" "Steel Ring" "Steelwood Bow" "Wereclaw Talisman"
+
+#------------------------------------
+# [5705] Multi-Unique bases.
+#------------------------------------
+# These bases have multiple uniques. One of the uniques, is a high value one
+# While others are cheap. We give them a high quality display, while making a normal unique
+# Sound to prevent false excitement.
+
+Show # $type->unique $tier->multispecial
+	Rarity Unique
+	BaseType == "Archon Kite Shield" "Coral Amulet" "Gavel" "Glorious Plate" "Gold Ring" "Highborn Staff" "Jade Amulet" "Judgement Staff" "Lacquered Garb" "Leather Belt" "Long Staff" "Magistrate Crown" "Medium Cluster Jewel" "Murder Mitts" "Paua Amulet" "Sadist Garb" "Saint's Hauberk" "Sentinel Jacket" "Silver Flask" "Sinner Tricorne" "Small Cluster Jewel" "Sorcerer Boots" "Stealth Boots" "Studded Belt" "Sulphur Flask" "Topaz Ring" "Triumphant Lamellar" "Turquoise Amulet" "Two-Stone Ring" "Unset Ring"
+
+Show # $type->unique $tier->highvinktar
+	ItemLevel >= 82
+	Rarity Unique
+	BaseType == "Imperial Staff"
+
+Show # $type->unique $tier->exjewels
+	Rarity Unique
+	Class "Jewel"
+	BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
+
+#------------------------------------
+# [5708] Tier 3 uniques 
+#------------------------------------
+
+Show # $type->unique $tier->t3boss
+	Rarity Unique
+	BaseType == "Agate Amulet" "Amber Amulet" "Ambusher" "Amethyst Flask" "Amethyst Ring" "Arcanist Slippers" "Assassin Bow" "Assassin's Mitts" "Black Maw Talisman" "Blood Sceptre" "Blue Pearl Amulet" "Bone Helmet" "Cardinal Round Shield" "Carnal Armour" "Carnal Boots" "Carnal Mitts" "Carnal Sceptre" "Carved Wand" "Chain Belt" "Citrine Amulet" "Cloth Belt" "Clutching Talisman" "Crusader Gloves" "Eternal Sword" "Ezomyte Spiked Shield" "Ezomyte Staff" "Fiend Dagger" "Fossilised Spirit Shield" "Gladius" "Goathide Boots" "Golden Plate" "Goliath Greaves" "Great Crown" "Harbinger Bow" "Harlequin Mask" "Heavy Belt" "Hellion's Paw" "Hubris Circlet" "Hydrascale Boots" "Infernal Sword" "Iron Ring" "Lacquered Buckler" "Legion Gloves" "Legion Sword" "Lion Pelt" "Maelström Staff" "Meatgrinder" "Midnight Blade" "Mind Cage" "Mirrored Spiked Shield" "Murder Boots" "Necromancer Circlet" "Nightmare Mace" "Onyx Amulet" "Opal Ring" "Penetrating Arrow Quiver" "Praetor Crown" "Prophet Crown" "Quartz Flask" "Ranger Bow" "Regicide Mask" "Rotfeather Talisman" "Royal Sceptre" "Ruby Ring" "Sacrificial Garb" "Sapphire Ring" "Savant's Robe" "Silken Hood" "Soldier Gloves" "Spine Bow" "Steelscale Gauntlets" "Stibnite Flask" "Stygian Vise" "Tarnished Spirit Shield" "Terror Claw" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Topaz Flask" "Tornado Wand" "Two-Point Arrow Quiver" "Vaal Axe" "Vaal Blade" "Vaal Gauntlets" "Vaal Mask" "Vaal Regalia" "Vaal Sceptre" "Vaal Spirit Shield" "Void Sceptre" "Widowsilk Robe" "Wyrmscale Boots" "Zealot Gloves"
+
+Show # $type->unique $tier->t3
+	Rarity Unique
+	BaseType == "Ancient Greaves" "Ancient Spirit Shield" "Astral Plate" "Bismuth Flask" "Blinder" "Blunt Arrow Quiver Piece" "Bone Bow" "Bone Circlet" "Broadhead Arrow Quiver" "Bronzescale Boots" "Callous Mask Piece" "Cedar Tower Shield" "Champion Kite Shield" "Clasped Mitts" "Cloth Belt Piece" "Coronal Leather" "Demon Dagger" "Diamond Ring" "Ebony Tower Shield" "Enameled Buckler" "Etched Greatsword" "Ezomyte Blade" "Ezomyte Burgonet" "Ezomyte Dagger" "Full Wyrmscale" "Golden Buckler" "Grand Mana Flask" "Granite Flask" "Holy Chainmail" "Imperial Bow" "Imperial Maul" "Imperial Skean" "Imperial Staff" "Ironscale Gauntlets" "Jasper Chopper" "Karui Chopper" "Karui Maul" "Labrys" "Lacquered Helmet" "Lapis Amulet" "Leather Cap" "Loricated Ringmail" "Moonstone Ring" "Nightmare Bascinet" "Nubuck Boots" "Opal Wand" "Painted Tower Shield" "Paua Ring" "Raven Mask" "Rawhide Tower Shield" "Ritual Sceptre" "Royal Axe" "Royal Burgonet" "Sage Wand" "Sanctified Life Flask" "Sanctified Mana Flask" "Serpentscale Boots" "Shackled Boots" "Shadow Sceptre" "Sharkskin Tunic" "Siege Helmet" "Solaris Circlet" "Soldier Helmet" "Steelhead" "Strapped Mitts" "Thorium Spirit Shield" "Timeworn Claw" "Trapper Boots" "Two-Toned Boots" "Tyrant's Sekhem" "Vaal Hatchet" "Variscite Blade" "Varnished Coat" "Void Axe" "War Hammer" "Zodiac Leather"
+
+#------------------------------------
+# [5709] Tier 4 uniques
+#------------------------------------
+
+Show # $type->unique $tier->hideable2
+	Rarity Unique
+	BaseType == "Ambush Mitts" "Blunt Arrow Quiver" "Brass Maul" "Callous Mask" "Citadel Bow" "Clasped Boots" "Cleaver" "Coral Ring" "Crude Bow" "Crusader Plate" "Crystal Wand" "Cutlass" "Death Bow" "Despot Axe" "Elegant Ringmail" "Elegant Sword" "Fire Arrow Quiver" "Gilded Sallet" "Gnarled Branch" "Goathide Gloves" "Gold Amulet" "Great Mallet" "Imperial Claw" "Iron Circlet" "Iron Hat" "Iron Mask" "Iron Staff" "Ironscale Boots" "Jade Hatchet" "Jagged Maul" "Latticed Ringmail" "Leather Hood" "Long Bow" "Ornate Sword" "Painted Buckler" "Pinnacle Tower Shield" "Plank Kite Shield" "Plate Vest" "Prismatic Ring" "Reaver Sword" "Reinforced Greaves" "Royal Bow" "Royal Staff" "Rusted Sword" "Rustic Sash" "Scholar Boots" "Serrated Arrow Quiver" "Sharktooth Arrow Quiver" "Skinning Knife" "Sledgehammer" "Spiraled Wand" "Strapped Leather" "Velvet Gloves" "Velvet Slippers" "Vine Circlet" "War Buckler" "Wild Leather" "Woodsplitter"
+
+Show # $type->unique $tier->hideable
+	Rarity Unique
+	BaseType == "Abyssal Axe" "Ancient Gauntlets" "Antique Greaves" "Antique Rapier" "Assassin's Garb" "Auric Mace" "Aventail Helmet" "Awl" "Baroque Round Shield" "Basket Rapier" "Bastard Sword" "Bone Armour" "Boot Blade" "Boot Knife" "Branded Kite Shield" "Brass Spirit Shield" "Bronze Gauntlets" "Bronze Sceptre" "Bronzescale Gauntlets" "Buckskin Tunic" "Burnished Spiked Shield" "Chain Gloves" "Chiming Spirit Shield" "Close Helmet" "Coiled Staff" "Colossal Tower Shield" "Compound Spiked Shield" "Conjurer Boots" "Conjurer Gloves" "Conquest Chainmail" "Copper Plate" "Corrugated Buckler" "Corsair Sword" "Crusader Chainmail" "Crystal Belt" "Crystal Sceptre" "Cutthroat's Garb" "Decimation Bow" "Decorative Axe" "Deerskin Boots" "Deicide Mask" "Demon's Horn" "Desert Brigandine" "Destiny Leather" "Destroyer Regalia" "Diamond Flask" "Dragonscale Boots" "Dragonscale Gauntlets" "Dread Maul" "Dream Mace" "Driftwood Wand" "Dusk Blade" "Eelskin Gloves" "Elder Sword" "Elegant Foil" "Embroidered Gloves" "Engraved Wand" "Estoc" "Ezomyte Axe" "Festival Mask" "Flaying Knife" "Fright Claw" "Full Dragonscale" "Full Scale Armour" "Goat's Horn" "Golden Mask" "Goliath Gauntlets" "Great Helmet" "Greater Mana Flask" "Grinning Fetish" "Gut Ripper" "Hallowed Hybrid Flask" "Harmonic Spirit Shield" "Headsman Axe" "Highland Blade" "Imbued Wand" "Imperial Staff Piece" "Infernal Axe" "Iron Gauntlets" "Iron Sceptre" "Ivory Spirit Shield" "Jagged Foil" "Karui Sceptre" "Laminated Kite Shield" "Large Hybrid Flask" "Lathi" "Legion Boots" "Legion Sword Piece" "Lion Sword" "Lunaris Circlet" "Marble Amulet" "Mesh Boots" "Mesh Gloves" "Military Staff" "Mosaic Kite Shield" "Nailed Fist" "Necromancer Silks" "Nubuck Gloves" "Opal Sceptre" "Ornate Mace" "Ornate Ringmail" "Pine Buckler" "Plague Mask" "Plated Greaves" "Platinum Kris" "Platinum Sceptre" "Poleaxe" "Polished Spiked Shield" "Primordial Staff" "Quartz Wand" "Quicksilver Flask" "Recurve Bow" "Reinforced Tower Shield" "Riveted Boots" "Rock Breaker" "Rotted Round Shield" "Royal Skean" "Sabre" "Sage's Robe" "Saintly Chainmail" "Samite Gloves" "Samnite Helmet" "Satin Gloves" "Scholar's Robe" "Secutor Helm" "Serpentine Staff" "Serpentscale Gauntlets" "Shadow Axe" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Short Bow" "Silk Slippers" "Simple Robe" "Slaughter Knife" "Slink Gloves" "Soldier Boots" "Sorcerer Gloves" "Sovereign Spiked Shield" "Spidersilk Robe" "Spiked Club" "Spike-Point Arrow Quiver" "Steel Gauntlets" "Steel Kite Shield" "Stiletto" "Strapped Boots" "Studded Round Shield" "Sundering Axe" "Supreme Spiked Shield" "Teak Round Shield" "Terror Maul" "Thresher Claw" "Throat Stabber" "Tiger Sword" "Tomahawk" "Tribal Circlet" "Tricorne" "Twilight Blade" "Ursine Pelt" "Vaal Buckler" "Vaal Claw" "Vanguard Belt" "Vile Staff" "Visored Sallet" "War Sword" "Whalebone Rapier" "Wool Gloves" "Wool Shoes" "Wrapped Mitts" "Wyrmscale Gauntlets" "Zealot Helmet"
+
+Show # $type->unique $tier->restex
+	Rarity Unique
+
+#===============================================================================================================
+# [[4900]] Misc Map Items
+#===============================================================================================================
+
+Show # $type->miscmapitems $tier->relickeys
+	Class "Misc Map Items"
+	BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key"
+
+Show # $type->miscmapitems $tier->any
+	Class "Misc Map Items"
+
+#===============================================================================================================
+# [[4900]] Questlike-Items2
+#===============================================================================================================
+
+Show # $type->questlike $tier->labyrinthconsumable
+	Class "Labyrinth"
+
+Show # $type->questlike $tier->incursionconsumable
+	Class "Incursion Item"
+
+Show # $type->questlike $tier->questitems
+	Class "Pantheon Soul" "Quest"
