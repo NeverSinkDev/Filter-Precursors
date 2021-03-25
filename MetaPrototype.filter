@@ -104,8 +104,8 @@ Section Influenced : Rarity <= Rare
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
-	Show ExoticHeistBases { BaseType == bases_exoticHeistLower bases_exoticHeistHigher }
-	Show ExoticRitualBases { BaseType == bases_exoticRitual }
+	Show ExoticHeistBases { BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticRitualBases { BaseType == bases.exotic.ritual.any }
 	Show ExoticTalismanBases { BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 }
 
@@ -371,7 +371,7 @@ Section ExoticVariations
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
-			Show SynthSelected { BaseType bases_exoticSynthesised }
+			Show SynthSelected { BaseType bases.crafting.synthesised.any }
 			Show SynthClasses { Class classes_synth }
 			Show SynthRandom { Empty(); }
 		}
@@ -380,7 +380,7 @@ Section ExoticVariations
 #------------------------------------		
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
-			Show FractSelected { BaseType bases_exoticFractured }
+			Show FractSelected { BaseType bases.crafting.fractured.any }
 			Show FractClasses { Class classes_fract }
 			Show FractRandom { Empty(); }
 		}
@@ -479,9 +479,9 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
 	{
-		Show t1 { BaseType bases_crafting_t1; }
-		Show t2 { BaseType bases_crafting_t2; }
-		Show t3 { BaseType bases_crafting_t3; }
+		Show t1 { BaseType bases.crafting.general.t1; }
+		Show t2 { BaseType bases.crafting.general.t2; }
+		Show t3 { BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -490,9 +490,9 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84
 	{
-		Show t1 { BaseType bases_crafting_t1; }
-		Show t2 { BaseType bases_crafting_t2; }
-		Show t3 { BaseType bases_crafting_t3; }
+		Show t1 { BaseType bases.crafting.general.t1; }
+		Show t2 { BaseType bases.crafting.general.t2; }
+		Show t3 { BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -501,9 +501,9 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 60
 	{
-		Show t1 { BaseType bases_crafting_t1; }
-		Show t2 { BaseType bases_crafting_t2; }
-		Show t3 { BaseType bases_crafting_t3; }
+		Show t1 { BaseType bases.crafting.general.t1; }
+		Show t2 { BaseType bases.crafting.general.t2; }
+		Show t3 { BaseType bases.crafting.general.t3; }
 	}
 
 	Cont RareDecoratorRemover { Empty(); }
@@ -545,8 +545,8 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 
 Section Chancing : Clean(), Rarity Normal, Auto("chancing")
 {
-	Show hh { BaseType == "Leather Belt"; }
-	Show t2 { BaseType == bases_chancing; }
+	Show hh { BaseType == bases.chancing.higher; }
+	Show t2 { BaseType == bases.chancing.any; }
 }
 
 #===============================================================================================================
@@ -559,8 +559,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 66
 #------------------------------------
 	Section HighQualityEndgameFlasks : Quality >= 15
 	{
-		Show HighQualUtility { AreaLevel <= 77; BaseType bases_utilityflasksasorted; }
-		Show HighQUalLifeMana { AreaLevel <= 72; BaseType bases_flaskslifemanaasorted; }
+		Show HighQualUtility { AreaLevel <= 77; BaseType bases.flask.utilityassorted; }
+		Show HighQUalLifeMana { AreaLevel <= 72; BaseType bases.flask.lifemanaassorted; }
 	}
 
 	Section 20QualEndgameFlasks : Quality >= 20
@@ -572,7 +572,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 66
 #------------------------------------
 	Section UtilityEndgameFlasks
 	{
-		Show AsortedUtility { BaseType bases_utilityflasksasorted; AreaLevel <= 77; }
+		Show AsortedUtility { BaseType bases.flask.utilityassorted; AreaLevel <= 77; }
 		Show AnyUtility { Class "Utility Flasks"; AreaLevel <= 72; }
 	}
 
@@ -584,7 +584,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 66
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
 #------------------------------------
-	Section EarlyMappingLifeManaFlasks : BaseType bases_flaskslifemanaasorted
+	Section EarlyMappingLifeManaFlasks : BaseType bases.flask.lifemanaassorted
 	{
 		Show EarlyMappingLifeMana { AreaLevel <= 69; }
 	}
@@ -639,16 +639,16 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman")
 	{
-		Show T1AttackTalisman { BaseType bases_talismans_attack + bases_talismans_universal; Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=3 top2base + merged_amu_attack2 + universal2 }
-		Show T1CasterTalisman { BaseType bases_talismans_caster + bases_talismans_universal; Mod amu_life[2] + "Dazzling" "Resplendent";  Mod >=3 top2base + merged_amu_caster2 + universal2 + amu_esp[2]; }
-		Show T2AttackTalisman { BaseType bases_talismans_attack + bases_talismans_universal + bases_talismans_damagetypes; Mod amu_life[3] + "Dazzling" "Resplendent"; Mod >=3 top3base + merged_amu_attack3 + universal3 }
-		Show T2CasterTalisman { BaseType bases_talismans_caster + bases_talismans_universal + bases_talismans_damagetypes; Mod amu_life[3] + "Dazzling" "Resplendent";  Mod >=3 top3base + merged_amu_caster3 + universal3 + amu_esp[2]; }
+		Show T1AttackTalisman { BaseType bases.talismans.attack.any + bases.talismans.universal.any; Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=3 top2base + merged_amu_attack2 + universal2 }
+		Show T1CasterTalisman { BaseType bases.talismans.caster.any + bases.talismans.universal.any; Mod amu_life[2] + "Dazzling" "Resplendent";  Mod >=3 top2base + merged_amu_caster2 + universal2 + amu_esp[2]; }
+		Show T2AttackTalisman { BaseType bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod amu_life[3] + "Dazzling" "Resplendent"; Mod >=3 top3base + merged_amu_attack3 + universal3 }
+		Show T2CasterTalisman { BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod amu_life[3] + "Dazzling" "Resplendent";  Mod >=3 top3base + merged_amu_caster3 + universal3 + amu_esp[2]; }
 
-		Show T1StatTalisman { BaseType bases_eg_rares_talismans_stats; Mod amu_life[2]; Mod amu_allat[3]; Mod str[2] + dex[2] + int[2]; }
-		Show T2StatTalisman { BaseType bases_eg_rares_talismans_stats; Mod amu_allat[3]; Mod str[3] + dex[3] + int[3]; }
+		Show T1StatTalisman { BaseType bases.talismans.stats.any; Mod amu_life[2]; Mod amu_allat[3]; Mod str[2] + dex[2] + int[2]; }
+		Show T2StatTalisman { BaseType bases.talismans.stats.any; Mod amu_allat[3]; Mod str[3] + dex[3] + int[3]; }
 
 		Show T3DecentModsTalisman { BaseType "Talisman"; Mod >= 3 amu_life[3] + top2base + merged_amu_attack3 + merged_amu_caster3 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent"; }
-		Show T3DecentTypeTalisman { BaseType bases_talismans_universal + bases_talismans_attack + bases_talismans_caster };
+		Show T3DecentTypeTalisman { BaseType bases.talismans.universal.any + bases.talismans.attack.any + bases.talismans.attack.any };
 
 		Show Any { BaseType "Talisman"; Empty(); }
 	}
@@ -658,16 +658,16 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 	Section EndgameRareRingsAmulets : Class "Rings" "Amulets", Auto("rr->amuring")
 	{
-		Show T1 { BaseType bases_eg_rares_ringsamu_t1; }
-		Show T2 { BaseType bases_eg_rares_ringsamu_t2; }
-		Show T3 { BaseType bases_eg_rares_ringsamu_t3; }
+		Show T1 { BaseType bases.rares.eg.ringsamu.t1; }
+		Show T2 { BaseType bases.rares.eg.ringsamu.T2; }
+		Show T3 { BaseType bases.rares.eg.ringsamu.t3; }
 	}
 
 	Section EndgameRareBelts : Class "Belts", Auto("rr->belts")
 	{
-		Show T1 { BaseType bases_eg_rares_belts_t1; }
-		Show T2 { BaseType bases_eg_rares_belts_t2; }
-		Show T3 { BaseType bases_eg_rares_belts_t3; }
+		Show T1 { BaseType bases.rares.eg.belts.t1; }
+		Show T2 { BaseType bases.rares.eg.belts.t2; }
+		Show T3 { BaseType bases.rares.eg.belts.t3; }
 	}
 
 #===============================================================================================================
@@ -675,14 +675,14 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1weapons { BaseType bases_eg_rares_t1_weapons }
-		Show T1armours { BaseType bases_eg_rares_t1_armours }
+		Show T1weapons { BaseType bases.rares.eg.t1.weapons }
+		Show T1armours { BaseType bases.rares.eg.t1.armours }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
-		Show T2weapons { BaseType bases_eg_rares_t2_weapons }
-		Show T2armours { BaseType bases_eg_rares_t2_armours }
+		Show T2weapons { BaseType bases.rares.eg.t2.weapons }
+		Show T2armours { BaseType bases.rares.eg.t2.armours }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
@@ -735,9 +735,9 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 	Section HeistCloak : Class "Heist Cloak", Auto("Heist->Cloak")
 	{
-		Show t1highlevel { BaseType bases_t1_heist_cloak; ItemLevel >= levels_t1_heist_cloak; }
-		Show t1 { BaseType bases_t1_heist_cloak; }
-		Show t2 { BaseType bases_t2_heist_cloak; }
+		Show t1highlevel { BaseType bases.heist.cloak.t1; ItemLevel >= levels_t1_heist_cloak; }
+		Show t1 { BaseType bases.heist.cloak.t1; }
+		Show t2 { BaseType bases.heist.cloak.t2; }
 		Show t3any { Empty(); }
 	}
 #------------------------------------
@@ -745,9 +745,9 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 	Section HeistBrooch : Class "Heist Brooch", Auto("Heist->Brooch")
 	{
-		Show t1highlevel { BaseType bases_t1_heist_brooch; ItemLevel >= levels_t1_heist_brooch; }
-		Show t1 { BaseType bases_t1_heist_brooch; }
-		Show t2 { BaseType bases_t2_heist_brooch; }
+		Show t1highlevel { BaseType bases.heist.brooch.t1; ItemLevel >= levels_t1_heist_brooch; }
+		Show t1 { BaseType bases.heist.brooch.t1; }
+		Show t2 { BaseType bases.heist.brooch.t2; }
 		Show t3any { Empty(); }
 	}
 #------------------------------------
@@ -755,9 +755,9 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 	Section HeistGear : Class "Heist Gear", Auto("Heist->Gear")
 	{
-		Show t1highlevel { BaseType bases_t1_heist_gear; ItemLevel >= levels_t1_heist_gear; }
-		Show t1 { BaseType bases_t1_heist_gear; }
-		Show t2 { BaseType bases_t2_heist_gear; }
+		Show t1highlevel { BaseType bases.heist.gear.t1; ItemLevel >= levels_t1_heist_gear; }
+		Show t1 { BaseType bases.heist.gear.t1; }
+		Show t2 { BaseType bases.heist.gear.t2; }
 		Show t3any { Empty(); }
 	}
 #------------------------------------
@@ -765,9 +765,9 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 	Section HeistTools : Class "Heist Tool", Auto("Heist->Tool")
 	{
-		Show t1highlevel { BaseType bases_t1_heist_tool; ItemLevel >= levels_t1_heist_tool; }
-		Show t1 { BaseType bases_t1_heist_tool; }
-		Show t2 { BaseType bases_t2_heist_tool; }
+		Show t1highlevel { BaseType bases.heist.tool.t1; ItemLevel >= levels_t1_heist_tool; }
+		Show t1 { BaseType bases.heist.tool.t1; }
+		Show t2 { BaseType bases.heist.tool.t2; }
 		Show t3any { Empty(); }
 	}
 }
@@ -799,12 +799,12 @@ Section Gems : Class "Gems"
 #------------------------------------
 	Section GemsSpecial : Auto("gems-special")
 	{
-		Show ex6lvlgems { BaseType leveledGems6; GemLevel >= 6; }
+		Show ex6lvlgems { BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
 
-		Show exSpecialE4 { BaseType specialEGems; GemLevel >= 4; }
-		Show exSpecialE2 { BaseType specialEGems; GemLevel >= 2; }
-		Show exSpecialEQ { BaseType specialEGems; Quality >= 15; Corrupted False; }
-		Show exSpecial { BaseType specialGems; }
+		Show exSpecialE4 { BaseType gems.untiered.empowerclassgems; GemLevel >= 4; }
+		Show exSpecialE2 { BaseType gems.untiered.empowerclassgems; GemLevel >= 2; }
+		Show exSpecialEQ { BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
+		Show exSpecial { BaseType gems.untiered.specialGems; }
 	}
 #------------------------------------
 # [3902] Gems during leveling
@@ -845,10 +845,10 @@ Section Gems : Class "Gems"
 #===============================================================================================================
 Section Replicas : Auto("unique->replicas"), Replica True, Rarity Unique
 {
-	Show t1 { BaseType uniquereplicas.t1; }
-	Show t2 { BaseType uniquereplicas.t2; }
-	Show multi { BaseType uniquereplicas.multi; }
-	Show t3 { BaseType uniquereplicas.t3; }
+	Show t1 { BaseType uniques.replicas.t1; }
+	Show t2 { BaseType uniques.replicas.t2; }
+	Show multi { BaseType uniques.replicas.multi; }
+	Show t3 { BaseType uniques.replicas.t3; }
 	Show restex { Empty(); }
 }
 
@@ -862,11 +862,11 @@ Section Maps : Class "Maps"
 #------------------------------------
 	Section UniqueMaps : Rarity Unique, Auto("unique->maps")
 	{
-		Show ex { BaseType unique.maps.ex; MapTier 16; }
-		Show t1 { BaseType unique.maps.t1; }
-		Show t2 { BaseType unique.maps.t2; }
-		Show t3 { BaseType unique.maps.t3; }
-		Show t4 { BaseType unique.maps.t4; }
+		Show ex { BaseType uniques.maps.ex; MapTier 16; }
+		Show t1 { BaseType uniques.maps.t1; }
+		Show t2 { BaseType uniques.maps.t2; }
+		Show t3 { BaseType uniques.maps.t3; }
+		Show t4 { BaseType uniques.maps.t4; }
 		Show restex { Empty(); }
 	}
 
