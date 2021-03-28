@@ -371,7 +371,7 @@ Section ExoticVariations
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
-			Show SynthSelected { BaseType bases.crafting.synthesised.any }
+			Show SynthSelected { BaseType bases.crafting.synthesised.t1 }
 			Show SynthClasses { Class classes_synth }
 			Show SynthRandom { Empty(); }
 		}
@@ -380,7 +380,7 @@ Section ExoticVariations
 #------------------------------------		
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
-			Show FractSelected { BaseType bases.crafting.fractured.any }
+			Show FractSelected { BaseType bases.crafting.fractured.t1 }
 			Show FractClasses { Class classes_fract }
 			Show FractRandom { Empty(); }
 		}
@@ -658,16 +658,16 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 	Section EndgameRareRingsAmulets : Class "Rings" "Amulets", Auto("rr->amuring")
 	{
-		Show T1 { BaseType bases.rares.eg.ringsamu.t1; }
-		Show T2 { BaseType bases.rares.eg.ringsamu.T2; }
-		Show T3 { BaseType bases.rares.eg.ringsamu.t3; }
+		Show T1 { BaseType bases.rares.jwl.ringsamu.t1; }
+		Show T2 { BaseType bases.rares.jwl.ringsamu.T2; }
+		Show T3 { BaseType bases.rares.jwl.ringsamu.t3; }
 	}
 
 	Section EndgameRareBelts : Class "Belts", Auto("rr->belts")
 	{
-		Show T1 { BaseType bases.rares.eg.belts.t1; }
-		Show T2 { BaseType bases.rares.eg.belts.t2; }
-		Show T3 { BaseType bases.rares.eg.belts.t3; }
+		Show T1 { BaseType bases.rares.jwl.belts.t1; }
+		Show T2 { BaseType bases.rares.jwl.belts.t2; }
+		Show T3 { BaseType bases.rares.jwl.belts.t3; }
 	}
 
 #===============================================================================================================
