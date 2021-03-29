@@ -1313,6 +1313,8 @@ Section Unique : Rarity Unique, Auto("unique")
 #------------------------------------	
 	Show t3boss { BaseType == uniques.generic.t3boss; }
 	Show t3 { BaseType == uniques.generic.t3; }
+
+	ShowD recipeUniqueRings { Class "Rings"; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
@@ -1364,11 +1366,11 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 # [6002] Utility Flasks
 #------------------------------------
 
-Section LevelingUtilityFlasks : Class "Utility Flask"
+Section LevelingUtilityFlasks
 {
-	Show EarlySpeedFlasks { BaseType "Quicksilver Flask" "Silver Flask"; AreaLevel <= 35; }
+	Show Quicksilver { BaseType "Quicksilver Flask"; }
 	Show AsortedUtility { BaseType bases.flask.utilityassorted; }
-	Show AnyUtility { Class "Utility Flasks"; }
+	Show Any { Class "Utility Flask"; }
 }
 
 #------------------------------------
