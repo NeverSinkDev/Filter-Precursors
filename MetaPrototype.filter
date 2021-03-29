@@ -330,7 +330,9 @@ Section ExoticItemClasses
 #------------------------------------	
 	Section Invitations : Rarity <= Rare, Auto("exotic->invitation")
 	{
-		Show CraftableInvitation { BaseType == bases_watchstones }
+		Show T1 { BaseType == exotic.invitations.t1 }
+		Show T2 { BaseType == exotic.invitations.t1 }
+		Show T3 { BaseType == exotic.invitations.t3 }
 	}	
 #------------------------------------
 #   [1234] Secret Society Equipment
@@ -552,7 +554,7 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing")
 #===============================================================================================================
 # [[0200]] Endgame Flasks
 #===============================================================================================================
-Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 66
+Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 {
 #------------------------------------
 # [2701] High quality assorted flasks
@@ -598,6 +600,14 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
 {
 	Show Overquality { Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armour" "Boots" "Gloves" "Helmets"; }
+}
+
+Section AnimatedWeapons : Auto("AnimatedWeapons")
+{
+	ShowD normalmelee { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves";}
+	ShowD normalranged { Rarity Normal; Class "Bows" "Wands";}
+	ShowD magicmelee { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves";}
+	ShowD magicranged { Rarity Magic; Class "Bows" "Wands";}
 }
 
 #===============================================================================================================
@@ -786,8 +796,8 @@ Section Gems : Class "Gems"
 		Show AwaT1 { BaseType gems.t1awa; }
 		Show AwaAny { BaseType "Awakened"; }
 		Show DivT1 { GemQualityType Divergent; BaseType gems.t1div; }
-		Show PhaT1 { GemQualityType Phantasmal; BaseType gems.t1pha; }
 		Show AnoT1 { GemQualityType Anomalous; BaseType gems.t1ano; }
+		Show PhaT1 { GemQualityType Phantasmal; BaseType gems.t1pha; }
 		Show AltAny { AlternateQuality True; }
 		Show 2020z { Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
 		Show 2120 { Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120 }
@@ -1295,6 +1305,7 @@ Section Unique : Rarity Unique, Auto("unique")
 # While others are cheap. We give them a high quality display, while making a normal unique
 # Sound to prevent false excitement.
 	Show multispecial { BaseType == uniques.generic.multispecial; }
+	Show earlyleague { BaseType == uniques.generic.earlyleague; }
 	Show highvinktar { BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	Show exjewels { BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Class "Jewel"; }
 #------------------------------------
@@ -1329,4 +1340,177 @@ Section Questlike : Auto("Questlike")
 	Show LabyrinthConsumable { Class "Labyrinth"; }
 	Show IncursionConsumable { Class "Incursion Item"; }
 	Show QuestItems { Class "Pantheon Soul" "Quest"; }
+}
+
+#===============================================================================================================
+# [[6000]] Hide outdated leveling flasks
+#===============================================================================================================
+
+Section HideLayer3 : Auto("HideLayer"), Quality 0, Class "Life Flask" "Mana Flask"
+{
+	Hide OutdatedLevelFlaskA { AreaLevel >= 15; BaseType "Large" "Medium" "Small"; }
+	Hide OutdatedLevelFlaskB { AreaLevel >= 30; BaseType "Grand" "Greater"; }
+	Hide OutdatedLevelFlaskC { AreaLevel >= 48; BaseType "Colossal" "Giant" "Sacred"; }
+	Hide OutdatedLevelFlaskD { AreaLevel >= 60; BaseType "Hallowed" "Sanctified"; }
+}
+
+#===============================================================================================================
+# [[6000]] Leveling - Flasks
+#===============================================================================================================
+
+Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
+
+#------------------------------------
+# [6002] Utility Flasks
+#------------------------------------
+
+Section LevelingUtilityFlasks : Class "Utility Flask"
+{
+	Show EarlySpeedFlasks { BaseType "Quicksilver Flask" "Silver Flask"; AreaLevel <= 35; }
+	Show AsortedUtility { BaseType bases.flask.utilityassorted; }
+	Show AnyUtility { Class "Utility Flasks"; }
+}
+
+#------------------------------------
+# [6002] Hybrid flasks
+#------------------------------------
+Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid")
+{
+	Show t1 {FlaskHighlight(20, "Small");}
+	Show t2 {FlaskHighlight(30, "Medium");}
+	Show t3 {FlaskHighlight(40, "Large");}
+	Show t4 {FlaskHighlight(50, "Colossal");}
+	Show t5 {FlaskHighlight(60, "Sacred");}
+	Show t6 {FlaskHighlight(67, "Hallowed");}
+}
+
+#------------------------------------
+# [6002] Life flasks
+#------------------------------------
+Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life")
+{
+	Show t1 {FlaskHighlight(5, "Small");}
+	Show t2 {FlaskHighlight(8, "Medium");}
+	Show t3 {FlaskHighlight(13, "Large");}
+	Show t4 {FlaskHighlight(19, "Greater");}
+	Show t5 {FlaskHighlight(25, "Grand");}
+	Show t6 {FlaskHighlight(31, "Giant");}
+	Show t7 {FlaskHighlight(43, "Colossal");}
+	Show t8 {FlaskHighlight(30, "Sacred");}
+	Show t9 {FlaskHighlight(51, "Hallowed");}
+	Show t10 {FlaskHighlight(60, "Sanctified");}
+	Show t11 {FlaskHighlight(68, "Divine");}
+	Show t12 {FlaskHighlight(68, "Eternal");}
+}
+
+#------------------------------------
+# [6002] Mana flasks
+#------------------------------------
+Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
+{
+	Show t1 {FlaskHighlight(5, "Small");}
+	Show t2 {FlaskHighlight(8, "Medium");}
+	Show t3 {FlaskHighlight(13, "Large");}
+	Show t4 {FlaskHighlight(19, "Greater");}
+	Show t5 {FlaskHighlight(25, "Grand");}
+	Show t6 {FlaskHighlight(31, "Giant");}
+	Show t7 {FlaskHighlight(43, "Colossal");}
+	Show t8 {FlaskHighlight(30, "Sacred");}
+	Show t9 {FlaskHighlight(51, "Hallowed");}
+	Show t10 {FlaskHighlight(60, "Sanctified");}
+	Show t11 {FlaskHighlight(68, "Divine");}
+	Show t12 {FlaskHighlight(68, "Eternal");}
+}
+
+#===============================================================================================================
+# [[6000]] Leveling - Rules
+#===============================================================================================================
+
+#------------------------------------
+# [6002] Links and Sockets
+#------------------------------------
+
+Section Leveling4LinkedGear : LinkedSockets >= 4
+{
+	Show general { Empty(); }
+}
+
+Section RGBGear : SocketGroup "RGB"
+{
+	Show general { Empty(); }
+}
+
+#------------------------------------
+# [6002] Rares
+#------------------------------------
+
+Section LevelingRareGear : Rarity Rare
+{
+	Section Universal : Auto("Leveling->Rare->universal")
+	{
+		Show Trinkets { Class == leveling.classes.jwlry; }
+	}
+
+	Section Armour : Auto("Leveling->Rare->armours")
+	{
+		Show General { Class == leveling.classes.armour; }
+		Show Shields { Class == "Shields"; }
+	}
+	
+	Section Caster : Auto("Leveling->Rare->caster")
+	{
+		Show General { Class == leveling.classes.caster; }
+	}
+
+	Section Archer : Auto("Leveling->Rare->archer")
+	{
+		Show General { Class == leveling.classes.archer; }
+	}
+
+	Section Melee : Auto("Leveling->Rare->melee")
+	{
+		Show General { Class == leveling.classes.melee; }
+	}
+}
+
+#===============================================================================================================
+# [[6400]] Leveling - Useful items
+#===============================================================================================================
+
+Section LevelingMiscGear : Rarity <= Magic
+{
+	Section ThreeLinkedGear : LinkedSockets >= 3
+	{
+		Show General { AreaLevel <= leveling.keylevels.threelink; }
+	}
+
+	Section Act1 : AreaLevel <= leveling.keylevels.act1
+	{
+		Show General { BaseType leveling.bases.act1.general; }
+		Show Boots { Class "Boots"; }
+		Show Jwlry { Class classes_jwlry; }
+		Show Caster { Class leveling.classes.caster - "Staves" }
+	}
+	
+	Section Act2 : AreaLevel <= leveling.keylevels.act2
+	{
+		Show Boots { Class "Boots"; }
+		Show Jwlry { Class classes_jwlry; }
+	}
+
+	Section Act3 : AreaLevel <= leveling.keylevels.act3
+	{
+		Show Jwlry { Class classes_jwlry; }
+	}
+}
+
+#===============================================================================================================
+# [[6400]] Leveling - First Levels and Vendor Items
+#===============================================================================================================
+
+Section FirstLevels
+{
+	Show ThreeSocketedGear { Rarity <= Magic; Sockets >= 3; ItemLevel <= 8; Class "Boots" "Gloves" "Helmets" "Shields"; }
+	Show FirstAreas { AreaLevel <= 3; Rarity Normal; }
+	Show EarlyBodyArmours { AreaLevel <= 5; Rarity Normal; Class "Body Armours"; %D0 }
 }
