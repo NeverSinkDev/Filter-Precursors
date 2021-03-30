@@ -15,7 +15,7 @@ Func Clean(){ Corrupted False; }
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
-	Show arm { Corrupted False; Class "Body Armour"; }
+	Show arm { Corrupted False; Class "Body Armours"; }
 	Show wep { Empty(); }
 }
 
@@ -115,8 +115,8 @@ Section Influenced : Rarity <= Rare
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
-	Show ExoticHeistBases { BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
-	Show ExoticRitualBases { BaseType == bases.exotic.ritual.any }
+	Show ExoticHeistBases { BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticRitualBases { BaseType bases.exotic.ritual.any }
 	Show ExoticTalismanBases { BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 }
 
@@ -256,7 +256,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Jewels
 #------------------------------------	
-		Section Jewels : Class "Jewels"
+		Section Jewels : Class "Jewel"
 		{
 			Show PotentiallyValuableJewel { Mod >= 3 jewels_priority + jewels_general + jewels_mult + jewels_minion }
 		}
@@ -300,9 +300,9 @@ Section IdModSection : IdMods
 #   [1234] Incursion/Temple Mods
 #------------------------------------
 		Show IncursionSpeedTraps { Mod "Matatl's"; Class "Boots"; }
-		Show IncursionLifeChest  { Mod "Guatelitzi's"; Class "Body Armour"; }
-		Show IncursionSumonner   { Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptre" "Staves" "Wand"; }
-		Show IncursionCaster     { Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptre" "Staves" "Wand"; }
+		Show IncursionLifeChest  { Mod "Guatelitzi's"; Class "Body Armours"; }
+		Show IncursionSumonner   { Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionCaster     { Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptres" "Staves" "Wands"; }
 		Show IncursionElemental  { Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
 		Show IncursionAttack     { Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
 		Show IncursionGloveHelm  { Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
@@ -343,7 +343,7 @@ Section ExoticItemClasses
 #------------------------------------	
 	Section Watchstones : Rarity <= Rare, Auto("exotic->watchstones")
 	{
-		Show CraftableWatchstone { BaseType == bases_watchstones }
+		Show CraftableWatchstone { BaseType bases_watchstones }
 	}
 #------------------------------------
 #   [1234] Craftable Invitations
@@ -426,7 +426,7 @@ Section ExoticVariations
 # [[0200]] Jewels
 #===============================================================================================================
 #!! Chapter "Endgame crafting and recipe items"
-#!! Override 110 : "jewels"
+#!! Override 110 : "Jewel"
 
 Section Jewels
 {
@@ -568,8 +568,8 @@ Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 67, Auto("En
 {
 	Show RGBSmall1	{ Width <=2; Height <=2; }
 	Show RGBSmall2	{ Width <=1; Height <=4; }
-	Show RGBLarge	{ Width >=2; Height >=4; }
-	Show RGBMedium	{ Empty(); }
+	ShowD RGBLarge	{ Width >=2; Height >=4; }
+	Show RGBMedium	{ Width >=2; Height = 3; }
 }
 #------------------------------------
 # [1234] Chisel Recipes
@@ -647,7 +647,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
 {
 	Show Overquality { Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
-	Show EarlyEndgame4Link { LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armour" "Boots" "Gloves" "Helmets"; }
+	Show EarlyEndgame4Link { LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
 Section AnimatedWeapons : Auto("AnimatedWeapons")
@@ -1088,7 +1088,7 @@ Section MapFragments : Class "Map Fragments"
 		Show t2 { BaseType fragments.scarabs.t2; }
 		Show t3 { BaseType fragments.scarabs.t3; }
 		Show t4 { BaseType fragments.scarabs.t4; }
-		Show restex { BaseType "Scarab;"; }
+		Show restex { BaseType "Scarab"; }
 	}
 
 #------------------------------------
@@ -1151,7 +1151,7 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67
 {
-	Show essences { BaseType == currency.leveling.essences; }
+	Show essences { BaseType currency.leveling.essences; }
 	Show trans { BaseType == currency.leveling.trans; }
 	Show aug { BaseType == currency.leveling.aug; }
 	Show portal { BaseType == currency.leveling.portal; }
@@ -1254,12 +1254,12 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency"
 
 Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
 {
-	Show t1 { BaseType == currency.essence.t1; }
-	Show t2 { BaseType == currency.essence.t2; }
-	Show t3 { BaseType == currency.essence.t3; }
-	Show t4 { BaseType == currency.essence.t4; }
-	Show t5 { BaseType == currency.essence.t5; }
-	Show t6 { BaseType == currency.essence.t6; }
+	Show t1 { BaseType currency.essence.t1; }
+	Show t2 { BaseType currency.essence.t2; }
+	Show t3 { BaseType currency.essence.t3; }
+	Show t4 { BaseType currency.essence.t4; }
+	Show t5 { BaseType currency.essence.t5; }
+	Show t6 { BaseType currency.essence.t6; }
 }
 
 #------------------------------------
@@ -1286,7 +1286,7 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator"
 Section CurrencyExotic : Auto("currency->others"), Class "Currency"
 {
 	Show harbinger { BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
-	Show misc { BaseType == "Cartographer's Seal" "Imprint" "Unshaping Orb"; }
+	Show misc { BaseType "Cartographer's Seal" "Imprint" "Unshaping Orb"; }
 }
 
 #===============================================================================================================
@@ -1554,25 +1554,19 @@ Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
 # [6002] Links and Sockets
 #------------------------------------
 
-Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->SocketsLinks")
+Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->Rare->SocketsLinks")
 {
-	Section Leveling4LinkedGear : LinkedSockets >= 4
-	{
-		Show 4linkgeneral { Empty(); }
-	}
-
-	Section RGBGear : SocketGroup "RGB"
-	{
-		Show RGBgeneral { Empty(); }
-	}
+	Show Chromatic4linkrares { LinkedSockets >= 4; SocketGroup "RGB"; }
+	Show 4linkrares { LinkedSockets >= 4; }
+	Show ChromaticItems { SocketGroup "RGB"; } 
 }
 
 #------------------------------------
-# [6002] Rares
+# [6002] Rares - Decorators
 #------------------------------------
 #!! Override 840 : "leveling: all rare rules"
 
-Section RareDecorator : Auto("Decorators->rarelvl"), ItemLevel <= 68
+Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), ItemLevel <= 68
 {
 	Cont LargeRares { Height >= 3; Width >= 2; }
 	Cont MediumRares1 { Height >= 3; Width = 1; }
@@ -1582,11 +1576,16 @@ Section RareDecorator : Auto("Decorators->rarelvl"), ItemLevel <= 68
 	Cont CorruptedRares { Corrupted True; }
 }
 
+#------------------------------------
+# [6002] Rares - Universal
+#------------------------------------
+
 Section LevelingRareGear : Rarity Rare
 {
 	Section Universal : Auto("Leveling->Rare->universal")
 	{
-		Show Trinkets { Class == leveling.classes.jwlry; }
+		Show RusticSash { BaseType "Rustic Sash"; }
+		Show Jewellery { Class == leveling.classes.jwlry; }
 	}
 
 #!! Override 840 : "leveling: rare armours"
@@ -1598,6 +1597,9 @@ Section LevelingRareGear : Rarity Rare
 		Show Shields { Class == "Shields"; }
 	}
 
+#------------------------------------
+# [6002] Rares - Caster
+#------------------------------------
 #!! Override 850 : "leveling: class specific leveling weapons"
 
 	Section Caster : Auto("Leveling->Rare->caster")
@@ -1605,6 +1607,9 @@ Section LevelingRareGear : Rarity Rare
 		Show General { Class == leveling.classes.caster; }
 	}
 
+#------------------------------------
+# [6002] Rares - Archer
+#------------------------------------
 	Section Archer : Auto("Leveling->Rare->archer"), Class == leveling.classes.archer
 	{
 		Show l1 { ItemLevel <= 16 }
@@ -1619,6 +1624,9 @@ Section LevelingRareGear : Rarity Rare
 		Show General { Empty(); }
 	}
 
+#------------------------------------
+# [6002] Rares - Melee
+#------------------------------------
 	Section Melee : Auto("Leveling->Rare->melee"), Class == leveling.classes.melee
 	{
 		Show l1 { ItemLevel <= 16 }
@@ -1644,13 +1652,29 @@ Section LevelingRareGear : Rarity Rare
 }
 
 #===============================================================================================================
-# [[6400]] Leveling - Useful items
+# [[6400]] Leveling - Useful magic and normal items
 #===============================================================================================================
 #!! Chapter "Leveling - remaining normal and magic items"
-#!! Override 910 : "3 Linked Gear"
+#!! Override 910 : "Linked Gear"
 
+#------------------------------------
+# [6002] Purpose Picked Items
+#------------------------------------
 Section LevelingMiscGear : Rarity <= Magic
 {
+	Section FourLinkedGear : LinkedSockets >= 4, Auto("Leveling->NormalMagic->4L")
+	{
+		Show General { Empty(); }
+	}
+
+	Section Chromatic : Auto("Leveling->NormalMagic->RGB"), SocketGroup "RGB"
+	{
+		Show RGBSmall1	{ Width <=2; Height <=2; }
+		Show RGBSmall2	{ Width <=1; Height <=4; }
+		Show RGBLarge	{ Width >=2; Height >=4; AreaLevel <= leveling.keylevels.act3 }
+		Show RGBMedium	{ Width >=2; Height = 3; }
+	}
+
 	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L")
 	{
 		Show General { AreaLevel <= leveling.keylevels.threelink; }
@@ -1660,34 +1684,100 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1")
 	{
+		Show CasterCraftRings { BaseType leveling.bases.act1.craftrings; }
 		Show General { BaseType leveling.bases.act1.general; }
 		Show Boots { Class "Boots"; }
-		Show Jwlry { Class classes_jwlry; }
 		Show Caster { Class leveling.classes.caster - "Staves" }
+		Show Quivers { Class "Quivers" }
+		Show Physical { BaseType "Rustic Sash" "Iron Ring"; }
 	}
 	
-	Section Act2 : AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
+	Section Act2 : AreaLevel > leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
 	{
+		Show CasterCraftRings { BaseType leveling.bases.act1.craftrings; }
 		Show Boots { Class "Boots"; }
-		Show Jwlry { Class classes_jwlry; }
+		Show Physical { BaseType "Rustic Sash"; }
 	}
 
-	Section Act3 : AreaLevel <= leveling.keylevels.act3, Auto("Leveling->NormalMagic->act3")
+	Section LaterActs : Auto("Leveling->NormalMagic->otheracts")
 	{
-		Show Jwlry { Class classes_jwlry; }
+		Show FireResistGear { BaseType "Ruby Ring"; AreaLevel > leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
+		Show GeneralCrafting { AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
 	}
 }
 
-#===============================================================================================================
-# [[6400]] Leveling - First Levels and Vendor Items
-#===============================================================================================================
-#!! Override 930 : "Items for the first levels"
+#------------------------------------
+# [6002] Normals
+#------------------------------------
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
-	Show ThreeSocketedGear { Rarity <= Magic; Sockets >= 3; ItemLevel <= 8; Class "Boots" "Gloves" "Helmets" "Shields"; }
-	Show FirstAreas { AreaLevel <= 3; Rarity Normal; }
-	Show EarlyBodyArmours { AreaLevel <= 5; Rarity Normal; Class "Body Armours"; %D0 }
+	Show FirstAreas { AreaLevel <= 4; Rarity Normal; }
+	Show EarlyBodyArmours { AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; %D0 }
+	Show ThreeSocketedGear { Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
 }
 
-#!! Override 940 : "Remaining items"
+#------------------------------------
+# [6002] Weapon Progression
+#------------------------------------
+
+Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; }
+
+Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee leveling.classes.archer, Auto("Leveling->WeaponProgression")
+{
+	Show r01 { ProgressionRow(Normal, 9,5); }
+	Show r02 { ProgressionRow(Normal, 11,8); }
+	Show r03 { ProgressionRow(Normal, 14,11); }
+	Show r04 { ProgressionRow(Normal, 16,13); }
+	Show r05 { ProgressionRow(Normal, 18,16); }
+	Show r06 { ProgressionRow(Normal, 20,18); }
+	Show r07 { ProgressionRow(Normal, 22,20); }
+	Show r08 { ProgressionRow(Normal, 24,22); }
+	Show r09 { ProgressionRow(Normal, 26,24); }
+	Show r10 { ProgressionRow(Normal, 28,26); }
+	Show r11 { ProgressionRow(Normal, 30,28); }
+	Show r12 { ProgressionRow(Normal, 32,30); }
+	Show r13 { ProgressionRow(Normal, 34,32); }
+	Show r14 { ProgressionRow(Normal, 36,34); }
+	Show r15 { ProgressionRow(Normal, 40,38); }
+	Show r16 { ProgressionRow(Normal, 42,40); }
+	Show r17 { ProgressionRow(Normal, 44,42); }
+	Show r18 { ProgressionRow(Normal, 46,44); }
+	Show r19 { ProgressionRow(Normal, 48,46); }
+	Show r20 { ProgressionRow(Normal, 50,48); }
+	Show r21 { ProgressionRow(Normal, 52,50); }
+	Show r22 { ProgressionRow(Normal, 54,52); }
+	Show r23 { ProgressionRow(Normal, 56,54); }
+	Show r24 { ProgressionRow(Normal, 58,56); }
+	Show r25 { ProgressionRow(Normal, 60,58); }
+	Show r26 { ProgressionRow(Normal, 62,60); }
+	Show r27 { ProgressionRow(Normal, 64,62); }
+	Show r28 { ProgressionRow(Normal, 66,64); }
+	Show r29 { ProgressionRow(Normal, 68,66); }
+}
+
+#------------------------------------
+# [6002] Remaining Magics
+#------------------------------------
+#!! Override 930 : "Items for the first levels"
+
+Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel <= 68, Rarity = Magic
+{
+	Cont Large { Height >= 3; Width >= 2; }
+	Cont Medium1 { Height >= 3; Width = 1; }
+	Cont Medium2 { Height = 2; Width = 2; }
+	Cont EarlyCasterWeapons { Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
+	Cont Tiny { Height = 1; Width <= 2; }
+}
+
+Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
+{
+	Hide LargeMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height >= 3; Width >= 2 }
+	Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act3; Height >= 1; }
+
+	Show Rest { AreaLevel >=leveling.keylevels.act3; AreaLevel <= 68; }
+	Show Act34 { AreaLevel >=leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act3; }
+	Show Act2 { AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
+	Show Act1 { AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
+	Show FirstLevels {  AreaLevel >=1;  AreaLevel <= leveling.keylevels.start; }
+}
