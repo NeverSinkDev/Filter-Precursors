@@ -102,11 +102,12 @@ Section Influenced : Rarity <= Rare
 	}
 }
 
-#!! Override 030 : "heist and ritual bases"
+
 
 #===============================================================================================================
 # [[0200]] Exotic Bases
 #===============================================================================================================
+#!! Override 030 : "heist and ritual bases"
 
 # These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
 # These are bases such as heist and ritual bases.
@@ -119,11 +120,12 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticTalismanBases { BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 }
 
-#!! Override 040 : "identified mod filtering"
+
 
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING
 #===============================================================================================================
+#!! Override 040 : "identified mod filtering"
 
 Section IdModSection : IdMods
 {
@@ -279,8 +281,6 @@ var exotic_bestiary_t2 = "of Craiceann" "of Saqawal";
 var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
 var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
 
-#!! Override 050 : "veil, incursion, delve etc. mod items"
-
 Section IdModSection : IdMods
 {
 	Section Rare : Rarity "Rare", Auto("ExoticMods")
@@ -288,6 +288,8 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Veiled/Betrayal
 #------------------------------------
+#!! Override 050 : "veil, incursion, delve etc. mod items"
+
 		Show t1veil     { Mod t1veiled; }
 		Show t2veil     { Mod t2veiled; }
 		Show DuoVeil    { Mod "Veiled"; Mod "of the Veil"; }
@@ -321,11 +323,12 @@ Section IdModSection : IdMods
 	}
 }
 
-#!! Override 060 : "exotic gear: trinkets, watchstones, invitations"
 
 #===============================================================================================================
 # [[0200]] Exotic Item Classes
 #===============================================================================================================
+#!! Override 060 : "exotic gear: trinkets, watchstones, invitations"
+
 Section ExoticItemClasses
 {	
 #------------------------------------
@@ -360,11 +363,12 @@ Section ExoticItemClasses
 	}
 }
 
-#!! Override 070 : "exotic gear: synthesised, fractured, enchanted gear"
 
 #===============================================================================================================
 # [[0200]] Exotic Item Variations
 #===============================================================================================================
+#!! Override 070 : "exotic gear: synthesised, fractured, enchanted gear"
+
 Section ExoticVariations
 {	
 #------------------------------------
@@ -417,12 +421,13 @@ Section ExoticVariations
 	}
 }
 
-#!! Chapter "Endgame crafting and recipe items"
-#!! Override 110 : "jewels"
 
 #===============================================================================================================
 # [[0200]] Jewels
 #===============================================================================================================
+#!! Chapter "Endgame crafting and recipe items"
+#!! Override 110 : "jewels"
+
 Section Jewels
 {
 #------------------------------------
@@ -479,12 +484,11 @@ Section Jewels
 #===============================================================================================================
 # [[0200]] Recipes and 5links
 #===============================================================================================================
+#!! Override 120 : "5links and 6sockets"
 
 #------------------------------------
 # [1234] Link Based
 #------------------------------------
-
-#!! Override 120 : "5links and 6sockets"
 
 Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 {
@@ -494,15 +498,16 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 	Show 6Sockets		{ Sockets >= 6; }
 }
 
-#!! Override 130 : "High level crafting bases"
 
 #===============================================================================================================
 # [[0200]] High Level Crafting Bases
 #===============================================================================================================
+#!! Override 130 : "High level crafting bases"
 
 #------------------------------------
 # [1234] ILVL 86
 #------------------------------------
+
 
 Section EndgameCraftingBases : Rarity <= Rare, Clean()
 {
@@ -554,11 +559,11 @@ Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Rare, ItemLeve
 	Show t1 { BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"; }
 }
 
-#!! Override 140 : "Chromatic and Chisel Recipes"
-
 #------------------------------------
 # [1234] RGB Endgame
 #------------------------------------
+#!! Override 140 : "Chromatic and Chisel Recipes"
+
 Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 67, Auto("EndgameRGB")
 {
 	Show RGBSmall1	{ Width <=2; Height <=2; }
@@ -578,11 +583,10 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 	Show ChiselAnyQualNormal { Corrupted False; Rarity Normal; }
 }
 
-#!! Override 150 : "Chancing bases"
-
 #===============================================================================================================
 # [[0200]] Chancing Bases
 #===============================================================================================================
+#!! Override 150 : "Chancing bases"
 
 Section Chancing : Clean(), Rarity Normal, Auto("chancing")
 {
@@ -590,11 +594,12 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing")
 	Show t2 { BaseType == bases.chancing.any; }
 }
 
-#!! Override 160 : "Endgame Flasks"
 
 #===============================================================================================================
 # [[0200]] Endgame Flasks
 #===============================================================================================================
+#!! Override 160 : "Endgame Flasks"
+
 Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 {
 #------------------------------------
@@ -633,11 +638,11 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 	}
 }
 
-#!! Override 170 : "Overquality and endgame 4links"
 
 #===============================================================================================================
 # [[0200]] Misc Rules
 #===============================================================================================================
+#!! Override 170 : "Overquality and endgame 4links"
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
 {
@@ -662,12 +667,11 @@ Section HideLayer1 : Auto("HideLayer")
 	Hide NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class classes_equip; }
 }
 
-#!! Chapter "Rare Endgame Items"
-#!! Override 210 : "Rare continue/style sections sections"
-
 #===============================================================================================================
 # [[0200]] Rare Item Decorators
 #===============================================================================================================
+#!! Chapter "Rare Endgame Items"
+#!! Override 210 : "Rare continue/style sections sections"
 
 Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68
 {
@@ -688,7 +692,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Exotic Corrupted Items
 #===============================================================================================================
-
 #!! Override 220 : "Talismans"
 
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
@@ -715,7 +718,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Accessoires
 #===============================================================================================================
-
 #!! Override 230 : "Rings and Amulets"
 
 	Section EndgameRareRingsAmulets : Class "Rings" "Amulets", Auto("rr->amuring")
@@ -735,7 +737,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T1 - handpicked
 #===============================================================================================================
-	
 #!! Override 240 : "T1 rares - handpicked"	
 	Section EndgameRareGear : Auto("rr")
 	{
@@ -745,7 +746,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
-		
 #!! Override 250 : "T2 rares - handpicked"
 		
 		Show T2weapons { BaseType bases.rares.eg.t2.weapons }
@@ -754,7 +754,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
 #===============================================================================================================
-
 #!! Override 260 : "T3 rares - droplevel-based"
 
 		Show t3runedaggers { DropLevel >= bases.rares.eg.t3runedaggers; Class "Rune Daggers"; }
@@ -783,7 +782,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T4 - rest
 #===============================================================================================================
-
 #!! Override 270 : "T4 rares remaining"
 
 		Show t4endgamerares { Class rare_gear_classes; }
@@ -801,14 +799,12 @@ Section HideLayer2 : Auto("HideLayer")
 #===============================================================================================================
 # [[0200]] Heist Gear
 #===============================================================================================================
-
 #!! Chapter "Heist Gear"
 Section HeistFollowerGear : Rarity <= Rare
 {
 #------------------------------------
 # [3001] Heist Cloak
 #------------------------------------
-
 #!! Override 310 : "Heist Cloaks"
 	Section HeistCloak : Class "Heist Cloak", Auto("Heist->Cloak")
 	{
@@ -820,7 +816,6 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 # [3002] Heist Brooch
 #------------------------------------
-
 #!! Override 320 : "Heist Brooch"
 	Section HeistBrooch : Class "Heist Brooch", Auto("Heist->Brooch")
 	{
@@ -832,7 +827,6 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 # [3003] Heist Gear
 #------------------------------------
-
 #!! Override 330 : "Heist Gear"
 	Section HeistGear : Class "Heist Gear", Auto("Heist->Gear")
 	{
@@ -844,7 +838,6 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 # [3004] Heist Tool
 #------------------------------------
-
 #!! Override 340 : "Heist Tool"
 	Section HeistTools : Class "Heist Tool", Auto("Heist->Tool")
 	{
@@ -858,7 +851,6 @@ Section HeistFollowerGear : Rarity <= Rare
 #===============================================================================================================
 # [[3900]] Gem Tierlists
 #===============================================================================================================
-
 #!! Chapter Gems
 #!! Override 410 : "All Gems - incl. awakened, alt and very valuable"
 
@@ -883,7 +875,6 @@ Section Gems : Class "Gems"
 #------------------------------------
 # [3901] Exceptional Gems - Special gems
 #------------------------------------
-
 #!! Override 420 : "empower and enlighten type gems"
 
 	Section GemsSpecial : Auto("gems-special")
@@ -898,7 +889,6 @@ Section Gems : Class "Gems"
 #------------------------------------
 # [3902] Gems during leveling
 #------------------------------------
-
 #!! Override 430 : "leveling specific gem rules"
 
 	Section Gems-Leveling : Auto("gems-leveling")
@@ -910,7 +900,6 @@ Section Gems : Class "Gems"
 #------------------------------------
 # [3902] High Quality and Leveled Gems
 #------------------------------------
-
 #!! Override 440 : "quality, leveled and generic gems"
 
 	Section GemsGeneric : Auto("gems-generic")
@@ -935,12 +924,12 @@ Section Gems : Class "Gems"
 	}
 }
 
-#!! Chapter "Maps, fragments, maplike items, replicas"
-#!! Override 510 : "replicas uniques and unique maps"
-
 #===============================================================================================================
 # [[3900]] REPLICA UNIQUES
 #===============================================================================================================
+#!! Chapter "Maps, fragments, maplike items, replicas"
+#!! Override 510 : "replicas uniques and unique maps"
+
 Section Replicas : Auto("unique->replicas"), Replica True, Rarity Unique
 {
 	Show t1 { BaseType uniques.replicas.t1; }
@@ -953,10 +942,10 @@ Section Replicas : Auto("unique->replicas"), Replica True, Rarity Unique
 #===============================================================================================================
 # [[4400]] Special Maps
 #===============================================================================================================
+#!! Override 520 : "all maps, incl. uniques"
+
 Section Maps : Class "Maps"
 {
-
-#!! Override 520 : "all maps, incl. uniques"
 
 #------------------------------------
 # [4402] Unique Maps
@@ -974,7 +963,6 @@ Section Maps : Class "Maps"
 #------------------------------------
 # [4404] Blighted maps
 #------------------------------------
-
 #!! Override 530 : "blighted maps, enchanted maps, maps with special mods"
 
 	Section BlightedMaps : BlightedMap True, Auto("maps->blighted")
@@ -1004,11 +992,10 @@ Section Maps : Class "Maps"
 #===============================================================================================================
 # [[0200]] Normal Map Progression
 #===============================================================================================================
-	Section GenericMaps : Auto("maps")
-	{
-
 #!! Override 540 : "T11-T16 maps"
 
+	Section GenericMaps : Auto("maps")
+	{
 		Cont deco_mapup_t16 { MapTier >= 16; AreaLevel < 83; }
 		Show maps_a_t16 { MapTier >= 16; }
 		Cont deco_mapup_t15 { MapTier > 15; AreaLevel < 82; }
@@ -1055,7 +1042,6 @@ Section Maps : Class "Maps"
 #------------------------------------
 # [4403] Labyrinth items, Offerings
 #------------------------------------
-
 #!! Override 570 : "labyrinth offerings"
 
 Section Labyrinth : Auto("LabyrinthOfferings")
@@ -1067,7 +1053,6 @@ Section Labyrinth : Auto("LabyrinthOfferings")
 #===============================================================================================================
 # [[4500]] Heist Contracts and Blueprints
 #===============================================================================================================
-
 #!! Override 580 : "heist contracts and blueprints"
 
 Section HeistUniques : Rarity Unique, Class "Blueprint" "Contract", Auto("Unique->Heist")
@@ -1090,7 +1075,6 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 #===============================================================================================================
 # [[4500]] Fragments
 #===============================================================================================================
-
 #!! Override 590 : "scarabs and fragments tierlists"
 
 Section MapFragments : Class "Map Fragments"
@@ -1121,12 +1105,11 @@ Section MapFragments : Class "Map Fragments"
 	}
 }
 
-#!! Chapter "Currencylike item tierlists 1"
-#!! Override 610 : "Stacked Currency"
-
 #===============================================================================================================
 # [[4800]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
+#!! Chapter "Currencylike item tierlists 1"
+#!! Override 610 : "Stacked Currency"
 
 Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency"
 {
@@ -1142,7 +1125,6 @@ Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency"
 #------------------------------------
 # [5112] Perandus Coins
 #------------------------------------
-
 #!! Override 720 : "Perandus and Heist Coins"
 
 Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency", BaseType "Perandus Coin"
@@ -1165,7 +1147,6 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 #===============================================================================================================
 # [[4900]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
-
 #!! Override 620 : "Leveling Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67
@@ -1180,7 +1161,6 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaL
 #===============================================================================================================
 # [[4900]] Currency - Regular Currency Tiering
 #===============================================================================================================
-
 #!! Override 630 : "Regular Currency"
 
 Section CurrencyTiering : Auto("Currency"), Class "Currency"
@@ -1205,7 +1185,6 @@ Section CurrencyTiering : Auto("Currency"), Class "Currency"
 #------------------------------------
 # [5103] Incursion - Vials
 #------------------------------------
-
 #!! Override 640 : "Vials, Delirium Orbs"
 
 Section CurrencyVials : Auto("vials"), Class "Currency"
@@ -1231,7 +1210,6 @@ Section CurrencyVials : Auto("currency->deliriumorbs"), Class "Currency"
 #------------------------------------
 # [5104] Delve - Resonators
 #------------------------------------
-
 #!! Override 650 : "Resonators, Fossils"
 
 Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stackable Socketable Currency"
@@ -1258,7 +1236,6 @@ Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency"
 #------------------------------------
 # [5104] Blight - Oils
 #------------------------------------
-
 #!! Override 660 : "Blight Oils"
 
 Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency"
@@ -1273,7 +1250,6 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency"
 #------------------------------------
 # [5104] Essences
 #------------------------------------
-
 #!! Override 670 : "Essences"
 
 Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
@@ -1289,7 +1265,6 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
 #------------------------------------
 # [5104] Incubators
 #------------------------------------
-
 #!! Override 680 : "Incubators"
 
 Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator"
@@ -1306,7 +1281,6 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator"
 #------------------------------------
 # [5104] Others
 #------------------------------------
-
 #!! Override 690 : "Harbinger Scrolls"
 
 Section CurrencyExotic : Auto("currency->others"), Class "Currency"
@@ -1318,7 +1292,6 @@ Section CurrencyExotic : Auto("currency->others"), Class "Currency"
 #===============================================================================================================
 # [[4900]] Currency - Prophecies
 #===============================================================================================================
-
 #!! Chapter "Currencylike item tierlists 2"
 #!! Override 710 : "Prophecies"
 
@@ -1342,7 +1315,6 @@ Section CurrencyProphecy : Auto("currency->prophecy"), Class "Currency", BaseTyp
 #------------------------------------
 # [5112] Breach and Legion Splinters
 #------------------------------------
-
 #!! Override 720 : "Breach and Simulacrum Splinters"
 
 Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency"
@@ -1368,7 +1340,6 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 #===============================================================================================================
 # [[4900]] Divination Cards
 #===============================================================================================================
-
 #!! Override 730 : "Divination Cards"
 
 Section DivinationCards : Auto("divination"), Class "Divination"
@@ -1387,7 +1358,6 @@ Section DivinationCards : Auto("divination"), Class "Divination"
 #===============================================================================================================
 # [[4900]] Remaining Currency
 #===============================================================================================================
-
 #!! Override 740 : "Remaining Currency"
 
 Section CurrencyRemaining : Class "Currency", Auto("Currency")
@@ -1399,7 +1369,6 @@ Section CurrencyRemaining : Class "Currency", Auto("Currency")
 #===============================================================================================================
 # [[4900]] Questlike-Items1 (override uniques)
 #===============================================================================================================
-
 #!! Override 750 : "Metamorph Samples"
 
 Section Metamorph : Class "Metamorph", Auto("Metamorph")
@@ -1416,10 +1385,10 @@ Section HeistTarget : Class "Heist Target", Auto("HeistTarget")
 #===============================================================================================================
 # [[4900]] Uniques
 #===============================================================================================================
+#!! Override 760 : "All uniques"
 
 Section Unique : Rarity Unique, Auto("unique")
 {
-#!! Override 760 : "All uniques"
 
 #------------------------------------
 # [5701] Exceptions #1
@@ -1473,7 +1442,6 @@ Section Unique : Rarity Unique, Auto("unique")
 #===============================================================================================================
 # [[4900]] Misc Map Items
 #===============================================================================================================
-
 #!! Override 780 : "Quest Items and Relic Keys"
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
@@ -1496,7 +1464,6 @@ Section Questlike : Auto("Questlike")
 #===============================================================================================================
 # [[6000]] Hide outdated leveling flasks
 #===============================================================================================================
-
 #!! Chapter "Leveling - flasks, rares, 4links"
 #!! Override 810 : "All leveling rules incl. utility flasks"
 
@@ -1525,11 +1492,11 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 	Show Any { Class "Utility Flask"; }
 }
 
-#!! Override 820 : "leveling life and mana flasks"
-
 #------------------------------------
 # [6002] Hybrid flasks
 #------------------------------------
+#!! Override 820 : "leveling life and mana flasks"
+
 Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid")
 {
 	Show t1 {FlaskHighlight(20, "Small");}
@@ -1581,7 +1548,6 @@ Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
 #===============================================================================================================
 # [[6000]] Leveling - Rules
 #===============================================================================================================
-
 #!! Override 830 : "leveling: 4links and chromatic socket items"
 
 #------------------------------------
@@ -1601,11 +1567,10 @@ Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->SocketsLinks"
 	}
 }
 
-#!! Override 840 : "leveling: all rare rules"
-
 #------------------------------------
 # [6002] Rares
 #------------------------------------
+#!! Override 840 : "leveling: all rare rules"
 
 Section RareDecorator : Auto("Decorators->rarelvl"), ItemLevel <= 68
 {
@@ -1681,7 +1646,6 @@ Section LevelingRareGear : Rarity Rare
 #===============================================================================================================
 # [[6400]] Leveling - Useful items
 #===============================================================================================================
-
 #!! Chapter "Leveling - remaining normal and magic items"
 #!! Override 910 : "3 Linked Gear"
 
@@ -1717,7 +1681,6 @@ Section LevelingMiscGear : Rarity <= Magic
 #===============================================================================================================
 # [[6400]] Leveling - First Levels and Vendor Items
 #===============================================================================================================
-
 #!! Override 930 : "Items for the first levels"
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
