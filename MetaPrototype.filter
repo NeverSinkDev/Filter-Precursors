@@ -30,7 +30,10 @@ Section Influenced : Rarity <= Rare
 #------------------------------------
 #   [1234] ASPECTS
 #------------------------------------
-	Cont aspect_corruptedInfluenced { HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord; Corrupted True; }
+	Section Decorators : Auto("decorators->influenced")
+	{	
+		Cont aspect_corruptedInfluenced { HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord; Corrupted True; }
+	}
 #------------------------------------
 #   [1234] Crusader
 #------------------------------------
@@ -193,7 +196,7 @@ Section IdModSection : IdMods
 		Section Helmets : Class "Helmets"
 		{
 			Show 3LifeHelmet { Mod helm_life[2]; Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int [3] + gloves_accu[2] + minionGems + helmLifeHybrid + wmana[2] }
-			Show 4LifeGloves { Mod helm_life[3]; Mod >=3 res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int [4] + gloves_accu[3] + minionGems + helmLifeHybrid + wmana[3] }
+			Show 4LifeHelmet { Mod helm_life[3]; Mod >=3 res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int [4] + gloves_accu[3] + minionGems + helmLifeHybrid + wmana[3] }
 			Show 3ESHelm { Mod >= 2 helmES; DropLevel >= 55; }
 			Show 4ESHelm { Mod >= 4 "Prior's" "Deacon's" "Seraphim's" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] + gloves_accu[2] + helmEsHybrid + minionGems + wmana[2] }
 		}
@@ -434,7 +437,7 @@ Section Jewels
 
 		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare
 		{
-			Show 1modcorrupted { HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+			Show 1moduncorrupted { HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
 	}
 #------------------------------------
@@ -503,7 +506,10 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 
 Section EndgameCraftingBases : Rarity <= Rare, Clean()
 {
-	Cont RareDecorator { Empty(); }
+	Section : Auto("Decorator->craftinggeneric")
+	{
+		Cont RareDecorator { Empty(); }
+	}
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
 	{
@@ -534,7 +540,10 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 		Show t3 { BaseType bases.crafting.general.t3; }
 	}
 
-	Cont RareDecoratorRemover { Empty(); }
+	Section : Auto("Decorator->craftinggeneric")
+	{
+		Cont RareDecoratorRemover { Empty(); }
+	}
 }
 
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
@@ -612,8 +621,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 
 	Section QualityEndgameFlasks
 	{
-		Show AsortedUtility { BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
-		Show AnyUtility { BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
+		Show UtilityHigh { BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
+		Show UtilityLow { BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
@@ -1038,9 +1047,9 @@ Section Maps : Class "Maps"
 		Show maps_d_t2  { MapTier = 2; }
 		Cont deco_mapup_t1  { MapTier > 1; AreaLevel < 68; }
 		Show maps_d_t1  { MapTier = 1; }
-	}
 
-	Show restex { Empty(); }
+		Show restex { Empty(); }
+	}
 }
 
 #------------------------------------
@@ -1399,7 +1408,7 @@ Section Metamorph : Class "Metamorph", Auto("Metamorph")
 	Show Any { Empty(); }
 }
 
-Section HeistTarget : Class "Heist Target"
+Section HeistTarget : Class "Heist Target", Auto("HeistTarget")
 {
 	Show Any { Empty(); }
 }
@@ -1509,7 +1518,7 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 # [6002] Utility Flasks
 #------------------------------------
 
-Section LevelingUtilityFlasks
+Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 {
 	Show Quicksilver { BaseType "Quicksilver Flask"; }
 	Show AsortedUtility { BaseType bases.flask.utilityassorted; }
@@ -1579,14 +1588,17 @@ Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
 # [6002] Links and Sockets
 #------------------------------------
 
-Section Leveling4LinkedGear : LinkedSockets >= 4
+Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->SocketsLinks")
 {
-	Show general { Empty(); }
-}
+	Section Leveling4LinkedGear : LinkedSockets >= 4
+	{
+		Show 4linkgeneral { Empty(); }
+	}
 
-Section RGBGear : SocketGroup "RGB"
-{
-	Show general { Empty(); }
+	Section RGBGear : SocketGroup "RGB"
+	{
+		Show RGBgeneral { Empty(); }
+	}
 }
 
 #!! Override 840 : "leveling: all rare rules"
@@ -1595,7 +1607,7 @@ Section RGBGear : SocketGroup "RGB"
 # [6002] Rares
 #------------------------------------
 
-Section RareDecorator : Auto("Decorators->rarelvl"), AreaLevel <= 68
+Section RareDecorator : Auto("Decorators->rarelvl"), ItemLevel <= 68
 {
 	Cont LargeRares { Height >= 3; Width >= 2; }
 	Cont MediumRares1 { Height >= 3; Width = 1; }
@@ -1675,14 +1687,14 @@ Section LevelingRareGear : Rarity Rare
 
 Section LevelingMiscGear : Rarity <= Magic
 {
-	Section ThreeLinkedGear : LinkedSockets >= 3
+	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L")
 	{
 		Show General { AreaLevel <= leveling.keylevels.threelink; }
 	}
 
 #!! Override 920 : "Act 1-3 specific gear"
 
-	Section Act1 : AreaLevel <= leveling.keylevels.act1
+	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1")
 	{
 		Show General { BaseType leveling.bases.act1.general; }
 		Show Boots { Class "Boots"; }
@@ -1690,13 +1702,13 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show Caster { Class leveling.classes.caster - "Staves" }
 	}
 	
-	Section Act2 : AreaLevel <= leveling.keylevels.act2
+	Section Act2 : AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
 	{
 		Show Boots { Class "Boots"; }
 		Show Jwlry { Class classes_jwlry; }
 	}
 
-	Section Act3 : AreaLevel <= leveling.keylevels.act3
+	Section Act3 : AreaLevel <= leveling.keylevels.act3, Auto("Leveling->NormalMagic->act3")
 	{
 		Show Jwlry { Class classes_jwlry; }
 	}
@@ -1708,7 +1720,7 @@ Section LevelingMiscGear : Rarity <= Magic
 
 #!! Override 930 : "Items for the first levels"
 
-Section FirstLevels
+Section FirstLevels : Auto("Leveling->FirstLevels")
 {
 	Show ThreeSocketedGear { Rarity <= Magic; Sockets >= 3; ItemLevel <= 8; Class "Boots" "Gloves" "Helmets" "Shields"; }
 	Show FirstAreas { AreaLevel <= 3; Rarity Normal; }
