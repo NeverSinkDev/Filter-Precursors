@@ -440,7 +440,7 @@ Section Jewels
 			Show 1modcorrupted { Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
-		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare
+		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
 		{
 			Show 1moduncorrupted { HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
@@ -469,7 +469,7 @@ Section Jewels
 		Show HighRare { Rarity Rare; ItemLevel >= 82; }
 		Show HighMagic { Rarity Magic; ItemLevel >= 82; }
 		Show AnyRare { Rarity Rare; }
-		Show AnyMagic { Rarity Rare; }
+		Show AnyMagic { Rarity Magic; }
 	}
 #------------------------------------
 # [1234] Generic Jewels
@@ -588,7 +588,7 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 #===============================================================================================================
 #!! Override 150 : "Chancing bases"
 
-Section Chancing : Clean(), Rarity Normal, Auto("chancing")
+Section Chancing : Clean(), Rarity Normal, Auto("chancing"), Mirrored False
 {
 	Show hh { BaseType == bases.chancing.higher; }
 	Show t2 { BaseType == bases.chancing.any; }
@@ -930,7 +930,7 @@ Section Gems : Class "Gems"
 #!! Chapter "Maps, fragments, maplike items, replicas"
 #!! Override 510 : "replicas uniques and unique maps"
 
-Section Replicas : Auto("unique->replicas"), Replica True, Rarity Unique
+Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 {
 	Show t1 { BaseType uniques.replicas.t1; }
 	Show t2 { BaseType uniques.replicas.t2; }
@@ -950,7 +950,7 @@ Section Maps : Class "Maps"
 #------------------------------------
 # [4402] Unique Maps
 #------------------------------------
-	Section UniqueMaps : Rarity Unique, Auto("unique->maps")
+	Section UniqueMaps : Rarity Unique, Auto("uniques->maps")
 	{
 		Show ex { BaseType uniques.maps.ex; MapTier 16; }
 		Show t1 { BaseType uniques.maps.t1; }
@@ -1055,7 +1055,7 @@ Section Labyrinth : Auto("LabyrinthOfferings")
 #===============================================================================================================
 #!! Override 580 : "heist contracts and blueprints"
 
-Section HeistUniques : Rarity Unique, Class "Blueprint" "Contract", Auto("Unique->Heist")
+Section HeistUniques : Rarity Unique, Class "Blueprint" "Contract", Auto("Uniques->Heist")
 {
 	Show Any { Empty(); }
 }
@@ -1204,7 +1204,6 @@ Section CurrencyVials : Auto("currency->deliriumorbs"), Class "Currency"
 	Show t1 { BaseType currency.deliriumorb.t1; }
 	Show t2 { BaseType currency.deliriumorb.t2; }
 	Show t3 { BaseType currency.deliriumorb.t3; }
-	Show restex { BaseType "Vial of"; }
 }
 
 #------------------------------------
@@ -1387,7 +1386,7 @@ Section HeistTarget : Class "Heist Target", Auto("HeistTarget")
 #===============================================================================================================
 #!! Override 760 : "All uniques"
 
-Section Unique : Rarity Unique, Auto("unique")
+Section Unique : Rarity Unique, Auto("uniques")
 {
 
 #------------------------------------
@@ -1692,7 +1691,7 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show Physical { BaseType "Rustic Sash" "Iron Ring"; }
 	}
 	
-	Section Act2 : AreaLevel > leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
+	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
 	{
 		Show CasterCraftRings { BaseType leveling.bases.act1.craftrings; }
 		Show Boots { Class "Boots"; }
@@ -1701,7 +1700,7 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section LaterActs : Auto("Leveling->NormalMagic->otheracts")
 	{
-		Show FireResistGear { BaseType "Ruby Ring"; AreaLevel > leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
+		Show FireResistGear { BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
 		Show GeneralCrafting { AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
 	}
 }
