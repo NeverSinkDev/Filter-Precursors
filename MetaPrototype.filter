@@ -1816,9 +1816,9 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
 # [6002] Hide All known Section
 #------------------------------------
 
-Section HideAll 
+Section HideFinal : Auto("HideLayer")
 {
-	Hide any { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
+	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
 }
 
 #------------------------------------

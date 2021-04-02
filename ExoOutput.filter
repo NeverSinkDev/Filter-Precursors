@@ -1423,18 +1423,15 @@ Show # $type->decorators->rareeg $tier->tinyrares
 
 Show # $type->decorators->rareeg $tier->ilvl68
 	ItemLevel >= 68
-	ItemLevel >= 68
 	Rarity Rare
 	Continue
 
 Show # $type->decorators->rareeg $tier->ilvl75
-	ItemLevel >= 68
 	ItemLevel >= 75
 	Rarity Rare
 	Continue
 
 Show # $type->decorators->rareeg $tier->ilvl85
-	ItemLevel >= 68
 	ItemLevel >= 85
 	Rarity Rare
 	Continue
@@ -3849,7 +3846,6 @@ Show # $type->decorators->leveling->magic $tier->earlycasterweapons
 	ItemLevel <= 68
 	AreaLevel <= 15
 	Rarity Magic
-	Rarity Magic
 	Class "Sceptres" "Wands"
 	Continue
 
@@ -3901,7 +3897,7 @@ Show # $type->leveling->magic->remaining $tier->firstlevels
 # [6002] Hide All known Section
 #------------------------------------
 
-Hide
+Hide # $type->hidelayer $tier->final
 	Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
 
 #------------------------------------
