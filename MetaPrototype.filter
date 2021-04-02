@@ -28,6 +28,16 @@ Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 Section Influenced : Rarity <= Rare
 {
 #------------------------------------
+#   [1234] Influenced Maps
+#------------------------------------
+
+Section Maps : Auto("maps->influenced"), Class "Maps"
+{	
+	Show InfShaper { HasInfluence Shaper; }
+	Show InfElder { HasInfluence Elder; }
+}
+
+#------------------------------------
 #   [1234] ASPECTS
 #------------------------------------
 	Section Decorators : Auto("decorators->influenced")
@@ -100,6 +110,17 @@ Section Influenced : Rarity <= Rare
 		Show t21 { ItemLevel >= 80; BaseType Influenced.Elder.t21; }
 		Show t22 { ItemLevel >= 85; BaseType Influenced.Elder.t22; }
 	}
+
+#------------------------------------
+#   [1234] Remaining
+#------------------------------------
+
+	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
+	{
+		Show AnyTopLevel { ItemLevel >= 86; }
+		Show AnyTrinket { Class "Amulet" "Belts" "Rings"; }
+		Show Any { Empty(); }
+	}
 }
 
 
@@ -119,8 +140,6 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticRitualBases { BaseType bases.exotic.ritual.any }
 	Show ExoticTalismanBases { BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 }
-
-
 
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING
@@ -498,7 +517,6 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 	Show 6Sockets		{ Sockets >= 6; }
 }
 
-
 #===============================================================================================================
 # [[0200]] High Level Crafting Bases
 #===============================================================================================================
@@ -626,8 +644,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 
 	Section QualityEndgameFlasks
 	{
-		Show UtilityHigh { BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
-		Show UtilityLow { BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
+		Show QualityHigh { BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
+		Show QualityLow { BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
@@ -712,7 +730,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show T3DecentModsTalisman { BaseType "Talisman"; Mod >= 3 amu_life[3] + top2base + merged_amu_attack3 + merged_amu_caster3 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent"; }
 		Show T3DecentTypeTalisman { BaseType bases.talismans.universal.any + bases.talismans.attack.any + bases.talismans.attack.any };
 
-		Show Any { BaseType "Talisman"; Empty(); }
+		Show ClassBased { BaseType bases.talismans.universal.any; }
+		Show Any { BaseType "Talisman"; }
 	}
 
 #===============================================================================================================
@@ -1491,6 +1510,13 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 	Show Any { Class "Utility Flask"; }
 }
 
+Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
+{
+	Show max  { Quality >= 20; }
+	Show high { Quality >= 15; }
+	Show any  { Quality >= 1; }
+}
+
 #------------------------------------
 # [6002] Hybrid flasks
 #------------------------------------
@@ -1700,6 +1726,7 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section LaterActs : Auto("Leveling->NormalMagic->otheracts")
 	{
+		Show HighPhysQuivers { BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
 		Show FireResistGear { BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
 		Show GeneralCrafting { AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
 	}
@@ -1708,6 +1735,7 @@ Section LevelingMiscGear : Rarity <= Magic
 #------------------------------------
 # [6002] Normals
 #------------------------------------
+#!! Override 930 : "first levels gear"
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
@@ -1719,6 +1747,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 #------------------------------------
 # [6002] Weapon Progression
 #------------------------------------
+#!! Override 940 : "weapon progression"
 
 Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; }
 
@@ -1758,7 +1787,7 @@ Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee level
 #------------------------------------
 # [6002] Remaining Magics
 #------------------------------------
-#!! Override 930 : "Items for the first levels"
+#!! Override 950 : "magic vendor items"
 
 Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel <= 68, Rarity = Magic
 {
@@ -1779,4 +1808,29 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
 	Show Act2 { AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
 	Show Act1 { AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
 	Show FirstLevels {  AreaLevel >=1;  AreaLevel <= leveling.keylevels.start; }
+}
+
+#!! Override 960 : "don't override anything"
+
+#------------------------------------
+# [6002] Hide All known Section
+#------------------------------------
+
+Section HideAll 
+{
+	Hide any { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
+}
+
+#------------------------------------
+# [6002] Show All unknown Section
+#------------------------------------
+
+# THIS ENTRY IS CAUGHT IN 3 CASES:
+# 1) YOUR FILTER IS OUT OF DATE!
+# 2) YOU DID SOMETHING SILLY WHEN EDITING THE FILTER
+# 3) YOU ENCOUNTERED A PREVIOUSLY UNKNOWN UNIQUE
+
+Section AnyRemaining : Auto("AnyRemaining")
+{
+	Show restex { Empty(); }
 }
