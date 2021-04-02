@@ -19,7 +19,7 @@ var t4col = Grey;
 # Basic markup strategy for item tiering
 Style Marking
 {
-	var icon = Square;
+	var icon = Circle;
 	# ex-tier
 	Func T1 () {SetFontSize 45; PlayAlertSound 6 300; PlayEffect t1col; MinimapIcon 0 t1col Star; };
 	# divine tier
@@ -73,7 +73,7 @@ Style BasicIntegration
 	#Apply (Basetiering.t1 => Influenced.t1*);
 	#Apply (Basetiering.t2 => Influenced.t2*);
 
-	#Apply (Basetiering => Incubator);
+	#Apply (Basetiering => *.t1*);
 	#Apply (!BaseTiering.T1 => 6Links);
 	#Apply (!ExplicitModHighlight.Basic => IdModSection);
 }
