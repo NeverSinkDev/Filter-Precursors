@@ -20,6 +20,20 @@ Show # $type->6l $tier->wep
 # !! Override 020 : "influenced rules"
 
 #------------------------------------
+# [1234] Influenced Maps
+#------------------------------------
+
+Show # $type->maps->influenced $tier->infshaper
+	HasInfluence Shaper
+	Rarity <= Rare
+	Class "Maps"
+
+Show # $type->maps->influenced $tier->infelder
+	HasInfluence Elder
+	Rarity <= Rare
+	Class "Maps"
+
+#------------------------------------
 # [1234] ASPECTS
 #------------------------------------
 
@@ -232,6 +246,24 @@ Show # $type->rare->elder $tier->t22
 	ItemLevel >= 85
 	Rarity <= Rare
 	BaseType "Agate Amulet" "Amber Amulet" "Ambusher" "Amethyst Ring" "Ancient Greaves" "Antique Gauntlets" "Archon Kite Shield" "Assassin's Garb" "Battle Buckler" "Behemoth Mace" "Blue Pearl Amulet" "Boot Blade" "Broadhead Arrow Quiver" "Callous Mask" "Cerulean Ring" "Champion Kite Shield" "Citadel Bow" "Citrine Amulet" "Cloth Belt" "Cogwork Ring" "Colossal Tower Shield" "Compound Spiked Shield" "Conjurer Boots" "Coronal Maul" "Crusader Boots" "Crystal Belt" "Crystal Sceptre" "Crystal Wand" "Deicide Mask" "Diamond Ring" "Dragonscale Boots" "Dragoon Sword" "Ebony Tower Shield" "Eclipse Staff" "Engraved Wand" "Eternal Burgonet" "Ezomyte Burgonet" "Ezomyte Staff" "Ezomyte Tower Shield" "Faun's Horn" "Fencer Helm" "Fingerless Silk Gloves" "Fluted Bascinet" "Frontier Leather" "Gavel" "Girded Tower Shield" "Gladiator Helmet" "Glass Shank" "Golden Kris" "Golden Mask" "Great Crown" "Gripped Gloves" "Headsman Axe" "Heathen Wand" "Heavy Belt" "Hellion's Paw" "Hubris Circlet" "Hunter Hood" "Hydrascale Gauntlets" "Imbued Wand" "Infernal Axe" "Infernal Sword" "Jade Amulet" "Judgement Staff" "Lacquered Garb" "Lacquered Helmet" "Legion Sword" "Lion Pelt" "Magistrate Crown" "Maraketh Bow" "Marble Amulet" "Mind Cage" "Mosaic Kite Shield" "Necromancer Circlet" "Nightmare Bascinet" "Pig-Faced Bascinet" "Piledriver" "Plated Maul" "Platinum Sceptre" "Praetor Crown" "Prophet Crown" "Reaver Axe" "Reaver Helmet" "Regicide Mask" "Ritual Sceptre" "Riveted Gloves" "Royal Axe" "Royal Burgonet" "Sage Wand" "Samnite Helmet" "Sekhem" "Serpentscale Gauntlets" "Serrated Arrow Quiver" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Gloves" "Siege Axe" "Siege Helmet" "Sinner Tricorne" "Slink Boots" "Solaris Circlet" "Soldier Boots" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spike-Point Arrow Quiver" "Spiny Round Shield" "Stag Sceptre" "Steel Circlet" "Throat Stabber" "Titan Gauntlets" "Titan Greaves" "Trapper Boots" "Trisula" "Turquoise Amulet" "Two-Point Arrow Quiver" "Two-Stone Ring" "Two-Toned Boots" "Unset Ring" "Ursine Pelt" "Vaal Axe" "Vaal Blade" "Vaal Buckler" "Vaal Hatchet" "Vaal Mask" "Vaal Spirit Shield" "Vanguard Belt" "Void Axe" "Woodful Staff" "Wrist Chopper" "Wyrmscale Gauntlets"
+
+#------------------------------------
+# [1234] Remaining
+#------------------------------------
+
+Show # $type->rare->any $tier->anytoplevel
+	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	ItemLevel >= 86
+	Rarity <= Rare
+
+Show # $type->rare->any $tier->anytrinket
+	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	Rarity <= Rare
+	Class "Amulet" "Belts" "Rings"
+
+Show # $type->rare->any $tier->any
+	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	Rarity <= Rare
 
 #===============================================================================================================
 # [[0200]] Exotic Bases
@@ -959,6 +991,7 @@ Show # $type->jewels->special $tier->1moduncorrupted
 	Corrupted False
 	Identified True
 	Rarity <= Rare
+	Class "Jewel"
 	HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"
 
 #------------------------------------
@@ -1023,7 +1056,7 @@ Show # $type->jewels->abyss $tier->anyrare
 	Class "Abyss Jewel"
 
 Show # $type->jewels->abyss $tier->anymagic
-	Rarity Rare
+	Rarity Magic
 	Class "Abyss Jewel"
 
 #------------------------------------
@@ -1230,11 +1263,13 @@ Show # $type->chiselrecipe $tier->chiselanyqualnormal
 
 Show # $type->chancing $tier->hh
 	Corrupted False
+	Mirrored False
 	Rarity Normal
 	BaseType == "Leather Belt"
 
 Show # $type->chancing $tier->t2
 	Corrupted False
+	Mirrored False
 	Rarity Normal
 	BaseType == "Ezomyte Dagger" "Occultist's Vestment" "Prophecy Wand" "Sadist Garb" "Two-Stone Ring"
 
@@ -1283,14 +1318,14 @@ Show # $type->endgameflasks $tier->anyutility
 	Rarity <= Magic
 	Class "Utility Flasks"
 
-Show # $type->endgameflasks $tier->utilityhigh
+Show # $type->endgameflasks $tier->qualityhigh
 	Quality >= 15
 	AreaLevel >= 68
 	AreaLevel <= 77
 	Rarity <= Magic
 	BaseType "Flask"
 
-Show # $type->endgameflasks $tier->utilitylow
+Show # $type->endgameflasks $tier->qualitylow
 	Quality >= 1
 	AreaLevel >= 68
 	AreaLevel <= 77
@@ -1490,6 +1525,13 @@ Show # $type->rare->exotic->talisman $tier->t3decenttypetalisman
 	Rarity Rare
 	Class "Amulets"
 	BaseType "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman" "Writhing Talisman"
+
+Show # $type->rare->exotic->talisman $tier->classbased
+	AnyEnchantment True
+	ItemLevel >= 68
+	Rarity Rare
+	Class "Amulets"
+	BaseType "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman"
 
 Show # $type->rare->exotic->talisman $tier->any
 	AnyEnchantment True
@@ -1997,27 +2039,27 @@ Show # $type->gems-generic $tier->any
 # !! Chapter "Maps, fragments, maplike items, replicas"
 # !! Override 510 : "replicas uniques and unique maps"
 
-Show # $type->unique->replicas $tier->t1
+Show # $type->uniques->replicas $tier->t1
 	Replica True
 	Rarity Unique
 	BaseType "Blood Raiment" "Chain Belt" "Cloth Belt" "Ebony Tower Shield" "Ezomyte Burgonet" "Granite Flask" "Great Crown" "Lacquered Buckler" "Leather Belt" "Maelström Staff" "Ornate Quiver" "Paua Amulet" "Relic Chambers Map" "Ruby Ring" "Soldier Boots" "Temple Map" "Terror Maul" "Triumphant Lamellar" "Vaal Gauntlets" "Void Sceptre"
 
-Show # $type->unique->replicas $tier->t2
+Show # $type->uniques->replicas $tier->t2
 	Replica True
 	Rarity Unique
 	BaseType "Arcanist Slippers" "Elegant Ringmail" "Engraved Wand" "Eternal Sword" "Ezomyte Dagger" "Glorious Plate" "Great Mallet" "Heavy Belt" "Imperial Bow" "Jade Amulet" "Ornate Mace" "Paua Ring" "Sanctified Mana Flask" "Siege Axe" "Vaal Claw" "Vaal Rapier"
 
-Show # $type->unique->replicas $tier->multi
+Show # $type->uniques->replicas $tier->multi
 	Replica True
 	Rarity Unique
 	BaseType "Carnal Armour"
 
-Show # $type->unique->replicas $tier->t3
+Show # $type->uniques->replicas $tier->t3
 	Replica True
 	Rarity Unique
 	BaseType "Arcanist Gloves" "Assassin's Boots" "Boot Knife" "Bronzescale Boots" "Crusader Chainmail" "Death Bow" "Decimation Bow" "Dunes Map" "Elder Sword" "Ezomyte Axe" "Festival Mask" "Gnarled Branch" "Gold Amulet" "Great Helmet" "Grinning Fetish" "Gut Ripper" "Infernal Sword" "Jasper Chopper" "Laminated Kite Shield" "Murder Boots" "Nailed Fist" "Royal Skean" "Rustic Sash" "Sage Wand" "Samite Gloves" "Sapphire Ring" "Shadow Sceptre" "Shagreen Boots" "Short Bow" "Silk Slippers" "Sinner Tricorne" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Stiletto" "Sulphur Flask" "Titan Greaves" "Tornado Wand" "Unset Ring" "War Sword" "Zealot Gloves" "Zodiac Leather"
 
-Show # $type->unique->replicas $tier->restex
+Show # $type->uniques->replicas $tier->restex
 	Replica True
 	Rarity Unique
 
@@ -2030,33 +2072,33 @@ Show # $type->unique->replicas $tier->restex
 # [4402] Unique Maps
 #------------------------------------
 
-Show # $type->unique->maps $tier->ex
+Show # $type->uniques->maps $tier->ex
 	MapTier 16
 	Rarity Unique
 	Class "Maps"
 	BaseType "Harbinger Map"
 
-Show # $type->unique->maps $tier->t1
+Show # $type->uniques->maps $tier->t1
 	Rarity Unique
 	Class "Maps"
 	BaseType "Basilica Map" "Chateau Map" "Courthouse Map" "Courtyard Map" "Cursed Crypt Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
 
-Show # $type->unique->maps $tier->t2
+Show # $type->uniques->maps $tier->t2
 	Rarity Unique
 	Class "Maps"
 	BaseType "Harbinger Map" "Museum Map"
 
-Show # $type->unique->maps $tier->t3
+Show # $type->uniques->maps $tier->t3
 	Rarity Unique
 	Class "Maps"
 	BaseType "Cemetery Map" "Moon Temple Map" "Necropolis Map" "Primordial Blocks Map" "Promenade Map" "Shore Map" "Temple Map" "Underground River Map" "Vaal Pyramid Map"
 
-Show # $type->unique->maps $tier->t4
+Show # $type->uniques->maps $tier->t4
 	Rarity Unique
 	Class "Maps"
 	BaseType "Atoll Map" "Bone Crypt Map" "Dunes Map" "Overgrown Shrine Map" "Strand Map" "Underground Sea Map"
 
-Show # $type->unique->maps $tier->restex
+Show # $type->uniques->maps $tier->restex
 	Rarity Unique
 	Class "Maps"
 
@@ -2285,7 +2327,7 @@ Show # $type->labyrinthofferings $tier->offeringsupgraded
 #===============================================================================================================
 # !! Override 580 : "heist contracts and blueprints"
 
-Show # $type->unique->heist $tier->any
+Show # $type->uniques->heist $tier->any
 	Rarity Unique
 	Class "Blueprint" "Contract"
 
@@ -2549,10 +2591,6 @@ Show # $type->currency->deliriumorbs $tier->t2
 Show # $type->currency->deliriumorbs $tier->t3
 	Class "Currency"
 	BaseType "Abyssal Delirium Orb" "Amorphous Delirium Orb" "Armoursmith's Delirium Orb" "Blacksmith's Delirium Orb" "Decadent Delirium Orb" "Delirium Orb" "Imperial Delirium Orb" "Jeweller's Delirium Orb" "Portentous Delirium Orb" "Primal Delirium Orb" "Singular Delirium Orb" "Timeless Delirium Orb" "Whispering Delirium Orb"
-
-Show # $type->currency->deliriumorbs $tier->restex
-	Class "Currency"
-	BaseType "Vial of"
 
 #------------------------------------
 # [5104] Delve - Resonators
@@ -2865,21 +2903,21 @@ Show # $type->heisttarget $tier->any
 # [5701] Exceptions #1
 #------------------------------------
 
-Show # $type->unique $tier->extabula
+Show # $type->uniques $tier->extabula
 	Rarity Unique
 	SocketGroup "WWWWWW"
 	BaseType == "Simple Robe"
 
-Show # $type->unique $tier->exsynth
+Show # $type->uniques $tier->exsynth
 	SynthesisedItem True
 	Rarity Unique
 	Class "Rings"
 
-Show # $type->unique $tier->ex6link
+Show # $type->uniques $tier->ex6link
 	LinkedSockets 6
 	Rarity Unique
 
-Show # $type->unique $tier->exharby
+Show # $type->uniques $tier->exharby
 	Rarity Unique
 	Class "Piece"
 
@@ -2887,7 +2925,7 @@ Show # $type->unique $tier->exharby
 # [5702] Tier 1 uniques
 #------------------------------------
 
-Show # $type->unique $tier->t1
+Show # $type->uniques $tier->t1
 	Rarity Unique
 	BaseType == "Arcanist Gloves" "Crusader Boots" "Crusader Helmet" "Fluted Bascinet" "Greatwolf Talisman" "Large Cluster Jewel" "Ornate Quiver" "Prismatic Jewel" "Prophecy Wand" "Rawhide Boots" "Siege Axe" "Silk Gloves" "Timeless Jewel" "Vaal Rapier" "Wyrmscale Doublet"
 
@@ -2895,17 +2933,17 @@ Show # $type->unique $tier->t1
 # [5703] Exceptions #2
 #------------------------------------
 
-Show # $type->unique $tier->2xcorrupteduniques
+Show # $type->uniques $tier->2xcorrupteduniques
 	Corrupted True
 	CorruptedMods >= 2
 	Rarity Unique
 
-Show # $type->unique $tier->2xabyss
+Show # $type->uniques $tier->2xabyss
 	Sockets >= AA
 	Rarity Unique
 	Class "Boots" "Gloves" "Helmets"
 
-Show # $type->unique $tier->5link
+Show # $type->uniques $tier->5link
 	LinkedSockets 5
 	Rarity Unique
 
@@ -2913,7 +2951,7 @@ Show # $type->unique $tier->5link
 # [5704] Tier 2 uniques
 #------------------------------------
 
-Show # $type->unique $tier->t2
+Show # $type->uniques $tier->t2
 	Rarity Unique
 	BaseType == "Archon Kite Shield Piece" "Assassin's Boots" "Blood Raiment" "Butcher Axe" "Crimson Round Shield" "Deerskin Gloves" "Ezomyte Dagger" "Ezomyte Tower Shield" "Gemstone Sword" "Imperial Maul" "Ivory Watchstone" "Jewelled Foil" "Jingling Spirit Shield" "Karui Maul" "Occultist's Vestment" "Riveted Gloves" "Sapphire Flask" "Savant's Robe" "Steel Ring" "Wereclaw Talisman"
 
@@ -2924,21 +2962,21 @@ Show # $type->unique $tier->t2
 # While others are cheap. We give them a high quality display, while making a normal unique
 # Sound to prevent false excitement.
 
-Show # $type->unique $tier->multispecial
+Show # $type->uniques $tier->multispecial
 	Rarity Unique
 	BaseType == "Agate Amulet" "Ambusher" "Coral Amulet" "Exquisite Leather" "Ezomyte Staff" "Fiend Dagger" "Gavel" "Glorious Plate" "Goathide Boots" "Gold Ring" "Hydrascale Gauntlets" "Iron Ring" "Leather Belt" "Long Staff" "Magistrate Crown" "Medium Cluster Jewel" "Mirrored Spiked Shield" "Paua Amulet" "Saint's Hauberk" "Silver Flask" "Small Cluster Jewel" "Stealth Boots" "Studded Belt" "Topaz Ring" "Triumphant Lamellar" "Turquoise Amulet" "Two-Stone Ring" "Unset Ring"
 
 # !! Override 770 : "Only low tier uniques"
 
-#Show # $type->unique $tier->earlyleague
+#Show # $type->uniques $tier->earlyleague
 #	Rarity Unique
 
-Show # $type->unique $tier->highvinktar
+Show # $type->uniques $tier->highvinktar
 	ItemLevel >= 82
 	Rarity Unique
 	BaseType == "Imperial Staff"
 
-Show # $type->unique $tier->exjewels
+Show # $type->uniques $tier->exjewels
 	Rarity Unique
 	Class "Jewel"
 	BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"
@@ -2947,15 +2985,15 @@ Show # $type->unique $tier->exjewels
 # [5708] Tier 3 uniques 
 #------------------------------------
 
-Show # $type->unique $tier->t3boss
+Show # $type->uniques $tier->t3boss
 	Rarity Unique
 	BaseType == "Amber Amulet" "Amethyst Flask" "Amethyst Ring" "Arcanist Slippers" "Archon Kite Shield" "Assassin's Mitts" "Black Maw Talisman" "Blood Sceptre" "Blue Pearl Amulet" "Bone Helmet" "Cardinal Round Shield" "Carnal Armour" "Carnal Boots" "Carnal Mitts" "Carnal Sceptre" "Carved Wand" "Chain Belt" "Citrine Amulet" "Cloth Belt" "Clutching Talisman" "Crusader Gloves" "Ebony Tower Shield" "Eternal Sword" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Fossilised Spirit Shield" "Gladiator Plate" "Gladius" "Golden Plate" "Goliath Greaves" "Great Crown" "Harbinger Bow" "Harlequin Mask" "Heavy Belt" "Hellion's Paw" "Highborn Staff" "Hubris Circlet" "Hydrascale Boots" "Imperial Skean" "Infernal Sword" "Jade Amulet" "Lacquered Buckler" "Lacquered Garb" "Legion Gloves" "Legion Sword" "Lion Pelt" "Maelström Staff" "Meatgrinder" "Midnight Blade" "Mind Cage" "Murder Boots" "Murder Mitts" "Necromancer Circlet" "Nightmare Mace" "Onyx Amulet" "Opal Ring" "Penetrating Arrow Quiver" "Praetor Crown" "Prophet Crown" "Quartz Flask" "Ranger Bow" "Regicide Mask" "Rotfeather Talisman" "Royal Sceptre" "Ruby Flask" "Ruby Ring" "Sacrificial Garb" "Sadist Garb" "Sage Wand" "Sapphire Ring" "Sentinel Jacket" "Silken Hood" "Slink Boots" "Solaris Circlet" "Soldier Gloves" "Sorcerer Boots" "Spine Bow" "Steelscale Gauntlets" "Stibnite Flask" "Stygian Vise" "Sulphur Flask" "Tarnished Spirit Shield" "Terror Claw" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Topaz Flask" "Tornado Wand" "Two-Point Arrow Quiver" "Vaal Axe" "Vaal Blade" "Vaal Gauntlets" "Vaal Mask" "Vaal Regalia" "Vaal Sceptre" "Vaal Spirit Shield" "Void Sceptre" "Widowsilk Robe" "Wyrmscale Boots" "Zealot Gloves"
 
-Show # $type->unique $tier->t3
+Show # $type->uniques $tier->t3
 	Rarity Unique
 	BaseType == "Ancient Gauntlets" "Ancient Greaves" "Ancient Spirit Shield" "Assassin Bow" "Astral Plate" "Bismuth Flask" "Blinder" "Blunt Arrow Quiver Piece" "Bone Bow" "Bone Circlet" "Broadhead Arrow Quiver" "Bronzescale Boots" "Callous Mask Piece" "Cedar Tower Shield" "Champion Kite Shield" "Clasped Mitts" "Cloth Belt Piece" "Coiled Staff" "Coronal Leather" "Corsair Sword" "Crystal Belt" "Demon Dagger" "Diamond Ring" "Enameled Buckler" "Etched Greatsword" "Ezomyte Blade" "Golden Buckler" "Grand Mana Flask" "Granite Flask" "Hallowed Hybrid Flask" "Holy Chainmail" "Imperial Bow" "Imperial Staff" "Iron Sceptre" "Ironscale Gauntlets" "Jasper Chopper" "Judgement Staff" "Karui Chopper" "Labrys" "Lacquered Helmet" "Legion Boots" "Loricated Ringmail" "Moonstone Ring" "Nightmare Bascinet" "Nubuck Boots" "Opal Wand" "Painted Tower Shield" "Paua Ring" "Raven Mask" "Rawhide Tower Shield" "Ritual Sceptre" "Royal Axe" "Royal Burgonet" "Royal Skean" "Sanctified Life Flask" "Sanctified Mana Flask" "Serpentscale Boots" "Shackled Boots" "Shadow Sceptre" "Sharkskin Tunic" "Siege Helmet" "Sinner Tricorne" "Soldier Helmet" "Sovereign Spiked Shield" "Steel Circlet" "Steelhead" "Steelwood Bow" "Strapped Mitts" "Thorium Spirit Shield" "Timeworn Claw" "Trapper Boots" "Two-Toned Boots" "Tyrant's Sekhem" "Variscite Blade" "Varnished Coat" "Void Axe" "War Hammer" "Zodiac Leather"
 
-#Hide # $type->unique $tier->recipeuniquerings
+#Hide # $type->uniques $tier->recipeuniquerings
 #	Rarity Unique
 #	Class "Rings"
 
@@ -2963,15 +3001,15 @@ Show # $type->unique $tier->t3
 # [5709] Tier 4 uniques
 #------------------------------------
 
-Show # $type->unique $tier->hideable2
+Show # $type->uniques $tier->hideable2
 	Rarity Unique
 	BaseType == "Ambush Mitts" "Blunt Arrow Quiver" "Brass Maul" "Callous Mask" "Citadel Bow" "Clasped Boots" "Cleaver" "Coral Ring" "Crude Bow" "Crusader Plate" "Crystal Wand" "Cutlass" "Death Bow" "Despot Axe" "Elegant Ringmail" "Elegant Sword" "Fire Arrow Quiver" "Gilded Sallet" "Gnarled Branch" "Goathide Gloves" "Gold Amulet" "Great Mallet" "Imperial Claw" "Iron Circlet" "Iron Hat" "Iron Mask" "Iron Staff" "Ironscale Boots" "Jade Hatchet" "Jagged Maul" "Lapis Amulet" "Latticed Ringmail" "Leather Hood" "Long Bow" "Ornate Sword" "Painted Buckler" "Pinnacle Tower Shield" "Plank Kite Shield" "Plate Vest" "Prismatic Ring" "Reaver Sword" "Reinforced Greaves" "Royal Bow" "Royal Staff" "Rusted Sword" "Rustic Sash" "Scholar Boots" "Serrated Arrow Quiver" "Sharktooth Arrow Quiver" "Skinning Knife" "Sledgehammer" "Spiraled Wand" "Strapped Leather" "Velvet Gloves" "Velvet Slippers" "Vine Circlet" "War Buckler" "Wild Leather" "Woodsplitter"
 
-Show # $type->unique $tier->hideable
+Show # $type->uniques $tier->hideable
 	Rarity Unique
 	BaseType == "Abyssal Axe" "Antique Greaves" "Antique Rapier" "Assassin's Garb" "Auric Mace" "Aventail Helmet" "Awl" "Baroque Round Shield" "Basket Rapier" "Bastard Sword" "Bone Armour" "Boot Blade" "Boot Knife" "Branded Kite Shield" "Brass Spirit Shield" "Bronze Gauntlets" "Bronze Sceptre" "Bronzescale Gauntlets" "Buckskin Tunic" "Burnished Spiked Shield" "Chain Gloves" "Chiming Spirit Shield" "Close Helmet" "Colossal Tower Shield" "Compound Spiked Shield" "Conjurer Boots" "Conjurer Gloves" "Conquest Chainmail" "Copper Plate" "Corrugated Buckler" "Crusader Chainmail" "Crystal Sceptre" "Cutthroat's Garb" "Decimation Bow" "Decorative Axe" "Deerskin Boots" "Deicide Mask" "Demon's Horn" "Desert Brigandine" "Destiny Leather" "Destroyer Regalia" "Diamond Flask" "Dragonscale Boots" "Dragonscale Gauntlets" "Dread Maul" "Dream Mace" "Driftwood Wand" "Dusk Blade" "Eelskin Gloves" "Elder Sword" "Elegant Foil" "Embroidered Gloves" "Engraved Wand" "Estoc" "Ezomyte Axe" "Festival Mask" "Flaying Knife" "Fright Claw" "Full Dragonscale" "Full Scale Armour" "Full Wyrmscale" "Goat's Horn" "Golden Mask" "Goliath Gauntlets" "Great Helmet" "Greater Mana Flask" "Grinning Fetish" "Gut Ripper" "Harmonic Spirit Shield" "Headsman Axe" "Highland Blade" "Imbued Wand" "Imperial Staff Piece" "Infernal Axe" "Iron Gauntlets" "Ivory Spirit Shield" "Jagged Foil" "Karui Sceptre" "Laminated Kite Shield" "Large Hybrid Flask" "Lathi" "Leather Cap" "Legion Sword Piece" "Lion Sword" "Lunaris Circlet" "Marble Amulet" "Mesh Boots" "Mesh Gloves" "Military Staff" "Mosaic Kite Shield" "Nailed Fist" "Necromancer Silks" "Nubuck Gloves" "Opal Sceptre" "Ornate Mace" "Ornate Ringmail" "Pine Buckler" "Plague Mask" "Plated Greaves" "Platinum Kris" "Platinum Sceptre" "Poleaxe" "Polished Spiked Shield" "Primordial Staff" "Quartz Wand" "Quicksilver Flask" "Recurve Bow" "Reinforced Tower Shield" "Riveted Boots" "Rock Breaker" "Rotted Round Shield" "Sabre" "Sage's Robe" "Saintly Chainmail" "Samite Gloves" "Samnite Helmet" "Satin Gloves" "Scholar's Robe" "Secutor Helm" "Serpentine Staff" "Serpentscale Gauntlets" "Shadow Axe" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Short Bow" "Silk Slippers" "Simple Robe" "Slaughter Knife" "Slink Gloves" "Soldier Boots" "Sorcerer Gloves" "Spidersilk Robe" "Spiked Club" "Spike-Point Arrow Quiver" "Steel Gauntlets" "Steel Kite Shield" "Stiletto" "Strapped Boots" "Studded Round Shield" "Sundering Axe" "Supreme Spiked Shield" "Teak Round Shield" "Terror Maul" "Thresher Claw" "Throat Stabber" "Tiger Sword" "Tomahawk" "Tribal Circlet" "Tricorne" "Twilight Blade" "Ursine Pelt" "Vaal Buckler" "Vaal Claw" "Vaal Hatchet" "Vanguard Belt" "Vile Staff" "Visored Sallet" "War Sword" "Whalebone Rapier" "Wool Gloves" "Wool Shoes" "Wrapped Mitts" "Wyrmscale Gauntlets" "Zealot Helmet"
 
-Show # $type->unique $tier->restex
+Show # $type->uniques $tier->restex
 	Rarity Unique
 
 #===============================================================================================================
@@ -3044,6 +3082,18 @@ Show # $type->leveling->flasks->utility $tier->asortedutility
 
 Show # $type->leveling->flasks->utility $tier->any
 	Class "Utility Flask"
+
+Show # $type->leveling->flasks->quality $tier->max
+	Quality >= 20
+	Class "Flask"
+
+Show # $type->leveling->flasks->quality $tier->high
+	Quality >= 15
+	Class "Flask"
+
+Show # $type->leveling->flasks->quality $tier->any
+	Quality >= 1
+	Class "Flask"
 
 #------------------------------------
 # [6002] Hybrid flasks
@@ -3506,25 +3556,31 @@ Show # $type->leveling->normalmagic->act1 $tier->physical
 	BaseType "Iron Ring" "Rustic Sash"
 
 Show # $type->leveling->normalmagic->act2 $tier->castercraftrings
-	AreaLevel > 15
+	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity <= Magic
 	BaseType "Iron Ring" "Ruby Ring" "Sapphire Ring" "Topaz Ring"
 
 Show # $type->leveling->normalmagic->act2 $tier->boots
-	AreaLevel > 15
+	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity <= Magic
 	Class "Boots"
 
 Show # $type->leveling->normalmagic->act2 $tier->physical
-	AreaLevel > 15
+	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity <= Magic
 	BaseType "Rustic Sash"
 
+Show # $type->leveling->normalmagic->otheracts $tier->highphysquivers
+	AreaLevel >= 24
+	AreaLevel <= 41
+	Rarity <= Magic
+	BaseType "Broadhead Arrow Quiver"
+
 Show # $type->leveling->normalmagic->otheracts $tier->fireresistgear
-	AreaLevel > 24
+	AreaLevel >= 24
 	AreaLevel <= 51
 	Rarity <= Magic
 	BaseType "Ruby Ring"
@@ -3537,6 +3593,7 @@ Show # $type->leveling->normalmagic->otheracts $tier->generalcrafting
 #------------------------------------
 # [6002] Normals
 #------------------------------------
+# !! Override 930 : "first levels gear"
 
 Show # $type->leveling->firstlevels $tier->firstareas
 	AreaLevel <= 4
@@ -3557,6 +3614,7 @@ Show # $type->leveling->firstlevels $tier->threesocketedgear
 #------------------------------------
 # [6002] Weapon Progression
 #------------------------------------
+# !! Override 940 : "weapon progression"
 
 Show # $type->leveling->weaponprogression $tier->r01
 	ItemLevel <= 9
@@ -3764,7 +3822,7 @@ Show # $type->leveling->weaponprogression $tier->r29
 #------------------------------------
 # [6002] Remaining Magics
 #------------------------------------
-# !! Override 930 : "Items for the first levels"
+# !! Override 950 : "magic vendor items"
 
 Show # $type->decorators->leveling->magic $tier->large
 	Width >= 2
@@ -3837,3 +3895,21 @@ Show # $type->leveling->magic->remaining $tier->firstlevels
 	AreaLevel >= 1
 	AreaLevel <= 8
 	Rarity Magic
+
+# !! Override 960 : "don't override anything"
+#------------------------------------
+# [6002] Hide All known Section
+#------------------------------------
+
+Hide
+	Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"
+
+#------------------------------------
+# [6002] Show All unknown Section
+#------------------------------------
+# THIS ENTRY IS CAUGHT IN 3 CASES:
+# 1) YOUR FILTER IS OUT OF DATE!
+# 2) YOU DID SOMETHING SILLY WHEN EDITING THE FILTER
+# 3) YOU ENCOUNTERED A PREVIOUSLY UNKNOWN UNIQUE
+
+Show # $type->anyremaining $tier->restex
