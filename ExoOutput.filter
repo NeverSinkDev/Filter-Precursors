@@ -1521,13 +1521,6 @@ Show # $type->rare->exotic->talisman $tier->t3decenttypetalisman
 	ItemLevel >= 68
 	Rarity Rare
 	Class "Amulets"
-	BaseType "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman" "Writhing Talisman"
-
-Show # $type->rare->exotic->talisman $tier->classbased
-	AnyEnchantment True
-	ItemLevel >= 68
-	Rarity Rare
-	Class "Amulets"
 	BaseType "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman"
 
 Show # $type->rare->exotic->talisman $tier->any
@@ -3266,15 +3259,18 @@ Show # $type->leveling->flasks->mana $tier->t12
 Show # $type->leveling->rare->socketslinks $tier->chromatic4linkrares
 	LinkedSockets >= 4
 	ItemLevel <= 68
+	Rarity Rare
+	SocketGroup "RGB"
+
+Show # $type->leveling->rare->socketslinks $tier->chromaticitems
+	ItemLevel <= 68
+	Rarity Rare
 	SocketGroup "RGB"
 
 Show # $type->leveling->rare->socketslinks $tier->4linkrares
 	LinkedSockets >= 4
 	ItemLevel <= 68
-
-Show # $type->leveling->rare->socketslinks $tier->chromaticitems
-	ItemLevel <= 68
-	SocketGroup "RGB"
+	Rarity Rare
 
 #------------------------------------
 # [6002] Rares - Decorators
@@ -3863,7 +3859,7 @@ Hide # $type->leveling->magic->remaining $tier->largemagicblocker
 	Rarity Magic
 
 Hide # $type->leveling->magic->remaining $tier->mediummagicblocker
-	Height >= 1
+	Height > 1
 	AreaLevel >= 34
 	Rarity Magic
 

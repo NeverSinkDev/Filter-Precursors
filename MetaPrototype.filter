@@ -728,9 +728,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show T2StatTalisman { BaseType bases.talismans.stats.any; Mod amu_allat[3]; Mod str[3] + dex[3] + int[3]; }
 
 		Show T3DecentModsTalisman { BaseType "Talisman"; Mod >= 3 amu_life[3] + top2base + merged_amu_attack3 + merged_amu_caster3 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent"; }
-		Show T3DecentTypeTalisman { BaseType bases.talismans.universal.any + bases.talismans.attack.any + bases.talismans.attack.any };
-
-		Show ClassBased { BaseType bases.talismans.universal.any; }
+		Show T3DecentTypeTalisman { BaseType bases.talismans.universal.any; };
+		
 		Show Any { BaseType "Talisman"; }
 	}
 
@@ -1579,11 +1578,11 @@ Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
 # [6002] Links and Sockets
 #------------------------------------
 
-Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->Rare->SocketsLinks")
+Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->Rare->SocketsLinks"), Rarity Rare
 {
 	Show Chromatic4linkrares { LinkedSockets >= 4; SocketGroup "RGB"; }
-	Show 4linkrares { LinkedSockets >= 4; }
-	Show ChromaticItems { SocketGroup "RGB"; } 
+	Show ChromaticItems { SocketGroup "RGB"; }
+	Show 4linkrares { LinkedSockets >= 4; } 
 }
 
 #------------------------------------
@@ -1801,9 +1800,9 @@ Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel 
 Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
 {
 	Hide LargeMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height >= 3; Width >= 2 }
-	Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act3; Height >= 1; }
+	Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act3; Height > 1; }
 
-	Show Rest { AreaLevel >=leveling.keylevels.act3; AreaLevel <= 68; }
+	Show Rest { AreaLevel >= leveling.keylevels.act3; AreaLevel <= 68; }
 	Show Act34 { AreaLevel >=leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act3; }
 	Show Act2 { AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
 	Show Act1 { AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
