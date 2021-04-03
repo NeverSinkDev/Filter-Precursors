@@ -25,7 +25,7 @@ Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 
 #!! Override 020 : "influenced rules"
 
-Section Influenced : Rarity <= Rare
+Section Influenced : Rarity <= Rare, Tag("influenced")
 {
 #------------------------------------
 #   [1234] Influenced Maps
@@ -33,7 +33,7 @@ Section Influenced : Rarity <= Rare
 
 Section Maps : Auto("maps->influenced"), Class "Maps"
 {	
-	Show InfShaper { HasInfluence Shaper; tag("influenced"); }
+	Show InfShaper { HasInfluence Shaper; }
 	Show InfElder { HasInfluence Elder; }
 }
 

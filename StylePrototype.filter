@@ -1,33 +1,137 @@
+# Markup naming strategies
+# error => returns tier 4 color variations
+# .icon		 => returns icon
+# .cray	 	 => beam color
+# .cmap		 => mc
+# .size		 => font size
+
 #------------------------------------
-# Basic Highlight
+# Color Names
 #------------------------------------
 
 var sBlack = 0 0 0 255;
 var sWhite = 255 255 255 255;
+var sRed = 255 0 0 255;
 
-var t1icon = Star;
+#------------------------------------
+# Universal
+#------------------------------------
 
-var t1col = Red;
-var t2col = Yellow;
+var icon = Circle;	# differs
+
+#------------------------------------
+# Variables - Tierlists
+#------------------------------------
+
+var tier.error = 255 0 255 255;
+var tier.error.low = 100 0 100 255;
+var tier.error.cmap = Pink;
+var tier.error.cray = Pink;
+
+var tier.t1.icon = Star;	# sometimes differs
+var tier.t1.cmap = Red;		
+var tier.t1.cray  = Red;
+var tier.t1.acc = sRed;		# differs
+var tier.t1.base = sWhite;
+
+var tier.t2.cmap = Red;		# red/yellow
+var tier.t2.cray  = Red;	# red/yellow
+var tier.t2.acc = tier.t1.acc;
+var tier.t2.base = sWhite;		# differs
+
+#------------------------------------
+# Variables - ItemTypes
+#------------------------------------
+
+var exoticgear.sound = 3 300;
+
+var exoticgear.cmap = Blue;
+var exoticgear.cray = Blue;
+var exoticgear.tx = 0 240 190 255;
+var exoticgear.tx.low = 0 240 190 180;
+var exoticgear.extra = 0 75 30 255;
+
+#------------------------------------
+# TO BE REPLACED
+#------------------------------------
+
 var t3col = White;
 var t4col = Grey;
 
 #------------------------------------
-# Basic Strategies
+# Universal Strategies
+#------------------------------------
+
+Style UniversalExotic
+{
+	var icon = Diamond;
+
+	Func T1
+	{
+		SetFontSize 45;
+		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor exoticgear.extra;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
+	}
+
+	Func T2
+	{
+		SetFontSize 45;
+		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
+	}
+
+	Func T3
+	{
+		SetFontSize 40;
+		SetTextColor SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
+	}
+
+	Func T4
+	{
+		SetFontSize 40;
+		SetTextColor SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
+		PlayEffect exoticgear.cray Temp;
+	}
+}
+
+Style UniversalTierlist
+{
+	Func restex ()
+	{ 
+		SetFontSize 45; 
+		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
+		PlayAlertSound 2 300; PlayEffect tier.error.scl; MinimapIcon 0 tier.error.scl icon; 
+	}
+
+	Func T1 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t1.acc; SetBorderColor tier.t1.acc; SetBackgroundColor tier.t1.base; 
+		PlayAlertSound 6 300; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
+	}
+
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound 1 300; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
+#------------------------------------
+# Marking Base Strategies
 #------------------------------------
 
 # Basic markup strategy for item tiering
-Style Marking
+Style MarkingSixTier : UniversalTierlist
 {
 	var icon = Circle;
 	# ex-tier
-	Func T1 () {SetFontSize 45; PlayAlertSound 6 300; PlayEffect t1col; MinimapIcon 0 t1col Star; };
-	# divine tier
-	Func T2 () {SetFontSize 45; PlayAlertSound 1 300; PlayEffect t2col; MinimapIcon 1 t1col icon; };
 	# chaos tier
-	Func T3 () {SetFontSize 45; PlayAlertSound 2 300; PlayEffect t3col; MinimapIcon 1 t3col icon; };
+	Func T3 () {SetFontSize 45; PlayAlertSound 2 300; PlayEffect t2col; MinimapIcon 1 t2col icon; };
 	# alteration tier
-	Func T4h (){SetFontSize 45; PlayEffect t4col; MinimapIcon 2 t4col icon; };
+	Func T4h (){SetFontSize 45; PlayEffect t3col; MinimapIcon 2 t3col icon; };
 	Func T4 () {SetFontSize 45; PlayEffect t4col Temp; };
 	# low tier
 	Func T5 () {SetFontSize 40; PlayEffect t4col Temp; MinimapIcon 2 t4col icon; };
@@ -35,19 +139,15 @@ Style Marking
 	Func T6 () {SetFontSize 40; };
 }
 
+#------------------------------------
+# Coloration Base Strategies
+#------------------------------------
+
 # Basic color strategy for item tiering
-Style BaseTiering : Marking
+Style BaseTiering : MarkingSixTier
 {
 	var icon = Triangle;
 
-	# ex tier
-	var T1c = 255 0 0 255; 		# Ex
-	Func T1 () 		{ SetTextColor T1c; SetBorderColor T1c; SetBackgroundColor sWhite; };
-
-	# divine tier
-	var T2c = 240 90 35 255; 	# Divine
-	Func T2 () 		{ SetBackgroundColor T2c; SetBorderColor sWhite; SetTextColor sWhite; };
-	
 	# chaos tier - variations
 	var T3c = 249 150 25 255;	# Chaos
 	Func T3 () 		{ SetBackgroundColor T3c; SetBorderColor sBlack; SetTextColor sBlack; };
@@ -63,13 +163,55 @@ Style BaseTiering : Marking
 	Func T6 () 		{ SetTextColor acc; SetBorderColor sBlack; };
 }
 
-Style ExplicitModHighlight
+#------------------------------------
+# Derived Strategies - PRE-RARE
+#------------------------------------
+
+Style SixLinkVariant : BaseTiering
 {
-	Func Basic()	{ SetFontSize 45; SetTextColor 255 190 0 255; SetBorderColor 0 240 190 240; SetBackgroundColor 0 75 30 255; PlayAlertSound 3 300; PlayEffect Blue; MinimapIcon 1 Blue Diamond };
+	var icon = Diamond;
+	var tier.t1.acc = 200 0 0 255;
+	var tier.t2.acc = 200 0 0 255;
 }
 
-Style BasicIntegration
+Style InfluencedVariant : BaseTiering
 {
+	var icon = Diamond;
+	var tier.t1.icon = Cross;
+
+	var tier.t1.acc = 200 0 0 255;
+	var tier.t2.acc = 200 0 0 255;
+}
+
+# purple highlight for general identified mod items
+Style IdMods : UniversalExotic
+{
+	var exoticgear.cmap = Purple;
+	var exoticgear.cray = Purple;
+	var icon = Diamond;
+}
+
+#------------------------------------
+# Applications - PRE-RARE
+#------------------------------------
+
+Style ApplicatonTableGear
+{
+	Apply(SixLinkVariant.t1 => 6Links.arm);
+	Apply(SixLinkVariant.t2 => 6Links.wep);
+
+	Apply(InfluencedVariant.t1 => Influenced.t1*);
+	Apply(InfluencedVariant.t2 => Influenced.t2*);
+
+	Apply(!UniversalExotic.t1 => exoticbases);
+	
+	Apply(!IdMods.t2 => IdModSection);
+}
+
+Style Demo
+{
+	#Merge ( influenced = crusader + warlord + redeemer + hunter );
+	#Apply ( BaseTiering.t1 => $influenced );
 	#Apply (Basetiering.t1 => Influenced.t1*);
 	#Apply (Basetiering.t2 => Influenced.t2*);
 
