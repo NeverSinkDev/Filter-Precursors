@@ -452,14 +452,14 @@ Section Jewels : Tag("jewels")
 #------------------------------------
 # [1234] Special Cases
 #------------------------------------
-	Section IdentifiedJewels : Identified True, Auto("jewels->special"), Tag("jewels.rare")
+	Section IdentifiedJewels : Identified True, Auto("jewels->special"), Tag("*rare")
 	{
-		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1
+		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, Tag("*corrupt")
 		{
 			Show 1modcorrupted { Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
-		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
+		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel", Tag("*special")
 		{
 			Show 1moduncorrupted { HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
@@ -467,36 +467,36 @@ Section Jewels : Tag("jewels")
 #------------------------------------
 # [1234] Cluster Jewels
 #------------------------------------
-	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, Tag("jewels.cluster")
+	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, Tag("*cluster")
 	{
-		Show OptimalHighLarge { BaseType "Large Cluster Jewel"; ItemLevel >= 82; EnchantmentPassiveNum <= 8; }
-		Show HighLarge { BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large { BaseType "Large Cluster Jewel"; }
+		Show OptimalHighLarge	{ Tag("V2"); Tag("High"); BaseType "Large Cluster Jewel"; ItemLevel >= 82; EnchantmentPassiveNum <= 8; }
+		Show HighLarge 			{ Tag("V3"); Tag("High"); BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
+		Show Large 				{ Tag("V4"); BaseType "Large Cluster Jewel"; }
 
-		Show OptimalHighMedium { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
-		Show HighMedium { BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium { BaseType "Medium Cluster Jewel"; }
+		Show OptimalHighMedium { Tag("V2"); Tag("High"); BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
+		Show HighMedium 	   { Tag("V3"); Tag("High"); BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
+		Show Medium { 			 Tag("V4"); BaseType "Medium Cluster Jewel"; }
 
-		Show HighSmall { BaseType "Small Cluster Jewel"; ItemLevel >= 82; }
-		Show Small { BaseType "Small Cluster Jewel"; }
+		Show HighSmall { 		 Tag("V3"); Tag("High"); BaseType "Small Cluster Jewel"; ItemLevel >= 82; }
+		Show Small { 			 Tag("V4"); BaseType "Small Cluster Jewel"; }
 	}
 #------------------------------------
 # [1234] Abyss Jewels
 #------------------------------------
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
-		Show HighRare  { Tag("jewels.rare"); Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic { Tag("jewels.magic"); Rarity Magic; ItemLevel >= 82; }
-		Show AnyRare   { Tag("jewels.rare"); Rarity Rare; }
-		Show AnyMagic  { Tag("jewels.magic"); Rarity Magic; }
+		Show HighRare  { Tag("*rare");  Tag("V4"); Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic { Tag("*magic"); Rarity Magic; ItemLevel >= 82; }
+		Show AnyRare   { Tag("*rare");  Rarity Rare; }
+		Show AnyMagic  { Tag("*magic"); Rarity Magic; }
 	}
 #------------------------------------
 # [1234] Generic Jewels
 #------------------------------------
 	Section GenericJewels : Class "Jewel", BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
 	{
-		Show AnyRare  { Tag("jewels.rare");  Rarity Rare; }
-		Show AnyMagic { Tag("jewels.magic"); Rarity <= Magic; }
+		Show AnyRare  { Tag("*rare"); Tag("V4"); Rarity Rare; }
+		Show AnyMagic { Tag("*magic"); Rarity <= Magic; }
 	}
 }
 
@@ -509,12 +509,12 @@ Section Jewels : Tag("jewels")
 # [1234] Link Based
 #------------------------------------
 
-Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
+Section SocketsLinks : Tag("recipe"), Rarity <= Rare, Auto("SocketsLinks")
 {
-	Show 5LinksLeveling	{ LinkedSockets >= 5; AreaLevel <= 67; }
-	Show 5Link6Sockets	{ Sockets >= 6; LinkedSockets >= 5; }
-	Show 5Links			{ LinkedSockets >= 5; AreaLevel >= 67; }
-	Show 6Sockets		{ Sockets >= 6; }
+	Show 5LinksLeveling	{ Tag("V2"); Tag("*special"); Tag("*t1"); LinkedSockets >= 5; AreaLevel <= 67; }
+	Show 5Link6Sockets	{ Tag("*t1"); Tag("*special"); Sockets >= 6; LinkedSockets >= 5; }
+	Show 5Links			{ Tag("*t1"); Tag("*special"); LinkedSockets >= 5; AreaLevel >= 67; }
+	Show 6Sockets		{ Tag("*t1"); Sockets >= 6; }
 }
 
 #===============================================================================================================
@@ -526,8 +526,7 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 # [1234] ILVL 86
 #------------------------------------
 
-
-Section EndgameCraftingBases : Rarity <= Rare, Clean()
+Section EndgameCraftingBases : Rarity <= Rare, Clean(), Tag("craftspecial"), Tag("craftgeneral")
 {
 	Section : Auto("Decorator->craftinggeneric")
 	{
@@ -536,9 +535,9 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
 	{
-		Show t1 { BaseType bases.crafting.general.t1; }
-		Show t2 { BaseType bases.crafting.general.t2; }
-		Show t3 { BaseType bases.crafting.general.t3; }
+		Show t1 { Tag("craftspecial.I86"); BaseType bases.crafting.general.t1; }
+		Show t2 { Tag("craftgeneral.I86"); BaseType bases.crafting.general.t2; }
+		Show t3 { Tag("craftgeneral.I86"); BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -547,9 +546,9 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84
 	{
-		Show t1 { BaseType bases.crafting.general.t1; }
-		Show t2 { BaseType bases.crafting.general.t2; }
-		Show t3 { BaseType bases.crafting.general.t3; }
+		Show t1 { Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
+		Show t2 { Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
+		Show t3 { Tag("craftgeneral.I84"); BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -558,9 +557,9 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean()
 
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 60
 	{
-		Show t1 { BaseType bases.crafting.general.t1; }
-		Show t2 { BaseType bases.crafting.general.t2; }
-		Show t3 { BaseType bases.crafting.general.t3; }
+		Show t1 { Tag("craftspecial.ANY"); BaseType bases.crafting.general.t1; }
+		Show t2 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t2; }
+		Show t3 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t3; }
 	}
 
 	Section : Auto("Decorator->craftinggeneric")

@@ -11,7 +11,7 @@
 
 var sBlack = 0 0 0 255;
 var sWhite = 255 255 255 255;
-var sRed = 255 0 0 255;
+var sRed   = 255 0 0 255;
 
 #------------------------------------
 # Universal
@@ -19,8 +19,10 @@ var sRed = 255 0 0 255;
 
 var icon = Circle;	# differs
 
+var ray.t1 = Red;
+var ray.t2 = Yellow;
 var ray.t3 = White;
-var ray.t4 = White Temp;
+var ray.t4 = Grey;
 
 #------------------------------------
 # Variables - Tierlists
@@ -75,6 +77,27 @@ var jewel.rare.extra    = 120 120 0 225;
 var jewel.cluster.tx    = 150 0 255 255;
 var jewel.cluster.extra = 34 0 67 255;
 
+var recipe.t1.acc   = 180 135 135 255;
+var recipe.t2.acc   = 180 135 135 200;
+var recipe.cmap = Grey;
+var recipe.cray = Grey;
+
+#------------------------------------
+# Variables - Accents
+#------------------------------------
+
+var accent.special.tx = exoticgear.tx;
+var accent.high.tx = 240 100 0 255;
+var accent.corrupt.tx = 200 0 0 255;
+
+var accent.level.i86.high = 255 125 0 240;
+var accent.level.i86 = 255 125 0 185;
+var accent.level.i84.high = 200 200 0 240;
+var accent.level.i84 = 200 200 0 185;
+
+var accent.notice.high = 240 240 240 240;
+var accent.notice = 200 200 200 200;
+
 #------------------------------------
 # Variables - Tier Subtypes
 #------------------------------------
@@ -83,15 +106,63 @@ var fragment.sound = 3 300;
 var fragment.tx = 255 85 85 255;
 
 #------------------------------------
+# Global Strategies
+#------------------------------------
+
+# Global strategies can be applied to any section
+# Even if they miss the parent tag
+
+# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
+Style UniversalValueAccents
+{
+	Func V1 ()
+	{
+		PlayAlertSound 1 300;
+		SetFontSize 45;
+		PlayEffect Red; 
+		MinimapIcon 0 Red *;
+	}
+
+	Func V2 ()
+	{
+		SetFontSize 45;
+		PlayEffect Yellow; MinimapIcon 1 Yellow *;
+	}
+
+	Func V3 ()
+	{
+		SetFontSize 45;
+		PlayEffect White; MinimapIcon 2 White *;
+	}
+
+	Func V4 ()
+	{
+		PlayEffect Grey Temp; MinimapIcon 2 Grey *;
+	}
+}
+
+#------------------------------------
 # Universal Strategies
 #------------------------------------
 
+# Accents are additional styles attached to other styles. These add additional highlight for features, such as high level, special properties, corrupted state etc.
 Style UniversalAccents
 {
-	Func ExoticAccent ()
+	Func High()
+	{
+		SetBorderColor accent.high.tx;
+	}
+
+	Func Special ()
 	{
 		SetBorderColor exoticgear.tx;
-		PlayEffect exoticgear.cray Temp; MinimapIcon 2 exoticgear.cmap icon;
+		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+
+	Func Corrupt ()
+	{
+		SetBorderColor accent.corrupt.tx;
+		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
 	}
 }
 
@@ -174,7 +245,31 @@ Style UniversalTierlist
 # Item Specific Strategies
 #------------------------------------
 
-Style JewelStrategy : UniversalAccents
+Style RecipeStrategy
+{
+	var icon = Pentagon;
+
+	Func T1() 
+	{ 
+		SetFontSize 45;
+		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
+		PlayAlertSound 2 300; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
+	}
+
+	Func T2() 
+	{ 
+		SetFontSize 40;
+		SetTextColor recipe.t1.acc SetBorderColor recipe.t1.acc; SetBackgroundColor sBlack;
+	}
+
+	Func t3() 
+	{ 
+		SetFontSize 35;
+		SetTextColor recipe.t1.acc; SetBorderColor recipe.t2.acc; SetBackgroundColor sBlack;
+	}
+}
+
+Style JewelStrategy
 {
 	var icon = Diamond;
 
@@ -199,6 +294,51 @@ Style JewelStrategy : UniversalAccents
 	}
 }
 
+Style CraftSpecialStrategy
+{
+	Func I86 () 
+	{ 
+		SetFontSize 45;  MinimapIcon 2 Blue Diamond;
+		PlayEffect Blue;
+		SetBorderColor accent.level.i86.high;
+	}
+
+	Func I84 () 
+	{ 
+		SetFontSize 45;  MinimapIcon 2 Blue Diamond;
+		PlayEffect White;
+		SetBorderColor accent.level.i84.high;
+	}
+
+	Func ANY () 
+	{ 
+		SetFontSize 40;
+		SetBackgroundColor 0 0 0 180;
+		SetBorderColor accent.notice.high;
+	}
+}
+
+Style CraftGeneralStrategy
+{
+	Func I86 () 
+	{ 
+		SetFontSize 40;
+		SetBorderColor accent.level.i86;
+	}
+
+	Func I84 () 
+	{ 
+		SetFontSize 35;
+		SetBorderColor accent.level.i84;
+	}
+
+	Func ANY () 
+	{ 
+		SetBackgroundColor 0 0 0 180;
+		SetBorderColor accent.notice;
+	}
+}
+
 #------------------------------------
 # Tiering Marking Strat
 #------------------------------------
@@ -212,7 +352,6 @@ Style ThreeXTierList : UniversalTierlist
 		PlayAlertSound 1 300; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
 	}
 }
-
 
 #------------------------------------
 # Derived Strategies - PRE-RARE
@@ -254,7 +393,7 @@ Style InvitationTierList : ThreeXTierList
 # Applications - PRE-RARE
 #------------------------------------
 
-Style APP_PreRareGear
+Style LibrarySectionBased
 {
 	Apply(6Links.arm => SixLinkVariant.t1);
 	Apply(6Links.wep => SixLinkVariant.t2);
@@ -270,10 +409,25 @@ Style APP_PreRareGear
 	Apply(Invitations => InvitationTierList);
 }
 
-Style APP_Tags_Exotic
+Style LibraryTagBased
 {
 	Apply($jewels => JewelStrategy);
 	Apply($exotic => UniversalExotic);
+	Apply($recipe => RecipeStrategy);
+
+	Apply($craftspecial => CraftSpecialStrategy);
+	Apply($craftgeneral => CraftGeneralStrategy);
+}
+
+Style LibraryGlobal
+{
+	Apply(ALL => UniversalValueAccents);
+}
+
+Style LibraryAccents
+{
+	Apply($jewels => UniversalAccents);
+	Apply($recipe => UniversalAccents);
 }
 
 
