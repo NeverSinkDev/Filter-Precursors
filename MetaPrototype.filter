@@ -25,7 +25,7 @@ Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 
 #!! Override 020 : "influenced rules"
 
-Section Influenced : Rarity <= Rare, Tag("influenced")
+Section Influenced : Rarity <= Rare
 {
 #------------------------------------
 #   [1234] Influenced Maps
@@ -300,7 +300,7 @@ var exotic_bestiary_t2 = "of Craiceann" "of Saqawal";
 var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
 var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
 
-Section IdModSection : IdMods
+Section IdModSectionSpecial : IdMods, Tag(exotic)
 {
 	Section Rare : Rarity "Rare", Auto("ExoticMods")
 	{
@@ -309,36 +309,36 @@ Section IdModSection : IdMods
 #------------------------------------
 #!! Override 050 : "veil, incursion, delve etc. mod items"
 
-		Show t1veil     { Mod t1veiled; }
-		Show t2veil     { Mod t2veiled; }
-		Show DuoVeil    { Mod "Veiled"; Mod "of the Veil"; }
-		Show SmallVeil1 { Mod "Veil"; Width <= 2; Height <= 2; } 
-		Show SmallVeil2 { Mod "Veil"; Width <= 1; Height <= 4; }
-		Show VeilRest   { Mod "Veil"; }
+		Show t1veil     { Tag(exotic.t1); Mod t1veiled; }
+		Show t2veil     { Tag(exotic.t2); Mod t2veiled; }
+		Show DuoVeil    { Tag(exotic.t3); Mod "Veiled"; Mod "of the Veil"; }
+		Show SmallVeil1 { Tag(exotic.t3); Mod "Veil"; Width <= 2; Height <= 2; } 
+		Show SmallVeil2 { Tag(exotic.t3); Mod "Veil"; Width <= 1; Height <= 4; }
+		Show VeilRest   { Tag(exotic.t4); Mod "Veil"; }
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
-		Show IncursionSpeedTraps { Mod "Matatl's"; Class "Boots"; }
-		Show IncursionLifeChest  { Mod "Guatelitzi's"; Class "Body Armours"; }
-		Show IncursionSumonner   { Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
-		Show IncursionCaster     { Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptres" "Staves" "Wands"; }
-		Show IncursionElemental  { Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
-		Show IncursionAttack     { Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
-		Show IncursionGloveHelm  { Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
-		Show IncursionJwlry		 { Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
-		Show IncursionRandom     { Mod exotic_incursion; }
+		Show IncursionSpeedTraps { Tag(exotic.t2); Mod "Matatl's"; Class "Boots"; }
+		Show IncursionLifeChest  { Tag(exotic.t2); Mod "Guatelitzi's"; Class "Body Armours"; }
+		Show IncursionSumonner   { Tag(exotic.t2); Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionCaster     { Tag(exotic.t2); Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptres" "Staves" "Wands"; }
+		Show IncursionElemental  { Tag(exotic.t2); Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
+		Show IncursionAttack     { Tag(exotic.t2); Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
+		Show IncursionGloveHelm  { Tag(exotic.t2); Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
+		Show IncursionJwlry		 { Tag(exotic.t2); Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
+		Show IncursionRandom     { Tag(exotic.t3); Mod exotic_incursion; }
 #------------------------------------
 #   [1234] Bestiary
 #------------------------------------
-		Show BestiaryValuable { Mod exotic_bestiary_t1 }
-		Show BestiaryOther    { Mod exotic_bestiary_t2 }
+		Show BestiaryValuable { Tag(exotic.t2); Mod exotic_bestiary_t1 }
+		Show BestiaryOther    { Tag(exotic.t3); Mod exotic_bestiary_t2 }
 #------------------------------------
 #   [1234] Other
 #------------------------------------
-		Show Delve { Mod exotic_delve };
-		Show Warband { Mod exotic_warband };
-		Show Essence { Mod "of the Essence" };
-		Show Crafting { Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
+		Show Delve    { Tag(exotic.t2); Mod exotic_delve };
+		Show Warband  { Tag(exotic.t3); Mod exotic_warband };
+		Show Essence  { Tag(exotic.t2); Mod "of the Essence" };
+		Show Crafting { Tag(exotic.t4); Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
 
@@ -346,49 +346,49 @@ Section IdModSection : IdMods
 #===============================================================================================================
 # [[0200]] Exotic Item Classes
 #===============================================================================================================
-#!! Override 060 : "exotic gear: trinkets, watchstones, invitations"
+#!! Override 060 : "exotic gear: trinkets, watchstones etc., invitations"
 
-Section ExoticItemClasses
+Section ArtefactItemClasses
 {	
 #------------------------------------
 #   [1234] Trinkets
 #------------------------------------	
-	Section Trinkets : Class "Trinket", Auto("exotic->trinkets")
+	Section Trinkets : Class "Trinket", Auto("artefact->trinkets")
 	{
 		Show AnyTrinket { Empty(); }
 	}
 #------------------------------------
 #   [1234] Magic Watchstones
 #------------------------------------	
-	Section Watchstones : Rarity <= Rare, Auto("exotic->watchstones")
+	Section Watchstones : Rarity <= Rare, Auto("artefact->watchstones")
 	{
 		Show CraftableWatchstone { BaseType bases_watchstones }
 	}
 #------------------------------------
-#   [1234] Craftable Invitations
-#------------------------------------	
-	Section Invitations : Rarity <= Rare, Auto("exotic->invitation")
-	{
-		Show T1 { BaseType == exotic.invitations.t1 }
-		Show T2 { BaseType == exotic.invitations.t1 }
-		Show T3 { BaseType == exotic.invitations.t3 }
-	}	
-#------------------------------------
 #   [1234] Secret Society Equipment
 #------------------------------------
-	Section Fishing : Class "Fishing Rod", Auto("exotic->redacted")
+	Section Fishing : Class "Fishing Rod", Auto("artefact->redacted")
 	{
 		Show SCP3889 { Empty(); }
 	}
 }
 
+#------------------------------------
+#   [1234] Craftable Invitations
+#------------------------------------	
+Section Invitations : Rarity <= Rare, Auto("exotic->invitation"), Tag("artefact")
+{
+	Show T1 { BaseType == exotic.invitations.t1 }
+	Show T2 { BaseType == exotic.invitations.t1 }
+	Show T3 { BaseType == exotic.invitations.t3 }
+}
 
 #===============================================================================================================
 # [[0200]] Exotic Item Variations
 #===============================================================================================================
 #!! Override 070 : "exotic gear: synthesised, fractured, enchanted gear"
 
-Section ExoticVariations
+Section ExoticVariations : Tag(exotic)
 {	
 #------------------------------------
 #   [1234] Double Corruptions
@@ -397,8 +397,8 @@ Section ExoticVariations
 	{
 		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
-			Show DoubleCorruptedJwlry { Class "Amulet" "Belt" "Jewel" "Ring"; }
-			Show DoubleCorruptedAny { Empty(); }
+			Show DoubleCorruptedJwlry { Tag(exotic.t2); Class "Amulet" "Belt" "Jewel" "Ring"; }
+			Show DoubleCorruptedAny   { Tag(exotic.t3); Empty(); }
 		}
 	}
 #------------------------------------
@@ -408,34 +408,34 @@ Section ExoticVariations
 	{
 		Section AbyssJewelItems : SocketGroup "A", Auto("exotic->sockets")
 		{
-			Show AnyNonBelt { Class classes_nonJwlryEquip; }
+			Show AnyNonBelt { Tag(exotic.t2); Class classes_nonJwlryEquip; }
 		}
 #------------------------------------
 #   [1234] Synthesised
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
-			Show SynthSelected { BaseType bases.crafting.synthesised.t1 }
-			Show SynthClasses { Class classes_synth }
-			Show SynthRandom { Empty(); }
+			Show SynthSelected { Tag(exotic.t2); BaseType bases.crafting.synthesised.t1 }
+			Show SynthClasses  { Tag(exotic.t2); Class classes_synth }
+			Show SynthRandom   { Tag(exotic.t3); Empty(); }
 		}
 #------------------------------------
 #   [1234] Fractured
 #------------------------------------		
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
-			Show FractSelected { BaseType bases.crafting.fractured.t1 }
-			Show FractClasses { Class classes_fract }
-			Show FractRandom { Empty(); }
+			Show FractSelected { Tag(exotic.t2); BaseType bases.crafting.fractured.t1 }
+			Show FractClasses  { Tag(exotic.t2); Class classes_fract }
+			Show FractRandom   { Tag(exotic.t3); Empty(); }
 		}
 #------------------------------------
 #   [1234] Enchanted
 #------------------------------------
 		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
-			Show Exotic { Class classes_exoticEnch }
-			Show Helmets { Class "Helmets" }
-			Show GlovesBoots { Class "Gloves" "Boots" }
+			Show Exotic      { Tag(exotic.t2); Class classes_exoticEnch }
+			Show Helmets     { Tag(exotic.t2); Class "Helmets" }
+			Show GlovesBoots { Tag(exotic.t4); Class "Gloves" "Boots" }
 		}
 	}
 }
@@ -447,12 +447,12 @@ Section ExoticVariations
 #!! Chapter "Endgame crafting and recipe items"
 #!! Override 110 : "Jewel"
 
-Section Jewels
+Section Jewels : Tag("jewels")
 {
 #------------------------------------
 # [1234] Special Cases
 #------------------------------------
-	Section IdentifiedJewels : Identified True, Auto("jewels->special")
+	Section IdentifiedJewels : Identified True, Auto("jewels->special"), Tag("jewels.rare")
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1
 		{
@@ -467,7 +467,7 @@ Section Jewels
 #------------------------------------
 # [1234] Cluster Jewels
 #------------------------------------
-	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare
+	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, Tag("jewels.cluster")
 	{
 		Show OptimalHighLarge { BaseType "Large Cluster Jewel"; ItemLevel >= 82; EnchantmentPassiveNum <= 8; }
 		Show HighLarge { BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
@@ -485,18 +485,18 @@ Section Jewels
 #------------------------------------
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
-		Show HighRare { Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic { Rarity Magic; ItemLevel >= 82; }
-		Show AnyRare { Rarity Rare; }
-		Show AnyMagic { Rarity Magic; }
+		Show HighRare  { Tag("jewels.rare"); Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic { Tag("jewels.magic"); Rarity Magic; ItemLevel >= 82; }
+		Show AnyRare   { Tag("jewels.rare"); Rarity Rare; }
+		Show AnyMagic  { Tag("jewels.magic"); Rarity Magic; }
 	}
 #------------------------------------
 # [1234] Generic Jewels
 #------------------------------------
 	Section GenericJewels : Class "Jewel", BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
 	{
-		Show AnyRare { Rarity Rare; }
-		Show AnyMagic { Rarity <= Magic; }
+		Show AnyRare  { Tag("jewels.rare");  Rarity Rare; }
+		Show AnyMagic { Tag("jewels.magic"); Rarity <= Magic; }
 	}
 }
 
@@ -1286,7 +1286,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
 
 Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator"
 {
-	Show leveledex { ItemLevel >= 81; BaseType = currency.incubators.leveledex; }
+	Show leveledex { ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
 
 	Show t1 { BaseType == currency.incubators.t1; }
 	Show t2 { BaseType == currency.incubators.t2; }
@@ -1616,7 +1616,7 @@ Section LevelingRareGear : Rarity Rare
 
 	Section Armour : Auto("Leveling->Rare->armours")
 	{
-		Show BootsFocus { Class = "Boots"; }
+		Show BootsFocus { Class == "Boots"; }
 		Show General { Class == leveling.classes.armour; }
 		Show Shields { Class == "Shields"; }
 	}

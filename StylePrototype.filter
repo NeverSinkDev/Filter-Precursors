@@ -19,6 +19,9 @@ var sRed = 255 0 0 255;
 
 var icon = Circle;	# differs
 
+var ray.t3 = White;
+var ray.t4 = White Temp;
+
 #------------------------------------
 # Variables - Tierlists
 #------------------------------------
@@ -39,6 +42,13 @@ var tier.t2.cray  = Red;	# red/yellow
 var tier.t2.acc = tier.t1.acc;
 var tier.t2.base = sWhite;		# differs
 
+var tier.t3.cmap = Yellow;
+var tier.t3.cray  = Yellow;
+var tier.t3.acc = tier.t1.acc;
+var tier.t3.base = sBlack;		# differs
+var tier.t3.sound = 3 300;		# differs
+var tier.t3.iconsize = 1;
+
 #------------------------------------
 # Variables - ItemTypes
 #------------------------------------
@@ -51,50 +61,91 @@ var exoticgear.tx = 0 240 190 255;
 var exoticgear.tx.low = 0 240 190 180;
 var exoticgear.extra = 0 75 30 255;
 
+var artefact.sound = 3 300;
+
+var artefact.tx = 240 0 0 255;
+var artefact.extra = 70 0 20 255;
+var artefact.cmap = Red;
+var artefact.cray = Red;
+
+var jewel.magic.tx      = 0 75 250 255;
+var jewel.magic.extra   = 0 20 40 255;
+var jewel.rare.tx 	    = 220 220 0 255;
+var jewel.rare.extra    = 120 120 0 225;
+var jewel.cluster.tx    = 150 0 255 255;
+var jewel.cluster.extra = 34 0 67 255;
+
 #------------------------------------
-# TO BE REPLACED
+# Variables - Tier Subtypes
 #------------------------------------
 
-var t3col = White;
-var t4col = Grey;
+var fragment.sound = 3 300;
+var fragment.tx = 255 85 85 255;
 
 #------------------------------------
 # Universal Strategies
 #------------------------------------
 
+Style UniversalAccents
+{
+	Func ExoticAccent ()
+	{
+		SetBorderColor exoticgear.tx;
+		PlayEffect exoticgear.cray Temp; MinimapIcon 2 exoticgear.cmap icon;
+	}
+}
+
+# Artefacts are items that are almost always useful/worth something
+# These usually drop from very specific locations/spots, but are still nice drops
+Style UniversalArtefact
+{
+	var icon = Pentagon;
+
+	Func T1 ()
+	{
+		SetFontSize 45;
+		SetTextColor artefact.tx; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
+		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap icon;
+	}
+}
+
+# Exotic gear has some special properties, such as mods
+# Rare types, corruptions, synthesised state etc
 Style UniversalExotic
 {
 	var icon = Diamond;
 
-	Func T1
+	Func T1 ()
 	{
 		SetFontSize 45;
 		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor exoticgear.extra;
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
 	}
 
-	Func T2
+	Func T2 ()
 	{
 		SetFontSize 45;
 		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
+	}
+
+	Func T3 ()
+	{
+		SetFontSize 40;
+		SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
 	}
 
-	Func T3
+	Func T4 ()
 	{
 		SetFontSize 40;
-		SetTextColor SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
-	}
-
-	Func T4
-	{
-		SetFontSize 40;
-		SetTextColor SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
+		SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
 		PlayEffect exoticgear.cray Temp;
 	}
 }
 
+# Tiered lists have a come with multiple tiers grouping a single use case
+# The T1 and T2 strategies are used in every true tierlist
 Style UniversalTierlist
 {
 	Func restex ()
@@ -120,61 +171,61 @@ Style UniversalTierlist
 }
 
 #------------------------------------
-# Marking Base Strategies
+# Item Specific Strategies
 #------------------------------------
 
-# Basic markup strategy for item tiering
-Style MarkingSixTier : UniversalTierlist
+Style JewelStrategy : UniversalAccents
 {
-	var icon = Circle;
-	# ex-tier
-	# chaos tier
-	Func T3 () {SetFontSize 45; PlayAlertSound 2 300; PlayEffect t2col; MinimapIcon 1 t2col icon; };
-	# alteration tier
-	Func T4h (){SetFontSize 45; PlayEffect t3col; MinimapIcon 2 t3col icon; };
-	Func T4 () {SetFontSize 45; PlayEffect t4col Temp; };
-	# low tier
-	Func T5 () {SetFontSize 40; PlayEffect t4col Temp; MinimapIcon 2 t4col icon; };
+	var icon = Diamond;
 
-	Func T6 () {SetFontSize 40; };
+	Func cluster () 
+	{ 
+		SetFontSize 45;
+		SetTextColor jewel.cluster.tx; SetBorderColor jewel.cluster.tx; SetBackgroundColor jewel.cluster.extra;
+		PlayAlertSound 2 300; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap icon; 
+	}
+
+	Func rare () 
+	{ 
+		SetFontSize 45;
+		SetTextColor jewel.rare.tx; SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
+		PlayEffect ray.t4; MinimapIcon 2 Blue icon;
+	}
+
+	Func magic () 
+	{ 
+		SetFontSize 40;
+		SetTextColor jewel.magic.tx; SetBorderColor jewel.magic.tx; SetBackgroundColor jewel.magic.extra;
+	}
 }
 
 #------------------------------------
-# Coloration Base Strategies
+# Tiering Marking Strat
 #------------------------------------
 
-# Basic color strategy for item tiering
-Style BaseTiering : MarkingSixTier
+Style ThreeXTierList : UniversalTierlist
 {
-	var icon = Triangle;
-
-	# chaos tier - variations
-	var T3c = 249 150 25 255;	# Chaos
-	Func T3 () 		{ SetBackgroundColor T3c; SetBorderColor sBlack; SetTextColor sBlack; };
-
-	# alteration tier - variations
-	var T4c = 210 178 135 255; 	# Alteration
-	Func T4 () 		{ SetBackgroundColor T4c; SetTextColor sBlack; SetBorderColor sBlack; };
-
-	# low tier 1
-	Func T5 () 		{ SetTextColor acc; SetBorderColor acc; SetBackgroundColor sBlack; };
-
-	# low tier 2
-	Func T6 () 		{ SetTextColor acc; SetBorderColor sBlack; };
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound 1 300; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
+	}
 }
+
 
 #------------------------------------
 # Derived Strategies - PRE-RARE
 #------------------------------------
 
-Style SixLinkVariant : BaseTiering
+Style SixLinkVariant : UniversalTierlist
 {
 	var icon = Diamond;
 	var tier.t1.acc = 200 0 0 255;
 	var tier.t2.acc = 200 0 0 255;
 }
 
-Style InfluencedVariant : BaseTiering
+Style InfluencedVariant : UniversalTierlist
 {
 	var icon = Diamond;
 	var tier.t1.icon = Cross;
@@ -184,39 +235,54 @@ Style InfluencedVariant : BaseTiering
 }
 
 # purple highlight for general identified mod items
-Style IdMods : UniversalExotic
+Style IdModsMulti : UniversalExotic
 {
 	var exoticgear.cmap = Purple;
 	var exoticgear.cray = Purple;
 	var icon = Diamond;
 }
 
+Style InvitationTierList : ThreeXTierList
+{
+	var icon = Pentagon;
+	var tier.t1.acc = fragment.tx;
+	var tier.t2.acc = fragment.tx;
+	var tier.t3.acc = fragment.tx;
+}
+
 #------------------------------------
 # Applications - PRE-RARE
 #------------------------------------
 
-Style ApplicatonTableGear
+Style APP_PreRareGear
 {
-	Apply(SixLinkVariant.t1 => 6Links.arm);
-	Apply(SixLinkVariant.t2 => 6Links.wep);
+	Apply(6Links.arm => SixLinkVariant.t1);
+	Apply(6Links.wep => SixLinkVariant.t2);
 
-	Apply(InfluencedVariant.t1 => Influenced.t1*);
-	Apply(InfluencedVariant.t2 => Influenced.t2*);
+	Apply(Influenced.t1* => InfluencedVariant.t1);
+	Apply(Influenced.t2* => InfluencedVariant.t2);
 
-	Apply(!UniversalExotic.t1 => exoticbases);
-	
-	Apply(!IdMods.t2 => IdModSection);
+	Apply(exoticbases => !UniversalExotic.t1);
+	Apply(IdModSection => !IdModsMulti.t2);
+
+	Apply(ArtefactItemClasses => !UniversalArtefact.t1);
+
+	Apply(Invitations => InvitationTierList);
 }
 
-Style Demo
+Style APP_Tags_Exotic
 {
-	#Merge ( influenced = crusader + warlord + redeemer + hunter );
-	#Apply ( BaseTiering.t1 => $influenced );
-	#Apply (Basetiering.t1 => Influenced.t1*);
-	#Apply (Basetiering.t2 => Influenced.t2*);
-
-	#Apply (Basetiering => *.t1*);
-	#Apply (!BaseTiering.T1 => 6Links);
-	#Apply (!ExplicitModHighlight.Basic => IdModSection);
+	Apply($jewels => JewelStrategy);
+	Apply($exotic => UniversalExotic);
 }
+
+
+#Merge ( influenced = crusader + warlord + redeemer + hunter );
+#Apply ( BaseTiering.t1 => $influenced );
+#Apply (Basetiering.t1 => Influenced.t1*);
+#Apply (Basetiering.t2 => Influenced.t2*);
+#Apply (Basetiering => *.t1*);
+#Apply (!BaseTiering.T1 => 6Links);
+#Apply (!ExplicitModHighlight.Basic => IdModSection);
+
 
