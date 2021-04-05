@@ -16,6 +16,7 @@ Style LibrarySectionBased
 	Apply(ArtefactItemClasses => !UniversalArtefact.t1);
 
 	Apply(Invitations => InvitationTierList);
+	Apply(AdditionalCrafting.any => CraftGeneralStrategy.ANY);
 }
 
 Style LibraryTagBased
@@ -26,6 +27,7 @@ Style LibraryTagBased
 
 	Apply($craftspecial => CraftSpecialStrategy);
 	Apply($craftgeneral => CraftGeneralStrategy);
+	Apply($utilflasks => UtilityFlasks);
 }
 
 Style LibraryGlobal

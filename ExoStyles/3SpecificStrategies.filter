@@ -16,7 +16,7 @@ Style RecipeStrategy
 	Func T2() 
 	{ 
 		SetFontSize 40;
-		SetTextColor recipe.t1.acc SetBorderColor recipe.t1.acc; SetBackgroundColor sBlack;
+		SetTextColor recipe.t1.acc; SetBorderColor recipe.t1.acc; SetBackgroundColor sBlack;
 	}
 
 	Func t3() 
@@ -96,7 +96,6 @@ Style CraftGeneralStrategy
 	}
 }
 
-
 #------------------------------------
 # Tiering Marking Strat
 #------------------------------------
@@ -108,5 +107,53 @@ Style ThreeXTierList : UniversalTierlist
 		SetFontSize 45;
 		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
 		PlayAlertSound 1 300; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
+	}
+}
+
+Style LowerValueTiering
+{
+	var t1.acc = NONE;
+	var t2.acc = NONE;
+	var t3.acc = NONE;
+
+	var t1.base = 0 0 0 255;
+	var t2.base = 0 0 0 200;
+	var t3.base = 0 0 0;
+
+	var t1.extra = 255 255 255 255;
+	var t2.extra = 255 255 255 200;
+	var t3.extra = 0 0 0 255;
+
+	var t1.font = 45;
+	var t2.font = 40;
+	var t3.font = 35;
+
+	var icon = Diamond;
+
+	Func LT1 () 
+	{ 
+		SetFontSize t1.font;
+		SetTextColor t1.acc; 
+		SetBorderColor t1.extra; 
+		SetBackgroundColor t1.base; 
+		PlayAlertSound 1 300; PlayEffect Grey Temp; MinimapIcon 2 Grey icon; 
+	}
+
+	Func LT2 () 
+	{ 
+		SetFontSize t2.font;
+		SetTextColor t2.acc; 
+		SetBorderColor t2.extra; 
+		SetBackgroundColor t2.base; 
+		PlayAlertSound 1 300;
+	}
+
+	Func LT3 () 
+	{ 
+		SetFontSize t3.font;
+		SetTextColor t3.acc; 
+		SetBorderColor t3.extra; 
+		SetBackgroundColor t3.base; 
+		PlayAlertSound 1 300;
 	}
 }

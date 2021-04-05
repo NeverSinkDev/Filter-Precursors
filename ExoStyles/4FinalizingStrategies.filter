@@ -33,3 +33,15 @@ Style InvitationTierList : ThreeXTierList
 	var tier.t2.acc = fragment.tx;
 	var tier.t3.acc = fragment.tx;
 }
+
+Style UtilityFlasks : LowerValueTiering
+{
+	var icon = "Diamond";
+
+	var t1.acc = flasks.utility.t1.acc;
+	var t2.acc = flasks.utility.t1.acc;
+	var t3.acc = flasks.utility.t1.acc;
+	
+	var t2.extra = flasks.utility.t1.acc;
+	var t3.base = flasks.utility.base;
+}
