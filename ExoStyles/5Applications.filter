@@ -1,0 +1,40 @@
+#------------------------------------
+# Applications - PRE-RARE
+#------------------------------------
+
+Style LibrarySectionBased
+{
+	Apply(6Links.arm => SixLinkVariant.t1);
+	Apply(6Links.wep => SixLinkVariant.t2);
+
+	Apply(Influenced.t1* => InfluencedVariant.t1);
+	Apply(Influenced.t2* => InfluencedVariant.t2);
+
+	Apply(exoticbases => !UniversalExotic.t1);
+	Apply(IdModSection => !IdModsMulti.t2);
+
+	Apply(ArtefactItemClasses => !UniversalArtefact.t1);
+
+	Apply(Invitations => InvitationTierList);
+}
+
+Style LibraryTagBased
+{
+	Apply($jewels => JewelStrategy);
+	Apply($exotic => UniversalExotic);
+	Apply($recipe => RecipeStrategy);
+
+	Apply($craftspecial => CraftSpecialStrategy);
+	Apply($craftgeneral => CraftGeneralStrategy);
+}
+
+Style LibraryGlobal
+{
+	Apply(ALL => UniversalValueAccents);
+}
+
+Style LibraryAccents
+{
+	Apply($jewels => UniversalAccents);
+	Apply($recipe => UniversalAccents);
+}

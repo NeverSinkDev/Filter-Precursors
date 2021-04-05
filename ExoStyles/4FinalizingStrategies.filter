@@ -1,0 +1,35 @@
+#------------------------------------
+# Derived Strategies - PRE-RARE
+#------------------------------------
+
+Style SixLinkVariant : UniversalTierlist
+{
+	var icon = Diamond;
+	var tier.t1.acc = 200 0 0 255;
+	var tier.t2.acc = 200 0 0 255;
+}
+
+Style InfluencedVariant : UniversalTierlist
+{
+	var icon = Diamond;
+	var tier.t1.icon = Cross;
+
+	var tier.t1.acc = 200 0 0 255;
+	var tier.t2.acc = 200 0 0 255;
+}
+
+# purple highlight for general identified mod items
+Style IdModsMulti : UniversalExotic
+{
+	var exoticgear.cmap = Purple;
+	var exoticgear.cray = Purple;
+	var icon = Diamond;
+}
+
+Style InvitationTierList : ThreeXTierList
+{
+	var icon = Pentagon;
+	var tier.t1.acc = fragment.tx;
+	var tier.t2.acc = fragment.tx;
+	var tier.t3.acc = fragment.tx;
+}

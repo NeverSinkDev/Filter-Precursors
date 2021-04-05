@@ -1,0 +1,112 @@
+#------------------------------------
+# Item Specific Strategies
+#------------------------------------
+
+Style RecipeStrategy
+{
+	var icon = Pentagon;
+
+	Func T1() 
+	{ 
+		SetFontSize 45;
+		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
+		PlayAlertSound 2 300; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
+	}
+
+	Func T2() 
+	{ 
+		SetFontSize 40;
+		SetTextColor recipe.t1.acc SetBorderColor recipe.t1.acc; SetBackgroundColor sBlack;
+	}
+
+	Func t3() 
+	{ 
+		SetFontSize 35;
+		SetTextColor recipe.t1.acc; SetBorderColor recipe.t2.acc; SetBackgroundColor sBlack;
+	}
+}
+
+Style JewelStrategy
+{
+	var icon = Diamond;
+
+	Func cluster () 
+	{ 
+		SetFontSize 45;
+		SetTextColor jewel.cluster.tx; SetBorderColor jewel.cluster.tx; SetBackgroundColor jewel.cluster.extra;
+		PlayAlertSound 2 300; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap icon; 
+	}
+
+	Func rare () 
+	{ 
+		SetFontSize 45;
+		SetTextColor jewel.rare.tx; SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
+		PlayEffect ray.t4; MinimapIcon 2 Blue icon;
+	}
+
+	Func magic () 
+	{ 
+		SetFontSize 40;
+		SetTextColor jewel.magic.tx; SetBorderColor jewel.magic.tx; SetBackgroundColor jewel.magic.extra;
+	}
+}
+
+Style CraftSpecialStrategy
+{
+	Func I86 () 
+	{ 
+		SetFontSize 45;  MinimapIcon 2 Blue Diamond;
+		PlayEffect Blue;
+		SetBorderColor accent.level.i86.high;
+	}
+
+	Func I84 () 
+	{ 
+		SetFontSize 45;  MinimapIcon 2 Blue Diamond;
+		PlayEffect White;
+		SetBorderColor accent.level.i84.high;
+	}
+
+	Func ANY () 
+	{ 
+		SetFontSize 40;
+		SetBackgroundColor 0 0 0 180;
+		SetBorderColor accent.notice.high;
+	}
+}
+
+Style CraftGeneralStrategy
+{
+	Func I86 () 
+	{ 
+		SetFontSize 40;
+		SetBorderColor accent.level.i86;
+	}
+
+	Func I84 () 
+	{ 
+		SetFontSize 35;
+		SetBorderColor accent.level.i84;
+	}
+
+	Func ANY () 
+	{ 
+		SetBackgroundColor 0 0 0 180;
+		SetBorderColor accent.notice;
+	}
+}
+
+
+#------------------------------------
+# Tiering Marking Strat
+#------------------------------------
+
+Style ThreeXTierList : UniversalTierlist
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound 1 300; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
+	}
+}

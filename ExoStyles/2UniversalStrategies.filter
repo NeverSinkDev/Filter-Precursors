@@ -1,0 +1,135 @@
+#------------------------------------
+# Global Strategies
+#------------------------------------
+
+# Global strategies can be applied to any section
+# Even if they miss the parent tag
+
+# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
+Style UniversalValueAccents
+{
+	Func V1 ()
+	{
+		PlayAlertSound 1 300;
+		SetFontSize 45;
+		PlayEffect Red; 
+		MinimapIcon 0 Red *;
+	}
+
+	Func V2 ()
+	{
+		SetFontSize 45;
+		PlayEffect Yellow; MinimapIcon 1 Yellow *;
+	}
+
+	Func V3 ()
+	{
+		SetFontSize 45;
+		PlayEffect White; MinimapIcon 2 White *;
+	}
+
+	Func V4 ()
+	{
+		PlayEffect Grey Temp; MinimapIcon 2 Grey *;
+	}
+}
+
+#------------------------------------
+# Universal Strategies
+#------------------------------------
+
+# Accents are additional styles attached to other styles. These add additional highlight for features, such as high level, special properties, corrupted state etc.
+Style UniversalAccents
+{
+	Func High()
+	{
+		SetBorderColor accent.high.tx;
+	}
+
+	Func Special ()
+	{
+		SetBorderColor exoticgear.tx;
+		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+
+	Func Corrupt ()
+	{
+		SetBorderColor accent.corrupt.tx;
+		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+}
+
+# Artefacts are items that are almost always useful/worth something
+# These usually drop from very specific locations/spots, but are still nice drops
+Style UniversalArtefact
+{
+	var icon = Pentagon;
+
+	Func T1 ()
+	{
+		SetFontSize 45;
+		SetTextColor artefact.tx; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
+		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap icon;
+	}
+}
+
+# Exotic gear has some special properties, such as mods
+# Rare types, corruptions, synthesised state etc
+Style UniversalExotic
+{
+	var icon = Diamond;
+
+	Func T1 ()
+	{
+		SetFontSize 45;
+		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor exoticgear.extra;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
+	}
+
+	Func T2 ()
+	{
+		SetFontSize 45;
+		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
+	}
+
+	Func T3 ()
+	{
+		SetFontSize 40;
+		SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
+	}
+
+	Func T4 ()
+	{
+		SetFontSize 40;
+		SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
+		PlayEffect exoticgear.cray Temp;
+	}
+}
+
+# Tiered lists have a come with multiple tiers grouping a single use case
+# The T1 and T2 strategies are used in every true tierlist
+Style UniversalTierlist
+{
+	Func restex ()
+	{ 
+		SetFontSize 45; 
+		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
+		PlayAlertSound 2 300; PlayEffect tier.error.scl; MinimapIcon 0 tier.error.scl icon; 
+	}
+
+	Func T1 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t1.acc; SetBorderColor tier.t1.acc; SetBackgroundColor tier.t1.base; 
+		PlayAlertSound 6 300; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
+	}
+
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound 1 300; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
