@@ -37,15 +37,7 @@ Style UniversalValueAccents
 	{
 		SetTextColor sWhite; SetFontSize 35; SetBorderColor chancing.acc;
 	}
-}
 
-#------------------------------------
-# Universal Strategies
-#------------------------------------
-
-# Accents are additional styles attached to other styles. These add additional highlight for features, such as high level, special properties, corrupted state etc.
-Style UniversalAccents
-{
 	Func High()
 	{
 		SetBorderColor accent.high.tx;
@@ -62,7 +54,17 @@ Style UniversalAccents
 		SetBorderColor accent.corrupt.tx;
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
 	}
+
+	Func Low ()
+	{
+		SetBackgroundColor 0 0 0 180;
+		SetBorderColor accent.notice.low;
+	}
 }
+
+#------------------------------------
+# Universal Strategies
+#------------------------------------
 
 # Artefacts are items that are almost always useful/worth something
 # These usually drop from very specific locations/spots, but are still nice drops

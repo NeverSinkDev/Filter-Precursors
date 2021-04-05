@@ -2064,7 +2064,7 @@ Show # $type->jewels->cluster $tier->optimalhighlarge
 	BaseType "Large Cluster Jewel"
 	SetFontSize 45
 	SetTextColor 150 0 255 255
-	SetBorderColor 150 0 255 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 34 0 67 255
 	PlayAlertSound 2 300
 	PlayEffect Yellow
@@ -2076,7 +2076,7 @@ Show # $type->jewels->cluster $tier->highlarge
 	BaseType "Large Cluster Jewel"
 	SetFontSize 45
 	SetTextColor 150 0 255 255
-	SetBorderColor 150 0 255 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 34 0 67 255
 	PlayAlertSound 2 300
 	PlayEffect White
@@ -2100,7 +2100,7 @@ Show # $type->jewels->cluster $tier->optimalhighmedium
 	BaseType "Medium Cluster Jewel"
 	SetFontSize 45
 	SetTextColor 150 0 255 255
-	SetBorderColor 150 0 255 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 34 0 67 255
 	PlayAlertSound 2 300
 	PlayEffect Yellow
@@ -2112,7 +2112,7 @@ Show # $type->jewels->cluster $tier->highmedium
 	BaseType "Medium Cluster Jewel"
 	SetFontSize 45
 	SetTextColor 150 0 255 255
-	SetBorderColor 150 0 255 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 34 0 67 255
 	PlayAlertSound 2 300
 	PlayEffect White
@@ -2135,7 +2135,7 @@ Show # $type->jewels->cluster $tier->highsmall
 	BaseType "Small Cluster Jewel"
 	SetFontSize 45
 	SetTextColor 150 0 255 255
-	SetBorderColor 150 0 255 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 34 0 67 255
 	PlayAlertSound 2 300
 	PlayEffect White
@@ -2362,7 +2362,7 @@ Show # $type->normalcraft->rest $tier->t2
 	ItemLevel >= 60
 	Rarity <= Rare
 	BaseType "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Sacrificial Garb" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
-	SetBorderColor 200 200 200 200
+	SetBorderColor 200 200 200 180
 	SetBackgroundColor 0 0 0 180
 
 Show # $type->normalcraft->rest $tier->t3
@@ -2371,7 +2371,7 @@ Show # $type->normalcraft->rest $tier->t3
 	ItemLevel >= 60
 	Rarity <= Rare
 	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Golden Kris" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Kris" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
-	SetBorderColor 200 200 200 200
+	SetBorderColor 200 200 200 180
 	SetBackgroundColor 0 0 0 180
 
 Show # $type->decorator->craftinggeneric $tier->raredecoratorremover
@@ -2387,7 +2387,7 @@ Show # $type->normalcraft->extra $tier->any
 	ItemLevel <= 83
 	Rarity < Rare
 	BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"
-	SetBorderColor 200 200 200 200
+	SetBorderColor 200 200 200 180
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
@@ -2524,11 +2524,13 @@ Show # $type->endgameflasks $tier->highqualutility
 	AreaLevel <= 77
 	Rarity <= Magic
 	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
-	SetFontSize 40
+	SetFontSize 45
 	SetTextColor 50 200 125 255
-	SetBorderColor 50 200 125 255
-	SetBackgroundColor 0 0 0 200
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 1 300
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey "Diamond"
 
 Show # $type->endgameflasks $tier->highquallifemana
 	Quality >= 15
@@ -2536,16 +2538,26 @@ Show # $type->endgameflasks $tier->highquallifemana
 	AreaLevel <= 72
 	Rarity <= Magic
 	BaseType "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"
-	SetFontSize 40
-	SetTextColor 180 135 135 255
-	SetBorderColor 180 135 135 255
-	SetBackgroundColor 0 0 0 255
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 180 135 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey
+	MinimapIcon 2 Grey Pentagon
 
 Show # $type->endgameflasks $tier->any20qualflask
 	Quality >= 20
 	AreaLevel >= 68
 	Rarity <= Magic
 	BaseType "Flask"
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 180 135 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey
+	MinimapIcon 2 Grey Pentagon
 
 #------------------------------------
 #   [1202] Utility OR quality flasks
@@ -2579,6 +2591,10 @@ Show # $type->endgameflasks $tier->qualityhigh
 	AreaLevel <= 77
 	Rarity <= Magic
 	BaseType "Flask"
+	SetFontSize 40
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->endgameflasks $tier->qualitylow
 	Quality >= 1
@@ -2586,6 +2602,10 @@ Show # $type->endgameflasks $tier->qualitylow
 	AreaLevel <= 77
 	Rarity <= Magic
 	BaseType "Flask"
+	SetFontSize 35
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 200
+	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
 #   [1203] Early mapping life/mana/utility flasks
@@ -2596,6 +2616,8 @@ Show # $type->endgameflasks $tier->earlymappinglifemana
 	AreaLevel <= 69
 	Rarity <= Magic
 	BaseType "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 
 #===============================================================================================================
 # [[1300]] Misc Rules
@@ -2609,6 +2631,8 @@ Show # $type->miscendgamerules $tier->overquality
 	DropLevel >= 50
 	Rarity <= Rare
 	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->miscendgamerules $tier->earlyendgame4link
 	Corrupted False
@@ -2616,6 +2640,10 @@ Show # $type->miscendgamerules $tier->earlyendgame4link
 	AreaLevel <= 72
 	AreaLevel >= 68
 	Class "Body Armours" "Boots" "Gloves" "Helmets"
+	SetFontSize 40
+	SetBorderColor 0 240 190 180
+	SetBackgroundColor 0 0 0 255
+	PlayEffect Blue Temp
 
 #Hide # $type->animatedweapons $tier->normalmelee
 #	Rarity Normal
