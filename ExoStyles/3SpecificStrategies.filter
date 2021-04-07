@@ -2,6 +2,20 @@
 # Item Specific Strategies
 #------------------------------------
 
+# Artefacts are items that are almost always useful/worth something
+# These usually drop from very specific locations/spots, but are still nice drops
+Style Artefact
+{
+	var icon = Pentagon;
+
+	Func T1 ()
+	{
+		SetFontSize 45;
+		SetTextColor artefact.tx; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
+		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap icon;
+	}
+}
+
 Style RecipeStrategy
 {
 	var icon = Pentagon;
@@ -41,7 +55,7 @@ Style JewelStrategy
 	{ 
 		SetFontSize 45;
 		SetTextColor jewel.rare.tx; SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
-		PlayEffect ray.t4; MinimapIcon 2 Blue icon;
+		PlayEffect tier.t5.cray; MinimapIcon 2 Blue icon;
 	}
 
 	Func magic () 
@@ -95,9 +109,6 @@ Style CraftGeneralStrategy
 		SetBorderColor accent.notice;
 	}
 }
-
-Style CraftGeneralStrategy
-{
 
 #------------------------------------
 # Tiering Marking Strat

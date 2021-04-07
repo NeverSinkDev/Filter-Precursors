@@ -669,7 +669,7 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
 	Show EarlyEndgame4Link { Tag("Low"); LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
-Section AnimatedWeapons : Auto("AnimatedWeapons")
+Section AnimatedWeapons : Auto("AnimatedWeapons"), Tag("AnimatedWeapon")
 {
 	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves";}
 	ShowD normalranged { Rarity Normal; Class "Bows" "Wands";}
@@ -692,18 +692,18 @@ Section HideLayer1 : Auto("HideLayer")
 #!! Chapter "Rare Endgame Items"
 #!! Override 210 : "Rare continue/style sections sections"
 
-Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68
+Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, Tag("raredeco")
 {
-	Cont LargeRares { Height >= 3; Width >= 2; }
-	Cont MediumRares1 { Height >= 3; Width = 1; }
-	Cont MediumRares2 { Height = 2; Width = 2; }
-	Cont TinyRares { Height = 1; Width <= 2; }
+	Cont LargeRares 	{ Tag("*large"); Height >= 3; Width >= 2; }
+	Cont MediumRares1 	{ Tag("*medium"); Height >= 3; Width = 1; }
+	Cont MediumRares2 	{ Tag("*medium"); Height = 2; Width = 2; }
+	Cont TinyRares 		{ Tag("*tiny"); Height = 1; Width <= 2; }
 
-	Cont ILVL68 { ItemLevel >= 68; }
-	Cont ILVL75 { ItemLevel >= 75; }
-	Cont ILVL85 { ItemLevel >= 85; }
+	Cont ILVL68 { Tag("*ilvl68"); ItemLevel >= 68; }
+	Cont ILVL75 { Tag("*ilvl75"); ItemLevel >= 75; }
+	Cont ILVL85 { Tag("*ilvl85"); ItemLevel >= 85; }
 
-	Cont CorruptedRares { Corrupted True; }
+	Cont CorruptedRares { Tag("*corrupt"); Corrupted True; }
 }
 
 Section EndgameRares : Rarity Rare, ItemLevel >= 68
@@ -1816,7 +1816,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
 # [6002] Hide All known Section
 #------------------------------------
 
-Section HideFinal : Auto("HideLayer")
+Section HideLayerFinal : Auto("HideLayer")
 {
 	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
 }

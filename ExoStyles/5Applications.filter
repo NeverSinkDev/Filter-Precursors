@@ -2,6 +2,11 @@
 # Applications - PRE-RARE
 #------------------------------------
 
+Style Global
+{
+	Apply(ALL => UniversalPreProc.ApplyToAll);
+}
+
 Style LibrarySectionBased
 {
 	Apply(6Links.arm => SixLinkVariant.t1);
@@ -13,14 +18,17 @@ Style LibrarySectionBased
 	Apply(exoticbases => !UniversalExotic.t1);
 	Apply(IdModSection => !IdModsMulti.t2);
 
-	Apply(ArtefactItemClasses => !UniversalArtefact.t1);
+	Apply(ArtefactItemClasses => !Artefact.t1);
 
 	Apply(Invitations => InvitationTierList);
 	Apply(AdditionalCrafting.any => CraftGeneralStrategy.ANY);
+
+	Apply(HideLayer* => !UniversalHideLayer.any)
 }
 
 Style LibraryTagBased
 {
+	## Pre-Rare
 	Apply($jewels => JewelStrategy);
 	Apply($exotic => UniversalExotic);
 	Apply($recipe => RecipeStrategy);
@@ -28,6 +36,9 @@ Style LibraryTagBased
 	Apply($craftspecial => CraftSpecialStrategy);
 	Apply($craftgeneral => CraftGeneralStrategy);
 	Apply($utilflasks => UtilityFlasks);
+
+	## Rare
+	Apply($raredeco => EndgameRareDecorators)
 }
 
 Style LibraryGlobal

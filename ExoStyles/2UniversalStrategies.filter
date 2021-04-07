@@ -6,6 +6,28 @@
 # Even if they miss the parent tag
 
 # Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
+
+Style UniversalPreProc
+{
+	Func ApplyToAll ()
+	{
+		SetBorderColor 0 0 0;
+	}
+}
+
+Style UniversalHideLayer
+{
+	Func Any ()
+	{
+		SetBorderColor 0 0 0 0;
+		SetBackgroundColor 0 0 0 0;
+		MinimapIcon NONE;
+		PlayEffect NONE;
+		PlayAlertSound NONE;
+		SetFontSize 18;
+	}
+}
+
 Style UniversalValueAccents
 {
 	Func V1 ()
@@ -55,9 +77,16 @@ Style UniversalValueAccents
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
 	}
 
+	Func AnimatedWeapon()
+	{
+		SetBorderColor 230 0 0 255;
+		SetFontSize 25;
+		SetBackgroundColor 0 0 0 100;
+	}
+
 	Func Low ()
 	{
-		SetBackgroundColor 0 0 0 180;
+		SetBackgroundColor accent.low.base;
 		SetBorderColor accent.notice.low;
 	}
 }
@@ -65,20 +94,6 @@ Style UniversalValueAccents
 #------------------------------------
 # Universal Strategies
 #------------------------------------
-
-# Artefacts are items that are almost always useful/worth something
-# These usually drop from very specific locations/spots, but are still nice drops
-Style UniversalArtefact
-{
-	var icon = Pentagon;
-
-	Func T1 ()
-	{
-		SetFontSize 45;
-		SetTextColor artefact.tx; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
-		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap icon;
-	}
-}
 
 # Exotic gear has some special properties, such as mods
 # Rare types, corruptions, synthesised state etc
@@ -138,5 +153,43 @@ Style UniversalTierlist
 		SetFontSize 45;
 		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
 		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
+Style EndgameRareDecorators
+{
+	Func large()
+	{
+		SetBorderColor 0 0 0 255;
+	}
+
+	Func medium()
+	{
+		SetBorderColor 100 100 100 255;
+	}
+
+	Func tiny()
+	{
+		SetBorderColor 50 200 50 255;
+	}
+
+	Func ilvl85()
+	{
+		SetTextColor 255 220 0 255; SetBorderColor NONE;
+	}
+
+	Func ilvl75()
+	{
+		SetTextColor 255 190 0 255; SetBorderColor NONE;
+	}
+
+	Func ilvl68()
+	{
+		SetBorderColor NONE;
+	}
+
+	Func corrupt()
+	{
+		SetBorderColor accent.corrupt.tx;
 	}
 }
