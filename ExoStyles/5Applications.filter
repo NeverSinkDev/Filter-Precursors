@@ -9,6 +9,8 @@ Style Global
 
 Style LibrarySectionBased
 {
+	# PRERARES
+
 	Apply(6Links.arm => SixLinkVariant.t1);
 	Apply(6Links.wep => SixLinkVariant.t2);
 
@@ -23,7 +25,26 @@ Style LibrarySectionBased
 	Apply(Invitations => InvitationTierList);
 	Apply(AdditionalCrafting.any => CraftGeneralStrategy.ANY);
 
-	Apply(HideLayer* => !UniversalHideLayer.any)
+	Apply(HideLayer* => !UniversalHideLayer.any);
+
+	# RARES
+
+	Apply(BreachRings => !RaresJewellery.t3);
+
+	Apply(Talismans.T1* => !UniversalExotic.t1);
+	Apply(Talismans.T2* => !UniversalExotic.t2);
+	Apply(Talismans.T3* => !UniversalExotic.t3);
+	Apply(Talismans.Any => !RaresJewellery.t3);
+
+	Apply(EndgameRareRingsAmulets => RaresJewellery);
+	Apply(EndgameRareBelts => RaresJewellery);
+	Apply(EndgameRareGear.t1* => RaresArmoursWeapons.t1);
+	Apply(EndgameRareGear.t2* => RaresArmoursWeapons.t2);
+	Apply(EndgameRareGear.t3* => RaresArmoursWeapons.t3);
+	Apply(EndgameRareGear.t4* => RaresArmoursWeapons.t4);
+
+	Apply(HeistFollowerGear => HeistFollowerGearStrategy);
+
 }
 
 Style LibraryTagBased

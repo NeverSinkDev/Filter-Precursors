@@ -156,31 +156,80 @@ Style UniversalTierlist
 	}
 }
 
+Style RaresJewellery
+{
+	Func T1 ()
+	{
+		SetFontSize 45;
+		SetBackgroundColor rares.jewellery.t1;
+	}
+
+	Func T2 ()
+	{
+		SetFontSize 45;
+		SetBackgroundColor rares.jewellery.t2;
+	}
+
+	Func T3 ()
+	{
+		SetFontSize 40;
+		SetBackgroundColor rares.jewellery.t3;
+	}
+}
+
+Style RaresArmoursWeapons
+{
+	Func T1 ()
+	{
+		SetFontSize 40;
+		SetBackgroundColor rares.generic.t1;
+	}
+
+	Func T2 ()
+	{
+		SetFontSize 40;
+		SetBackgroundColor rares.generic.t2;
+		
+	}
+
+	Func T3 ()
+	{
+		SetBackgroundColor rares.generic.t3;
+		SetFontSize 35;
+	}
+
+	Func T4 ()
+	{
+		SetBackgroundColor rares.generic.t4;
+		SetFontSize 30;
+	}
+}
+
 Style EndgameRareDecorators
 {
 	Func large()
 	{
-		SetBorderColor 0 0 0 255;
+		SetBorderColor accent.rare.large;
 	}
 
 	Func medium()
 	{
-		SetBorderColor 100 100 100 255;
+		SetBorderColor accent.rare.medium;
 	}
 
 	Func tiny()
 	{
-		SetBorderColor 50 200 50 255;
+		SetBorderColor accent.rare.tiny;
 	}
 
 	Func ilvl85()
 	{
-		SetTextColor 255 220 0 255; SetBorderColor NONE;
+		SetTextColor accent.rare.ilvl85; SetBorderColor NONE;
 	}
 
 	Func ilvl75()
 	{
-		SetTextColor 255 190 0 255; SetBorderColor NONE;
+		SetTextColor accent.rare.ilvl75; SetBorderColor NONE;
 	}
 
 	Func ilvl68()

@@ -110,6 +110,54 @@ Style CraftGeneralStrategy
 	}
 }
 
+Style HeistFollowerGearStrategy
+{
+	var icon = Raindrop;
+
+	Func t1highlevel ()
+	{
+		SetFontSize 45;
+		SetTextColor accent.rare.ilvl85;
+		SetBorderColor accent.heist;
+		SetBorderColor rares.generic.t1;
+
+		PlayEffect Blue;
+		MinimapIcon 0 Blue icon;
+		PlayAlertSound 3 300;
+	}
+	Func T1 ()
+	{
+		SetFontSize 45;
+		SetBorderColor accent.heist;
+		SetBorderColor rares.generic.t1;
+
+		PlayEffect White;
+		MinimapIcon 1 White icon;
+		PlayAlertSound 3 300;
+	}
+	Func T2 ()
+	{
+		SetFontSize 45;
+		SetBorderColor accent.heist.low;
+		SetBorderColor rares.generic.t2;
+
+		PlayEffect Grey;
+		MinimapIcon 1 Grey icon;
+		PlayAlertSound 3 300;
+
+	}
+	Func t3any ()
+	{
+		SetFontSize 40;
+		SetBorderColor accent.heist.low;
+		SetBorderColor rares.generic.t2;
+
+		PlayEffect Grey;
+		MinimapIcon 2 Grey icon;
+		PlayAlertSound 3 300;
+	}
+}
+
 #------------------------------------
 # Tiering Marking Strat
 #------------------------------------
