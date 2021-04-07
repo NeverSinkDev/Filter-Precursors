@@ -7,18 +7,11 @@ var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields"
 var classes_attack = "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves" "Wands";
 var classes_2hcast = "Staves";
 var classes_1hcast = "Rune Daggers" "Sceptres" "Wands";
-
 var classes_nonJwlryEquip = classes_armor + classes_attack + classes_2hcast + classes_1hcast + "Quivers";
-var classes_jwlry = "Rings" "Amulets" "Belts";
-
 var classes_equip = "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves";
 
-var classes_synth = "Amulets" "Belt" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands";
-var classes_fract = "Amulets" "Belt" "Jewel" "Rings";
-var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves";
-
 var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
-var bases_invitations = "Maven's Invitation" "Maven's Invitation: Glennach Cairns" "Maven's Invitation: Haewark Hamlet" "Maven's Invitation: Lex Ejoris" "Maven's Invitation: Lex Proxima" "Maven's Invitation: Lira Arthain" "Maven's Invitation: New Vastir" "Maven's Invitation: The Feared" "Maven's Invitation: The Forgotten" "Maven's Invitation: The Formed" "Maven's Invitation: The Hidden" "Maven's Invitation: The Twisted" "Maven's Invitation: Tirn's End" "Maven's Invitation: Valdo's Rest"
+# var bases_invitations = "Maven's Invitation" "Maven's Invitation: Glennach Cairns" "Maven's Invitation: Haewark Hamlet" "Maven's Invitation: Lex Ejoris" "Maven's Invitation: Lex Proxima" "Maven's Invitation: Lira Arthain" "Maven's Invitation: New Vastir" "Maven's Invitation: The Feared" "Maven's Invitation: The Forgotten" "Maven's Invitation: The Formed" "Maven's Invitation: The Hidden" "Maven's Invitation: The Twisted" "Maven's Invitation: Tirn's End" "Maven's Invitation: Valdo's Rest"
 
 var rare_gear_classes =  "Rune Daggers" "Daggers" "Claws" "Wands" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Sceptres" "Warstaves" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows" "Boots" "Gloves" "Helmets" "Body Armours" "Shields" "Shields" "Quivers";
 
@@ -37,11 +30,10 @@ var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster";
 var ws_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
 var ws_burn = "of Conflagrating" "of Combusting" "of Burning";
 
-var ws_fire = "of Ashes" "of Immolation" "of Flames";
-var ws_cold = "of Glaciation" "of Floe" "of Rime";
-var ws_light = "of Arcing" "of Discharge" "of Voltage";
-
-var w_t1res = "of Tzteosh" "of Haast" "of Ephij" "of Bameth";
+## var ws_fire = "of Ashes" "of Immolation" "of Flames";
+## var ws_cold = "of Glaciation" "of Floe" "of Rime";
+## var ws_light = "of Arcing" "of Discharge" "of Voltage";
+## var w_t1res = "of Tzteosh" "of Haast" "of Ephij" "of Bameth";
 
 var ws_manaregen = "of Nirvana" "of Euphoria";
 
@@ -81,7 +73,7 @@ var wmana = "Zaffre" "Blue" "Mazarine" "Chalybeous";
 
 var w_cheatmods = "of the Underground" "Subterranean" "of Many";
 var w_temple_Phys = "of Tacati" "Tacati's";
-var w_temple_Sumonner = "Citaqualotl's";
+## var w_temple_Sumonner = "Citaqualotl's";
 var w_temple_Caster = "Matatl's" "Tacati" "Topotante's";
 
 ## ARMORS
@@ -92,30 +84,35 @@ var gloves_accu = "of Lioneye" "of the Ranger" "of the Marksman";
 var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
 
 ## 86/81/73
-var life = "Prime" "Rapturous" "Vigorous" "Fecund" "Athlete's" "Virile" "Rotund" "Robust";
+## var life = "Prime" "Rapturous" "Vigorous" "Fecund" "Athlete's" "Virile" "Rotund" "Robust";
 var lifeShort = "Athlete's" "Virile" "Rotund" "Robust";
 var movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
+
 ## armor
-var a_arp = "Impenetrable" "Impregnable" "Girded" "Thickened";
-var a_arf = "Carapaced";
-var a_arlife = "Crocodile's" "Nautilus's" "Urchin's" "Oyster's";
+## var a_arp = "Impenetrable" "Impregnable" "Girded" "Thickened";
+## var a_arf = "Carapaced";
+## var a_arlife = "Crocodile's" "Nautilus's" "Urchin's" "Oyster's";
+
 ## ES
-var a_esf = "Resplendent" "Incandescent" "Scintillating" "Blazing" "Seething" "Pulsing" "Radiating";
-var a_esp = "Unfaltering" "Unassailable" "Indomitable" "Dauntless" "Fearless";
-var a_esh = "Seraphim's" "Djinn's" "Naga's";
-var a_esmana = "Bishop's" "Priest's";
-var a_eslife = "Exarch's" "Abbot's";
+## var a_esf = "Resplendent" "Incandescent" "Scintillating" "Blazing" "Seething" "Pulsing" "Radiating";
+## var a_esp = "Unfaltering" "Unassailable" "Indomitable" "Dauntless" "Fearless";
+## var a_esh = "Seraphim's" "Djinn's" "Naga's";
+## var a_esmana = "Bishop's" "Priest's";
+## var a_eslife = "Exarch's" "Abbot's";
+
 ## evasion ES
-var a_evesp = "Incorporeal" "Illusory" "Unreal";
-var a_evesf = "Eidolon's" "Spirit's" "Cherub's";
-var a_evesh = "Hummingbird's" "Dragonfly's";
+## var a_evesp = "Incorporeal" "Illusory" "Unreal";
+## var a_evesf = "Eidolon's" "Spirit's" "Cherub's";
+## var a_evesh = "Hummingbird's" "Dragonfly's";
+
 ## evasion
-var a_evlife = "Ibex's" "Ram's";
-var a_evp = "Illusion's" "Mirage's" "Nightmare's" "Phantasm's";
-var a_evf = "Phased" "Blurred" "Fleet";
+## var a_evlife = "Ibex's" "Ram's";
+## var a_evp = "Illusion's" "Mirage's" "Nightmare's" "Phantasm's";
+## var a_evf = "Phased" "Blurred" "Fleet";
+
 ## armor energy shield
-var a_aresp = "Interpermeated" "Inspired" "Interpolated" "Inculcated";
-var a_aresf = "Consecrated" "Beatified" "Hallowed" "Sanctified";
+## var a_aresp = "Interpermeated" "Inspired" "Interpolated" "Inculcated";
+## var a_aresf = "Consecrated" "Beatified" "Hallowed" "Sanctified";
 
 ## HELMETS
 var helm_life = "Fecund" "Athlete's" "Virile";
@@ -193,11 +190,13 @@ var merged_ring_attack3 = ring_wed[3] + ring_fire_d[3] + ring_cold_d[3] + ring_l
 var merged_ring_caster2 = ring_mana[2] + ring_ias + ring_fcr + ring_mana_regen[2] + ring_ele_dmg;
 var merged_ring_caster3 = ring_mana[3] + ring_ias + ring_fcr + ring_mana_regen[3] + ring_ele_dmg;
 
-var top4base = res_fire[4] + res_fire[4] + res_light[4] + res_cold[4] + res_chaos + str[4] + dex[4] + int[4];
+
 
 var merged_ring_universal2 = ring_res_prism[2] + ring_all_atr[1] + top2base + ring_unset;
 var merged_ring_universal3 = ring_res_prism[3] + ring_all_atr[2] + top3base + ring_unset;
-var merged_ring_universal4 = ring_res_prism[3] + ring_all_atr[2] + top4base + ring_unset;
+
+## var top4base = res_fire[4] + res_fire[4] + res_light[4] + res_cold[4] + res_chaos + str[4] + dex[4] + int[4];
+## var merged_ring_universal4 = ring_res_prism[3] + ring_all_atr[2] + top4base + ring_unset;
 
 ## BELTS
 var belt_life = "Fecund" "Athlete's"  "Virile" "Rotund" "Robust";

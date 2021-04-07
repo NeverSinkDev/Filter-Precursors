@@ -123,20 +123,20 @@ Style UniversalTierlist
 	{ 
 		SetFontSize 45; 
 		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
-		PlayAlertSound 2 300; PlayEffect tier.error.scl; MinimapIcon 0 tier.error.scl icon; 
+		PlayAlertSound sounds.unique; PlayEffect tier.error.scl; MinimapIcon 0 tier.error.scl icon; 
 	}
 
 	Func T1 () 
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t1.acc; SetBorderColor tier.t1.acc; SetBackgroundColor tier.t1.base; 
-		PlayAlertSound 6 300; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
+		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
 	}
 
 	Func T2 () 
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound 1 300; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
 	}
 }
