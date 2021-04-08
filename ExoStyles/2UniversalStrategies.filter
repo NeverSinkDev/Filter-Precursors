@@ -2,10 +2,7 @@
 # Global Strategies
 #------------------------------------
 
-# Global strategies can be applied to any section
-# Even if they miss the parent tag
-
-# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
+# This rule is applied to every single rule in the filter first.
 
 Style UniversalPreProc
 {
@@ -14,6 +11,9 @@ Style UniversalPreProc
 		SetBorderColor 0 0 0;
 	}
 }
+
+# Global strategies can be applied to any section
+# Even if they miss the parent tag
 
 Style UniversalHideLayer
 {
@@ -27,6 +27,8 @@ Style UniversalHideLayer
 		SetFontSize 18;
 	}
 }
+
+# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
 
 Style UniversalValueAccents
 {
@@ -138,7 +140,7 @@ Style UniversalTierlist
 	{ 
 		SetFontSize 45; 
 		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
-		PlayAlertSound sounds.unique; PlayEffect tier.error.scl; MinimapIcon 0 tier.error.scl icon; 
+		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
 
 	Func T1 () 
@@ -162,18 +164,21 @@ Style RaresJewellery
 	{
 		SetFontSize 45;
 		SetBackgroundColor rares.jewellery.t1;
+		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize 45;
 		SetBackgroundColor rares.jewellery.t2;
+		SetBorderColor NONE;
 	}
 
 	Func T3 ()
 	{
 		SetFontSize 40;
 		SetBackgroundColor rares.jewellery.t3;
+		SetBorderColor NONE;
 	}
 }
 
@@ -183,12 +188,14 @@ Style RaresArmoursWeapons
 	{
 		SetFontSize 40;
 		SetBackgroundColor rares.generic.t1;
+		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize 40;
 		SetBackgroundColor rares.generic.t2;
+		SetBorderColor NONE;
 		
 	}
 
@@ -196,12 +203,14 @@ Style RaresArmoursWeapons
 	{
 		SetBackgroundColor rares.generic.t3;
 		SetFontSize 35;
+		SetBorderColor NONE;
 	}
 
 	Func T4 ()
 	{
 		SetBackgroundColor rares.generic.t4;
 		SetFontSize 30;
+		SetBorderColor NONE;
 	}
 }
 

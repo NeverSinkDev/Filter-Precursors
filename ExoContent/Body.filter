@@ -873,22 +873,22 @@ Section HeistFollowerGear : Rarity <= Rare
 #!! Chapter Gems
 #!! Override 410 : "All Gems - incl. awakened, alt and very valuable"
 
-Section Gems : Class "Gems"
+Section Gems : Class "Gems", Tag("Gems")
 {
 #------------------------------------
 # [3901] Exceptional Gems - Awakened and AltQuality
 #------------------------------------
 	Section GemsExceptional : Auto("gems-exceptional")
 	{
-		Show AwaT1 { BaseType gems.t1awa; }
-		Show AwaAny { BaseType "Awakened"; }
-		Show DivT1 { GemQualityType Divergent; BaseType gems.t1div; }
-		Show AnoT1 { GemQualityType Anomalous; BaseType gems.t1ano; }
-		Show PhaT1 { GemQualityType Phantasmal; BaseType gems.t1pha; }
-		Show AltAny { AlternateQuality True; }
-		Show 2020z { Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
-		Show 2120 { Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120 }
-		Show 2123 { Quality >= 23; GemLevel >= 21; BaseType gems.t1_2123 }
+		Show AwaT1 	{ Tag("*T1"); BaseType gems.t1awa; }
+		Show AwaAny { Tag("*P1"); BaseType "Awakened"; }
+		Show DivT1 	{ Tag("*T1"); GemQualityType Divergent; BaseType gems.t1div; }
+		Show AnoT1 	{ Tag("*T1"); GemQualityType Anomalous; BaseType gems.t1ano; }
+		Show PhaT1 	{ Tag("*T1"); GemQualityType Phantasmal; BaseType gems.t1pha; }
+		Show AltAny { Tag("*P1"); AlternateQuality True; }
+		Show 2020z 	{ Tag("*T1"); Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
+		Show 2120 	{ Tag("*T1"); Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120 }
+		Show 2123 	{ Tag("*T1"); Quality >= 23; GemLevel >= 21; BaseType gems.t1_2123 }
 	}
 
 #------------------------------------
@@ -898,12 +898,12 @@ Section Gems : Class "Gems"
 
 	Section GemsSpecial : Auto("gems-special")
 	{
-		Show ex6lvlgems { BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
+		Show ex6lvlgems { Tag("*P1"); BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
 
-		Show exSpecialE4 { BaseType gems.untiered.empowerclassgems; GemLevel >= 4; }
-		Show exSpecialE2 { BaseType gems.untiered.empowerclassgems; GemLevel >= 2; }
-		Show exSpecialEQ { BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
-		Show exSpecial { BaseType gems.untiered.specialGems; }
+		Show exSpecialE4 { Tag("*T1"); BaseType gems.untiered.empowerclassgems; GemLevel >= 4; }
+		Show exSpecialE2 { Tag("*P1"); BaseType gems.untiered.empowerclassgems; GemLevel >= 2; }
+		Show exSpecialEQ { Tag("*P1"); BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
+		Show exSpecial { Tag("*P2"); BaseType gems.untiered.specialGems; }
 	}
 #------------------------------------
 # [3902] Gems during leveling
@@ -912,9 +912,9 @@ Section Gems : Class "Gems"
 
 	Section Gems-Leveling : Auto("gems-leveling")
 	{
-		Show FirstZone { AreaLevel 1; }
-		Show LevelingVaal { AreaLevel < 65; BaseType "Vaal"; Quality <= 5; GemLevel <= 5; }
-		Show Leveling { AreaLevel < 65; Quality = 0; GemLevel <= 5; }
+		Show  FirstZone { Tag("*FirstLevel"); AreaLevel 1; }
+		Show  LevelingVaal { Tag("*VaalLvl"); AreaLevel < 65; BaseType "Vaal"; Quality <= 5; GemLevel <= 5; }
+		Show  Leveling { Tag("*Leveling"); AreaLevel < 65; Quality = 0; GemLevel <= 5; }
 	}
 #------------------------------------
 # [3902] High Quality and Leveled Gems
@@ -923,23 +923,23 @@ Section Gems : Class "Gems"
 
 	Section GemsGeneric : Auto("gems-generic")
 	{
-		Show LT1 { GemLevel >= 21 }
-		Show QT1 { Quality >= 23 }
+		Show LT1 { Tag("*P1"); GemLevel >= 21 }
+		Show QT1 { Tag("*P1"); Quality >= 23 }
 
-		Cont DecoGemsVaalBgDrop { BaseType "Vaal"; }
+		Cont DecoGemsVaalBgDrop { Tag("*VaalGem"); BaseType "Vaal"; }
 
-		Show QT2 { Quality >= 20 }
-		Show LT2 { GemLevel >= 19 }
+		Show QT2 { Tag("*P2"); Quality >= 20 }
+		Show LT2 { Tag("*P2"); GemLevel >= 19 }
 
-		Show QT3 { Quality >= 14 }
-		Show LT3 { GemLevel >= 17 }
+		Show QT3 { Tag("*P3"); Quality >= 14 }
+		Show LT3 { Tag("*P3"); GemLevel >= 18 }
 
-		Show QT4 { Quality >= 1 }	
-		Show LT4 { GemLevel >= 1 }
+		Show QT4 { Tag("*P4"); Quality >= 1; }	
+		Show LT4 { Tag("*P4"); GemLevel >= 2; }
 
-		Show CorruptedVaalAny { BaseType "Vaal"; Corrupted True; }
+		Show CorruptedVaalAny { Tag("*VaalGem"); BaseType "Vaal"; }
 
-		Show any { Empty(); }
+		Show any { Tag("*P5"); Empty(); }
 	}
 }
 

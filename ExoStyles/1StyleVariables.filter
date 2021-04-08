@@ -46,24 +46,6 @@ var tier.error.cmap = Pink;
 var tier.error.cray = Pink;
 
 #------------------------------------
-# Standards - Tierlists
-#------------------------------------
-
-var tier.error = 255 0 255 255;
-var tier.error.low = 100 0 100 255;
-
-var tier.t1.acc = sRed;		# differs
-var tier.t1.base = sWhite;
-
-var tier.t2.acc = tier.t1.acc;
-var tier.t2.base = sWhite;		# differs
-
-var tier.t3.acc = tier.t1.acc;
-var tier.t3.base = sBlack;		# differs
-var tier.t3.sound = sounds.unique;
-var tier.t3.iconsize = 1;
-
-#------------------------------------
 # Variables - ItemTypes
 #------------------------------------
 
@@ -108,9 +90,36 @@ var rares.jewellery.t2 = 0 50 0 255;
 var rares.jewellery.t3 = 0 50 0;
 
 var rares.generic.t1 = 0 0 0 255;
-var rares.generic.t2 = 40 40 40 200;
-var rares.generic.t3 = 100 100 100 160;
-var rares.generic.t4 = 120 120 120 120;
+var rares.generic.t2 = 20 20 20 220;
+var rares.generic.t3 = 75 65 65 200;
+var rares.generic.t4 = 75 65 65 200;
+
+var gems.t1 = 0 0 125 255;
+var gems.high = 20 240 240 255;
+var gems.norm = 30 190 190 255;
+var gems.low =  40 130 130 255;
+var gems.base = 6 0 60 255;
+
+#------------------------------------
+# Standards - Tierlists
+#------------------------------------
+
+var tier.error = 255 0 255 255;
+var tier.error.low = 100 0 100 255;
+
+var tier.t1.acc = sRed;		# differs
+var tier.t1.base = sWhite;
+
+var tier.t2.acc = tier.t1.acc;
+var tier.t2.base = sWhite;		# differs
+
+var tier.t3.acc = tier.t1.acc;
+var tier.t3.base = sBlack;		# differs
+var tier.t3.sound = sounds.unique;
+var tier.t3.iconsize = 1;
+
+var tier.special.acc = tier.t3.acc;
+var tier.special.base = tier.t3.base;
 
 #------------------------------------
 # Variables - Accents
@@ -134,11 +143,11 @@ var accent.notice.low = 100 100 100 150;
 var accent.heist = 255 85 85 255;
 var accent.heist.low = 255 85 85 200;
 
-var accent.rare.large = 0 0 0 255
-var accent.rare.medium = 100 100 100 255
-var accent.rare.tiny = 50 200 50 255
-var accent.rare.ilvl85 = 255 220 0 255
-var accent.rare.ilvl75 = 255 190 0 255
+var accent.rare.large = 0 0 0 220;
+var accent.rare.medium = 180 180 180 220;
+var accent.rare.tiny = 50 200 50 255;
+var accent.rare.ilvl85 = 255 220 0 255;
+var accent.rare.ilvl75 = 255 190 0 255;
 
 #------------------------------------
 # Variables - Tier Subtypes
@@ -146,3 +155,7 @@ var accent.rare.ilvl75 = 255 190 0 255
 
 var fragment.sound = sounds.currency;
 var fragment.tx = 255 85 85 255;
+
+var unique.sound = sounds.unique;
+var unique.tx = 175 96 37 255;
+var unique.extra = 53 13 13 255;

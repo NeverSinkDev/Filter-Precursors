@@ -9,6 +9,9 @@ Style Global
 
 Style LibrarySectionBased
 {
+	# General
+	Apply(HideLayer* => !UniversalHideLayer.any);
+
 	# PRERARES
 
 	Apply(6Links.arm => SixLinkVariant.t1);
@@ -24,8 +27,6 @@ Style LibrarySectionBased
 
 	Apply(Invitations => InvitationTierList);
 	Apply(AdditionalCrafting.any => CraftGeneralStrategy.ANY);
-
-	Apply(HideLayer* => !UniversalHideLayer.any);
 
 	# RARES
 
@@ -45,6 +46,8 @@ Style LibrarySectionBased
 
 	Apply(HeistFollowerGear => HeistFollowerGearStrategy);
 
+	# Tierlists
+	Apply(Replicas => ReplicaTierList);
 }
 
 Style LibraryTagBased
@@ -60,6 +63,9 @@ Style LibraryTagBased
 
 	## Rare
 	Apply($raredeco => EndgameRareDecorators)
+
+	## Gems
+	Apply($Gems => GemStrategy);
 }
 
 Style LibraryGlobal

@@ -119,7 +119,7 @@ Style HeistFollowerGearStrategy
 		SetFontSize 45;
 		SetTextColor accent.rare.ilvl85;
 		SetBorderColor accent.heist;
-		SetBorderColor rares.generic.t1;
+		SetBackgroundColor rares.generic.t1;
 
 		PlayEffect Blue;
 		MinimapIcon 0 Blue icon;
@@ -129,7 +129,7 @@ Style HeistFollowerGearStrategy
 	{
 		SetFontSize 45;
 		SetBorderColor accent.heist;
-		SetBorderColor rares.generic.t1;
+		SetBackgroundColor rares.generic.t1;
 
 		PlayEffect White;
 		MinimapIcon 1 White icon;
@@ -139,7 +139,7 @@ Style HeistFollowerGearStrategy
 	{
 		SetFontSize 45;
 		SetBorderColor accent.heist.low;
-		SetBorderColor rares.generic.t2;
+		SetBackgroundColor rares.generic.t2;
 
 		PlayEffect Grey;
 		MinimapIcon 1 Grey icon;
@@ -150,11 +150,84 @@ Style HeistFollowerGearStrategy
 	{
 		SetFontSize 40;
 		SetBorderColor accent.heist.low;
-		SetBorderColor rares.generic.t2;
+		SetBackgroundColor rares.generic.t2;
 
 		PlayEffect Grey;
 		MinimapIcon 2 Grey icon;
 		PlayAlertSound 3 300;
+	}
+}
+
+Style GemStrategy : UniversalTierlist
+{
+	var icon = Triangle;
+	var altBg = artefact.extra;	
+	var tier.t1.acc = gems.t1;
+
+	# Used for special cases, such as alt quality, awakened gems etc.
+	Func P1()
+	{
+		SetFontSize 45;
+		SetBackgroundColor altBg; SetTextColor gems.high; SetBorderColor artefact.tx;
+		PlayAlertSound sounds.t2; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cray icon;
+	}
+
+	# 19/20 gems + empower/enlighten
+	Func P2 ()
+	{
+		BD gems.high; TX gems.high; BG gems.base;
+		SetFontSize 45;
+		Sound sounds.currency; 
+		Beam tier.t4.cray; 
+		MM 1 tier.t3.cmap icon;
+	}
+
+	# high qual gems
+	Func P3 ()
+	{
+		BD gems.norm; TX gems.norm;
+		SetFontSize 45;
+		Sound sounds.currency;
+		Beam tier.t5.cray; 
+		MM 1 tier.t4.cmap icon;
+	}
+
+	# low qual/vaal gems
+	Func P4 ()
+	{
+		BD gems.low; TX gems.low;
+		SetFontSize 35;
+	}
+
+	# trash gems
+	Func P5 ()
+	{
+		TX gems.low;
+		SetFontSize 30;
+	}
+
+	# Leveling specific gem rules
+	Func Leveling()
+	{
+		SetFontSize 40;
+	}
+
+	Func VaalGem()
+	{
+		SetBackgroundColor 40 0 0 255;
+		SetFontSize 35;
+	}
+
+	Func VaalLvl()
+	{
+		SetFontSize 45;
+		SetBackgroundColor 40 0 0 255;
+		MinimapIcon 2 White icon;
+	}
+
+	Func FirstLevel()
+	{
+		SetFontSize 45;
 	}
 }
 
@@ -168,7 +241,14 @@ Style ThreeXTierList : UniversalTierlist
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound 1 300; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
+		PlayAlertSound tier.t3.sound; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
+	}
+
+	Func Multi()
+	{
+		SetFontSize 45;
+		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
+		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
 	}
 }
 

@@ -34,6 +34,14 @@ Style InvitationTierList : ThreeXTierList
 	var tier.t3.acc = fragment.tx;
 }
 
+Style ReplicaTierList : ThreeXTierList
+{
+	var icon = Star;
+	var tier.t1.acc = unique.tx;
+	var tier.t2.acc = unique.tx;
+	var tier.t3.acc = unique.tx;
+}
+
 Style UtilityFlasks : LowerValueTiering
 {
 	var icon = "Diamond";
