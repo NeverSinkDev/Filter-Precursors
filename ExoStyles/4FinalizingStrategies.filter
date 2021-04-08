@@ -26,22 +26,6 @@ Style IdModsMulti : UniversalExotic
 	var icon = Diamond;
 }
 
-Style InvitationTierList : ThreeXTierList
-{
-	var icon = Pentagon;
-	var tier.t1.acc = fragment.tx;
-	var tier.t2.acc = fragment.tx;
-	var tier.t3.acc = fragment.tx;
-}
-
-Style ReplicaTierList : ThreeXTierList
-{
-	var icon = Star;
-	var tier.t1.acc = unique.tx;
-	var tier.t2.acc = unique.tx;
-	var tier.t3.acc = unique.tx;
-}
-
 Style UtilityFlasks : LowerValueTiering
 {
 	var icon = "Diamond";
@@ -52,4 +36,35 @@ Style UtilityFlasks : LowerValueTiering
 	
 	var t2.extra = flasks.utility.t1.acc;
 	var t3.base = flasks.utility.base;
+}
+
+#------------------------------------
+# Derived Strategies - True Tierlists
+#------------------------------------
+
+Style InvitationTierList : ThreeXTierList
+{
+	var icon = Pentagon;
+	var tier.t1.acc = fragment.tx;
+	var tier.t2.acc = fragment.tx;
+	var tier.t3.acc = fragment.tx;
+}
+
+Style ReplicaTierList : ThreeXTierList
+{
+	var tier.t3.cmap = White;
+	var tier.t3.cray = White;
+	var icon = Star;
+	var tier.t1.acc = unique.tx;
+	var tier.t2.acc = unique.tx;
+	var tier.t3.acc = unique.tx;
+}
+
+Style UniqueMapStrat : UniversalTierlist, T3WhitePiece, T4WhitePieceNoBG
+{
+	var tier.t1.acc = unique.tx;
+	var tier.t2.acc = unique.tx;
+	var tier.t3.acc = unique.tx;
+	var tier.t4.acc = unique.tx;
+	var icon = Square;
 }

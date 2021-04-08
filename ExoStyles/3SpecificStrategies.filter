@@ -232,6 +232,60 @@ Style GemStrategy : UniversalTierlist
 }
 
 #------------------------------------
+# Tier Pieces
+#------------------------------------
+
+Style T2RedPiece
+{
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
+Style T2YellowPiece
+{
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+	}
+}
+
+Style T3YellowPiece
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound sounds.t3; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+	}
+}
+
+Style T3WhitePiece
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound sounds.t3; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+Style T4WhitePieceNoBG
+{
+	Func T4 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
+		PlayAlertSound sounds.t3; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+#------------------------------------
 # Tiering Marking Strat
 #------------------------------------
 
@@ -248,7 +302,7 @@ Style ThreeXTierList : UniversalTierlist
 	{
 		SetFontSize 45;
 		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
-		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
+		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
 	}
 }
 
