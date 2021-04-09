@@ -1,4 +1,15 @@
 #------------------------------------
+# Common Functions
+#------------------------------------
+
+Func Colors(a,b,c)
+{
+    SetTextColor a;
+    SetBorderColor b;
+    SetBackgroundColor c;
+}
+
+#------------------------------------
 # Color Names
 #------------------------------------
 
@@ -16,6 +27,8 @@ var sounds.currency = 2 300;
 var sounds.unique = 3 300;
 var sounds.maps = 4 300;
 var sounds.maps.high = 5 300;
+
+var sound = sounds.currency;
 
 #------------------------------------
 # Standards - Beams and Map Icon Colors
@@ -172,5 +185,3 @@ var fragment.tx = 255 85 85 255;
 var unique.sound = sounds.unique;
 var unique.tx = 175 96 37 255;
 var unique.extra = 53 13 13 255;
-
-Func colors (a,b,c){ SetTextColor a; SetBorderColor b; SetBackgroundColor c; }

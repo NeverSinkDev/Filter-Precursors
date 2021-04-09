@@ -113,14 +113,14 @@ Style UniversalExotic
 	Func T1 ()
 	{
 		SetFontSize 45;
-		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor exoticgear.extra;
+		Colors(exoticgear.tx, exoticgear.tx, exoticgear.extra);
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize 45;
-		SetTextColor exoticgear.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		Colors(exoticgear.tx, exoticgear.tx, sBlack);
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
 	}
 
@@ -136,25 +136,6 @@ Style UniversalExotic
 		SetFontSize 40;
 		SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
 		PlayEffect exoticgear.cray Temp;
-	}
-}
-
-# Tiered lists have a come with multiple tiers grouping a single use case
-# The T1 and T2 strategies are used in every true tierlist
-Style UniversalTierlist
-{
-	Func T1 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t1.acc; SetBorderColor tier.t1.acc; SetBackgroundColor tier.t1.base; 
-		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
-	}
-
-	Func T2 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
 	}
 }
 

@@ -1,4 +1,81 @@
 #------------------------------------
+# Tier Pieces
+#------------------------------------
+
+# Tiered lists have a come with multiple tiers grouping a single use case
+# The T1 and T2 strategies are used in every true tierlist
+
+Style T1
+{
+	Func T1 () 
+	{ 
+		SetFontSize 45;
+		Colors(tier.t1.acc, tier.t1.acc, tier.t1.base);
+		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
+	}
+}
+
+Style T2RedPiece
+{
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
+Style T2YellowPiece
+{
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+	}
+}
+
+Style T3YellowPiece
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+	}
+}
+
+Style T3WhitePiece
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+Style T4WhitePieceNoBG
+{
+	Func T4 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+Style TMulti
+{
+	Func Multi()
+	{
+		SetFontSize 45;
+		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
+		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
+	}
+}
+
+#------------------------------------
 # Item Specific Strategies
 #------------------------------------
 
@@ -158,7 +235,7 @@ Style HeistFollowerGearStrategy
 	}
 }
 
-Style GemStrategy : UniversalTierlist
+Style GemStrategy : T1
 {
 	var icon = Triangle;
 	var altBg = artefact.extra;	
@@ -228,60 +305,6 @@ Style GemStrategy : UniversalTierlist
 	Func FirstLevel()
 	{
 		SetFontSize 45;
-	}
-}
-
-#------------------------------------
-# Tier Pieces
-#------------------------------------
-
-Style T2RedPiece
-{
-	Func T2 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
-	}
-}
-
-Style T2YellowPiece
-{
-	Func T2 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
-	}
-}
-
-Style T3YellowPiece
-{
-	Func T3 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound sounds.t3; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
-	}
-}
-
-Style T3WhitePiece
-{
-	Func T3 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound sounds.t3; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
-	}
-}
-
-Style T4WhitePieceNoBG
-{
-	Func T4 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
-		PlayAlertSound sounds.t3; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
 	}
 }
 
@@ -366,23 +389,6 @@ Style GeneralMapProgressionStrategy
 #------------------------------------
 # Tiering Marking Strat
 #------------------------------------
-
-Style ThreeXTierList : UniversalTierlist
-{
-	Func T3 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound tier.t3.sound; PlayEffect tier.t3.cray; MinimapIcon tier.t3.iconsize tier.t3.cmap icon; 
-	}
-
-	Func Multi()
-	{
-		SetFontSize 45;
-		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
-		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
-	}
-}
 
 Style LowerValueTiering
 {

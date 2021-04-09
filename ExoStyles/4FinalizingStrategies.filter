@@ -31,14 +31,14 @@ Style OfferingsHigh : T3YellowPiece
 	}
 }
 
-Style SixLinkVariant : UniversalTierlist
+Style SixLinkVariant : T1, T2RedPiece
 {
 	var icon = Diamond;
 	var tier.t1.acc = 200 0 0 255;
 	var tier.t2.acc = 200 0 0 255;
 }
 
-Style InfluencedVariant : UniversalTierlist
+Style InfluencedVariant : T1, T2YellowPiece
 {
 	var icon = Diamond;
 	var tier.t1.icon = Cross;
@@ -71,27 +71,29 @@ Style UtilityFlasks : LowerValueTiering
 # Derived Strategies - True Tierlists
 #------------------------------------
 
-Style InvitationTierList : ThreeXTierList
+Style InvitationTierList : T1, T2RedPiece, T3YellowPiece
 {
+	var sound = sounds.unique;
 	var icon = Pentagon;
+
 	var tier.t1.acc = fragment.tx;
 	var tier.t2.acc = fragment.tx;
 	var tier.t3.acc = fragment.tx;
 }
 
-Style ReplicaTierList : ThreeXTierList
+Style ReplicaTierList : T1, T2RedPiece, TMulti, T3WhitePiece
 {
-	var tier.t3.cmap = White;
-	var tier.t3.cray = White;
+	var sound = sounds.unique;
 	var icon = Star;
+
 	var tier.t1.acc = unique.tx;
 	var tier.t2.acc = unique.tx;
 	var tier.t3.acc = unique.tx;
 }
 
-Style UniqueMapStrat : UniversalTierlist, T3WhitePiece, T4WhitePieceNoBG
+Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 {
-	var sounds.t3 = sounds.unique;
+	var sound = sounds.unique;
 	var icon = Star;
 
 	var tier.t1.acc = unique.tx;

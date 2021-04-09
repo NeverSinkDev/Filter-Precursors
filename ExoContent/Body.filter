@@ -309,7 +309,7 @@ Section IdModSectionSpecial : IdMods, Tag(exotic)
 #------------------------------------
 #!! Override 050 : "veil, incursion, delve etc. mod items"
 
-		Show t1veil     { Tag(exotic.t1); Mod t1veiled; }
+		Show t1veil     { Tag(exotic.t2); Mod t1veiled; }
 		Show t2veil     { Tag(exotic.t2); Mod t2veiled; }
 		Show DuoVeil    { Tag(exotic.t3); Mod "Veiled"; Mod "of the Veil"; }
 		Show SmallVeil1 { Tag(exotic.t3); Mod "Veil"; Width <= 2; Height <= 2; } 
@@ -415,8 +415,8 @@ Section ExoticVariations : Tag(exotic)
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
-			Show SynthSelected { Tag(exotic.t2); BaseType bases.crafting.synthesised.t1 }
-			Show SynthClasses  { Tag(exotic.t2); Class classes_synth }
+			Show SynthSelected { Tag(exotic.t1); BaseType bases.crafting.synthesised.t1 }
+			Show SynthClasses  { Tag(exotic.t1); Class classes_synth }
 			Show SynthRandom   { Tag(exotic.t3); Empty(); }
 		}
 #------------------------------------
