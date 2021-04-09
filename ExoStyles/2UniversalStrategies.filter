@@ -101,11 +101,89 @@ Style UniversalValueAccents
 }
 
 #------------------------------------
+# Styling Pieces
+#------------------------------------
+
+# Tiered lists have a come with multiple tiers grouping a single use case
+# The T1 and T2 strategies are used in every true tierlist
+
+Style T1
+{
+	Func T1 () 
+	{ 
+		SetFontSize 45;
+		Colors(tier.t1.acc, tier.t1.acc, tier.t1.base);
+		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
+	}
+}
+
+Style T2RedPiece
+{
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
+Style T2YellowPiece
+{
+	Func T2 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+	}
+}
+
+Style T3YellowPiece
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+	}
+}
+
+Style T3WhitePiece
+{
+	Func T3 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+Style T4WhitePieceNoBG
+{
+	Func T4 () 
+	{ 
+		SetFontSize 45;
+		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+Style TMulti
+{
+	Func Multi()
+	{
+		SetFontSize 45;
+		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
+		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
+	}
+}
+
+#------------------------------------
 # Universal Strategies
 #------------------------------------
 
 # Exotic gear has some special properties, such as mods
 # Rare types, corruptions, synthesised state etc
+
 Style UniversalExotic
 {
 	var icon = Diamond;
@@ -136,99 +214,5 @@ Style UniversalExotic
 		SetFontSize 40;
 		SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
 		PlayEffect exoticgear.cray Temp;
-	}
-}
-
-Style RaresJewellery
-{
-	Func T1 ()
-	{
-		SetFontSize 45;
-		SetBackgroundColor rares.jewellery.t1;
-		SetBorderColor NONE;
-	}
-
-	Func T2 ()
-	{
-		SetFontSize 45;
-		SetBackgroundColor rares.jewellery.t2;
-		SetBorderColor NONE;
-	}
-
-	Func T3 ()
-	{
-		SetFontSize 40;
-		SetBackgroundColor rares.jewellery.t3;
-		SetBorderColor NONE;
-	}
-}
-
-Style RaresArmoursWeapons
-{
-	Func T1 ()
-	{
-		SetFontSize 40;
-		SetBackgroundColor rares.generic.t1;
-		SetBorderColor NONE;
-	}
-
-	Func T2 ()
-	{
-		SetFontSize 40;
-		SetBackgroundColor rares.generic.t2;
-		SetBorderColor NONE;
-		
-	}
-
-	Func T3 ()
-	{
-		SetBackgroundColor rares.generic.t3;
-		SetFontSize 35;
-		SetBorderColor NONE;
-	}
-
-	Func T4 ()
-	{
-		SetBackgroundColor rares.generic.t4;
-		SetFontSize 30;
-		SetBorderColor NONE;
-	}
-}
-
-Style EndgameRareDecorators
-{
-	Func large()
-	{
-		SetBorderColor accent.rare.large;
-	}
-
-	Func medium()
-	{
-		SetBorderColor accent.rare.medium;
-	}
-
-	Func tiny()
-	{
-		SetBorderColor accent.rare.tiny;
-	}
-
-	Func ilvl85()
-	{
-		SetTextColor accent.rare.ilvl85; SetBorderColor NONE;
-	}
-
-	Func ilvl75()
-	{
-		SetTextColor accent.rare.ilvl75; SetBorderColor NONE;
-	}
-
-	Func ilvl68()
-	{
-		SetBorderColor NONE;
-	}
-
-	Func corrupt()
-	{
-		SetBorderColor accent.corrupt.tx;
 	}
 }

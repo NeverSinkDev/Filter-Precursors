@@ -2,35 +2,6 @@
 # Derived Strategies - PRE-RARE
 #------------------------------------
 
-Style BaseStyle
-{
-	Func Foo()
-	{
-		var gencol = 0 255 0 255;
-		colors ( gencol, 0 255 0 255, gencol);
-		PlayEffect Red;
-	}
-}
-
-Style Offerings : BaseStyle
-{
-	Func T3 : Foo ()
-	{
-		PlayAlertSound 3 300;
-		BG 255 0 0 255;
-	}
-}
-
-Style OfferingsHigh : T3YellowPiece
-{
-	Func T3()
-	{
-		var icon = Hexagon;
-		var tier.t3.acc = fragment.tx;
-		var tier.t3.cray = sounds.currency;
-	}
-}
-
 Style SixLinkVariant : T1, T2RedPiece
 {
 	var icon = Diamond;
@@ -100,4 +71,27 @@ Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 	var tier.t2.acc = unique.tx;
 	var tier.t3.acc = unique.tx;
 	var tier.t4.acc = unique.tx;
+}
+
+#------------------------------------
+# Derived Strategies - Mapping
+#------------------------------------
+
+Style Offerings : BaseStyle
+{
+	Func T3 : Foo ()
+	{
+		PlayAlertSound 3 300;
+		BG 255 0 0 255;
+	}
+}
+
+Style OfferingsHigh : T3YellowPiece
+{
+	Func T3()
+	{
+		var icon = Hexagon;
+		var tier.t3.acc = fragment.tx;
+		var tier.t3.cray = sounds.currency;
+	}
 }
