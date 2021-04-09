@@ -177,6 +177,75 @@ Style TMulti
 	}
 }
 
+Style PatternGlow
+{
+	var fsize = 45;
+	var msize = 1;
+	var acc = tier.error;
+	var bg = tier.error.low;
+	var cmap = Yellow;
+	var cray = Yellow;
+	
+	Func Any () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
+	}
+}
+
+Style PatternBlack
+{
+	var fsize = 45;
+	var msize = 2;
+	var acc = tier.error;
+	var bg = sBlack;
+	var cmap = White;
+	var cray = White;
+	
+	Func Any () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
+	}
+}
+
+Style PatternT1
+{
+	var fsize = 45;
+	var msize = 0;
+	var acc = tier.error;
+	var bg = sWhite;
+	var cmap = Red;
+	var cray = Red;
+	var sound = sounds.t1;
+	
+	Func Any () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
+	}
+}
+
+Style PatternInverseBlack
+{
+	var fsize = 45;
+	var msize = 1;
+	var acc = tier.error;
+	var bg = sBlack;
+	var cmap = Yellow;
+	var cray = Yellow;
+	
+	Func Any () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
+	}
+}
+
 #------------------------------------
 # Universal Strategies
 #------------------------------------

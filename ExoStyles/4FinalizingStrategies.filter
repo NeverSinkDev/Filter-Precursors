@@ -73,25 +73,59 @@ Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 	var tier.t4.acc = unique.tx;
 }
 
+Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG
+{
+	var sound = sounds.currency;
+	var icon = Hexagon;
+
+	var tier.t1.acc = fragment.tx;
+	var tier.t2.acc = fragment.tx;
+	var tier.t3.acc = fragment.tx;
+	var tier.t4.acc = fragment.tx;
+}
+
+Style FragmentExceptions : PatternT1
+{
+	Func T1p : Any()
+	{
+		var acc = sBlack;
+		var sound = sounds.currency;
+		var icon = Hexagon;
+	}
+}
+
 #------------------------------------
 # Derived Strategies - Mapping
 #------------------------------------
 
-Style Offerings : BaseStyle
+Style ExoticFragments : T3WhitePiece
 {
-	Func T3 : Foo ()
+	var sound = sounds.unique;
+	var icon = Pentagon;
+	var tier.t3.acc = fragment.tx;
+
+	Func Offerings : T3 ()
 	{
-		PlayAlertSound 3 300;
-		BG 255 0 0 255;
+		MinimapIcon 2 * White;
+	}
+
+	Func OfferingsUpgraded : T3 ()
+	{
+		MinimapIcon 1 * Yellow; PlayEffect Yellow;
 	}
 }
 
-Style OfferingsHigh : T3YellowPiece
+Style HeistMapLike : PatternBlack
 {
-	Func T3()
-	{
-		var icon = Hexagon;
-		var tier.t3.acc = fragment.tx;
-		var tier.t3.cray = sounds.currency;
-	}
+	var icon = UpsideDownHouse;
+	var sound = sounds.maps;
+	var acc = heist.contracts.acc;
+}
+
+Style HeistMapLikeHigh : PatternGlow
+{
+	var icon = UpsideDownHouse;
+	var sound = sounds.maps;
+	var acc = heist.blueprints.acc;
+	var bg = heist.blueprints.base;
 }

@@ -49,6 +49,18 @@ Style LibrarySectionBased
 	# Tierlists
 	Apply(Replicas => ReplicaTierList);
 	Apply(UniqueMaps => UniqueMapStrat);
+
+	# Maps and MapLike
+	Apply(Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
+	Apply(Labyrinth => ExoticFragments);
+
+	Apply(HeistUniqueMapLike => !UniqueMapStrat.T2);
+
+	Apply(HeistContracts => !HeistMapLike.Any);
+	Apply(HeistBlueprint => !HeistMapLikeHigh.Any);
+
+	Apply(MapFragments => FragmentTierStrat);
+	Apply(MapFragments.T1p => FragmentExceptions.Any);
 }
 
 Style LibraryTagBased
@@ -72,9 +84,6 @@ Style LibraryTagBased
 
 	Apply($Maps.HighHarbingerMap => UniqueMapStrat.t1);
 	Apply($Maps => GeneralMapProgressionStrategy);
-	Apply(Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
-	Apply(Labyrinth.Offerings => Offerings.T3);
-	Apply(Labyrinth.OfferingsUpgraded => OfferingsHigh.T3);
 }
 
 Style LibraryGlobal
