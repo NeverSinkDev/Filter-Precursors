@@ -1188,11 +1188,11 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67
 {
-	Show essences { BaseType currency.leveling.essences; }
-	Show trans { BaseType == currency.leveling.trans; }
-	Show aug { BaseType == currency.leveling.aug; }
-	Show portal { BaseType == currency.leveling.portal; }
-	Show wisdom { BaseType == currency.leveling.wisdom; }
+	Show essences { Tag("t5alchemy"); BaseType currency.leveling.essences; }
+	Show trans 	  { BaseType == currency.leveling.trans; }
+	Show aug      { BaseType == currency.leveling.aug; }
+	Show portal   { BaseType == currency.leveling.portal; }
+	Show wisdom   { BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -1202,17 +1202,17 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaL
 
 Section CurrencyTiering : Auto("Currency"), Class "Currency"
 {
-	Show t11 { BaseType == currency.generic.t11; }
-	Show t12 { BaseType == currency.generic.t12; }
-	Show t21 { BaseType == currency.generic.t21; }
-	Show t22 { BaseType == currency.generic.t22; }
-	Show t23 { BaseType == currency.generic.t23; }
-	Show t31 { BaseType == currency.generic.t31; }
-	Show t32 { BaseType == currency.generic.t32; }
-	Show t33 { BaseType == currency.generic.t33; }
-	Show t41 { BaseType == currency.generic.t41; }
-	Show t42 { BaseType == currency.generic.t42; }
-	Show t43 { BaseType == currency.generic.t43; }
+	Show t1exalted 	{ BaseType == currency.generic.t1; }
+	Show t2divine 	{ BaseType == currency.generic.t2divine; }
+	Show t3annul 	{ BaseType == currency.generic.t3annul; }
+	Show t4chaos 	{ BaseType == currency.generic.t4chaos; }
+	Show t5alchemy 	{ BaseType == currency.generic.t5alchemy; }
+	Show t6chrom 	{ BaseType == currency.generic.t6chrom; }
+	Show t7chance 	{ BaseType == currency.generic.t7chance; }
+	Show t8trans 	{ BaseType == currency.generic.t8trans; }
+	Show t9armour 	{ BaseType == currency.generic.t9armour; }
+	Show tportal 	{ BaseType == currency.generic.tportal; }
+	Show twisdom 	{ BaseType == currency.generic.twisdom; }
 }
 
 #===============================================================================================================

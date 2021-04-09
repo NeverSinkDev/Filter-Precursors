@@ -4605,57 +4605,111 @@ Show # $type->currency->leveling $tier->wisdom
 #===============================================================================================================
 # !! Override 630 : "Regular Currency"
 
-Show # $type->currency $tier->t11
+Show # $type->currency $tier->t1exalted
 	Class "Currency"
 	BaseType == "Albino Rhoa Feather" "Awakener's Orb" "Crusader's Exalted Orb" "Eternal Orb" "Exalted Orb" "Hunter's Exalted Orb" "Maven's Orb" "Mirror of Kalandra" "Mirror Shard" "Prime Regrading Lens" "Redeemer's Exalted Orb" "Secondary Regrading Lens" "Tailoring Orb" "Tempering Orb" "Warlord's Exalted Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 0 255
+	SetBorderColor 255 0 0 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
-Show # $type->currency $tier->t12
+Show # $type->currency $tier->t2divine
 	Class "Currency"
 	BaseType == "Ancient Orb" "Crescent Splinter" "Divine Orb" "Elevated Sextant"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
-Show # $type->currency $tier->t21
+Show # $type->currency $tier->t3annul
 	Class "Currency"
 	BaseType == "Blessing of Chayula" "Exalted Shard" "Fertile Catalyst" "Infused Engineer's Orb" "Orb of Annulment" "Orb of Unmaking" "Prismatic Catalyst" "Ritual Vessel"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
-Show # $type->currency $tier->t22
+Show # $type->currency $tier->t4chaos
 	Class "Currency"
 	BaseType == "Ancient Shard" "Awakened Sextant" "Blessing of Esh" "Blessing of Tul" "Blessing of Uul-Netol" "Blessing of Xoph" "Chaos Orb" "Gemcutter's Prism" "Harbinger's Orb" "Ritual Splinter" "Stacked Deck" "Tempering Catalyst"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
-Show # $type->currency $tier->t23
+Show # $type->currency $tier->t5alchemy
 	Class "Currency"
 	BaseType == "Annulment Shard" "Bestiary Orb" "Cartographer's Chisel" "Facetor's Lens" "Harbinger's Shard" "Orb of Alchemy" "Orb of Alteration" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Prime Sextant" "Regal Orb" "Simple Sextant" "Turbulent Catalyst" "Vaal Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
-Show # $type->currency $tier->t31
+Show # $type->currency $tier->t6chrom
 	Class "Currency"
 	BaseType == "Blessed Orb" "Chromatic Orb" "Glassblower's Bauble" "Imbued Catalyst" "Intrinsic Catalyst" "Orb of Fusing"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
-Show # $type->currency $tier->t32
+Show # $type->currency $tier->t7chance
 	Class "Currency"
 	BaseType == "Abrasive Catalyst" "Chaos Shard" "Engineer's Orb" "Horizon Shard" "Jeweller's Orb" "Orb of Chance" "Silver Coin"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
-Show # $type->currency $tier->t33
+Show # $type->currency $tier->t8trans
 	Class "Currency"
 	BaseType == "Alchemy Shard" "Binding Shard" "Blacksmith's Whetstone" "Engineer's Shard" "Orb of Augmentation" "Orb of Binding" "Orb of Transmutation" "Regal Shard"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 190 178 135 180
+	SetBorderColor 190 178 135 180
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
-Show # $type->currency $tier->t41
+Show # $type->currency $tier->t9armour
 	Class "Currency"
 	BaseType == "Alteration Shard" "Armourer's Scrap" "Transmutation Shard"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 170 158 130 220
+	SetBorderColor 170 158 130 220
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
-Show # $type->currency $tier->t42
+Show # $type->currency $tier->tportal
 	Class "Currency"
 	BaseType == "Portal Scroll"
 	SetBorderColor 0 0 0
 
-Show # $type->currency $tier->t43
+Show # $type->currency $tier->twisdom
 	Class "Currency"
 	BaseType == "Scroll of Wisdom"
 	SetBorderColor 0 0 0

@@ -61,6 +61,19 @@ Style LibrarySectionBased
 
 	Apply(MapFragments => FragmentTierStrat);
 	Apply(MapFragments.T1p => FragmentExceptions.Any);
+	
+	# Currency
+	Apply(CurrencyTiering.t1exalted => t1exalted.Any);
+	Apply(CurrencyTiering.t2divine => t2divine.Any);
+	Apply(CurrencyTiering.t3annul => t3annul.Any);
+	Apply(CurrencyTiering.t4chaos => t4chaos.Any);
+	Apply(CurrencyTiering.t5alchemy => t5alchemy.Any);
+	Apply(CurrencyTiering.t6chrom => t6chrom.Any);
+	Apply(CurrencyTiering.t7chance => t7chance.Any);
+	Apply(CurrencyTiering.t8trans => t8trans.Any);
+	Apply(CurrencyTiering.t9armour => t9armour.Any);
+	Apply(CurrencyTiering.tportal => tportal.Any);
+	Apply(CurrencyTiering.twisdom => twisdom.Any);
 }
 
 Style LibraryTagBased

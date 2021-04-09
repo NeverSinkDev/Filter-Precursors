@@ -93,6 +93,27 @@ Style UniversalValueAccents
 		SetBackgroundColor 0 0 0 100;
 	}
 
+	Func CurrAlchEq()
+	{
+		SetBorderColor 230 0 0 255;
+		SetFontSize 25;
+		SetBackgroundColor 0 0 0 100;
+	}
+
+	Func CurrChaosEq()
+	{
+		SetBorderColor 230 0 0 255;
+		SetFontSize 25;
+		SetBackgroundColor 0 0 0 100;
+	}
+
+	Func CurrAnnulHigh()
+	{
+		SetBorderColor 230 0 0 255;
+		SetFontSize 25;
+		SetBackgroundColor 0 0 0 100;
+	}	
+
 	Func Low ()
 	{
 		SetBackgroundColor accent.low.base;
@@ -194,6 +215,24 @@ Style PatternGlow
 	}
 }
 
+Style PatternHighWhite
+{
+	var fsize = 45;
+	var msize = 0;
+	var acc = tier.error;
+	var bg = sWhite;
+	var cmap = Red;
+	var cray = Red;
+	var sound = sounds.t2;
+	
+	Func Any () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
+		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
+	}
+}
+
 Style PatternBlack
 {
 	var fsize = 45;
@@ -241,7 +280,7 @@ Style PatternInverseBlack
 	Func Any () 
 	{ 
 		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
 	}
 }

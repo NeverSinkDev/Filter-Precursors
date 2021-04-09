@@ -457,3 +457,96 @@ Style LowerValueTiering
 		PlayAlertSound 1 300;
 	}
 }
+
+#------------------------------------
+# Currency Tiering
+#------------------------------------
+
+Style t1exalted : PatternT1
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t1; 
+		var icon = Star;
+	}
+}
+
+Style t2divine : PatternHighWhite
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t2divine; 
+	}
+}
+
+Style t3annul : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t3annul; 
+	}
+}
+
+Style t4chaos : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t4chaos; 
+	}
+}
+
+Style t5alchemy : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t5alchemy; 
+	}
+}
+
+Style t6chrom : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t6chrom; 
+	}
+}
+
+Style t7chance : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t7chance; 
+	}
+}
+
+Style t8trans : PatternBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t8trans; 
+	}
+}
+
+Style t9armour : PatternBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t9armour; 
+	}
+}
+
+Style tportal
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.tportal; 
+	}
+}
+
+Style twisdom
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.twisdom; 
+	}
+}
