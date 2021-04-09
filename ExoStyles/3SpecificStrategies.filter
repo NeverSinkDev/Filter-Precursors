@@ -286,6 +286,84 @@ Style T4WhitePieceNoBG
 }
 
 #------------------------------------
+# Map Tier Pieces
+#------------------------------------
+
+Style GeneralMapProgressionStrategy
+{
+	Func SpecialHigh()
+	{
+		SetFontSize 45;
+		SetTextColor maps.special; SetBorderColor maps.special; SetBackgroundColor sWhite; 
+		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square; 
+	}
+
+	Func Special()
+	{
+		SetFontSize 45;
+		SetTextColor maps.special; SetBorderColor maps.special; SetBackgroundColor sWhite; 
+		PlayAlertSound sounds.maps; PlayEffect Purple; MinimapIcon 1 Purple Square; 
+	}
+
+	Func BlightedHigh()
+	{
+		SetFontSize 45;
+		SetTextColor maps.blighted; SetBorderColor maps.blighted; SetBackgroundColor sWhite; 
+		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square; 
+	}
+
+	Func Blighted()
+	{
+		SetFontSize 45;
+		SetTextColor maps.blighted; SetBorderColor maps.blighted; SetBackgroundColor maps.blighted.base; 
+		PlayAlertSound sounds.maps; PlayEffect Purple; MinimapIcon 1 Purple Square; 
+	}
+
+	Func Z1()
+	{
+		#SetFontSize 45;
+		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z1.acc; 
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+	}
+
+	Func Z2()
+	{
+		#SetFontSize 45;
+		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z2.acc; 
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+	}
+
+	Func Z3()
+	{
+		#SetFontSize 45;
+		SetBorderColor NONE; SetBackgroundColor sBlack; 
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square; 
+	}
+
+	Func Z4()
+	{
+		#SetFontSize 40;
+		SetBorderColor NONE;
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
+	}
+
+	Func deco_mapup()
+	{
+		SetBorderColor accent.maps.upgrade; SetFontSize 45;
+	}
+
+	Func deco_map_zone12()
+	{
+		SetBorderColor 0 0 0 255; SetFontSize 45;
+	}
+
+	Func deco_map_zone34()
+	{
+		SetBorderColor 200 200 200 255; SetFontSize 40;
+	}
+}
+
+#------------------------------------
 # Tiering Marking Strat
 #------------------------------------
 

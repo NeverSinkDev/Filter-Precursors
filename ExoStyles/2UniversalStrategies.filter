@@ -32,6 +32,13 @@ Style UniversalHideLayer
 
 Style UniversalValueAccents
 {
+	Func restex ()
+	{ 
+		SetFontSize 45; 
+		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
+		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
+	}
+
 	Func V1 ()
 	{
 		PlayAlertSound 1 300;
@@ -136,13 +143,6 @@ Style UniversalExotic
 # The T1 and T2 strategies are used in every true tierlist
 Style UniversalTierlist
 {
-	Func restex ()
-	{ 
-		SetFontSize 45; 
-		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
-		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
-	}
-
 	Func T1 () 
 	{ 
 		SetFontSize 45;

@@ -963,7 +963,7 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 #===============================================================================================================
 #!! Override 520 : "all maps, incl. uniques"
 
-Section Maps : Class "Maps"
+Section Maps : Class "Maps", Tag("Maps")
 {
 
 #------------------------------------
@@ -971,7 +971,7 @@ Section Maps : Class "Maps"
 #------------------------------------
 	Section UniqueMaps : Rarity Unique, Auto("uniques->maps")
 	{
-		Show ex { BaseType uniques.maps.ex; MapTier 16; }
+		Show ex { Tag("Maps.HighHarbingerMap"); BaseType uniques.maps.ex; MapTier 16; }
 		Show t1 { BaseType uniques.maps.t1; }
 		Show t2 { BaseType uniques.maps.t2; }
 		Show t3 { BaseType uniques.maps.t3; }
@@ -986,8 +986,8 @@ Section Maps : Class "Maps"
 
 	Section BlightedMaps : BlightedMap True, Auto("maps->blighted")
 	{
-		Show t1 { MapTier >= Maps.Blighted.HighTier }
-		Show Any { Empty(); }
+		Show t1  { Tag("*blightedhigh"); MapTier >= Maps.Blighted.HighTier }
+		Show Any { Tag("*blighted"); Empty(); }
 	}
 
 #------------------------------------
@@ -996,8 +996,8 @@ Section Maps : Class "Maps"
 
 	Section EnchantedMaps : AnyEnchantment True, Auto("maps->enchanted")
 	{
-		Show t1 { MapTier >= Maps.Enchanted.HighTier }
-		Show Any { Empty(); }
+		Show t1  { Tag("*specialhigh"); MapTier >= Maps.Enchanted.HighTier }
+		Show Any { Tag("*special"); Empty(); }
 	}
 
 #------------------------------------
@@ -1005,54 +1005,72 @@ Section Maps : Class "Maps"
 #------------------------------------
 	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
 	{
-		Show NemesisBeyond { HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
+		Show NemesisBeyond { Tag("*special"); HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
 	}
 
 #===============================================================================================================
 # [[0200]] Normal Map Progression
 #===============================================================================================================
-#!! Override 540 : "T11-T16 maps"
+
+
+#------------------------------------
+# [4403] Generic Decorators
+#------------------------------------
+
+#!! Override 540 : "Map decorators"
 
 	Section GenericMaps : Auto("maps")
-	{
+	{		
+		Cont deco_zone1general { Tag("*deco_map_zone12"); MapTier >= 14; }
+		Cont deco_zone2general { Tag("*deco_map_zone12"); MapTier >= 11; MapTier <= 13; }
+		Cont deco_zone3general { Tag("*deco_map_zone34"); MapTier >= 6; MapTier <= 10; }
+		Cont deco_zone4general { Tag("*deco_map_zone34"); MapTier >= 1; MapTier <= 5; }
+
+#------------------------------------
+# [4403] Map progression
+#------------------------------------
+
+#!! Override 541 : "T11-T16 maps"
+
 		Cont deco_mapup_t16 { MapTier >= 16; AreaLevel < 83; }
-		Show maps_a_t16 { MapTier >= 16; }
+		Show maps_a_t16 { Tag("*z1"); MapTier >= 16; }
 		Cont deco_mapup_t15 { MapTier > 15; AreaLevel < 82; }
-		Show maps_a_t15 { MapTier = 15; }
+		Show maps_a_t15 { Tag("*z1"); MapTier = 15; }
 		Cont deco_mapup_t14 { MapTier > 14; AreaLevel < 81; }
-		Show maps_a_t14 { MapTier = 14; }
+		Show maps_a_t14 { Tag("*z1"); MapTier = 14; }
+
 		Cont deco_mapup_t13 { MapTier > 13; AreaLevel < 80; }
-		Show maps_b_t13 { MapTier = 13; }
+		Show maps_b_t13 { Tag("*z2"); MapTier = 13; }
 		Cont deco_mapup_t12 { MapTier > 12; AreaLevel < 79; }
-		Show maps_b_t12 { MapTier = 12; }
+		Show maps_b_t12 { Tag("*z2"); MapTier = 12; }
 		Cont deco_mapup_t11 { MapTier > 11; AreaLevel < 78; }
-		Show maps_b_t11 { MapTier = 11; }
+		Show maps_b_t11 { Tag("*z2"); MapTier = 11; }
 
 #!! Override 550 : "T16-T10 maps"
 
 		Cont deco_mapup_t10 { MapTier > 10; AreaLevel < 77; }
-		Show maps_c_t10 { MapTier = 10; }
+		Show maps_c_t10 { Tag("*z3"); MapTier = 10; }
 		Cont deco_mapup_t9  { MapTier > 9; AreaLevel < 76; }
-		Show maps_c_t9  { MapTier = 9; }
+		Show maps_c_t9  { Tag("*z3"); MapTier = 9; }
 		Cont deco_mapup_t8  { MapTier > 8; AreaLevel < 75; }
-		Show maps_c_t8  { MapTier = 8; }
+		Show maps_c_t8  { Tag("*z3"); MapTier = 8; }
 		Cont deco_mapup_t7  { MapTier > 7; AreaLevel < 74; }
-		Show maps_c_t7  { MapTier = 7; }
+		Show maps_c_t7  { Tag("*z3"); MapTier = 7; }
 		Cont deco_mapup_t6  { MapTier > 6; AreaLevel < 73; }
-		Show maps_c_t6  { MapTier = 6; }
+		Show maps_c_t6  { Tag("*z3"); MapTier = 6; }
 
 #!! Override 560 : "T1-T5 maps"
 
 		Cont deco_mapup_t5  { MapTier > 5; AreaLevel < 72; }
-		Show maps_d_t5  { MapTier = 5; }
+		Show maps_d_t5  { Tag("*z4"); MapTier = 5; }
 		Cont deco_mapup_t4  { MapTier > 4; AreaLevel < 71; }
-		Show maps_d_t4  { MapTier = 4; }
+		Show maps_d_t4  { Tag("*z4"); MapTier = 4; }
 		Cont deco_mapup_t3  { MapTier > 3; AreaLevel < 70; }
-		Show maps_d_t3  { MapTier = 3; }
+		Show maps_d_t3  { Tag("*z4"); MapTier = 3; }
 		Cont deco_mapup_t2  { MapTier > 2; AreaLevel < 69; }
-		Show maps_d_t2  { MapTier = 2; }
+		Show maps_d_t2  { Tag("*z4"); MapTier = 2; }
 		Cont deco_mapup_t1  { MapTier > 1; AreaLevel < 68; }
-		Show maps_d_t1  { MapTier = 1; }
+		Show maps_d_t1  { Tag("*z4"); MapTier = 1; }
 
 		Show restex { Empty(); }
 	}

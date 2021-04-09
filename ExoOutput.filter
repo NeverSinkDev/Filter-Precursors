@@ -129,7 +129,8 @@
 #   [2503] Delirium/Blight/Enchanted Maps!
 #   [2504] Beyond-Nemesis Maps, for those juicy sextants.
 # [[2600]] Normal Map Progression
-#   [2601] Labyrinth items, Offerings
+#   [2601] Map progression
+#   [2602] Labyrinth items, Offerings
 # [[2700]] Heist Contracts and Blueprints
 # [[2800]] Fragments
 #   [2801] Scarabs
@@ -1928,7 +1929,7 @@ Show # $type->exotic->synthesised $tier->synthselected
 Show # $type->exotic->synthesised $tier->synthclasses
 	SynthesisedItem True
 	Rarity <= Rare
-	Class "Amulets" "Belt" "Bows" "Jewel" "Rings" "Rune Daggers" "Sceptres" "Wands"
+	Class "Amulets" "Belt" "Bows" "Jewel" "Maps" "Rings" "Rune Daggers" "Sceptres" "Wands"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1966,7 +1967,7 @@ Show # $type->exotic->fractured $tier->fractselected
 Show # $type->exotic->fractured $tier->fractclasses
 	FracturedItem True
 	Rarity <= Rare
-	Class "Amulets" "Belt" "Jewel" "Rings"
+	Class "Amulets" "Belt" "Jewel" "Maps" "Rings"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -3237,8 +3238,8 @@ Show # $type->heist->cloak $tier->t1
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
-	PlayEffect White
-	MinimapIcon 1 White Raindrop
+	PlayEffect Blue
+	MinimapIcon 0 Blue Raindrop
 
 Show # $type->heist->cloak $tier->t2
 	Rarity <= Rare
@@ -3288,8 +3289,8 @@ Show # $type->heist->brooch $tier->t1
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
-	PlayEffect White
-	MinimapIcon 1 White Raindrop
+	PlayEffect Blue
+	MinimapIcon 0 Blue Raindrop
 
 Show # $type->heist->brooch $tier->t2
 	Rarity <= Rare
@@ -3339,8 +3340,8 @@ Show # $type->heist->gear $tier->t1
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
-	PlayEffect White
-	MinimapIcon 1 White Raindrop
+	PlayEffect Blue
+	MinimapIcon 0 Blue Raindrop
 
 Show # $type->heist->gear $tier->t2
 	Rarity <= Rare
@@ -3390,8 +3391,8 @@ Show # $type->heist->tool $tier->t1
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
-	PlayEffect White
-	MinimapIcon 1 White Raindrop
+	PlayEffect Blue
+	MinimapIcon 0 Blue Raindrop
 
 Show # $type->heist->tool $tier->t2
 	Rarity <= Rare
@@ -3794,7 +3795,7 @@ Show # $type->uniques->replicas $tier->restex
 	SetBackgroundColor 100 0 100 255
 	PlayAlertSound 3 300
 	PlayEffect Pink
-	MinimapIcon 0 Pink Star
+	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
 # [[2500]] Special Maps
@@ -3810,36 +3811,72 @@ Show # $type->uniques->maps $tier->ex
 	Rarity Unique
 	Class "Maps"
 	BaseType "Harbinger Map"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 175 96 37 255
+	SetBorderColor 175 96 37 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->uniques->maps $tier->t1
 	Rarity Unique
 	Class "Maps"
 	BaseType "Basilica Map" "Chateau Map" "Courthouse Map" "Courtyard Map" "Cursed Crypt Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 175 96 37 255
+	SetBorderColor 175 96 37 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->uniques->maps $tier->t2
 	Rarity Unique
 	Class "Maps"
 	BaseType "Harbinger Map" "Museum Map"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 175 96 37 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->uniques->maps $tier->t3
 	Rarity Unique
 	Class "Maps"
 	BaseType "Cemetery Map" "Moon Temple Map" "Necropolis Map" "Primordial Blocks Map" "Promenade Map" "Shore Map" "Temple Map" "Underground River Map" "Vaal Pyramid Map"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 175 96 37 255
+	PlayAlertSound 3 300
+	PlayEffect White
+	MinimapIcon 0 White Star
 
 Show # $type->uniques->maps $tier->t4
 	Rarity Unique
 	Class "Maps"
 	BaseType "Atoll Map" "Bone Crypt Map" "Dunes Map" "Overgrown Shrine Map" "Strand Map" "Underground Sea Map"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 175 96 37 255
+	SetBorderColor 175 96 37 255
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 3 300
+	PlayEffect White
+	MinimapIcon 0 White Star
 
 Show # $type->uniques->maps $tier->restex
 	Rarity Unique
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [2502] Blighted maps
@@ -3850,12 +3887,24 @@ Show # $type->maps->blighted $tier->t1
 	BlightedMap True
 	MapTier >= 15
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 20 50 20 255
+	SetBorderColor 20 50 20 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 5 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Square
 
 Show # $type->maps->blighted $tier->any
 	BlightedMap True
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 20 50 20 255
+	SetBorderColor 20 50 20 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 5 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Square
 
 #------------------------------------
 #   [2503] Delirium/Blight/Enchanted Maps!
@@ -3865,12 +3914,24 @@ Show # $type->maps->enchanted $tier->t1
 	AnyEnchantment True
 	MapTier >= 11
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 210 20 210 255
+	SetBorderColor 210 20 210 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 5 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Square
 
 Show # $type->maps->enchanted $tier->any
 	AnyEnchantment True
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 210 20 210 255
+	SetBorderColor 210 20 210 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 5 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Square
 
 #------------------------------------
 #   [2504] Beyond-Nemesis Maps, for those juicy sextants.
@@ -3881,84 +3942,159 @@ Show # $type->maps->identified $tier->nemesisbeyond
 	Class "Maps"
 	HasExplicitMod "Otherworldly"
 	HasExplicitMod "Antagonist's"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 210 20 210 255
+	SetBorderColor 210 20 210 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 5 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Square
 
 #===============================================================================================================
 # [[2600]] Normal Map Progression
 #===============================================================================================================
-# !! Override 540 : "T11-T16 maps"
+#------------------------------------
+# [4403] Generic Decorators
+#------------------------------------
+# !! Override 540 : "Map decorators"
+
+Show # $type->maps $tier->deco_zone1general
+	MapTier >= 14
+	Class "Maps"
+	SetFontSize 45
+	SetBorderColor 0 0 0 255
+	Continue
+
+Show # $type->maps $tier->deco_zone2general
+	MapTier >= 11
+	MapTier <= 13
+	Class "Maps"
+	SetFontSize 45
+	SetBorderColor 0 0 0 255
+	Continue
+
+Show # $type->maps $tier->deco_zone3general
+	MapTier >= 6
+	MapTier <= 10
+	Class "Maps"
+	SetFontSize 40
+	SetBorderColor 200 200 200 255
+	Continue
+
+Show # $type->maps $tier->deco_zone4general
+	MapTier >= 1
+	MapTier <= 5
+	Class "Maps"
+	SetFontSize 40
+	SetBorderColor 200 200 200 255
+	Continue
+
+#------------------------------------
+#   [2601] Map progression
+#------------------------------------
+# !! Override 541 : "T11-T16 maps"
 
 Show # $type->maps $tier->deco_mapup_t16
 	MapTier >= 16
 	AreaLevel < 83
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_a_t16
 	MapTier >= 16
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 235 235 235 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Red Square
 
 Show # $type->maps $tier->deco_mapup_t15
 	MapTier > 15
 	AreaLevel < 82
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_a_t15
 	MapTier 15
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 235 235 235 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Red Square
 
 Show # $type->maps $tier->deco_mapup_t14
 	MapTier > 14
 	AreaLevel < 81
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_a_t14
 	MapTier 14
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 235 235 235 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Red Square
 
 Show # $type->maps $tier->deco_mapup_t13
 	MapTier > 13
 	AreaLevel < 80
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_b_t13
 	MapTier 13
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 200 200 200 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Red Square
 
 Show # $type->maps $tier->deco_mapup_t12
 	MapTier > 12
 	AreaLevel < 79
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_b_t12
 	MapTier 12
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 200 200 200 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Red Square
 
 Show # $type->maps $tier->deco_mapup_t11
 	MapTier > 11
 	AreaLevel < 78
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_b_t11
 	MapTier 11
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetTextColor 0 0 0 255
+	SetBackgroundColor 200 200 200 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Red Square
 
 # !! Override 550 : "T16-T10 maps"
 
@@ -3966,61 +4102,81 @@ Show # $type->maps $tier->deco_mapup_t10
 	MapTier > 10
 	AreaLevel < 77
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_c_t10
 	MapTier 10
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Square
 
 Show # $type->maps $tier->deco_mapup_t9
 	MapTier > 9
 	AreaLevel < 76
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_c_t9
 	MapTier 9
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Square
 
 Show # $type->maps $tier->deco_mapup_t8
 	MapTier > 8
 	AreaLevel < 75
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_c_t8
 	MapTier 8
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Square
 
 Show # $type->maps $tier->deco_mapup_t7
 	MapTier > 7
 	AreaLevel < 74
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_c_t7
 	MapTier 7
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Square
 
 Show # $type->maps $tier->deco_mapup_t6
 	MapTier > 6
 	AreaLevel < 73
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_c_t6
 	MapTier 6
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 1 Yellow Square
 
 # !! Override 560 : "T1-T5 maps"
 
@@ -4028,78 +4184,109 @@ Show # $type->maps $tier->deco_mapup_t5
 	MapTier > 5
 	AreaLevel < 72
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_d_t5
 	MapTier 5
 	Class "Maps"
-	SetBorderColor 0 0 0
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 2 White Square
 
 Show # $type->maps $tier->deco_mapup_t4
 	MapTier > 4
 	AreaLevel < 71
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_d_t4
 	MapTier 4
 	Class "Maps"
-	SetBorderColor 0 0 0
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 2 White Square
 
 Show # $type->maps $tier->deco_mapup_t3
 	MapTier > 3
 	AreaLevel < 70
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_d_t3
 	MapTier 3
 	Class "Maps"
-	SetBorderColor 0 0 0
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 2 White Square
 
 Show # $type->maps $tier->deco_mapup_t2
 	MapTier > 2
 	AreaLevel < 69
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_d_t2
 	MapTier 2
 	Class "Maps"
-	SetBorderColor 0 0 0
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 2 White Square
 
 Show # $type->maps $tier->deco_mapup_t1
 	MapTier > 1
 	AreaLevel < 68
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 220 50 0 255
 	Continue
 
 Show # $type->maps $tier->maps_d_t1
 	MapTier 1
 	Class "Maps"
-	SetBorderColor 0 0 0
+	PlayAlertSound 4 300
+	PlayEffect White
+	MinimapIcon 2 White Square
 
 Show # $type->maps $tier->restex
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [2601] Labyrinth items, Offerings
+#   [2602] Labyrinth items, Offerings
 #------------------------------------
 # !! Override 570 : "labyrinth offerings"
 
 Show # $type->labyrinthofferings $tier->offerings
 	BaseType "Offering to the Goddess"
-	SetBorderColor 0 0 0
+	SetTextColor 0 255 0 255
+	SetBorderColor 0 255 0 255
+	SetBackgroundColor 255 0 0 255
+	PlayAlertSound 3 300
+	PlayEffect Red
 
 Show # $type->labyrinthofferings $tier->offeringsupgraded
 	BaseType "Dedication to the Goddess" "Gift to the Goddess" "Tribute to the Goddess"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 255 85 85 255
+	PlayAlertSound sounds.t3
+	PlayEffect 2 300
+	MinimapIcon 0 Yellow Hexagon
 
 #===============================================================================================================
 # [[2700]] Heist Contracts and Blueprints
@@ -4160,7 +4347,13 @@ Show # $type->fragments->scarabs $tier->t4
 Show # $type->fragments->scarabs $tier->restex
 	Class "Map Fragments"
 	BaseType "Scarab"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [2802] Regular Fragment Tiering
@@ -4193,7 +4386,13 @@ Show # $type->fragments $tier->t4
 
 Show # $type->fragments $tier->restex
 	Class "Map Fragments"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
 # [[2900]] Currency - Exceptions - Stacked Currency
@@ -4401,7 +4600,13 @@ Show # $type->vials $tier->t3
 Show # $type->vials $tier->restex
 	Class "Currency"
 	BaseType "Vial of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [3201] Delirum Orbs
@@ -4444,7 +4649,13 @@ Show # $type->currency->resonator $tier->t3
 
 Show # $type->currency->resonator $tier->restex
 	Class "Delve Stackable Socketable Currency"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [3203] Delve - Fossils
@@ -4473,7 +4684,13 @@ Show # $type->currency->fossil $tier->t4
 Show # $type->currency->fossil $tier->restex
 	Class "Currency"
 	BaseType "Fossil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [3204] Blight - Oils
@@ -4502,7 +4719,13 @@ Show # $type->currency->oil $tier->t4
 Show # $type->currency->oil $tier->restex
 	Class "Currency"
 	BaseType "Oil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [3205] Essences
@@ -4571,7 +4794,13 @@ Show # $type->currency->incubators $tier->t4
 
 Show # $type->currency->incubators $tier->restex
 	Class "Incubator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [3207] Others
@@ -4645,7 +4874,13 @@ Show # $type->currency->prophecy $tier->t4
 Show # $type->currency->prophecy $tier->restex
 	Class "Currency"
 	BaseType "Prophecy"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
 # [[3400]] Currency - Splinters
@@ -4749,7 +4984,13 @@ Show # $type->divination $tier->t5
 
 Show # $type->divination $tier->restex
 	Class "Divination"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
 # [[3600]] Remaining Currency
@@ -4763,7 +5004,13 @@ Hide # $type->currency $tier->scrollfragments
 
 Show # $type->currency $tier->restex
 	Class "Currency"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
 # [[3700]] Questlike-Items1 (override uniques)
@@ -4918,7 +5165,13 @@ Show # $type->uniques $tier->hideable
 
 Show # $type->uniques $tier->restex
 	Rarity Unique
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
 # [[3900]] Misc Map Items
@@ -5977,4 +6230,10 @@ Hide # $type->hidelayer $tier->final
 # 3) YOU ENCOUNTERED A PREVIOUSLY UNKNOWN UNIQUE
 
 Show # $type->anyremaining $tier->restex
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle

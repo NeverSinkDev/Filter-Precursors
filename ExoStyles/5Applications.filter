@@ -48,10 +48,13 @@ Style LibrarySectionBased
 
 	# Tierlists
 	Apply(Replicas => ReplicaTierList);
+	Apply(UniqueMaps => UniqueMapStrat);
 }
 
 Style LibraryTagBased
 {
+	Apply(*.restex => !UniversalValueAccents.restex);
+
 	## Pre-Rare
 	Apply($jewels => JewelStrategy);
 	Apply($exotic => UniversalExotic);
@@ -66,6 +69,12 @@ Style LibraryTagBased
 
 	## Gems
 	Apply($Gems => GemStrategy);
+
+	Apply($Maps.HighHarbingerMap => UniqueMapStrat.t1);
+	Apply($Maps => GeneralMapProgressionStrategy);
+	Apply(Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
+	Apply(Labyrinth.Offerings => Offerings.T3);
+	Apply(Labyrinth.OfferingsUpgraded => OfferingsHigh.T3);
 }
 
 Style LibraryGlobal

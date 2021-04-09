@@ -100,6 +100,16 @@ var gems.norm = 30 190 190 255;
 var gems.low =  40 130 130 255;
 var gems.base = 6 0 60 255;
 
+var maps.z1.acc = 235 235 235 255;
+var maps.z2.acc = 200 200 200 255;
+var maps.z3 = NONE;
+var maps.z4 = NONE;
+
+var maps.blighted = 20 50 20 255;
+var maps.blighted.base = 170 220 170;
+
+var maps.special = 210 20 210 255;
+
 #------------------------------------
 # Standards - Tierlists
 #------------------------------------
@@ -150,6 +160,8 @@ var accent.rare.tiny = 50 200 50 255;
 var accent.rare.ilvl85 = 255 220 0 255;
 var accent.rare.ilvl75 = 255 190 0 255;
 
+var accent.maps.upgrade = 220 50 0 255;
+
 #------------------------------------
 # Variables - Tier Subtypes
 #------------------------------------
@@ -160,3 +172,5 @@ var fragment.tx = 255 85 85 255;
 var unique.sound = sounds.unique;
 var unique.tx = 175 96 37 255;
 var unique.extra = 53 13 13 255;
+
+Func colors (a,b,c){ SetTextColor a; SetBorderColor b; SetBackgroundColor c; }
