@@ -1148,15 +1148,15 @@ Section MapFragments : Class "Map Fragments"
 #!! Chapter "Currencylike item tierlists 1"
 #!! Override 610 : "Stacked Currency"
 
-Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency"
+Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency", Tag("currency")
 {
-	Show splinters_t1	{ StackSize >= 3; BaseType currency.stacked.splinters1; }
-	Show splinters_t2	{ StackSize >= 3; BaseType currency.stacked.splinters2; }
-	Show orbs_chaos		{ StackSize >= 3; BaseType currency.stacked.chaos; }
-	Show orbs_alchemy	{ StackSize >= 3; BaseType currency.stacked.alch; }
-	Show orbs_alt		{ StackSize >= 3; BaseType currency.stacked.alt; }
-	Show orbs_transmute	{ StackSize >= 3; BaseType currency.stacked.trans; }
-	Show orbs_wisdom	{ StackSize >= 3; BaseType currency.stacked.scroll; }
+	Show splinters_t1	{ Tag("*eqChaos"); StackSize >= 3; BaseType currency.stacked.splinters1; }
+	Show splinters_t2	{ Tag("*eqAlchemy"); StackSize >= 3; BaseType currency.stacked.splinters2; }
+	Show orbs_chaos		{ Tag("*eqAnnul"); StackSize >= 3; BaseType currency.stacked.chaos; }
+	Show orbs_alchemy	{ Tag("*eqChaos"); StackSize >= 3; BaseType currency.stacked.alch; }
+	Show orbs_alt		{ Tag("*eqAlchemy"); StackSize >= 3; BaseType currency.stacked.alt; }
+	Show orbs_transmute	{ Tag("*eqAlchemy"); StackSize >= 3; BaseType currency.stacked.trans; }
+	Show orbs_wisdom	{ Tag("*eqAlchemy"); StackSize >= 3; BaseType currency.stacked.scroll; }
 }
 
 #------------------------------------
@@ -1186,9 +1186,9 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 #===============================================================================================================
 #!! Override 620 : "Leveling Currency"
 
-Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67
+Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, Tag("Currency")
 {
-	Show essences { Tag("t5alchemy"); BaseType currency.leveling.essences; }
+	Show essences { Tag("*eqAlchemy"); BaseType currency.leveling.essences; }
 	Show trans 	  { BaseType == currency.leveling.trans; }
 	Show aug      { BaseType == currency.leveling.aug; }
 	Show portal   { BaseType == currency.leveling.portal; }
@@ -1200,19 +1200,19 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaL
 #===============================================================================================================
 #!! Override 630 : "Regular Currency"
 
-Section CurrencyTiering : Auto("Currency"), Class "Currency"
+Section CurrencyTiering : Auto("Currency"), Class "Currency", Tag("Currency")
 {
-	Show t1exalted 	{ BaseType == currency.generic.t1; }
-	Show t2divine 	{ BaseType == currency.generic.t2divine; }
-	Show t3annul 	{ BaseType == currency.generic.t3annul; }
-	Show t4chaos 	{ BaseType == currency.generic.t4chaos; }
-	Show t5alchemy 	{ BaseType == currency.generic.t5alchemy; }
-	Show t6chrom 	{ BaseType == currency.generic.t6chrom; }
-	Show t7chance 	{ BaseType == currency.generic.t7chance; }
-	Show t8trans 	{ BaseType == currency.generic.t8trans; }
-	Show t9armour 	{ BaseType == currency.generic.t9armour; }
-	Show tportal 	{ BaseType == currency.generic.tportal; }
-	Show twisdom 	{ BaseType == currency.generic.twisdom; }
+	Show t1exalted 	{ Tag("*t1exalted"); BaseType == currency.generic.t1; }
+	Show t2divine 	{ Tag("*t2divine"); BaseType == currency.generic.t2divine; }
+	Show t3annul 	{ Tag("*t3annul"); BaseType == currency.generic.t3annul; }
+	Show t4chaos 	{ Tag("*t4chaos"); BaseType == currency.generic.t4chaos; }
+	Show t5alchemy 	{ Tag("*t5alchemy"); BaseType == currency.generic.t5alchemy; }
+	Show t6chrom 	{ Tag("*t6chrom"); BaseType == currency.generic.t6chrom; }
+	Show t7chance 	{ Tag("*t7chance"); BaseType == currency.generic.t7chance; }
+	Show t8trans 	{ Tag("*t8trans"); BaseType == currency.generic.t8trans; }
+	Show t9armour 	{ Tag("*t9armour"); BaseType == currency.generic.t9armour; }
+	Show tportal 	{ Tag("*tportal"); BaseType == currency.generic.tportal; }
+	Show twisdom 	{ Tag("*twisdom"); BaseType == currency.generic.twisdom; }
 }
 
 #===============================================================================================================
@@ -1224,11 +1224,11 @@ Section CurrencyTiering : Auto("Currency"), Class "Currency"
 #------------------------------------
 #!! Override 640 : "Vials, Delirium Orbs"
 
-Section CurrencyVials : Auto("vials"), Class "Currency"
+Section CurrencyVials : Auto("vials"), Class "Currency", Tag("Currency")
 {
-	Show t1 { BaseType currency.vials.t1; }
-	Show t2 { BaseType currency.vials.t2; }
-	Show t3 { BaseType currency.vials.t3; }
+	Show t1 { Tag("*t1exalted"); BaseType currency.vials.t1; }
+	Show t2 { Tag("*t2divine"); BaseType currency.vials.t2; }
+	Show t3 { Tag("*t4chaos"); BaseType currency.vials.t3; }
 	Show restex { BaseType "Vial of"; }
 }
 
@@ -1236,11 +1236,11 @@ Section CurrencyVials : Auto("vials"), Class "Currency"
 # [5104] Delirum Orbs
 #------------------------------------
 
-Section CurrencyVials : Auto("currency->deliriumorbs"), Class "Currency"
+Section CurrencyVials : Auto("currency->deliriumorbs"), Class "Currency", Tag("Currency")
 {
-	Show t1 { BaseType currency.deliriumorb.t1; }
-	Show t2 { BaseType currency.deliriumorb.t2; }
-	Show t3 { BaseType currency.deliriumorb.t3; }
+	Show t1 { Tag("*t1exalted"); BaseType currency.deliriumorb.t1; }
+	Show t2 { Tag("*t2divine"); BaseType currency.deliriumorb.t2; }
+	Show t3 { Tag("*t4chaos"); BaseType currency.deliriumorb.t3; }
 }
 
 #------------------------------------
@@ -1248,11 +1248,11 @@ Section CurrencyVials : Auto("currency->deliriumorbs"), Class "Currency"
 #------------------------------------
 #!! Override 650 : "Resonators, Fossils"
 
-Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stackable Socketable Currency"
+Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stackable Socketable Currency", Tag("Currency")
 {
-	Show t1 { BaseType == currency.resonator.t1; }
-	Show t2 { BaseType == currency.resonator.t2; }
-	Show t3 { BaseType == currency.resonator.t3; }
+	Show t1 { Tag("*t2divine"); BaseType == currency.resonator.t1; }
+	Show t2 { Tag("*t4chaos"); BaseType == currency.resonator.t2; }
+	Show t3 { Tag("*t6chrom"); BaseType == currency.resonator.t3; }
 	Show restex { Empty(); }
 }
 
@@ -1260,12 +1260,12 @@ Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stack
 # [5104] Delve - Fossils
 #------------------------------------
 
-Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency"
+Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency", Tag("Currency")
 {
-	Show t1 { BaseType == currency.fossil.t1; }
-	Show t2 { BaseType == currency.fossil.t2; }
-	Show t3 { BaseType == currency.fossil.t3; }
-	Show t4 { BaseType == currency.fossil.t4; }
+	Show t1 { Tag("*t1exalted"); BaseType == currency.fossil.t1; }
+	Show t2 { Tag("*t2divine"); BaseType == currency.fossil.t2; }
+	Show t3 { Tag("*t4chaos"); BaseType == currency.fossil.t3; }
+	Show t4 { Tag("*t6chrom"); BaseType == currency.fossil.t4; }
 	Show restex { BaseType "Fossil"; }
 }
 
@@ -1274,12 +1274,12 @@ Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency"
 #------------------------------------
 #!! Override 660 : "Blight Oils"
 
-Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency"
+Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", Tag("Currency")
 {
-	Show t1 { BaseType == currency.oil.t1; }
-	Show t2 { BaseType == currency.oil.t2; }
-	Show t3 { BaseType == currency.oil.t3; }
-	Show t4 { BaseType == currency.oil.t4; }
+	Show t1 { Tag("*t1exalted"); BaseType == currency.oil.t1; }
+	Show t2 { Tag("*t2divine"); BaseType == currency.oil.t2; }
+	Show t3 { Tag("*t4chaos"); BaseType == currency.oil.t3; }
+	Show t4 { Tag("*t6chrom"); BaseType == currency.oil.t4; }
 	Show restex { BaseType "Oil"; }
 }
 
@@ -1303,14 +1303,14 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
 #------------------------------------
 #!! Override 680 : "Incubators"
 
-Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator"
+Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", Tag("Currency")
 {
 	Show leveledex { ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
 
-	Show t1 { BaseType == currency.incubators.t1; }
-	Show t2 { BaseType == currency.incubators.t2; }
-	Show t3 { BaseType == currency.incubators.t3; }
-	Show t4 { BaseType == currency.incubators.t4; }
+	Show t1 { Tag("*t1exalted"); BaseType == currency.incubators.t1; }
+	Show t2 { Tag("*t2divine"); BaseType == currency.incubators.t2; }
+	Show t3 { Tag("*t4chaos"); BaseType == currency.incubators.t3; }
+	Show t4 { Tag("*t6chrom"); BaseType == currency.incubators.t4; }
 	Show restex { Empty(); }
 }
 

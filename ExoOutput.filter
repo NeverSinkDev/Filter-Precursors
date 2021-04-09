@@ -4490,43 +4490,85 @@ Show # $type->currency->stacked $tier->splinters_t1
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Splinter of Chayula" "Timeless Maraketh Splinter" "Timeless Templar Splinter"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->stacked $tier->splinters_t2
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Splinter of Esh" "Splinter of Tul" "Splinter of Uul-Netol" "Splinter of Xoph" "Timeless Eternal Empire Splinter" "Timeless Karui Splinter" "Timeless Vaal Splinter"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->stacked $tier->orbs_chaos
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Awakened Sextant" "Chaos Orb" "Facetor's Lens" "Fertile Catalyst" "Gemcutter's Prism" "Harbinger's Orb" "Prime Sextant" "Prismatic Catalyst" "Ritual Splinter" "Stacked Deck" "Tempering Catalyst" "Vaal Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
 Show # $type->currency->stacked $tier->orbs_alchemy
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Abrasive Catalyst" "Cartographer's Chisel" "Imbued Catalyst" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Turbulent Catalyst"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->stacked $tier->orbs_alt
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Blessed Orb" "Chromatic Orb" "Glassblower's Bauble" "Jeweller's Orb" "Orb of Augmentation" "Orb of Chance" "Silver Coin" "Simple Sextant"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->stacked $tier->orbs_transmute
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Blacksmith's Whetstone" "Orb of Transmutation"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->stacked $tier->orbs_wisdom
 	StackSize >= 3
 	Class "Currency"
 	BaseType "Armourer's Scrap" "Portal Scroll" "Scroll of Wisdom"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 #------------------------------------
 #   [2901] Perandus Coins
@@ -4574,7 +4616,13 @@ Show # $type->currency->leveling $tier->essences
 	AreaLevel <= 67
 	Class "Currency"
 	BaseType "Muttering Essence of" "Wailing Essence of" "Weeping Essence of" "Whispering Essence of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->leveling $tier->trans
 	AreaLevel <= 67
@@ -4646,8 +4694,8 @@ Show # $type->currency $tier->t4chaos
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 249 150 25 255
 	PlayAlertSound 2 300
-	PlayEffect Yellow
-	MinimapIcon 1 Yellow Circle
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency $tier->t5alchemy
 	Class "Currency"
@@ -4657,8 +4705,8 @@ Show # $type->currency $tier->t5alchemy
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 213 159 0 255
 	PlayAlertSound 2 300
-	PlayEffect Yellow
-	MinimapIcon 1 Yellow Circle
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency $tier->t6chrom
 	Class "Currency"
@@ -4668,8 +4716,8 @@ Show # $type->currency $tier->t6chrom
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 	PlayAlertSound 2 300
-	PlayEffect Yellow
-	MinimapIcon 1 Yellow Circle
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Circle
 
 Show # $type->currency $tier->t7chance
 	Class "Currency"
@@ -4725,17 +4773,35 @@ Show # $type->currency $tier->twisdom
 Show # $type->vials $tier->t1
 	Class "Currency"
 	BaseType "Vial of Summoning" "Vial of the Ghost" "Vial of Transcendence"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 0 255
+	SetBorderColor 255 0 0 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->vials $tier->t2
 	Class "Currency"
 	BaseType "Vial of Awakening" "Vial of Consequence" "Vial of Sacrifice"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->vials $tier->t3
 	Class "Currency"
 	BaseType "Vial of Dominance" "Vial of Fate" "Vial of the Ritual"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->vials $tier->restex
 	Class "Currency"
@@ -4755,17 +4821,35 @@ Show # $type->vials $tier->restex
 Show # $type->currency->deliriumorbs $tier->t1
 	Class "Currency"
 	BaseType "Skittering Delirium Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 0 255
+	SetBorderColor 255 0 0 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->currency->deliriumorbs $tier->t2
 	Class "Currency"
 	BaseType "Blighted Delirium Orb" "Cartographer's Delirium Orb" "Diviner's Delirium Orb" "Fine Delirium Orb" "Foreboding Delirium Orb" "Fossilised Delirium Orb" "Fragmented Delirium Orb" "Obscured Delirium Orb" "Thaumaturge's Delirium Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->deliriumorbs $tier->t3
 	Class "Currency"
 	BaseType "Abyssal Delirium Orb" "Amorphous Delirium Orb" "Armoursmith's Delirium Orb" "Blacksmith's Delirium Orb" "Decadent Delirium Orb" "Delirium Orb" "Imperial Delirium Orb" "Jeweller's Delirium Orb" "Portentous Delirium Orb" "Primal Delirium Orb" "Singular Delirium Orb" "Timeless Delirium Orb" "Whispering Delirium Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 #------------------------------------
 #   [3202] Delve - Resonators
@@ -4775,17 +4859,35 @@ Show # $type->currency->deliriumorbs $tier->t3
 Show # $type->currency->resonator $tier->t1
 	Class "Delve Stackable Socketable Currency"
 	BaseType == "Prime Alchemical Resonator" "Prime Chaotic Resonator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->resonator $tier->t2
 	Class "Delve Stackable Socketable Currency"
 	BaseType == "Potent Chaotic Resonator" "Powerful Chaotic Resonator" "Primitive Chaotic Resonator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->resonator $tier->t3
 	Class "Delve Stackable Socketable Currency"
 	BaseType == "Potent Alchemical Resonator" "Powerful Alchemical Resonator" "Primitive Alchemical Resonator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Circle
 
 Show # $type->currency->resonator $tier->restex
 	Class "Delve Stackable Socketable Currency"
@@ -4804,22 +4906,46 @@ Show # $type->currency->resonator $tier->restex
 Show # $type->currency->fossil $tier->t1
 	Class "Currency"
 	BaseType == "Bloodstained Fossil" "Fractured Fossil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 0 0 255
+	SetBorderColor 255 0 0 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->currency->fossil $tier->t2
 	Class "Currency"
 	BaseType == "Corroded Fossil" "Enchanted Fossil" "Faceted Fossil" "Glyphic Fossil" "Hollow Fossil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->fossil $tier->t3
 	Class "Currency"
 	BaseType == "Aetheric Fossil" "Bound Fossil" "Dense Fossil" "Encrusted Fossil" "Gilded Fossil" "Jagged Fossil" "Lucent Fossil" "Perfect Fossil" "Prismatic Fossil" "Pristine Fossil" "Sanctified Fossil" "Serrated Fossil" "Shuddering Fossil" "Tangled Fossil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->fossil $tier->t4
 	Class "Currency"
 	BaseType == "Aberrant Fossil" "Frigid Fossil" "Metallic Fossil" "Scorched Fossil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Circle
 
 Show # $type->currency->fossil $tier->restex
 	Class "Currency"
@@ -4839,22 +4965,46 @@ Show # $type->currency->fossil $tier->restex
 
 #Show # $type->currency->oil $tier->t1
 #	Class "Currency"
-#	SetBorderColor 0 0 0
+#	SetFontSize 45
+#	SetTextColor 255 0 0 255
+#	SetBorderColor 255 0 0 255
+#	SetBackgroundColor 255 255 255 255
+#	PlayAlertSound 6 300
+#	PlayEffect Red
+#	MinimapIcon 0 Red Star
 
 Show # $type->currency->oil $tier->t2
 	Class "Currency"
 	BaseType == "Golden Oil" "Opalescent Oil" "Silver Oil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->oil $tier->t3
 	Class "Currency"
 	BaseType == "Black Oil" "Crimson Oil" "Teal Oil" "Violet Oil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->oil $tier->t4
 	Class "Currency"
 	BaseType == "Amber Oil" "Azure Oil" "Clear Oil" "Indigo Oil" "Sepia Oil" "Verdant Oil"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Circle
 
 Show # $type->currency->oil $tier->restex
 	Class "Currency"
@@ -4915,22 +5065,46 @@ Show # $type->currency->incubators $tier->leveledex
 
 #Show # $type->currency->incubators $tier->t1
 #	Class "Incubator"
-#	SetBorderColor 0 0 0
+#	SetFontSize 45
+#	SetTextColor 255 0 0 255
+#	SetBorderColor 255 0 0 255
+#	SetBackgroundColor 255 255 255 255
+#	PlayAlertSound 6 300
+#	PlayEffect Red
+#	MinimapIcon 0 Red Star
 
 Show # $type->currency->incubators $tier->t2
 	Class "Incubator"
 	BaseType == "Geomancer's Incubator" "Time-Lost Incubator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->incubators $tier->t3
 	Class "Incubator"
 	BaseType == "Diviner's Incubator" "Enchanted Incubator" "Foreboding Incubator" "Fossilised Incubator" "Gemcutter's Incubator" "Infused Incubator" "Obscured Incubator" "Ornate Incubator" "Otherworldly Incubator" "Singular Incubator" "Skittering Incubator" "Thaumaturge's Incubator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->incubators $tier->t4
 	Class "Incubator"
 	BaseType == "Abyssal Incubator" "Cartographer's Incubator" "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Decadent Incubator" "Fine Incubator" "Fragmented Incubator" "Mysterious Incubator" "Primal Incubator" "Whispering Incubator"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Circle
 
 Show # $type->currency->incubators $tier->restex
 	Class "Incubator"

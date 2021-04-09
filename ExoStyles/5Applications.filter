@@ -61,19 +61,6 @@ Style LibrarySectionBased
 
 	Apply(MapFragments => FragmentTierStrat);
 	Apply(MapFragments.T1p => FragmentExceptions.Any);
-	
-	# Currency
-	Apply(CurrencyTiering.t1exalted => t1exalted.Any);
-	Apply(CurrencyTiering.t2divine => t2divine.Any);
-	Apply(CurrencyTiering.t3annul => t3annul.Any);
-	Apply(CurrencyTiering.t4chaos => t4chaos.Any);
-	Apply(CurrencyTiering.t5alchemy => t5alchemy.Any);
-	Apply(CurrencyTiering.t6chrom => t6chrom.Any);
-	Apply(CurrencyTiering.t7chance => t7chance.Any);
-	Apply(CurrencyTiering.t8trans => t8trans.Any);
-	Apply(CurrencyTiering.t9armour => t9armour.Any);
-	Apply(CurrencyTiering.tportal => tportal.Any);
-	Apply(CurrencyTiering.twisdom => twisdom.Any);
 }
 
 Style LibraryTagBased
@@ -97,6 +84,23 @@ Style LibraryTagBased
 
 	Apply($Maps.HighHarbingerMap => UniqueMapStrat.t1);
 	Apply($Maps => GeneralMapProgressionStrategy);
+
+	# Currency
+	Apply($currency.t1exalted => t1exalted.Any);
+	Apply($currency.t2divine => t2divine.Any);
+	Apply($currency.t3annul => t3annul.Any);
+	Apply($currency.t4chaos => t4chaos.Any);
+	Apply($currency.t5alchemy => t5alchemy.Any);
+	Apply($currency.t6chrom => t6chrom.Any);
+	Apply($currency.t7chance => t7chance.Any);
+	Apply($currency.t8trans => t8trans.Any);
+	Apply($currency.t9armour => t9armour.Any);
+	Apply($currency.tportal => tportal.Any);
+	Apply($currency.twisdom => twisdom.Any);
+
+	Apply($currency.eqChaos => t4chaos.Any);
+	Apply($currency.eqAlchemy => t5alchemy.Any);
+	Apply($currency.eqAnnul => t3annul.Any);
 }
 
 Style LibraryGlobal
