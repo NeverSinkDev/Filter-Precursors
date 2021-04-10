@@ -353,29 +353,15 @@ Style GeneralMapProgressionStrategy
 	Func SpecialHigh()
 	{
 		SetFontSize 45;
-		SetTextColor maps.special; SetBorderColor maps.special; SetBackgroundColor sWhite; 
+		SetTextColor maps.special.acc; SetBorderColor maps.special.acc; SetBackgroundColor maps.special.extra; 
 		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square; 
 	}
 
-	Func Special()
+	Func SpecialLow()
 	{
 		SetFontSize 45;
-		SetTextColor maps.special; SetBorderColor maps.special; SetBackgroundColor sWhite; 
-		PlayAlertSound sounds.maps; PlayEffect Purple; MinimapIcon 1 Purple Square; 
-	}
-
-	Func BlightedHigh()
-	{
-		SetFontSize 45;
-		SetTextColor maps.blighted; SetBorderColor maps.blighted; SetBackgroundColor sWhite; 
-		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square; 
-	}
-
-	Func Blighted()
-	{
-		SetFontSize 45;
-		SetTextColor maps.blighted; SetBorderColor maps.blighted; SetBackgroundColor maps.blighted.base; 
-		PlayAlertSound sounds.maps; PlayEffect Purple; MinimapIcon 1 Purple Square; 
+		SetTextColor maps.special.acc; SetBorderColor maps.special.acc; SetBackgroundColor maps.special.low.extra; 
+		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 1 Purple Square; 
 	}
 
 	Func Z1()
@@ -452,109 +438,334 @@ Style LowerValueTiering
 	}
 }
 
+#------------------------------------
+# Currency Tiering
+#------------------------------------
+
+Style Coins
+{
+	Func Huge ()
+	{
+		Colors( coins.acc, coins.acc, coins.extra);
+		PlayEffect Orange;
+		SetFontSize 45;
+	}
+
+	Func Large ()
+	{
+		Colors( coins.acc, coins.acc, sBlack);
+		PlayEffect Orange Temp;
+		SetFontSize 45;
+	}
+
+	Func Medium ()
+	{
+		SetFontSize 40;
+		SetTextColor coins.acc;
+		SetBorderColor coins.extra;
+		PlayEffect Orange Temp;
+	}
+
+	Func Small ()
+	{
+		SetTextColor coins.extra;
+		SetBorderColor coins.extra;
+		PlayEffect Orange Temp;
+		SetFontSize 35;
+	}
+}
 
 #------------------------------------
 # Currency Tiering
 #------------------------------------
 
-Style AllCurrency
+Style t1exalted : PatternT1
 {
-	Style t1exalted : PatternT1
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t1; 
-			var icon = Star;
-		}
-	}
-
-	Style t2divine : PatternHighWhite
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t2divine; 
-		}
-	}
-
-	Style t3annul : PatternInverseBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t3annul; 
-		}
-	}
-
-	Style t4chaos : PatternInverseBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t4chaos; 
-			var msize = 2;
-			var cmap = White;
-			var cray = White;
-		}
-	}
-
-	Style t5alchemy : PatternInverseBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t5alchemy; 
-			var msize = 2;
-			var cmap = White;
-			var cray = White;
-		}
-	}
-
-	Style t6chrom : PatternInverseBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t6chrom; 
-			var msize = 2;
-			var cmap = Grey;
-			var cray = Grey Temp;
-		}
-	}
-
-	Style t7chance : PatternInverseBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t7chance; 
-		}
-	}
-
-	Style t8trans : PatternBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t8trans; 
-		}
-	}
-
-	Style t9armour : PatternBlack
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.t9armour; 
-		}
-	}
-
-	Style tportal
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.tportal; 
-		}
-	}
-
-	Style twisdom
-	{
-		Func Any()
-		{ 
-			var acc = currency.acc.twisdom; 
-		}
+	Func Any()
+	{ 
+		var acc = currency.acc.t1; 
+		var icon = Star;
 	}
 }
 
+Style t2divine : PatternHighWhite
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t2divine; 
+	}
+}
+
+Style t3annul : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t3annul; 
+	}
+}
+
+Style t4chaos : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t4chaos; 
+		var msize = 2;
+		var cmap = White;
+		var cray = White;
+	}
+}
+
+Style t5alchemy : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t5alchemy; 
+		var msize = 2;
+		var cmap = White;
+		var cray = White;
+	}
+}
+
+Style t6chrom : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t6chrom; 
+		var msize = 2;
+		var cmap = Grey;
+		var cray = Grey;
+	}
+}
+
+Style t7chance : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = currency.acc.t7chance; 
+		RemoveEffects();
+	}
+}
+
+Style t8trans : PatternBlack
+{
+	var acc = currency.acc.t8trans; 
+
+	Func Any()
+	{ 
+		RemoveEffects();
+		SetFontSize 40;
+	}
+}
+
+Style t9armour : PatternBlack
+{
+	var acc = currency.acc.t9armour; 
+
+	Func Any()
+	{ 
+		RemoveEffects();
+		SetFontSize 40;
+	}
+	
+}
+
+Style tportal
+{
+	Func Any()
+	{ 
+		SetFontSize 35;
+		SetBorderColor currency.acc.tportal;
+	}
+}
+
+Style twisdom
+{
+	Func Any()
+	{ 
+		SetFontSize 35;
+		SetBorderColor currency.acc.twisdom;
+		RemoveEffects();
+	}
+}
+
+#------------------------------------
+# Currency Tiering
+#------------------------------------
+
+Style t1divi : PatternT1
+{
+	Func Any()
+	{ 
+		var acc = divi.acc.t1; 
+		var icon = Star;
+	}
+}
+
+Style t2divi : PatternHighWhite
+{
+	Func Any()
+	{ 
+		var acc = divi.acc.t2; 
+		var icon = Triangle;
+	}
+}
+
+Style t3divi : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = divi.acc.t3; 
+		var icon = Triangle;
+		var msize = 1;
+	}
+}
+
+Style t4divi : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = divi.acc.t4; 
+		var icon = Triangle;
+		var cmap = White;
+		var cray = White;
+		var msize = 2;
+	}
+}
+
+Style t5divi : PatternBlack
+{
+	Func Any()
+	{ 
+		var acc = divi.acc.t5; 
+		var icon = Triangle;
+		var cmap = Grey;
+		var cray = Grey;
+		var msize = 2;
+	}
+}
+
+Style tnewdivi : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = divi.acc.tnew; 
+		var icon = Triangle;
+		var msize = 1;
+	}
+}
+
+#------------------------------------
+# Splinter Tiering
+#------------------------------------
+
+Style SplinterStrategy
+{
+	var icon = Kite;
+	var sound = sounds.currency;
+
+	Func Stylize()
+	{
+		MM * * icon;
+	}
+
+	Func T1
+	{
+		Colors(splinters.text, splinters.acc.t1, splinters.extra);
+		SetFontSize 45;
+		MinimapIcon 0 Grey icon;
+		PlayAlertSound sound;
+		PlayEffect Purple Temp;
+	}
+
+	Func T2
+	{
+		Colors(splinters.text, splinters.acc.t2, splinters.extra);
+		SetFontSize 45;
+		MinimapIcon 0 Grey icon;
+		PlayAlertSound sound;
+		PlayEffect Purple Temp;
+	}
+
+	Func T3
+	{
+		Colors(splinters.text, splinters.acc.t3, splinters.extra);
+		SetFontSize 40;
+		MinimapIcon 0 Grey icon;
+		PlayEffect Purple Temp;
+	}
+}
+
+#------------------------------------
+# Unique Tiering
+#------------------------------------
+
+Style t1uni : PatternT1
+{
+	Func Any()
+	{ 
+		var acc = unique.tx;
+		var icon = Star;
+	}
+}
+
+Style t2uni : PatternHighWhite
+{
+	Func Any()
+	{ 
+		var acc = unique.tx;
+		var icon = Star;
+		var msize = 0;
+		var sound = sounds.t2;
+		var cmap = Yellow;
+	}
+}
+
+Style HarbyUnique : PatternHighWhite
+{
+	Func Any()
+	{ 
+		var acc = unique.beachhead.acc;
+		var icon = Star;
+		var msize = 0;
+		var sound = sounds.t2;
+		var cmap = Blue;
+	}
+}
+
+Style t3uni : PatternInverseBlack
+{
+	Func Any()
+	{ 
+		var acc = unique.tx;
+		var icon = Star;
+		var cmap = Blue;
+		var msize = 1;
+		MM msize Brown Star;		
+	}
+}
+
+Style t4uni : PatternGlow
+{
+	Func Any()
+	{ 
+		var acc = unique.tx; 
+		var bg = unique.extra;
+		var icon = Star;
+		var cmap = Brown;
+		var cray = Brown;
+		var msize = 2;
+	}
+}
+
+Style t5uni : PatternBlack
+{
+	Func Any()
+	{ 
+		var acc = unique.tx; 
+		var icon = Star;
+		var cmap = Brown;
+		var cray = Brown;
+		var msize = 2;
+		SetFontSize 40;
+	}
+}

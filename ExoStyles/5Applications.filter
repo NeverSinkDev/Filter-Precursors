@@ -49,12 +49,11 @@ Style LibrarySectionBased
 
 	Apply(HeistFollowerGear => HeistFollowerGearStrategy);
 
-	# Tierlists
+	# Tierlists and Maps
 	Apply(Replicas => ReplicaTierList);
 	Apply(UniqueMaps => UniqueMapStrat);
 	Apply(InfluencedMaps* => !InfluencedMapsStrategy.Any)
 
-	# Maps and MapLike
 	Apply(Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
 	Apply(Labyrinth => ExoticFragments);
 
@@ -65,6 +64,12 @@ Style LibrarySectionBased
 
 	Apply(MapFragments => FragmentTierStrat);
 	Apply(MapFragments.T1p => FragmentExceptions.Any);
+	
+	Apply(CurrencyProphecy.t1* => FragmentTierStrat.t1);
+	Apply(CurrencyProphecy.t2* => FragmentTierStrat.t2);
+	Apply(CurrencyProphecy.t3* => FragmentTierStrat.t3);
+	Apply(CurrencyProphecy.t4* => FragmentTierStrat.t4);
+	Apply(CurrencyProphecy.t5* => FragmentTierStrat.t5);
 }
 
 Style LibraryTagBased
@@ -106,9 +111,27 @@ Style LibraryTagBased
 	Apply($currency.tportal => tportal.Any);
 	Apply($currency.twisdom => twisdom.Any);
 
+	Apply($divi.t1 => t1divi.Any);
+	Apply($divi.t2 => t2divi.Any);
+	Apply($divi.t3 => t3divi.Any);
+	Apply($divi.t4 => t4divi.Any);
+	Apply($divi.t5 => t5divi.Any);
+	Apply($divi.tnew => tnewdivi.Any);
+
 	Apply($currency.eqChaos => t4chaos.Any);
 	Apply($currency.eqAlchemy => t5alchemy.Any);
 	Apply($currency.eqAnnul => t3annul.Any);
+
+	Apply($Coins => Coins);
+	Apply($Splinters => SplinterStrategy);
+
+	Apply($unique.t1 => t1uni.Any);
+	Apply($unique.t2 => t2uni.Any);
+	Apply($unique.t3 => t3uni.Any);
+	Apply($unique.t4 => t4uni.Any);
+	Apply($unique.t5 => t5uni.Any);
+	Apply($unique.harbyunique => harbyunique.Any);
+	# Apply($unique.tnew => tnewdivi.Any);
 }
 
 Style LibraryGlobal

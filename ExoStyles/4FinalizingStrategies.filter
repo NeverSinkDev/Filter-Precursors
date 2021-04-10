@@ -68,10 +68,14 @@ Style InvitationTierList : T1, T2RedPiece, T3YellowPiece
 	var tier.t3.acc = fragment.tx;
 }
 
-Style ReplicaTierList : T1, T2RedPiece, TMulti, T3WhitePiece
+Style ReplicaTierList : T1, T2YellowPiece, TMulti, T3WhitePiece
 {
 	var sound = sounds.unique;
 	var icon = Star;
+
+	var tier.special.base = unique.tx;
+	var tier.special.acc = sBlack;
+	var exoticgear.cmap = Blue;
 
 	var tier.t1.acc = unique.tx;
 	var tier.t2.acc = unique.tx;
@@ -89,7 +93,7 @@ Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 	var tier.t4.acc = unique.tx;
 }
 
-Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG
+Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 {
 	var sound = sounds.currency;
 	var icon = Hexagon;
@@ -98,6 +102,7 @@ Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG
 	var tier.t2.acc = fragment.tx;
 	var tier.t3.acc = fragment.tx;
 	var tier.t4.acc = fragment.tx;
+	var tier.t5.acc = fragment.tx;
 }
 
 Style FragmentExceptions : PatternT1
@@ -117,17 +122,17 @@ Style FragmentExceptions : PatternT1
 Style ExoticFragments : T3WhitePiece
 {
 	var sound = sounds.unique;
-	var icon = Pentagon;
+	var icon = Hexagon;
 	var tier.t3.acc = fragment.tx;
 
 	Func Offerings : T3 ()
 	{
-		MinimapIcon 2 * White;
+		MinimapIcon 2 White *;
 	}
 
 	Func OfferingsUpgraded : T3 ()
 	{
-		MinimapIcon 1 * Yellow; PlayEffect Yellow;
+		MinimapIcon 1 Yellow *; PlayEffect Yellow;
 	}
 }
 

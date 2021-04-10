@@ -9,6 +9,11 @@ Func Colors(a,b,c)
     SetBackgroundColor c;
 }
 
+Func RemoveEffects()
+{
+    PlayAlertSound NONE; MM NONE; PlayEffect NONE;
+}
+
 Func LVHL1()
 {
     SetFontSize 45; PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
@@ -89,7 +94,7 @@ var artefact.tx = 240 0 0 255;
 var artefact.extra = 70 0 20 255;
 
 var artefact.cmap = Orange;
-var artefact.cray = tier.t1.icon;
+var artefact.cray = Orange;
 
 var jewel.magic.tx      = 0 75 250 255;
 var jewel.magic.extra   = 0 20 40 255;
@@ -139,8 +144,12 @@ var influenced.gear.t3 = 50 130 165;
 
 var maps.influenced = 100 0 122 255;
 
-var maps.blighted = 20 50 20 255;
-var maps.blighted.base = 170 220 170;
+var maps.special.extra = 235 220 245 255;
+var maps.special.low.extra = 200 200 200 255;
+var maps.special.acc = 145 30 220 255; 
+
+var coins.acc = 255 178 135 255;
+var coins.extra = 255 178 135 135;
 
 var maps.special = 210 20 210 255;
 
@@ -148,6 +157,8 @@ var heist.contracts.acc = 220 60 60 255;
 var heist.contracts.base = sBlack;
 var heist.blueprints.acc = 255 85 85 255;
 var heist.blueprints.base = 40 0 30 255;
+
+var questlike.tx.acc = 74 230 58 255;
 
 #------------------------------------
 # Standards - Tierlists
@@ -227,8 +238,24 @@ var currency.acc.t5alchemy =213 159 0 255;
 var currency.acc.t6chrom =  210 178 135 255;
 var currency.acc.t7chance = 210 178 135 255;
 # low tiers
-var currency.acc.t8trans =  190 178 135 180;
-var currency.acc.t9armour = 170 158 130 220;
+var currency.acc.t8trans =  190 178 135 255;
+var currency.acc.t9armour = 170 158 130 255;
 # scrolls
-var currency.acc.tportal =  100 50 30 255;
-var currency.acc.twisdom =  170 158 130 220;
+var currency.acc.tportal =  30 50 100 255;
+var currency.acc.twisdom =  100 50 30 255;
+
+var splinters.text = sWhite;
+var splinters.extra = 65 20 80;
+var splinters.acc.t1 = 210 20 210 255;
+var splinters.acc.t2 = 130 15 255 255;
+var splinters.acc.t3 = 115 115 115 255;
+
+var divi.acc.t5 = 0 100 150;
+var divi.acc.t4 = 0 100 150;
+var divi.acc.t3 = 40 100 255 255;
+var divi.acc.t2 = 0 20 180 255;
+var divi.acc.t1 = 0 0 255 255;
+var divi.acc.tnew = 40 255 217;
+
+var unique.beachhead.acc = 37 105 175 255;
+var unique.early.extra = 10 30 45 255;

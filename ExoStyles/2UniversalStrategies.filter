@@ -80,6 +80,11 @@ Style UniversalValueAccents
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
 	}
 
+	Func SpecialB ()
+	{
+		SetBorderColor exoticgear.tx;
+	}
+
 	Func UniqueSound ()
 	{
 		PlayAlertSound sounds.unique;
@@ -103,10 +108,46 @@ Style UniversalValueAccents
 		SetBackgroundColor 0 0 0 100;
 	}
 
+	Func Maximize()
+	{
+		SetFontSize 45;
+	}
+
+	Func Shrink()
+	{
+		SetFontSize 35; RemoveEffects();
+	}
+
+	Func LevelCurrency()
+	{
+		SetFontSize 45; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
+	}
+
+	Func LevelGear()
+	{
+		SetFontSize 45; MinimapIcon 1 Grey Diamond; PlayAlertSound sounds.currency;
+	}
+
+	Func EarlyUniques()
+	{
+		SetBackgroundColor unique.early.extra;
+	}
+
 	Func Low ()
 	{
 		SetBackgroundColor accent.low.base;
 		SetBorderColor accent.notice.low;
+	}
+
+	Func QuestLike()
+	{
+		SetBorderColor questlike.tx.acc;
+		SetTextColor questlike.tx.acc;
+		PlayEffect Green;
+		SetFontSize 45;
+		SetBackgroundColor sBlack;
+		MinimapIcon 1 Green Pentagon;
+		PlayAlertSound sounds.unique;
 	}
 }
 
@@ -174,6 +215,16 @@ Style T4WhitePieceNoBG
 		SetFontSize 45;
 		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
 		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+	}
+}
+
+Style T5
+{
+	Func T5 () 
+	{ 
+		SetFontSize 40;
+		SetTextColor tier.t5.acc;
+		PlayEffect tier.t5.cray Temp;
 	}
 }
 

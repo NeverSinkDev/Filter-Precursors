@@ -522,16 +522,16 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 {
 	Section CraftRareDecorators : Auto("Decorator->craftingrare"), Rarity Rare, Tag("raredeco")
 	{
-		Cont ILVL75 { Tag("raredeco.ilvl75"); ItemLevel >= 75; }
-		Cont ILVL84 { Tag("raredeco.ilvl84"); ItemLevel >= 84; }
-		Cont ILVL86 { Tag("raredeco.ilvl86"); ItemLevel >= 86; }
-		Cont RareEnhancerGear { Tag("raredeco.t1equip"); Class classes_nonJwlryEquip; }
-		Cont RareEnhancerJwlry { Tag("raredeco.t1jewellery"); Class classes_jewellery; }
+		Cont RareDecoratorILVL75 { Tag("raredeco.ilvl75"); ItemLevel >= 75; }
+		Cont RareDecoratorILVL84 { Tag("raredeco.ilvl84"); ItemLevel >= 84; }
+		Cont RareDecoratorILVL86 { Tag("raredeco.ilvl86"); ItemLevel >= 86; }
+		Cont RareDecoratorGear { Tag("raredeco.t1equip"); Class classes_nonJwlryEquip; }
+		Cont RareDecoratorJwlry { Tag("raredeco.t1jewellery"); Class classes_jewellery; }
 	}
 
 	Section CraftNormalDecorators : Auto("Decorator->craftingrare"), Rarity <= Magic, ItemLevel >= 68
 	{
-		Cont NormalEnhancer { tag("Low"); Class classes_nonJwlryEquip classes_jewellery; };
+		Cont NormalDecorator { tag("Low"); Class classes_nonJwlryEquip classes_jewellery; };
 	}
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
@@ -704,7 +704,8 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 
 	Cont ILVL68 { Tag("*ilvl68"); ItemLevel >= 68; }
 	Cont ILVL75 { Tag("*ilvl75"); ItemLevel >= 75; }
-	Cont ILVL85 { Tag("*ilvl85"); ItemLevel >= 85; }
+	Cont ILVL84 { Tag("*ilvl84"); ItemLevel >= 84; }
+	Cont ILVL86 { Tag("*ilvl86"); ItemLevel >= 86; }
 
 	Cont CorruptedRares { Tag("*corrupt"); Corrupted True; }
 }
@@ -989,8 +990,8 @@ Section Maps : Class "Maps", Tag("Maps")
 
 	Section BlightedMaps : BlightedMap True, Auto("maps->blighted")
 	{
-		Show t1  { Tag("*blightedhigh"); MapTier >= Maps.Blighted.HighTier }
-		Show Any { Tag("*blighted"); Empty(); }
+		Show t1  { Tag("*SpecialHigh"); MapTier >= Maps.Blighted.HighTier }
+		Show Any { Tag("*SpecialLow"); Empty(); }
 	}
 
 #------------------------------------
@@ -999,8 +1000,8 @@ Section Maps : Class "Maps", Tag("Maps")
 
 	Section EnchantedMaps : AnyEnchantment True, Auto("maps->enchanted")
 	{
-		Show t1  { Tag("*specialhigh"); MapTier >= Maps.Enchanted.HighTier }
-		Show Any { Tag("*special"); Empty(); }
+		Show t1  { Tag("*SpecialHigh"); MapTier >= Maps.Enchanted.HighTier }
+		Show Any { Tag("*SpecialLow"); Empty(); }
 	}
 
 #------------------------------------
@@ -1008,7 +1009,7 @@ Section Maps : Class "Maps", Tag("Maps")
 #------------------------------------
 	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
 	{
-		Show NemesisBeyond { Tag("*special"); HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
+		Show NemesisBeyond { Tag("*SpecialLow"); HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
 	}
 
 #===============================================================================================================
@@ -1167,12 +1168,12 @@ Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency", Tag("curr
 #------------------------------------
 #!! Override 720 : "Perandus and Heist Coins"
 
-Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency", BaseType "Perandus Coin"
+Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency", BaseType "Perandus Coin", Tag("coins")
 {
-	Show t1 { StackSize >= stacksize.perandus.t1; }
-	Show t2 { StackSize >= stacksize.perandus.t2; }
-	Show t3 { StackSize >= stacksize.perandus.t3; }
-	Show t4 { Empty(); }
+	Show t1 { Tag("*Huge"); StackSize >= stacksize.perandus.t1; }
+	Show t2 { Tag("*Large"); StackSize >= stacksize.perandus.t2; }
+	Show t3 { Tag("*Medium"); StackSize >= stacksize.perandus.t3; }
+	Show t4 { Tag("*Small"); Empty(); }
 }
 
 #------------------------------------
@@ -1181,7 +1182,7 @@ Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency
 
 Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 {
-	Show Any { BaseType == "Rogue's Marker"; }
+	Show Any { Tag("Coins.Large"); BaseType == "Rogue's Marker"; }
 }
 
 #===============================================================================================================
@@ -1191,11 +1192,11 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, Tag("Currency")
 {
-	Show essences { Tag("*eqAlchemy"); BaseType currency.leveling.essences; }
-	Show trans 	  { BaseType == currency.leveling.trans; }
-	Show aug      { BaseType == currency.leveling.aug; }
-	Show portal   { BaseType == currency.leveling.portal; }
-	Show wisdom   { BaseType == currency.leveling.wisdom; }
+	Show essences { Tag("*eqAlchemy"); Tag("LevelCurrency"); BaseType currency.leveling.essences; }
+	Show trans 	  { Tag("Currency.t8trans"); Tag("LevelCurrency"); BaseType == currency.leveling.trans; }
+	Show aug      { Tag("Currency.t9armour"); Tag("Maximize"); BaseType == currency.leveling.aug; }
+	Show portal   { Tag("Currency.tportal"); Tag("Maximize"); BaseType == currency.leveling.portal; }
+	Show wisdom   { Tag("Currency.twisdom"); Tag("Maximize"); BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -1308,7 +1309,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", Tag("Curr
 
 Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", Tag("Currency")
 {
-	Show leveledex { ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
+	Show leveledex { Tag("*t4chaos"); ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
 
 	Show t1 { Tag("*t1exalted"); BaseType == currency.incubators.t1; }
 	Show t2 { Tag("*t2divine"); BaseType == currency.incubators.t2; }
@@ -1339,11 +1340,10 @@ Section CurrencyProphecy : Auto("currency->prophecy"), Class "Currency", BaseTyp
 	Show t1 { Prophecy == currency.prophecy.t1; }
 	Show t2 { Prophecy == currency.prophecy.t2; }
 	Show t3 { Prophecy == currency.prophecy.t3; }
-	Show t3mapping { Prophecy == currency.prophecy.t3mapping; }
-	Show t3council { Prophecy == currency.prophecy.t3council; }
-	Show t4upgrade { Prophecy == currency.prophecy.t4upgrade; }
+	Show t3mapping { Tag("High"); Prophecy == currency.prophecy.t3mapping; }
+	Show t4upgrade { Tag("SpecialB"); Prophecy == currency.prophecy.t4upgrade; }
 	Show t4drop { Prophecy == currency.prophecy.t4drop; }
-	Show t4 { Prophecy == currency.prophecy.t4; }
+	Show t5 { Prophecy == currency.prophecy.t5; }
 	Show restex { Empty(); }
 }
 
@@ -1356,11 +1356,11 @@ Section CurrencyProphecy : Auto("currency->prophecy"), Class "Currency", BaseTyp
 #------------------------------------
 #!! Override 720 : "Breach and Simulacrum Splinters"
 
-Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency"
+Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency", Tag("Splinters")
 {
-	Show t1 { BaseType == currency.splinters.t1; }
-	Show t2 { BaseType == currency.splinters.t2; }
-	Show t3 { BaseType == currency.splinters.t3; }
+	Show t1 { Tag("*t1"); BaseType == currency.splinters.t1; }
+	Show t2 { Tag("*t2"); BaseType == currency.splinters.t2; }
+	Show t3 { Tag("*t3"); BaseType == currency.splinters.t3; }
 }
 
 #------------------------------------
@@ -1369,11 +1369,11 @@ Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency"
 
 Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Class "Currency", BaseType "Simulacrum Splinter"
 {
-	Show t1 { StackSize >= stacksize.simulacrum.t1; }
-	Show t2 { StackSize >= stacksize.simulacrum.t2; }
-	Show t3 { StackSize >= stacksize.simulacrum.t3; }
-	Show t4 { StackSize >= stacksize.simulacrum.t4; }
-	Show t5 { Empty(); }
+	Show t1 { Tag("Currency.t1exalted"); Tag("Splinters.Stylize"); StackSize >= stacksize.simulacrum.t1; }
+	Show t2 { Tag("Currency.t2divine"); Tag("Splinters.Stylize");  StackSize >= stacksize.simulacrum.t2; }
+	Show t3 { Tag("Currency.t3annul"); Tag("Splinters.Stylize"); StackSize >= stacksize.simulacrum.t3; }
+	Show t4 { Tag("Currency.t4chaos"); Tag("Splinters.Stylize"); StackSize >= stacksize.simulacrum.t4; }
+	Show t5 { Empty(); Tag("Splinters.t2") }
 }
 
 #===============================================================================================================
@@ -1381,16 +1381,16 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 #===============================================================================================================
 #!! Override 730 : "Divination Cards"
 
-Section DivinationCards : Auto("divination"), Class "Divination"
+Section DivinationCards : Auto("divination"), Class "Divination", Tag("divi")
 {
-	Show t1 { BaseType == divination.t1; }
-	Show t2 { BaseType == divination.t2; }
-	Show t3 { BaseType == divination.t3; }
-	Show tnew { BaseType == divination.tnew; }
-	Show t4c { BaseType == divination.t4c; }
-	Show t5c { BaseType == divination.t5c; }
-	Show t4 { BaseType == divination.t4; }
-	Show t5 { BaseType == divination.t5; }
+	Show t1 	{ Tag("*t1");	BaseType == divination.t1; }
+	Show t2 	{ Tag("*t2");	BaseType == divination.t2; }
+	Show t3 	{ Tag("*t3");	BaseType == divination.t3; }
+	Show tnew 	{ Tag("*tnew");	BaseType == divination.tnew; }
+	Show t4c 	{ Tag("*t4");	BaseType == divination.t4c; }
+	Show t5c 	{ Tag("*t5");	BaseType == divination.t5c; }
+	Show t4 	{ Tag("*t4");	BaseType == divination.t4; }
+	Show t5 	{ Tag("*t5"); Tag("Shrink");	BaseType == divination.t5; }
 	Show restex { Empty(); }
 }
 
@@ -1401,7 +1401,7 @@ Section DivinationCards : Auto("divination"), Class "Divination"
 
 Section CurrencyRemaining : Class "Currency", Auto("Currency")
 {
-	Hide scrollfragments { BaseType "Scroll Fragment"; }
+	Hide scrollfragments { Tag("shrink"); BaseType "Scroll Fragment"; }
 	Show restex { Empty(); }
 }
 
@@ -1412,13 +1412,12 @@ Section CurrencyRemaining : Class "Currency", Auto("Currency")
 
 Section Metamorph : Class "Metamorph", Auto("Metamorph")
 {
-	Show ILVL80 { ItemLevel >= 80; }
-	Show Any { Empty(); }
+	Show Any { Tag("QuestLike"); Empty(); }
 }
 
 Section HeistTarget : Class "Heist Target", Auto("HeistTarget")
 {
-	Show Any { Empty(); }
+	Show Any { Tag("QuestLike"); Empty(); }
 }
 
 #===============================================================================================================
@@ -1426,55 +1425,55 @@ Section HeistTarget : Class "Heist Target", Auto("HeistTarget")
 #===============================================================================================================
 #!! Override 760 : "All uniques"
 
-Section Unique : Rarity Unique, Auto("uniques")
+Section Unique : Rarity Unique, Auto("uniques"), Tag("unique")
 {
 
 #------------------------------------
 # [5701] Exceptions #1
 #------------------------------------
-	Show exTabula { BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
-	Show exSynth  { Class "Rings"; SynthesisedItem True; }
-	Show ex6link  { LinkedSockets 6; }
-	Show exHarby  { Class "Piece"; }
+	Show exTabula { Tag("*t2"); BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
+	Show exSynth  { Tag("*t2"); Class "Rings"; SynthesisedItem True; }
+	Show ex6link  { Tag("*t1"); LinkedSockets 6; }
+	Show exHarby  { Tag("*HarbyUnique"); Class "Piece"; }
 #------------------------------------
 # [5702] Tier 1 uniques
 #------------------------------------
-	Show t1 { BaseType == uniques.generic.t1; }
+	Show t1 { Tag("*t1"); BaseType == uniques.generic.t1; }
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
-	Show 2xcorrupteduniques { Corrupted True; CorruptedMods >= 2; }
-	Show 2xabyss { Sockets >= "AA"; Class "Boots" "Gloves" "Helmets" }
-	Show 5link { LinkedSockets 5; }
+	Show 2xcorrupteduniques { Tag("*t2"); Corrupted True; CorruptedMods >= 2; }
+	Show 2xabyss 			{ Tag("*t2"); Sockets >= "AA"; Class "Boots" "Gloves" "Helmets" }
+	Show 5link 				{ Tag("*t2"); LinkedSockets 5; }
 #------------------------------------
 # [5704] Tier 2 uniques
 #------------------------------------
-	Show t2 { BaseType == uniques.generic.t2; }	
+	Show t2 { Tag("*t2"); BaseType == uniques.generic.t2; }	
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
 # These bases have multiple uniques. One of the uniques, is a high value one
 # While others are cheap. We give them a high quality display, while making a normal unique
 # Sound to prevent false excitement.
-	Show multispecial { BaseType == uniques.generic.multispecial; }
+	Show multispecial { Tag("*t3"); Tag("special"); BaseType == uniques.generic.multispecial; }
 
 #!! Override 770 : "Only low tier uniques"
 
-	Show earlyleague { BaseType == uniques.generic.earlyleague; }
-	Show highvinktar { BaseType == "Imperial Staff"; ItemLevel >= 82; }
-	Show exjewels { BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Class "Jewel"; }
+	Show earlyleague { Tag("*t4"); Tag("EarlyUniques"); BaseType == uniques.generic.earlyleague; }
+	Show highvinktar { Tag("*t3"); BaseType == "Imperial Staff"; ItemLevel >= 82; }
+	Show exjewels { Tag("*t4"); Tag("special"); BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Class "Jewel"; }
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss { BaseType == uniques.generic.t3boss; }
-	Show t3 { BaseType == uniques.generic.t3; }
+	Show t3boss { Tag("*t4"); BaseType == uniques.generic.t3boss; }
+	Show t3 	{ Tag("*t4"); BaseType == uniques.generic.t3; }
 
-	ShowD recipeUniqueRings { Class "Rings"; }
+	Show recipeUniqueRings { Tag("*t4"); Tag("special"); Class "Rings"; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
-	Show hideable2 { BaseType == uniques.generic.hideable2; }
-	Show hideable { BaseType == uniques.generic.hideable; }
+	Show hideable2 { Tag("*t5"); BaseType == uniques.generic.hideable2; }
+	Show hideable { Tag("*t5"); BaseType == uniques.generic.hideable; }
 	Show restex { Empty(); }
 }
 
@@ -1485,8 +1484,8 @@ Section Unique : Rarity Unique, Auto("uniques")
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
 {
-	Show RelicKeys { BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key"; }
-	Show Any { Empty(); }
+	Show RelicKeys { Tag("Currency.t1exalted"); BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key"; }
+	Show Any { Tag("restex"); Empty(); }
 }
 
 #===============================================================================================================
@@ -1495,9 +1494,9 @@ Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
 
 Section Questlike : Auto("Questlike")
 {
-	Show LabyrinthConsumable { Class "Labyrinth"; }
-	Show IncursionConsumable { Class "Incursion Item"; }
-	Show QuestItems { Class "Pantheon Soul" "Quest"; }
+	Show LabyrinthConsumable { Tag("QuestLike"); Class "Labyrinth"; }
+	Show IncursionConsumable { Tag("QuestLike"); Class "Incursion Item"; }
+	Show QuestItems { Tag("QuestLike"); Class "Pantheon Soul" "Quest"; }
 }
 
 #===============================================================================================================
