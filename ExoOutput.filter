@@ -46,14 +46,13 @@
 #
 # [[0100]] High tier influenced items
 #   [0101] Influenced Maps
-#   [0102] ASPECTS
-#   [0103] Crusader
-#   [0104] Warlord
-#   [0105] Redeemer
-#   [0106] Hunter
-#   [0107] Shaper
-#   [0108] Elder
-#   [0109] Remaining
+#   [0102] Crusader
+#   [0103] Warlord
+#   [0104] Redeemer
+#   [0105] Hunter
+#   [0106] Shaper
+#   [0107] Elder
+#   [0108] Remaining
 # [[0200]] Exotic Bases
 # [[0300]] IDENTIFIED MOD FILTERING
 #   [0301] Physical
@@ -225,27 +224,28 @@ Show # $type->maps->influenced $tier->infshaper
 	HasInfluence Shaper
 	Rarity <= Rare
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 100 0 122 255
+	SetBorderColor 100 0 122 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Square
 
 Show # $type->maps->influenced $tier->infelder
 	HasInfluence Elder
 	Rarity <= Rare
 	Class "Maps"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 100 0 122 255
+	SetBorderColor 100 0 122 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Square
 
 #------------------------------------
-#   [0102] ASPECTS
-#------------------------------------
-
-Show # $type->decorators->influenced $tier->aspect_corruptedinfluenced
-	Corrupted True
-	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-	Rarity <= Rare
-	SetBorderColor 0 0 0
-	Continue
-
-#------------------------------------
-#   [0103] Crusader
+#   [0102] Crusader
 #------------------------------------
 
 Show # $type->rare->crusader $tier->t11
@@ -254,10 +254,10 @@ Show # $type->rare->crusader $tier->t11
 	Rarity <= Rare
 	BaseType "Anarchic Spiritblade" "Banishing Blade" "Battery Staff" "Blasting Blade" "Blue Pearl Amulet" "Boom Mace" "Capricious Spiritblade" "Cogwork Ring" "Crystal Belt" "Disapprobation Axe" "Eventuality Rod" "Flashfire Blade" "Hedron Bow" "Honed Cleaver" "Infernal Blade" "Malign Fangs" "Potentiality Rod" "Psychotic Axe" "Reciprocation Staff" "Solarine Bow" "Stygian Vise" "Transformer Staff"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -267,10 +267,10 @@ Show # $type->rare->crusader $tier->t12
 	Rarity <= Rare
 	BaseType "Congregator Wand"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -280,10 +280,10 @@ Show # $type->rare->crusader $tier->t13
 	Rarity <= Rare
 	BaseType "Astral Plate" "Butcher Axe" "Harmonic Spirit Shield" "Lathi" "Opal Ring" "Pneumatic Dagger" "Spiny Round Shield" "Unset Ring" "Vaal Regalia" "Void Fangs"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -295,10 +295,10 @@ Show # $type->rare->crusader $tier->t21
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 Show # $type->rare->crusader $tier->t22
 	HasInfluence Crusader
@@ -308,13 +308,13 @@ Show # $type->rare->crusader $tier->t22
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 #------------------------------------
-#   [0104] Warlord
+#   [0103] Warlord
 #------------------------------------
 
 Show # $type->rare->warlord $tier->t11
@@ -323,10 +323,10 @@ Show # $type->rare->warlord $tier->t11
 	Rarity <= Rare
 	BaseType "Anarchic Spiritblade" "Apex Cleaver" "Banishing Blade" "Battery Staff" "Blue Pearl Amulet" "Boom Mace" "Capricious Spiritblade" "Crack Mace" "Disapprobation Axe" "Eventuality Rod" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flare Mace" "Foundry Bow" "Gripped Gloves" "Hedron Bow" "Hollowpoint Dagger" "Honed Cleaver" "Infernal Blade" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Opal Ring" "Pneumatic Dagger" "Potentiality Rod" "Pressurised Dagger" "Prime Cleaver" "Psychotic Axe" "Rebuking Blade" "Reciprocation Staff" "Solarine Bow" "Spiked Gloves" "Steel Ring" "Transformer Staff" "Vermillion Ring" "Void Fangs"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -336,10 +336,10 @@ Show # $type->rare->warlord $tier->t12
 	Rarity <= Rare
 	BaseType "Engraved Wand" "Flashfire Blade" "Spiraled Wand"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -349,10 +349,10 @@ Show # $type->rare->warlord $tier->t13
 	Rarity <= Rare
 	BaseType "Accumulator Wand" "Alternating Sceptre" "Congregator Wand" "Ebony Tower Shield" "Ezomyte Tower Shield" "Oscillating Sceptre" "Shadow Sceptre"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -364,10 +364,10 @@ Show # $type->rare->warlord $tier->t21
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 Show # $type->rare->warlord $tier->t22
 	HasInfluence Warlord
@@ -377,13 +377,13 @@ Show # $type->rare->warlord $tier->t22
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 #------------------------------------
-#   [0105] Redeemer
+#   [0104] Redeemer
 #------------------------------------
 
 Show # $type->rare->redeemer $tier->t11
@@ -392,10 +392,10 @@ Show # $type->rare->redeemer $tier->t11
 	Rarity <= Rare
 	BaseType "Alternating Sceptre" "Anarchic Spiritblade" "Blue Pearl Amulet" "Boom Mace" "Capricious Spiritblade" "Cogwork Ring" "Crack Mace" "Disapprobation Axe" "Elegant Round Shield" "Eventuality Rod" "Fickle Spiritblade" "Flashfire Blade" "Flickerflame Blade" "Geodesic Ring" "Hedron Bow" "Hollowpoint Dagger" "Infernal Blade" "Malign Fangs" "Opal Ring" "Oscillating Sceptre" "Pneumatic Dagger" "Potentiality Rod" "Pressurised Dagger" "Psychotic Axe" "Stygian Vise" "Transformer Staff" "Vermillion Ring"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -405,10 +405,10 @@ Show # $type->rare->redeemer $tier->t12
 	Rarity <= Rare
 	BaseType "Two-Toned Boots" "Void Fangs"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -418,10 +418,10 @@ Show # $type->rare->redeemer $tier->t13
 	Rarity <= Rare
 	BaseType "Archon Kite Shield" "Crusader Buckler" "Ezomyte Spiked Shield" "Ezomyte Tower Shield" "Marble Amulet" "Ochre Sceptre" "Shadow Sceptre" "Sorcerer Boots" "Stag Sceptre"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -433,10 +433,10 @@ Show # $type->rare->redeemer $tier->t21
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 Show # $type->rare->redeemer $tier->t22
 	HasInfluence Redeemer
@@ -446,13 +446,13 @@ Show # $type->rare->redeemer $tier->t22
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 #------------------------------------
-#   [0106] Hunter
+#   [0105] Hunter
 #------------------------------------
 
 Show # $type->rare->hunter $tier->t11
@@ -461,10 +461,10 @@ Show # $type->rare->hunter $tier->t11
 	Rarity <= Rare
 	BaseType "Anarchic Spiritblade" "Apex Cleaver" "Battery Staff" "Blue Pearl Amulet" "Blunt Force Condenser" "Boom Mace" "Capricious Spiritblade" "Cogwork Ring" "Crushing Force Magnifier" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Geodesic Ring" "Gripped Gloves" "Honed Cleaver" "Infernal Blade" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Potentiality Rod" "Prismatic Ring" "Psychotic Axe" "Reciprocation Staff" "Shadow Fangs" "Solarine Bow" "Spiked Gloves" "Stygian Vise" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring" "Void Fangs"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -474,10 +474,10 @@ Show # $type->rare->hunter $tier->t12
 	Rarity <= Rare
 	BaseType "Alternating Sceptre" "Horned Sceptre" "Iron Gauntlets" "Ornate Quiver" "Oscillating Sceptre" "Pneumatic Dagger" "Stabilising Sceptre"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -487,10 +487,10 @@ Show # $type->rare->hunter $tier->t13
 	Rarity <= Rare
 	BaseType "Angelic Kite Shield" "Archon Kite Shield" "Citrine Amulet" "Crested Tower Shield" "Crusader Buckler" "Ebony Tower Shield" "Ezomyte Tower Shield" "Harmonic Spirit Shield" "Jade Amulet" "Sekhem" "Shadow Sceptre" "Sorcerer Boots" "Spiraled Wand" "Titan Greaves"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -502,10 +502,10 @@ Show # $type->rare->hunter $tier->t21
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 Show # $type->rare->hunter $tier->t22
 	HasInfluence Hunter
@@ -515,13 +515,13 @@ Show # $type->rare->hunter $tier->t22
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 #------------------------------------
-#   [0107] Shaper
+#   [0106] Shaper
 #------------------------------------
 
 Show # $type->rare->shaper $tier->t11
@@ -530,10 +530,10 @@ Show # $type->rare->shaper $tier->t11
 	Rarity <= Rare
 	BaseType "Anarchic Spiritblade" "Apex Cleaver" "Banishing Blade" "Battery Staff" "Boom Mace" "Cogwork Ring" "Crack Mace" "Crystal Belt" "Eventuality Rod" "Fickle Spiritblade" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Honed Cleaver" "Horned Sceptre" "Infernal Blade" "Malign Fangs" "Marble Amulet" "Opal Ring" "Pneumatic Dagger" "Potentiality Rod" "Pressurised Dagger" "Psychotic Axe" "Solarine Bow" "Steel Ring" "Stygian Vise" "Vermillion Ring"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -543,10 +543,10 @@ Show # $type->rare->shaper $tier->t12
 	Rarity <= Rare
 	BaseType "Accumulator Wand" "Stabilising Sceptre" "Titanium Spirit Shield"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -556,10 +556,10 @@ Show # $type->rare->shaper $tier->t13
 	Rarity <= Rare
 	BaseType "Bone Helmet" "Cerulean Ring" "Congregator Wand" "Ezomyte Tower Shield" "Sharktooth Arrow Quiver" "Sorcerer Boots" "Spike-Point Arrow Quiver" "Two-Point Arrow Quiver"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -571,10 +571,10 @@ Show # $type->rare->shaper $tier->t21
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 Show # $type->rare->shaper $tier->t22
 	HasInfluence Shaper
@@ -584,13 +584,13 @@ Show # $type->rare->shaper $tier->t22
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 #------------------------------------
-#   [0108] Elder
+#   [0107] Elder
 #------------------------------------
 
 Show # $type->rare->elder $tier->t11
@@ -599,10 +599,10 @@ Show # $type->rare->elder $tier->t11
 	Rarity <= Rare
 	BaseType "Anarchic Spiritblade" "Apex Cleaver" "Banishing Blade" "Battery Staff" "Boom Mace" "Capacity Rod" "Capricious Spiritblade" "Crack Mace" "Eventuality Rod" "Flickerflame Blade" "Foundry Bow" "Hollowpoint Dagger" "Infernal Blade" "Malign Fangs" "Pneumatic Dagger" "Potentiality Rod" "Prismatic Ring" "Psychotic Axe" "Reciprocation Staff" "Solarine Bow" "Stygian Vise" "Transformer Staff" "Void Fangs"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -612,10 +612,10 @@ Show # $type->rare->elder $tier->t12
 	Rarity <= Rare
 	BaseType "Congregator Wand" "Flashfire Blade" "Iron Hat" "Opal Ring" "Steel Ring"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -625,10 +625,10 @@ Show # $type->rare->elder $tier->t13
 	Rarity <= Rare
 	BaseType "Bone Helmet" "Disapprobation Axe" "Hubris Circlet" "Mechalarm Belt" "Royal Burgonet" "Stabilising Sceptre" "Two-Point Arrow Quiver" "Two-Toned Boots"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 200 0 0 255
+	SetTextColor 50 130 165 255
+	SetBorderColor 50 130 165 255
 	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
+	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Cross
 
@@ -640,10 +640,10 @@ Show # $type->rare->elder $tier->t21
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 Show # $type->rare->elder $tier->t22
 	HasInfluence Elder
@@ -653,31 +653,43 @@ Show # $type->rare->elder $tier->t22
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
-	SetBackgroundColor 200 0 0 255
+	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 0 Yellow Diamond
+	MinimapIcon 0 Yellow Cross
 
 #------------------------------------
-#   [0109] Remaining
+#   [0108] Remaining
 #------------------------------------
-
-Show # $type->rare->any $tier->anytoplevel
-	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-	ItemLevel >= 86
-	Rarity <= Rare
-	SetBorderColor 0 0 0
 
 Show # $type->rare->any $tier->anytrinket
 	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 	Rarity <= Rare
 	Class "Amulet" "Belts" "Rings"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 50 130 165
+	PlayEffect Blue Temp
+
+Show # $type->rare->any $tier->anytoplevel
+	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	ItemLevel >= 86
+	Rarity <= Rare
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 50 200 50 255
+	SetBackgroundColor 50 130 165
+	PlayEffect Blue Temp
 
 Show # $type->rare->any $tier->any
 	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 	Rarity <= Rare
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 50 130 165
+	PlayEffect Blue Temp
 
 #===============================================================================================================
 # [[0200]] Exotic Bases
@@ -1542,7 +1554,6 @@ Show # $type->exoticmods $tier->duoveil
 	HasExplicitMod "of the Veil"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1555,7 +1566,6 @@ Show # $type->exoticmods $tier->smallveil1
 	HasExplicitMod "Veil"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1568,7 +1578,6 @@ Show # $type->exoticmods $tier->smallveil2
 	HasExplicitMod "Veil"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1579,7 +1588,6 @@ Show # $type->exoticmods $tier->veilrest
 	HasExplicitMod "Veil"
 	SetFontSize 40
 	SetBorderColor 0 240 190 180
-	SetBackgroundColor 0 0 0 255
 	PlayEffect Blue Temp
 
 #------------------------------------
@@ -1696,7 +1704,6 @@ Show # $type->exoticmods $tier->incursionrandom
 	HasExplicitMod "Citaqualotl" "Guatelitzi" "Matatl" "Puhuarte" "Tacati" "Topotante" "Xopec"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1723,7 +1730,6 @@ Show # $type->exoticmods $tier->bestiaryother
 	HasExplicitMod "of Craiceann" "of Saqawal"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1750,7 +1756,6 @@ Show # $type->exoticmods $tier->warband
 	HasExplicitMod "Betrayer's" "Brinerot" "Deceiver's" "Mutewind" "Redblade" "Turncoat's"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1773,7 +1778,6 @@ Show # $type->exoticmods $tier->crafting
 	HasExplicitMod "of Crafting" "of Spellcraft" "of Weaponcraft"
 	SetFontSize 40
 	SetBorderColor 0 240 190 180
-	SetBackgroundColor 0 0 0 255
 	PlayEffect Blue Temp
 
 #===============================================================================================================
@@ -1793,7 +1797,7 @@ Show # $type->artefact->trinkets $tier->anytrinket
 	SetBackgroundColor 70 0 20 255
 	PlayAlertSound 3 300
 	PlayEffect Star
-	MinimapIcon 0 Star Pentagon
+	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
 #   [0502] Magic Watchstones
@@ -1808,7 +1812,7 @@ Show # $type->artefact->watchstones $tier->craftablewatchstone
 	SetBackgroundColor 70 0 20 255
 	PlayAlertSound 3 300
 	PlayEffect Star
-	MinimapIcon 0 Star Pentagon
+	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
 #   [0503] Secret Society Equipment
@@ -1822,7 +1826,7 @@ Show # $type->artefact->redacted $tier->scp3889
 	SetBackgroundColor 70 0 20 255
 	PlayAlertSound 3 300
 	PlayEffect Star
-	MinimapIcon 0 Star Pentagon
+	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
 #   [0504] Craftable Invitations
@@ -1889,7 +1893,6 @@ Show # $type->exotic->corruptions $tier->doublecorruptedany
 	Rarity Rare
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1943,7 +1946,6 @@ Show # $type->exotic->synthesised $tier->synthrandom
 	Rarity <= Rare
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -1981,7 +1983,6 @@ Show # $type->exotic->fractured $tier->fractrandom
 	Rarity <= Rare
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -2020,7 +2021,6 @@ Show # $type->exotic->enchanted $tier->glovesboots
 	Class "Boots" "Gloves"
 	SetFontSize 40
 	SetBorderColor 0 240 190 180
-	SetBackgroundColor 0 0 0 255
 	PlayEffect Blue Temp
 
 #===============================================================================================================
@@ -2044,6 +2044,7 @@ Show # $type->jewels->special $tier->1modcorrupted
 	SetTextColor 220 220 0 255
 	SetBorderColor 200 0 0 255
 	SetBackgroundColor 120 120 0 225
+	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
@@ -2057,6 +2058,7 @@ Show # $type->jewels->special $tier->1moduncorrupted
 	SetTextColor 220 220 0 255
 	SetBorderColor 0 240 190 255
 	SetBackgroundColor 120 120 0 225
+	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
@@ -2169,9 +2171,9 @@ Show # $type->jewels->abyss $tier->highrare
 	Class "Abyss Jewel"
 	SetFontSize 45
 	SetTextColor 220 220 0 255
-	SetBorderColor 220 220 0 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 120 120 0 225
-	PlayEffect Grey Temp
+	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
 Show # $type->jewels->abyss $tier->highmagic
@@ -2180,7 +2182,7 @@ Show # $type->jewels->abyss $tier->highmagic
 	Class "Abyss Jewel"
 	SetFontSize 40
 	SetTextColor 0 75 250 255
-	SetBorderColor 0 75 250 255
+	SetBorderColor 240 100 0 255
 	SetBackgroundColor 0 20 40 255
 
 Show # $type->jewels->abyss $tier->anyrare
@@ -2191,7 +2193,7 @@ Show # $type->jewels->abyss $tier->anyrare
 	SetBorderColor 220 220 0 255
 	SetBackgroundColor 120 120 0 225
 	PlayEffect Grey
-	MinimapIcon 2 Blue Diamond
+	MinimapIcon 2 Grey Diamond
 
 Show # $type->jewels->abyss $tier->anymagic
 	Rarity Magic
@@ -2243,7 +2245,7 @@ Show # $type->socketslinks $tier->5linksleveling
 	SetBackgroundColor 180 135 135 255
 	PlayAlertSound 2 300
 	PlayEffect Blue
-	MinimapIcon 1 Blue Pentagon
+	MinimapIcon 1 Blue Hexagon
 
 Show # $type->socketslinks $tier->5link6sockets
 	LinkedSockets >= 5
@@ -2255,7 +2257,7 @@ Show # $type->socketslinks $tier->5link6sockets
 	SetBackgroundColor 180 135 135 255
 	PlayAlertSound 2 300
 	PlayEffect Blue
-	MinimapIcon 2 Blue Pentagon
+	MinimapIcon 2 Blue Hexagon
 
 Show # $type->socketslinks $tier->5links
 	LinkedSockets >= 5
@@ -2267,7 +2269,7 @@ Show # $type->socketslinks $tier->5links
 	SetBackgroundColor 180 135 135 255
 	PlayAlertSound 2 300
 	PlayEffect Blue
-	MinimapIcon 2 Blue Pentagon
+	MinimapIcon 2 Blue Hexagon
 
 Show # $type->socketslinks $tier->6sockets
 	Sockets >= 6
@@ -2278,7 +2280,7 @@ Show # $type->socketslinks $tier->6sockets
 	SetBackgroundColor 180 135 135 255
 	PlayAlertSound 2 300
 	PlayEffect Grey
-	MinimapIcon 2 Grey Pentagon
+	MinimapIcon 2 Grey Hexagon
 
 #===============================================================================================================
 # [[0900]] High Level Crafting Bases
@@ -2288,10 +2290,50 @@ Show # $type->socketslinks $tier->6sockets
 # [1234] ILVL 86
 #------------------------------------
 
-Show # $type->decorator->craftinggeneric $tier->raredecorator
+Show # $type->decorator->craftingrare $tier->ilvl75
 	Corrupted False
-	Rarity <= Rare
-	SetBorderColor 0 0 0
+	ItemLevel >= 75
+	Rarity Rare
+	SetTextColor 245 190 0 255
+	Continue
+
+Show # $type->decorator->craftingrare $tier->ilvl84
+	Corrupted False
+	ItemLevel >= 84
+	Rarity Rare
+	SetTextColor 250 165 0 255
+	Continue
+
+Show # $type->decorator->craftingrare $tier->ilvl86
+	Corrupted False
+	ItemLevel >= 86
+	Rarity Rare
+	SetTextColor 255 140 0 255
+	Continue
+
+Show # $type->decorator->craftingrare $tier->rareenhancergear
+	Corrupted False
+	Rarity Rare
+	Class "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rune Daggers" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
+	SetFontSize 40
+	SetBackgroundColor 0 0 0 255
+	Continue
+
+Show # $type->decorator->craftingrare $tier->rareenhancerjwlry
+	Corrupted False
+	Rarity Rare
+	Class "Amulets" "Belts" "Rings"
+	SetFontSize 45
+	SetBackgroundColor 0 75 30 255
+	Continue
+
+Show # $type->decorator->craftingrare $tier->normalenhancer
+	Corrupted False
+	ItemLevel >= 68
+	Rarity <= Magic
+	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 	Continue
 
 Show # $type->normalcraft->i86 $tier->t1
@@ -2301,8 +2343,9 @@ Show # $type->normalcraft->i86 $tier->t1
 	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 125 0 240
+	PlayAlertSound 3 300
 	PlayEffect Blue
-	MinimapIcon 2 Blue Diamond
+	MinimapIcon 1 Blue Diamond
 
 Show # $type->normalcraft->i86 $tier->t2
 	Corrupted False
@@ -2331,8 +2374,9 @@ Show # $type->normalcraft->i84 $tier->t1
 	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 200 200 0 240
+	PlayAlertSound 3 300
 	PlayEffect White
-	MinimapIcon 2 Blue Diamond
+	MinimapIcon 2 White Diamond
 
 Show # $type->normalcraft->i84 $tier->t2
 	Corrupted False
@@ -2357,44 +2401,73 @@ Show # $type->normalcraft->i84 $tier->t3
 Show # $type->normalcraft->rest $tier->t1
 	Corrupted False
 	ItemLevel <= 83
-	ItemLevel >= 60
+	ItemLevel >= 68
 	Rarity <= Rare
 	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
-	SetFontSize 40
+	SetFontSize 45
 	SetBorderColor 240 240 240 240
 	SetBackgroundColor 0 0 0 180
+	PlayAlertSound 3 300
+	PlayEffect Grey
+	MinimapIcon 2 Grey Diamond
 
 Show # $type->normalcraft->rest $tier->t2
 	Corrupted False
 	ItemLevel <= 83
-	ItemLevel >= 60
+	ItemLevel >= 68
 	Rarity <= Rare
 	BaseType "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Sacrificial Garb" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
 	SetBorderColor 200 200 200 180
 	SetBackgroundColor 0 0 0 180
 
-Show # $type->normalcraft->rest $tier->t3
-	Corrupted False
-	ItemLevel <= 83
-	ItemLevel >= 60
-	Rarity <= Rare
-	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Golden Kris" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Kris" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
-	SetBorderColor 200 200 200 180
-	SetBackgroundColor 0 0 0 180
+#Hide # $type->normalcraft->rest $tier->t3
+#	Corrupted False
+#	ItemLevel <= 83
+#	ItemLevel >= 68
+#	Rarity <= Rare
+#	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Golden Kris" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Kris" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
+#	SetBorderColor 200 200 200 180
+#	SetBackgroundColor 0 0 0 180
 
 Show # $type->decorator->craftinggeneric $tier->raredecoratorremover
 	Corrupted False
-	Rarity <= Rare
-	SetBorderColor 0 0 0
+	ItemLevel >= 68
+	Rarity Rare
+	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
+	SetFontSize 32
+	SetTextColor 255 255 119
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 0 0 0 240
+	Continue
+
+Show # $type->decorator->craftinggeneric $tier->magicdecoratorremover
+	Corrupted False
+	ItemLevel >= 68
+	Rarity Magic
+	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
+	SetFontSize 32
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 0 0 0 240
+	Continue
+
+Show # $type->decorator->craftinggeneric $tier->normaldecoratorremover
+	Corrupted False
+	ItemLevel >= 68
+	Rarity Normal
+	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
+	SetFontSize 32
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 0 0 0 240
 	Continue
 
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
 Show # $type->normalcraft->extra $tier->any
+	Corrupted False
 	ItemLevel >= 68
 	ItemLevel <= 83
-	Rarity < Rare
+	Rarity < Magic
 	BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"
 	SetBorderColor 200 200 200 180
 	SetBackgroundColor 0 0 0 180
@@ -2538,12 +2611,12 @@ Show # $type->endgameflasks $tier->highqualutility
 	Rarity <= Magic
 	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
 	SetFontSize 45
-	SetTextColor 50 200 125 255
-	SetBorderColor 255 255 255 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 1 300
-	PlayEffect Grey Temp
-	MinimapIcon 2 Grey "Diamond"
+	SetTextColor 50 200 125
+	SetBorderColor 50 200 125
+	SetBackgroundColor 25 100 75
+	PlayAlertSound 3 300
+	PlayEffect Grey
+	MinimapIcon 2 Grey Circle
 
 Show # $type->endgameflasks $tier->highquallifemana
 	Quality >= 15
@@ -2555,9 +2628,7 @@ Show # $type->endgameflasks $tier->highquallifemana
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 180 135 135 255
-	PlayAlertSound 2 300
-	PlayEffect Grey
-	MinimapIcon 2 Grey Pentagon
+	PlayEffect Grey Temp
 
 Show # $type->endgameflasks $tier->any20qualflask
 	Quality >= 20
@@ -2568,9 +2639,7 @@ Show # $type->endgameflasks $tier->any20qualflask
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 180 135 135 255
-	PlayAlertSound 2 300
-	PlayEffect Grey
-	MinimapIcon 2 Grey Pentagon
+	PlayEffect Grey Temp
 
 #------------------------------------
 #   [1102] Utility OR quality flasks
@@ -2582,10 +2651,9 @@ Show # $type->endgameflasks $tier->asortedutility
 	Rarity <= Magic
 	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
 	SetFontSize 40
-	SetTextColor 50 200 125 255
-	SetBorderColor 50 200 125 255
-	SetBackgroundColor 0 0 0 200
-	PlayAlertSound 1 300
+	SetBorderColor 50 200 125
+	SetBackgroundColor 25 100 75
+	PlayEffect Grey Temp
 
 Show # $type->endgameflasks $tier->anyutility
 	AreaLevel >= 68
@@ -2593,10 +2661,7 @@ Show # $type->endgameflasks $tier->anyutility
 	Rarity <= Magic
 	Class "Utility Flasks"
 	SetFontSize 35
-	SetTextColor 50 200 125 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 25 100 75
-	PlayAlertSound 1 300
+	SetBorderColor 50 200 125
 
 Show # $type->endgameflasks $tier->qualityhigh
 	Quality >= 15
@@ -2646,7 +2711,6 @@ Show # $type->miscendgamerules $tier->overquality
 	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 0 240 190 180
-	SetBackgroundColor 0 0 0 255
 	PlayEffect Blue Temp
 
 Show # $type->miscendgamerules $tier->earlyendgame4link
@@ -2744,13 +2808,13 @@ Show # $type->decorators->rareeg $tier->ilvl68
 Show # $type->decorators->rareeg $tier->ilvl75
 	ItemLevel >= 75
 	Rarity Rare
-	SetTextColor 255 190 0 255
+	SetTextColor 245 190 0 255
 	Continue
 
 Show # $type->decorators->rareeg $tier->ilvl85
 	ItemLevel >= 85
 	Rarity Rare
-	SetTextColor 255 220 0 255
+	SetBorderColor 0 0 0
 	Continue
 
 Show # $type->decorators->rareeg $tier->corruptedrares
@@ -2879,7 +2943,7 @@ Show # $type->rare->exotic->talisman $tier->t3decentmodstalisman
 	HasExplicitMod >=3 "Athlete's" "Virile" "Rotund" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Ranger" "of the Marksman" "of the Sniper" "Devastating" "Overpowering" "Unleashed" "Empowering" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Flaring" "Tempered" "Razor-sharp" "of Expertise" "of Nimbleness" "Zaffre" "Blue" "Mazarine" "of Nirvana" "of Euphoria" "of Bliss" "Wizard's" "Thaumaturgist's" "of Immolation" "of Flames" "of Cinders" "of Floe" "of Rime" "of Ice" "of Discharge" "of Voltage" "of Electricity" "of the Span" "of the Rainbow" "of the Multiverse" "of the Infinite" "of Incision" "of Penetrating" "of Destruction" "of Ferocity" "Unassailable" "Impregnable" "Vaporous" "Dazzling" "Resplendent"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 0 50 0
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -2892,7 +2956,7 @@ Show # $type->rare->exotic->talisman $tier->t3decenttypetalisman
 	BaseType "Avian Twins Talisman" "Fangjaw Talisman" "Hexclaw Talisman" "Longtooth Talisman" "Mandible Talisman" "Rotfeather Talisman" "Spinefuse Talisman" "Three Rat Talisman" "Wereclaw Talisman"
 	SetFontSize 40
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 0 50 0
 	PlayAlertSound 3 300
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
@@ -3222,7 +3286,7 @@ Show # $type->heist->cloak $tier->t1highlevel
 	Class "Heist Cloak"
 	BaseType "Whisper-woven Cloak"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3234,7 +3298,7 @@ Show # $type->heist->cloak $tier->t1
 	Class "Heist Cloak"
 	BaseType "Whisper-woven Cloak"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3273,7 +3337,7 @@ Show # $type->heist->brooch $tier->t1highlevel
 	Class "Heist Brooch"
 	BaseType "Foliate Brooch"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3285,7 +3349,7 @@ Show # $type->heist->brooch $tier->t1
 	Class "Heist Brooch"
 	BaseType "Foliate Brooch"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3324,7 +3388,7 @@ Show # $type->heist->gear $tier->t1highlevel
 	Class "Heist Gear"
 	BaseType "Burst Band" "Obsidian Sharpening Stone" "Precise Arrowhead"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3336,7 +3400,7 @@ Show # $type->heist->gear $tier->t1
 	Class "Heist Gear"
 	BaseType "Burst Band" "Obsidian Sharpening Stone" "Precise Arrowhead"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3375,7 +3439,7 @@ Show # $type->heist->tool $tier->t1highlevel
 	Class "Heist Tool"
 	BaseType "Grandmaster Keyring" "Master Lockpick" "Regicide Disguise Kit" "Silkweave Sole" "Steel Bracers" "Thaumaturgical Sensing Charm" "Thaumaturgical Ward" "Thaumetic Blowtorch" "Thaumetic Flashpowder"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -3387,7 +3451,7 @@ Show # $type->heist->tool $tier->t1
 	Class "Heist Tool"
 	BaseType "Grandmaster Keyring" "Master Lockpick" "Regicide Disguise Kit" "Silkweave Sole" "Steel Bracers" "Thaumaturgical Sensing Charm" "Thaumaturgical Ward" "Thaumetic Blowtorch" "Thaumetic Flashpowder"
 	SetFontSize 45
-	SetTextColor 255 220 0 255
+	SetTextColor 250 165 0 255
 	SetBorderColor 255 85 85 255
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 3 300
@@ -5025,32 +5089,68 @@ Show # $type->currency->oil $tier->restex
 Show # $type->currency->essence $tier->t1
 	Class "Currency"
 	BaseType "Deafening Essence of" "Essence of Delirium" "Essence of Horror" "Essence of Hysteria" "Essence of Insanity"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->essence $tier->t2
 	Class "Currency"
 	BaseType "Remnant of Corruption" "Shrieking Essence of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
 Show # $type->currency->essence $tier->t3
 	Class "Currency"
 	BaseType "Screaming Essence of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 249 150 25 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->essence $tier->t4
 	Class "Currency"
 	BaseType "Wailing Essence of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
 
 Show # $type->currency->essence $tier->t5
 	Class "Currency"
 	BaseType "Weeping Essence of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 190 178 135 180
+	SetBorderColor 190 178 135 180
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 Show # $type->currency->essence $tier->t6
 	Class "Currency"
 	BaseType "Muttering Essence of" "Whispering Essence of"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 190 178 135 180
+	SetBorderColor 190 178 135 180
+	SetBackgroundColor 0 0 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
 
 #------------------------------------
 #   [3206] Incubators
@@ -5124,12 +5224,24 @@ Show # $type->currency->incubators $tier->restex
 Show # $type->currency->others $tier->harbinger
 	Class "Currency"
 	BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 Show # $type->currency->others $tier->misc
 	Class "Currency"
 	BaseType "Cartographer's Seal" "Imprint" "Unshaping Orb"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Circle
 
 #===============================================================================================================
 # [[3300]] Currency - Prophecies

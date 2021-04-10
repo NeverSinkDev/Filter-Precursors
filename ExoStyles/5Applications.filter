@@ -20,6 +20,8 @@ Style LibrarySectionBased
 	Apply(Influenced.t1* => InfluencedVariant.t1);
 	Apply(Influenced.t2* => InfluencedVariant.t2);
 
+	Apply(Influenced.Any* => !InfluencedRandom.Any);
+
 	Apply(exoticbases => !UniversalExotic.t1);
 	Apply(IdModSection => !IdModsMulti.t2);
 
@@ -32,10 +34,10 @@ Style LibrarySectionBased
 
 	Apply(BreachRings => !RaresJewellery.t3);
 
+	Apply(Talismans.* => !RaresJewellery.t3);
 	Apply(Talismans.T1* => !UniversalExotic.t1);
 	Apply(Talismans.T2* => !UniversalExotic.t2);
 	Apply(Talismans.T3* => !UniversalExotic.t3);
-	Apply(Talismans.Any => !RaresJewellery.t3);
 
 	Apply(EndgameRareRingsAmulets => RaresJewellery);
 	Apply(EndgameRareBelts => RaresJewellery);
@@ -43,12 +45,14 @@ Style LibrarySectionBased
 	Apply(EndgameRareGear.t2* => RaresArmoursWeapons.t2);
 	Apply(EndgameRareGear.t3* => RaresArmoursWeapons.t3);
 	Apply(EndgameRareGear.t4* => RaresArmoursWeapons.t4);
+	Apply(DecoratorRemover => DecoratorRemoverStrategy);
 
 	Apply(HeistFollowerGear => HeistFollowerGearStrategy);
 
 	# Tierlists
 	Apply(Replicas => ReplicaTierList);
 	Apply(UniqueMaps => UniqueMapStrat);
+	Apply(InfluencedMaps* => !InfluencedMapsStrategy.Any)
 
 	# Maps and MapLike
 	Apply(Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
@@ -74,7 +78,11 @@ Style LibraryTagBased
 
 	Apply($craftspecial => CraftSpecialStrategy);
 	Apply($craftgeneral => CraftGeneralStrategy);
-	Apply($utilflasks => UtilityFlasks);
+
+	Apply($raredeco.t1equip => RaresArmoursWeapons.t1);
+	Apply($raredeco.t1jewellery => RaresJewellery.t1);
+
+	Apply($utilflasks => UtilityFlasksStrategy);
 
 	## Rare
 	Apply($raredeco => EndgameRareDecorators)

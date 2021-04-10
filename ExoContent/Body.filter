@@ -31,19 +31,11 @@ Section Influenced : Rarity <= Rare
 #   [1234] Influenced Maps
 #------------------------------------
 
-Section Maps : Auto("maps->influenced"), Class "Maps"
+Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 {	
 	Show InfShaper { HasInfluence Shaper; }
 	Show InfElder { HasInfluence Elder; }
 }
-
-#------------------------------------
-#   [1234] ASPECTS
-#------------------------------------
-	Section Decorators : Auto("decorators->influenced")
-	{	
-		Cont aspect_corruptedInfluenced { HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord; Corrupted True; }
-	}
 #------------------------------------
 #   [1234] Crusader
 #------------------------------------
@@ -117,8 +109,8 @@ Section Maps : Auto("maps->influenced"), Class "Maps"
 
 	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
 	{
-		Show AnyTopLevel { ItemLevel >= 86; }
 		Show AnyTrinket { Class "Amulet" "Belts" "Rings"; }
+		Show AnyTopLevel { Tag("tiny"); ItemLevel >= 86; }
 		Show Any { Empty(); }
 	}
 }
@@ -452,7 +444,7 @@ Section Jewels : Tag("jewels")
 #------------------------------------
 # [1234] Special Cases
 #------------------------------------
-	Section IdentifiedJewels : Identified True, Auto("jewels->special"), Tag("*rare")
+	Section IdentifiedJewels : Identified True, Auto("jewels->special"), Tag("*rare"), Tag("UniqueSound")
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, Tag("Corrupt")
 		{
@@ -485,8 +477,8 @@ Section Jewels : Tag("jewels")
 #------------------------------------
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
-		Show HighRare  { Tag("*rare");  Tag("V4"); Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic { Tag("*magic"); Rarity Magic; ItemLevel >= 82; }
+		Show HighRare  { Tag("*rare");  Tag("High"); Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic { Tag("*magic"); Tag("High"); Rarity Magic; ItemLevel >= 82; }
 		Show AnyRare   { Tag("*rare");  Rarity Rare; }
 		Show AnyMagic  { Tag("*magic"); Rarity Magic; }
 	}
@@ -526,14 +518,23 @@ Section SocketsLinks : Tag("recipe"), Rarity <= Rare, Auto("SocketsLinks")
 # [1234] ILVL 86
 #------------------------------------
 
-Section EndgameCraftingBases : Rarity <= Rare, Clean(), Tag("craftspecial"), Tag("craftgeneral")
+Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 {
-	Section : Auto("Decorator->craftinggeneric")
+	Section CraftRareDecorators : Auto("Decorator->craftingrare"), Rarity Rare, Tag("raredeco")
 	{
-		Cont RareDecorator { Empty(); }
+		Cont ILVL75 { Tag("raredeco.ilvl75"); ItemLevel >= 75; }
+		Cont ILVL84 { Tag("raredeco.ilvl84"); ItemLevel >= 84; }
+		Cont ILVL86 { Tag("raredeco.ilvl86"); ItemLevel >= 86; }
+		Cont RareEnhancerGear { Tag("raredeco.t1equip"); Class classes_nonJwlryEquip; }
+		Cont RareEnhancerJwlry { Tag("raredeco.t1jewellery"); Class classes_jewellery; }
 	}
 
-	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86
+	Section CraftNormalDecorators : Auto("Decorator->craftingrare"), Rarity <= Magic, ItemLevel >= 68
+	{
+		Cont NormalEnhancer { tag("Low"); Class classes_nonJwlryEquip classes_jewellery; };
+	}
+
+	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
 		Show t1 { Tag("craftspecial.I86"); BaseType bases.crafting.general.t1; }
 		Show t2 { Tag("craftgeneral.I86"); BaseType bases.crafting.general.t2; }
@@ -544,7 +545,7 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean(), Tag("craftspecial"), Tag
 # [1234] ILVL 84
 #------------------------------------
 
-	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84
+	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
 		Show t1 { Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
 		Show t2 { Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
@@ -555,23 +556,25 @@ Section EndgameCraftingBases : Rarity <= Rare, Clean(), Tag("craftspecial"), Tag
 # [1234] ILVL ANY
 #------------------------------------
 
-	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 60
+	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
 		Show t1 { Tag("craftspecial.ANY"); BaseType bases.crafting.general.t1; }
 		Show t2 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t2; }
-		Show t3 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t3; }
+		ShowD t3 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t3; }
 	}
 
-	Section : Auto("Decorator->craftinggeneric")
+	Section DecoratorRemover : Auto("Decorator->craftinggeneric"), Class == classes_jewellery classes_nonJwlryEquip, ItemLevel >= 68
 	{
-		Cont RareDecoratorRemover { Empty(); }
+		Cont RareDecoratorRemover { Rarity Rare; }
+		Cont MagicDecoratorRemover { Rarity Magic; }
+		Cont NormalDecoratorRemover { Rarity Normal; }
 	}
 }
 
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
-Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Rare, ItemLevel >= 68, ItemLevel <= 83
+Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
 	Show any { BaseType "Eternal Burgonet" "Onyx Amulet" "Sorcerer Boots" "Sorcerer Gloves" "Two-Stone Ring"; }
 }
@@ -626,12 +629,12 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	Section HighQualityEndgameFlasks : Quality >= 15
 	{
 		Show HighQualUtility  { Tag("*lt1"); AreaLevel <= 77; BaseType bases.flask.utilityassorted; }
-		Show HighQUalLifeMana { Tag("recipe.t1"); AreaLevel <= 72; BaseType bases.flask.lifemanaassorted; }
+		Show HighQUalLifeMana { Tag("recipe.ts1"); AreaLevel <= 72; BaseType bases.flask.lifemanaassorted; }
 	}
 
 	Section 20QualEndgameFlasks : Quality >= 20
 	{
-		Show Any20QualFlask { Tag("recipe.t1"); BaseType "Flask"; }
+		Show Any20QualFlask { Tag("recipe.ts1"); BaseType "Flask"; }
 	}
 #------------------------------------
 # [2701] Utility OR quality flasks
@@ -1288,14 +1291,14 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", Tag("Curre
 #------------------------------------
 #!! Override 670 : "Essences"
 
-Section CurrencyEssence : Auto("currency->essence"), Class "Currency"
+Section CurrencyEssence : Auto("currency->essence"), Class "Currency", Tag("Currency")
 {
-	Show t1 { BaseType currency.essence.t1; }
-	Show t2 { BaseType currency.essence.t2; }
-	Show t3 { BaseType currency.essence.t3; }
-	Show t4 { BaseType currency.essence.t4; }
-	Show t5 { BaseType currency.essence.t5; }
-	Show t6 { BaseType currency.essence.t6; }
+	Show t1 { Tag("*t2divine"); BaseType currency.essence.t1; }
+	Show t2 { Tag("*t3annul"); BaseType currency.essence.t2; }
+	Show t3 { Tag("*t4chaos"); BaseType currency.essence.t3; }
+	Show t4 { Tag("*t7chance"); BaseType currency.essence.t4; }
+	Show t5 { Tag("*t8trans"); BaseType currency.essence.t5; }
+	Show t6 { Tag("*t8trans"); BaseType currency.essence.t6; }
 }
 
 #------------------------------------
@@ -1319,10 +1322,10 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", Ta
 #------------------------------------
 #!! Override 690 : "Harbinger Scrolls"
 
-Section CurrencyExotic : Auto("currency->others"), Class "Currency"
+Section CurrencyExotic : Auto("currency->others"), Class "Currency", Tag("Currency")
 {
-	Show harbinger { BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
-	Show misc { BaseType "Cartographer's Seal" "Imprint" "Unshaping Orb"; }
+	Show harbinger { Tag("*t2divine"); BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
+	Show misc { Tag("*t2divine"); BaseType "Cartographer's Seal" "Imprint" "Unshaping Orb"; }
 }
 
 #===============================================================================================================

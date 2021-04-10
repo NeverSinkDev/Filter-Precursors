@@ -11,11 +11,22 @@ Style SixLinkVariant : T1, T2RedPiece
 
 Style InfluencedVariant : T1, T2YellowPiece
 {
-	var icon = Diamond;
+	var icon = Cross;
 	var tier.t1.icon = Cross;
+	
+	var sounds.t1 = sounds.t2;
 
-	var tier.t1.acc = 200 0 0 255;
-	var tier.t2.acc = 200 0 0 255;
+	var tier.t1.acc = influenced.gear.t1;
+	var tier.t2.acc = influenced.gear.t2;
+}
+
+Style InfluencedRandom : PatternLowWhite
+{
+	var icon = Cross;
+	var sound = NONE;
+	var acc = influenced.gear.t3;
+	var cmap = NONE;
+	var cray = Blue Temp;
 }
 
 # purple highlight for general identified mod items
@@ -26,16 +37,21 @@ Style IdModsMulti : UniversalExotic
 	var icon = Diamond;
 }
 
-Style UtilityFlasks : LowerValueTiering
+Style UtilityFlasks1 : LowerValueTiering
 {
 	var icon = "Diamond";
 
 	var t1.acc = flasks.utility.t1.acc;
-	var t2.acc = flasks.utility.t1.acc;
-	var t3.acc = flasks.utility.t1.acc;
 	
 	var t2.extra = flasks.utility.t1.acc;
-	var t3.base = flasks.utility.base;
+	var t3.base =  flasks.utility.base;
+}
+
+Style UtilityFlasksStrategy : LowerValueTiering
+{
+	var icon = "Diamond";
+	var acc = 50 200 125;
+	var extra = 25 100 75;
 }
 
 #------------------------------------
@@ -113,6 +129,13 @@ Style ExoticFragments : T3WhitePiece
 	{
 		MinimapIcon 1 * Yellow; PlayEffect Yellow;
 	}
+}
+
+Style InfluencedMapsStrategy : PatternT1
+{
+	var acc = maps.influenced;
+	var sound = sounds.t2;
+	var icon = Square;
 }
 
 Style HeistMapLike : PatternBlack

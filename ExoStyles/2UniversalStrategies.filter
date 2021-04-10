@@ -39,12 +39,12 @@ Style UniversalValueAccents
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
 
-	Func V1 ()
+	Func VF1 ()
 	{
 		PlayAlertSound 1 300;
 		SetFontSize 45;
 		PlayEffect Red; 
-		MinimapIcon 0 Red *;
+		MinimapIcon 0 Red Star;
 	}
 
 	Func V2 ()
@@ -78,6 +78,16 @@ Style UniversalValueAccents
 	{
 		SetBorderColor exoticgear.tx;
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+
+	Func UniqueSound ()
+	{
+		PlayAlertSound sounds.unique;
+	}
+
+	Func tiny()
+	{
+		SetBorderColor accent.rare.tiny;
 	}
 
 	Func Corrupt ()
@@ -212,6 +222,24 @@ Style PatternHighWhite
 	}
 }
 
+Style PatternLowWhite
+{
+	var fsize = 45;
+	var msize = 0;
+	var acc = tier.error;
+	var bg = sWhite;
+	var cmap = White;
+	var cray = White;
+	var sound = sounds.currency;
+	
+	Func Any () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
+		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
+	}
+}
+
 Style PatternBlack
 {
 	var fsize = 45;
@@ -292,14 +320,39 @@ Style UniversalExotic
 	Func T3 ()
 	{
 		SetFontSize 40;
-		SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+		SetBorderColor exoticgear.tx;
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
 	}
 
 	Func T4 ()
 	{
 		SetFontSize 40;
-		SetBorderColor exoticgear.tx.low; SetBackgroundColor sBlack;
+		SetBorderColor exoticgear.tx.low;
 		PlayEffect exoticgear.cray Temp;
+	}
+}
+
+Style DecoratorRemoverStrategy
+{
+	Func RareDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+		SetTextColor 255 255 119;
+	}
+
+	Func MagicDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+	}
+
+	Func NormalDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
 	}
 }

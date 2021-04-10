@@ -74,9 +74,14 @@ Style EndgameRareDecorators
 		SetBorderColor accent.rare.tiny;
 	}
 
-	Func ilvl85()
+	Func ilvl86()
 	{
-		SetTextColor accent.rare.ilvl85; SetBorderColor NONE;
+		SetTextColor accent.rare.ilvl86; SetBorderColor NONE;
+	}
+
+	Func ilvl84()
+	{
+		SetTextColor accent.rare.ilvl84; SetBorderColor NONE;
 	}
 
 	Func ilvl75()
@@ -115,13 +120,20 @@ Style Artefact
 
 Style RecipeStrategy
 {
-	var icon = Pentagon;
+	var icon = Hexagon;
 
 	Func T1() 
 	{ 
 		SetFontSize 45;
 		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
 		PlayAlertSound 2 300; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
+	}
+
+	Func TS1() 
+	{ 
+		SetFontSize 45;
+		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
+		PlayEffect recipe.cray Temp;
 	}
 
 	Func T2() 
@@ -152,7 +164,7 @@ Style JewelStrategy
 	{ 
 		SetFontSize 45;
 		SetTextColor jewel.rare.tx; SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
-		PlayEffect tier.t5.cray; MinimapIcon 2 Blue icon;
+		PlayEffect tier.t5.cray; MinimapIcon 2 Grey icon;
 	}
 
 	Func magic () 
@@ -166,23 +178,27 @@ Style CraftSpecialStrategy
 {
 	Func I86 () 
 	{ 
-		SetFontSize 45;  MinimapIcon 2 Blue Diamond;
+		SetFontSize 45;  MinimapIcon 1 Blue Diamond;
 		PlayEffect Blue;
 		SetBorderColor accent.level.i86.high;
+		PlayAlertSound sounds.unique;
 	}
 
 	Func I84 () 
 	{ 
-		SetFontSize 45;  MinimapIcon 2 Blue Diamond;
+		SetFontSize 45;  MinimapIcon 2 White Diamond;
 		PlayEffect White;
 		SetBorderColor accent.level.i84.high;
+		PlayAlertSound sounds.unique;
 	}
 
 	Func ANY () 
 	{ 
-		SetFontSize 40;
-		SetBackgroundColor 0 0 0 180;
+		SetFontSize 45;  MinimapIcon 2 Grey Diamond;
+		PlayEffect Grey;
 		SetBorderColor accent.notice.high;
+		PlayAlertSound sounds.unique;
+		SetBackgroundColor 0 0 0 180;
 	}
 }
 
@@ -214,7 +230,7 @@ Style HeistFollowerGearStrategy
 	Func t1highlevel ()
 	{
 		SetFontSize 45;
-		SetTextColor accent.rare.ilvl85;
+		SetTextColor accent.rare.ilvl84;
 		SetBorderColor accent.heist;
 		SetBackgroundColor rares.generic.t1;
 
@@ -412,150 +428,133 @@ Style GeneralMapProgressionStrategy
 
 Style LowerValueTiering
 {
-	var t1.acc = NONE;
-	var t2.acc = NONE;
-	var t3.acc = NONE;
+	var icon = "Diamond";
+	var acc = 255 0 0 255;
+	var extra = 0 0 0 255;
 
-	var t1.base = 0 0 0 255;
-	var t2.base = 0 0 0 200;
-	var t3.base = 0 0 0;
-
-	var t1.extra = 255 255 255 255;
-	var t2.extra = 255 255 255 200;
-	var t3.extra = 0 0 0 255;
-
-	var t1.font = 45;
-	var t2.font = 40;
-	var t3.font = 35;
-
-	var icon = Diamond;
-
-	Func LT1 () 
-	{ 
-		SetFontSize t1.font;
-		SetTextColor t1.acc; 
-		SetBorderColor t1.extra; 
-		SetBackgroundColor t1.base; 
-		PlayAlertSound 1 300; PlayEffect Grey Temp; MinimapIcon 2 Grey icon; 
+	Func LT1()
+	{
+		Colors(acc, acc, extra);
+		LVHL1();
 	}
 
-	Func LT2 () 
-	{ 
-		SetFontSize t2.font;
-		SetTextColor t2.acc; 
-		SetBorderColor t2.extra; 
-		SetBackgroundColor t2.base; 
-		PlayAlertSound 1 300;
+	Func LT2()
+	{
+		SetBorderColor acc;
+		SetBackgroundColor extra;
+		LVHL2();
 	}
 
-	Func LT3 () 
-	{ 
-		SetFontSize t3.font;
-		SetTextColor t3.acc; 
-		SetBorderColor t3.extra; 
-		SetBackgroundColor t3.base; 
-		PlayAlertSound 1 300;
+	Func LT3()
+	{
+		SetBorderColor acc;
+		LVHL3();
 	}
 }
+
 
 #------------------------------------
 # Currency Tiering
 #------------------------------------
 
-Style t1exalted : PatternT1
+Style AllCurrency
 {
-	Func Any()
-	{ 
-		var acc = currency.acc.t1; 
-		var icon = Star;
+	Style t1exalted : PatternT1
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t1; 
+			var icon = Star;
+		}
+	}
+
+	Style t2divine : PatternHighWhite
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t2divine; 
+		}
+	}
+
+	Style t3annul : PatternInverseBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t3annul; 
+		}
+	}
+
+	Style t4chaos : PatternInverseBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t4chaos; 
+			var msize = 2;
+			var cmap = White;
+			var cray = White;
+		}
+	}
+
+	Style t5alchemy : PatternInverseBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t5alchemy; 
+			var msize = 2;
+			var cmap = White;
+			var cray = White;
+		}
+	}
+
+	Style t6chrom : PatternInverseBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t6chrom; 
+			var msize = 2;
+			var cmap = Grey;
+			var cray = Grey Temp;
+		}
+	}
+
+	Style t7chance : PatternInverseBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t7chance; 
+		}
+	}
+
+	Style t8trans : PatternBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t8trans; 
+		}
+	}
+
+	Style t9armour : PatternBlack
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.t9armour; 
+		}
+	}
+
+	Style tportal
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.tportal; 
+		}
+	}
+
+	Style twisdom
+	{
+		Func Any()
+		{ 
+			var acc = currency.acc.twisdom; 
+		}
 	}
 }
 
-Style t2divine : PatternHighWhite
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t2divine; 
-	}
-}
-
-Style t3annul : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t3annul; 
-	}
-}
-
-Style t4chaos : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t4chaos; 
-		var msize = 2;
-		var cmap = White;
-		var cray = White;
-	}
-}
-
-Style t5alchemy : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t5alchemy; 
-		var msize = 2;
-		var cmap = White;
-		var cray = White;
-	}
-}
-
-Style t6chrom : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t6chrom; 
-		var msize = 2;
-		var cmap = Grey;
-		var cray = Grey Temp;
-	}
-}
-
-Style t7chance : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t7chance; 
-	}
-}
-
-Style t8trans : PatternBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t8trans; 
-	}
-}
-
-Style t9armour : PatternBlack
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.t9armour; 
-	}
-}
-
-Style tportal
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.tportal; 
-	}
-}
-
-Style twisdom
-{
-	Func Any()
-	{ 
-		var acc = currency.acc.twisdom; 
-	}
-}

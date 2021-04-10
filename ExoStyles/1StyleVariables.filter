@@ -9,6 +9,21 @@ Func Colors(a,b,c)
     SetBackgroundColor c;
 }
 
+Func LVHL1()
+{
+    SetFontSize 45; PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
+}
+
+Func LVHL2()
+{
+    SetFontSize 40; PlayEffect Grey Temp;
+}
+
+Func LVHL3()
+{
+    SetFontSize 35;
+}
+
 #------------------------------------
 # Color Names
 #------------------------------------
@@ -73,7 +88,7 @@ var artefact.sound = sounds.unique;
 var artefact.tx = 240 0 0 255;
 var artefact.extra = 70 0 20 255;
 
-var artefact.cmap = tier.t1.icon;
+var artefact.cmap = Orange;
 var artefact.cray = tier.t1.icon;
 
 var jewel.magic.tx      = 0 75 250 255;
@@ -117,6 +132,12 @@ var maps.z1.acc = 235 235 235 255;
 var maps.z2.acc = 200 200 200 255;
 var maps.z3 = NONE;
 var maps.z4 = NONE;
+
+var influenced.gear.t1 = 50 130 165 255;
+var influenced.gear.t2 = 20 110 220;
+var influenced.gear.t3 = 50 130 165;
+
+var maps.influenced = 100 0 122 255;
 
 var maps.blighted = 20 50 20 255;
 var maps.blighted.base = 170 220 170;
@@ -175,8 +196,10 @@ var accent.heist.low = 255 85 85 200;
 var accent.rare.large = 0 0 0 220;
 var accent.rare.medium = 180 180 180 220;
 var accent.rare.tiny = 50 200 50 255;
-var accent.rare.ilvl85 = 255 220 0 255;
-var accent.rare.ilvl75 = 255 190 0 255;
+
+var accent.rare.ilvl86 = 255 140 0 255;
+var accent.rare.ilvl84 = 250 165 0 255;
+var accent.rare.ilvl75 = 245 190 0 255;
 
 var accent.maps.upgrade = 220 50 0 255;
 
