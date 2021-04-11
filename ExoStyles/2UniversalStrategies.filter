@@ -135,25 +135,15 @@ Style UniversalValueAccents
 		SetFontSize 40;
 	}
 
+	Func ClearBorder()
+	{
+		SetBorderColor NONE;
+	}
+
 	Func ManaFlask()
 	{
 		SetBorderColor flasks.mana.acc;
 		SetFontSize 40;
-	}
-
-	Func NoticeHigh()
-	{
-		SetBorderColor accent.notice.high;
-	}
-
-	Func Notice()
-	{
-		SetBorderColor accent.notice;
-	}
-
-	Func NoticeLow()
-	{
-		SetBorderColor accent.notice.low;
 	}
 
 	Func SF45()
@@ -250,12 +240,29 @@ Style UniversalValueAccents
 
 	Func NoticeNM3 ()
 	{
+		SetTextColor 180 180 180;
 		SetBackgroundColor accent.low.base;
 	}
 
 	Func Low ()
 	{
 		SetBackgroundColor accent.low.base;
+		SetBorderColor accent.notice.low;
+	}
+
+	
+	Func NoticeHigh()
+	{
+		SetBorderColor accent.notice.high;
+	}
+
+	Func Notice()
+	{
+		SetBorderColor accent.notice;
+	}
+
+	Func NoticeLow()
+	{
 		SetBorderColor accent.notice.low;
 	}
 

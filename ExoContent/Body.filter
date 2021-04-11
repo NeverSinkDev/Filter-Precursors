@@ -1723,7 +1723,6 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L")
 	{
-		Cont EarlyCasterWeapons { Tag("LVLCaster"); Tag("ThreeLink"); Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
 		Show EarlyThreeLinks 	{ Tag("ThreeLink"); Tag("SF40"); AreaLevel <= leveling.keylevels.threelinkEarly; }
 		Show General 			{ Tag("ThreeLink"); Tag("SF35"); AreaLevel <= leveling.keylevels.threelink; }
 	}
@@ -1732,6 +1731,7 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1")
 	{
+		Show CasterWeapons { Tag("LVLCaster"); Tag("ThreeLink"); Sockets >= 3; Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
 		Show CasterCraftRings { Tag("NoticeNM0"); Tag("SF45"); BaseType leveling.bases.act1.craftrings; }
 		Show General { Tag("NoticeNM0"); Tag("SF45"); BaseType leveling.bases.act1.general; }
 		Show Boots { Tag("NoticeNM0"); Tag("SF45"); Rarity Magic; Class "Boots"; }
@@ -1743,15 +1743,14 @@ Section LevelingMiscGear : Rarity <= Magic
 	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
 	{
 		Show CasterCraftRings { Tag("NoticeNM2"); Tag("SF35"); BaseType leveling.bases.act1.craftrings; }
-		Show Boots { Tag("NoticeNM3"); Tag("SF35"); Class "Boots"; }
-		Show Physical { Tag("NoticeNM3"); Tag("SF35"); Tag("LVLMelee"); BaseType "Rustic Sash"; }
+		Show Physical { Tag("NoticeNM2"); Tag("SF35"); Tag("LVLMelee"); BaseType "Rustic Sash"; }
 	}
 
 	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), Tag("low")
 	{
-		Show HighPhysQuivers { Tag("NoticeNM3"); Tag("SF35"); BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
-		Show FireResistGear  { Tag("NoticeNM3"); Tag("SF35"); BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
-		Show GeneralCrafting { Tag("NoticeNM3"); Tag("SF35"); AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
+		Show HighPhysQuivers { Tag("NoticeNM2"); Tag("SF35"); BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
+		Show FireResistGear  { Tag("NoticeNM2"); Tag("SF35"); BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
+		Show GeneralCrafting { Tag("NoticeNM2"); Tag("SF35"); AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
 	}
 }
 
@@ -1762,9 +1761,9 @@ Section LevelingMiscGear : Rarity <= Magic
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
-	Show EarlyBodyArmours	{ Tag("NoticeNM3"); Tag("SF30"); AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; %D0 }
+	Show EarlyBodyArmours	{ Tag("NoticeNM3"); AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; %D0 }
 	Show ThreeSocketedGear 	{ Tag("NoticeNM2"); Tag("SF40"); Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
-	Show FirstAreas 		{ Tag("NoticeNM3"); Tag("SF35"); AreaLevel <= 4; Rarity Normal; }
+	Show FirstAreas 		{ Tag("NoticeNM3"); AreaLevel <= 4; Rarity Normal; }
 }
 
 #------------------------------------
@@ -1815,21 +1814,20 @@ Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee level
 Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel <= 68, Rarity = Magic
 {
 	Cont Large 	 { Height >= 3; Width >= 2; }
-	Cont Medium1 { Height >= 3; Width = 1; }
-	Cont Medium2 { Height = 2; Width = 2; }
-	Cont Tiny 	 { Height = 1; Width <= 2; }
+	Cont Medium1 { Tag("Notice"); Height >= 3; Width = 1; }
+	Cont Medium2 { Tag("Notice"); Height = 2; Width = 2; }
+	Cont Tiny 	 { Tag("NoticeHigh"); Height = 1; Width <= 2; }
 }
 
 Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
 {
-	Hide LargeMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height >= 3; Width >= 2 }
-	Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act3; Height > 1; }
+	Hide LargeMagicBlocker  { Tag("restex"); AreaLevel >= leveling.keylevels.act1; Height >= 3; Width >= 2 }
+	Hide MediumMagicBlocker { Tag("restex"); AreaLevel >= leveling.keylevels.act2; Height > 1; }
 
-	Show Rest 		 { Tag("SF30"); AreaLevel >= leveling.keylevels.act3; AreaLevel <= 68; }
-	Show Act34 		 { Tag("SF35"); AreaLevel >=leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act3; }
-	Show Act2 		 { Tag("SF35"); AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
-	Show Act1 		 { Tag("SF40"); AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
-	Show FirstLevels { Tag("SF40"); AreaLevel >=1;  AreaLevel <= leveling.keylevels.start; }
+	Show Rest 		 { Tag("ClearBorder"); Tag("SF30"); AreaLevel >= leveling.keylevels.act3; AreaLevel <= 68; }
+	Show Act2 		 { Tag("ClearBorder"); Tag("SF35"); AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
+	Show Act1 		 { Tag("ClearBorder"); Tag("SF35"); AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
+	Show FirstLevels { Tag("ClearBorder"); Tag("SF40"); AreaLevel >=1;  AreaLevel <= leveling.keylevels.start; }
 }
 
 #!! Override 960 : "don't override anything"
