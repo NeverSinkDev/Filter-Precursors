@@ -25,6 +25,7 @@ Style UniversalHideLayer
 		PlayEffect NONE;
 		PlayAlertSound NONE;
 		SetFontSize 18;
+		DisableDropSound True;
 	}
 }
 
@@ -118,6 +119,69 @@ Style UniversalValueAccents
 		SetFontSize 35; RemoveEffects();
 	}
 
+	Func LevelFlaskHigh()
+	{
+		SetFontSize 45; MinimapIcon 1 Yellow Raindrop; PlayAlertSound sounds.currency;
+	}
+
+	Func LevelFlask()
+	{
+		SetFontSize 45; MinimapIcon 2 Grey Raindrop;
+	}
+
+	Func LifeFlask()
+	{
+		SetBorderColor flasks.life.acc;
+		SetFontSize 40;
+	}
+
+	Func ManaFlask()
+	{
+		SetBorderColor flasks.mana.acc;
+		SetFontSize 40;
+	}
+
+	Func NoticeHigh()
+	{
+		SetBorderColor accent.notice.high;
+	}
+
+	Func Notice()
+	{
+		SetBorderColor accent.notice;
+	}
+
+	Func NoticeLow()
+	{
+		SetBorderColor accent.notice.low;
+	}
+
+	Func SF45()
+	{
+		SetFontSize 45;
+	}
+
+	Func SF40()
+	{
+		SetFontSize 40;
+	}
+
+	Func SF35()
+	{
+		SetFontSize 35;
+	}
+
+	Func SF30()
+	{
+		SetFontSize 35;
+	}
+
+	Func HybridFlask
+	{
+		SetBorderColor flasks.hybrid.acc;
+		SetFontSize 40;
+	}
+
 	Func LevelCurrency()
 	{
 		SetFontSize 45; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
@@ -128,9 +192,65 @@ Style UniversalValueAccents
 		SetFontSize 45; MinimapIcon 1 Grey Diamond; PlayAlertSound sounds.currency;
 	}
 
+	Func LVLCaster()
+	{
+		SetBorderColor accent.leveling.caster;
+		SetBackgroundColor accent.leveling.bg.caster;
+	}
+
+	Func LVLMelee()
+	{
+		SetBorderColor accent.leveling.melee;
+		SetBackgroundColor accent.leveling.bg.melee;
+	}
+
+	Func LVLArcher()
+	{
+		SetBorderColor accent.leveling.archer;
+		SetBackgroundColor accent.leveling.bg.archer;
+	}
+
+	Func FourLink()
+	{
+		SetBorderColor accent.leveling.fourlink;
+		SetBackgroundColor sBlack;
+		PlayEffect Grey;
+		MinimapIcon 2 Grey Diamond;
+	}
+
+	Func ThreeLink()
+	{
+		SetBorderColor accent.leveling.fourlink;
+		SetBackgroundColor sBlack;
+		PlayEffect Grey Temp;
+	}
+
 	Func EarlyUniques()
 	{
 		SetBackgroundColor unique.early.extra;
+	}
+
+	Func NoticeNM0 ()
+	{
+		SetBackgroundColor sBlack;
+		SetBorderColor exoticgear.tx;
+	}
+
+	Func NoticeNM1 ()
+	{
+		SetBackgroundColor sBlack;
+		SetBorderColor sWhite;
+	}
+
+	Func NoticeNM2 ()
+	{
+		SetBackgroundColor sBlack;
+		SetBorderColor accent.notice.low;
+	}
+
+	Func NoticeNM3 ()
+	{
+		SetBackgroundColor accent.low.base;
 	}
 
 	Func Low ()

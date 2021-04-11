@@ -147,6 +147,11 @@ Style RecipeStrategy
 		SetFontSize 35;
 		SetTextColor recipe.t1.acc; SetBorderColor recipe.t2.acc; SetBackgroundColor sBlack;
 	}
+
+	Func accent()
+	{
+		SetBorderColor recipe.t1.acc;
+	}
 }
 
 Style JewelStrategy
@@ -433,7 +438,8 @@ Style LowerValueTiering
 
 	Func LT3()
 	{
-		SetBorderColor acc;
+		SetBorderColor sBlack;
+		SetBackgroundColor extra;
 		LVHL3();
 	}
 }

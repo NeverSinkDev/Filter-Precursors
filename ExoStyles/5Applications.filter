@@ -50,6 +50,7 @@ Style LibrarySectionBased
 	Apply(HeistFollowerGear => HeistFollowerGearStrategy);
 
 	# Tierlists and Maps
+	
 	Apply(Replicas => ReplicaTierList);
 	Apply(UniqueMaps => UniqueMapStrat);
 	Apply(InfluencedMaps* => !InfluencedMapsStrategy.Any)
@@ -85,6 +86,9 @@ Style LibraryTagBased
 	Apply($craftgeneral => CraftGeneralStrategy);
 
 	Apply($raredeco.t1equip => RaresArmoursWeapons.t1);
+	Apply($raredeco.t2equip => RaresArmoursWeapons.t2);
+	Apply($raredeco.t3equip => RaresArmoursWeapons.t3);
+	Apply($raredeco.t4equip => RaresArmoursWeapons.t4);
 	Apply($raredeco.t1jewellery => RaresJewellery.t1);
 
 	Apply($utilflasks => UtilityFlasksStrategy);

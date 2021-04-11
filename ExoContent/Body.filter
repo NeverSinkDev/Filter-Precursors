@@ -478,9 +478,9 @@ Section Jewels : Tag("jewels")
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
 		Show HighRare  { Tag("*rare");  Tag("High"); Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic { Tag("*magic"); Tag("High"); Rarity Magic; ItemLevel >= 82; }
+		Show HighMagic { Tag("*magic"); Tag("High"); Rarity <= Magic; ItemLevel >= 82; }
 		Show AnyRare   { Tag("*rare");  Rarity Rare; }
-		Show AnyMagic  { Tag("*magic"); Rarity Magic; }
+		Show AnyMagic  { Tag("*magic"); Rarity <= Magic; }
 	}
 #------------------------------------
 # [1234] Generic Jewels
@@ -1525,16 +1525,16 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 
 Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 {
-	Show Quicksilver { BaseType "Quicksilver Flask"; }
-	Show AsortedUtility { BaseType bases.flask.utilityassorted; }
-	Show Any { Class "Utility Flask"; }
+	Show Quicksilver 		{ Tag("utilflasks.LT1"); Tag("LevelFlaskHigh"); BaseType "Quicksilver Flask"; }
+	Show AsortedUtility 	{ Tag("utilflasks.LT2"); Tag("LevelFlask"); BaseType bases.flask.utilityassorted; }
+	Show Any 				{ Tag("utilflasks.LT3"); Class "Utility Flask"; }
 }
 
 Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 {
-	Show max  { Quality >= 20; }
-	Show high { Quality >= 15; }
-	Show any  { Quality >= 1; }
+	Show max  { Tag("recipe.ts1"); Quality >= 20; }
+	Show high { Tag("recipe.t2"); Quality >= 15; }
+	Show any  { Tag("recipe.t3"); Quality >= 1; }
 }
 
 #------------------------------------
@@ -1542,7 +1542,7 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 #------------------------------------
 #!! Override 820 : "leveling life and mana flasks"
 
-Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid")
+Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid"), Tag("HybridFlask")
 {
 	Show t1 {FlaskHighlight(20, "Small");}
 	Show t2 {FlaskHighlight(30, "Medium");}
@@ -1555,7 +1555,7 @@ Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hyb
 #------------------------------------
 # [6002] Life flasks
 #------------------------------------
-Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life")
+Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"), Tag("LifeFlask")
 {
 	Show t1 {FlaskHighlight(5, "Small");}
 	Show t2 {FlaskHighlight(8, "Medium");}
@@ -1574,7 +1574,7 @@ Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life")
 #------------------------------------
 # [6002] Mana flasks
 #------------------------------------
-Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
+Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana"), Tag("ManaFlask")
 {
 	Show t1 {FlaskHighlight(5, "Small");}
 	Show t2 {FlaskHighlight(8, "Medium");}
@@ -1601,9 +1601,7 @@ Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana")
 
 Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->Rare->SocketsLinks"), Rarity Rare
 {
-	Show Chromatic4linkrares { LinkedSockets >= 4; SocketGroup "RGB"; }
-	Show ChromaticItems { SocketGroup "RGB"; }
-	Show 4linkrares { LinkedSockets >= 4; } 
+	Show 4linkrares 			{ Tag("SF45"); Tag("FourLink"); LinkedSockets >= 4; } 
 }
 
 #------------------------------------
@@ -1611,14 +1609,12 @@ Section LevelingLinksAndSockets : ItemLevel <= 68, Auto("Leveling->Rare->Sockets
 #------------------------------------
 #!! Override 840 : "leveling: all rare rules"
 
-Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), ItemLevel <= 68
+Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), Rarity Rare, ItemLevel <= 68, Tag("raredeco")
 {
-	Cont LargeRares { Height >= 3; Width >= 2; }
-	Cont MediumRares1 { Height >= 3; Width = 1; }
-	Cont MediumRares2 { Height = 2; Width = 2; }
-	Cont TinyRares { Height = 1; Width <= 2; }
-	Cont FourlinkRares { LinkedSockets >= 4; }
-	Cont CorruptedRares { Corrupted True; }
+	Cont LargeRares 	{ Tag("*large"); Height >= 3; Width >= 2; }
+	Cont MediumRares1 	{ Tag("*medium"); Height >= 3; Width = 1; }
+	Cont MediumRares2 	{ Tag("*medium"); Height = 2; Width = 2; }
+	Cont TinyRares 		{ Tag("*tiny"); Height = 1; Width <= 2; }
 }
 
 #------------------------------------
@@ -1627,19 +1623,21 @@ Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), ItemLevel <=
 
 Section LevelingRareGear : Rarity Rare
 {
-	Section Universal : Auto("Leveling->Rare->universal")
+	Section Universal : Auto("Leveling->Rare->universal"), Tag("raredeco.t1jewellery")
 	{
-		Show RusticSash { BaseType "Rustic Sash"; }
-		Show Jewellery { Class == leveling.classes.jwlry; }
+		Show RusticSash { Tag("SF45"); BaseType "Rustic Sash"; Tag("LVLMelee"); }
+		Show Jewellery  { Tag("SF45"); Class == leveling.classes.jwlry; }
 	}
 
 #!! Override 840 : "leveling: rare armours"
 
 	Section Armour : Auto("Leveling->Rare->armours")
 	{
-		Show BootsFocus { Class == "Boots"; }
-		Show General { Class == leveling.classes.armour; }
-		Show Shields { Class == "Shields"; }
+		Show BootsFocus { Tag("raredeco.t1equip"); Tag("SF45"); Tag("noticehigh"); Class == "Boots"; }
+		Show General 	{ Tag("raredeco.t1equip"); Tag("SF45"); Tag("noticehigh"); Class == leveling.classes.armour; }
+		Show BodyArmours{ Tag("raredeco.t2equip"); Tag("SF40"); Class == "Body Armours"; }
+		Show Shields 	{ Tag("raredeco.t2equip"); Tag("SF40"); Class == "Shields"; }
+		Show Quivers 	{ Tag("LVLArcher"); Tag("SF40"); Class == "Quivers"; }
 	}
 
 #------------------------------------
@@ -1647,26 +1645,27 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 #!! Override 850 : "leveling: class specific leveling weapons"
 
-	Section Caster : Auto("Leveling->Rare->caster")
+	Section Caster : Auto("Leveling->Rare->caster"), Tag("LVLCaster")
 	{
-		Show General { Class == leveling.classes.caster; }
+		Show EarlyLevels { Tag("LVLCaster"); Tag("Maximize"); Class == leveling.classes.caster; ItemLevel <= 16; }
+		Show General     { Tag("LVLCaster"); Tag("SF40"); Class == leveling.classes.caster; }
 	}
 
 #------------------------------------
 # [6002] Rares - Archer
 #------------------------------------
-	Section Archer : Auto("Leveling->Rare->archer"), Class == leveling.classes.archer
+	Section Archer : Auto("Leveling->Rare->archer"), Class == "Bows"
 	{
-		Show l1 { ItemLevel <= 16 }
-		Show l2 { ItemLevel <= 24; DropLevel >= 8; }
-		Show l3 { ItemLevel <= 32; DropLevel >= 16; }
-		Show l4 { ItemLevel <= 40; DropLevel >= 24; }
-		Show l5 { ItemLevel <= 48; DropLevel >= 32; }
-		Show l6 { ItemLevel <= 56; DropLevel >= 40; }
-		Show l7 { ItemLevel <= 64; DropLevel >= 48; }
-		Show l8 { ItemLevel <= 68; DropLevel >= 56; }
-
-		Show General { Empty(); }
+		Show l1 { Tag("LVLArcher"); Tag("Maximize"); ItemLevel <= 16 }
+		Show l2 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 20; DropLevel >= 8; }
+		Show l3 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 26; DropLevel >= 14; }
+		Show l4 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 32; DropLevel >= 20; }
+		Show l5 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 38; DropLevel >= 26; }
+		Show l6 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 44; DropLevel >= 32; }
+		Show l7 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 50; DropLevel >= 38; }
+		Show l8 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 56; DropLevel >= 44; }
+		Show l9 { Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 58; DropLevel >= 50; }
+		Show l10{ Tag("LVLArcher"); Tag("SF40"); ItemLevel <= 68; DropLevel >= 56; }
 	}
 
 #------------------------------------
@@ -1674,25 +1673,27 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 	Section Melee : Auto("Leveling->Rare->melee"), Class == leveling.classes.melee
 	{
-		Show l1 { ItemLevel <= 16 }
-		Show l2 { ItemLevel <= 24; DropLevel >= 8; }
-		Show l3 { ItemLevel <= 32; DropLevel >= 16; }
-		Show l4 { ItemLevel <= 40; DropLevel >= 24; }
-		Show l5 { ItemLevel <= 48; DropLevel >= 32; }
-		Show l6 { ItemLevel <= 56; DropLevel >= 40; }
-		Show l7 { ItemLevel <= 64; DropLevel >= 48; }
-		Show l8 { ItemLevel <= 68; DropLevel >= 56; }
-
-		Show General { Empty(); }
+		Show l1 { Tag("LVLMelee"); Tag("Maximize"); ItemLevel <= 16 }
+		Show l2 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 20; DropLevel >= 8; }
+		Show l3 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 26; DropLevel >= 14; }
+		Show l4 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 32; DropLevel >= 20; }
+		Show l5 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 38; DropLevel >= 26; }
+		Show l6 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 44; DropLevel >= 32; }
+		Show l7 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 50; DropLevel >= 38; }
+		Show l8 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 56; DropLevel >= 44; }
+		Show l9 { Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 58; DropLevel >= 50; }
+		Show l10{ Tag("LVLMelee"); Tag("SF40"); ItemLevel <= 68; DropLevel >= 56; }
 	}
 
 #!! Override 860 : "leveling: remaining rare items"
 
-	Section Vendorable : Auto("Leveling->Rare->Remaining")
+	Section Vendorable : Auto("Leveling->Rare->Remaining"), Tag("raredeco.t4equip")
 	{
-		Show UnderLevel42 { AreaLevel >=24; ItemLevel <= 42; }
-		Show UnderLevel24 { AreaLevel >=16; ItemLevel <= 24; }
-		Show UnderLevel16 { AreaLevel >=1;  ItemLevel <= 16; }
+		Show ChromaticRares { Tag("Recipes.Accent"); SocketGroup "RGB"; }
+		Show UnderLevel68 { Tag("SF35"); AreaLevel >=42; }
+		Show UnderLevel42 { Tag("SF35"); AreaLevel >=24; ItemLevel <= 42; }
+		Show UnderLevel24 { Tag("SF40"); AreaLevel >=16; ItemLevel <= 24; }
+		Show UnderLevel16 { Tag("SF40"); AreaLevel >=1;  ItemLevel <= 16; }
 	}
 }
 
@@ -1709,46 +1710,48 @@ Section LevelingMiscGear : Rarity <= Magic
 {
 	Section FourLinkedGear : LinkedSockets >= 4, Auto("Leveling->NormalMagic->4L")
 	{
-		Show General { Empty(); }
+		Show General { Tag("SF45"); Tag("FourLink"); Empty(); }
 	}
 
 	Section Chromatic : Auto("Leveling->NormalMagic->RGB"), SocketGroup "RGB"
 	{
-		Show RGBSmall1	{ Width <=2; Height <=2; }
-		Show RGBSmall2	{ Width <=1; Height <=4; }
-		Show RGBLarge	{ Width >=2; Height >=4; AreaLevel <= leveling.keylevels.act3 }
-		Show RGBMedium	{ Width >=2; Height = 3; }
+		Show RGBSmall1	{ Tag("SF45"); Tag("Recipe.t2"); Width <=2; Height <=2; }
+		Show RGBSmall2	{ Tag("SF45"); Tag("Recipe.t2"); Width <=1; Height <=4; }
+		Show RGBLarge	{ Tag("SF40"); Tag("Recipe.t3"); Width >=2; Height >=4; AreaLevel <= leveling.keylevels.act3 }
+		Show RGBMedium	{ Tag("SF40"); Tag("Recipe.t3"); Width >=2; Height = 3; }
 	}
 
 	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L")
 	{
-		Show General { AreaLevel <= leveling.keylevels.threelink; }
+		Cont EarlyCasterWeapons { Tag("LVLCaster"); Tag("ThreeLink"); Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
+		Show EarlyThreeLinks 	{ Tag("ThreeLink"); Tag("SF40"); AreaLevel <= leveling.keylevels.threelinkEarly; }
+		Show General 			{ Tag("ThreeLink"); Tag("SF35"); AreaLevel <= leveling.keylevels.threelink; }
 	}
 
 #!! Override 920 : "Act 1-3 specific gear"
 
 	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1")
 	{
-		Show CasterCraftRings { BaseType leveling.bases.act1.craftrings; }
-		Show General { BaseType leveling.bases.act1.general; }
-		Show Boots { Class "Boots"; }
-		Show Caster { Class leveling.classes.caster - "Staves" }
-		Show Quivers { Class "Quivers" }
-		Show Physical { BaseType "Rustic Sash" "Iron Ring"; }
+		Show CasterCraftRings { Tag("NoticeNM0"); Tag("SF45"); BaseType leveling.bases.act1.craftrings; }
+		Show General { Tag("NoticeNM0"); Tag("SF45"); BaseType leveling.bases.act1.general; }
+		Show Boots { Tag("NoticeNM0"); Tag("SF45"); Rarity Magic; Class "Boots"; }
+		Show Quivers { Tag("LVLArcher"); Tag("SF40"); Class "Quivers" }
+		Show Physical { Tag("LVLMelee"); Tag("SF40"); BaseType "Rustic Sash" "Iron Ring"; }
+		Show Jewellery { Tag("NoticeNM1"); Tag("SF40"); Class classes_jewellery; }
 	}
 	
 	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2")
 	{
-		Show CasterCraftRings { BaseType leveling.bases.act1.craftrings; }
-		Show Boots { Class "Boots"; }
-		Show Physical { BaseType "Rustic Sash"; }
+		Show CasterCraftRings { Tag("NoticeNM2"); Tag("SF35"); BaseType leveling.bases.act1.craftrings; }
+		Show Boots { Tag("NoticeNM3"); Tag("SF35"); Class "Boots"; }
+		Show Physical { Tag("NoticeNM3"); Tag("SF35"); Tag("LVLMelee"); BaseType "Rustic Sash"; }
 	}
 
-	Section LaterActs : Auto("Leveling->NormalMagic->otheracts")
+	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), Tag("low")
 	{
-		Show HighPhysQuivers { BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
-		Show FireResistGear { BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
-		Show GeneralCrafting { AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
+		Show HighPhysQuivers { Tag("NoticeNM3"); Tag("SF35"); BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
+		Show FireResistGear  { Tag("NoticeNM3"); Tag("SF35"); BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
+		Show GeneralCrafting { Tag("NoticeNM3"); Tag("SF35"); AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
 	}
 }
 
@@ -1759,9 +1762,9 @@ Section LevelingMiscGear : Rarity <= Magic
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
-	Show FirstAreas { AreaLevel <= 4; Rarity Normal; }
-	Show EarlyBodyArmours { AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; %D0 }
-	Show ThreeSocketedGear { Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
+	Show EarlyBodyArmours	{ Tag("NoticeNM3"); Tag("SF30"); AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; %D0 }
+	Show ThreeSocketedGear 	{ Tag("NoticeNM2"); Tag("SF40"); Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
+	Show FirstAreas 		{ Tag("NoticeNM3"); Tag("SF35"); AreaLevel <= 4; Rarity Normal; }
 }
 
 #------------------------------------
@@ -1771,7 +1774,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 
 Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; }
 
-Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee leveling.classes.archer, Auto("Leveling->WeaponProgression")
+Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee leveling.classes.archer, Auto("Leveling->WeaponProgression"), Tag("NoticeNM3")
 {
 	Show r01 { ProgressionRow(Normal, 9,5); }
 	Show r02 { ProgressionRow(Normal, 11,8); }
@@ -1811,11 +1814,10 @@ Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee level
 
 Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel <= 68, Rarity = Magic
 {
-	Cont Large { Height >= 3; Width >= 2; }
+	Cont Large 	 { Height >= 3; Width >= 2; }
 	Cont Medium1 { Height >= 3; Width = 1; }
 	Cont Medium2 { Height = 2; Width = 2; }
-	Cont EarlyCasterWeapons { Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
-	Cont Tiny { Height = 1; Width <= 2; }
+	Cont Tiny 	 { Height = 1; Width <= 2; }
 }
 
 Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
@@ -1823,11 +1825,11 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic
 	Hide LargeMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height >= 3; Width >= 2 }
 	Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act3; Height > 1; }
 
-	Show Rest { AreaLevel >= leveling.keylevels.act3; AreaLevel <= 68; }
-	Show Act34 { AreaLevel >=leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act3; }
-	Show Act2 { AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
-	Show Act1 { AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
-	Show FirstLevels {  AreaLevel >=1;  AreaLevel <= leveling.keylevels.start; }
+	Show Rest 		 { Tag("SF30"); AreaLevel >= leveling.keylevels.act3; AreaLevel <= 68; }
+	Show Act34 		 { Tag("SF35"); AreaLevel >=leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act3; }
+	Show Act2 		 { Tag("SF35"); AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
+	Show Act1 		 { Tag("SF40"); AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
+	Show FirstLevels { Tag("SF40"); AreaLevel >=1;  AreaLevel <= leveling.keylevels.start; }
 }
 
 #!! Override 960 : "don't override anything"

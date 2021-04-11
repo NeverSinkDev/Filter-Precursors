@@ -43,7 +43,7 @@
 #===============================================================================================================
 # [WELCOME] TABLE OF CONTENTS + QUICKJUMP TABLE
 #===============================================================================================================
-#
+# [[0100]] OVERRIDE AREA 1 - Override ALL rules here
 # [[0100]] High tier influenced items
 #   [0101] Influenced Maps
 #   [0102] Crusader
@@ -2178,7 +2178,7 @@ Show # $type->jewels->abyss $tier->highrare
 
 Show # $type->jewels->abyss $tier->highmagic
 	ItemLevel >= 82
-	Rarity Magic
+	Rarity <= Magic
 	Class "Abyss Jewel"
 	SetFontSize 40
 	SetTextColor 0 75 250 255
@@ -2196,7 +2196,7 @@ Show # $type->jewels->abyss $tier->anyrare
 	MinimapIcon 2 Grey Diamond
 
 Show # $type->jewels->abyss $tier->anymagic
-	Rarity Magic
+	Rarity <= Magic
 	Class "Abyss Jewel"
 	SetFontSize 40
 	SetTextColor 0 75 250 255
@@ -2405,7 +2405,7 @@ Show # $type->normalcraft->rest $tier->t1
 	Rarity <= Rare
 	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
-	SetBorderColor 240 240 240 240
+	SetBorderColor 255 255 255 255
 	SetBackgroundColor 0 0 0 180
 	PlayAlertSound 3 300
 	PlayEffect Grey
@@ -2660,8 +2660,9 @@ Show # $type->endgameflasks $tier->anyutility
 	AreaLevel <= 72
 	Rarity <= Magic
 	Class "Utility Flasks"
-	SetFontSize 35
-	SetBorderColor 50 200 125
+	SetFontSize 40
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 25 100 75
 
 Show # $type->endgameflasks $tier->qualityhigh
 	Quality >= 15
@@ -2761,6 +2762,7 @@ Hide # $type->hidelayer $tier->normalmagicendgame
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 #===============================================================================================================
 # [[1400]] Rare Item Decorators
@@ -3262,7 +3264,7 @@ Show # $type->rr $tier->t4endgamerares
 	Rarity Rare
 	Class "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rune Daggers" "Sceptres" "Shields" "Staves" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
 	SetFontSize 30
-	SetBackgroundColor 75 65 65 200
+	SetBackgroundColor 75 65 65 100
 
 #===============================================================================================================
 # [[2100]] Hide Layer 2 - Rare Gear
@@ -3275,6 +3277,7 @@ Hide # $type->hidelayer $tier->raresendgame
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 #===============================================================================================================
 # [[2200]] Heist Gear
@@ -5938,6 +5941,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaska
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 Hide # $type->hidelayer $tier->outdatedlevelflaskb
 	Quality 0
@@ -5947,6 +5951,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskb
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 Hide # $type->hidelayer $tier->outdatedlevelflaskc
 	Quality 0
@@ -5956,6 +5961,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskc
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 Hide # $type->hidelayer $tier->outdatedlevelflaskd
 	Quality 0
@@ -5965,6 +5971,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 #===============================================================================================================
 # [[4200]] Leveling - Flasks
@@ -5975,30 +5982,52 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 
 Show # $type->leveling->flasks->utility $tier->quicksilver
 	BaseType "Quicksilver Flask"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 50 200 125
+	SetBorderColor 50 200 125
+	SetBackgroundColor 25 100 75
+	PlayAlertSound 2 300
+	PlayEffect Grey
+	MinimapIcon 1 Yellow Raindrop
 
 Show # $type->leveling->flasks->utility $tier->asortedutility
 	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 50 200 125
+	SetBackgroundColor 25 100 75
+	PlayEffect Grey Temp
+	MinimapIcon 2 Grey Raindrop
 
 Show # $type->leveling->flasks->utility $tier->any
 	Class "Utility Flask"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 25 100 75
 
 Show # $type->leveling->flasks->quality $tier->max
 	Quality >= 20
 	Class "Flask"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 180 135 135 255
+	PlayEffect Grey Temp
 
 Show # $type->leveling->flasks->quality $tier->high
 	Quality >= 15
 	Class "Flask"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->flasks->quality $tier->any
 	Quality >= 1
 	Class "Flask"
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 200
+	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
 #   [4201] Hybrid flasks
@@ -6009,37 +6038,43 @@ Show # $type->leveling->flasks->hybrid $tier->t1
 	AreaLevel <= 20
 	Class "Hybrid Flask"
 	BaseType "Small"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 100 0 100
 
 Show # $type->leveling->flasks->hybrid $tier->t2
 	AreaLevel <= 30
 	Class "Hybrid Flask"
 	BaseType "Medium"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 100 0 100
 
 Show # $type->leveling->flasks->hybrid $tier->t3
 	AreaLevel <= 40
 	Class "Hybrid Flask"
 	BaseType "Large"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 100 0 100
 
 Show # $type->leveling->flasks->hybrid $tier->t4
 	AreaLevel <= 50
 	Class "Hybrid Flask"
 	BaseType "Colossal"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 100 0 100
 
 Show # $type->leveling->flasks->hybrid $tier->t5
 	AreaLevel <= 60
 	Class "Hybrid Flask"
 	BaseType "Sacred"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 100 0 100
 
 Show # $type->leveling->flasks->hybrid $tier->t6
 	AreaLevel <= 67
 	Class "Hybrid Flask"
 	BaseType "Hallowed"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 100 0 100
 
 #------------------------------------
 #   [4202] Life flasks
@@ -6049,73 +6084,85 @@ Show # $type->leveling->flasks->life $tier->t1
 	AreaLevel <= 5
 	Class "Life Flask"
 	BaseType "Small"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t2
 	AreaLevel <= 8
 	Class "Life Flask"
 	BaseType "Medium"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t3
 	AreaLevel <= 13
 	Class "Life Flask"
 	BaseType "Large"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t4
 	AreaLevel <= 19
 	Class "Life Flask"
 	BaseType "Greater"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t5
 	AreaLevel <= 25
 	Class "Life Flask"
 	BaseType "Grand"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t6
 	AreaLevel <= 31
 	Class "Life Flask"
 	BaseType "Giant"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t7
 	AreaLevel <= 43
 	Class "Life Flask"
 	BaseType "Colossal"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t8
 	AreaLevel <= 30
 	Class "Life Flask"
 	BaseType "Sacred"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t9
 	AreaLevel <= 51
 	Class "Life Flask"
 	BaseType "Hallowed"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t10
 	AreaLevel <= 60
 	Class "Life Flask"
 	BaseType "Sanctified"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t11
 	AreaLevel <= 68
 	Class "Life Flask"
 	BaseType "Divine"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 Show # $type->leveling->flasks->life $tier->t12
 	AreaLevel <= 68
 	Class "Life Flask"
 	BaseType "Eternal"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 120 0 0
 
 #------------------------------------
 #   [4203] Mana flasks
@@ -6125,73 +6172,85 @@ Show # $type->leveling->flasks->mana $tier->t1
 	AreaLevel <= 5
 	Class "Mana Flask"
 	BaseType "Small"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t2
 	AreaLevel <= 8
 	Class "Mana Flask"
 	BaseType "Medium"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t3
 	AreaLevel <= 13
 	Class "Mana Flask"
 	BaseType "Large"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t4
 	AreaLevel <= 19
 	Class "Mana Flask"
 	BaseType "Greater"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t5
 	AreaLevel <= 25
 	Class "Mana Flask"
 	BaseType "Grand"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t6
 	AreaLevel <= 31
 	Class "Mana Flask"
 	BaseType "Giant"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t7
 	AreaLevel <= 43
 	Class "Mana Flask"
 	BaseType "Colossal"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t8
 	AreaLevel <= 30
 	Class "Mana Flask"
 	BaseType "Sacred"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t9
 	AreaLevel <= 51
 	Class "Mana Flask"
 	BaseType "Hallowed"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t10
 	AreaLevel <= 60
 	Class "Mana Flask"
 	BaseType "Sanctified"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t11
 	AreaLevel <= 68
 	Class "Mana Flask"
 	BaseType "Divine"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 Show # $type->leveling->flasks->mana $tier->t12
 	AreaLevel <= 68
 	Class "Mana Flask"
 	BaseType "Eternal"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 0 0 120
 
 #===============================================================================================================
 # [[4300]] Leveling - Rules
@@ -6201,24 +6260,15 @@ Show # $type->leveling->flasks->mana $tier->t12
 # [6002] Links and Sockets
 #------------------------------------
 
-Show # $type->leveling->rare->socketslinks $tier->chromatic4linkrares
-	LinkedSockets >= 4
-	ItemLevel <= 68
-	Rarity Rare
-	SocketGroup "RGB"
-	SetBorderColor 0 0 0
-
-Show # $type->leveling->rare->socketslinks $tier->chromaticitems
-	ItemLevel <= 68
-	Rarity Rare
-	SocketGroup "RGB"
-	SetBorderColor 0 0 0
-
 Show # $type->leveling->rare->socketslinks $tier->4linkrares
 	LinkedSockets >= 4
 	ItemLevel <= 68
 	Rarity Rare
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 0 140 240 255
+	SetBackgroundColor 0 0 0 255
+	PlayEffect Grey
+	MinimapIcon 2 Grey Diamond
 
 #------------------------------------
 #   [4301] Rares - Decorators
@@ -6229,40 +6279,32 @@ Show # $type->decorators->leveling->rare $tier->largerares
 	Width >= 2
 	Height >= 3
 	ItemLevel <= 68
-	SetBorderColor 0 0 0
+	Rarity Rare
+	SetBorderColor 0 0 0 220
 	Continue
 
 Show # $type->decorators->leveling->rare $tier->mediumrares1
 	Width 1
 	Height >= 3
 	ItemLevel <= 68
-	SetBorderColor 0 0 0
+	Rarity Rare
+	SetBorderColor 180 180 180 220
 	Continue
 
 Show # $type->decorators->leveling->rare $tier->mediumrares2
 	Width 2
 	Height 2
 	ItemLevel <= 68
-	SetBorderColor 0 0 0
+	Rarity Rare
+	SetBorderColor 180 180 180 220
 	Continue
 
 Show # $type->decorators->leveling->rare $tier->tinyrares
 	Width <= 2
 	Height 1
 	ItemLevel <= 68
-	SetBorderColor 0 0 0
-	Continue
-
-Show # $type->decorators->leveling->rare $tier->fourlinkrares
-	LinkedSockets >= 4
-	ItemLevel <= 68
-	SetBorderColor 0 0 0
-	Continue
-
-Show # $type->decorators->leveling->rare $tier->corruptedrares
-	Corrupted True
-	ItemLevel <= 68
-	SetBorderColor 0 0 0
+	Rarity Rare
+	SetBorderColor 50 200 50 255
 	Continue
 
 #------------------------------------
@@ -6272,39 +6314,70 @@ Show # $type->decorators->leveling->rare $tier->corruptedrares
 Show # $type->leveling->rare->universal $tier->rusticsash
 	Rarity Rare
 	BaseType "Rustic Sash"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->universal $tier->jewellery
 	Rarity Rare
 	Class == "Amulets" "Belts" "Rings"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBackgroundColor 0 75 30 255
 
 # !! Override 840 : "leveling: rare armours"
 
 Show # $type->leveling->rare->armours $tier->bootsfocus
 	Rarity Rare
 	Class == "Boots"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->rare->armours $tier->general
 	Rarity Rare
-	Class == "Body Armours" "Boots" "Gloves" "Helmets"
-	SetBorderColor 0 0 0
+	Class == "Boots" "Gloves" "Helmets"
+	SetFontSize 45
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 0 0 0 255
+
+Show # $type->leveling->rare->armours $tier->bodyarmours
+	Rarity Rare
+	Class == "Body Armours"
+	SetFontSize 40
+	SetBackgroundColor 20 20 20 220
 
 Show # $type->leveling->rare->armours $tier->shields
 	Rarity Rare
 	Class == "Shields"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBackgroundColor 20 20 20 220
+
+Show # $type->leveling->rare->armours $tier->quivers
+	Rarity Rare
+	Class == "Quivers"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 #------------------------------------
 #   [4303] Rares - Caster
 #------------------------------------
 # !! Override 850 : "leveling: class specific leveling weapons"
 
+Show # $type->leveling->rare->caster $tier->earlylevels
+	ItemLevel <= 16
+	Rarity Rare
+	Class == "Rune Daggers" "Sceptres" "Staves" "Wands"
+	SetFontSize 45
+	SetBorderColor 50 50 150 255
+	SetBackgroundColor 43 43 100 180
+
 Show # $type->leveling->rare->caster $tier->general
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Staves" "Wands"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 50 50 150 255
+	SetBackgroundColor 43 43 100 180
 
 #------------------------------------
 #   [4304] Rares - Archer
@@ -6313,62 +6386,91 @@ Show # $type->leveling->rare->caster $tier->general
 Show # $type->leveling->rare->archer $tier->l1
 	ItemLevel <= 16
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 45
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l2
-	ItemLevel <= 24
+	ItemLevel <= 20
 	DropLevel >= 8
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l3
-	ItemLevel <= 32
-	DropLevel >= 16
+	ItemLevel <= 26
+	DropLevel >= 14
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l4
-	ItemLevel <= 40
-	DropLevel >= 24
+	ItemLevel <= 32
+	DropLevel >= 20
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l5
-	ItemLevel <= 48
-	DropLevel >= 32
+	ItemLevel <= 38
+	DropLevel >= 26
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l6
-	ItemLevel <= 56
-	DropLevel >= 40
+	ItemLevel <= 44
+	DropLevel >= 32
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l7
-	ItemLevel <= 64
-	DropLevel >= 48
+	ItemLevel <= 50
+	DropLevel >= 38
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->rare->archer $tier->l8
+	ItemLevel <= 56
+	DropLevel >= 44
+	Rarity Rare
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
+
+Show # $type->leveling->rare->archer $tier->l9
+	ItemLevel <= 58
+	DropLevel >= 50
+	Rarity Rare
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
+
+Show # $type->leveling->rare->archer $tier->l10
 	ItemLevel <= 68
 	DropLevel >= 56
 	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
-
-Show # $type->leveling->rare->archer $tier->general
-	Rarity Rare
-	Class == "Bows" "Quivers"
-	SetBorderColor 0 0 0
+	Class == "Bows"
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 #------------------------------------
 #   [4305] Rares - Melee
@@ -6378,81 +6480,125 @@ Show # $type->leveling->rare->melee $tier->l1
 	ItemLevel <= 16
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->melee $tier->l2
-	ItemLevel <= 24
+	ItemLevel <= 20
 	DropLevel >= 8
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->melee $tier->l3
-	ItemLevel <= 32
-	DropLevel >= 16
+	ItemLevel <= 26
+	DropLevel >= 14
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->melee $tier->l4
-	ItemLevel <= 40
-	DropLevel >= 24
+	ItemLevel <= 32
+	DropLevel >= 20
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->melee $tier->l5
-	ItemLevel <= 48
+	ItemLevel <= 38
+	DropLevel >= 26
+	Rarity Rare
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
+
+Show # $type->leveling->rare->melee $tier->l6
+	ItemLevel <= 44
 	DropLevel >= 32
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
-
-Show # $type->leveling->rare->melee $tier->l6
-	ItemLevel <= 56
-	DropLevel >= 40
-	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->melee $tier->l7
-	ItemLevel <= 64
-	DropLevel >= 48
+	ItemLevel <= 50
+	DropLevel >= 38
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 Show # $type->leveling->rare->melee $tier->l8
+	ItemLevel <= 56
+	DropLevel >= 44
+	Rarity Rare
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
+
+Show # $type->leveling->rare->melee $tier->l9
+	ItemLevel <= 58
+	DropLevel >= 50
+	Rarity Rare
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
+
+Show # $type->leveling->rare->melee $tier->l10
 	ItemLevel <= 68
 	DropLevel >= 56
 	Rarity Rare
 	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
-
-Show # $type->leveling->rare->melee $tier->general
-	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
 
 # !! Override 860 : "leveling: remaining rare items"
+
+Show # $type->leveling->rare->remaining $tier->chromaticrares
+	Rarity Rare
+	SocketGroup "RGB"
+	SetFontSize 30
+	SetBackgroundColor 75 65 65 100
+
+Show # $type->leveling->rare->remaining $tier->underlevel68
+	AreaLevel >= 42
+	Rarity Rare
+	SetFontSize 35
+	SetBackgroundColor 75 65 65 100
 
 Show # $type->leveling->rare->remaining $tier->underlevel42
 	ItemLevel <= 42
 	AreaLevel >= 24
 	Rarity Rare
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBackgroundColor 75 65 65 100
 
 Show # $type->leveling->rare->remaining $tier->underlevel24
 	ItemLevel <= 24
 	AreaLevel >= 16
 	Rarity Rare
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBackgroundColor 75 65 65 100
 
 Show # $type->leveling->rare->remaining $tier->underlevel16
 	ItemLevel <= 16
 	AreaLevel >= 1
 	Rarity Rare
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBackgroundColor 75 65 65 100
 
 #===============================================================================================================
 # [[4400]] Leveling - Useful magic and normal items
@@ -6466,21 +6612,31 @@ Show # $type->leveling->rare->remaining $tier->underlevel16
 Show # $type->leveling->normalmagic->4l $tier->general
 	LinkedSockets >= 4
 	Rarity <= Magic
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 0 140 240 255
+	SetBackgroundColor 0 0 0 255
+	PlayEffect Grey
+	MinimapIcon 2 Grey Diamond
 
 Show # $type->leveling->normalmagic->rgb $tier->rgbsmall1
 	Width <= 2
 	Height <= 2
 	Rarity <= Magic
 	SocketGroup "RGB"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->rgb $tier->rgbsmall2
 	Width <= 1
 	Height <= 4
 	Rarity <= Magic
 	SocketGroup "RGB"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->rgb $tier->rgblarge
 	Width >= 2
@@ -6488,20 +6644,49 @@ Show # $type->leveling->normalmagic->rgb $tier->rgblarge
 	AreaLevel <= 34
 	Rarity <= Magic
 	SocketGroup "RGB"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 200
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->rgb $tier->rgbmedium
 	Width >= 2
 	Height 3
 	Rarity <= Magic
 	SocketGroup "RGB"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetTextColor 180 135 135 255
+	SetBorderColor 180 135 135 200
+	SetBackgroundColor 0 0 0 255
+
+Show # $type->leveling->normalmagic->3l $tier->earlycasterweapons
+	LinkedSockets >= 3
+	AreaLevel <= 15
+	Rarity <= Magic
+	Rarity Magic
+	Class "Sceptres" "Wands"
+	SetBorderColor 0 140 240 255
+	SetBackgroundColor 0 0 0 255
+	PlayEffect Grey Temp
+	Continue
+
+Show # $type->leveling->normalmagic->3l $tier->earlythreelinks
+	LinkedSockets >= 3
+	AreaLevel <= 28
+	Rarity <= Magic
+	SetFontSize 40
+	SetBorderColor 0 140 240 255
+	SetBackgroundColor 0 0 0 255
+	PlayEffect Grey Temp
 
 Show # $type->leveling->normalmagic->3l $tier->general
 	LinkedSockets >= 3
-	AreaLevel <= 24
+	AreaLevel <= 28
 	Rarity <= Magic
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBorderColor 0 140 240 255
+	SetBackgroundColor 0 0 0 255
+	PlayEffect Grey Temp
 
 # !! Override 920 : "Act 1-3 specific gear"
 
@@ -6509,102 +6694,133 @@ Show # $type->leveling->normalmagic->act1 $tier->castercraftrings
 	AreaLevel <= 15
 	Rarity <= Magic
 	BaseType "Iron Ring" "Ruby Ring" "Sapphire Ring" "Topaz Ring"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->act1 $tier->general
 	AreaLevel <= 15
 	Rarity <= Magic
 	BaseType "Amber Amulet" "Chain Belt" "Coral Ring" "Jade Amulet" "Lapis Amulet" "Leather Belt"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->act1 $tier->boots
 	AreaLevel <= 15
 	Rarity <= Magic
+	Rarity Magic
 	Class "Boots"
-	SetBorderColor 0 0 0
-
-Show # $type->leveling->normalmagic->act1 $tier->caster
-	AreaLevel <= 15
-	Rarity <= Magic
-	Class "Rune Daggers" "Sceptres" "Wands"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->act1 $tier->quivers
 	AreaLevel <= 15
 	Rarity <= Magic
 	Class "Quivers"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 50 150 150 255
+	SetBackgroundColor 43 100 100 180
 
 Show # $type->leveling->normalmagic->act1 $tier->physical
 	AreaLevel <= 15
 	Rarity <= Magic
 	BaseType "Iron Ring" "Rustic Sash"
-	SetBorderColor 0 0 0
+	SetFontSize 40
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 100 43 43 180
+
+Show # $type->leveling->normalmagic->act1 $tier->jewellery
+	AreaLevel <= 15
+	Rarity <= Magic
+	Class "Amulets" "Belts" "Rings"
+	SetFontSize 40
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->act2 $tier->castercraftrings
 	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity <= Magic
 	BaseType "Iron Ring" "Ruby Ring" "Sapphire Ring" "Topaz Ring"
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 255
 
 Show # $type->leveling->normalmagic->act2 $tier->boots
 	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity <= Magic
 	Class "Boots"
+	SetFontSize 35
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->normalmagic->act2 $tier->physical
 	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity <= Magic
 	BaseType "Rustic Sash"
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBorderColor 150 50 50 255
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->normalmagic->otheracts $tier->highphysquivers
 	AreaLevel >= 24
 	AreaLevel <= 41
 	Rarity <= Magic
 	BaseType "Broadhead Arrow Quiver"
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->normalmagic->otheracts $tier->fireresistgear
 	AreaLevel >= 24
 	AreaLevel <= 51
 	Rarity <= Magic
 	BaseType "Ruby Ring"
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->normalmagic->otheracts $tier->generalcrafting
 	AreaLevel >= 34
 	Rarity <= Magic
 	BaseType "Leather Belt" "Onyx Amulet" "Prismatic Ring" "Two-Stone Ring"
-	SetBorderColor 0 0 0
+	SetFontSize 35
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
 #   [4401] Normals
 #------------------------------------
 # !! Override 930 : "first levels gear"
 
-Show # $type->leveling->firstlevels $tier->firstareas
-	AreaLevel <= 4
-	Rarity Normal
-	SetBorderColor 0 0 0
-
 Show # %D0 $type->leveling->firstlevels $tier->earlybodyarmours
 	AreaLevel >= 2
 	AreaLevel <= 8
 	Rarity Normal
 	Class "Body Armours"
+	SetFontSize 35
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->firstlevels $tier->threesocketedgear
 	Sockets >= 3
 	AreaLevel <= 8
 	Rarity <= Magic
 	Class "Boots" "Gloves" "Helmets" "Shields"
+	SetFontSize 40
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 255
+
+Show # $type->leveling->firstlevels $tier->firstareas
+	AreaLevel <= 4
+	Rarity Normal
+	SetFontSize 35
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
 #   [4402] Weapon Progression
@@ -6618,6 +6834,7 @@ Show # $type->leveling->weaponprogression $tier->r01
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r02
 	ItemLevel <= 11
@@ -6626,6 +6843,7 @@ Show # $type->leveling->weaponprogression $tier->r02
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r03
 	ItemLevel <= 14
@@ -6634,6 +6852,7 @@ Show # $type->leveling->weaponprogression $tier->r03
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r04
 	ItemLevel <= 16
@@ -6642,6 +6861,7 @@ Show # $type->leveling->weaponprogression $tier->r04
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r05
 	ItemLevel <= 18
@@ -6650,6 +6870,7 @@ Show # $type->leveling->weaponprogression $tier->r05
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r06
 	ItemLevel <= 20
@@ -6658,6 +6879,7 @@ Show # $type->leveling->weaponprogression $tier->r06
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r07
 	ItemLevel <= 22
@@ -6666,6 +6888,7 @@ Show # $type->leveling->weaponprogression $tier->r07
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r08
 	ItemLevel <= 24
@@ -6674,6 +6897,7 @@ Show # $type->leveling->weaponprogression $tier->r08
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r09
 	ItemLevel <= 26
@@ -6682,6 +6906,7 @@ Show # $type->leveling->weaponprogression $tier->r09
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r10
 	ItemLevel <= 28
@@ -6690,6 +6915,7 @@ Show # $type->leveling->weaponprogression $tier->r10
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r11
 	ItemLevel <= 30
@@ -6698,6 +6924,7 @@ Show # $type->leveling->weaponprogression $tier->r11
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r12
 	ItemLevel <= 32
@@ -6706,6 +6933,7 @@ Show # $type->leveling->weaponprogression $tier->r12
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r13
 	ItemLevel <= 34
@@ -6714,6 +6942,7 @@ Show # $type->leveling->weaponprogression $tier->r13
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r14
 	ItemLevel <= 36
@@ -6722,6 +6951,7 @@ Show # $type->leveling->weaponprogression $tier->r14
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r15
 	ItemLevel <= 40
@@ -6730,6 +6960,7 @@ Show # $type->leveling->weaponprogression $tier->r15
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r16
 	ItemLevel <= 42
@@ -6738,6 +6969,7 @@ Show # $type->leveling->weaponprogression $tier->r16
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r17
 	ItemLevel <= 44
@@ -6746,6 +6978,7 @@ Show # $type->leveling->weaponprogression $tier->r17
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r18
 	ItemLevel <= 46
@@ -6754,6 +6987,7 @@ Show # $type->leveling->weaponprogression $tier->r18
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r19
 	ItemLevel <= 48
@@ -6762,6 +6996,7 @@ Show # $type->leveling->weaponprogression $tier->r19
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r20
 	ItemLevel <= 50
@@ -6770,6 +7005,7 @@ Show # $type->leveling->weaponprogression $tier->r20
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r21
 	ItemLevel <= 52
@@ -6778,6 +7014,7 @@ Show # $type->leveling->weaponprogression $tier->r21
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r22
 	ItemLevel <= 54
@@ -6786,6 +7023,7 @@ Show # $type->leveling->weaponprogression $tier->r22
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r23
 	ItemLevel <= 56
@@ -6794,6 +7032,7 @@ Show # $type->leveling->weaponprogression $tier->r23
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r24
 	ItemLevel <= 58
@@ -6802,6 +7041,7 @@ Show # $type->leveling->weaponprogression $tier->r24
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r25
 	ItemLevel <= 60
@@ -6810,6 +7050,7 @@ Show # $type->leveling->weaponprogression $tier->r25
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r26
 	ItemLevel <= 62
@@ -6818,6 +7059,7 @@ Show # $type->leveling->weaponprogression $tier->r26
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r27
 	ItemLevel <= 64
@@ -6826,6 +7068,7 @@ Show # $type->leveling->weaponprogression $tier->r27
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r28
 	ItemLevel <= 66
@@ -6834,6 +7077,7 @@ Show # $type->leveling->weaponprogression $tier->r28
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 Show # $type->leveling->weaponprogression $tier->r29
 	ItemLevel <= 68
@@ -6842,6 +7086,7 @@ Show # $type->leveling->weaponprogression $tier->r29
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetBorderColor 0 0 0
+	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
 #   [4403] Remaining Magics
@@ -6872,14 +7117,6 @@ Show # $type->decorators->leveling->magic $tier->medium2
 	SetBorderColor 0 0 0
 	Continue
 
-Show # $type->decorators->leveling->magic $tier->earlycasterweapons
-	ItemLevel <= 68
-	AreaLevel <= 15
-	Rarity Magic
-	Class "Sceptres" "Wands"
-	SetBorderColor 0 0 0
-	Continue
-
 Show # $type->decorators->leveling->magic $tier->tiny
 	Width <= 2
 	Height 1
@@ -6905,30 +7142,35 @@ Show # $type->leveling->magic->remaining $tier->rest
 	AreaLevel >= 34
 	AreaLevel <= 68
 	Rarity Magic
+	SetFontSize 35
 	SetBorderColor 0 0 0
 
 Show # $type->leveling->magic->remaining $tier->act34
 	AreaLevel >= 24
 	AreaLevel <= 34
 	Rarity Magic
+	SetFontSize 35
 	SetBorderColor 0 0 0
 
 Show # $type->leveling->magic->remaining $tier->act2
 	AreaLevel >= 15
 	AreaLevel <= 24
 	Rarity Magic
+	SetFontSize 35
 	SetBorderColor 0 0 0
 
 Show # $type->leveling->magic->remaining $tier->act1
 	AreaLevel >= 8
 	AreaLevel <= 15
 	Rarity Magic
+	SetFontSize 40
 	SetBorderColor 0 0 0
 
 Show # $type->leveling->magic->remaining $tier->firstlevels
 	AreaLevel >= 1
 	AreaLevel <= 8
 	Rarity Magic
+	SetFontSize 40
 	SetBorderColor 0 0 0
 
 # !! Override 960 : "don't override anything"
@@ -6941,6 +7183,7 @@ Hide # $type->hidelayer $tier->final
 	SetFontSize 18
 	SetBorderColor 0 0 0 0
 	SetBackgroundColor 0 0 0 0
+	DisableDropSound True
 
 #------------------------------------
 #   [4404] Show All unknown Section
