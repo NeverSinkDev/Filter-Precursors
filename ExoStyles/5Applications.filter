@@ -47,7 +47,10 @@ Style LibrarySectionBased
 	Apply(EndgameRareGear.t4* => RaresArmoursWeapons.t4);
 	Apply(DecoratorRemover => DecoratorRemoverStrategy);
 
-	Apply(HeistFollowerGear => HeistFollowerGearStrategy);
+	Apply(HeistFollowerGear.t1 => HeistFollowerGearStrategy.t1);
+	Apply(HeistFollowerGear.t1highlevel => HeistFollowerGearStrategy.t1highlevel);
+	Apply(HeistFollowerGear.t2 => HeistFollowerGearStrategy.t2);
+	Apply(HeistFollowerGear.t3any => HeistFollowerGearStrategy.t3any);
 
 	# Tierlists and Maps
 	

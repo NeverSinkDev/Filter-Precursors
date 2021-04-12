@@ -81,6 +81,12 @@ Style UniversalValueAccents
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
 	}
 
+	Func SpecialNoB ()
+	{
+		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+
+
 	Func SpecialB ()
 	{
 		SetBorderColor exoticgear.tx;
@@ -175,12 +181,7 @@ Style UniversalValueAccents
 	Func LevelCurrency()
 	{
 		SetFontSize 45; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
-	}
-
-	Func LevelGear()
-	{
-		SetFontSize 45; MinimapIcon 1 Grey Diamond; PlayAlertSound sounds.currency;
-	}
+	}	
 
 	Func LVLCaster()
 	{
@@ -210,7 +211,7 @@ Style UniversalValueAccents
 
 	Func ThreeLink()
 	{
-		SetBorderColor accent.leveling.fourlink;
+		SetBorderColor accent.leveling.threelink;
 		SetBackgroundColor sBlack;
 		PlayEffect Grey Temp;
 	}
@@ -256,14 +257,14 @@ Style UniversalValueAccents
 		SetBorderColor accent.notice.high;
 	}
 
-	Func Notice()
-	{
-		SetBorderColor accent.notice;
-	}
-
 	Func NoticeLow()
 	{
 		SetBorderColor accent.notice.low;
+	}
+
+	Func Notice()
+	{
+		SetBorderColor accent.notice;
 	}
 
 	Func QuestLike()
@@ -311,7 +312,7 @@ Style T2YellowPiece
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
 	}
 }
 
@@ -321,7 +322,7 @@ Style T3YellowPiece
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 0 tier.t3.cmap icon; 
+		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
 	}
 }
 
@@ -331,7 +332,7 @@ Style T3WhitePiece
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap icon; 
 	}
 }
 
@@ -341,7 +342,7 @@ Style T4WhitePieceNoBG
 	{ 
 		SetFontSize 45;
 		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 0 tier.t4.cmap icon; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
 	}
 }
 

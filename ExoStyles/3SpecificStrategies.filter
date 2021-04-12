@@ -30,7 +30,7 @@ Style RaresArmoursWeapons
 {
 	Func T1 ()
 	{
-		SetFontSize 40;
+		SetFontSize 45;
 		SetBackgroundColor rares.generic.t1;
 		SetBorderColor NONE;
 	}
@@ -52,7 +52,7 @@ Style RaresArmoursWeapons
 	Func T4 ()
 	{
 		SetBackgroundColor rares.generic.t4;
-		SetFontSize 30;
+		SetFontSize 35;
 		SetBorderColor NONE;
 	}
 }
@@ -97,6 +97,11 @@ Style EndgameRareDecorators
 	Func corrupt()
 	{
 		SetBorderColor accent.corrupt.tx;
+	}
+
+	Func corruptimpl()
+	{
+		SetBorderColor accent.corruptimpl.tx;
 	}
 }
 
@@ -162,7 +167,7 @@ Style JewelStrategy
 	{ 
 		SetFontSize 45;
 		SetTextColor jewel.cluster.tx; SetBorderColor jewel.cluster.tx; SetBackgroundColor jewel.cluster.extra;
-		PlayAlertSound 2 300; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap icon; 
+		PlayAlertSound 2 300; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap Pentagon; 
 	}
 
 	Func rare () 
@@ -203,7 +208,6 @@ Style CraftSpecialStrategy
 		PlayEffect Grey;
 		SetBorderColor accent.notice.high;
 		PlayAlertSound sounds.unique;
-		SetBackgroundColor 0 0 0 180;
 	}
 }
 
@@ -211,19 +215,19 @@ Style CraftGeneralStrategy
 {
 	Func I86 () 
 	{ 
-		SetFontSize 40;
+		SetFontSize NONE;
 		SetBorderColor accent.level.i86;
 	}
 
 	Func I84 () 
 	{ 
-		SetFontSize 35;
+		SetFontSize NONE;
 		SetBorderColor accent.level.i84;
 	}
 
 	Func ANY () 
 	{ 
-		SetBackgroundColor 0 0 0 180;
+		SetFontSize NONE;
 		SetBorderColor accent.notice;
 	}
 }
@@ -239,8 +243,8 @@ Style HeistFollowerGearStrategy
 		SetBorderColor accent.heist;
 		SetBackgroundColor rares.generic.t1;
 
-		PlayEffect Blue;
-		MinimapIcon 0 Blue icon;
+		PlayEffect Yellow;
+		MinimapIcon 1 Yellow icon;
 		PlayAlertSound 3 300;
 	}
 	Func T1 ()
@@ -303,7 +307,7 @@ Style GemStrategy : T1
 	# high qual gems
 	Func P3 ()
 	{
-		BD gems.norm; TX gems.norm;
+		BD gems.norm; TX sBlack;
 		SetFontSize 45;
 		Sound sounds.currency;
 		Beam tier.t5.cray; 
@@ -313,8 +317,8 @@ Style GemStrategy : T1
 	# low qual/vaal gems
 	Func P4 ()
 	{
-		BD gems.low; TX gems.low;
-		SetFontSize 35;
+		BD gems.norm; TX gems.low;
+		SetFontSize 40;
 	}
 
 	# trash gems
@@ -332,14 +336,14 @@ Style GemStrategy : T1
 
 	Func VaalGem()
 	{
-		SetBackgroundColor 40 0 0 255;
+		SetBackgroundColor 55 0 0 255;
 		SetFontSize 35;
 	}
 
 	Func VaalLvl()
 	{
 		SetFontSize 45;
-		SetBackgroundColor 40 0 0 255;
+		SetBackgroundColor 55 0 0 255;
 		MinimapIcon 2 White icon;
 	}
 
@@ -499,6 +503,9 @@ Style t2divine : PatternHighWhite
 	Func Any()
 	{ 
 		var acc = currency.acc.t2divine; 
+		var msize = 0;
+		var cmap = Red;
+		var cray = Red;
 	}
 }
 
@@ -507,17 +514,21 @@ Style t3annul : PatternInverseBlack
 	Func Any()
 	{ 
 		var acc = currency.acc.t3annul; 
+		var msize = 1;
+		var cmap = Yellow;
+		var cray = Yellow;
 	}
 }
 
 Style t4chaos : PatternInverseBlack
 {
 	Func Any()
-	{ 
+	{
 		var acc = currency.acc.t4chaos; 
 		var msize = 2;
 		var cmap = White;
 		var cray = White;
+		SetFontSize 45;
 	}
 }
 
@@ -529,6 +540,7 @@ Style t5alchemy : PatternInverseBlack
 		var msize = 2;
 		var cmap = White;
 		var cray = White;
+		SetFontSize 45;
 	}
 }
 
@@ -540,6 +552,7 @@ Style t6chrom : PatternInverseBlack
 		var msize = 2;
 		var cmap = Grey;
 		var cray = Grey;
+		SetFontSize 45;
 	}
 }
 
@@ -559,7 +572,8 @@ Style t8trans : PatternBlack
 	Func Any()
 	{ 
 		RemoveEffects();
-		SetFontSize 40;
+		SetFontSize 45;
+		SetBackgroundColor sBlack;
 	}
 }
 
@@ -571,6 +585,7 @@ Style t9armour : PatternBlack
 	{ 
 		RemoveEffects();
 		SetFontSize 40;
+		SetBackgroundColor sBlack;
 	}
 	
 }
@@ -579,8 +594,9 @@ Style tportal
 {
 	Func Any()
 	{ 
-		SetFontSize 35;
+		SetFontSize 40;
 		SetBorderColor currency.acc.tportal;
+		SetBackgroundColor sBlack;
 	}
 }
 
@@ -588,8 +604,9 @@ Style twisdom
 {
 	Func Any()
 	{ 
-		SetFontSize 35;
+		SetFontSize 40;
 		SetBorderColor currency.acc.twisdom;
+		SetBackgroundColor sBlack;
 		RemoveEffects();
 	}
 }
@@ -635,6 +652,7 @@ Style t4divi : PatternInverseBlack
 		var cmap = White;
 		var cray = White;
 		var msize = 2;
+		SetFontSize 45;
 	}
 }
 
@@ -643,10 +661,9 @@ Style t5divi : PatternBlack
 	Func Any()
 	{ 
 		var acc = divi.acc.t5; 
-		var icon = Triangle;
-		var cmap = Grey;
-		var cray = Grey;
-		var msize = 2;
+		PlayEffect NONE; MM NONE;
+		SetFontSize 45;
+		SetBackgroundColor sBlack;
 	}
 }
 
@@ -678,7 +695,7 @@ Style SplinterStrategy
 	{
 		Colors(splinters.text, splinters.acc.t1, splinters.extra);
 		SetFontSize 45;
-		MinimapIcon 0 Grey icon;
+		MinimapIcon 1 Grey icon;
 		PlayAlertSound sound;
 		PlayEffect Purple Temp;
 	}
@@ -687,7 +704,7 @@ Style SplinterStrategy
 	{
 		Colors(splinters.text, splinters.acc.t2, splinters.extra);
 		SetFontSize 45;
-		MinimapIcon 0 Grey icon;
+		MinimapIcon 2 Grey icon;
 		PlayAlertSound sound;
 		PlayEffect Purple Temp;
 	}
@@ -696,7 +713,7 @@ Style SplinterStrategy
 	{
 		Colors(splinters.text, splinters.acc.t3, splinters.extra);
 		SetFontSize 40;
-		MinimapIcon 0 Grey icon;
+		MinimapIcon 2 Grey icon;
 		PlayEffect Purple Temp;
 	}
 }
