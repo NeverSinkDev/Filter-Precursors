@@ -154,7 +154,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-		Section FastEleWeapons : BaseType == quickWeapons
+		Section FastEleWeapons : BaseType == quickWeapons, Corrupted False
 		{
 			Show 3HighEle { Mod >=3 w_cheatmods + w_temple_Caster + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + ws_attack_speed[1] + ws_attack_crit[2] + ws_critmulti[1] }
 			Show 4HighEle { Mod >=4 w_cheatmods + w_temple_Caster + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + ws_attack_speed[2] + ws_attack_crit[3] + ws_critmulti[2] }
@@ -206,7 +206,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Helmets
 #------------------------------------
-		Section Helmets : Class "Helmets"
+		Section Helmets : Class "Helmets", Corrupted False
 		{
 			Show 3LifeHelmet { Mod helm_life[2]; Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int [3] + gloves_accu[2] + minionGems + helmLifeHybrid + wmana[2] }
 			Show 4LifeHelmet { Mod helm_life[3]; Mod >=3 res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int [4] + gloves_accu[3] + minionGems + helmLifeHybrid + wmana[3] }
@@ -318,7 +318,9 @@ Section IdModSectionSpecial : IdMods, Tag(exotic)
 		Show IncursionAttack     { %D5; Tag(exotic.t2); Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
 		Show IncursionGloveHelm  { Tag(exotic.t2); Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
 		Show IncursionJwlry		 { %D5; Tag(exotic.t2); Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
+		Show IncursionMagic		 { %D4; Tag(exotic.t3); Mod exotic_incursion Rarity Magic; }
 		Show IncursionRandom     { %D3; Tag(exotic.t3); Mod exotic_incursion; }
+
 #------------------------------------
 #   [1234] Bestiary
 #------------------------------------
@@ -461,7 +463,7 @@ Section Jewels : Tag("jewels")
 #------------------------------------
 	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, Tag("*cluster")
 	{
-		Show OptimalHighLarge	{ Tag("V2"); Tag("High"); BaseType "Large Cluster Jewel"; ItemLevel >= 82; EnchantmentPassiveNum <= 8; }
+		Show OptimalHighLarge	{ Tag("V2"); Tag("High"); BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
 		Show HighLarge 			{ %D5; Tag("V3"); Tag("High"); BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
 		Show Large 				{ %D4; Tag("V4"); BaseType "Large Cluster Jewel"; }
 
@@ -469,7 +471,7 @@ Section Jewels : Tag("jewels")
 		Show HighMedium 	   { %D5; Tag("V3"); Tag("High"); BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
 		Show Medium 		   { %D4; Tag("V4"); BaseType "Medium Cluster Jewel"; }
 
-		Show HighSmall { %D5; Tag("V3"); Tag("High"); BaseType "Small Cluster Jewel"; ItemLevel >= 82; }
+		Show HighSmall { %D5; Tag("V3"); Tag("High"); BaseType "Small Cluster Jewel"; ItemLevel >= 84; }
 		Show Small 				{ %D4; Tag("V4"); BaseType "Small Cluster Jewel"; }
 	}
 #------------------------------------
@@ -723,7 +725,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show Any { %H1; Tag("Notice"); Empty(); }
 	}
 
-	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman")
+	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
 	{
 		Show T1AttackTalisman { %H5; BaseType bases.talismans.attack.any + bases.talismans.universal.any; Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=3 top2base + merged_amu_attack2 + universal2 }
 		Show T1CasterTalisman { %H5; BaseType bases.talismans.caster.any + bases.talismans.universal.any; Mod amu_life[2] + "Dazzling" "Resplendent";  Mod >=3 top2base + merged_amu_caster2 + universal2 + amu_esp[2]; }
@@ -1752,6 +1754,7 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show HighPhysQuivers { %D2; Tag("NoticeNM2"); Tag("SF35"); BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
 		Show FireResistGear  { %D2; Tag("NoticeNM2"); Tag("SF35"); BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
 		Show GeneralCrafting { %D2; Tag("NoticeNM2"); Tag("SF35"); AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
+		ShowD SummonShield { Tag("NoticeNM2"); Tag("SF40"); AreaLevel <= leveling.keylevels.act5; BaseType "Bone Spirit Shield" }
 	}
 }
 

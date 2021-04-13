@@ -307,7 +307,7 @@ Style GemStrategy : T1
 	# high qual gems
 	Func P3 ()
 	{
-		BD gems.norm; TX sBlack;
+		BD gems.norm; gems.norm;
 		SetFontSize 45;
 		Sound sounds.currency;
 		Beam tier.t5.cray; 
@@ -317,7 +317,7 @@ Style GemStrategy : T1
 	# low qual/vaal gems
 	Func P4 ()
 	{
-		BD gems.norm; TX gems.low;
+		BD gems.low; TX gems.norm;
 		SetFontSize 40;
 	}
 
