@@ -6,21 +6,21 @@ Style RaresJewellery
 {
 	Func T1 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t3;
 		SetBackgroundColor rares.jewellery.t1;
 		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetBackgroundColor rares.jewellery.t2;
 		SetBorderColor NONE;
 	}
 
 	Func T3 ()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBackgroundColor rares.jewellery.t3;
 		SetBorderColor NONE;
 	}
@@ -30,14 +30,14 @@ Style RaresArmoursWeapons
 {
 	Func T1 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetBackgroundColor rares.generic.t1;
 		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBackgroundColor rares.generic.t2;
 		SetBorderColor NONE;
 	}
@@ -45,14 +45,14 @@ Style RaresArmoursWeapons
 	Func T3 ()
 	{
 		SetBackgroundColor rares.generic.t3;
-		SetFontSize 35;
+		SetFontSize font.t6;
 		SetBorderColor NONE;
 	}
 
 	Func T4 ()
 	{
 		SetBackgroundColor rares.generic.t4;
-		SetFontSize 35;
+		SetFontSize font.t6;
 		SetBorderColor NONE;
 	}
 }
@@ -117,7 +117,7 @@ Style Artefact
 
 	Func T1 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t2;
 		SetTextColor artefact.tx; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
 		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap icon;
 	}
@@ -129,27 +129,27 @@ Style RecipeStrategy
 
 	Func T1() 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t3;
 		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
 		PlayAlertSound sounds.currency; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
 	}
 
 	Func TS1() 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
 		PlayEffect recipe.cray Temp;
 	}
 
 	Func T2() 
 	{ 
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetTextColor recipe.t1.acc; SetBorderColor recipe.t1.acc; SetBackgroundColor sBlack;
 	}
 
 	Func t3() 
 	{ 
-		SetFontSize 35;
+		SetFontSize font.t6;
 		SetTextColor recipe.t1.acc; SetBorderColor recipe.t2.acc; SetBackgroundColor sBlack;
 	}
 
@@ -165,21 +165,21 @@ Style JewelStrategy
 
 	Func cluster () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t3;
 		SetTextColor jewel.cluster.tx; SetBorderColor jewel.cluster.tx; SetBackgroundColor jewel.cluster.extra;
 		PlayAlertSound sounds.currency; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap Pentagon; 
 	}
 
 	Func rare () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetTextColor jewel.rare.tx; SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
 		PlayEffect tier.t5.cray; MinimapIcon 2 Grey icon;
 	}
 
 	Func magic () 
 	{ 
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetTextColor jewel.magic.tx; SetBorderColor jewel.magic.tx; SetBackgroundColor jewel.magic.extra;
 	}
 }
@@ -188,7 +188,7 @@ Style CraftSpecialStrategy
 {
 	Func I86 () 
 	{ 
-		SetFontSize 45;  MinimapIcon 1 Blue Diamond;
+		SetFontSize font.t2;  MinimapIcon 1 Blue Diamond;
 		PlayEffect Blue;
 		SetBorderColor accent.level.i86.high;
 		PlayAlertSound sounds.unique;
@@ -196,7 +196,7 @@ Style CraftSpecialStrategy
 
 	Func I84 () 
 	{ 
-		SetFontSize 45;  MinimapIcon 2 White Diamond;
+		SetFontSize font.t3;  MinimapIcon 2 White Diamond;
 		PlayEffect White;
 		SetBorderColor accent.level.i84.high;
 		PlayAlertSound sounds.unique;
@@ -204,7 +204,7 @@ Style CraftSpecialStrategy
 
 	Func ANY () 
 	{ 
-		SetFontSize 45;  MinimapIcon 2 Grey Diamond;
+		SetFontSize font.t4;  MinimapIcon 2 Grey Diamond;
 		PlayEffect Grey;
 		SetBorderColor accent.notice.high;
 		PlayAlertSound sounds.unique;
@@ -238,7 +238,7 @@ Style HeistFollowerGearStrategy
 
 	Func t1highlevel ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t2;
 		SetTextColor accent.rare.ilvl84;
 		SetBorderColor accent.heist;
 		SetBackgroundColor rares.generic.t1;
@@ -249,7 +249,7 @@ Style HeistFollowerGearStrategy
 	}
 	Func T1 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t3;
 		SetBorderColor accent.heist;
 		SetBackgroundColor rares.generic.t1;
 
@@ -259,7 +259,7 @@ Style HeistFollowerGearStrategy
 	}
 	Func T2 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetBorderColor accent.heist.low;
 		SetBackgroundColor rares.generic.t2;
 
@@ -270,7 +270,7 @@ Style HeistFollowerGearStrategy
 	}
 	Func t3any ()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBorderColor accent.heist.low;
 		SetBackgroundColor rares.generic.t2;
 
@@ -289,7 +289,7 @@ Style GemStrategy : T1
 	# Used for special cases, such as alt quality, awakened gems etc.
 	Func P1()
 	{
-		SetFontSize 45;
+		SetFontSize font.t2;
 		SetBackgroundColor altBg; SetTextColor gems.high; SetBorderColor artefact.tx;
 		PlayAlertSound sounds.t2; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cray icon;
 	}
@@ -298,7 +298,7 @@ Style GemStrategy : T1
 	Func P2 ()
 	{
 		BD gems.high; TX gems.high; BG gems.base;
-		SetFontSize 45;
+		SetFontSize font.t3;
 		Sound sounds.currency; 
 		Beam tier.t4.cray; 
 		MM 1 tier.t3.cmap icon;
@@ -308,7 +308,7 @@ Style GemStrategy : T1
 	Func P3 ()
 	{
 		BD gems.norm; TX gems.norm;
-		SetFontSize 45;
+		SetFontSize font.t4;
 		Sound sounds.currency;
 		Beam tier.t5.cray; 
 		MM 1 tier.t4.cmap icon;
@@ -318,38 +318,38 @@ Style GemStrategy : T1
 	Func P4 ()
 	{
 		BD gems.low; TX gems.norm;
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 
 	# trash gems
 	Func P5 ()
 	{
 		TX gems.low;
-		SetFontSize 30;
+		SetFontSize font.t7;
 	}
 
 	# Leveling specific gem rules
 	Func Leveling()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 
 	Func VaalGem()
 	{
 		SetBackgroundColor 55 0 0 255;
-		SetFontSize 35;
+		SetFontSize font.t6;
 	}
 
 	Func VaalLvl()
 	{
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetBackgroundColor 55 0 0 255;
 		MinimapIcon 2 White icon;
 	}
 
 	Func FirstLevel()
 	{
-		SetFontSize 45;
+		SetFontSize font.t4;
 	}
 }
 
@@ -396,7 +396,7 @@ Style GeneralMapProgressionStrategy
 
 	Func Z4()
 	{
-		#SetFontSize 40;
+		#SetFontSize font.t5;
 		SetBorderColor NONE;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
 	}
@@ -413,7 +413,7 @@ Style GeneralMapProgressionStrategy
 
 	Func deco_map_zone34()
 	{
-		SetBorderColor 200 200 200 255; SetFontSize 40;
+		SetBorderColor 200 200 200 255; SetFontSize font.t5;
 	}
 }
 
@@ -470,7 +470,7 @@ Style Coins
 
 	Func Medium ()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetTextColor coins.acc;
 		SetBorderColor coins.extra;
 		PlayEffect Orange Temp;
@@ -481,7 +481,7 @@ Style Coins
 		SetTextColor coins.extra;
 		SetBorderColor coins.extra;
 		PlayEffect Orange Temp;
-		SetFontSize 35;
+		SetFontSize font.t6;
 	}
 }
 
@@ -584,7 +584,7 @@ Style t9armour : PatternBlack
 	Func Any()
 	{ 
 		RemoveEffects();
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBackgroundColor sBlack;
 	}
 	
@@ -594,7 +594,7 @@ Style tportal
 {
 	Func Any()
 	{ 
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBorderColor currency.acc.tportal;
 		SetBackgroundColor sBlack;
 	}
@@ -604,7 +604,7 @@ Style twisdom
 {
 	Func Any()
 	{ 
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBorderColor currency.acc.twisdom;
 		SetBackgroundColor sBlack;
 		RemoveEffects();
@@ -712,7 +712,7 @@ Style SplinterStrategy
 	Func T3
 	{
 		Colors(splinters.text, splinters.acc.t3, splinters.extra);
-		SetFontSize 40;
+		SetFontSize font.t5;
 		MinimapIcon 2 Grey icon;
 		PlayEffect Purple Temp;
 	}
@@ -789,6 +789,6 @@ Style t5uni : PatternBlack
 		var cmap = Brown;
 		var cray = Brown;
 		var msize = 2;
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 }

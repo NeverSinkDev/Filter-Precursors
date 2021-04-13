@@ -24,7 +24,7 @@ Style UniversalHideLayer
 		MinimapIcon NONE;
 		PlayEffect NONE;
 		PlayAlertSound NONE;
-		SetFontSize 18;
+		SetFontSize font.min;
 		DisableDropSound True;
 	}
 }
@@ -35,7 +35,7 @@ Style UniversalValueAccents
 {
 	Func restex ()
 	{ 
-		SetFontSize 45; 
+		SetFontSize font.max; 
 		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
@@ -43,20 +43,20 @@ Style UniversalValueAccents
 	Func VF1 ()
 	{
 		PlayAlertSound sounds.t2;
-		SetFontSize 45;
+		SetFontSize font.max;
 		PlayEffect Red; 
 		MinimapIcon 0 Red Star;
 	}
 
 	Func V2 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t2;
 		PlayEffect Yellow; MinimapIcon 1 Yellow *;
 	}
 
 	Func V3 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t3;
 		PlayEffect White; MinimapIcon 2 White *;
 	}
 
@@ -67,7 +67,7 @@ Style UniversalValueAccents
 
 	Func Chancing ()
 	{
-		SetTextColor sWhite; SetFontSize 35; SetBorderColor chancing.acc;
+		SetTextColor sWhite; SetFontSize font.t6; SetBorderColor chancing.acc;
 	}
 
 	Func High()
@@ -117,34 +117,34 @@ Style UniversalValueAccents
 	Func AnimatedWeapon()
 	{
 		SetBorderColor 230 0 0 255;
-		SetFontSize 25;
+		SetFontSize font.min;
 		SetBackgroundColor 0 0 0 100;
 	}
 
 	Func Maximize()
 	{
-		SetFontSize 45;
+		SetFontSize font.t3;
 	}
 
 	Func Shrink()
 	{
-		SetFontSize 35; RemoveEffects();
+		SetFontSize font.t6; RemoveEffects();
 	}
 
 	Func LevelFlaskHigh()
 	{
-		SetFontSize 45; MinimapIcon 1 Yellow Raindrop; PlayAlertSound sounds.currency;
+		SetFontSize font.t3; MinimapIcon 1 Yellow Raindrop; PlayAlertSound sounds.currency;
 	}
 
 	Func LevelFlask()
 	{
-		SetFontSize 45; MinimapIcon 2 Grey Raindrop;
+		SetFontSize font.t4; MinimapIcon 2 Grey Raindrop;
 	}
 
 	Func LifeFlask()
 	{
 		SetBorderColor flasks.life.acc;
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 
 	Func ClearBorder()
@@ -155,38 +155,38 @@ Style UniversalValueAccents
 	Func ManaFlask()
 	{
 		SetBorderColor flasks.mana.acc;
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 
 	Func SF45()
 	{
-		SetFontSize 45;
+		SetFontSize font.t4;
 	}
 
 	Func SF40()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 
 	Func SF35()
 	{
-		SetFontSize 35;
+		SetFontSize font.t6;
 	}
 
 	Func SF30()
 	{
-		SetFontSize 35;
+		SetFontSize font.t7;
 	}
 
 	Func HybridFlask
 	{
 		SetBorderColor flasks.hybrid.acc;
-		SetFontSize 40;
+		SetFontSize font.t5;
 	}
 
 	Func LevelCurrency()
 	{
-		SetFontSize 45; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
+		SetFontSize font.t4; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
 	}	
 
 	Func LVLCaster()
@@ -278,7 +278,7 @@ Style UniversalValueAccents
 		SetBorderColor questlike.tx.acc;
 		SetTextColor questlike.tx.acc;
 		PlayEffect Green;
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetBackgroundColor sBlack;
 		MinimapIcon 1 Green Pentagon;
 		PlayAlertSound sounds.unique;
@@ -296,7 +296,7 @@ Style T1
 {
 	Func T1 () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.max;
 		Colors(tier.t1.acc, tier.t1.acc, tier.t1.base);
 		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
 	}
@@ -306,7 +306,7 @@ Style T2RedPiece
 {
 	Func T2 () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t2;
 		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
 		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
 	}
@@ -316,7 +316,7 @@ Style T2YellowPiece
 {
 	Func T2 () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t2;
 		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
 		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
 	}
@@ -326,7 +326,7 @@ Style T3YellowPiece
 {
 	Func T3 () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t3;
 		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
 		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
 	}
@@ -346,7 +346,7 @@ Style T4WhitePieceNoBG
 {
 	Func T4 () 
 	{ 
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
 		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
 	}
@@ -356,7 +356,7 @@ Style T5
 {
 	Func T5 () 
 	{ 
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetTextColor tier.t5.acc;
 		PlayEffect tier.t5.cray Temp;
 	}
@@ -366,7 +366,7 @@ Style TMulti
 {
 	Func Multi()
 	{
-		SetFontSize 45;
+		SetFontSize font.t3;
 		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
 		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
 	}
@@ -374,7 +374,7 @@ Style TMulti
 
 Style PatternGlow
 {
-	var fsize = 45;
+	var fsize = font.t4;
 	var msize = 1;
 	var acc = tier.error;
 	var bg = tier.error.low;
@@ -391,7 +391,7 @@ Style PatternGlow
 
 Style PatternHighWhite
 {
-	var fsize = 45;
+	var fsize = font.t2;
 	var msize = 0;
 	var acc = tier.error;
 	var bg = sWhite;
@@ -409,7 +409,7 @@ Style PatternHighWhite
 
 Style PatternLowWhite
 {
-	var fsize = 45;
+	var fsize = font.t4;
 	var msize = 0;
 	var acc = tier.error;
 	var bg = sWhite;
@@ -427,7 +427,7 @@ Style PatternLowWhite
 
 Style PatternBlack
 {
-	var fsize = 45;
+	var fsize = font.t4;
 	var msize = 2;
 	var acc = tier.error;
 	var bg = sBlack;
@@ -444,7 +444,7 @@ Style PatternBlack
 
 Style PatternT1
 {
-	var fsize = 45;
+	var fsize = font.max;
 	var msize = 0;
 	var acc = tier.error;
 	var bg = sWhite;
@@ -462,7 +462,7 @@ Style PatternT1
 
 Style PatternInverseBlack
 {
-	var fsize = 45;
+	var fsize = font.t3;
 	var msize = 1;
 	var acc = tier.error;
 	var bg = sBlack;
@@ -490,28 +490,28 @@ Style UniversalExotic
 
 	Func T1 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t2;
 		Colors(exoticgear.tx, exoticgear.tx, exoticgear.extra);
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
 	}
 
 	Func T2 ()
 	{
-		SetFontSize 45;
+		SetFontSize font.t3;
 		Colors(exoticgear.tx, exoticgear.tx, sBlack);
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
 	}
 
 	Func T3 ()
 	{
-		SetFontSize 40;
+		SetFontSize font.t4;
 		SetBorderColor exoticgear.tx;
 		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
 	}
 
 	Func T4 ()
 	{
-		SetFontSize 40;
+		SetFontSize font.t5;
 		SetBorderColor exoticgear.tx.low;
 		PlayEffect exoticgear.cray Temp;
 	}
