@@ -131,7 +131,7 @@ Style RecipeStrategy
 	{ 
 		SetFontSize 45;
 		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
-		PlayAlertSound 2 300; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
+		PlayAlertSound sounds.currency; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
 	}
 
 	Func TS1() 
@@ -167,7 +167,7 @@ Style JewelStrategy
 	{ 
 		SetFontSize 45;
 		SetTextColor jewel.cluster.tx; SetBorderColor jewel.cluster.tx; SetBackgroundColor jewel.cluster.extra;
-		PlayAlertSound 2 300; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap Pentagon; 
+		PlayAlertSound sounds.currency; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap Pentagon; 
 	}
 
 	Func rare () 
@@ -245,7 +245,7 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect Yellow;
 		MinimapIcon 1 Yellow icon;
-		PlayAlertSound 3 300;
+		PlayAlertSound sounds.unique;
 	}
 	Func T1 ()
 	{
@@ -255,7 +255,7 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect White;
 		MinimapIcon 1 White icon;
-		PlayAlertSound 3 300;
+		PlayAlertSound sounds.unique;
 	}
 	Func T2 ()
 	{
@@ -265,7 +265,7 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect Grey;
 		MinimapIcon 1 Grey icon;
-		PlayAlertSound 3 300;
+		PlayAlertSound sounds.unique;
 
 	}
 	Func t3any ()
@@ -276,7 +276,7 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect Grey;
 		MinimapIcon 2 Grey icon;
-		PlayAlertSound 3 300;
+		PlayAlertSound sounds.unique;
 	}
 }
 
