@@ -378,6 +378,7 @@ Style GeneralMapProgressionStrategy
 		#SetFontSize 45;
 		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z1.acc; 
 		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+		SetFontSize font.t2;
 	}
 
 	Func Z2()
@@ -385,35 +386,40 @@ Style GeneralMapProgressionStrategy
 		#SetFontSize 45;
 		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z2.acc; 
 		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+		SetFontSize font.t3;
 	}
 
 	Func Z3()
 	{
 		#SetFontSize 45;
 		SetBorderColor NONE; SetBackgroundColor sBlack; 
+		SetFontSize sWhite;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square; 
+		SetFontSize font.t4;
 	}
 
 	Func Z4()
 	{
 		#SetFontSize font.t5;
-		SetBorderColor NONE;
+		SetBorderColor NONE; SetBackgroundColor sBlack; 
+		SetFontSize sWhite;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
+		SetFontSize font.t4;
 	}
 
 	Func deco_mapup()
 	{
-		SetBorderColor accent.maps.upgrade; SetFontSize 45;
+		SetBorderColor accent.maps.upgrade;
 	}
 
 	Func deco_map_zone12()
 	{
-		SetBorderColor 0 0 0 255; SetFontSize 45;
+		SetBorderColor 0 0 0 255;
 	}
 
 	Func deco_map_zone34()
 	{
-		SetBorderColor 200 200 200 255; SetFontSize font.t5;
+		SetBorderColor 200 200 200 255;
 	}
 }
 

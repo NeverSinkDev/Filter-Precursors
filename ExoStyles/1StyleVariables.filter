@@ -16,17 +16,17 @@ Func RemoveEffects()
 
 Func LVHL1()
 {
-    SetFontSize 45; PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
+    SetFontSize font.t4; PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
 }
 
 Func LVHL2()
 {
-    SetFontSize 40; PlayEffect Grey Temp;
+    SetFontSize font.t5; PlayEffect Grey Temp;
 }
 
 Func LVHL3()
 {
-    SetFontSize 40;
+    SetFontSize font.t5;
 }
 
 
@@ -117,7 +117,7 @@ var jewel.rare.extra    = 120 120 0 225;
 var jewel.cluster.tx    = 150 0 255 255;
 var jewel.cluster.extra = 34 0 67 255;
 
-var recipe.t1.acc   = 180 135 135 255;
+var recipe.t1.acc   = 155 138 138 255;
 var recipe.t2.acc   = 180 135 135 200;
 var recipe.cmap = Grey;
 var recipe.cray = Grey;
@@ -234,7 +234,7 @@ var accent.leveling.archer = 50 150 150 255;
 
 var accent.leveling.bg.melee = 100 43 43 210;
 var accent.leveling.bg.caster = 43 43 100 210;
-var accent.leveling.bg.archer = 43 100 100 210;
+var accent.leveling.bg.archer = 43 100 75 210;
 
 #------------------------------------
 # Variables - Tier Subtypes
@@ -272,8 +272,8 @@ var splinters.acc.t1 = 210 20 210 255;
 var splinters.acc.t2 = 130 15 255 255;
 var splinters.acc.t3 = 115 115 115 255;
 
-var divi.acc.t5 = 0 100 150;
-var divi.acc.t4 = 0 100 150;
+var divi.acc.t5 = 31 152 212 255;
+var divi.acc.t4 = 31 152 212 255;
 var divi.acc.t3 = 40 100 255 255;
 var divi.acc.t2 = 0 20 180 255;
 var divi.acc.t1 = 0 0 255 255;
