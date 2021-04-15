@@ -2168,14 +2168,17 @@ Show # $type->jewels->special $tier->1modcorrupted
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-Show # %H5 $type->jewels->special $tier->1moduncorrupted
+Show # %H4 $type->jewels->special $tier->1moduncorrupted
 	Corrupted False
 	Identified True
 	Rarity <= Rare
 	Class "Jewel"
 	HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"
-	SetBorderColor 0 0 0
+	SetFontSize 45
+	SetBorderColor 0 240 190 255
 	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
 #   [0702] Cluster Jewels
@@ -4702,7 +4705,7 @@ Show # $type->currency->stacked $tier->splinters_t2
 Show # $type->currency->stacked $tier->shards
 	StackSize >= 4
 	Class "Currency"
-	BaseType "Abrasive Catalyst" "Cartographer's Chisel" "Imbued Catalyst" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Turbulent Catalyst"
+	BaseType "Chaos Shard" "Harbinger's Shard" "Horizon Shard"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255

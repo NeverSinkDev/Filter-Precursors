@@ -482,7 +482,7 @@ Section Jewels : Tag("jewels")
 
 		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
 		{
-			Show 1moduncorrupted { %H5; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+			Show 1moduncorrupted { Tag("exotic.t3"); %H4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
 	}
 #------------------------------------
@@ -1194,7 +1194,7 @@ Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency", Tag("curr
 {
 	Show splinters_t1	{ Tag("*eqChaos"); StackSize >= 2; BaseType currency.stacked.splinters1; }
 	Show splinters_t2	{ Tag("*eqAlchemy"); StackSize >= 2; BaseType currency.stacked.splinters2; }
-	Show shards			{ Tag("*eqAlchemy"); StackSize >= 4; BaseType currency.stacked.alch; }
+	Show shards			{ Tag("*eqAlchemy"); StackSize >= 4; BaseType currency.stacked.shards; }
 	Show orbs_chaos		{ Tag("*eqAnnul"); StackSize >= 2; BaseType currency.stacked.chaos; }
 	Show orbs_alchemy	{ Tag("*eqChaos"); StackSize >= 2; BaseType currency.stacked.alch; }
 	Show orbs_alt		{ %H5; Tag("*eqAlchemy"); StackSize >= 3; BaseType currency.stacked.alt; }
