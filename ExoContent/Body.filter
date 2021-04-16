@@ -131,6 +131,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticHeistBases 	{ BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	{ BaseType bases.exotic.ritual.any }
 	Show ExoticTalismanBases { BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
+	Show ExoticBasesMisc { BaseType == "Grasping Mail"; }
 }
 
 #===============================================================================================================
@@ -174,13 +175,13 @@ Section IdModSection : IdMods
 #------------------------------------
 		Section Caster : Class == classes_1hcast
 		{
-			Show 3HighCaster { Mod >= 3 convokingMods + convokingLvl + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_cast_speed[1] + ws_critmulti[1] + wmana[1] + wcast_hspell[1] }
-			Show 4HighCaster { Mod >= 4 convokingMods + convokingLvl + veilPS + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + wcast_hspell[2] }
+			Show 3HighCaster { Mod >= 3 veilP + convokingMods + convokingLvl + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_cast_speed[1] + ws_critmulti[1] + wmana[1] + wcast_hspell[1] }
+			Show 4HighCaster { Mod >= 4 veilPS + convokingMods + convokingLvl + veilPS + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + wcast_hspell[2] }
 			Show FireCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wsdmg_fire[3] + "Lava Conjurer's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2] + ws_burn[2] + wdmg_fire[2] + wdot_fire[2] + w_extrachaos_phys[2] + w_extrachaos_fire[2] + wdot_fire[3] + wcast_hspell[1] }
 			Show ColdCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_cold[3] + wsdmg_cold[3] + "Winter Beckoner's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2] + wdmg_cold[2] + w_extrachaos_phys[2] + w_extrachaos_cold[2] + wdot_cold[3] + wcast_hspell[1] }
 			Show LightCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_light[3] + wsdmg_light[3] + "Tempest Master's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2]  + wdmg_light[2] + w_extrachaos_phys[2] + w_extrachaos_light[2] + wcast_hspell[1] }
 			Show ChaosCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + "Mad Lord's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[2] + wmana[3] + ws_dot[2] + w_extrachaos_phys[2] + wcast_hspell[1] + wdot_chaos[3] }
-			Show 3SpellSlinger { Mod >= 3 w_temple_Caster + w_cheatmods + wcast_spell[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_critmulti[1] + w_extrachaos_phys[1] + wcast_hspell[1] + wcast_fire[2] + wcast_cold[2] + wcast_light[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wdmg_phys[1] + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + wdmg_pphys[3] + wdmg_chaos }
+			Show 3SpellSlinger { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_critmulti[1] + w_extrachaos_phys[1] + wcast_hspell[1] + wcast_fire[2] + wcast_cold[2] + wcast_light[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wdmg_phys[1] + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + wdmg_pphys[3] + wdmg_chaos }
 			Show 4SpellSlinger { Mod >= 4 veilPS + w_temple_Caster + w_cheatmods + wcast_spell[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_critmulti[3] + w_extrachaos_phys[2] + wcast_hspell[1] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wdmg_phys[2] + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg_pphys[3] + wdmg_chaos + ws_attack_speed_smol[1] }
 		}
 #------------------------------------
@@ -188,11 +189,11 @@ Section IdModSection : IdMods
 #------------------------------------
 		Section Boots : Class "Boots"
 		{
-			Show 3LifeBoots { Mod movespeed[2]; Mod >=2 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + wmana[1] }
+			Show 3LifeBoots { Mod movespeed[2] + veilP; Mod >=2 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + wmana[1] }
 			Show 4LifeBoots { Mod movespeed[3]; Mod >=3 veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[3] + str[4] + dex[4] + int [4] + wmana[2] }
-			Show 3ESBoots {  DropLevel >= 55; Mod movespeed[3]; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + str[3] + dex[3] + int [3] }
-			Show 4ESBoots {  DropLevel >= 55; Mod movespeed[3]; Mod >= 3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] }
-			Show HighStatBoots { Mod >= 3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[1] + str[2] + dex[2] + int[2] }
+			Show 3ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + str[3] + dex[3] + int [3] }
+			Show 4ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] }
+			Show HighStatBoots { Mod >= 3 veilPS + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[1] + str[2] + dex[2] + int[2] }
 		}
 #------------------------------------
 #   [1234] Gloves
@@ -532,9 +533,9 @@ Section Jewels : Tag("jewels")
 
 Section SocketsLinks : Tag("recipe"), Rarity <= Rare, Auto("SocketsLinks")
 {
-	Show 5LinksLeveling	{ %D5; Tag("V2");  Tag("exotic.t2"); LinkedSockets >= 5; AreaLevel <= 67; }
+	Show 5LinksLeveling	{ %D4; Tag("V2");  Tag("exotic.t2"); LinkedSockets >= 5; AreaLevel <= 67; }
 	Show 5Link6Sockets	{ %D4; Tag("*t1"); Tag("special"); Sockets >= 6; LinkedSockets >= 5; }
-	Show 5Links			{ %D4; Tag("exotic.t3"); LinkedSockets >= 5; AreaLevel >= 67; }
+	Show 5Links			{ %D3; Tag("exotic.t3"); LinkedSockets >= 5; AreaLevel >= 67; }
 	Show 6Sockets		{ %H4; Tag("*t1"); Sockets >= 6; }
 }
 
@@ -566,8 +567,8 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
 		Show t1 { Tag("craftspecial.I86"); BaseType bases.crafting.general.t1; }
-		Show t2 { %H5; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t2; }
-		Show t3 { %H3; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t3; }
+		Show t2 { %D5; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t2; }
+		Show t3 { %D3; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -576,9 +577,9 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
-		Show t1 { %HS4; Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
-		Show t2 { %H3; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
-		Show t3 { %H2; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t3; }
+		Show t1 { %D5; Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
+		Show t2 { %D3; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
+		Show t3 { %D2; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -587,8 +588,8 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
-		Show t1  { %HS3; Tag("craftspecial.ANY"); BaseType bases.crafting.general.t1; }
-		Show t2  { %H1; Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t2; }
+		Show t1  { %D3; Tag("craftspecial.ANY"); BaseType bases.crafting.general.t1; }
+		Show t2  { %D1; Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t2; }
 		ShowD t3 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t3; }
 	}
 
@@ -617,7 +618,7 @@ Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 67, Auto("En
 {
 	Show RGBSmall1	{ %H2; Tag("*t2"); Tag("SF40"); Width <=2; Height <=2; }
 	Show RGBSmall2	{ %H2; Tag("*t2"); Tag("SF40"); Width <=1; Height <=4; }
-	ShowD RGBLarge	{ Tag("*t3"); Tag("SF35"); Width >=2; Height >=4; }
+	Show RGBLarge	{ %H0; Tag("*t3"); Tag("SF35"); Width >=2; Height >=4; }
 	Show RGBMedium	{ %H1; Tag("*t3"); Tag("SF35"); Width >=2; Height = 3; }
 }
 #------------------------------------
@@ -1082,24 +1083,24 @@ Section Maps : Class "Maps", Tag("Maps")
 		Cont deco_mapup_t14 { MapTier >= 14; AreaLevel < 81; }
 		Show maps_a_t14 { Tag("*z1"); MapTier = 14; }
 
-		Cont deco_mapup_t13 { %D5; MapTier >= 13; AreaLevel < 80; }
+		Cont deco_mapup_t13 { %D4; MapTier >= 13; AreaLevel < 80; }
 		Show maps_b_t13 { %H5; Tag("*z2"); MapTier = 13; }
-		Cont deco_mapup_t12 { %D5; MapTier >= 12; AreaLevel < 79; }
+		Cont deco_mapup_t12 { %D4; MapTier >= 12; AreaLevel < 79; }
 		Show maps_b_t12 { %H5; Tag("*z2"); MapTier = 12; }
-		Cont deco_mapup_t11 { %D5; MapTier >= 11; AreaLevel < 78; }
+		Cont deco_mapup_t11 { %D4; MapTier >= 11; AreaLevel < 78; }
 		Show maps_b_t11 { %H5; Tag("*z2"); MapTier = 11; }
 
 #!! Override 550 : "T16-T10 maps"
 
-		Cont deco_mapup_t10 { %D4; MapTier >= 10; AreaLevel < 77; }
+		Cont deco_mapup_t10 { %D3; MapTier >= 10; AreaLevel < 77; }
 		Show maps_c_t10 { %H4; Tag("*z3"); MapTier = 10; }
-		Cont deco_mapup_t9  { %D4; MapTier >= 9; AreaLevel < 76; }
+		Cont deco_mapup_t9  { %D3; MapTier >= 9; AreaLevel < 76; }
 		Show maps_c_t9  { %H4; Tag("*z3"); MapTier = 9; }
-		Cont deco_mapup_t8  { %D4; MapTier >= 8; AreaLevel < 75; }
+		Cont deco_mapup_t8  { %D3; MapTier >= 8; AreaLevel < 75; }
 		Show maps_c_t8  { %H4; Tag("*z3"); MapTier = 8; }
-		Cont deco_mapup_t7  { %D4; MapTier >= 7; AreaLevel < 74; }
+		Cont deco_mapup_t7  { %D3; MapTier >= 7; AreaLevel < 74; }
 		Show maps_c_t7  { %H4; Tag("*z3"); MapTier = 7; }
-		Cont deco_mapup_t6  { %D4; MapTier >= 6; AreaLevel < 73; }
+		Cont deco_mapup_t6  { %D3; MapTier >= 6; AreaLevel < 73; }
 		Show maps_c_t6  { %H4; Tag("*z3"); MapTier = 6; }
 
 #!! Override 560 : "T1-T5 maps"
@@ -1194,7 +1195,7 @@ Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency", Tag("curr
 {
 	Show splinters_t1	{ Tag("*eqChaos"); StackSize >= 2; BaseType currency.stacked.splinters1; }
 	Show splinters_t2	{ Tag("*eqAlchemy"); StackSize >= 2; BaseType currency.stacked.splinters2; }
-	Show shards			{ Tag("*eqAlchemy"); StackSize >= 4; BaseType currency.stacked.shards; }
+	Show shards			{ %H4; Tag("*eqAlchemy"); StackSize >= 4; BaseType currency.stacked.shards; }
 	Show orbs_chaos		{ Tag("*eqAnnul"); StackSize >= 2; BaseType currency.stacked.chaos; }
 	Show orbs_alchemy	{ Tag("*eqChaos"); StackSize >= 2; BaseType currency.stacked.alch; }
 	Show orbs_alt		{ %H5; Tag("*eqAlchemy"); StackSize >= 3; BaseType currency.stacked.alt; }
@@ -1524,7 +1525,9 @@ Section Unique : Rarity Unique, Auto("uniques"), Tag("unique")
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
 {
-	Show RelicKeys { Tag(G1); Tag("Currency.t1exalted"); BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key"; }
+	Show RelicKeys { Tag(G1); Tag("Currency.t1exalted"); BaseType miscmap.keys; }
+	Show InscribedUltimatum { Tag(G2); Tag("fragments.t2"); BaseType "Inscribed Ultimatum"; }
+	Show AlvaTemple { Tag(G2); Tag("fragments.t2"); BaseType "Chronicle of Atzoatl"; }
 	Show Any { Tag("restex"); Empty(); }
 }
 
