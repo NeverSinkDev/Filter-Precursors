@@ -949,17 +949,7 @@ Section Gems : Class "Gems", Tag("Gems")
 		Show exSpecialEQ { Tag(G2); Tag("*P1"); BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
 		Show exSpecial { Tag("*P2"); BaseType gems.untiered.specialGems; }
 	}
-#------------------------------------
-# [3902] Gems during leveling
-#------------------------------------
-#!! Override 430 : "leveling specific gem rules"
 
-	Section Gems-Leveling : Auto("gems-leveling")
-	{
-		Show  FirstZone    { Tag("*FirstLevel"); AreaLevel 1; }
-		Show  LevelingVaal { %H4; Tag("*VaalLvl"); AreaLevel < 65; BaseType "Vaal"; Quality <= 5; GemLevel <= 5; }
-		Show  Leveling     { %H2; Tag("*Leveling"); AreaLevel < 65; Quality = 0; GemLevel <= 5; }
-	}
 #------------------------------------
 # [3902] High Quality and Leveled Gems
 #------------------------------------
@@ -978,8 +968,13 @@ Section Gems : Class "Gems", Tag("Gems")
 		Show QT3 { %D3; Tag("*P3"); Quality >= 14 }
 		Show LT3 { %D3; Tag("*P3"); GemLevel >= 18 }
 
+		Show QT4Lvl { %D4; Tag("*P3"); Quality >= 1; AreaLevel <= 67 }	
 		Show QT4 { %D2; Tag("*P4"); Quality >= 1; }	
 		Show LT4 { %D2; Tag("*P4"); GemLevel >= 2; }
+
+		Show  FirstZone    { Tag("*FirstLevel"); AreaLevel 1; }
+		Show  LevelingVaal { %H4; Tag("*VaalLvl"); AreaLevel <= 67; BaseType "Vaal"; }
+		Show  Leveling     { %H2; Tag("*Leveling"); AreaLevel <= 67; }
 
 		Show CorruptedVaalAny { %D3; Tag("*VaalGem"); BaseType "Vaal"; }
 
