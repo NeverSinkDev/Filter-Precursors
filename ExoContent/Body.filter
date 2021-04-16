@@ -192,7 +192,7 @@ Section IdModSection : IdMods
 			Show 3LifeBoots { Mod movespeed[2] + veilP; Mod >=2 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + wmana[1] }
 			Show 4LifeBoots { Mod movespeed[3]; Mod >=3 veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[3] + str[4] + dex[4] + int [4] + wmana[2] }
 			Show 3ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + str[3] + dex[3] + int [3] }
-			Show 4ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] }
+			Show 4ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] }
 			Show HighStatBoots { Mod >= 3 veilPS + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[1] + str[2] + dex[2] + int[2] }
 		}
 #------------------------------------
@@ -1523,11 +1523,15 @@ Section Unique : Rarity Unique, Auto("uniques"), Tag("unique")
 #===============================================================================================================
 #!! Override 780 : "Quest Items and Relic Keys"
 
-Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
+Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { Tag(G1); Tag("Currency.t1exalted"); BaseType miscmap.keys; }
 	Show InscribedUltimatum { Tag(G2); Tag("fragments.t2"); BaseType "Inscribed Ultimatum"; }
 	Show AlvaTemple { Tag(G2); Tag("fragments.t2"); BaseType "Chronicle of Atzoatl"; }
+}
+
+Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
+{
 	Show Any { Tag("restex"); Empty(); }
 }
 

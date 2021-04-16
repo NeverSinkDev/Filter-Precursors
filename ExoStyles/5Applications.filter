@@ -126,11 +126,11 @@ Style LibraryTagBased
 	Apply(divi, $divi.t5 => t5divi.Any);
 	Apply(divi, $divi.tnew => tnewdivi.Any);
 
-	Apply(tier.fragments, fragments.t1* => FragmentTierStrat.t1);
-	Apply(tier.fragments, CurrencyProphecy.t2* => FragmentTierStrat.t2);
-	Apply(tier.fragments, CurrencyProphecy.t3* => FragmentTierStrat.t3);
-	Apply(tier.fragments, CurrencyProphecy.t4* => FragmentTierStrat.t4);
-	Apply(tier.fragments, CurrencyProphecy.t5* => FragmentTierStrat.t5);
+	Apply(tier.fragments, $fragments.t1 => FragmentTierStrat.t1);
+	Apply(tier.fragments, $fragments.t2 => FragmentTierStrat.t2);
+	Apply(tier.fragments, $fragments.t3 => FragmentTierStrat.t3);
+	Apply(tier.fragments, $fragments.t4 => FragmentTierStrat.t4);
+	Apply(tier.fragments, $fragments.t5 => FragmentTierStrat.t5);
 
 	Apply(currency.def, $currency.eqChaos => t4chaos.Any);
 	Apply(currency.def, $currency.eqAlchemy => t5alchemy.Any);

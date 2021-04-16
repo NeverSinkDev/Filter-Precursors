@@ -1,11 +1,11 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.0.0c.2021.106.1
+# VERSION:  8.0.0c.2021.106.15
 # TYPE:     0-SOFT
 # STYLE:    NORMAL
 # AUTHOR:   NeverSink
-# BUILDNOTES: Filter generated with NeverSink's FilterpolishZ
+# BUILDNOTES: Filter generated with NeverSink's FilterpolishZ and the domainlanguage Exo.
 #
 #------------------------------------
 # LINKS TO LATEST VERSION AND FILTER EDITOR
@@ -36,154 +36,154 @@
 # PLEASE READ THE FAQ ON https://goo.gl/oQn4EN BEFORE ASKING QUESTIONS
 #
 # TWITTER: @NeverSinkGaming
-# REDDIT:  NeverSinkDev
+# TWITCH:  https://www.twitch.tv/neversink
+# DISCORD: https://discord.gg/mye6xhF
 # GITHUB:  NeverSinkDev
-# EMAIL :  NeverSinkGaming-at-gmail.com
 
 #===============================================================================================================
 # [WELCOME] TABLE OF CONTENTS + QUICKJUMP TABLE
 #===============================================================================================================
 # [[0100]] OVERRIDE AREA 1 - Override ALL rules here
-# [[0100]] High tier influenced items
-#   [0101] Influenced Maps
-#   [0102] Crusader
-#   [0103] Warlord
-#   [0104] Redeemer
-#   [0105] Hunter
-#   [0106] Shaper
-#   [0107] Elder
-#   [0108] Remaining
-# [[0200]] Exotic Bases
-# [[0300]] IDENTIFIED MOD FILTERING
-#   [0301] Physical
-#   [0302] Elemental
-#   [0303] Gembased
-#   [0304] Caster and Spellslinger
-#   [0305] Boots
-#   [0306] Gloves
-#   [0307] Helmets
-#   [0308] Amulets
-#   [0309] Rings
-#   [0310] Quivers
-#   [0311] Belts
-#   [0312] Shields
-#   [0313] Jewels
-#   [0314] Misc
-# [[0400]] Exotic Mods Filtering
-#   [0401] Veiled/Betrayal
-#   [0402] Incursion/Temple Mods
-#   [0403] Bestiary
-#   [0404] Other
-# [[0500]] Exotic Item Classes
-#   [0501] Trinkets
-#   [0502] Magic Watchstones
-#   [0503] Secret Society Equipment
-#   [0504] Craftable Invitations
-# [[0600]] Exotic Item Variations
-#   [0601] Double Corruptions
-#   [0602] Abyss Jeweled Rares
-#   [0603] Synthesised
-#   [0604] Fractured
-#   [0605] Enchanted
-# [[0700]] Jewels
-#   [0701] Special Cases
-#   [0702] Cluster Jewels
-#   [0703] Abyss Jewels
-#   [0704] Generic Jewels
-# [[0800]] Recipes and 5links
-# [[0900]] High Level Crafting Bases
-#   [0901] ILVL 84
-#   [0902] ILVL ANY
-#   [0903] RGB Endgame
-#   [0904] Chisel Recipes
-# [[1000]] Chancing Bases
-# [[1100]] Endgame Flasks
-#   [1101] High quality assorted flasks
-#   [1102] Utility OR quality flasks
-#   [1103] Early mapping life/mana/utility flasks
-# [[1200]] Misc Rules
-# [[1300]] Hide Layer 1 - Normal and Magic Endgame Gear
-# [[1400]] Rare Item Decorators
-# [[1500]] Endgame - Rare - Exotic Corrupted Items
-# [[1600]] Endgame - Rare - Accessoires
+# [[0100]] Global overriding rules
+# [[0200]] High tier influenced items
+#   [0201] Influenced Maps
+#   [0202] Crusader
+#   [0203] Warlord
+#   [0204] Redeemer
+#   [0205] Hunter
+#   [0206] Shaper
+#   [0207] Elder
+#   [0208] Remaining
+# [[0300]] Exotic Bases
+# [[0400]] IDENTIFIED MOD FILTERING
+#   [0401] Physical
+#   [0402] Elemental
+#   [0403] Gembased
+#   [0404] Caster and Spellslinger
+#   [0405] Boots
+#   [0406] Gloves
+#   [0407] Helmets
+#   [0408] Amulets
+#   [0409] Rings
+#   [0410] Quivers
+#   [0411] Belts
+#   [0412] Shields
+#   [0413] Jewels
+#   [0414] Misc
+# [[0500]] Exotic Mods Filtering
+#   [0501] Veiled/Betrayal
+#   [0502] Incursion/Temple Mods
+#   [0503] Bestiary
+#   [0504] Other
+# [[0600]] Exotic Item Classes
+#   [0601] Trinkets
+#   [0602] Magic Watchstones
+#   [0603] Secret Society Equipment
+#   [0604] Craftable Invitations
+# [[0700]] Exotic Item Variations
+#   [0701] Double Corruptions
+#   [0702] Abyss Jeweled Rares
+#   [0703] Synthesised
+#   [0704] Fractured
+#   [0705] Enchanted
+# [[0800]] Jewels
+#   [0801] Special Cases
+#   [0802] Cluster Jewels
+#   [0803] Abyss Jewels
+#   [0804] Generic Jewels
+# [[0900]] Recipes and 5links
+# [[1000]] High Level Crafting Bases
+#   [1001] ILVL 84
+#   [1002] ILVL ANY
+#   [1003] RGB Endgame
+#   [1004] Chisel Recipes
+# [[1100]] Chancing Bases
+# [[1200]] Endgame Flasks
+#   [1201] High quality assorted flasks
+#   [1202] Utility OR quality flasks
+#   [1203] Early mapping life/mana/utility flasks
+# [[1300]] Misc Rules
+# [[1400]] Hide Layer 1 - Normal and Magic Endgame Gear
+# [[1500]] Rare Item Decorators
+# [[1600]] Endgame - Rare - Exotic Corrupted Items
 # [[1700]] Endgame - Rare - Accessoires
-# [[1800]] Endgame - Rare - Gear - T1 - handpicked
-# [[1900]] Endgame - Rare - Gear - T2 - handpicked
-# [[2000]] Endgame - Rare - Gear - T3 - droplevel-based
-# [[2100]] Endgame - Rare - Gear - T4 - rest
-# [[2200]] Hide Layer 2 - Rare Gear
-# [[2300]] Heist Gear
-#   [2301] Heist Cloak
-#   [2302] Heist Brooch
-#   [2303] Heist Gear
-#   [2304] Heist Tool
-# [[2400]] Gem Tierlists
-#   [2401] Exceptional Gems - Awakened and AltQuality
-#   [2402] Exceptional Gems - Special gems
-#   [2403] Gems during leveling
-#   [2404] High Quality and Leveled Gems
-# [[2500]] REPLICA UNIQUES
-# [[2600]] Special Maps
-#   [2601] Unique Maps
-#   [2602] Blighted maps
-#   [2603] Delirium/Blight/Enchanted Maps!
-#   [2604] Beyond-Nemesis Maps, for those juicy sextants.
-# [[2700]] Normal Map Progression
-#   [2701] Map progression
-#   [2702] Labyrinth items, Offerings
-# [[2800]] Heist Contracts and Blueprints
-# [[2900]] Fragments
-#   [2901] Scarabs
-#   [2902] Regular Fragment Tiering
-# [[3000]] Currency - Exceptions - Stacked Currency
-#   [3001] Perandus Coins
-#   [3002] Heist Coins
-# [[3100]] Currency - Exceptions - Leveling Currencies
-# [[3200]] Currency - Regular Currency Tiering
-# [[3300]] Currency - SPECIAL
-#   [3301] Delirum Orbs
-#   [3302] Delve - Resonators
-#   [3303] Delve - Fossils
-#   [3304] Blight - Oils
-#   [3305] Essences
-#   [3306] Incubators
-#   [3307] Others
-# [[3400]] Currency - Prophecies
-# [[3500]] Currency - Splinters
-#   [3501] Simulacrum Splinters
-# [[3600]] Divination Cards
-# [[3700]] Remaining Currency
-# [[3800]] Questlike-Items1 (override uniques)
-# [[3900]] Uniques
-#   [3901] Exceptions #1
-#   [3902] Tier 1 uniques
-#   [3903] Exceptions #2
-#   [3904] Tier 2 uniques
-#   [3905] Multi-Unique bases.
-#   [3906] Tier 3 uniques 
-#   [3907] Tier 4 uniques
-# [[4000]] Misc Map Items
-# [[4100]] Questlike-Items2
-# [[4200]] Hide outdated leveling flasks
-# [[4300]] Leveling - Flasks
-#   [4301] Hybrid flasks
-#   [4302] Life flasks
-#   [4303] Mana flasks
-# [[4400]] Leveling - Rules
-#   [4401] Rares - Decorators
-#   [4402] Rares - Universal
-#   [4403] Rares - Caster
-#   [4404] Rares - Archer
-#   [4405] Rares - Melee
-# [[4500]] Leveling - Useful magic and normal items
-#   [4501] Normals
-#   [4502] Weapon Progression
-#   [4503] Remaining Magics
-#   [4504] Show All unknown Section
+# [[1800]] Endgame - Rare - Accessoires
+# [[1900]] Endgame - Rare - Gear - T1 - handpicked
+# [[2000]] Endgame - Rare - Gear - T2 - handpicked
+# [[2100]] Endgame - Rare - Gear - T3 - droplevel-based
+# [[2200]] Endgame - Rare - Gear - T4 - rest
+# [[2300]] Hide Layer 2 - Rare Gear
+# [[2400]] Heist Gear
+#   [2401] Heist Cloak
+#   [2402] Heist Brooch
+#   [2403] Heist Gear
+#   [2404] Heist Tool
+# [[2500]] Gem Tierlists
+#   [2501] Exceptional Gems - Awakened and AltQuality
+#   [2502] Exceptional Gems - Special gems
+#   [2503] Gems during leveling
+#   [2504] High Quality and Leveled Gems
+# [[2600]] REPLICA UNIQUES
+# [[2700]] Special Maps
+#   [2701] Unique Maps
+#   [2702] Blighted maps
+#   [2703] Delirium/Blight/Enchanted Maps!
+#   [2704] Beyond-Nemesis Maps, for those juicy sextants.
+# [[2800]] Normal Map Progression
+#   [2801] Map progression
+#   [2802] Labyrinth items, Offerings
+# [[2900]] Heist Contracts and Blueprints
+# [[3000]] Fragments
+#   [3001] Scarabs
+#   [3002] Regular Fragment Tiering
+# [[3100]] Currency - Exceptions - Stacked Currency
+#   [3101] Perandus Coins
+#   [3102] Heist Coins
+# [[3200]] Currency - Exceptions - Leveling Currencies
+# [[3300]] Currency - Regular Currency Tiering
+# [[3400]] Currency - SPECIAL
+#   [3401] Delirum Orbs
+#   [3402] Delve - Resonators
+#   [3403] Delve - Fossils
+#   [3404] Blight - Oils
+#   [3405] Essences
+#   [3406] Incubators
+#   [3407] Others
+# [[3500]] Currency - Prophecies
+# [[3600]] Currency - Splinters
+#   [3601] Simulacrum Splinters
+# [[3700]] Divination Cards
+# [[3800]] Remaining Currency
+# [[3900]] Questlike-Items1 (override uniques)
+# [[4000]] Uniques
+#   [4001] Exceptions #1
+#   [4002] Tier 1 uniques
+#   [4003] Exceptions #2
+#   [4004] Tier 2 uniques
+#   [4005] Multi-Unique bases.
+#   [4006] Tier 3 uniques 
+#   [4007] Tier 4 uniques
+# [[4100]] Misc Map Items
+# [[4200]] Questlike-Items2
+# [[4300]] Hide outdated leveling flasks
+# [[4400]] Leveling - Flasks
+#   [4401] Hybrid flasks
+#   [4402] Life flasks
+#   [4403] Mana flasks
+# [[4500]] Leveling - Rules
+#   [4501] Rares - Decorators
+#   [4502] Rares - Universal
+#   [4503] Rares - Caster
+#   [4504] Rares - Archer
+#   [4505] Rares - Melee
+# [[4600]] Leveling - Useful magic and normal items
+#   [4601] Normals
+#   [4602] Weapon Progression
+#   [4603] Remaining Magics
+#   [4604] Show All unknown Section
 
-# var bases_invitations = "Maven's Invitation" "Maven's Invitation: Glennach Cairns" "Maven's Invitation: Haewark Hamlet" "Maven's Invitation: Lex Ejoris" "Maven's Invitation: Lex Proxima" "Maven's Invitation: Lira Arthain" "Maven's Invitation: New Vastir" "Maven's Invitation: The Feared" "Maven's Invitation: The Forgotten" "Maven's Invitation: The Formed" "Maven's Invitation: The Hidden" "Maven's Invitation: The Twisted" "Maven's Invitation: Tirn's End" "Maven's Invitation: Valdo's Rest"
 #===============================================================================================================
-# [[0200]] Global overriding rules
+# [[0100]] Global overriding rules
 #===============================================================================================================
 # !! Chapter "High Priority Rules"
 # !! Override 010 : "ALL Rules"
@@ -213,12 +213,12 @@ Show # $type->6l $tier->wep
 	MinimapIcon 0 Red Diamond
 
 #===============================================================================================================
-# [[0100]] High tier influenced items
+# [[0200]] High tier influenced items
 #===============================================================================================================
 # !! Override 020 : "influenced rules"
 
 #------------------------------------
-#   [0101] Influenced Maps
+#   [0201] Influenced Maps
 #------------------------------------
 
 Show # $type->maps->influenced $tier->infshaper
@@ -246,7 +246,7 @@ Show # $type->maps->influenced $tier->infelder
 	MinimapIcon 0 Red Square
 
 #------------------------------------
-#   [0102] Crusader
+#   [0202] Crusader
 #------------------------------------
 
 Show # $type->rare->crusader $tier->t11
@@ -315,7 +315,7 @@ Show # %D5 $type->rare->crusader $tier->t22
 	MinimapIcon 1 Yellow Cross
 
 #------------------------------------
-#   [0103] Warlord
+#   [0203] Warlord
 #------------------------------------
 
 Show # $type->rare->warlord $tier->t11
@@ -384,7 +384,7 @@ Show # %D5 $type->rare->warlord $tier->t22
 	MinimapIcon 1 Yellow Cross
 
 #------------------------------------
-#   [0104] Redeemer
+#   [0204] Redeemer
 #------------------------------------
 
 Show # $type->rare->redeemer $tier->t11
@@ -453,7 +453,7 @@ Show # %D5 $type->rare->redeemer $tier->t22
 	MinimapIcon 1 Yellow Cross
 
 #------------------------------------
-#   [0105] Hunter
+#   [0205] Hunter
 #------------------------------------
 
 Show # $type->rare->hunter $tier->t11
@@ -522,7 +522,7 @@ Show # %D5 $type->rare->hunter $tier->t22
 	MinimapIcon 1 Yellow Cross
 
 #------------------------------------
-#   [0106] Shaper
+#   [0206] Shaper
 #------------------------------------
 
 Show # $type->rare->shaper $tier->t11
@@ -591,7 +591,7 @@ Show # %D5 $type->rare->shaper $tier->t22
 	MinimapIcon 1 Yellow Cross
 
 #------------------------------------
-#   [0107] Elder
+#   [0207] Elder
 #------------------------------------
 
 Show # $type->rare->elder $tier->t11
@@ -660,7 +660,7 @@ Show # %D5 $type->rare->elder $tier->t22
 	MinimapIcon 1 Yellow Cross
 
 #------------------------------------
-#   [0108] Remaining
+#   [0208] Remaining
 #------------------------------------
 
 Show # %D4 $type->rare->any $tier->anytrinket
@@ -693,7 +693,7 @@ Show # %D3 $type->rare->any $tier->any
 	PlayEffect Blue Temp
 
 #===============================================================================================================
-# [[0200]] Exotic Bases
+# [[0300]] Exotic Bases
 #===============================================================================================================
 # !! Override 030 : "heist and ritual bases"
 # These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
@@ -732,13 +732,24 @@ Show # $type->exoticbases $tier->exotictalismanbases
 	PlayEffect Blue
 	MinimapIcon 0 Blue Diamond
 
+Show # $type->exoticbases $tier->exoticbasesmisc
+	Rarity <= Rare
+	BaseType == "Grasping Mail"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
+
 #===============================================================================================================
-# [[0300]] IDENTIFIED MOD FILTERING
+# [[0400]] IDENTIFIED MOD FILTERING
 #===============================================================================================================
 # !! Override 040 : "identified mod filtering"
 
 #------------------------------------
-#   [0301] Physical
+#   [0401] Physical
 #------------------------------------
 
 Show # $type->rareid $tier->veiledphys
@@ -798,7 +809,7 @@ Show # $type->rareid $tier->4highphys
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0302] Elemental
+#   [0402] Elemental
 #------------------------------------
 
 Show # $type->rareid $tier->3highele
@@ -828,7 +839,7 @@ Show # $type->rareid $tier->4highele
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0303] Gembased
+#   [0403] Gembased
 #------------------------------------
 
 Show # $type->rareid $tier->gemmodsbow
@@ -871,14 +882,14 @@ Show # $type->rareid $tier->gemmodsstaves
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0304] Caster and Spellslinger
+#   [0404] Caster and Spellslinger
 #------------------------------------
 
 Show # $type->rareid $tier->3highcaster
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
-	HasExplicitMod >=3 "Empress's" "Queen's" "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Finesse" "of Destruction" "Zaffre" "Lich's"
+	HasExplicitMod >=3 "Veiled" "Empress's" "Queen's" "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Finesse" "of Destruction" "Zaffre" "Lich's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -891,7 +902,7 @@ Show # $type->rareid $tier->4highcaster
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
-	HasExplicitMod >=4 "Empress's" "Queen's" "Martinet's" "Veiled" "of the Veil" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Shocking" "Entombing" "Polar" "Glaciated" "Cremating" "Blasting" "Incinerating" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "Zaffre" "Blue" "Mazarine" "Lich's" "Archmage's"
+	HasExplicitMod >=4 "Veiled" "of the Veil" "Empress's" "Queen's" "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Electrocuting" "Discharging" "Shocking" "Entombing" "Polar" "Glaciated" "Cremating" "Blasting" "Incinerating" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Nirvana" "Zaffre" "Blue" "Mazarine" "Lich's" "Archmage's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -956,7 +967,7 @@ Show # $type->rareid $tier->3spellslinger
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
-	HasExplicitMod >=3 "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Destruction" "Baleful" "Lich's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "Flaring" "Carbonising" "Crystalising" "Vapourising" "Merciless" "Tyrannical" "Cruel" "Malicious"
+	HasExplicitMod >=3 "Veiled" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Runic" "Glyphic" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's" "Magister's" "of Unmaking" "of Ruin" "of Destruction" "Baleful" "Lich's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "Flaring" "Carbonising" "Crystalising" "Vapourising" "Merciless" "Tyrannical" "Cruel" "Malicious"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -979,14 +990,14 @@ Show # $type->rareid $tier->4spellslinger
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0305] Boots
+#   [0405] Boots
 #------------------------------------
 
 Show # $type->rareid $tier->3lifeboots
 	Identified True
 	Rarity Rare
 	Class "Boots"
-	HasExplicitMod "Hellion's" "Cheetah's"
+	HasExplicitMod "Hellion's" "Cheetah's" "Veiled"
 	HasExplicitMod >=2 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "Virile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "Zaffre"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1015,7 +1026,7 @@ Show # $type->rareid $tier->3esboots
 	DropLevel >= 55
 	Rarity Rare
 	Class "Boots"
-	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's"
+	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's" "Veiled"
 	HasExplicitMod >=2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1030,7 +1041,7 @@ Show # $type->rareid $tier->4esboots
 	DropLevel >= 55
 	Rarity Rare
 	Class "Boots"
-	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's"
+	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's" "Veiled"
 	HasExplicitMod >=3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" "Veiled" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1044,7 +1055,7 @@ Show # $type->rareid $tier->highstatboots
 	Identified True
 	Rarity Rare
 	Class "Boots"
-	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius"
+	HasExplicitMod >=3 "Veiled" "of the Veil" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1054,7 +1065,7 @@ Show # $type->rareid $tier->highstatboots
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0306] Gloves
+#   [0406] Gloves
 #------------------------------------
 
 Show # $type->rareid $tier->3lifegloves
@@ -1112,7 +1123,7 @@ Show # $type->rareid $tier->4esgloves
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0307] Helmets
+#   [0407] Helmets
 #------------------------------------
 
 Show # $type->rareid $tier->3lifehelmet
@@ -1171,7 +1182,7 @@ Show # $type->rareid $tier->4eshelm
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0308] Amulets
+#   [0408] Amulets
 #------------------------------------
 
 Show # $type->rareid $tier->3modattackamu
@@ -1249,7 +1260,7 @@ Show # $type->rareid $tier->4highstatamu
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0309] Rings
+#   [0409] Rings
 #------------------------------------ 	
 
 Show # $type->rareid $tier->2modringattack
@@ -1309,7 +1320,7 @@ Show # $type->rareid $tier->3modringcaster
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0310] Quivers
+#   [0410] Quivers
 #------------------------------------
 
 Show # $type->rareid $tier->4modquiver
@@ -1341,7 +1352,7 @@ Show # $type->rareid $tier->5modquiver
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0311] Belts
+#   [0411] Belts
 #------------------------------------
 
 Show # $type->rareid $tier->4modbelt
@@ -1375,7 +1386,7 @@ Show # $type->rareid $tier->5modbelt
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0312] Shields
+#   [0412] Shields
 #------------------------------------ 		
 
 Show # $type->rareid $tier->2lifecastershield
@@ -1489,7 +1500,7 @@ Show # $type->rareid $tier->highstatshield
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0313] Jewels
+#   [0413] Jewels
 #------------------------------------
 
 Show # $type->rareid $tier->potentiallyvaluablejewel
@@ -1506,7 +1517,7 @@ Show # $type->rareid $tier->potentiallyvaluablejewel
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0314] Misc
+#   [0414] Misc
 #------------------------------------
 
 Show # $type->rareid $tier->highresstat
@@ -1621,11 +1632,11 @@ Show # $type->magicid $tier->utility
 	MinimapIcon 1 Purple Diamond
 
 #===============================================================================================================
-# [[0400]] Exotic Mods Filtering
+# [[0500]] Exotic Mods Filtering
 #===============================================================================================================
 
 #------------------------------------
-#   [0401] Veiled/Betrayal
+#   [0501] Veiled/Betrayal
 #------------------------------------
 # !! Override 050 : "veil, incursion, delve etc. mod items"
 
@@ -1697,7 +1708,7 @@ Show # %D4 $type->exoticmods $tier->veilrest
 	PlayEffect Blue Temp
 
 #------------------------------------
-#   [0402] Incursion/Temple Mods
+#   [0502] Incursion/Temple Mods
 #------------------------------------
 
 Show # $type->exoticmods $tier->incursionspeedtraps
@@ -1825,7 +1836,7 @@ Show # %D3 $type->exoticmods $tier->incursionrandom
 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
-#   [0403] Bestiary
+#   [0503] Bestiary
 #------------------------------------
 
 Show # $type->exoticmods $tier->bestiaryvaluable
@@ -1851,7 +1862,7 @@ Show # %D4 $type->exoticmods $tier->bestiaryother
 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
-#   [0404] Other
+#   [0504] Other
 #------------------------------------
 
 Show # $type->exoticmods $tier->delve
@@ -1897,12 +1908,12 @@ Show # %D2 $type->exoticmods $tier->crafting
 	PlayEffect Blue Temp
 
 #===============================================================================================================
-# [[0500]] Exotic Item Classes
+# [[0600]] Exotic Item Classes
 #===============================================================================================================
 # !! Override 060 : "exotic gear: trinkets, watchstones etc., invitations"
 
 #------------------------------------
-#   [0501] Trinkets
+#   [0601] Trinkets
 #------------------------------------
 
 Show # $type->artefact->trinkets $tier->anytrinket
@@ -1916,7 +1927,7 @@ Show # $type->artefact->trinkets $tier->anytrinket
 	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
-#   [0502] Magic Watchstones
+#   [0602] Magic Watchstones
 #------------------------------------
 
 Show # $type->artefact->watchstones $tier->craftablewatchstone
@@ -1931,7 +1942,7 @@ Show # $type->artefact->watchstones $tier->craftablewatchstone
 	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
-#   [0503] Secret Society Equipment
+#   [0603] Secret Society Equipment
 #------------------------------------
 
 Show # $type->artefact->redacted $tier->scp3889
@@ -1945,7 +1956,7 @@ Show # $type->artefact->redacted $tier->scp3889
 	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
-#   [0504] Craftable Invitations
+#   [0604] Craftable Invitations
 #------------------------------------
 
 Show # $type->exotic->invitation $tier->t1
@@ -1982,12 +1993,12 @@ Show # $type->exotic->invitation $tier->t3
 	MinimapIcon 1 Yellow Pentagon
 
 #===============================================================================================================
-# [[0600]] Exotic Item Variations
+# [[0700]] Exotic Item Variations
 #===============================================================================================================
 # !! Override 070 : "exotic gear: synthesised, fractured, enchanted gear"
 
 #------------------------------------
-#   [0601] Double Corruptions
+#   [0701] Double Corruptions
 #------------------------------------
 
 Show # $type->exotic->corruptions $tier->doublecorruptedjwlry
@@ -2016,7 +2027,7 @@ Show # %D5 $type->exotic->corruptions $tier->doublecorruptedany
 	MinimapIcon 1 Blue Diamond
 
 #------------------------------------
-#   [0602] Abyss Jeweled Rares
+#   [0702] Abyss Jeweled Rares
 #------------------------------------
 
 Show # $type->exotic->sockets $tier->anynonbelt
@@ -2032,7 +2043,7 @@ Show # $type->exotic->sockets $tier->anynonbelt
 	MinimapIcon 1 Blue Diamond
 
 #------------------------------------
-#   [0603] Synthesised
+#   [0703] Synthesised
 #------------------------------------
 
 Show # $type->exotic->synthesised $tier->synthselected
@@ -2071,7 +2082,7 @@ Show # %D5 $type->exotic->synthesised $tier->synthrandom
 	MinimapIcon 1 Blue Diamond
 
 #------------------------------------
-#   [0604] Fractured
+#   [0704] Fractured
 #------------------------------------ 	
 
 Show # %D5 $type->exotic->fractured $tier->fractselected
@@ -2108,7 +2119,7 @@ Show # %D4 $type->exotic->fractured $tier->fractrandom
 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
-#   [0605] Enchanted
+#   [0705] Enchanted
 #------------------------------------
 
 Show # $type->exotic->enchanted $tier->exotic
@@ -2144,13 +2155,13 @@ Show # %D2 $type->exotic->enchanted $tier->glovesboots
 	PlayEffect Blue Temp
 
 #===============================================================================================================
-# [[0700]] Jewels
+# [[0800]] Jewels
 #===============================================================================================================
 # !! Chapter "Endgame crafting and recipe items"
 # !! Override 110 : "Jewel"
 
 #------------------------------------
-#   [0701] Special Cases
+#   [0801] Special Cases
 #------------------------------------
 
 Show # $type->jewels->special $tier->1modcorrupted
@@ -2181,7 +2192,7 @@ Show # %H4 $type->jewels->special $tier->1moduncorrupted
 	MinimapIcon 2 Blue Diamond
 
 #------------------------------------
-#   [0702] Cluster Jewels
+#   [0802] Cluster Jewels
 #------------------------------------
 
 Show # $type->jewels->cluster $tier->optimalhighlarge
@@ -2280,7 +2291,7 @@ Show # %D4 $type->jewels->cluster $tier->small
 	MinimapIcon 2 Grey Pentagon
 
 #------------------------------------
-#   [0703] Abyss Jewels
+#   [0803] Abyss Jewels
 #------------------------------------
 
 Show # %HS4 $type->jewels->abyss $tier->highrare
@@ -2322,7 +2333,7 @@ Show # %HS2 $type->jewels->abyss $tier->anymagic
 	SetBackgroundColor 0 20 40 255
 
 #------------------------------------
-#   [0704] Generic Jewels
+#   [0804] Generic Jewels
 #------------------------------------
 
 Show # %HS3 $type->jewels->generic $tier->anyrare
@@ -2346,14 +2357,14 @@ Show # %H3 $type->jewels->generic $tier->anymagic
 	SetBackgroundColor 0 20 40 255
 
 #===============================================================================================================
-# [[0800]] Recipes and 5links
+# [[0900]] Recipes and 5links
 #===============================================================================================================
 # !! Override 120 : "5links and 6sockets"
 #------------------------------------
 # [1234] Link Based
 #------------------------------------
 
-Show # %D5 $type->socketslinks $tier->5linksleveling
+Show # %D4 $type->socketslinks $tier->5linksleveling
 	LinkedSockets >= 5
 	AreaLevel <= 67
 	Rarity <= Rare
@@ -2377,7 +2388,7 @@ Show # %D4 $type->socketslinks $tier->5link6sockets
 	PlayEffect Blue
 	MinimapIcon 2 Blue Hexagon
 
-Show # %D4 $type->socketslinks $tier->5links
+Show # %D3 $type->socketslinks $tier->5links
 	LinkedSockets >= 5
 	AreaLevel >= 67
 	Rarity <= Rare
@@ -2399,7 +2410,7 @@ Show # %H4 $type->socketslinks $tier->6sockets
 	MinimapIcon 2 Grey Hexagon
 
 #===============================================================================================================
-# [[0900]] High Level Crafting Bases
+# [[1000]] High Level Crafting Bases
 #===============================================================================================================
 # !! Override 130 : "High level crafting bases"
 #------------------------------------
@@ -2458,7 +2469,7 @@ Show # $type->normalcraft->i86 $tier->t1
 	Corrupted False
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 125 0 240
 	PlayAlertSound 3 300
@@ -2480,14 +2491,14 @@ Show # %D3 $type->normalcraft->i86 $tier->t3
 	SetBorderColor 255 125 0 185
 
 #------------------------------------
-#   [0901] ILVL 84
+#   [1001] ILVL 84
 #------------------------------------
 
 Show # %D5 $type->normalcraft->i84 $tier->t1
 	Corrupted False
 	ItemLevel >= 84
 	Rarity <= Rare
-	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 200 200 0 240
 	PlayAlertSound 3 300
@@ -2509,7 +2520,7 @@ Show # %D2 $type->normalcraft->i84 $tier->t3
 	SetBorderColor 200 200 0 185
 
 #------------------------------------
-#   [0902] ILVL ANY
+#   [1002] ILVL ANY
 #------------------------------------
 
 Show # %D3 $type->normalcraft->rest $tier->t1
@@ -2517,7 +2528,7 @@ Show # %D3 $type->normalcraft->rest $tier->t1
 	ItemLevel <= 83
 	ItemLevel >= 68
 	Rarity <= Rare
-	BaseType "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 255 255 255
 	PlayAlertSound 3 300
@@ -2583,7 +2594,7 @@ Show # %H2 $type->normalcraft->extra $tier->any
 	SetBorderColor 200 200 200 220
 
 #------------------------------------
-#   [0903] RGB Endgame
+#   [1003] RGB Endgame
 #------------------------------------
 # !! Override 140 : "Chromatic and Chisel Recipes"
 
@@ -2609,16 +2620,16 @@ Show # %H2 $type->endgamergb $tier->rgbsmall2
 	SetBorderColor 155 138 138 255
 	SetBackgroundColor 0 0 0 255
 
-#Hide # $type->endgamergb $tier->rgblarge
-#	Width >= 2
-#	Height >= 4
-#	AreaLevel >= 67
-#	Rarity < Rare
-#	SocketGroup "RGB"
-#	SetFontSize 35
-#	SetTextColor 155 138 138 255
-#	SetBorderColor 180 135 135 200
-#	SetBackgroundColor 0 0 0 255
+Show # %H0 $type->endgamergb $tier->rgblarge
+	Width >= 2
+	Height >= 4
+	AreaLevel >= 67
+	Rarity < Rare
+	SocketGroup "RGB"
+	SetFontSize 35
+	SetTextColor 155 138 138 255
+	SetBorderColor 180 135 135 200
+	SetBackgroundColor 0 0 0 255
 
 Show # %H1 $type->endgamergb $tier->rgbmedium
 	Width >= 2
@@ -2632,7 +2643,7 @@ Show # %H1 $type->endgamergb $tier->rgbmedium
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [0904] Chisel Recipes
+#   [1004] Chisel Recipes
 #------------------------------------
 
 Show # %D1 $type->chiselrecipe $tier->chisel20
@@ -2683,7 +2694,7 @@ Show # %D0 $type->chiselrecipe $tier->chiselanyqualnormal
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[1000]] Chancing Bases
+# [[1100]] Chancing Bases
 #===============================================================================================================
 # !! Override 150 : "Chancing bases"
 
@@ -2706,12 +2717,12 @@ Show # %D2 $type->chancing $tier->t2
 	SetBorderColor 0 150 0 90
 
 #===============================================================================================================
-# [[1100]] Endgame Flasks
+# [[1200]] Endgame Flasks
 #===============================================================================================================
 # !! Override 160 : "Endgame Flasks"
 
 #------------------------------------
-#   [1101] High quality assorted flasks
+#   [1201] High quality assorted flasks
 #------------------------------------
 
 Show # %D3 $type->endgameflasks $tier->highqualutility
@@ -2751,7 +2762,7 @@ Show # %D3 $type->endgameflasks $tier->any20qualflask
 	PlayEffect Grey Temp
 
 #------------------------------------
-#   [1102] Utility OR quality flasks
+#   [1202] Utility OR quality flasks
 #------------------------------------
 
 Show # %D2 $type->endgameflasks $tier->asortedutility
@@ -2796,7 +2807,7 @@ Show # %D1 $type->endgameflasks $tier->qualitylow
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [1103] Early mapping life/mana/utility flasks
+#   [1203] Early mapping life/mana/utility flasks
 #------------------------------------
 
 Show # %D2 $type->endgameflasks $tier->earlymappinglifemana
@@ -2808,7 +2819,7 @@ Show # %D2 $type->endgameflasks $tier->earlymappinglifemana
 	SetBackgroundColor 0 0 0 180
 
 #===============================================================================================================
-# [[1200]] Misc Rules
+# [[1300]] Misc Rules
 #===============================================================================================================
 # !! Override 170 : "Overquality and endgame 4links"
 
@@ -2861,7 +2872,7 @@ Show # %D1 $type->miscendgamerules $tier->earlyendgame4link
 #	SetBackgroundColor 0 0 0 100
 
 #===============================================================================================================
-# [[1300]] Hide Layer 1 - Normal and Magic Endgame Gear
+# [[1400]] Hide Layer 1 - Normal and Magic Endgame Gear
 #===============================================================================================================
 
 Hide # $type->hidelayer $tier->normalmagicendgame
@@ -2874,7 +2885,7 @@ Hide # $type->hidelayer $tier->normalmagicendgame
 	DisableDropSound True
 
 #===============================================================================================================
-# [[1400]] Rare Item Decorators
+# [[1500]] Rare Item Decorators
 #===============================================================================================================
 # !! Chapter "Rare Endgame Items"
 # !! Override 210 : "Rare continue/style sections sections"
@@ -2951,7 +2962,7 @@ Show # $type->decorators->rareeg $tier->corruptedraresimplicit
 	Continue
 
 #===============================================================================================================
-# [[1500]] Endgame - Rare - Exotic Corrupted Items
+# [[1600]] Endgame - Rare - Exotic Corrupted Items
 #===============================================================================================================
 # !! Override 220 : "Talismans"
 
@@ -3100,7 +3111,7 @@ Show # %H2 $type->rare->exotic->talisman $tier->any
 	PlayEffect Blue Temp
 
 #===============================================================================================================
-# [[1600]] Endgame - Rare - Accessoires
+# [[1700]] Endgame - Rare - Accessoires
 #===============================================================================================================
 
 #Hide # $type->rareoptional $tier->idhider
@@ -3112,7 +3123,7 @@ Show # %H2 $type->rare->exotic->talisman $tier->any
 #	SetBorderColor 0 0 0
 
 #===============================================================================================================
-# [[1700]] Endgame - Rare - Accessoires
+# [[1800]] Endgame - Rare - Accessoires
 #===============================================================================================================
 # !! Override 230 : "Rings and Amulets"
 
@@ -3120,7 +3131,7 @@ Show # %D4 $type->rr->amuring $tier->t1
 	ItemLevel >= 68
 	Rarity Rare
 	Class "Amulets" "Rings"
-	BaseType "Agate Amulet" "Blue Pearl Amulet" "Cerulean Ring" "Citrine Amulet" "Marble Amulet" "Onyx Amulet" "Opal Ring" "Prismatic Ring" "Steel Ring" "Turquoise Amulet" "Two-Stone Ring" "Vermillion Ring"
+	BaseType "Agate Amulet" "Blue Pearl Amulet" "Cerulean Ring" "Citrine Amulet" "Iolite Ring" "Marble Amulet" "Onyx Amulet" "Opal Ring" "Prismatic Ring" "Seaglass Amulet" "Steel Ring" "Turquoise Amulet" "Two-Stone Ring" "Vermillion Ring"
 	SetFontSize 45
 	SetBackgroundColor 0 80 30 255
 
@@ -3165,26 +3176,26 @@ Show # %D2 $type->rr->belts $tier->t3
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[1800]] Endgame - Rare - Gear - T1 - handpicked
+# [[1900]] Endgame - Rare - Gear - T1 - handpicked
 #===============================================================================================================
 # !! Override 240 : "T1 rares - handpicked"	
 
 Show # %D4 $type->rr $tier->t1weapons
 	ItemLevel >= 68
 	Rarity Rare
-	BaseType "Convoking Wand" "Imbued Wand" "Opal Sceptre" "Opal Wand" "Ornate Quiver"
+	BaseType "Artillery Quiver" "Convoking Wand" "Imbued Wand" "Opal Sceptre" "Opal Wand" "Ornate Quiver"
 	SetFontSize 45
 	SetBackgroundColor 0 0 0 255
 
 Show # %D4 $type->rr $tier->t1armours
 	ItemLevel >= 68
 	Rarity Rare
-	BaseType "Arcanist Slippers" "Assassin's Boots" "Bone Helmet" "Crusader Boots" "Dragonscale Boots" "Eternal Burgonet" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Goliath Greaves" "Gripped Gloves" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
+	BaseType "Apothecary's Gloves" "Arcanist Slippers" "Assassin's Boots" "Blessed Boots" "Bone Helmet" "Crusader Boots" "Dragonscale Boots" "Eternal Burgonet" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Goliath Greaves" "Gripped Gloves" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
 	SetFontSize 45
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[1900]] Endgame - Rare - Gear - T2 - handpicked
+# [[2000]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
 # !! Override 250 : "T2 rares - handpicked"
 
@@ -3203,7 +3214,7 @@ Show # %D3 $type->rr $tier->t2armours
 	SetBackgroundColor 30 30 30 255
 
 #===============================================================================================================
-# [[2000]] Endgame - Rare - Gear - T3 - droplevel-based
+# [[2100]] Endgame - Rare - Gear - T3 - droplevel-based
 #===============================================================================================================
 # !! Override 260 : "T3 rares - droplevel-based"
 
@@ -3388,7 +3399,7 @@ Show # %D2 $type->rr $tier->t3quivers
 	SetBackgroundColor 75 75 75 240
 
 #===============================================================================================================
-# [[2100]] Endgame - Rare - Gear - T4 - rest
+# [[2200]] Endgame - Rare - Gear - T4 - rest
 #===============================================================================================================
 # !! Override 270 : "T4 rares remaining"
 
@@ -3400,7 +3411,7 @@ Show # %D1 $type->rr $tier->t4endgamerares
 	SetBackgroundColor 80 80 80 140
 
 #===============================================================================================================
-# [[2200]] Hide Layer 2 - Rare Gear
+# [[2300]] Hide Layer 2 - Rare Gear
 #===============================================================================================================
 
 Hide # $type->hidelayer $tier->raresendgame
@@ -3413,12 +3424,12 @@ Hide # $type->hidelayer $tier->raresendgame
 	DisableDropSound True
 
 #===============================================================================================================
-# [[2300]] Heist Gear
+# [[2400]] Heist Gear
 #===============================================================================================================
 # !! Chapter "Heist Gear"
 
 #------------------------------------
-#   [2301] Heist Cloak
+#   [2401] Heist Cloak
 #------------------------------------
 # !! Override 310 : "Heist Cloaks"
 
@@ -3468,7 +3479,7 @@ Show # %HS3 $type->heist->cloak $tier->t3any
 	MinimapIcon 2 Grey Raindrop
 
 #------------------------------------
-#   [2302] Heist Brooch
+#   [2402] Heist Brooch
 #------------------------------------
 # !! Override 320 : "Heist Brooch"
 
@@ -3518,7 +3529,7 @@ Show # %HS3 $type->heist->brooch $tier->t3any
 	MinimapIcon 2 Grey Raindrop
 
 #------------------------------------
-#   [2303] Heist Gear
+#   [2403] Heist Gear
 #------------------------------------
 # !! Override 330 : "Heist Gear"
 
@@ -3568,7 +3579,7 @@ Show # %HS3 $type->heist->gear $tier->t3any
 	MinimapIcon 2 Grey Raindrop
 
 #------------------------------------
-#   [2304] Heist Tool
+#   [2404] Heist Tool
 #------------------------------------
 # !! Override 340 : "Heist Tool"
 
@@ -3618,13 +3629,13 @@ Show # %HS3 $type->heist->tool $tier->t3any
 	MinimapIcon 2 Grey Raindrop
 
 #===============================================================================================================
-# [[2400]] Gem Tierlists
+# [[2500]] Gem Tierlists
 #===============================================================================================================
 # !! Chapter Gems
 # !! Override 410 : "All Gems - incl. awakened, alt and very valuable"
 
 #------------------------------------
-#   [2401] Exceptional Gems - Awakened and AltQuality
+#   [2501] Exceptional Gems - Awakened and AltQuality
 #------------------------------------
 
 Show # $type->gems-exceptional $tier->awat1
@@ -3736,7 +3747,7 @@ Show # $type->gems-exceptional $tier->2123
 	MinimapIcon 0 Red Star
 
 #------------------------------------
-#   [2402] Exceptional Gems - Special gems
+#   [2502] Exceptional Gems - Special gems
 #------------------------------------
 # !! Override 420 : "empower and enlighten type gems"
 
@@ -3801,7 +3812,7 @@ Show # $type->gems-special $tier->exspecial
 	MinimapIcon 1 Yellow Triangle
 
 #------------------------------------
-#   [2403] Gems during leveling
+#   [2503] Gems during leveling
 #------------------------------------
 # !! Override 430 : "leveling specific gem rules"
 
@@ -3831,7 +3842,7 @@ Show # %H2 $type->gems-leveling $tier->leveling
 	SetBorderColor 0 0 0
 
 #------------------------------------
-#   [2404] High Quality and Leveled Gems
+#   [2504] High Quality and Leveled Gems
 #------------------------------------
 # !! Override 440 : "quality, leveled and generic gems"
 
@@ -3935,7 +3946,7 @@ Show # %H0 $type->gems-generic $tier->any
 	SetBorderColor 0 0 0
 
 #===============================================================================================================
-# [[2500]] REPLICA UNIQUES
+# [[2600]] REPLICA UNIQUES
 #===============================================================================================================
 # !! Chapter "Maps, fragments, maplike items, replicas"
 # !! Override 510 : "replicas uniques and unique maps"
@@ -4000,12 +4011,12 @@ Show # $type->uniques->replicas $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[2600]] Special Maps
+# [[2700]] Special Maps
 #===============================================================================================================
 # !! Override 520 : "all maps, incl. uniques"
 
 #------------------------------------
-#   [2601] Unique Maps
+#   [2701] Unique Maps
 #------------------------------------
 
 Show # $type->uniques->maps $tier->ex
@@ -4081,7 +4092,7 @@ Show # $type->uniques->maps $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [2602] Blighted maps
+#   [2702] Blighted maps
 #------------------------------------
 # !! Override 530 : "blighted maps, enchanted maps, maps with special mods"
 
@@ -4109,7 +4120,7 @@ Show # %H5 $type->maps->blighted $tier->any
 	MinimapIcon 1 Purple Square
 
 #------------------------------------
-#   [2603] Delirium/Blight/Enchanted Maps!
+#   [2703] Delirium/Blight/Enchanted Maps!
 #------------------------------------
 
 Show # $type->maps->enchanted $tier->t1
@@ -4136,7 +4147,7 @@ Show # %H5 $type->maps->enchanted $tier->any
 	MinimapIcon 1 Purple Square
 
 #------------------------------------
-#   [2604] Beyond-Nemesis Maps, for those juicy sextants.
+#   [2704] Beyond-Nemesis Maps, for those juicy sextants.
 #------------------------------------
 
 Show # %H5 $type->maps->identified $tier->nemesisbeyond
@@ -4153,7 +4164,7 @@ Show # %H5 $type->maps->identified $tier->nemesisbeyond
 	MinimapIcon 1 Purple Square
 
 #===============================================================================================================
-# [[2700]] Normal Map Progression
+# [[2800]] Normal Map Progression
 #===============================================================================================================
 #------------------------------------
 # [4403] Generic Decorators
@@ -4188,7 +4199,7 @@ Show # $type->maps $tier->deco_zone4general
 	Continue
 
 #------------------------------------
-#   [2701] Map progression
+#   [2801] Map progression
 #------------------------------------
 # !! Override 541 : "T11-T16 maps"
 
@@ -4243,7 +4254,7 @@ Show # $type->maps $tier->maps_a_t14
 	PlayEffect Yellow
 	MinimapIcon 1 Red Square
 
-Show # %D5 $type->maps $tier->deco_mapup_t13
+Show # %D4 $type->maps $tier->deco_mapup_t13
 	MapTier >= 13
 	AreaLevel < 80
 	Class "Maps"
@@ -4260,7 +4271,7 @@ Show # %H5 $type->maps $tier->maps_b_t13
 	PlayEffect Yellow
 	MinimapIcon 1 Red Square
 
-Show # %D5 $type->maps $tier->deco_mapup_t12
+Show # %D4 $type->maps $tier->deco_mapup_t12
 	MapTier >= 12
 	AreaLevel < 79
 	Class "Maps"
@@ -4277,7 +4288,7 @@ Show # %H5 $type->maps $tier->maps_b_t12
 	PlayEffect Yellow
 	MinimapIcon 1 Red Square
 
-Show # %D5 $type->maps $tier->deco_mapup_t11
+Show # %D4 $type->maps $tier->deco_mapup_t11
 	MapTier >= 11
 	AreaLevel < 78
 	Class "Maps"
@@ -4296,7 +4307,7 @@ Show # %H5 $type->maps $tier->maps_b_t11
 
 # !! Override 550 : "T16-T10 maps"
 
-Show # %D4 $type->maps $tier->deco_mapup_t10
+Show # %D3 $type->maps $tier->deco_mapup_t10
 	MapTier >= 10
 	AreaLevel < 77
 	Class "Maps"
@@ -4312,7 +4323,7 @@ Show # %H4 $type->maps $tier->maps_c_t10
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-Show # %D4 $type->maps $tier->deco_mapup_t9
+Show # %D3 $type->maps $tier->deco_mapup_t9
 	MapTier >= 9
 	AreaLevel < 76
 	Class "Maps"
@@ -4328,7 +4339,7 @@ Show # %H4 $type->maps $tier->maps_c_t9
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-Show # %D4 $type->maps $tier->deco_mapup_t8
+Show # %D3 $type->maps $tier->deco_mapup_t8
 	MapTier >= 8
 	AreaLevel < 75
 	Class "Maps"
@@ -4344,7 +4355,7 @@ Show # %H4 $type->maps $tier->maps_c_t8
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-Show # %D4 $type->maps $tier->deco_mapup_t7
+Show # %D3 $type->maps $tier->deco_mapup_t7
 	MapTier >= 7
 	AreaLevel < 74
 	Class "Maps"
@@ -4360,7 +4371,7 @@ Show # %H4 $type->maps $tier->maps_c_t7
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-Show # %D4 $type->maps $tier->deco_mapup_t6
+Show # %D3 $type->maps $tier->deco_mapup_t6
 	MapTier >= 6
 	AreaLevel < 73
 	Class "Maps"
@@ -4469,7 +4480,7 @@ Show # $type->maps $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [2702] Labyrinth items, Offerings
+#   [2802] Labyrinth items, Offerings
 #------------------------------------
 # !! Override 570 : "labyrinth offerings"
 
@@ -4494,7 +4505,7 @@ Show # $type->labyrinthofferings $tier->offeringsupgraded
 	MinimapIcon 1 Yellow Hexagon
 
 #===============================================================================================================
-# [[2800]] Heist Contracts and Blueprints
+# [[2900]] Heist Contracts and Blueprints
 #===============================================================================================================
 # !! Override 580 : "heist contracts and blueprints"
 
@@ -4552,12 +4563,12 @@ Show # %H5 $type->heist->blueprint $tier->any
 	MinimapIcon 1 Yellow UpsideDownHouse
 
 #===============================================================================================================
-# [[2900]] Fragments
+# [[3000]] Fragments
 #===============================================================================================================
 # !! Override 590 : "scarabs and fragments tierlists"
 
 #------------------------------------
-#   [2901] Scarabs
+#   [3001] Scarabs
 #------------------------------------
 
 #Show # $type->fragments->scarabs $tier->t1
@@ -4572,7 +4583,7 @@ Show # %H5 $type->heist->blueprint $tier->any
 
 Show # $type->fragments->scarabs $tier->t2
 	Class "Map Fragments"
-	BaseType "Craicic Lure" "Farric Lure" "Fenumal Lure" "Gilded Ambush Scarab" "Gilded Divination Scarab" "Gilded Harbinger Scarab" "Gilded Legion Scarab" "Saqawine Lure" "Winged Ambush Scarab" "Winged Breach Scarab" "Winged Cartography Scarab" "Winged Divination Scarab" "Winged Elder Scarab" "Winged Harbinger Scarab" "Winged Legion Scarab" "Winged Metamorph Scarab" "Winged Perandus Scarab" "Winged Reliquary Scarab" "Winged Sulphite Scarab"
+	BaseType "Craicic Lure" "Farric Lure" "Fenumal Lure" "Gilded Abyss Scarab" "Gilded Ambush Scarab" "Gilded Blight Scarab" "Gilded Divination Scarab" "Gilded Harbinger Scarab" "Gilded Legion Scarab" "Saqawine Lure" "Winged Abyss Scarab" "Winged Ambush Scarab" "Winged Blight Scarab" "Winged Breach Scarab" "Winged Cartography Scarab" "Winged Divination Scarab" "Winged Elder Scarab" "Winged Harbinger Scarab" "Winged Legion Scarab" "Winged Metamorph Scarab" "Winged Perandus Scarab" "Winged Reliquary Scarab" "Winged Sulphite Scarab"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -4583,7 +4594,7 @@ Show # $type->fragments->scarabs $tier->t2
 
 Show # $type->fragments->scarabs $tier->t3
 	Class "Map Fragments"
-	BaseType "Gilded Bestiary Scarab" "Gilded Breach Scarab" "Gilded Cartography Scarab" "Gilded Elder Scarab" "Gilded Metamorph Scarab" "Gilded Perandus Scarab" "Gilded Reliquary Scarab" "Gilded Shaper Scarab" "Gilded Sulphite Scarab" "Gilded Torment Scarab" "Polished Ambush Scarab" "Polished Bestiary Scarab" "Polished Cartography Scarab" "Polished Divination Scarab" "Polished Elder Scarab" "Polished Harbinger Scarab" "Polished Legion Scarab" "Polished Metamorph Scarab" "Polished Sulphite Scarab" "Rusted Legion Scarab" "Winged Bestiary Scarab" "Winged Shaper Scarab" "Winged Torment Scarab"
+	BaseType "Gilded Bestiary Scarab" "Gilded Breach Scarab" "Gilded Cartography Scarab" "Gilded Elder Scarab" "Gilded Metamorph Scarab" "Gilded Perandus Scarab" "Gilded Reliquary Scarab" "Gilded Shaper Scarab" "Gilded Sulphite Scarab" "Gilded Torment Scarab" "Polished Abyss Scarab" "Polished Ambush Scarab" "Polished Bestiary Scarab" "Polished Blight Scarab" "Polished Cartography Scarab" "Polished Divination Scarab" "Polished Elder Scarab" "Polished Harbinger Scarab" "Polished Legion Scarab" "Polished Metamorph Scarab" "Polished Sulphite Scarab" "Rusted Abyss Scarab" "Rusted Blight Scarab" "Rusted Legion Scarab" "Winged Bestiary Scarab" "Winged Shaper Scarab" "Winged Torment Scarab"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -4615,7 +4626,7 @@ Show # $type->fragments->scarabs $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [2902] Regular Fragment Tiering
+#   [3002] Regular Fragment Tiering
 #------------------------------------
 
 Show # $type->fragments $tier->t1
@@ -4631,7 +4642,7 @@ Show # $type->fragments $tier->t1
 
 Show # $type->fragments $tier->t2
 	Class "Map Fragments"
-	BaseType "Chayula's Charged Breachstone" "Chayula's Enriched Breachstone" "Eber's Key" "Esh's Pure Breachstone" "Fragment of Constriction" "Fragment of Emptiness" "Fragment of Enslavement" "Fragment of Eradication" "Fragment of Knowledge" "Fragment of Purification" "Fragment of Shape" "Fragment of Terror" "Inya's Key" "Mortal Ignorance" "Timeless Maraketh Emblem" "Timeless Templar Emblem" "Tul's Pure Breachstone" "Uul-Netol's Enriched Breachstone" "Volkuur's Key" "Xoph's Pure Breachstone" "Yriel's Key"
+	BaseType "Chayula's Charged Breachstone" "Chayula's Enriched Breachstone" "Eber's Key" "Esh's Pure Breachstone" "Fragment of Constriction" "Fragment of Emptiness" "Fragment of Enslavement" "Fragment of Eradication" "Fragment of Knowledge" "Fragment of Purification" "Fragment of Shape" "Fragment of Terror" "Inya's Key" "Mortal Ignorance" "Sacred Blossom" "Timeless Maraketh Emblem" "Timeless Templar Emblem" "Tul's Pure Breachstone" "Uul-Netol's Enriched Breachstone" "Volkuur's Key" "Xoph's Pure Breachstone" "Yriel's Key"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -4673,7 +4684,7 @@ Show # $type->fragments $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3000]] Currency - Exceptions - Stacked Currency
+# [[3100]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
 # !! Chapter "Currencylike item tierlists 1"
 # !! Override 610 : "Stacked Currency"
@@ -4702,7 +4713,7 @@ Show # $type->currency->stacked $tier->splinters_t2
 	PlayEffect White
 	MinimapIcon 2 White Circle
 
-Show # $type->currency->stacked $tier->shards
+Show # %H4 $type->currency->stacked $tier->shards
 	StackSize >= 4
 	Class "Currency"
 	BaseType "Chaos Shard" "Harbinger's Shard" "Horizon Shard"
@@ -4775,7 +4786,7 @@ Show # $type->currency->stacked $tier->orbs_wisdom
 	MinimapIcon 2 White Circle
 
 #------------------------------------
-#   [3001] Perandus Coins
+#   [3101] Perandus Coins
 #------------------------------------
 # !! Override 720 : "Perandus and Heist Coins"
 
@@ -4817,7 +4828,7 @@ Show # %H2 $type->currency->peranduscoins $tier->t4
 	PlayEffect Orange Temp
 
 #------------------------------------
-#   [3002] Heist Coins
+#   [3102] Heist Coins
 #------------------------------------
 
 Show # %H4 $type->currency->heist $tier->any
@@ -4830,7 +4841,7 @@ Show # %H4 $type->currency->heist $tier->any
 	PlayEffect Orange Temp
 
 #===============================================================================================================
-# [[3100]] Currency - Exceptions - Leveling Currencies
+# [[3200]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
 # !! Override 620 : "Leveling Currency"
 
@@ -4883,7 +4894,7 @@ Show # %D4 $type->currency->leveling $tier->wisdom
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[3200]] Currency - Regular Currency Tiering
+# [[3300]] Currency - Regular Currency Tiering
 #===============================================================================================================
 # !! Override 630 : "Regular Currency"
 
@@ -4900,7 +4911,7 @@ Show # $type->currency $tier->t1exalted
 
 Show # $type->currency $tier->t2divine
 	Class "Currency"
-	BaseType == "Ancient Orb" "Crescent Splinter" "Divine Orb" "Elevated Sextant"
+	BaseType == "Ancient Orb" "Crescent Splinter" "Divine Orb" "Elevated Sextant" "Veiled Chaos Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -4911,7 +4922,7 @@ Show # $type->currency $tier->t2divine
 
 Show # $type->currency $tier->t3annul
 	Class "Currency"
-	BaseType == "Blessing of Chayula" "Exalted Shard" "Fertile Catalyst" "Infused Engineer's Orb" "Orb of Annulment" "Orb of Unmaking" "Prismatic Catalyst" "Ritual Vessel"
+	BaseType == "Accelerating Catalyst" "Blessing of Chayula" "Exalted Shard" "Fertile Catalyst" "Infused Engineer's Orb" "Noxious Catalyst" "Orb of Annulment" "Orb of Unmaking" "Prismatic Catalyst" "Ritual Vessel" "Unstable Catalyst"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -4992,7 +5003,7 @@ Show # %H2 $type->currency $tier->twisdom
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[3300]] Currency - SPECIAL
+# [[3400]] Currency - SPECIAL
 #===============================================================================================================
 #------------------------------------
 # [5103] Incursion - Vials
@@ -5044,7 +5055,7 @@ Show # $type->vials $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3301] Delirum Orbs
+#   [3401] Delirum Orbs
 #------------------------------------
 
 Show # $type->currency->deliriumorbs $tier->t1
@@ -5081,7 +5092,7 @@ Show # $type->currency->deliriumorbs $tier->t3
 	MinimapIcon 2 White Circle
 
 #------------------------------------
-#   [3302] Delve - Resonators
+#   [3402] Delve - Resonators
 #------------------------------------
 # !! Override 650 : "Resonators, Fossils"
 
@@ -5129,7 +5140,7 @@ Show # $type->currency->resonator $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3303] Delve - Fossils
+#   [3403] Delve - Fossils
 #------------------------------------
 
 Show # $type->currency->fossil $tier->t1
@@ -5188,23 +5199,24 @@ Show # $type->currency->fossil $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3304] Blight - Oils
+#   [3404] Blight - Oils
 #------------------------------------
 # !! Override 660 : "Blight Oils"
 
-#Show # $type->currency->oil $tier->t1
-#	Class "Currency"
-#	SetFontSize 45
-#	SetTextColor 255 0 0 255
-#	SetBorderColor 255 0 0 255
-#	SetBackgroundColor 255 255 255 255
-#	PlayAlertSound 6 300
-#	PlayEffect Red
-#	MinimapIcon 0 Red Star
+Show # $type->currency->oil $tier->t1
+	Class "Currency"
+	BaseType == "Golden Oil"
+	SetFontSize 45
+	SetTextColor 255 0 0 255
+	SetBorderColor 255 0 0 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
 
 Show # $type->currency->oil $tier->t2
 	Class "Currency"
-	BaseType == "Golden Oil" "Opalescent Oil" "Silver Oil"
+	BaseType == "Opalescent Oil" "Silver Oil" "Tainted Oil"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -5247,7 +5259,7 @@ Show # $type->currency->oil $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3305] Essences
+#   [3405] Essences
 #------------------------------------
 # !! Override 670 : "Essences"
 
@@ -5309,14 +5321,14 @@ Show # %H1 $type->currency->essence $tier->t6
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [3306] Incubators
+#   [3406] Incubators
 #------------------------------------
 # !! Override 680 : "Incubators"
 
 Show # %H5 $type->currency->incubators $tier->leveledex
 	ItemLevel >= 81
 	Class "Incubator"
-	BaseType == "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator"
+	BaseType == "Blighted Incubator" "Cartographer's Incubator" "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Enchanted Incubator" "Fragmented Incubator" "Otherworldly Incubator"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5348,7 +5360,7 @@ Show # $type->currency->incubators $tier->t2
 
 Show # %H5 $type->currency->incubators $tier->t3
 	Class "Incubator"
-	BaseType == "Diviner's Incubator" "Enchanted Incubator" "Foreboding Incubator" "Fossilised Incubator" "Gemcutter's Incubator" "Infused Incubator" "Obscured Incubator" "Ornate Incubator" "Otherworldly Incubator" "Singular Incubator" "Skittering Incubator" "Thaumaturge's Incubator"
+	BaseType == "Abyssal Incubator" "Blighted Incubator" "Cartographer's Incubator" "Diviner's Incubator" "Enchanted Incubator" "Foreboding Incubator" "Fossilised Incubator" "Gemcutter's Incubator" "Infused Incubator" "Maddening Incubator" "Morphing Incubator" "Mysterious Incubator" "Obscured Incubator" "Ornate Incubator" "Otherworldly Incubator" "Singular Incubator" "Skittering Incubator" "Thaumaturge's Incubator"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5359,7 +5371,7 @@ Show # %H5 $type->currency->incubators $tier->t3
 
 Show # %H4 $type->currency->incubators $tier->t4
 	Class "Incubator"
-	BaseType == "Abyssal Incubator" "Cartographer's Incubator" "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Decadent Incubator" "Fine Incubator" "Fragmented Incubator" "Mysterious Incubator" "Primal Incubator" "Whispering Incubator"
+	BaseType == "Celestial Armoursmith's Incubator" "Celestial Blacksmith's Incubator" "Celestial Jeweller's Incubator" "Decadent Incubator" "Fine Incubator" "Fragmented Incubator" "Primal Incubator" "Whispering Incubator"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5379,7 +5391,7 @@ Show # $type->currency->incubators $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3307] Others
+#   [3407] Others
 #------------------------------------
 # !! Override 690 : "Harbinger Scrolls"
 
@@ -5406,7 +5418,7 @@ Show # $type->currency->others $tier->misc
 	MinimapIcon 0 Red Circle
 
 #===============================================================================================================
-# [[3400]] Currency - Prophecies
+# [[3500]] Currency - Prophecies
 #===============================================================================================================
 # !! Chapter "Currencylike item tierlists 2"
 # !! Override 710 : "Prophecies"
@@ -5504,7 +5516,7 @@ Show # $type->currency->prophecy $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3500]] Currency - Splinters
+# [[3600]] Currency - Splinters
 #===============================================================================================================
 #------------------------------------
 # [5112] Breach and Legion Splinters
@@ -5544,7 +5556,7 @@ Show # %HS3 $type->currency->splinter $tier->t3
 	MinimapIcon 2 Grey Kite
 
 #------------------------------------
-#   [3501] Simulacrum Splinters
+#   [3601] Simulacrum Splinters
 #------------------------------------
 
 Show # $type->currency->splinter->simulacrum $tier->t1
@@ -5607,13 +5619,13 @@ Show # %H5 $type->currency->splinter->simulacrum $tier->t5
 	MinimapIcon 2 Grey Kite
 
 #===============================================================================================================
-# [[3600]] Divination Cards
+# [[3700]] Divination Cards
 #===============================================================================================================
 # !! Override 730 : "Divination Cards"
 
 Show # $type->divination $tier->t1
 	Class "Divination"
-	BaseType == "Abandoned Wealth" "Alluring Bounty" "Beauty Through Death" "Brother's Stash" "Desecrated Virtue" "Fateful Meeting" "House of Mirrors" "Love Through Ice" "Nook's Crown" "Seven Years Bad Luck" "The Cheater" "The Demon" "The Doctor" "The Fiend" "The Immortal" "The Iron Bard" "The Nurse" "The Samurai's Eye" "The Strategist" "Unrequited Love"
+	BaseType == "Abandoned Wealth" "Alluring Bounty" "Beauty Through Death" "Brother's Stash" "Deadly Joy" "Desecrated Virtue" "Fateful Meeting" "House of Mirrors" "Love Through Ice" "Luminous Trove" "Nook's Crown" "Seven Years Bad Luck" "The Cheater" "The Demon" "The Doctor" "The Fiend" "The Immortal" "The Iron Bard" "The Nurse" "The Samurai's Eye" "The Strategist" "Unrequited Love" "Winter's Embrace"
 	SetFontSize 45
 	SetTextColor 0 0 255 255
 	SetBorderColor 0 0 255 255
@@ -5624,7 +5636,7 @@ Show # $type->divination $tier->t1
 
 Show # $type->divination $tier->t2
 	Class "Divination"
-	BaseType == "A Note in the Wind" "Azyran's Reward" "Cameria's Cut" "Chaotic Disposition" "Gift of Asenath" "Hunter's Reward" "Immortal Resolve" "Keeper's Corruption" "Pride of the First Ones" "Remembrance" "Succor of the Sinless" "The Academic" "The Artist" "The Astromancer" "The Bitter Blossom" "The Bones" "The Damned" "The Dragon's Heart" "The Eye of Terror" "The Greatest Intentions" "The Gulf" "The Long Con" "The Patient" "The Price of Loyalty" "The Saint's Treasure" "The Spark and the Flame" "The Sustenance" "The Void" "Volatile Power" "Wealth and Power"
+	BaseType == "A Modest Request" "A Note in the Wind" "Azyran's Reward" "Broken Promises" "Cameria's Cut" "Chaotic Disposition" "Gift of Asenath" "Hunter's Reward" "Immortal Resolve" "Keeper's Corruption" "Pride of the First Ones" "Remembrance" "Succor of the Sinless" "The Academic" "The Artist" "The Astromancer" "The Bitter Blossom" "The Bones" "The Damned" "The Dragon's Heart" "The Enthusiasts" "The Eternal War" "The Eye of Terror" "The Greatest Intentions" "The Gulf" "The Long Con" "The Patient" "The Price of Loyalty" "The Saint's Treasure" "The Spark and the Flame" "The Sustenance" "The Void" "Volatile Power" "Wealth and Power"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -5635,7 +5647,7 @@ Show # $type->divination $tier->t2
 
 Show # $type->divination $tier->t3
 	Class "Divination"
-	BaseType == "A Familiar Call" "Akil's Prophecy" "Baited Expectations" "Blessing of God" "Boon of the First Ones" "Brotherhood in Exile" "Buried Treasure" "Burning Blood" "Council of Cats" "Dark Dreams" "Divine Justice" "Draped in Dreams" "Dying Anguish" "Dying Light" "Etched in Blood" "Friendship" "Humility" "Mawr Blaidd" "More is Never Enough" "Peaceful Moments" "Pride Before the Fall" "Rebirth" "Reckless Ambition" "Squandered Prosperity" "The Awakened" "The Bargain" "The Cartographer" "The Celestial Justicar" "The Celestial Stone" "The Chosen" "The Craving" "The Dapper Prodigy" "The Dark Mage" "The Deal" "The Dreamer" "The Eldritch Decay" "The Endless Darkness" "The Enlightened" "The Escape" "The Ethereal" "The Fishmonger" "The Heroic Shot" "The Hive of Knowledge" "The Hoarder" "The Landing" "The Life Thief" "The Mayor" "The Offering" "The Old Man" "The Polymath" "The Porcupine" "The Professor" "The Progeny of Lunaris" "The Risk" "The Rite of Elements" "The Sacrifice" "The Sephirot" "The Soul" "The Throne" "The Tinkerer's Table" "The Undaunted" "The Valkyrie" "The Vast" "The Warlord" "The White Knight" "The Wolven King's Bite" "The World Eater" "Time-Lost Relic" "Unchained" "Vanity" "Void of the Elements"
+	BaseType == "A Familiar Call" "Akil's Prophecy" "Baited Expectations" "Blessing of God" "Boon of the First Ones" "Brotherhood in Exile" "Brush, Paint and Palette" "Buried Treasure" "Burning Blood" "Council of Cats" "Dark Dreams" "Divine Justice" "Draped in Dreams" "Dying Anguish" "Dying Light" "Etched in Blood" "Friendship" "Humility" "Mawr Blaidd" "More is Never Enough" "Peaceful Moments" "Prejudice" "Pride Before the Fall" "Rebirth" "Reckless Ambition" "Squandered Prosperity" "The Awakened" "The Bargain" "The Cartographer" "The Celestial Justicar" "The Celestial Stone" "The Chosen" "The Craving" "The Dapper Prodigy" "The Dark Mage" "The Deal" "The Dreamer" "The Eldritch Decay" "The Endless Darkness" "The Enlightened" "The Escape" "The Ethereal" "The Fishmonger" "The Heroic Shot" "The Hive of Knowledge" "The Hoarder" "The Hook" "The Landing" "The Life Thief" "The Mayor" "The Offering" "The Old Man" "The Polymath" "The Porcupine" "The Professor" "The Progeny of Lunaris" "The Risk" "The Rite of Elements" "The Sacrifice" "The Sephirot" "The Shortcut" "The Soul" "The Throne" "The Tinkerer's Table" "The Undaunted" "The Valkyrie" "The Vast" "The Warlord" "The White Knight" "The Wolven King's Bite" "The World Eater" "Time-Lost Relic" "Unchained" "Vanity" "Void of the Elements"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5656,7 +5668,7 @@ Show # $type->divination $tier->t3
 
 Show # %H5 $type->divination $tier->t4c
 	Class "Divination"
-	BaseType == "Acclimatisation" "Boon of Justice" "Bowyer's Dream" "Coveted Possession" "Demigod's Wager" "Emperor of Purity" "Emperor's Luck" "Harmony of Souls" "Imperial Legacy" "Last Hope" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Sambodhi's Vow" "Society's Remorse" "The Cacophony" "The Chains that Bind" "The Fool" "The Gemcutter" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Seeker" "The Side Quest" "The Survivalist" "The Union" "The Wrath" "Three Faces in the Dark" "Three Voices" "Vinia's Token"
+	BaseType == "Acclimatisation" "Boon of Justice" "Bowyer's Dream" "Coveted Possession" "Demigod's Wager" "Emperor of Purity" "Emperor's Luck" "Harmony of Souls" "Imperial Legacy" "Last Hope" "Loyalty" "Lucky Connections" "Lucky Deck" "Monochrome" "No Traces" "Sambodhi's Vow" "Society's Remorse" "The Cacophony" "The Card Sharp" "The Chains that Bind" "The Fool" "The Gemcutter" "The Innocent" "The Inventor" "The Journey" "The Master Artisan" "The Seeker" "The Side Quest" "The Survivalist" "The Union" "The Wrath" "Three Faces in the Dark" "Three Voices" "Vinia's Token"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5676,7 +5688,7 @@ Show # %H3 $type->divination $tier->t5c
 
 Show # %H4 $type->divination $tier->t4
 	Class "Divination"
-	BaseType == "A Dab of Ink" "Alone in the Darkness" "Arrogance of the Vaal" "Assassin's Favour" "Atziri's Arsenal" "Audacity" "Blind Venture" "Boundless Realms" "Cartographer's Delight" "Cursed Words" "Deathly Designs" "Dialla's Subjugation" "Doedre's Madness" "Earth Drinker" "Echoes of Love" "Forbidden Power" "Gemcutter's Promise" "Gift of the Gemling Queen" "Glimmer of Hope" "Grave Knowledge" "Haunting Shadows" "Heterochromia" "Hope" "Hubris" "Hunter's Resolve" "Jack in the Box" "Left to Fate" "Lingering Remnants" "Lost Worlds" "Lysah's Respite" "Merciless Armament" "Mitts" "Perfection" "Prometheus' Armoury" "Scholar of the Seas" "Shard of Fate" "The Admirer" "The Aesthete" "The Arena Champion" "The Avenger" "The Battle Born" "The Bear Woman" "The Beast" "The Betrayal" "The Body" "The Breach" "The Brittle Emperor" "The Cache" "The Calling" "The Cataclysm" "The Cursed King" "The Darkest Dream" "The Deep Ones" "The Doppelganger" "The Dragon" "The Dreamland" "The Drunken Aristocrat" "The Easy Stroll" "The Encroaching Darkness" "The Endurance" "The Explorer" "The Eye of the Dragon" "The Feast" "The Fletcher" "The Formless Sea" "The Forsaken" "The Fox" "The Garish Power" "The Gentleman" "The Gladiator" "The Hale Heart" "The Hunger" "The Insatiable" "The Jester" "The Jeweller's Boon" "The King's Heart" "The Last One Standing" "The Lion" "The Long Watch" "The Lord of Celebration" "The Mad King" "The Master" "The Mercenary" "The Messenger" "The Mountain" "The Obscured" "The One With All" "The Pack Leader" "The Pact" "The Penitent" "The Poet" "The Price of Protection" "The Primordial" "The Queen" "The Realm" "The Road to Power" "The Scavenger" "The Skeleton" "The Spoiled Prince" "The Standoff" "The Stormcaller" "The Summoner" "The Surveyor" "The Sword King's Salute" "The Thaumaturgist" "The Tower" "The Traitor" "The Trial" "The Tumbleweed" "The Twilight Moon" "The Tyrant" "The Undisputed" "The Unexpected Prize" "The Valley of Steel Boxes" "The Visionary" "The Watcher" "The Whiteout" "The Wilted Rose" "The Wind" "The Wolf" "The Wolf's Legacy" "The Wolverine" "The Wretched" "Thirst for Knowledge" "Treasure Hunter" "Triskaidekaphobia" "Underground Forest" "Vile Power"
+	BaseType == "A Dab of Ink" "Alone in the Darkness" "Arrogance of the Vaal" "Assassin's Favour" "Atziri's Arsenal" "Audacity" "Blind Venture" "Boundless Realms" "Cartographer's Delight" "Cursed Words" "Deathly Designs" "Dialla's Subjugation" "Doedre's Madness" "Earth Drinker" "Echoes of Love" "Forbidden Power" "Gemcutter's Promise" "Gift of the Gemling Queen" "Glimmer of Hope" "Grave Knowledge" "Haunting Shadows" "Heterochromia" "Hope" "Hubris" "Hunter's Resolve" "Jack in the Box" "Left to Fate" "Lingering Remnants" "Lost Worlds" "Lysah's Respite" "Merciless Armament" "Mitts" "Perfection" "Prometheus' Armoury" "Sambodhi's Wisdom" "Scholar of the Seas" "Shard of Fate" "The Admirer" "The Adventuring Spirit" "The Aesthete" "The Arena Champion" "The Avenger" "The Battle Born" "The Bear Woman" "The Beast" "The Betrayal" "The Body" "The Breach" "The Brittle Emperor" "The Cache" "The Calling" "The Cataclysm" "The Cursed King" "The Darkest Dream" "The Deep Ones" "The Doppelganger" "The Dragon" "The Dreamland" "The Drunken Aristocrat" "The Easy Stroll" "The Encroaching Darkness" "The Endurance" "The Explorer" "The Eye of the Dragon" "The Feast" "The Fletcher" "The Formless Sea" "The Forsaken" "The Fox" "The Garish Power" "The Gentleman" "The Gladiator" "The Hale Heart" "The Hunger" "The Insatiable" "The Jester" "The Jeweller's Boon" "The King's Heart" "The Last One Standing" "The Lion" "The Long Watch" "The Lord of Celebration" "The Mad King" "The Master" "The Mercenary" "The Messenger" "The Mountain" "The Obscured" "The One With All" "The Pack Leader" "The Pact" "The Penitent" "The Poet" "The Price of Protection" "The Primordial" "The Queen" "The Realm" "The Road to Power" "The Scavenger" "The Skeleton" "The Spoiled Prince" "The Standoff" "The Stormcaller" "The Summoner" "The Surveyor" "The Sword King's Salute" "The Thaumaturgist" "The Tower" "The Traitor" "The Trial" "The Tumbleweed" "The Twilight Moon" "The Tyrant" "The Undisputed" "The Unexpected Prize" "The Valley of Steel Boxes" "The Visionary" "The Watcher" "The Whiteout" "The Wilted Rose" "The Wind" "The Wolf" "The Wolf's Legacy" "The Wolverine" "The Wretched" "Thirst for Knowledge" "Treasure Hunter" "Triskaidekaphobia" "Underground Forest" "Vile Power"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5704,7 +5716,7 @@ Show # $type->divination $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3700]] Remaining Currency
+# [[3800]] Remaining Currency
 #===============================================================================================================
 # !! Override 740 : "Remaining Currency"
 
@@ -5730,7 +5742,7 @@ Show # $type->currency $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3800]] Questlike-Items1 (override uniques)
+# [[3900]] Questlike-Items1 (override uniques)
 #===============================================================================================================
 # !! Override 750 : "Metamorph Samples"
 
@@ -5755,12 +5767,12 @@ Show # $type->heisttarget $tier->any
 	MinimapIcon 1 Green Pentagon
 
 #===============================================================================================================
-# [[3900]] Uniques
+# [[4000]] Uniques
 #===============================================================================================================
 # !! Override 760 : "All uniques"
 
 #------------------------------------
-#   [3901] Exceptions #1
+#   [4001] Exceptions #1
 #------------------------------------
 
 Show # $type->uniques $tier->extabula
@@ -5810,7 +5822,7 @@ Show # $type->uniques $tier->exharby
 	MinimapIcon 0 Blue Star
 
 #------------------------------------
-#   [3902] Tier 1 uniques
+#   [4002] Tier 1 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t1
@@ -5825,7 +5837,7 @@ Show # $type->uniques $tier->t1
 	MinimapIcon 0 Red Star
 
 #------------------------------------
-#   [3903] Exceptions #2
+#   [4003] Exceptions #2
 #------------------------------------
 
 Show # $type->uniques $tier->2xcorrupteduniques
@@ -5864,7 +5876,7 @@ Show # %D4 $type->uniques $tier->5link
 	MinimapIcon 0 Yellow Star
 
 #------------------------------------
-#   [3904] Tier 2 uniques
+#   [4004] Tier 2 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t2
@@ -5879,7 +5891,7 @@ Show # $type->uniques $tier->t2
 	MinimapIcon 0 Yellow Star
 
 #------------------------------------
-#   [3905] Multi-Unique bases.
+#   [4005] Multi-Unique bases.
 #------------------------------------
 # These bases have multiple uniques. One of the uniques, is a high value one
 # While others are cheap. We give them a high quality display, while making a normal unique
@@ -5933,7 +5945,7 @@ Show # $type->uniques $tier->exjewels
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [3906] Tier 3 uniques 
+#   [4006] Tier 3 uniques 
 #------------------------------------
 
 Show # $type->uniques $tier->t3boss
@@ -5970,7 +5982,7 @@ Show # %D2 $type->uniques $tier->recipeuniquerings
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [3907] Tier 4 uniques
+#   [4007] Tier 4 uniques
 #------------------------------------
 
 Show # %H4 $type->uniques $tier->hideable2
@@ -6006,13 +6018,12 @@ Show # $type->uniques $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4000]] Misc Map Items
+# [[4100]] Misc Map Items
 #===============================================================================================================
 # !! Override 780 : "Quest Items and Relic Keys"
 
-Show # $type->miscmapitems $tier->relickeys
-	Class "Misc Map Items"
-	BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key"
+Show # $type->miscmapitemsextra $tier->relickeys
+	BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key" "Vaal Reliquary Key"
 	SetFontSize 45
 	SetTextColor 255 0 0 255
 	SetBorderColor 255 0 0 255
@@ -6020,6 +6031,26 @@ Show # $type->miscmapitems $tier->relickeys
 	PlayAlertSound 6 300
 	PlayEffect Red
 	MinimapIcon 0 Red Star
+
+Show # $type->miscmapitemsextra $tier->inscribedultimatum
+	BaseType "Inscribed Ultimatum"
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 159 15 213 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Hexagon
+
+Show # $type->miscmapitemsextra $tier->alvatemple
+	BaseType "Chronicle of Atzoatl"
+	SetFontSize 45
+	SetTextColor 255 255 255 255
+	SetBorderColor 255 255 255 255
+	SetBackgroundColor 159 15 213 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Hexagon
 
 Show # $type->miscmapitems $tier->any
 	Class "Misc Map Items"
@@ -6032,7 +6063,7 @@ Show # $type->miscmapitems $tier->any
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4100]] Questlike-Items2
+# [[4200]] Questlike-Items2
 #===============================================================================================================
 
 Show # $type->questlike $tier->labyrinthconsumable
@@ -6066,7 +6097,7 @@ Show # $type->questlike $tier->questitems
 	MinimapIcon 1 Green Pentagon
 
 #===============================================================================================================
-# [[4200]] Hide outdated leveling flasks
+# [[4300]] Hide outdated leveling flasks
 #===============================================================================================================
 # !! Chapter "Leveling - flasks, rares, 4links"
 # !! Override 810 : "All leveling rules incl. utility flasks"
@@ -6112,7 +6143,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 	DisableDropSound True
 
 #===============================================================================================================
-# [[4300]] Leveling - Flasks
+# [[4400]] Leveling - Flasks
 #===============================================================================================================
 #------------------------------------
 # [6002] Utility Flasks
@@ -6168,7 +6199,7 @@ Show # %D1 $type->leveling->flasks->quality $tier->any
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [4301] Hybrid flasks
+#   [4401] Hybrid flasks
 #------------------------------------
 # !! Override 820 : "leveling life and mana flasks"
 
@@ -6215,7 +6246,7 @@ Show # %H2 $type->leveling->flasks->hybrid $tier->t6
 	SetBorderColor 100 0 100
 
 #------------------------------------
-#   [4302] Life flasks
+#   [4402] Life flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->life $tier->t1
@@ -6303,7 +6334,7 @@ Show # $type->leveling->flasks->life $tier->t12
 	SetBorderColor 120 0 0
 
 #------------------------------------
-#   [4303] Mana flasks
+#   [4403] Mana flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->mana $tier->t1
@@ -6391,7 +6422,7 @@ Show # $type->leveling->flasks->mana $tier->t12
 	SetBorderColor 0 0 120
 
 #===============================================================================================================
-# [[4400]] Leveling - Rules
+# [[4500]] Leveling - Rules
 #===============================================================================================================
 # !! Override 830 : "leveling: 4links and chromatic socket items"
 #------------------------------------
@@ -6409,7 +6440,7 @@ Show # %D4 $type->leveling->rare->socketslinks $tier->4linkrares
 	MinimapIcon 2 Grey Diamond
 
 #------------------------------------
-#   [4401] Rares - Decorators
+#   [4501] Rares - Decorators
 #------------------------------------
 # !! Override 840 : "leveling: all rare rules"
 
@@ -6446,7 +6477,7 @@ Show # $type->decorators->leveling->rare $tier->tinyrares
 	Continue
 
 #------------------------------------
-#   [4402] Rares - Universal
+#   [4502] Rares - Universal
 #------------------------------------
 
 Show # %D5 $type->leveling->rare->universal $tier->rusticsash
@@ -6498,7 +6529,7 @@ Show # %D4 $type->leveling->rare->armours $tier->quivers
 	SetBackgroundColor 43 100 75 210
 
 #------------------------------------
-#   [4403] Rares - Caster
+#   [4503] Rares - Caster
 #------------------------------------
 # !! Override 850 : "leveling: class specific leveling weapons"
 
@@ -6518,7 +6549,7 @@ Show # %D4 $type->leveling->rare->caster $tier->general
 	SetBackgroundColor 43 43 100 210
 
 #------------------------------------
-#   [4404] Rares - Archer
+#   [4504] Rares - Archer
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->archer $tier->l1
@@ -6611,7 +6642,7 @@ Show # %D4 $type->leveling->rare->archer $tier->l10
 	SetBackgroundColor 43 100 75 210
 
 #------------------------------------
-#   [4405] Rares - Melee
+#   [4505] Rares - Melee
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->melee $tier->l1
@@ -6739,7 +6770,7 @@ Show # %D3 $type->leveling->rare->remaining $tier->underlevel16
 	SetBackgroundColor 80 80 80 140
 
 #===============================================================================================================
-# [[4500]] Leveling - Useful magic and normal items
+# [[4600]] Leveling - Useful magic and normal items
 #===============================================================================================================
 # !! Chapter "Leveling - remaining normal and magic items"
 # !! Override 910 : "Linked Gear"
@@ -6799,7 +6830,7 @@ Show # %D2 $type->leveling->normalmagic->rgb $tier->rgbmedium
 
 Show # %D3 $type->leveling->normalmagic->3l $tier->earlythreelinks
 	LinkedSockets >= 3
-	AreaLevel <= 28
+	AreaLevel <= 15
 	Rarity <= Magic
 	SetFontSize 40
 	SetBorderColor 0 120 120 255
@@ -6929,7 +6960,7 @@ Show # %D2 $type->leveling->normalmagic->otheracts $tier->generalcrafting
 #	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4501] Normals
+#   [4601] Normals
 #------------------------------------
 # !! Override 930 : "first levels gear"
 
@@ -6959,7 +6990,7 @@ Show # %H3 $type->leveling->firstlevels $tier->firstareas
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4502] Weapon Progression
+#   [4602] Weapon Progression
 #------------------------------------
 # !! Override 940 : "weapon progression"
 
@@ -7254,7 +7285,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r29
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4503] Remaining Magics
+#   [4603] Remaining Magics
 #------------------------------------
 # !! Override 950 : "magic vendor items"
 
@@ -7338,7 +7369,7 @@ Hide # $type->hidelayer $tier->final
 	DisableDropSound True
 
 #------------------------------------
-#   [4504] Show All unknown Section
+#   [4604] Show All unknown Section
 #------------------------------------
 # THIS ENTRY IS CAUGHT IN 3 CASES:
 # 1) YOUR FILTER IS OUT OF DATE!
