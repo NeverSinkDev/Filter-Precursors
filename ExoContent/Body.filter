@@ -696,7 +696,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #===============================================================================================================
 #!! Override 170 : "Overquality and endgame 4links"
 
-Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean()
+Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity < Rare
 {
 	Show Overquality { %D2; Tag("exotic.t4"); Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; Tag("Low"); LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }

@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.0.0a
+# VERSION:  8.0.0b
 # TYPE:     0-SOFT
 # STYLE:    NORMAL
 # AUTHOR:   NeverSink
@@ -2827,6 +2827,7 @@ Show # %D2 $type->miscendgamerules $tier->overquality
 	Quality >= 29
 	ItemLevel >= 75
 	DropLevel >= 50
+	Rarity < Rare
 	Rarity <= Rare
 	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
 	SetFontSize 40
@@ -2838,6 +2839,7 @@ Show # %D1 $type->miscendgamerules $tier->earlyendgame4link
 	LinkedSockets >= 4
 	AreaLevel <= 72
 	AreaLevel >= 68
+	Rarity < Rare
 	Class "Body Armours" "Boots" "Gloves" "Helmets"
 	SetBorderColor 100 100 100 150
 	SetBackgroundColor 0 0 0 180
