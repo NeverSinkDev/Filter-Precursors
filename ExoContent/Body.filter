@@ -398,12 +398,19 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Craftable Invitations
 #------------------------------------	
-Section Invitations : Rarity <= Rare, Auto("exotic->invitation"), Tag("artefact")
+
+Section QuestItemException : Auto("QuestlikeException")
+{
+	Show QuestItems { Tag("QuestLike"); Class "Pantheon Soul" "Quest"; }
+}
+
+Section Invitations : Auto("exotic->invitation"), Tag("artefact"), Rarity <= Rare
 {
 	Show T1 { Tag(G1); BaseType == exotic.invitations.t1 }
 	Show T2 { Tag(G2); BaseType == exotic.invitations.t2 }
 	Show T3 { BaseType == exotic.invitations.t3 }
 }
+
 
 #===============================================================================================================
 # [[0200]] Exotic Item Variations
@@ -579,7 +586,7 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 	{
 		Show t1 { %D5; Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
 		Show t2 { %D3; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
-		Show t3 { %D2; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t3; }
+		ShowD t3 { Tag("craftgeneral.I84"); BaseType bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -618,8 +625,8 @@ Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 67, Auto("En
 {
 	Show RGBSmall1	{ %H2; Tag("*t2"); Tag("SF40"); Width <=2; Height <=2; }
 	Show RGBSmall2	{ %H2; Tag("*t2"); Tag("SF40"); Width <=1; Height <=4; }
-	Show RGBLarge	{ %H0; Tag("*t3"); Tag("SF35"); Width >=2; Height >=4; }
-	Show RGBMedium	{ %H1; Tag("*t3"); Tag("SF35"); Width >=2; Height = 3; }
+	Show RGBLarge	{ %H0; Tag("*t3"); Tag("SF40"); Width >=2; Height >=4; }
+	Show RGBMedium	{ %H1; Tag("*t3"); Tag("SF40"); Width >=2; Height = 3; }
 }
 #------------------------------------
 # [1234] Chisel Recipes
@@ -725,7 +732,7 @@ Section HideLayer1 : Auto("HideLayer")
 #!! Chapter "Rare Endgame Items"
 #!! Override 210 : "Rare continue/style sections sections"
 
-Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, Tag("raredeco")
+Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, Class classes_equip, Tag("raredeco")
 {
 	Cont LargeRares 	{ Tag("*large"); Height >= 3; Width >= 2; }
 	Cont MediumRares1 	{ Tag("*medium"); Height >= 3; Width = 1; }
@@ -1217,6 +1224,7 @@ Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency
 
 Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 {
+	Show HighStack { Tag("Coins.Huge"); StackSize >= 150; BaseType == "Rogue's Marker"; }
 	Show Any { %H4; Tag("Coins.Large"); BaseType == "Rogue's Marker"; }
 }
 
@@ -1536,9 +1544,9 @@ Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
 
 Section Questlike : Auto("Questlike")
 {
+	Show Invitations { Tag("QuestLike"); BaseType "Maven's"; }
 	Show LabyrinthConsumable { Tag("QuestLike"); Class "Labyrinth"; }
 	Show IncursionConsumable { Tag("QuestLike"); Class "Incursion Item"; }
-	Show QuestItems { Tag("QuestLike"); Class "Pantheon Soul" "Quest"; }
 	Show QuestWatchStones { Tag("QuestLike"); Class "Atlas Region Upgrade Item"; }
 }
 
@@ -1606,8 +1614,8 @@ Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"),
 	Show t4  { FlaskHighlight(19, "Greater");}
 	Show t5  { FlaskHighlight(25, "Grand");}
 	Show t6  { FlaskHighlight(31, "Giant");}
-	Show t7  { FlaskHighlight(43, "Colossal");}
-	Show t8  { FlaskHighlight(30, "Sacred");}
+	Show t7  { FlaskHighlight(37, "Colossal");}
+	Show t8  { FlaskHighlight(43, "Sacred");}
 	Show t9  { FlaskHighlight(51, "Hallowed");}
 	Show t10 { FlaskHighlight(60, "Sanctified");}
 	Show t11 { FlaskHighlight(68, "Divine");}
@@ -1625,8 +1633,8 @@ Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana"),
 	Show t4 {FlaskHighlight(19, "Greater");}
 	Show t5 {FlaskHighlight(25, "Grand");}
 	Show t6 {FlaskHighlight(31, "Giant");}
-	Show t7 {FlaskHighlight(43, "Colossal");}
-	Show t8 {FlaskHighlight(30, "Sacred");}
+	Show t7 {FlaskHighlight(37, "Colossal");}
+	Show t8 {FlaskHighlight(43, "Sacred");}
 	Show t9 {FlaskHighlight(51, "Hallowed");}
 	Show t10 {FlaskHighlight(60, "Sanctified");}
 	Show t11 {FlaskHighlight(68, "Divine");}
