@@ -361,21 +361,20 @@ Style GeneralMapProgressionStrategy
 {
 	Func SpecialHigh()
 	{
-		SetFontSize 45;
+		SetFontSize font.t1;
 		SetTextColor maps.special.acc; SetBorderColor maps.special.acc; SetBackgroundColor maps.special.extra; 
 		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square; 
 	}
 
 	Func SpecialLow()
 	{
-		SetFontSize 45;
+		SetFontSize font.t2;
 		SetTextColor maps.special.acc; SetBorderColor maps.special.acc; SetBackgroundColor maps.special.low.extra; 
 		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 1 Purple Square; 
 	}
 
 	Func Z1()
 	{
-		#SetFontSize 45;
 		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z1.acc; 
 		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
 		SetFontSize font.t2;
@@ -383,28 +382,25 @@ Style GeneralMapProgressionStrategy
 
 	Func Z2()
 	{
-		#SetFontSize 45;
 		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z2.acc; 
 		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
-		SetFontSize font.t3;
+		SetFontSize font.t2;
 	}
 
 	Func Z3()
 	{
-		#SetFontSize 45;
 		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
 		SetFontSize sWhite;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square; 
-		SetFontSize font.t4;
+		SetFontSize font.t3;
 	}
 
 	Func Z4()
 	{
-		#SetFontSize font.t5;
 		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
 		SetFontSize sWhite;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
-		SetFontSize font.t4;
+		SetFontSize font.t3;
 	}
 
 	Func deco_mapup()

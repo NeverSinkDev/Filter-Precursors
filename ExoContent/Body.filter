@@ -111,7 +111,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 	{
 		Show AnyTrinket  { %D4; Class "Amulet" "Belts" "Rings"; }
 		Show AnyTopLevel { %D5; Tag("tiny"); ItemLevel >= 86; }
-		Show Any 		 { %D3; Empty(); }
+		Show Any 		 { %D4; Empty(); }
 	}
 }
 
@@ -287,7 +287,7 @@ Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID")
 		Show Phys { Mod >= 1 wdmg_pphys[2] + "of Many"; }
 	}
 
-	Section Caster : Class "Wands" "Sceptres"
+	Section Caster : Class "Wands" "Sceptres" "Shields" "Rune Daggers"
 	{
 		Show DamageMods { Mod >= 1 wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + wgems_alllevels_global + convokingMods[1] + convokingLvl; }
 	}
@@ -574,7 +574,7 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
 		Show t1 { Tag("craftspecial.I86"); BaseType bases.crafting.general.t1; }
-		Show t2 { %D5; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t2; }
+		Show t2 { %D4; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t2; }
 		Show t3 { %D3; Tag("craftgeneral.I86"); BaseType bases.crafting.general.t3; }
 	}
 
@@ -584,8 +584,8 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
-		Show t1 { %D5; Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
-		Show t2 { %D3; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
+		Show t1 { %D4; Tag("craftspecial.I84"); BaseType bases.crafting.general.t1; }
+		Show t2 { %D2; Tag("craftgeneral.I84"); BaseType bases.crafting.general.t2; }
 		ShowD t3 { Tag("craftgeneral.I84"); BaseType bases.crafting.general.t3; }
 	}
 
@@ -596,7 +596,7 @@ Section EndgameCraftingBases : Clean(), Tag("craftspecial"), Tag("craftgeneral")
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
 		Show t1  { %D3; Tag("craftspecial.ANY"); BaseType bases.crafting.general.t1; }
-		Show t2  { %D1; Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t2; }
+		Show t2  { %D0; Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t2; }
 		ShowD t3 { Tag("craftgeneral.ANY"); BaseType bases.crafting.general.t3; }
 	}
 
@@ -757,7 +757,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
 	{
-		Show Any { %H1; Tag("Notice"); Empty(); }
+		Show Any { %H3; Tag("exotic.t3"); Empty(); }
 	}
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
@@ -820,6 +820,13 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		
 		Show T2weapons { %D3; BaseType bases.rares.eg.t2.weapons }
 		Show T2armours { %D3; BaseType bases.rares.eg.t2.armours }
+
+#===============================================================================================================
+# [[0200]] Endgame - Rare - Gear - T2 - handpicked
+#===============================================================================================================
+#!! Override 255 : "Identified Item Handling"
+
+		Show IdentifiedItemHandling { %D3; Tag(exotic.t4); Identified True; Corrupted False; Mirrored False; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
