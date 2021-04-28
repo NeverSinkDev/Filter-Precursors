@@ -826,7 +826,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 #!! Override 255 : "Identified Item Handling"
 
-		Show IdentifiedItemHandling { %D3; !exotic.t4; Identified True; Corrupted False; Mirrored False; }
+		Show IdentifiedItemHandling { %D3; !exotic.t4; Identified True; Corrupted False; Mirrored False; Class classes_equip; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
@@ -1775,7 +1775,7 @@ Section LevelingMiscGear : Rarity <= Magic
 	{
 		Show RGBSmall1	{ %D3; !SF45; !Recipe.t2; Width <=2; Height <=2; }
 		Show RGBSmall2	{ %D3; !SF45; !Recipe.t2; Width <=1; Height <=4; }
-		Show RGBLarge	{ %D2; !SF40; !Recipe.t3; Width >=2; Height >=4; AreaLevel <= leveling.keylevels.act3 }
+		Show RGBLarge	{ %D2; !SF40; !Recipe.t3; Width >=2; Height >=4; }
 		Show RGBMedium	{ %D2; !SF40; !Recipe.t3; Width >=2; Height = 3; }
 	}
 
