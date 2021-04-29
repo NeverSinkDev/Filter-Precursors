@@ -286,6 +286,71 @@ Style UniversalValueAccents
 }
 
 #------------------------------------
+# Universal Strategies
+#------------------------------------
+
+# Exotic gear has some special properties, such as mods
+# Rare types, corruptions, synthesised state etc
+
+Style UniversalExotic
+{
+	var icon = Diamond;
+
+	Func T1 ()
+	{
+		SetFontSize font.t2;
+		Colors(exoticgear.tx, exoticgear.tx, exoticgear.extra);
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
+	}
+
+	Func T2 ()
+	{
+		SetFontSize font.t3;
+		Colors(exoticgear.tx, exoticgear.tx, sBlack);
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
+	}
+
+	Func T3 ()
+	{
+		SetFontSize font.t4;
+		SetBorderColor exoticgear.tx;
+		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
+	}
+
+	Func T4 ()
+	{
+		SetFontSize font.t5;
+		SetBorderColor exoticgear.tx.low;
+		PlayEffect exoticgear.cray Temp;
+	}
+}
+
+Style DecoratorRemoverStrategy
+{
+	Func RareDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+		SetTextColor 255 255 119;
+	}
+
+	Func MagicDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+	}
+
+	Func NormalDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+	}
+}
+
+#------------------------------------
 # Styling Pieces
 #------------------------------------
 
@@ -474,70 +539,5 @@ Style PatternInverseBlack
 		SetFontSize fsize;
 		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-#------------------------------------
-# Universal Strategies
-#------------------------------------
-
-# Exotic gear has some special properties, such as mods
-# Rare types, corruptions, synthesised state etc
-
-Style UniversalExotic
-{
-	var icon = Diamond;
-
-	Func T1 ()
-	{
-		SetFontSize font.t2;
-		Colors(exoticgear.tx, exoticgear.tx, exoticgear.extra);
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
-	}
-
-	Func T2 ()
-	{
-		SetFontSize font.t3;
-		Colors(exoticgear.tx, exoticgear.tx, sBlack);
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
-	}
-
-	Func T3 ()
-	{
-		SetFontSize font.t4;
-		SetBorderColor exoticgear.tx;
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
-	}
-
-	Func T4 ()
-	{
-		SetFontSize font.t5;
-		SetBorderColor exoticgear.tx.low;
-		PlayEffect exoticgear.cray Temp;
-	}
-}
-
-Style DecoratorRemoverStrategy
-{
-	Func RareDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
-		SetTextColor 255 255 119;
-	}
-
-	Func MagicDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
-	}
-
-	Func NormalDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
 	}
 }
