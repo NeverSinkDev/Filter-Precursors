@@ -33,8 +33,8 @@ Section Influenced : Rarity <= Rare
 
 Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 {	
-	Show InfShaper { HasInfluence Shaper; }
-	Show InfElder { HasInfluence Elder; }
+	Show InfShaper { !maps.T1; HasInfluence Shaper; }
+	Show InfElder { !maps.T1; HasInfluence Elder; }
 }
 #------------------------------------
 #   [1234] Crusader
@@ -936,7 +936,7 @@ Section Gems : Class "Gems", !Gems
 #------------------------------------
 # [3901] Exceptional Gems - Awakened and AltQuality
 #------------------------------------
-	Section GemsExceptional : Auto("gems-exceptional"), !G1
+	Section GemsExceptional : Auto("gems-exceptional")
 	{
 		Show AwaT1 	{ !*T1; BaseType gems.t1awa; }
 		Show AwaAny { !*P1; BaseType "Awakened"; }

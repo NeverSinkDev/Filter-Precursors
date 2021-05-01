@@ -57,7 +57,6 @@ Style LibrarySectionBased
 	
 	Apply(tier.uniquereplica, Replicas => ReplicaTierList);
 	Apply(tier.uniquemaps, UniqueMaps => UniqueMapStrat);
-	Apply(influenced, InfluencedMaps* => !InfluencedMapsStrategy.Any)
 
 	Apply(deco.maps, Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
 	Apply(tier.fragments, Labyrinth => ExoticFragments);
@@ -106,25 +105,28 @@ Style LibraryTagBased
 	Apply(uniques.maps, $Maps.HighHarbingerMap => UniqueMapStrat.t1);
 	Apply(maps.general, $Maps => GeneralMapProgressionStrategy);
 
-	# Currency
-	Apply(currency.def, $currency.t1exalted => t1exalted.Any);
-	Apply(currency.def, $currency.t2divine => t2divine.Any);
-	Apply(currency.def, $currency.t3annul => t3annul.Any);
-	Apply(currency.def, $currency.t4chaos => t4chaos.Any);
-	Apply(currency.def, $currency.t5alchemy => t5alchemy.Any);
-	Apply(currency.def, $currency.t6chrom => t6chrom.Any);
-	Apply(currency.def, $currency.t7chance => t7chance.Any);
-	Apply(currency.def, $currency.t8trans => t8trans.Any);
-	Apply(currency.def, $currency.t9armour => t9armour.Any);
-	Apply(currency.def, $currency.tportal => tportal.Any);
-	Apply(currency.def, $currency.twisdom => twisdom.Any);
+	Apply(influenced, $Maps.T1 => InfluencedMapsStrategy)
 
-	Apply(divi, $divi.t1 => t1divi.Any);
-	Apply(divi, $divi.t2 => t2divi.Any);
-	Apply(divi, $divi.t3 => t3divi.Any);
-	Apply(divi, $divi.t4 => t4divi.Any);
-	Apply(divi, $divi.t5 => t5divi.Any);
-	Apply(divi, $divi.tnew => tnewdivi.Any);
+
+	# Currency
+	Apply(currency.def, $currency.t1exalted => t1exalted);
+	Apply(currency.def, $currency.t2divine => t2divine);
+	Apply(currency.def, $currency.t3annul => t3annul);
+	Apply(currency.def, $currency.t4chaos => t4chaos);
+	Apply(currency.def, $currency.t5alchemy => t5alchemy);
+	Apply(currency.def, $currency.t6chrom => t6chrom);
+	Apply(currency.def, $currency.t7chance => t7chance);
+	Apply(currency.def, $currency.t8trans => t8trans);
+	Apply(currency.def, $currency.t9armour => t9armour);
+	Apply(currency.def, $currency.tportal => tportal);
+	Apply(currency.def, $currency.twisdom => twisdom);
+
+	Apply(divi, $divi.t1 => t1divi);
+	Apply(divi, $divi.t2 => t2divi);
+	Apply(divi, $divi.t3 => t3divi);
+	Apply(divi, $divi.t4 => t4divi);
+	Apply(divi, $divi.t5 => t5divi);
+	Apply(divi, $divi.tnew => tnewdivi);
 
 	Apply(tier.fragments, $fragments.t1 => FragmentTierStrat.t1);
 	Apply(tier.fragments, $fragments.t2 => FragmentTierStrat.t2);
@@ -132,19 +134,19 @@ Style LibraryTagBased
 	Apply(tier.fragments, $fragments.t4 => FragmentTierStrat.t4);
 	Apply(tier.fragments, $fragments.t5 => FragmentTierStrat.t5);
 
-	Apply(currency.def, $currency.eqChaos => t4chaos.Any);
-	Apply(currency.def, $currency.eqAlchemy => t5alchemy.Any);
-	Apply(currency.def, $currency.eqAnnul => t3annul.Any);
+	Apply(currency.def, $currency.eqChaos => t4chaos);
+	Apply(currency.def, $currency.eqAlchemy => t5alchemy);
+	Apply(currency.def, $currency.eqAnnul => t3annul);
 
 	Apply(currency.coins, $Coins => Coins);
 	Apply(splinters, $Splinters => SplinterStrategy);
 
-	Apply(uniques.def, $unique.t1 => t1uni.Any);
-	Apply(uniques.def, $unique.t2 => t2uni.Any);
-	Apply(uniques.def, $unique.t3 => t3uni.Any);
-	Apply(uniques.def, $unique.t4 => t4uni.Any);
-	Apply(uniques.def, $unique.t5 => t5uni.Any);
-	Apply(uniques.harby, $unique.harbyunique => harbyunique.Any);
+	Apply(uniques.def, $unique.t1 => t1uni);
+	Apply(uniques.def, $unique.t2 => t2uni);
+	Apply(uniques.def, $unique.t3 => t3uni);
+	Apply(uniques.def, $unique.t4 => t4uni);
+	Apply(uniques.def, $unique.t5 => t5uni);
+	Apply(uniques.harby, $unique.harbyunique => harbyunique);
 	# Apply($unique.tnew => tnewdivi.Any);
 }
 

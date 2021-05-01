@@ -3,7 +3,6 @@
 #------------------------------------
 
 # This rule is applied to every single rule in the filter first.
-
 Style UniversalPreProc
 {
 	Func ApplyToAll ()
@@ -354,102 +353,19 @@ Style DecoratorRemoverStrategy
 # Styling Pieces
 #------------------------------------
 
-# Tiered lists have a come with multiple tiers grouping a single use case
-# The T1 and T2 strategies are used in every true tierlist
-
-Style T1
-{
-	Func T1 () 
-	{ 
-		SetFontSize font.max;
-		Colors(tier.t1.acc, tier.t1.acc, tier.t1.base);
-		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
-	}
-}
-
-Style T2RedPiece
-{
-	Func T2 () 
-	{ 
-		SetFontSize font.t2;
-		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
-	}
-}
-
-Style T2YellowPiece
-{
-	Func T2 () 
-	{ 
-		SetFontSize font.t2;
-		SetTextColor tier.t2.base; SetBorderColor tier.t2.base; SetBackgroundColor tier.t2.acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
-	}
-}
-
-Style T3YellowPiece
-{
-	Func T3 () 
-	{ 
-		SetFontSize font.t3;
-		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
-	}
-}
-
-Style T3WhitePiece
-{
-	Func T3 () 
-	{ 
-		SetFontSize 45;
-		SetTextColor tier.t3.base; SetBorderColor tier.t3.base; SetBackgroundColor tier.t3.acc; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap icon; 
-	}
-}
-
-Style T4WhitePieceNoBG
-{
-	Func T4 () 
-	{ 
-		SetFontSize font.t4;
-		SetTextColor tier.t4.acc; SetBorderColor tier.t4.acc; SetBackgroundColor sBlack; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
-	}
-}
-
-Style T5
-{
-	Func T5 () 
-	{ 
-		SetFontSize font.t5;
-		SetTextColor tier.t5.acc;
-		PlayEffect tier.t5.cray Temp;
-	}
-}
-
-Style TMulti
-{
-	Func Multi()
-	{
-		SetFontSize font.t3;
-		SetTextColor tier.special.acc; SetBorderColor exoticgear.tx; SetBackgroundColor tier.special.base; 
-		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
-	}
-}
-
 Style PatternGlow
 {
 	var fsize = font.t4;
 	var msize = 1;
 	var acc = tier.error;
-	var bg = tier.error.low;
+	var base = tier.error.low;
 	var cmap = Yellow;
 	var cray = Yellow;
 	
 	Func Any () 
-	{ 
+	{
 		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
 	}
 }
@@ -459,7 +375,7 @@ Style PatternHighWhite
 	var fsize = font.t2;
 	var msize = 0;
 	var acc = tier.error;
-	var bg = sWhite;
+	var base = sWhite;
 	var cmap = Red;
 	var cray = Red;
 	var sound = sounds.t2;
@@ -467,7 +383,7 @@ Style PatternHighWhite
 	Func Any () 
 	{ 
 		SetFontSize fsize;
-		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
 	}
 }
@@ -477,7 +393,7 @@ Style PatternLowWhite
 	var fsize = font.t4;
 	var msize = 0;
 	var acc = tier.error;
-	var bg = sWhite;
+	var base = sWhite;
 	var cmap = White;
 	var cray = White;
 	var sound = sounds.currency;
@@ -485,7 +401,7 @@ Style PatternLowWhite
 	Func Any () 
 	{ 
 		SetFontSize fsize;
-		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
 	}
 }
@@ -495,32 +411,14 @@ Style PatternBlack
 	var fsize = font.t4;
 	var msize = 2;
 	var acc = tier.error;
-	var bg = sBlack;
+	var base = sBlack;
 	var cmap = White;
 	var cray = White;
 	
 	Func Any () 
 	{ 
 		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
-		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-Style PatternT1
-{
-	var fsize = font.max;
-	var msize = 0;
-	var acc = tier.error;
-	var bg = sWhite;
-	var cmap = Red;
-	var cray = Red;
-	var sound = sounds.t1;
-	
-	Func Any () 
-	{ 
-		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor bg; 
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
 	}
 }
@@ -530,17 +428,124 @@ Style PatternInverseBlack
 	var fsize = font.t3;
 	var msize = 1;
 	var acc = tier.error;
-	var bg = sBlack;
+	var base = sBlack;
 	var cmap = Yellow;
 	var cray = Yellow;
 	
 	Func Any () 
 	{ 
 		SetFontSize fsize;
-		SetTextColor bg; SetBorderColor bg; SetBackgroundColor acc; 
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
 	}
 }
+
+Style T1
+{
+	var acc = tier.t1.acc;
+	var base = tier.t1.base;
+	var fsize = font.max;
+
+	Func T1 () 
+	{ 
+		SetFontSize fsize;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
+		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
+	}
+}
+
+Style T2RedPiece
+{
+	Func T2 () 
+	{ 
+		var acc = tier.t2.acc;
+		var base = tier.t2.base;
+
+		SetFontSize font.t2;
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
+Style T2YellowPiece
+{
+	Func T2 () 
+	{ 
+		var acc = tier.t2.acc;
+		var base = tier.t2.base;
+
+		SetFontSize font.t2;
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
+	}
+}
+
+Style T3YellowPiece
+{
+	Func T3 () 
+	{ 
+		var acc = tier.t3.acc;
+		var base = tier.t3.base;
+
+		SetFontSize font.t3;
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
+		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
+	}
+}
+
+Style T3WhitePiece
+{
+	Func T3 () 
+	{
+		var acc = tier.t3.acc;
+		var base = tier.t3.base;
+
+		SetFontSize 45;
+		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap icon; 
+	}
+}
+
+Style T4WhitePieceNoBG
+{
+	Func T4 () 
+	{ 
+		var acc = tier.t4.acc;
+		var base = sBlack;
+		SetFontSize font.t4;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
+	}
+}
+
+Style T5
+{
+	Func T5 () 
+	{
+		var acc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor acc;
+		PlayEffect tier.t5.cray Temp;
+	}
+}
+
+Style TMulti
+{
+	Func Multi()
+	{
+		var base = tier.special.base;
+		var acc = tier.special.acc;
+		var extra = exoticgear.tx;
+
+		SetFontSize font.t3;
+		SetTextColor acc; SetBorderColor extra; SetBackgroundColor base; 
+		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
+	}
+}
+
+#------------------------------------
+# Derived Strategies
+#------------------------------------
 
 #------------------------------------
 # Rares
@@ -828,7 +833,11 @@ Style GemStrategy : T1
 {
 	var icon = Triangle;
 	var altBg = artefact.extra;	
-	var tier.t1.acc = gems.t1;
+
+	Func T1()
+	{
+		var acc = gems.t1;
+	}
 
 	# Used for special cases, such as alt quality, awakened gems etc.
 	Func P1()
@@ -1035,35 +1044,26 @@ Style Coins
 # Currency Tiering
 #------------------------------------
 
-Style t1exalted : PatternT1
+Style t1exalted : T1
 {
-	Func Any()
-	{ 
-		var acc = currency.acc.t1; 
-		var icon = Star;
-	}
+	var acc = currency.acc.t1; 
+	var icon = Star;
 }
 
 Style t2divine : PatternHighWhite
 {
-	Func Any()
-	{ 
-		var acc = currency.acc.t2divine; 
-		var msize = 0;
-		var cmap = Red;
-		var cray = Red;
-	}
+	var acc = currency.acc.t2divine; 
+	var msize = 0;
+	var cmap = Red;
+	var cray = Red;
 }
 
 Style t3annul : PatternInverseBlack
 {
-	Func Any()
-	{ 
-		var acc = currency.acc.t3annul; 
-		var msize = 1;
-		var cmap = Yellow;
-		var cray = Yellow;
-	}
+	var acc = currency.acc.t3annul; 
+	var msize = 1;
+	var cmap = Yellow;
+	var cray = Yellow;
 }
 
 Style t4chaos : PatternInverseBlack
@@ -1080,33 +1080,28 @@ Style t4chaos : PatternInverseBlack
 
 Style t5alchemy : PatternInverseBlack
 {
-	Func Any()
-	{ 
-		var acc = currency.acc.t5alchemy; 
-		var msize = 2;
-		var cmap = White;
-		var cray = White;
-		SetFontSize 45;
-	}
+	var acc = currency.acc.t5alchemy; 
+	var msize = 2;
+	var cmap = White;
+	var cray = White;
+	var fsize = font.t3;
 }
 
 Style t6chrom : PatternInverseBlack
 {
-	Func Any()
-	{ 
-		var acc = currency.acc.t6chrom; 
-		var msize = 2;
-		var cmap = Grey;
-		var cray = Grey;
-		SetFontSize 45;
-	}
+	var acc = currency.acc.t6chrom; 
+	var msize = 2;
+	var cmap = Grey;
+	var cray = Grey;
+	var fsize = font.t4;
 }
 
 Style t7chance : PatternInverseBlack
 {
+	var acc = currency.acc.t7chance; 
+
 	Func Any()
 	{ 
-		var acc = currency.acc.t7chance; 
 		RemoveEffects();
 	}
 }
@@ -1114,26 +1109,24 @@ Style t7chance : PatternInverseBlack
 Style t8trans : PatternBlack
 {
 	var acc = currency.acc.t8trans; 
+	var base = sBlack;
 
 	Func Any()
 	{ 
 		RemoveEffects();
-		SetFontSize 45;
-		SetBackgroundColor sBlack;
 	}
 }
 
 Style t9armour : PatternBlack
 {
 	var acc = currency.acc.t9armour; 
+	var fsize = font.t5;
+	var base = sBlack;
 
 	Func Any()
 	{ 
 		RemoveEffects();
-		SetFontSize font.t5;
-		SetBackgroundColor sBlack;
 	}
-	
 }
 
 Style tportal
@@ -1161,9 +1154,9 @@ Style twisdom
 # Currency Tiering
 #------------------------------------
 
-Style t1divi : PatternT1
+Style t1divi : T1
 {
-	Func Any()
+	Func T1()
 	{ 
 		var acc = divi.acc.t1; 
 		var icon = Star;
@@ -1268,9 +1261,9 @@ Style SplinterStrategy
 # Unique Tiering
 #------------------------------------
 
-Style t1uni : PatternT1
+Style t1uni : T1
 {
-	Func Any()
+	Func T1()
 	{ 
 		var acc = unique.tx;
 		var icon = Star;
@@ -1318,7 +1311,7 @@ Style t4uni : PatternGlow
 	Func Any()
 	{ 
 		var acc = unique.tx; 
-		var bg = unique.extra;
+		var base = unique.extra;
 		var icon = Star;
 		var cmap = Brown;
 		var cray = Brown;
@@ -1340,25 +1333,30 @@ Style t5uni : PatternBlack
 }
 
 #------------------------------------
-# Derived Strategies - PRE-RARE
+# Finalizing Strategies
 #------------------------------------
 
 Style SixLinkVariant : T1, T2RedPiece
 {
 	var icon = Diamond;
-	var tier.t1.acc = 200 0 0 255;
-	var tier.t2.acc = 200 0 0 255;
+	var acc = 200 0 0 255;
 }
 
 Style InfluencedVariant : T1, T2YellowPiece
 {
 	var icon = Cross;
 	var tier.t1.icon = Cross;
-	
 	var sounds.t1 = sounds.t2;
 
-	var tier.t1.acc = influenced.gear.t1;
-	var tier.t2.acc = influenced.gear.t2;
+	Func T1()
+	{ 
+		var acc = influenced.gear.t1; 
+	}
+
+	Func T2()
+	{ 
+		var acc = influenced.gear.t2; 
+	}
 }
 
 Style InfluencedRandom : PatternLowWhite
@@ -1393,38 +1391,31 @@ Style InvitationTierList : T1, T2RedPiece, T3YellowPiece
 {
 	var sound = sounds.unique;
 	var icon = Pentagon;
-
-	var tier.t1.acc = fragment.tx;
-	var tier.t2.acc = fragment.tx;
-	var tier.t3.acc = fragment.tx;
+	var acc = fragment.tx;
 }
 
 Style ReplicaTierList : T1, T2YellowPiece, TMulti, T3WhitePiece
 {
 	var sound = sounds.unique;
 	var icon = Star;
+	var acc = unique.tx;
 
-	var tier.special.base = unique.tx;
-	var tier.special.acc = sBlack;
-	var exoticgear.cmap = Blue;
-
-	var tier.t1.acc = unique.tx;
-	var tier.t2.acc = unique.tx;
-	var tier.t3.acc = unique.tx;
+	Func Multi()
+	{
+		var base = unique.tx;
+		var acc = sBlack;
+		var exoticgear.cmap = Blue;
+		var extra = exoticgear.tx;
+	}
 }
 
 Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 {
 	var sound = sounds.unique;
 	var icon = Star;
-
 	var tier.t4.cmap = Brown;
 	var tier.t4.cray = Brown;
-
-	var tier.t1.acc = unique.tx;
-	var tier.t2.acc = unique.tx;
-	var tier.t3.acc = unique.tx;
-	var tier.t4.acc = unique.tx;
+	var acc = unique.tx;
 }
 
 Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
@@ -1432,21 +1423,14 @@ Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 	var sound = sounds.currency;
 	var icon = Hexagon;
 
-	var tier.t1.acc = fragment.tx;
-	var tier.t2.acc = fragment.tx;
-	var tier.t3.acc = fragment.tx;
-	var tier.t4.acc = fragment.tx;
-	var tier.t5.acc = fragment.tx;
+	var acc = fragment.tx;
 }
 
-Style FragmentExceptions : PatternT1
+Style FragmentExceptions : T1
 {
-	Func T1p : Any()
-	{
-		var acc = sBlack;
-		var sound = sounds.currency;
-		var icon = Hexagon;
-	}
+	var acc = sBlack;
+	var sound = sounds.currency;
+	var icon = Hexagon;
 }
 
 #------------------------------------
@@ -1457,7 +1441,7 @@ Style ExoticFragments : T3WhitePiece
 {
 	var sound = sounds.unique;
 	var icon = Hexagon;
-	var tier.t3.acc = fragment.tx;
+	var acc = fragment.tx;
 
 	Func Offerings : T3 ()
 	{
@@ -1470,11 +1454,11 @@ Style ExoticFragments : T3WhitePiece
 	}
 }
 
-Style InfluencedMapsStrategy : PatternT1
+Style InfluencedMapsStrategy : T1
 {
 	var acc = maps.influenced;
-	var sound = sounds.t2;
-	var icon = Square;
+	var sounds.t1 = sounds.t2;
+	var tier.t1.icon = Square;
 }
 
 Style HeistMapLike : PatternBlack
@@ -1489,5 +1473,5 @@ Style HeistMapLikeHigh : PatternGlow
 	var icon = UpsideDownHouse;
 	var sound = sounds.maps.high;
 	var acc = heist.blueprints.acc;
-	var bg = heist.blueprints.base;
+	var base = heist.blueprints.base;
 }
