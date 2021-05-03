@@ -1202,14 +1202,14 @@ Section MapFragments : Class "Map Fragments"
 
 Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency", !currency
 {
-	Show splinters_t1	{ !*eqChaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
-	Show splinters_t2	{ !*eqAlchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
-	Show shards			{ %H4; !*eqAlchemy; StackSize >= 4; BaseType currency.stacked.shards; }
-	Show orbs_chaos		{ !*eqAnnul; StackSize >= 2; BaseType currency.stacked.chaos; }
-	Show orbs_alchemy	{ !*eqChaos; StackSize >= 2; BaseType currency.stacked.alch; }
-	Show orbs_alt		{ %H5; !*eqAlchemy; StackSize >= 3; BaseType currency.stacked.alt; }
-	Show orbs_transmute	{ %H5; !*eqAlchemy; StackSize >= 3; BaseType currency.stacked.trans; }
-	Show orbs_wisdom	{ !*eqAlchemy; StackSize >= 4; BaseType currency.stacked.scroll; }
+	Show splinters_t1	{ !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
+	Show splinters_t2	{ !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
+	Show shards			{ %H4; !*t5alchemy; StackSize >= 4; BaseType currency.stacked.shards; }
+	Show orbs_chaos		{ !*t3annul; StackSize >= 2; BaseType currency.stacked.chaos; }
+	Show orbs_alchemy	{ !*t4chaos; StackSize >= 2; BaseType currency.stacked.alch; }
+	Show orbs_alt		{ %H5; !*t5alchemy; StackSize >= 3; BaseType currency.stacked.alt; }
+	Show orbs_transmute	{ %H5; !*t5alchemy; StackSize >= 3; BaseType currency.stacked.trans; }
+	Show orbs_wisdom	{ !*t5alchemy; StackSize >= 4; BaseType currency.stacked.scroll; }
 }
 
 #------------------------------------
@@ -1242,7 +1242,7 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
 {
-	Show essences { %D4; !*eqAlchemy; !LevelCurrency; BaseType currency.leveling.essences; }
+	Show essences { %D4; !*t5alchemy; !LevelCurrency; BaseType currency.leveling.essences; }
 	Show trans 	  { %D4; !Currency.t8trans; !LevelCurrency; BaseType == currency.leveling.trans; }
 	Show aug      { %D4; !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
 	Show portal   { %D4; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
