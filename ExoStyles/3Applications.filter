@@ -27,8 +27,8 @@ Style MainRules
 	Apply(special.exotic, exoticbases => !UniversalExotic.t1);
 	Apply(special.exotic, $exotic => UniversalExotic);
 	Apply(special.id, IdModSection => !IdModsMulti.t2);
-	Apply(artefact, ArtefactItemClasses => !Artefact.t1);
-	Apply(tier.invitation, Invitations => InvitationTierList);
+	Apply(special.artefact, ArtefactItemClasses => !Artefact.t1);
+	Apply(special.invitation, Invitations => InvitationTierList);
 
 	## Crafting
 	Apply(crafting, AdditionalCrafting.any => CraftGeneralStrategy.ANY);
@@ -42,39 +42,42 @@ Style MainRules
 
 	## default highlight in case these items lose their special tags
 	Apply(rares.jwl, BreachRings => !RaresJewellery.t3);
-	Apply(talisman, Talismans.* => !RaresJewellery.t3);
 	
 	## Talsimanspecific
+	Apply(talisman, Talismans.* => !RaresJewellery.t3);
 	Apply(talisman, Talismans.T1* => !UniversalExotic.t1);
 	Apply(talisman, Talismans.T2* => !UniversalExotic.t2);
 	Apply(talisman, Talismans.T3* => !UniversalExotic.t3);
 	Apply(talisman, Talismans.Any => !UniversalExotic.t4);
 
-	## rare general
-	Apply(rares.jwl, EndgameRareRingsAmulets => RaresJewellery);
-	Apply(rares.jwl, EndgameRareBelts => RaresJewellery);
-
-	Apply(rares.gear, EndgameRareGear.t1* => RaresArmoursWeapons.t1);
-	Apply(rares.gear, EndgameRareGear.t2* => RaresArmoursWeapons.t2);
-	Apply(rares.gear, EndgameRareGear.t3* => RaresArmoursWeapons.t3);
-	Apply(rares.gear, EndgameRareGear.t4* => RaresArmoursWeapons.t4);
-
-	## Rare
-	Apply(meta.removers, $raredeco => EndgameRareDecorators)
-	Apply(meta.removers,  DecoratorRemover => DecoratorRemoverStrategy);
-
+	## rare decorators
 	Apply(deco.rares, $raredeco.t1equip => RaresArmoursWeapons.t1);
 	Apply(deco.rares, $raredeco.t2equip => RaresArmoursWeapons.t2);
 	Apply(deco.rares, $raredeco.t3equip => RaresArmoursWeapons.t3);
 	Apply(deco.rares, $raredeco.t4equip => RaresArmoursWeapons.t4);
 	Apply(deco.rares, $raredeco.t1jewellery => RaresJewellery.t1);
 
+	## rare jewellery
+	Apply(rares.jwl, EndgameRareRingsAmulets => RaresJewellery);
+	Apply(rares.jwl, EndgameRareBelts => RaresJewellery);
+
+	## rare gear general
+	Apply(rares.gear, EndgameRareGear.t1* => RaresArmoursWeapons.t1);
+	Apply(rares.gear, EndgameRareGear.t2* => RaresArmoursWeapons.t2);
+	Apply(rares.gear, EndgameRareGear.t3* => RaresArmoursWeapons.t3);
+	Apply(rares.gear, EndgameRareGear.t4* => RaresArmoursWeapons.t4);
+
+	## rare decorator cleans
+	Apply(meta.removers, $raredeco => EndgameRareDecorators)
+	Apply(meta.removers,  DecoratorRemover => DecoratorRemoverStrategy);
+
+	## heist gear
 	Apply(heist, HeistFollowerGear.t1 => HeistFollowerGearStrategy.t1);
 	Apply(heist, HeistFollowerGear.t1highlevel => HeistFollowerGearStrategy.t1highlevel);
 	Apply(heist, HeistFollowerGear.t2 => HeistFollowerGearStrategy.t2);
 	Apply(heist, HeistFollowerGear.t3any => HeistFollowerGearStrategy.t3any);
 
-	## Tierlists and Maps
+	## tierlists and Maps
 	Apply(tier.uniquereplica, Replicas => ReplicaTierList);
 	Apply(tier.uniquemaps, UniqueMaps => UniqueMapStrat);
 
@@ -127,7 +130,7 @@ Style MainRules
 
 	## Exotic Currency
 	Apply(currency.coins, $Coins => Coins);
-	Apply(splinters, $Splinters => SplinterStrategy);
+	Apply(currency.splinters, $Splinters => SplinterStrategy);
 
 	## Uniques
 	Apply(uniques.def, $unique.t1 => t1uni);

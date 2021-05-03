@@ -557,53 +557,50 @@ Style RaresJewellery
 	{
 		SetFontSize font.t3;
 		SetBackgroundColor rares.jewellery.t1;
-		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize font.t4;
 		SetBackgroundColor rares.jewellery.t2;
-		SetBorderColor NONE;
 	}
 
 	Func T3 ()
 	{
 		SetFontSize font.t5;
 		SetBackgroundColor rares.jewellery.t3;
-		SetBorderColor NONE;
 	}
+
+	SetBorderColor NONE;
 }
 
 Style RaresArmoursWeapons
-{
+{	
 	Func T1 ()
 	{
 		SetFontSize font.t4;
 		SetBackgroundColor rares.generic.t1;
-		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize font.t5;
 		SetBackgroundColor rares.generic.t2;
-		SetBorderColor NONE;
 	}
 
 	Func T3 ()
 	{
 		SetBackgroundColor rares.generic.t3;
 		SetFontSize font.t6;
-		SetBorderColor NONE;
 	}
 
 	Func T4 ()
 	{
 		SetBackgroundColor rares.generic.t4;
 		SetFontSize font.t6;
-		SetBorderColor NONE;
 	}
+
+	SetBorderColor NONE;
 }
 
 Style EndgameRareDecorators
@@ -1422,7 +1419,6 @@ Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 {
 	var sound = sounds.currency;
 	var icon = Hexagon;
-
 	var acc = fragment.tx;
 }
 
