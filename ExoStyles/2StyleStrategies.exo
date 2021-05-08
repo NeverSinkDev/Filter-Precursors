@@ -500,7 +500,7 @@ Style T3WhitePiece
 		var acc = tier.t3.acc;
 		var base = tier.t3.base;
 
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap icon; 
 	}
@@ -737,7 +737,6 @@ Style CraftSpecialStrategy
 		SetFontSize font.t2;  MinimapIcon 1 Blue Diamond;
 		PlayEffect Blue;
 		SetBorderColor accent.level.i86.high;
-		PlayAlertSound sounds.unique;
 	}
 
 	Func I84 () 
@@ -745,7 +744,6 @@ Style CraftSpecialStrategy
 		SetFontSize font.t3;  MinimapIcon 2 White Diamond;
 		PlayEffect White;
 		SetBorderColor accent.level.i84.high;
-		PlayAlertSound sounds.unique;
 	}
 
 	Func ANY () 
@@ -753,29 +751,29 @@ Style CraftSpecialStrategy
 		SetFontSize font.t4;  MinimapIcon 2 Grey Diamond;
 		PlayEffect Grey;
 		SetBorderColor accent.notice.high;
-		PlayAlertSound sounds.unique;
 	}
+
+	PlayAlertSound sounds.unique;
 }
 
 Style CraftGeneralStrategy
 {
 	Func I86 () 
 	{ 
-		SetFontSize NONE;
 		SetBorderColor accent.level.i86;
 	}
 
 	Func I84 () 
 	{ 
-		SetFontSize NONE;
 		SetBorderColor accent.level.i84;
 	}
 
 	Func ANY () 
 	{ 
-		SetFontSize NONE;
 		SetBorderColor accent.notice;
 	}
+
+	SetFontSize NONE;
 }
 
 Style HeistFollowerGearStrategy
@@ -801,7 +799,6 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect White;
 		MinimapIcon 1 White icon;
-		PlayAlertSound sounds.unique;
 	}
 	Func T2 ()
 	{
@@ -811,8 +808,6 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect Grey;
 		MinimapIcon 1 Grey icon;
-		PlayAlertSound sounds.unique;
-
 	}
 	Func t3any ()
 	{
@@ -822,8 +817,9 @@ Style HeistFollowerGearStrategy
 
 		PlayEffect Grey;
 		MinimapIcon 2 Grey icon;
-		PlayAlertSound sounds.unique;
 	}
+
+	PlayAlertSound sounds.unique;
 }
 
 Style GemStrategy : T1
@@ -1010,14 +1006,14 @@ Style Coins
 	{
 		Colors( coins.acc, coins.acc, coins.extra);
 		PlayEffect Orange;
-		SetFontSize 45;
+		SetFontSize font.t3;
 	}
 
 	Func Large ()
 	{
 		Colors( coins.acc, coins.acc, sBlack);
 		PlayEffect Orange Temp;
-		SetFontSize 45;
+		SetFontSize font.t4;
 	}
 
 	Func Medium ()
@@ -1071,7 +1067,7 @@ Style t4chaos : PatternInverseBlack
 		var msize = 2;
 		var cmap = White;
 		var cray = White;
-		SetFontSize 45;
+		SetFontSize font.t3;
 	}
 }
 
@@ -1188,7 +1184,7 @@ Style t4divi : PatternInverseBlack
 		var cmap = White;
 		var cray = White;
 		var msize = 2;
-		SetFontSize 45;
+		SetFontSize font.t3;
 	}
 }
 
@@ -1198,7 +1194,7 @@ Style t5divi : PatternBlack
 	{ 
 		var acc = divi.acc.t5; 
 		PlayEffect NONE; MM NONE;
-		SetFontSize 45;
+		SetFontSize font.t4;
 		SetBackgroundColor sBlack;
 	}
 }
@@ -1230,7 +1226,7 @@ Style SplinterStrategy
 	Func T1
 	{
 		Colors(splinters.text, splinters.acc.t1, splinters.extra);
-		SetFontSize 45;
+		SetFontSize font.t3;
 		MinimapIcon 1 Grey icon;
 		PlayAlertSound sound;
 		PlayEffect Purple Temp;
@@ -1239,7 +1235,7 @@ Style SplinterStrategy
 	Func T2
 	{
 		Colors(splinters.text, splinters.acc.t2, splinters.extra);
-		SetFontSize 45;
+		SetFontSize font.t3;
 		MinimapIcon 2 Grey icon;
 		PlayAlertSound sound;
 		PlayEffect Purple Temp;
