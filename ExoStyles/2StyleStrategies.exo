@@ -493,6 +493,20 @@ Style T3YellowPiece
 	}
 }
 
+## Exception for Fragments and similary shaped sections
+Style T3YellowGlowPiece
+{
+	Func T3 () 
+	{ 
+		var acc = tier.t3.acc;
+		var extra = tier.t3.base;
+
+		SetFontSize font.t3;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor extra; 
+		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
+	}
+}
+
 Style T3WhitePiece
 {
 	Func T3 () 
@@ -557,21 +571,22 @@ Style RaresJewellery
 	{
 		SetFontSize font.t3;
 		SetBackgroundColor rares.jewellery.t1;
+		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize font.t4;
 		SetBackgroundColor rares.jewellery.t2;
+		SetBorderColor NONE;
 	}
 
 	Func T3 ()
 	{
 		SetFontSize font.t5;
 		SetBackgroundColor rares.jewellery.t3;
+		SetBorderColor NONE;
 	}
-
-	SetBorderColor NONE;
 }
 
 Style RaresArmoursWeapons
@@ -580,27 +595,29 @@ Style RaresArmoursWeapons
 	{
 		SetFontSize font.t4;
 		SetBackgroundColor rares.generic.t1;
+		SetBorderColor NONE;
 	}
 
 	Func T2 ()
 	{
 		SetFontSize font.t5;
 		SetBackgroundColor rares.generic.t2;
+		SetBorderColor NONE;
 	}
 
 	Func T3 ()
 	{
 		SetBackgroundColor rares.generic.t3;
 		SetFontSize font.t6;
+		SetBorderColor NONE;
 	}
 
 	Func T4 ()
 	{
 		SetBackgroundColor rares.generic.t4;
 		SetFontSize font.t6;
+		SetBorderColor NONE;
 	}
-
-	SetBorderColor NONE;
 }
 
 Style EndgameRareDecorators

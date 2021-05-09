@@ -1,5 +1,170 @@
-Expand RecipeStrategy
+## CURRENCY ADJUSTMENTS
+Expand t3annul : PatternGlow
 {
-	var icon = Diamond;
+    var base = currency.acc.t3extra;
+}
+
+Expand t4chaos : PatternGlow
+{
+    var base = currency.acc.t45extra;
+}
+
+Expand t5alchemy : PatternBlack
+{
+    var base = currency.acc.t45extra;
+}
+
+Expand t6chrom : PatternBlack
+{
+    Empty();
+}
+
+Expand t7chance : PatternBlack
+{
+    Empty();
+}
+
+Expand t9armour
+{
+    SetBorderColor currency.acc.t9armour;
+    SetTextColor NONE;
+}
+
+## LUNARIS DISABLES MOST DECORATORS
+Expand EndgameRareDecorators
+{
+    Disable;
+}
+
+## SIMPLIFIED RARE HIGHLIGHT
+Expand RaresJewellery.T1
+{
+    SetBorderColor rares.jewellery.border.t1;
+}
+
+Expand RaresJewellery.T2
+{
+    SetBorderColor rares.jewellery.border.t2;
+}
+
+Expand RaresJewellery.T3
+{
+    SetBorderColor rares.jewellery.border.t3;
+}
+
+Expand RaresArmoursWeapons.T1
+{
+    SetBorderColor 100 100 100 255;
+}
+
+Expand RaresArmoursWeapons.T2
+{
+    SetBorderColor 50 50 50 255;
+}
+
+Expand RaresArmoursWeapons.T3
+{
+    SetBorderColor 0 0 0 255;
+}
+
+Expand RaresArmoursWeapons.T4
+{
+    SetBorderColor 0 0 0 255;
+}
+
+## RESTORE GREY RECIPES
+Expand RecipeStrategy.T2
+{
+    SetTextColor NONE;
+}
+
+Expand RecipeStrategy.T3
+{
+    SetTextColor NONE;
+}
+
+## Divination cards follow the glow pattern
+Expand t3divi : PatternGlow
+{
+    var base = divi.acc.t3base;
+    SetFontSize font.t3;
+}
+
+Expand t4divi : PatternBlack
+{
+    Empty();
+}
+
+Expand t5divi
+{
+    SetFontSize NONE;
+    SetBorderColor sBlack;
+}
+
+Expand FragmentTierStrat : T1, T2RedPiece, T3YellowGlowPiece, T4WhitePieceNoBG, T5
+{
+	var sound = sounds.currency;
+	var icon = Hexagon;
+	var acc = fragment.tx;
+    var extra = fragment.acc.t3glow;
+}
+
+Expand ExoticFragments : T3YellowGlowPiece
+{
+    var extra = fragment.acc.t3glow;
+}
+
+Expand InvitationTierList : T1, T2RedPiece, T3YellowPiece
+{
+    var extra = fragment.acc.t3glow;
+}
+
+## We hard override the splinter colors
+Expand SplinterStrategy.T1
+{
+    SetTextColor splinters.acc.any;
+    SetBorderColor splinters.acc.any;
+    SetBackgroundColor splinters.extra;
+}
+
+Expand SplinterStrategy.T2
+{
+    SetTextColor splinters.acc.any;
+    SetBorderColor splinters.acc.any;
+    SetBackgroundColor sBlack;
+}
+
+Expand SplinterStrategy.T3
+{
+    SetTextColor splinters.acc.any;
+    SetBorderColor sBlack;
+    SetBackgroundColor NONE;
+}
+
+## Influenced items adjustments
+Expand InfluencedRandom : PatternBlack
+{
+    Empty();
+}
+
+Expand InfluencedVariant.T2
+{
+    SetTextColor influenced.gear.t2;
+    SetBorderColor influenced.gear.t2;
+    SetBackgroundColor influenced.extra;
+}
+
+Expand CraftSpecialStrategy.I84
+{
+    SetBorderColor rares.jewellery.border.t0;
+}
+
+Expand CraftSpecialStrategy.ANY
+{
+    SetBorderColor rares.jewellery.border.t1;
+}
+
+Expand GeneralMapProgressionStrategy.deco_mapup
+{
     Disable;
 }
