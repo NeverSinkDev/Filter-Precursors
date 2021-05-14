@@ -1,0 +1,395 @@
+## CURRENCY ADJUSTMENTS
+
+Expand t2divine
+{
+    SetBackgroundColor currency.extra.t2divine;
+    SetBorderColor currency.acc.t2divine;
+    SetTextColor currency.acc.t2divine;
+}
+
+Expand t3annul
+{
+    SetBackgroundColor sBlack;
+    SetBorderColor currency.acc.t3annul;
+    SetTextColor currency.acc.t3annul;
+}
+
+Expand t4chaos
+{
+    SetBackgroundColor sBlack;
+    SetBorderColor currency.acc.t4chaos;
+    SetTextColor currency.acc.t4chaos;
+}
+
+Expand t5alchemy
+{
+    SetBackgroundColor sBlack;
+    SetBorderColor currency.acc.t5alchemy;
+    SetTextColor currency.acc.t5alchemy;
+}
+
+Expand t6chrom
+{
+    SetBackgroundColor sBlack;
+    SetBorderColor currency.acc.t6chrom;
+    SetTextColor currency.acc.t6chrom;
+}
+
+Expand t7chance
+{
+    SetBackgroundColor sBlack;
+    SetBorderColor currency.acc.t7chance;
+    SetTextColor currency.acc.t7chance;
+}
+
+Expand t8trans
+{
+    SetBackgroundColor sBlack;
+    SetBorderColor currency.acc.t8trans;
+    SetTextColor currency.acc.t8trans;
+}
+
+Expand t9armour
+{
+    SetBorderColor NONE;
+    SetTextColor NONE;
+    SetBackgroundColor NONE;
+}
+
+Expand tportal
+{
+    SetBorderColor NONE;
+    SetTextColor NONE;
+    SetBackgroundColor NONE;
+}
+
+Expand twisdom
+{
+    SetBorderColor NONE;
+    SetTextColor NONE;
+    SetBackgroundColor NONE;
+}
+
+## ELDER DISABLES MOST DECORATORS
+Expand EndgameRareDecorators
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_map_zone12
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_map_zone34
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_mapup
+{
+    Disable;
+}
+
+## ELDER SIMPLIFIES DIVINATION CARD HIGHLIGHT
+Expand t2divi
+{
+    SetTextColor divi.acc.t3;
+    SetBorderColor divi.acc.t3;
+    SetBackgroundColor divi.extra.t2;
+}
+
+Expand t3divi
+{
+    SetTextColor divi.acc.t3;
+    SetBorderColor divi.acc.t3;
+    SetBackgroundColor sBlack;
+}
+
+Expand t4divi
+{
+    SetTextColor divi.acc.t4;
+    SetBorderColor divi.acc.t4;
+    SetBackgroundColor sBlack;
+}
+
+Expand t5divi
+{
+    SetBorderColor NONE;
+    SetTextColor divi.acc.t5;
+    SetBackgroundColor NONE;
+    SetFontSize NONE;
+}
+
+## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
+Expand FragmentTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
+{
+	var sound = sounds.currency;
+	var icon = Hexagon;
+	var acc = fragment.tx;
+    var extra = fragment.acc.t3glow;
+}
+
+Expand ExoticFragments : T3BlackPiece
+{
+    var extra = fragment.acc.t3glow;
+}
+
+Expand InvitationTierList : T1, T2GlowPiece, T3BlackPiece
+{
+    var extra = fragment.acc.t3glow;
+}
+
+## SIMPLIFIED RARE HIGHLIGHT
+Expand RaresJewellery.T1
+{
+    SetBorderColor rares.jewellery.text;
+    SetTextColor rares.jewellery.text;
+    SetBackgroundColor sBlack;
+    SetFontSize 35;
+}
+
+Expand RaresJewellery.T2
+{
+    SetBorderColor rares.jewellery.text;
+    SetTextColor rares.jewellery.text;
+    SetBackgroundColor sBlack;
+    SetFontSize 35;
+}
+
+Expand RaresJewellery.T3
+{
+    SetBorderColor rares.jewellery.text;
+    SetTextColor rares.jewellery.text;
+    SetBackgroundColor rares.low.acc;
+    SetFontSize NONE;
+}
+
+Expand RaresArmoursWeapons.T1
+{
+    SetBorderColor rares.notice;
+    SetBackgroundColor sBlack;
+    SetFontSize NONE;
+}
+
+Expand RaresArmoursWeapons.T2
+{
+    SetBorderColor rares.notice;
+    SetBackgroundColor sBlack;
+    SetFontSize NONE;
+}
+
+Expand RaresArmoursWeapons.T3
+{
+    SetBorderColor 0 0 0 255;
+    SetBackgroundColor rares.low.acc;
+    SetFontSize NONE;
+}
+
+Expand RaresArmoursWeapons.T4
+{
+    SetBorderColor 0 0 0 255;
+    SetBackgroundColor rares.low.acc;
+    SetFontSize NONE;
+}
+
+## RESTORE GREY RECIPES
+Expand RecipeStrategy.T1
+{
+    SetTextColor recipe.acc;
+    SetBorderColor recipe.acc;
+    SetFontSize 40;
+    SetBackgroundColor sBlack;
+}
+
+Expand RecipeStrategy.TS1
+{
+    SetTextColor recipe.acc;
+    SetBorderColor recipe.acc;
+    SetFontSize 40;
+    SetBackgroundColor sBlack;
+}
+
+## RESTORE GREY RECIPES
+Expand RecipeStrategy.T2
+{
+    SetTextColor recipe.acc;
+    SetBorderColor recipe.acc;
+    SetFontSize 32;
+    SetBackgroundColor NONE;
+}
+
+Expand RecipeStrategy.T3
+{
+    SetTextColor recipe.acc;
+    SetBorderColor recipe.acc;
+    SetFontSize 32;
+    SetBackgroundColor NONE;
+}
+
+## Uniques - we change the strategies
+Expand t2uni
+{
+    SetBackgroundColor unique.extra;
+    SetBorderColor unique.tx;
+    SetTextColor unique.tx;
+    SetFontSize font.t1;
+}
+
+Expand t3uni
+{
+    SetBorderColor exoticgear.tx;
+    SetTextColor unique.tx;
+    SetBackgroundColor sBlack;
+    SetFontSize font.t3;
+}
+
+Expand t4uni
+{
+    SetTextColor unique.tx;
+    SetBorderColor unique.tx;
+    SetBackgroundColor sBlack;
+    SetFontSize font.t3;
+}
+
+Expand t5uni
+{
+    SetTextColor unique.tx;
+    SetBorderColor sBlack;
+    SetBackgroundColor sBlack;
+}
+
+## Unique Map Strat
+
+Expand UniqueMapStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece
+{
+	var sound = sounds.unique;
+	var icon = Star;
+	var tier.t4.cmap = Brown;
+	var tier.t4.cray = Brown;
+	var acc = unique.tx;
+}
+
+## We hard override the splinter colors
+Expand SplinterStrategy.T1
+{
+    SetTextColor splinters.acc.any;
+    SetBorderColor splinters.acc.any;
+    SetBackgroundColor sBlack;
+}
+
+Expand SplinterStrategy.T2
+{
+    SetTextColor splinters.acc.any;
+    SetBorderColor sBlack;
+    SetBackgroundColor sBlack;
+}
+
+Expand SplinterStrategy.T3
+{
+    SetTextColor splinters.acc.any;
+    SetBorderColor sBlack;
+    SetBackgroundColor NONE;
+}
+
+## Influenced items adjustments
+Expand InfluencedRandom : PatternBlack
+{
+    Empty();
+    SetBorderColor sBlack;
+    SetBackgroundColor NONE;
+}
+
+Expand InfluencedVariant.T2
+{
+    SetTextColor influenced.gear.t2;
+    SetBorderColor influenced.gear.t2;
+    SetBackgroundColor sBlack;
+}
+
+## Crafting adjustments
+Expand CraftSpecialStrategy.I86
+{
+    SetBorderColor crafting.border.t1;
+}
+
+Expand CraftSpecialStrategy.I84
+{
+    SetBorderColor crafting.border.t1;
+}
+
+Expand CraftSpecialStrategy.ANY
+{
+    SetBorderColor crafting.border.t2;
+}
+
+Expand GeneralMapProgressionStrategy.deco_mapup
+{
+    Disable;
+}
+
+## Maps adjustments
+
+Expand InfluencedMapsStrategy
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+
+Expand GeneralMapProgressionStrategy.SpecialHigh
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+Expand GeneralMapProgressionStrategy.SpecialLow
+{
+    SetFontSize 40;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+Expand GeneralMapProgressionStrategy.Z1
+{
+    SetFontSize 40;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z1.acc;
+}
+
+Expand GeneralMapProgressionStrategy.Z2
+{
+    SetFontSize 40;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z2.acc;
+}
+
+Expand GeneralMapProgressionStrategy.Z3
+{
+    SetFontSize 40;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z3;
+}
+
+Expand GeneralMapProgressionStrategy.Z4
+{
+    SetFontSize 40;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z4;
+}
+
+## Disable lowest tier crafting
+
+Expand CraftGeneralStrategy.ANY
+{
+    Disable();
+}

@@ -454,6 +454,19 @@ Style T1
 	}
 }
 
+Style T2GlowPiece
+{
+	Func T2 () 
+	{ 
+		var acc = tier.t2.acc;
+		var base = tier.t2.extra;
+
+		SetFontSize font.t2;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
+	}
+}
+
 Style T2RedPiece
 {
 	Func T2 () 
@@ -517,6 +530,32 @@ Style T3WhitePiece
 		SetFontSize font.t4;
 		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
 		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap icon; 
+	}
+}
+
+Style T3BlackPiece
+{
+	Func T3 () 
+	{
+		var acc = tier.t3.acc;
+		var base = sBlack;
+
+		SetFontSize font.t4;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
+		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
+	}
+}
+
+Style T4BlackPiece
+{
+	Func T4 () 
+	{
+		var acc = tier.t4.acc;
+		var base = sBlack;
+
+		SetFontSize font.t4;
+		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
 	}
 }
 
