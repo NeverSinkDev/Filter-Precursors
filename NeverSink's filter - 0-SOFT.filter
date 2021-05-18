@@ -2217,7 +2217,7 @@ Show # $type->jewels->cluster $tier->optimalhighlarge
 	PlayEffect Yellow
 	MinimapIcon 1 Yellow Pentagon
 
-Show # %D5 $type->jewels->cluster $tier->highlarge
+Show # %D6 $type->jewels->cluster $tier->highlarge
 	Rarity <= Rare
 	EnchantmentPassiveNum <= 8
 	BaseType "Large Cluster Jewel"
@@ -2837,7 +2837,6 @@ Show # %D2 $type->miscendgamerules $tier->overquality
 	Quality >= 29
 	ItemLevel >= 75
 	DropLevel >= 50
-	Rarity < Rare
 	Rarity <= Rare
 	Class "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves"
 	SetFontSize 40
@@ -6114,7 +6113,7 @@ Show # $type->miscmapitemsextra $tier->alvatemple
 	PlayEffect Red
 	MinimapIcon 0 Red Hexagon
 
-Show # $type->miscmapitems $tier->any
+Show # $type->miscmapitems $tier->restex
 	Class "Misc Map Items"
 	SetFontSize 45
 	SetTextColor 255 0 255 255
@@ -6882,7 +6881,6 @@ Show # %D3 $type->leveling->normalmagic->rgb $tier->rgbsmall2
 Show # %D2 $type->leveling->normalmagic->rgb $tier->rgblarge
 	Width >= 2
 	Height >= 4
-	AreaLevel <= 34
 	Rarity <= Magic
 	SocketGroup "RGB"
 	SetFontSize 40
@@ -6923,7 +6921,6 @@ Show # %D2 $type->leveling->normalmagic->3l $tier->general
 Show # %D4 $type->leveling->normalmagic->act1 $tier->casterweapons
 	Sockets >= 3
 	AreaLevel <= 15
-	Rarity <= Magic
 	Rarity Magic
 	Class "Sceptres" "Wands"
 	SetBorderColor 0 120 120 255
@@ -6948,7 +6945,6 @@ Show # %D4 $type->leveling->normalmagic->act1 $tier->general
 
 Show # %D4 $type->leveling->normalmagic->act1 $tier->boots
 	AreaLevel <= 15
-	Rarity <= Magic
 	Rarity Magic
 	Class "Boots"
 	SetFontSize 45
@@ -7069,7 +7065,6 @@ Show # %H3 $type->leveling->firstlevels $tier->firstareas
 Show # %H2 $type->leveling->weaponprogression $tier->r01
 	ItemLevel <= 9
 	DropLevel >= 5
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7079,7 +7074,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r01
 Show # %H2 $type->leveling->weaponprogression $tier->r02
 	ItemLevel <= 11
 	DropLevel >= 8
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7089,7 +7083,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r02
 Show # %H2 $type->leveling->weaponprogression $tier->r03
 	ItemLevel <= 14
 	DropLevel >= 11
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7099,7 +7092,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r03
 Show # %H2 $type->leveling->weaponprogression $tier->r04
 	ItemLevel <= 16
 	DropLevel >= 13
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7109,7 +7101,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r04
 Show # %H2 $type->leveling->weaponprogression $tier->r05
 	ItemLevel <= 18
 	DropLevel >= 16
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7119,7 +7110,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r05
 Show # %H2 $type->leveling->weaponprogression $tier->r06
 	ItemLevel <= 20
 	DropLevel >= 18
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7129,7 +7119,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r06
 Show # %H2 $type->leveling->weaponprogression $tier->r07
 	ItemLevel <= 22
 	DropLevel >= 20
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7139,7 +7128,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r07
 Show # %H2 $type->leveling->weaponprogression $tier->r08
 	ItemLevel <= 24
 	DropLevel >= 22
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7149,7 +7137,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r08
 Show # %H2 $type->leveling->weaponprogression $tier->r09
 	ItemLevel <= 26
 	DropLevel >= 24
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7159,7 +7146,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r09
 Show # %H2 $type->leveling->weaponprogression $tier->r10
 	ItemLevel <= 28
 	DropLevel >= 26
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7169,7 +7155,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r10
 Show # %H2 $type->leveling->weaponprogression $tier->r11
 	ItemLevel <= 30
 	DropLevel >= 28
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7179,7 +7164,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r11
 Show # %H2 $type->leveling->weaponprogression $tier->r12
 	ItemLevel <= 32
 	DropLevel >= 30
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7189,7 +7173,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r12
 Show # %H2 $type->leveling->weaponprogression $tier->r13
 	ItemLevel <= 34
 	DropLevel >= 32
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7199,7 +7182,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r13
 Show # %H2 $type->leveling->weaponprogression $tier->r14
 	ItemLevel <= 36
 	DropLevel >= 34
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7209,7 +7191,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r14
 Show # %H2 $type->leveling->weaponprogression $tier->r15
 	ItemLevel <= 40
 	DropLevel >= 38
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7219,7 +7200,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r15
 Show # %H2 $type->leveling->weaponprogression $tier->r16
 	ItemLevel <= 42
 	DropLevel >= 40
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7229,7 +7209,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r16
 Show # %H2 $type->leveling->weaponprogression $tier->r17
 	ItemLevel <= 44
 	DropLevel >= 42
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7239,7 +7218,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r17
 Show # %H2 $type->leveling->weaponprogression $tier->r18
 	ItemLevel <= 46
 	DropLevel >= 44
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7249,7 +7227,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r18
 Show # %H2 $type->leveling->weaponprogression $tier->r19
 	ItemLevel <= 48
 	DropLevel >= 46
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7259,7 +7236,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r19
 Show # %H2 $type->leveling->weaponprogression $tier->r20
 	ItemLevel <= 50
 	DropLevel >= 48
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7269,7 +7245,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r20
 Show # %H2 $type->leveling->weaponprogression $tier->r21
 	ItemLevel <= 52
 	DropLevel >= 50
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7279,7 +7254,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r21
 Show # %H2 $type->leveling->weaponprogression $tier->r22
 	ItemLevel <= 54
 	DropLevel >= 52
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7289,7 +7263,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r22
 Show # %H2 $type->leveling->weaponprogression $tier->r23
 	ItemLevel <= 56
 	DropLevel >= 54
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7299,7 +7272,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r23
 Show # %H2 $type->leveling->weaponprogression $tier->r24
 	ItemLevel <= 58
 	DropLevel >= 56
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7309,7 +7281,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r24
 Show # %H2 $type->leveling->weaponprogression $tier->r25
 	ItemLevel <= 60
 	DropLevel >= 58
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7319,7 +7290,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r25
 Show # %H2 $type->leveling->weaponprogression $tier->r26
 	ItemLevel <= 62
 	DropLevel >= 60
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7329,7 +7299,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r26
 Show # %H2 $type->leveling->weaponprogression $tier->r27
 	ItemLevel <= 64
 	DropLevel >= 62
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7339,7 +7308,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r27
 Show # %H2 $type->leveling->weaponprogression $tier->r28
 	ItemLevel <= 66
 	DropLevel >= 64
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
@@ -7349,7 +7317,6 @@ Show # %H2 $type->leveling->weaponprogression $tier->r28
 Show # %H2 $type->leveling->weaponprogression $tier->r29
 	ItemLevel <= 68
 	DropLevel >= 66
-	Rarity Normal
 	Rarity <= Normal
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180

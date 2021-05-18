@@ -1,0 +1,183 @@
+Style BasicPattern
+{
+    var acc = sWhite;
+    var base = sBlack;
+    var border = sWhite;
+    var beamc = White;
+    var soundc = 2;
+    var mapc = White;
+    var icon = Kite;
+    var fs = 32;
+    var iconsize = 2;
+
+    Func High()
+    {
+        SetFontSize fs;
+        SetTextColor acc;
+        SetBorderColor acc;
+        SetBackgroundColor base;
+        MM iconsize mapc icon;
+        Sound soundc 300;
+        Beam beamc;
+    }
+
+    Func Low()
+    {
+        SetFontSize fs;
+        SetTextColor acc;
+        SetBorderColor sBlack;
+        SetBackgroundColor base;
+        MM iconsize mapc icon;
+        Sound soundc 300;
+        Beam beamc;
+    }
+}
+
+Style ExaltedStyle : BasicPattern
+{
+    var acc = legendary;
+    var base = sWhite;
+    var beamc = Red;
+    var soundc = 6;
+    var mapc = Red;
+    var icon = Star;
+    var fs = 45;
+    var iconsize = 0;
+}
+
+Style LegendaryStyle : BasicPattern
+{
+    var acc = legendary;
+    var beamc = Orange;
+    var soundc = 1;
+    var mapc = Orange;
+    var icon = Star;
+    var fs = 45;
+    var iconsize = 0;
+}
+
+Style EpicStyle : BasicPattern
+{
+    var acc = epic;
+    var beamc = Purple;
+    var mapc = Purple;
+    var soundc = 1;
+    var icon = Star;
+    var fs = 45;
+    var iconsize = 1;
+}
+
+Style QuestLike : BasicPattern
+{
+    var acc = quest;
+    var beamc = Pink;
+    var mapc = Pink;
+    var soundc = 2;
+    var icon = UpsideDownHouse;
+    var fs = 45;
+    var iconsize = 1;
+}
+
+Style RareStyle : BasicPattern
+{
+    var acc = rares;
+    var beamc = Blue;
+    var mapc = Blue;
+    var soundc = 2;
+    var icon = Kite;
+    var fs = 40;
+    var iconsize = 1;
+}
+
+Style UncommonStyle : BasicPattern
+{
+    var acc = uncommon;
+    var beamc = Green;
+    var mapc = Green;
+    var soundc = NONE;
+    var icon = Kite;
+    var fs = 40;
+}
+
+Style CommonStyle : BasicPattern
+{
+    var base = 0 0 0 220;
+    var acc = common;
+    var beamc = White Temp;
+    var mapc = White;
+    var soundc = NONE;
+    var icon = NONE;
+    var fs = 35;
+}
+
+Style LowStyle  : BasicPattern
+{
+    var base = 0 0 0 180;
+    var acc = lowtier;
+    var beamc = NONE;
+    var mapc = NONE;
+    var soundc = NONE;
+    var icon = NONE;
+    var fs = 32;
+}
+
+Style MapsStyleHigh  : BasicPattern
+{   
+    var acc = artifact;
+    var beamc = Yellow;
+    var mapc = Yellow;
+    var soundc = 5;
+    var icon = Square;
+    var fs = 45;
+    var iconsize = 0;
+}
+
+Style RareGearStyle  : BasicPattern
+{
+    var base = raresBase;
+    var acc = raresAcc;
+    var beamc = NONE;
+    var mapc = NONE;
+    var soundc = NONE;
+    var icon = NONE;
+    var fs = 35;
+}
+
+Style MapsStyle  : BasicPattern
+{
+    var acc = artifact;
+    var beamc = Yellow;
+    var mapc = Yellow;
+    var soundc = 4;
+    var icon = Square;
+    var fs = 40;
+    var iconsize = 1;
+}
+
+Style ExoticStyle  : BasicPattern
+{
+    var acc = special;
+    var beamc = Cyan;
+    var mapc = Cyan;
+    var soundc = 1;
+    var icon = Diamond;
+    var fs = 40;
+    var iconsize = 1;
+}
+
+Style IgnoredSections : BasicPattern
+{
+    Disable;
+    SetTextColor lowtier;
+    SetBackgroundColor sBlack;
+    SetFontSize 18;
+    DisableDropSound True;
+}
+
+Style WowAccents
+{
+    Func Shrink()
+	{
+		SetFontSize font.t6; RemoveEffects();
+	}
+}

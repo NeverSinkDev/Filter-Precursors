@@ -1,0 +1,54 @@
+Style WowDisable
+{
+    DisableStyle("meta.global");
+    DisableStyle("*");
+    DisableStyle("accents");
+}
+
+Style WowRules
+{
+    ## 
+    Apply(disa, $GEX => IgnoredSections.Low);
+
+	Apply(meta.hide ,HideLayer* => !UniversalHideLayer.any);
+	Apply(meta.safe, *.restex => !UniversalValueAccents.restex);
+	Apply(meta.safe, $shrink => WowAccents.shrink);
+
+    ## main rules
+	Apply(wowcolors, $G1 => ExaltedStyle.High);
+    Apply(wowcolors, $G2 => LegendaryStyle.High);
+    Apply(wowcolors, $G3 => EpicStyle.High);
+    Apply(wowcolors, $G4 => RareStyle.High);
+
+    Apply(wowcolors, $G5 => UncommonStyle.Low);
+    Apply(wowcolors, $G5H => UncommonStyle.High);
+
+    Apply(wowcolors, $GI => RareStyle.High);
+
+    Apply(wowcolors, $G6 => CommonStyle.Low);
+    Apply(wowcolors, $G6H => CommonStyle.High);
+
+    Apply(wowcolors, $G7 => LowStyle.Low);
+    Apply(wowcolors, $G7H => LowStyle.High);
+
+    Apply(wowcolors, $GS => ExoticStyle.Low);
+    Apply(wowcolors, $GSH => ExoticStyle.High);
+
+    Apply(wowcolors, $QuestLike => QuestLike.High);
+
+    ## rares
+    Apply(wowcolors, $GRJ1 => UncommonStyle.High);
+    Apply(wowcolors, $GRJ2 => UncommonStyle.Low);
+    Apply(wowcolors, $GRJ3 => UncommonStyle.Low);
+
+    ## maps
+    Apply(wowmaps, $GM1 => MapsStyleHigh.High);
+    Apply(wowmaps, $GM2 => MapsStyleHigh.High);
+    Apply(wowmaps, $GM3 => MapsStyle.Low);
+    Apply(wowmaps, $GM4 => MapsStyle.Low);
+
+    Apply(wowcolors, $GR1 => RareGearStyle.High);
+    Apply(wowcolors, $GR2 => RareGearStyle.High);
+    Apply(wowcolors, $GR3 => RareGearStyle.Low);
+    Apply(wowcolors, $GR4 => RareGearStyle.Low);
+}
