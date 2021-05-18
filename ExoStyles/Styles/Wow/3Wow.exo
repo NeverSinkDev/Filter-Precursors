@@ -28,6 +28,9 @@ Style WowRules
     Apply(wowcolors, $G6 => CommonStyle.Low);
     Apply(wowcolors, $G6H => CommonStyle.High);
 
+    Apply(wowcolors, $G7 => LowStyle.Low);
+    Apply(wowcolors, $G7H => LowStyle.High);
+
     Apply(wowcolors, $GS => ExoticStyle.Low);
     Apply(wowcolors, $GSH => ExoticStyle.High);
 
@@ -38,14 +41,14 @@ Style WowRules
     Apply(wowcolors, $GRJ2 => UncommonStyle.Low);
     Apply(wowcolors, $GRJ3 => UncommonStyle.Low);
 
-    Apply(wowcolors, $GR1 => CommonStyle.High);
-    Apply(wowcolors, $GR2 => CommonStyle.High);
-    Apply(wowcolors, $GR3 => CommonStyle.Low);
-    Apply(wowcolors, $GR4 => CommonStyle.Low);
-
     ## maps
     Apply(wowmaps, $GM1 => MapsStyleHigh.High);
     Apply(wowmaps, $GM2 => MapsStyleHigh.High);
     Apply(wowmaps, $GM3 => MapsStyle.Low);
     Apply(wowmaps, $GM4 => MapsStyle.Low);
+
+    Apply(wowcolors, $GR1 => RareGearStyle.High);
+    Apply(wowcolors, $GR2 => RareGearStyle.High);
+    Apply(wowcolors, $GR3 => RareGearStyle.Low);
+    Apply(wowcolors, $GR4 => RareGearStyle.Low);
 }

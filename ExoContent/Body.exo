@@ -499,7 +499,7 @@ Section Jewels : !jewels
 	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, !*cluster
 	{
 		Show OptimalHighLarge	{ !G2; !V2; !High; BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
-		Show HighLarge 			{ !G3; %D5; !V3; !High; BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
+		Show HighLarge 			{ !G3; %D6; !V3; !High; BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
 		Show Large 				{ !G4; %D4; !V4; BaseType "Large Cluster Jewel"; }
 
 		Show OptimalHighMedium { !G2; !V2; !High; BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
@@ -677,23 +677,23 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 # [2701] Utility OR quality flasks
 #------------------------------------
 
-	Section UtilityEndgameFlasks : !G5
+	Section UtilityEndgameFlasks
 	{
-		Show AsortedUtility { %D2; !*lt2; BaseType bases.flask.utilityassorted; AreaLevel <= 77; }
-		Show AnyUtility 	{ %D2; !*lt3; Class "Utility Flasks"; AreaLevel <= 72; }
+		Show AsortedUtility { %D2; !G6H; !*lt2; BaseType bases.flask.utilityassorted; AreaLevel <= 77; }
+		Show AnyUtility 	{ %D2; !G6; !*lt3; Class "Utility Flasks"; AreaLevel <= 72; }
 	}
 
-	Section QualityEndgameFlasks : !G5
+	Section QualityEndgameFlasks
 	{
-		Show QualityHigh { %D2; !recipe.t2; BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
-		Show QualityLow  { %D1; !recipe.t3; BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
+		Show QualityHigh { %D2; !G6H; !recipe.t2; BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
+		Show QualityLow  { %D1; !G6; !recipe.t3; BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
 #------------------------------------
-	Section EarlyMappingLifeManaFlasks : BaseType bases.flask.lifemanaassorted, !G6
+	Section EarlyMappingLifeManaFlasks : BaseType bases.flask.lifemanaassorted
 	{
-		Show EarlyMappingLifeMana { %D2; !Low; AreaLevel <= 69; }
+		Show EarlyMappingLifeMana { %D2; !G7H; !Low; AreaLevel <= 69; }
 	}
 }
 
@@ -971,28 +971,28 @@ Section Gems : Class "Gems", !Gems
 
 	Section GemsGeneric : Auto("gems-generic")
 	{
-		Show LT1 { !G3; !G2; !*P1; GemLevel >= 21 }
+		Show LT1 { !G2; !G2; !*P1; GemLevel >= 21 }
 		Show QT1 { !G3; !G2; !*P1; Quality >= 23 }
 
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
-		Show QT2 { !G4; %D5; !*P2; Quality >= 19 }
-		Show LT2 { !G5; %D4; !*P2; GemLevel >= 19 }
+		Show QT2 { !G3; %D5; !*P2; Quality >= 19 }
+		Show LT2 { !G4; %D4; !*P2; GemLevel >= 19 }
 
-		Show QT3 { !G5; %D3; !*P3; Quality >= 14 }
-		Show LT3 { !G6; %D3; !*P3; GemLevel >= 18 }
+		Show QT3 { !G4; %D3; !*P3; Quality >= 14 }
+		Show LT3 { !G5; %D3; !*P3; GemLevel >= 18 }
 
 		Show QT4Lvl { %D4; !G5; !*P3; Quality >= 1; AreaLevel <= 67 }	
-		Show QT4 { %D2; !G6; !*P4; Quality >= 1; }	
+		Show QT4 { %D2; !G5; !*P4; Quality >= 1; }	
 		Show LT4 { %D2; !G6; !*P4; GemLevel >= 2; }
 
 		Show  FirstZone    { !GS; !*FirstLevel; AreaLevel 1; }
 		Show  LevelingVaal { %H4; !G4; !*VaalLvl; AreaLevel <= 67; BaseType "Vaal"; }
 		Show  Leveling     { %H2; !G6; !*Leveling; AreaLevel <= 67; }
 
-		Show CorruptedVaalAny { %D3; !G6; !*VaalGem; BaseType "Vaal"; }
+		Show CorruptedVaalAny { %D3; !G6H; !*VaalGem; BaseType "Vaal"; }
 
-		Show any { %H0; !GM4; !*P5; Empty(); }
+		Show any { %H0; !G7; !*P5; Empty(); }
 	}
 }
 
@@ -1222,7 +1222,7 @@ Section CurrencyCoinsPerandus : Auto("currency->peranduscoins"), Class "Currency
 	Show t1 { !G3; !*Huge; StackSize >= stacksize.perandus.t1; }
 	Show t2 { !G4; %H4; !*Large; StackSize >= stacksize.perandus.t2; }
 	Show t3 { !G5; %H3; !*Medium; StackSize >= stacksize.perandus.t3; }
-	Show t4 { !G6; %H2; !*Small; Empty(); }
+	Show t4 { !G6H; %H2; !*Small; Empty(); }
 }
 
 #------------------------------------
@@ -1244,7 +1244,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaL
 {
 	Show essences { %D4; !G4; !*t5alchemy; !LevelCurrency; BaseType currency.leveling.essences; }
 	Show trans 	  { %D4; !G5H; !Currency.t8trans; !LevelCurrency; BaseType == currency.leveling.trans; }
-	Show aug      { %D4; !G5H; !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
+	Show aug      { %D4; !G5; !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
 	Show portal   { %D4; !G6H; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
 	Show wisdom   { %D4; !G6H; !Currency.twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
 }
@@ -1438,9 +1438,9 @@ Section DivinationCards : Auto("divination"), Class "Divination", !divi
 	Show t3 	{ !G3;!*t3;	BaseType == divination.t3; }
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
 	Show t4c 	{ %H5; !G4; !*t4;	BaseType == divination.t4c; }
-	Show t5c 	{ %H3; !G5H; !*t5;	BaseType == divination.t5c; }
-	Show t4 	{ %H4; !G4; !*t4;	BaseType == divination.t4; }
-	Show t5 	{ %H2; !G5; !*t5; !Shrink;	BaseType == divination.t5; }
+	Show t5c 	{ %H3; !G5; !*t5;	BaseType == divination.t5c; }
+	Show t4 	{ %H4; !G5H; !*t4;	BaseType == divination.t4; }
+	Show t5 	{ %H2; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
 	Show restex { Empty(); }
 }
 
@@ -1592,7 +1592,7 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 {
 	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; }
 	Show high { !G6; %D2; !recipe.t2; Quality >= 15; }
-	Show any  { !G6; %D1; !recipe.t3; Quality >= 1; }
+	Show any  { !G7; %D1; !recipe.t3; Quality >= 1; }
 }
 
 #------------------------------------
@@ -1600,7 +1600,7 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 #------------------------------------
 #!! Override 820 : "leveling life and mana flasks"
 
-Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6
+Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
 {
 	Show t1 { %H2; FlaskHighlight(20, "Small");}
 	Show t2 { %H2; FlaskHighlight(30, "Medium");}
@@ -1613,7 +1613,7 @@ Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hyb
 #------------------------------------
 # [6002] Life flasks
 #------------------------------------
-Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6
+Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
 {
 	Show t1  { FlaskHighlight(5, "Small");}
 	Show t2  { FlaskHighlight(8, "Medium");}
@@ -1632,7 +1632,7 @@ Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"),
 #------------------------------------
 # [6002] Mana flasks
 #------------------------------------
-Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6
+Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
 {
 	Show t1 {FlaskHighlight(5, "Small");}
 	Show t2 {FlaskHighlight(8, "Medium");}
@@ -1804,7 +1804,7 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show Physical { %D3; !NoticeNM2; !SF35; !LVLMelee; BaseType "Rustic Sash"; }
 	}
 
-	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), !low, !G6, !GLVL2
+	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), !low, !G7, !GLVL2
 	{
 		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
 		Show FireResistGear  { %D2; !NoticeNM2; !SF35; BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
@@ -1822,7 +1822,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 {
 	Show EarlyBodyArmours	{ %H1; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; }
 	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
-	Show FirstAreas 		{ %H3; !G6; !NoticeNM3; AreaLevel <= 4; Rarity Normal; }
+	Show FirstAreas 		{ %H3; !G7; !NoticeNM3; AreaLevel <= 4; Rarity Normal; }
 }
 
 #------------------------------------
@@ -1877,7 +1877,7 @@ Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel 
 	Cont Tiny 	 { !NoticeHigh; Height = 1; Width <= 2; }
 }
 
-Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic, !G5
+Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic, !G7
 {
 	Section HideLayerMagicLeveling
 	{

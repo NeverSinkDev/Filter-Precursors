@@ -8,6 +8,7 @@ Style BasicPattern
     var mapc = White;
     var icon = Kite;
     var fs = 32;
+    var iconsize = 2;
 
     Func High()
     {
@@ -15,7 +16,7 @@ Style BasicPattern
         SetTextColor acc;
         SetBorderColor acc;
         SetBackgroundColor base;
-        MM 0 mapc icon;
+        MM iconsize mapc icon;
         Sound soundc 300;
         Beam beamc;
     }
@@ -26,7 +27,7 @@ Style BasicPattern
         SetTextColor acc;
         SetBorderColor sBlack;
         SetBackgroundColor base;
-        MM 0 mapc icon;
+        MM iconsize mapc icon;
         Sound soundc 300;
         Beam beamc;
     }
@@ -34,12 +35,14 @@ Style BasicPattern
 
 Style ExaltedStyle : BasicPattern
 {
-    var acc = exalted;
+    var acc = legendary;
+    var base = sWhite;
     var beamc = Red;
     var soundc = 6;
     var mapc = Red;
     var icon = Star;
     var fs = 45;
+    var iconsize = 0;
 }
 
 Style LegendaryStyle : BasicPattern
@@ -50,6 +53,7 @@ Style LegendaryStyle : BasicPattern
     var mapc = Orange;
     var icon = Star;
     var fs = 45;
+    var iconsize = 0;
 }
 
 Style EpicStyle : BasicPattern
@@ -60,6 +64,7 @@ Style EpicStyle : BasicPattern
     var soundc = 1;
     var icon = Star;
     var fs = 45;
+    var iconsize = 1;
 }
 
 Style QuestLike : BasicPattern
@@ -70,6 +75,7 @@ Style QuestLike : BasicPattern
     var soundc = 2;
     var icon = UpsideDownHouse;
     var fs = 45;
+    var iconsize = 1;
 }
 
 Style RareStyle : BasicPattern
@@ -80,6 +86,7 @@ Style RareStyle : BasicPattern
     var soundc = 2;
     var icon = Kite;
     var fs = 40;
+    var iconsize = 1;
 }
 
 Style UncommonStyle : BasicPattern
@@ -89,21 +96,23 @@ Style UncommonStyle : BasicPattern
     var mapc = Green;
     var soundc = NONE;
     var icon = Kite;
-    var fs = 35;
+    var fs = 40;
 }
 
 Style CommonStyle : BasicPattern
 {
+    var base = 0 0 0 220;
     var acc = common;
     var beamc = White Temp;
     var mapc = White;
     var soundc = NONE;
     var icon = NONE;
-    var fs = 32;
+    var fs = 35;
 }
 
 Style LowStyle  : BasicPattern
 {
+    var base = 0 0 0 180;
     var acc = lowtier;
     var beamc = NONE;
     var mapc = NONE;
@@ -113,13 +122,25 @@ Style LowStyle  : BasicPattern
 }
 
 Style MapsStyleHigh  : BasicPattern
-{
+{   
     var acc = artifact;
     var beamc = Yellow;
     var mapc = Yellow;
     var soundc = 5;
     var icon = Square;
     var fs = 45;
+    var iconsize = 0;
+}
+
+Style RareGearStyle  : BasicPattern
+{
+    var base = raresBase;
+    var acc = raresAcc;
+    var beamc = NONE;
+    var mapc = NONE;
+    var soundc = NONE;
+    var icon = NONE;
+    var fs = 35;
 }
 
 Style MapsStyle  : BasicPattern
@@ -130,6 +151,7 @@ Style MapsStyle  : BasicPattern
     var soundc = 4;
     var icon = Square;
     var fs = 40;
+    var iconsize = 1;
 }
 
 Style ExoticStyle  : BasicPattern
@@ -140,6 +162,7 @@ Style ExoticStyle  : BasicPattern
     var soundc = 1;
     var icon = Diamond;
     var fs = 40;
+    var iconsize = 1;
 }
 
 Style IgnoredSections : BasicPattern
