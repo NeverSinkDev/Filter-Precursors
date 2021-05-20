@@ -1,9 +1,9 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.0.2a
+# VERSION:  8.1.0
 # TYPE:     0-SOFT
-# STYLE:    NORMAL
+# STYLE:    DEFAULT
 # AUTHOR:   NeverSink
 # BUILDNOTES: Filter generated with NeverSink's FilterpolishZ and the domainlanguage Exo.
 #
@@ -1917,7 +1917,7 @@ Show # %D2 $type->exoticmods $tier->crafting
 #------------------------------------
 
 Show # $type->artefact->trinkets $tier->anytrinket
-	Class "Trinket"
+	Class "Trinkets"
 	SetFontSize 45
 	SetTextColor 240 0 0 255
 	SetBorderColor 240 0 0 255
@@ -2478,7 +2478,7 @@ Show # $type->normalcraft->i86 $tier->t1
 	Corrupted False
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 125 0 240
 	PlayAlertSound 3 300
@@ -2489,14 +2489,14 @@ Show # %D4 $type->normalcraft->i86 $tier->t2
 	Corrupted False
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
+	BaseType == "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
 	SetBorderColor 255 125 0 185
 
 Show # %D3 $type->normalcraft->i86 $tier->t3
 	Corrupted False
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Golden Kris" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Kris" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
+	BaseType == "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
 	SetBorderColor 255 125 0 185
 
 #------------------------------------
@@ -2507,7 +2507,7 @@ Show # %D4 $type->normalcraft->i84 $tier->t1
 	Corrupted False
 	ItemLevel >= 84
 	Rarity <= Rare
-	BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 200 200 0 240
 	PlayAlertSound 3 300
@@ -2518,14 +2518,14 @@ Show # %D2 $type->normalcraft->i84 $tier->t2
 	Corrupted False
 	ItemLevel >= 84
 	Rarity <= Rare
-	BaseType "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
+	BaseType == "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
 	SetBorderColor 200 200 0 185
 
 #Hide # $type->normalcraft->i84 $tier->t3
 #	Corrupted False
 #	ItemLevel >= 84
 #	Rarity <= Rare
-#	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Golden Kris" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Kris" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
+#	BaseType == "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
 #	SetBorderColor 200 200 0 185
 
 #------------------------------------
@@ -2537,7 +2537,7 @@ Show # %D3 $type->normalcraft->rest $tier->t1
 	ItemLevel <= 83
 	ItemLevel >= 68
 	Rarity <= Rare
-	BaseType "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 255 255 255
 	PlayAlertSound 3 300
@@ -2549,7 +2549,7 @@ Show # %D0 $type->normalcraft->rest $tier->t2
 	ItemLevel <= 83
 	ItemLevel >= 68
 	Rarity <= Rare
-	BaseType "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
+	BaseType == "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
 	SetBorderColor 200 200 200 220
 
 #Hide # $type->normalcraft->rest $tier->t3
@@ -2557,7 +2557,7 @@ Show # %D0 $type->normalcraft->rest $tier->t2
 #	ItemLevel <= 83
 #	ItemLevel >= 68
 #	Rarity <= Rare
-#	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Golden Kris" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Kris" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
+#	BaseType == "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
 #	SetBorderColor 200 200 200 220
 
 Show # $type->decorator->craftinggeneric $tier->raredecoratorremover
@@ -3412,18 +3412,8 @@ Show # %D2 $type->rr $tier->t3body
 	SetBackgroundColor 75 75 75 200
 
 Show # %D2 $type->rr $tier->t3shields
-	Height <= 2
 	ItemLevel >= 68
-	DropLevel >= 53
-	Rarity Rare
-	Class "Shields"
-	SetFontSize 35
-	SetBackgroundColor 75 75 75 200
-
-Show # %D2 $type->rr $tier->t3shieldsl
-	Height >= 3
-	ItemLevel >= 68
-	DropLevel >= 60
+	DropLevel >= 56
 	Rarity Rare
 	Class "Shields"
 	SetFontSize 35

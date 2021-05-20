@@ -375,7 +375,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Trinkets
 #------------------------------------	
-	Section Trinkets : Class "Trinket", Auto("artefact->trinkets")
+	Section Trinkets : Class "Trinkets", Auto("artefact->trinkets")
 	{
 		Show AnyTrinket { !G3; Empty(); }
 	}
@@ -573,9 +573,9 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
-		Show t1 { !G3; !craftspecial.I86; BaseType bases.crafting.general.t1; }
-		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType bases.crafting.general.t2; }
-		Show t3 { !GEX; %D3; !craftgeneral.I86; BaseType bases.crafting.general.t3; }
+		Show t1 { !G3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
+		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
+		Show t3 { !GEX; %D3; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -584,9 +584,9 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
-		Show t1 { !G4; %D4; !craftspecial.I84; BaseType bases.crafting.general.t1; }
-		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType bases.crafting.general.t2; }
-		ShowD t3 { !GEX; !craftgeneral.I84; BaseType bases.crafting.general.t3; }
+		Show t1 { !G4; %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
+		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
+		ShowD t3 { !GEX; !craftgeneral.I84; BaseType == bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -595,9 +595,9 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
-		Show t1  { !G5; %D3; !craftspecial.ANY; BaseType bases.crafting.general.t1; }
-		Show t2  { !GEX; %D0; !craftgeneral.ANY; BaseType bases.crafting.general.t2; }
-		ShowD t3 { !GEX; !craftgeneral.ANY; BaseType bases.crafting.general.t3; }
+		Show t1  { !G5; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
+		Show t2  { !GEX; %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t2; }
+		ShowD t3 { !GEX; !craftgeneral.ANY; BaseType == bases.crafting.general.t3; }
 	}
 
 	Section DecoratorRemover : Auto("Decorator->craftinggeneric"), Class classes_equip, ItemLevel >= 68, !GEX
@@ -852,8 +852,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show t3gloves { !GR3; %D2; DropLevel >= bases.rares.eg.t3gloves; Class "Gloves"; }
 		Show t3helmets { !GR3; %D2; DropLevel >= bases.rares.eg.t3helmets; Class "Helmets"; }
 		Show t3body { !GR3; %D2; DropLevel >= bases.rares.eg.t3body; Class "Body Armours"; }
-		Show t3shields { !GR3; %D2; DropLevel >= bases.rares.eg.t3shields; Class "Shields"; Height <= 2; }
-		Show t3shieldsl { !GR3; %D2; DropLevel >= bases.rares.eg.t3shieldsl; Class "Shields"; Height >= 3; }
+		Show t3shields { !GR3; %D2; DropLevel >= bases.rares.eg.t3shields; Class "Shields"; }
 		Show t3quivers { !GR3; %D2; DropLevel >= bases.rares.eg.t3quivers; Class "Quivers"; }
 
 #===============================================================================================================
@@ -1376,7 +1375,7 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 Section CurrencyExotic : Auto("currency->others"), Class "Currency", !Currency
 {
 	Show harbinger { !G2; !*t2divine; BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
-	Show misc { !G3; !*t2divine; BaseType "Cartographer's Seal" "Imprint" "Unshaping Orb"; }
+	Show misc { !G3; !*t2divine; BaseType "Imprint" "Unshaping Orb"; }
 }
 
 #===============================================================================================================
