@@ -2010,7 +2010,7 @@ Show # $type->exotic->invitation $tier->t3
 #   [0701] Double Corruptions
 #------------------------------------
 
-Show # $type->exotic->corruptions $tier->doublecorruptedjwlry
+Show # %D6 $type->exotic->corruptions $tier->doublecorruptedjwlry
 	Corrupted True
 	CorruptedMods >= 2
 	Rarity Rare
@@ -2055,7 +2055,7 @@ Show # $type->exotic->sockets $tier->anynonbelt
 #   [0703] Synthesised
 #------------------------------------
 
-Show # $type->exotic->synthesised $tier->synthselected
+Show # %D6 $type->exotic->synthesised $tier->synthselected
 	SynthesisedItem True
 	Rarity <= Rare
 	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Hubris Circlet" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather"
@@ -2067,7 +2067,7 @@ Show # $type->exotic->synthesised $tier->synthselected
 	PlayEffect Blue
 	MinimapIcon 0 Blue Diamond
 
-Show # $type->exotic->synthesised $tier->synthclasses
+Show # %D6 $type->exotic->synthesised $tier->synthclasses
 	SynthesisedItem True
 	Rarity <= Rare
 	Class "Amulets" "Belt" "Bows" "Jewel" "Maps" "Rings" "Rune Daggers" "Sceptres" "Wands"
@@ -2407,7 +2407,7 @@ Show # %D3 $type->socketslinks $tier->5links
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-Show # %H4 $type->socketslinks $tier->6sockets
+Show # %D4 $type->socketslinks $tier->6sockets
 	Sockets >= 6
 	Rarity <= Rare
 	SetFontSize 45
@@ -2594,7 +2594,7 @@ Show # $type->decorator->craftinggeneric $tier->normaldecoratorremover
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
-Show # %H2 $type->normalcraft->extra $tier->any
+Show # %D2 $type->normalcraft->extra $tier->any
 	Corrupted False
 	ItemLevel >= 68
 	ItemLevel <= 83

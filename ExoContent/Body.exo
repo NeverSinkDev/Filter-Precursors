@@ -128,10 +128,10 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
-	Show ExoticHeistBases 	{ !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
-	Show ExoticRitualBases 	{ !GSH; BaseType bases.exotic.ritual.any }
+	Show ExoticHeistBases 	 { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticRitualBases 	 { !GSH; BaseType bases.exotic.ritual.any }
 	Show ExoticTalismanBases { !GSH; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
-	Show ExoticBasesMisc { !GSH; BaseType == "Grasping Mail"; }
+	Show ExoticBasesMisc 	 { !GSH; BaseType == "Grasping Mail"; }
 }
 
 #===============================================================================================================
@@ -149,9 +149,9 @@ Section IdModSection : IdMods
 		Section Weapons : Class classes_attack, DropLevel >= 55
 		{
 			Show VeiledPhys { Mod >= 1 wdmg_phys[1] + wdmg_pphys[1] + veilP; }
-			Show 2HighPhys { Mod >=2 w_cheatmods + w_temple_Phys + wdmg_phys[2] + wdmg_pphys[2] + wdmg_hphys[2] + ws_attack_speed[1] }
-			Show 3HighPhys { Mod >=3 veilP + w_cheatmods + w_temple_Phys + wdmg_phys[3] + wdmg_pphys[3] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[1] + ws_critmulti[1] }
-			Show 4HighPhys { Mod >=4 veilP + w_cheatmods + w_temple_Phys + wdmg_phys[4] + wdmg_pphys[4] + wdmg_hphys[4] + ws_attack_speed[3] + ws_attack_crit[2] + ws_critmulti[2] }
+			Show 2HighPhys  { Mod >=2 w_cheatmods + w_temple_Phys + wdmg_phys[2] + wdmg_pphys[2] + wdmg_hphys[2] + ws_attack_speed[1] }
+			Show 3HighPhys  { Mod >=3 veilP + w_cheatmods + w_temple_Phys + wdmg_phys[3] + wdmg_pphys[3] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[1] + ws_critmulti[1] }
+			Show 4HighPhys  { Mod >=4 veilP + w_cheatmods + w_temple_Phys + wdmg_phys[4] + wdmg_pphys[4] + wdmg_hphys[4] + ws_attack_speed[3] + ws_attack_crit[2] + ws_critmulti[2] }
 		}
 #------------------------------------
 #   [1234] Elemental
@@ -426,7 +426,7 @@ Section ExoticVariations : !exotic
 	{
 		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
-			Show DoubleCorruptedJwlry { !GSH; !exotic.t1; Class "Amulet" "Belt" "Jewel" "Ring"; }
+			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t1; Class "Amulet" "Belt" "Jewel" "Ring"; }
 			Show DoubleCorruptedAny   { !GS; %D5; !exotic.t2; Empty(); }
 		}
 	}
@@ -444,8 +444,8 @@ Section ExoticVariations : !exotic
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
-			Show SynthSelected { !GSH; !exotic.t1; BaseType bases.crafting.synthesised.t1 }
-			Show SynthClasses  { !GSH; !exotic.t1; Class classes_synth }
+			Show SynthSelected { !GSH; %D6; !exotic.t1; BaseType bases.crafting.synthesised.t1 }
+			Show SynthClasses  { !GSH; %D6; !exotic.t1; Class classes_synth }
 			Show SynthRandom   { !GS; %D5; !exotic.t2; Empty(); }
 		}
 #------------------------------------
@@ -538,12 +538,12 @@ Section Jewels : !jewels
 # [1234] Link Based
 #------------------------------------
 
-Section SocketsLinks : !recipe, Rarity <= Rare, Auto("SocketsLinks")
+Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 {
-	Show 5LinksLeveling	{ %D4; !G3; !V2;  !exotic.t2; LinkedSockets >= 5; AreaLevel <= 67; }
+	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel <= 67; }
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 67; }
-	Show 6Sockets		{ %H4; !G5H; !*t1; Sockets >= 6; }
+	Show 6Sockets		{ %D4; !G5H; !*t1; Sockets >= 6; }
 }
 
 #===============================================================================================================
@@ -613,7 +613,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
-	Show any { !GEX; %H2; BaseType bases.crafting.early; }
+	Show any { !GEX; %D2; BaseType bases.crafting.early; }
 }
 
 #------------------------------------
@@ -1241,9 +1241,9 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
 {
-	Show essences { %D4; !G4; !*t5alchemy; !LevelCurrency; BaseType currency.leveling.essences; }
+	Show essences { %D4; !G4;  !*t5alchemy; !LevelCurrency; BaseType currency.leveling.essences; }
 	Show trans 	  { %D4; !G5H; !Currency.t8trans; !LevelCurrency; BaseType == currency.leveling.trans; }
-	Show aug      { %D4; !G5; !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
+	Show aug      { %D4; !G5;  !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
 	Show portal   { %D4; !G6H; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
 	Show wisdom   { %D4; !G6H; !Currency.twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
 }
