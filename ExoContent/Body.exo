@@ -128,10 +128,11 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
-	Show ExoticHeistBases 	 { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
-	Show ExoticRitualBases 	 { !GSH; BaseType bases.exotic.ritual.any }
-	Show ExoticTalismanBases { !GSH; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
-	Show ExoticBasesMisc 	 { !GSH; BaseType == "Grasping Mail"; }
+	Show ExoticHeistBases 	  { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticRitualBases 	  { !GSH; BaseType bases.exotic.ritual.any }
+	Show ExoticExpeditionBases{ !GSH; BaseType bases.exotic.expedition.any }
+	Show ExoticTalismanBases  { !GSH; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
+	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
 }
 
 #===============================================================================================================
@@ -342,7 +343,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
 		Show IncursionSumonner   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
 		Show IncursionCaster     { !GSH; %D5; !exotic.t2; Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptres" "Staves" "Wands"; }
-		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
+		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "One Hand Swords"; }
 		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
 		Show IncursionGloveHelm  { !GSH; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
 		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
@@ -711,9 +712,9 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity < Rare, !GE
 
 Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 {
-	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves";}
+	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Two Hand" "Warstaves";}
 	ShowD normalranged { Rarity Normal; Class "Bows" "Wands";}
-	ShowD magicmelee   { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves";}
+	ShowD magicmelee   { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Two Hand" "Warstaves";}
 	ShowD magicranged  { Rarity Magic; Class "Bows" "Wands";}
 }
 
@@ -837,8 +838,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show t3daggers 	{ !GR3; %D2; DropLevel >= bases.rares.eg.t3daggers; Class "Daggers"; }
 		Show t3claws { !GR3; %D2; DropLevel >= bases.rares.eg.t3claws; Class "Claws"; }
 		Show t3wands { !GR3; %D2; DropLevel >= bases.rares.eg.t3wands; Class "Wands"; }
-		Show t3foils { !GR3; %D2; DropLevel >= bases.rares.eg.t3foils; Class "Thrusting One Hand Swords"; Height 4; }
-		Show t3swords1h { !GR3; %D2; DropLevel >= bases.rares.eg.t3swords1h; Class "One Hand Swords"; Height < 4 }
+		Show t3swords1h { !GR3; %D2; DropLevel >= bases.rares.eg.t3swords1h; Class "One Hand Swords"; }
 		Show t3maces1h { !GR3; %D2; DropLevel >= bases.rares.eg.t3maces1h; Class "One Hand Maces"; }
 		Show t3axes1h { !GR3; %D2; DropLevel >= bases.rares.eg.t3axes1h; Class "One Hand Axes"; }
 		Show t3sceptres { !GR3; %D2; DropLevel >= bases.rares.eg.t3sceptres; Class "Sceptres"; }
@@ -1162,6 +1162,21 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 }
 
 #===============================================================================================================
+# [[4500]] Expedition Logbooks
+#===============================================================================================================
+#!! Override 581 : "logboookss"
+
+Section Logbooks : Auto("Expedition->Logbook->High"), BaseType "Expedition Logbook"
+{
+	Show Any { !G4; Empty(); }
+}
+
+Section Logbooks : Auto("Expedition->Logbook->Any"), Class "Expedition Logbook"
+{
+	Show Any { !G4; Empty(); }
+}
+
+#===============================================================================================================
 # [[4500]] Fragments
 #===============================================================================================================
 #!! Override 590 : "scarabs and fragments tierlists"
@@ -1334,6 +1349,27 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", !Currency
 	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.oil.t3; }
 	Show t4 { !G5; %H3; !*t6chrom; BaseType == currency.oil.t4; }
 	Show restex { BaseType "Oil"; }
+}
+
+#------------------------------------
+# [5104] Expedition Currencies
+#------------------------------------
+#!! Override 661 : "Expedition"
+
+Section Expedition : Class "Currency", !Currency
+{
+	Section : Auto("currency->expedition->reroll")
+	{
+		Show Any { !G3; !*t3annul; BaseType == currency.expedition.reroll; }
+	}
+
+	Section : Auto("currency->expedition->shards")
+	{
+		Show High{ !G4; !*t4chaos; BaseType == currency.expedition.high; }
+		Show Mid { !G3; !*t5alchemy; BaseType == currency.expedition.mid; }
+		Show Low { !G5; !*t6chrom; BaseType == currency.expedition.low; }
+		Show restex { BaseType "Artifact"; }
+	}
 }
 
 #------------------------------------

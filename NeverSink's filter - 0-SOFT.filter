@@ -133,54 +133,56 @@
 #   [2901] Map progression
 #   [2902] Labyrinth items, Offerings
 # [[3000]] Heist Contracts and Blueprints
-# [[3100]] Fragments
-#   [3101] Scarabs
-#   [3102] Regular Fragment Tiering
-# [[3200]] Currency - Exceptions - Stacked Currency
-#   [3201] Perandus Coins
-#   [3202] Heist Coins
-# [[3300]] Currency - Exceptions - Leveling Currencies
-# [[3400]] Currency - Regular Currency Tiering
-# [[3500]] Currency - SPECIAL
-#   [3501] Delirum Orbs
-#   [3502] Delve - Resonators
-#   [3503] Delve - Fossils
-#   [3504] Blight - Oils
-#   [3505] Essences
-#   [3506] Incubators
-#   [3507] Others
-# [[3600]] Currency - Prophecies
-# [[3700]] Currency - Splinters
-#   [3701] Simulacrum Splinters
-# [[3800]] Divination Cards
-# [[3900]] Remaining Currency
-# [[4000]] Questlike-Items1 (override uniques)
-# [[4100]] Uniques
-#   [4101] Exceptions #1
-#   [4102] Tier 1 uniques
-#   [4103] Exceptions #2
-#   [4104] Tier 2 uniques
-#   [4105] Multi-Unique bases.
-#   [4106] Tier 3 uniques 
-#   [4107] Tier 4 uniques
-# [[4200]] Misc Map Items
-# [[4300]] Questlike-Items2
-# [[4400]] Hide outdated leveling flasks
-# [[4500]] Leveling - Flasks
-#   [4501] Hybrid flasks
-#   [4502] Life flasks
-#   [4503] Mana flasks
-# [[4600]] Leveling - Rules
-#   [4601] Rares - Decorators
-#   [4602] Rares - Universal
-#   [4603] Rares - Caster
-#   [4604] Rares - Archer
-#   [4605] Rares - Melee
-# [[4700]] Leveling - Useful magic and normal items
-#   [4701] Normals
-#   [4702] Weapon Progression
-#   [4703] Remaining Magics
-#   [4704] Show All unknown Section
+# [[3100]] Expedition Logbooks
+# [[3200]] Fragments
+#   [3201] Scarabs
+#   [3202] Regular Fragment Tiering
+# [[3300]] Currency - Exceptions - Stacked Currency
+#   [3301] Perandus Coins
+#   [3302] Heist Coins
+# [[3400]] Currency - Exceptions - Leveling Currencies
+# [[3500]] Currency - Regular Currency Tiering
+# [[3600]] Currency - SPECIAL
+#   [3601] Delirum Orbs
+#   [3602] Delve - Resonators
+#   [3603] Delve - Fossils
+#   [3604] Blight - Oils
+#   [3605] Expedition Currencies
+#   [3606] Essences
+#   [3607] Incubators
+#   [3608] Others
+# [[3700]] Currency - Prophecies
+# [[3800]] Currency - Splinters
+#   [3801] Simulacrum Splinters
+# [[3900]] Divination Cards
+# [[4000]] Remaining Currency
+# [[4100]] Questlike-Items1 (override uniques)
+# [[4200]] Uniques
+#   [4201] Exceptions #1
+#   [4202] Tier 1 uniques
+#   [4203] Exceptions #2
+#   [4204] Tier 2 uniques
+#   [4205] Multi-Unique bases.
+#   [4206] Tier 3 uniques 
+#   [4207] Tier 4 uniques
+# [[4300]] Misc Map Items
+# [[4400]] Questlike-Items2
+# [[4500]] Hide outdated leveling flasks
+# [[4600]] Leveling - Flasks
+#   [4601] Hybrid flasks
+#   [4602] Life flasks
+#   [4603] Mana flasks
+# [[4700]] Leveling - Rules
+#   [4701] Rares - Decorators
+#   [4702] Rares - Universal
+#   [4703] Rares - Caster
+#   [4704] Rares - Archer
+#   [4705] Rares - Melee
+# [[4800]] Leveling - Useful magic and normal items
+#   [4801] Normals
+#   [4802] Weapon Progression
+#   [4803] Remaining Magics
+#   [4804] Show All unknown Section
 
 #===============================================================================================================
 # [[0100]] Global overriding rules
@@ -279,7 +281,7 @@ Show # $type->rare->crusader $tier->t13
 	HasInfluence Crusader
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Astral Plate" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Marble Amulet" "Pneumatic Dagger" "Sorcerer Boots" "Two-Toned Boots" "Vaal Regalia" "Void Fangs"
+	BaseType "Astral Plate" "Blue Pearl Amulet" "Bone Helmet" "Fugitive Boots" "Marble Amulet" "Pneumatic Dagger" "Sorcerer Boots" "Two-Toned Boots" "Vaal Regalia" "Void Fangs"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
 	SetBorderColor 50 130 165 255
@@ -305,7 +307,7 @@ Show # %D5 $type->rare->crusader $tier->t22
 	HasInfluence Crusader
 	ItemLevel >= 85
 	Rarity <= Rare
-	BaseType "Agate Amulet" "Arcanist Slippers" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Battle Lamellar" "Battle Plate" "Blessed Boots" "Blood Raiment" "Blood Sceptre" "Bone Helmet" "Carnal Armour" "Chain Hauberk" "Citrine Amulet" "Colossal Tower Shield" "Colosseum Plate" "Commander's Brigandine" "Convoking Wand" "Coronal Leather" "Crude Bow" "Crusader Plate" "Crypt Armour" "Cutthroat's Garb" "Desert Brigandine" "Destiny Leather" "Destroyer Regalia" "Devout Chainmail" "Dragonscale Doublet" "Eclipse Staff" "Eternal Burgonet" "Exquisite Leather" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Fleshripper" "Frontier Leather" "Full Dragonscale" "Full Wyrmscale" "General's Brigandine" "Gladiator Plate" "Glorious Plate" "Golden Plate" "Grinning Fetish" "Gripped Gloves" "Headsman Axe" "Horned Sceptre" "Hubris Circlet" "Imbued Wand" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Lacquered Buckler" "Lacquered Garb" "Laminated Kite Shield" "Lapis Amulet" "Lion Pelt" "Loricated Ringmail" "Maelström Staff" "Majestic Plate" "Maraketh Bow" "Marble Amulet" "Mirrored Spiked Shield" "Necromancer Silks" "Occultist's Vestment" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pagan Wand" "Paua Ring" "Piledriver" "Pinnacle Tower Shield" "Royal Burgonet" "Ruby Ring" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Sapphire Ring" "Savant's Robe" "Sekhem" "Sentinel Jacket" "Shadow Sceptre" "Sharkskin Tunic" "Sinner Tricorne" "Sorcerer Boots" "Spidersilk Robe" "Spiked Gloves" "Spine Bow" "Spiny Round Shield" "Stabilising Sceptre" "Stag Sceptre" "Sundering Axe" "Talon Axe" "Topaz Ring" "Triumphant Lamellar" "Turquoise Amulet" "Two-Stone Ring" "Vaal Axe" "Vaal Buckler" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Widowsilk Robe" "Zodiac Leather"
+	BaseType "Agate Amulet" "Arcanist Slippers" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Battle Lamellar" "Battle Plate" "Blood Raiment" "Blood Sceptre" "Bone Helmet" "Carnal Armour" "Chain Hauberk" "Citrine Amulet" "Colossal Tower Shield" "Colosseum Plate" "Commander's Brigandine" "Convoking Wand" "Coronal Leather" "Crude Bow" "Crusader Plate" "Crypt Armour" "Cutthroat's Garb" "Desert Brigandine" "Destiny Leather" "Destroyer Regalia" "Devout Chainmail" "Dragonscale Doublet" "Eclipse Staff" "Eternal Burgonet" "Exquisite Leather" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Fleshripper" "Frontier Leather" "Fugitive Boots" "Full Dragonscale" "Full Wyrmscale" "General's Brigandine" "Gladiator Plate" "Glorious Plate" "Golden Plate" "Grinning Fetish" "Gripped Gloves" "Headsman Axe" "Horned Sceptre" "Hubris Circlet" "Imbued Wand" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Lacquered Buckler" "Lacquered Garb" "Laminated Kite Shield" "Lapis Amulet" "Lion Pelt" "Loricated Ringmail" "Maelström Staff" "Majestic Plate" "Maraketh Bow" "Marble Amulet" "Mirrored Spiked Shield" "Necromancer Silks" "Occultist's Vestment" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pagan Wand" "Paua Ring" "Piledriver" "Pinnacle Tower Shield" "Royal Burgonet" "Ruby Ring" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Sapphire Ring" "Savant's Robe" "Sekhem" "Sentinel Jacket" "Shadow Sceptre" "Sharkskin Tunic" "Sinner Tricorne" "Sorcerer Boots" "Spidersilk Robe" "Spiked Gloves" "Spine Bow" "Spiny Round Shield" "Stabilising Sceptre" "Stag Sceptre" "Sundering Axe" "Talon Axe" "Topaz Ring" "Triumphant Lamellar" "Turquoise Amulet" "Two-Stone Ring" "Vaal Axe" "Vaal Buckler" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Widowsilk Robe" "Zodiac Leather"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -348,7 +350,7 @@ Show # $type->rare->warlord $tier->t13
 	HasInfluence Warlord
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Accumulator Wand" "Alternating Sceptre" "Astral Plate" "Blessed Boots" "Bone Helmet" "Congregator Wand" "Hubris Circlet" "Marble Amulet" "Royal Burgonet" "Sorcerer Boots" "Titanium Spirit Shield" "Two-Toned Boots"
+	BaseType "Accumulator Wand" "Alternating Sceptre" "Astral Plate" "Bone Helmet" "Congregator Wand" "Fugitive Boots" "Hubris Circlet" "Marble Amulet" "Royal Burgonet" "Sorcerer Boots" "Titanium Spirit Shield" "Two-Toned Boots"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
 	SetBorderColor 50 130 165 255
@@ -374,7 +376,7 @@ Show # %D5 $type->rare->warlord $tier->t22
 	HasInfluence Warlord
 	ItemLevel >= 85
 	Rarity <= Rare
-	BaseType "Agate Amulet" "Amber Amulet" "Amethyst Ring" "Arcanist Gloves" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Blessed Boots" "Bone Helmet" "Cerulean Ring" "Champion Kite Shield" "Citrine Amulet" "Cogwork Ring" "Colossal Tower Shield" "Conquest Chainmail" "Convoking Wand" "Coral Ring" "Courtesan Sword" "Crystal Belt" "Deicide Mask" "Diamond Ring" "Ebony Tower Shield" "Eclipse Staff" "Eternal Burgonet" "Exquisite Blade" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Ezomyte Staff" "Ezomyte Tower Shield" "Fleshripper" "Gavel" "General's Brigandine" "Gladius" "Glorious Plate" "Heathen Wand" "Horned Sceptre" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Iolite Ring" "Jade Amulet" "Jewelled Foil" "Judgement Staff" "Lapis Amulet" "Legion Hammer" "Lion Pelt" "Maelström Staff" "Moonstone Ring" "Nightmare Bascinet" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Quartz Wand" "Ritual Sceptre" "Royal Burgonet" "Ruby Ring" "Runic Hatchet" "Sage Wand" "Sapphire Ring" "Seaglass Amulet" "Sekhem" "Shadow Sceptre" "Silken Hood" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiny Round Shield" "Sun Plate" "Sundering Axe" "Supreme Spiked Shield" "Titan Gauntlets" "Titanium Spirit Shield" "Topaz Ring" "Turquoise Amulet" "Twin Claw" "Two-Stone Ring" "Unset Ring" "Vaal Gauntlets" "Vaal Regalia" "Void Sceptre" "Widowsilk Robe"
+	BaseType "Agate Amulet" "Amber Amulet" "Amethyst Ring" "Arcanist Gloves" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Bone Helmet" "Cerulean Ring" "Champion Kite Shield" "Citrine Amulet" "Cogwork Ring" "Colossal Tower Shield" "Conquest Chainmail" "Convoking Wand" "Coral Ring" "Courtesan Sword" "Crystal Belt" "Deicide Mask" "Diamond Ring" "Ebony Tower Shield" "Eclipse Staff" "Eternal Burgonet" "Exquisite Blade" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Ezomyte Staff" "Ezomyte Tower Shield" "Fleshripper" "Fugitive Boots" "Gavel" "General's Brigandine" "Gladius" "Glorious Plate" "Heathen Wand" "Horned Sceptre" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Iolite Ring" "Jade Amulet" "Jewelled Foil" "Judgement Staff" "Lapis Amulet" "Legion Hammer" "Lion Pelt" "Maelström Staff" "Moonstone Ring" "Nightmare Bascinet" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Quartz Wand" "Ritual Sceptre" "Royal Burgonet" "Ruby Ring" "Runic Hatchet" "Sage Wand" "Sapphire Ring" "Seaglass Amulet" "Sekhem" "Shadow Sceptre" "Silken Hood" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiny Round Shield" "Sun Plate" "Sundering Axe" "Supreme Spiked Shield" "Titan Gauntlets" "Titanium Spirit Shield" "Topaz Ring" "Turquoise Amulet" "Twin Claw" "Two-Stone Ring" "Unset Ring" "Vaal Gauntlets" "Vaal Regalia" "Void Sceptre" "Widowsilk Robe"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -404,7 +406,7 @@ Show # $type->rare->redeemer $tier->t12
 	HasInfluence Redeemer
 	ItemLevel >= 84
 	Rarity <= Rare
-	BaseType "Blessed Boots" "Crystal Belt" "Fingerless Silk Gloves" "Spiked Gloves" "Spiraled Wand" "Steel Ring" "Void Fangs"
+	BaseType "Crystal Belt" "Fingerless Silk Gloves" "Fugitive Boots" "Spiked Gloves" "Spiraled Wand" "Steel Ring" "Void Fangs"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
 	SetBorderColor 50 130 165 255
@@ -430,7 +432,7 @@ Show # %D5 $type->rare->redeemer $tier->t21
 	HasInfluence Redeemer
 	ItemLevel >= 80
 	Rarity <= Rare
-	BaseType "Alternating Sceptre" "Anarchic Spiritblade" "Apothecary's Gloves" "Blasting Blade" "Blessed Boots" "Boom Mace" "Capricious Spiritblade" "Cogwork Ring" "Crack Mace" "Crystal Belt" "Disapprobation Axe" "Eventuality Rod" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Geodesic Ring" "Hedron Bow" "Hollowpoint Dagger" "Infernal Blade" "Iron Sceptre" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Ochre Sceptre" "Opal Ring" "Pneumatic Dagger" "Potentiality Rod" "Pressurised Dagger" "Psychotic Axe" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Sundering Axe" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring" "Void Fangs"
+	BaseType "Alternating Sceptre" "Anarchic Spiritblade" "Apothecary's Gloves" "Blasting Blade" "Boom Mace" "Capricious Spiritblade" "Cogwork Ring" "Crack Mace" "Crystal Belt" "Disapprobation Axe" "Eventuality Rod" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Fugitive Boots" "Geodesic Ring" "Hedron Bow" "Hollowpoint Dagger" "Infernal Blade" "Iron Sceptre" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Ochre Sceptre" "Opal Ring" "Pneumatic Dagger" "Potentiality Rod" "Pressurised Dagger" "Psychotic Axe" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Sundering Axe" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring" "Void Fangs"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -460,7 +462,7 @@ Show # $type->rare->hunter $tier->t11
 	HasInfluence Hunter
 	ItemLevel >= 82
 	Rarity <= Rare
-	BaseType "Anarchic Spiritblade" "Apex Cleaver" "Battery Staff" "Blessed Boots" "Blunt Force Condenser" "Boom Mace" "Capricious Spiritblade" "Crushing Force Magnifier" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Geodesic Ring" "Gripped Gloves" "Honed Cleaver" "Infernal Blade" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Potentiality Rod" "Psychotic Axe" "Reciprocation Staff" "Shadow Fangs" "Solarine Bow" "Spiked Gloves" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring"
+	BaseType "Anarchic Spiritblade" "Apex Cleaver" "Battery Staff" "Blunt Force Condenser" "Boom Mace" "Capricious Spiritblade" "Crushing Force Magnifier" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Fugitive Boots" "Geodesic Ring" "Gripped Gloves" "Honed Cleaver" "Infernal Blade" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Potentiality Rod" "Psychotic Axe" "Reciprocation Staff" "Shadow Fangs" "Solarine Bow" "Spiked Gloves" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
 	SetBorderColor 50 130 165 255
@@ -499,7 +501,7 @@ Show # %D5 $type->rare->hunter $tier->t21
 	HasInfluence Hunter
 	ItemLevel >= 80
 	Rarity <= Rare
-	BaseType "Accumulator Wand" "Agate Amulet" "Alternating Sceptre" "Amber Amulet" "Anarchic Spiritblade" "Apex Cleaver" "Apothecary's Gloves" "Astral Plate" "Battery Staff" "Blasting Blade" "Blessed Boots" "Blue Pearl Amulet" "Blunt Force Condenser" "Boom Mace" "Capricious Spiritblade" "Citrine Amulet" "Crushing Force Magnifier" "Crystal Belt" "Crystal Sceptre" "Eventuality Rod" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Geodesic Ring" "Gripped Gloves" "Honed Cleaver" "Infernal Blade" "Iolite Ring" "Iron Gauntlets" "Jade Amulet" "Lapis Amulet" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Micro-Distillery Belt" "Onyx Amulet" "Opal Ring" "Ornate Quiver" "Penetrating Arrow Quiver" "Potentiality Rod" "Psychotic Axe" "Reciprocation Staff" "Seaglass Amulet" "Shadow Fangs" "Solarine Bow" "Sorcerer Boots" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Transformer Staff" "Trisula" "Turquoise Amulet" "Two-Toned Boots" "Vermillion Ring"
+	BaseType "Accumulator Wand" "Agate Amulet" "Alternating Sceptre" "Amber Amulet" "Anarchic Spiritblade" "Apex Cleaver" "Apothecary's Gloves" "Astral Plate" "Battery Staff" "Blasting Blade" "Blue Pearl Amulet" "Blunt Force Condenser" "Boom Mace" "Capricious Spiritblade" "Citrine Amulet" "Crushing Force Magnifier" "Crystal Belt" "Crystal Sceptre" "Eventuality Rod" "Fickle Spiritblade" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Fugitive Boots" "Geodesic Ring" "Gripped Gloves" "Honed Cleaver" "Infernal Blade" "Iolite Ring" "Iron Gauntlets" "Jade Amulet" "Lapis Amulet" "Malign Fangs" "Maltreatment Axe" "Marble Amulet" "Micro-Distillery Belt" "Onyx Amulet" "Opal Ring" "Ornate Quiver" "Penetrating Arrow Quiver" "Potentiality Rod" "Psychotic Axe" "Reciprocation Staff" "Seaglass Amulet" "Shadow Fangs" "Solarine Bow" "Sorcerer Boots" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Transformer Staff" "Trisula" "Turquoise Amulet" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -555,7 +557,7 @@ Show # $type->rare->shaper $tier->t13
 	HasInfluence Shaper
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Astral Plate" "Blessed Boots" "Bone Helmet" "Carved Wand" "Congregator Wand" "Sorcerer Boots"
+	BaseType "Astral Plate" "Bone Helmet" "Carved Wand" "Congregator Wand" "Fugitive Boots" "Sorcerer Boots"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
 	SetBorderColor 50 130 165 255
@@ -581,7 +583,7 @@ Show # %D5 $type->rare->shaper $tier->t22
 	HasInfluence Shaper
 	ItemLevel >= 85
 	Rarity <= Rare
-	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Angelic Kite Shield" "Arcanist Gloves" "Assassin Bow" "Assassin's Garb" "Astral Plate" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Bronze Tower Shield" "Carved Wand" "Carving Knife" "Cerulean Ring" "Champion Kite Shield" "Citrine Amulet" "Colossal Tower Shield" "Congregator Wand" "Convoking Wand" "Coral Ring" "Crested Tower Shield" "Crusader Buckler" "Crusader Gloves" "Crystal Wand" "Diamond Ring" "Eclipse Staff" "Exquisite Blade" "Fossilised Spirit Shield" "Gripped Gloves" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Iolite Ring" "Lacewood Spirit Shield" "Laminated Kite Shield" "Leather Belt" "Lion Pelt" "Maelström Staff" "Maraketh Bow" "Marble Amulet" "Moonstone Ring" "Mosaic Kite Shield" "Onyx Amulet" "Opal Wand" "Pinnacle Tower Shield" "Ruby Ring" "Sapphire Ring" "Seaglass Amulet" "Shagreen Tower Shield" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Spine Bow" "Stealth Gloves" "Steelwood Bow" "Supreme Spiked Shield" "Thorium Spirit Shield" "Topaz Ring" "Turquoise Amulet" "Two-Point Arrow Quiver" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vaal Spirit Shield"
+	BaseType "Agate Amulet" "Ambusher" "Amethyst Ring" "Angelic Kite Shield" "Arcanist Gloves" "Assassin Bow" "Assassin's Garb" "Astral Plate" "Blue Pearl Amulet" "Bone Helmet" "Bronze Tower Shield" "Carved Wand" "Carving Knife" "Cerulean Ring" "Champion Kite Shield" "Citrine Amulet" "Colossal Tower Shield" "Congregator Wand" "Convoking Wand" "Coral Ring" "Crested Tower Shield" "Crusader Buckler" "Crusader Gloves" "Crystal Wand" "Diamond Ring" "Eclipse Staff" "Exquisite Blade" "Fossilised Spirit Shield" "Fugitive Boots" "Gripped Gloves" "Hubris Circlet" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Iolite Ring" "Lacewood Spirit Shield" "Laminated Kite Shield" "Leather Belt" "Lion Pelt" "Maelström Staff" "Maraketh Bow" "Marble Amulet" "Moonstone Ring" "Mosaic Kite Shield" "Onyx Amulet" "Opal Wand" "Pinnacle Tower Shield" "Ruby Ring" "Sapphire Ring" "Seaglass Amulet" "Shagreen Tower Shield" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Spine Bow" "Stealth Gloves" "Steelwood Bow" "Supreme Spiked Shield" "Thorium Spirit Shield" "Topaz Ring" "Turquoise Amulet" "Two-Point Arrow Quiver" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vaal Spirit Shield"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -624,7 +626,7 @@ Show # $type->rare->elder $tier->t13
 	HasInfluence Elder
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType "Astral Plate" "Blessed Boots" "Disapprobation Axe" "Gripped Gloves" "Horned Sceptre" "Leather Belt" "Mechalarm Belt" "Pagan Wand" "Sorcerer Boots" "Stabilising Sceptre" "Titanium Spirit Shield"
+	BaseType "Astral Plate" "Disapprobation Axe" "Fugitive Boots" "Gripped Gloves" "Horned Sceptre" "Leather Belt" "Mechalarm Belt" "Pagan Wand" "Sorcerer Boots" "Stabilising Sceptre" "Titanium Spirit Shield"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
 	SetBorderColor 50 130 165 255
@@ -637,7 +639,7 @@ Show # %D5 $type->rare->elder $tier->t21
 	HasInfluence Elder
 	ItemLevel >= 80
 	Rarity <= Rare
-	BaseType "Accumulator Wand" "Anarchic Spiritblade" "Apex Cleaver" "Apothecary's Gloves" "Banishing Blade" "Battery Staff" "Blessed Boots" "Bone Helmet" "Boom Mace" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crystal Belt" "Disapprobation Axe" "Eventuality Rod" "Faun's Horn" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Hollowpoint Dagger" "Horned Sceptre" "Infernal Blade" "Iron Greaves" "Malign Fangs" "Marble Amulet" "Mechalarm Belt" "Ochre Sceptre" "Opal Ring" "Oscillating Sceptre" "Pneumatic Dagger" "Potentiality Rod" "Prismatic Ring" "Psychotic Axe" "Quartz Wand" "Reciprocation Staff" "Sage Wand" "Solarine Bow" "Spiked Gloves" "Stabilising Sceptre" "Steel Ring" "Stygian Vise" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring"
+	BaseType "Accumulator Wand" "Anarchic Spiritblade" "Apex Cleaver" "Apothecary's Gloves" "Banishing Blade" "Battery Staff" "Bone Helmet" "Boom Mace" "Capacity Rod" "Capricious Spiritblade" "Congregator Wand" "Crack Mace" "Crystal Belt" "Disapprobation Axe" "Eventuality Rod" "Faun's Horn" "Fingerless Silk Gloves" "Flashfire Blade" "Flickerflame Blade" "Foundry Bow" "Fugitive Boots" "Hollowpoint Dagger" "Horned Sceptre" "Infernal Blade" "Iron Greaves" "Malign Fangs" "Marble Amulet" "Mechalarm Belt" "Ochre Sceptre" "Opal Ring" "Oscillating Sceptre" "Pneumatic Dagger" "Potentiality Rod" "Prismatic Ring" "Psychotic Axe" "Quartz Wand" "Reciprocation Staff" "Sage Wand" "Solarine Bow" "Spiked Gloves" "Stabilising Sceptre" "Steel Ring" "Stygian Vise" "Transformer Staff" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -713,6 +715,17 @@ Show # $type->exoticbases $tier->exoticheistbases
 Show # $type->exoticbases $tier->exoticritualbases
 	Rarity <= Rare
 	BaseType "Aetherwind Gloves" "Archdemon Crown" "Atonement Mask" "Basemetal Treads" "Blizzard Crown" "Brimstone Treads" "Cloudwhisper Boots" "Darksteel Treads" "Debilitation Gauntlets" "Demon Crown" "Dreamquest Slippers" "Duskwalk Slippers" "Gale Crown" "Gauche Gloves" "Gruelling Gauntlets" "Imp Crown" "Leyline Gloves" "Nexus Gloves" "Nightwind Slippers" "Penitent Mask" "Sinistral Gloves" "Sorrow Mask" "Southswing Gloves" "Stormrider Boots" "Taxing Gauntlets" "Windbreak Boots" "Winter Crown"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 0 75 30 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 0 Blue Diamond
+
+Show # $type->exoticbases $tier->exoticexpeditionbases
+	Rarity <= Rare
+	BaseType "Runic Crest" "Runic Crown" "Runic Gages" "Runic Gauntlets" "Runic Gloves" "Runic Greaves" "Runic Helm" "Runic Sabatons" "Runic Sollerets"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1766,7 +1779,7 @@ Show # %D5 $type->exoticmods $tier->incursioncaster
 Show # %D5 $type->exoticmods $tier->incursionelemental
 	Identified True
 	Rarity Rare
-	Class "Bows" "Claws" "Daggers" "Thrusting"
+	Class "Bows" "Claws" "Daggers" "One Hand Swords"
 	HasExplicitMod "Topotante's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -2478,7 +2491,7 @@ Show # $type->normalcraft->i86 $tier->t1
 	Corrupted False
 	ItemLevel >= 86
 	Rarity <= Rare
-	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 125 0 240
 	PlayAlertSound 3 300
@@ -2507,7 +2520,7 @@ Show # %D4 $type->normalcraft->i84 $tier->t1
 	Corrupted False
 	ItemLevel >= 84
 	Rarity <= Rare
-	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 200 200 0 240
 	PlayAlertSound 3 300
@@ -2537,7 +2550,7 @@ Show # %D3 $type->normalcraft->rest $tier->t1
 	ItemLevel <= 83
 	ItemLevel >= 68
 	Rarity <= Rare
-	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blessed Boots" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
+	BaseType == "Apothecary's Gloves" "Artillery Quiver" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring"
 	SetFontSize 45
 	SetBorderColor 255 255 255 255
 	PlayAlertSound 3 300
@@ -2550,7 +2563,7 @@ Show # %D0 $type->normalcraft->rest $tier->t2
 	ItemLevel >= 68
 	Rarity <= Rare
 	BaseType == "Convoking Wand" "Copper Kris" "Diamond Ring" "Eternal Burgonet" "Fossilised Spirit Shield" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Prismatic Ring" "Royal Burgonet" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Axe"
-	SetBorderColor 200 200 200 220
+	SetBorderColor 200 200 200 200
 
 #Hide # $type->normalcraft->rest $tier->t3
 #	Corrupted False
@@ -2558,7 +2571,7 @@ Show # %D0 $type->normalcraft->rest $tier->t2
 #	ItemLevel >= 68
 #	Rarity <= Rare
 #	BaseType == "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Citadel Bow" "Citrine Amulet" "Colossal Tower Shield" "Deicide Mask" "Eclipse Staff" "Exquisite Blade" "Fire Arrow Quiver" "Fleshripper" "Gemini Claw" "Harbinger Bow" "Harmonic Spirit Shield" "Imperial Maul" "Ivory Bow" "Karui Chopper" "Karui Maul" "Leather Belt" "Maraketh Bow" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sambar Sceptre" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Tornado Wand" "Turquoise Amulet" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre"
-#	SetBorderColor 200 200 200 220
+#	SetBorderColor 200 200 200 200
 
 Show # $type->decorator->craftinggeneric $tier->raredecoratorremover
 	Corrupted False
@@ -2600,7 +2613,7 @@ Show # %D2 $type->normalcraft->extra $tier->any
 	ItemLevel <= 83
 	Rarity < Magic
 	BaseType "Imbued Wand" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring"
-	SetBorderColor 200 200 200 220
+	SetBorderColor 200 200 200 200
 
 #------------------------------------
 #   [1003] RGB Endgame
@@ -2739,7 +2752,7 @@ Show # %D3 $type->endgameflasks $tier->highqualutility
 	AreaLevel >= 68
 	AreaLevel <= 77
 	Rarity <= Magic
-	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
+	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Iron Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
 	SetFontSize 45
 	SetTextColor 50 200 125
 	SetBorderColor 50 200 125
@@ -2778,7 +2791,7 @@ Show # %D2 $type->endgameflasks $tier->asortedutility
 	AreaLevel >= 68
 	AreaLevel <= 77
 	Rarity <= Magic
-	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
+	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Iron Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
 	SetFontSize 40
 	SetBorderColor 50 200 125
 	SetBackgroundColor 25 100 75
@@ -2855,7 +2868,7 @@ Show # %D1 $type->miscendgamerules $tier->earlyendgame4link
 
 #Hide # $type->animatedweapons $tier->normalmelee
 #	Rarity Normal
-#	Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves"
+#	Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Two Hand" "Warstaves"
 #	SetFontSize 18
 #	SetBorderColor 230 0 0 255
 #	SetBackgroundColor 0 0 0 100
@@ -2869,7 +2882,7 @@ Show # %D1 $type->miscendgamerules $tier->earlyendgame4link
 
 #Hide # $type->animatedweapons $tier->magicmelee
 #	Rarity Magic
-#	Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Thrusting" "Two Hand" "Warstaves"
+#	Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Sceptres" "Staves" "Two Hand" "Warstaves"
 #	SetFontSize 18
 #	SetBorderColor 230 0 0 255
 #	SetBackgroundColor 0 0 0 100
@@ -3213,7 +3226,7 @@ Show # %D4 $type->rr $tier->t1weapons
 Show # %D4 $type->rr $tier->t1armours
 	ItemLevel >= 68
 	Rarity Rare
-	BaseType "Apothecary's Gloves" "Arcanist Slippers" "Assassin's Boots" "Blessed Boots" "Bone Helmet" "Crusader Boots" "Dragonscale Boots" "Eternal Burgonet" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Goliath Greaves" "Gripped Gloves" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
+	BaseType "Apothecary's Gloves" "Arcanist Slippers" "Assassin's Boots" "Bone Helmet" "Crusader Boots" "Dragonscale Boots" "Eternal Burgonet" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Fugitive Boots" "Goliath Greaves" "Gripped Gloves" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
 	SetFontSize 45
 	SetBackgroundColor 0 0 0 255
 
@@ -3289,17 +3302,7 @@ Show # %D2 $type->rr $tier->t3wands
 	SetFontSize 35
 	SetBackgroundColor 75 75 75 200
 
-Show # %D2 $type->rr $tier->t3foils
-	Height 4
-	ItemLevel >= 68
-	DropLevel >= 60
-	Rarity Rare
-	Class "Thrusting One Hand Swords"
-	SetFontSize 35
-	SetBackgroundColor 75 75 75 200
-
 Show # %D2 $type->rr $tier->t3swords1h
-	Height < 4
 	ItemLevel >= 68
 	DropLevel >= 66
 	Rarity Rare
@@ -3435,7 +3438,7 @@ Show # %D2 $type->rr $tier->t3quivers
 Show # %D1 $type->rr $tier->t4endgamerares
 	ItemLevel >= 68
 	Rarity Rare
-	Class "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rune Daggers" "Sceptres" "Shields" "Staves" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
+	Class "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rune Daggers" "Sceptres" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
 	SetFontSize 35
 	SetBackgroundColor 75 75 70 120
 
@@ -4604,12 +4607,37 @@ Show # %H5 $type->heist->blueprint $tier->any
 	MinimapIcon 1 Yellow UpsideDownHouse
 
 #===============================================================================================================
-# [[3100]] Fragments
+# [[3100]] Expedition Logbooks
+#===============================================================================================================
+# !! Override 581 : "logboookss"
+
+Show # $type->expedition->logbook->high $tier->any
+	BaseType "Expedition Logbook"
+	SetFontSize 45
+	SetTextColor 255 85 85 255
+	SetBorderColor 255 85 85 255
+	SetBackgroundColor 40 0 30 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow UpsideDownHouse
+
+Show # $type->expedition->logbook->any $tier->any
+	Class "Expedition Logbook"
+	SetFontSize 45
+	SetTextColor 255 85 85 255
+	SetBorderColor 255 85 85 255
+	SetBackgroundColor 40 0 30 255
+	PlayAlertSound 5 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow UpsideDownHouse
+
+#===============================================================================================================
+# [[3200]] Fragments
 #===============================================================================================================
 # !! Override 590 : "scarabs and fragments tierlists"
 
 #------------------------------------
-#   [3101] Scarabs
+#   [3201] Scarabs
 #------------------------------------
 
 Show # $type->fragments->scarabs $tier->t1
@@ -4668,7 +4696,7 @@ Show # $type->fragments->scarabs $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3102] Regular Fragment Tiering
+#   [3202] Regular Fragment Tiering
 #------------------------------------
 
 Show # $type->fragments $tier->t1
@@ -4726,7 +4754,7 @@ Show # $type->fragments $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3200]] Currency - Exceptions - Stacked Currency
+# [[3300]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
 # !! Chapter "Currencylike item tierlists 1"
 # !! Override 610 : "Stacked Currency"
@@ -4770,7 +4798,7 @@ Show # %H4 $type->currency->stacked $tier->shards
 Show # $type->currency->stacked $tier->orbs_chaos
 	StackSize >= 2
 	Class "Currency"
-	BaseType "Awakened Sextant" "Chaos Orb" "Facetor's Lens" "Fertile Catalyst" "Gemcutter's Prism" "Harbinger's Orb" "Prime Sextant" "Prismatic Catalyst" "Ritual Splinter" "Stacked Deck" "Tempering Catalyst" "Vaal Orb"
+	BaseType "Awakened Sextant" "Chaos Orb" "Enkindling Orb" "Facetor's Lens" "Fertile Catalyst" "Gemcutter's Prism" "Harbinger's Orb" "Instilling Orb" "Prime Sextant" "Prismatic Catalyst" "Ritual Splinter" "Stacked Deck" "Tempering Catalyst" "Vaal Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -4828,7 +4856,7 @@ Show # $type->currency->stacked $tier->orbs_wisdom
 	MinimapIcon 2 White Circle
 
 #------------------------------------
-#   [3201] Perandus Coins
+#   [3301] Perandus Coins
 #------------------------------------
 # !! Override 720 : "Perandus and Heist Coins"
 
@@ -4870,7 +4898,7 @@ Show # %H2 $type->currency->peranduscoins $tier->t4
 	PlayEffect Orange Temp
 
 #------------------------------------
-#   [3202] Heist Coins
+#   [3302] Heist Coins
 #------------------------------------
 
 Show # $type->currency->heist $tier->highstack
@@ -4893,7 +4921,7 @@ Show # %H4 $type->currency->heist $tier->any
 	PlayEffect Orange Temp
 
 #===============================================================================================================
-# [[3300]] Currency - Exceptions - Leveling Currencies
+# [[3400]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
 # !! Override 620 : "Leveling Currency"
 
@@ -4945,7 +4973,7 @@ Show # %D4 $type->currency->leveling $tier->wisdom
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[3400]] Currency - Regular Currency Tiering
+# [[3500]] Currency - Regular Currency Tiering
 #===============================================================================================================
 # !! Override 630 : "Regular Currency"
 
@@ -4995,7 +5023,7 @@ Show # $type->currency $tier->t4chaos
 
 Show # %H5 $type->currency $tier->t5alchemy
 	Class "Currency"
-	BaseType == "Annulment Shard" "Bestiary Orb" "Cartographer's Chisel" "Facetor's Lens" "Glassblower's Bauble" "Harbinger's Shard" "Imbued Catalyst" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Regal Orb" "Simple Sextant" "Vaal Orb"
+	BaseType == "Annulment Shard" "Bestiary Orb" "Cartographer's Chisel" "Enkindling Orb" "Facetor's Lens" "Glassblower's Bauble" "Harbinger's Shard" "Imbued Catalyst" "Instilling Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Regal Orb" "Simple Sextant" "Vaal Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5054,7 +5082,7 @@ Show # %H2 $type->currency $tier->twisdom
 	SetBackgroundColor 0 0 0 255
 
 #===============================================================================================================
-# [[3500]] Currency - SPECIAL
+# [[3600]] Currency - SPECIAL
 #===============================================================================================================
 #------------------------------------
 # [5103] Incursion - Vials
@@ -5106,7 +5134,7 @@ Show # $type->vials $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3501] Delirum Orbs
+#   [3601] Delirum Orbs
 #------------------------------------
 
 Show # $type->currency->deliriumorbs $tier->t1
@@ -5143,7 +5171,7 @@ Show # $type->currency->deliriumorbs $tier->t3
 	MinimapIcon 2 White Circle
 
 #------------------------------------
-#   [3502] Delve - Resonators
+#   [3602] Delve - Resonators
 #------------------------------------
 # !! Override 650 : "Resonators, Fossils"
 
@@ -5191,7 +5219,7 @@ Show # $type->currency->resonator $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3503] Delve - Fossils
+#   [3603] Delve - Fossils
 #------------------------------------
 
 Show # $type->currency->fossil $tier->t1
@@ -5250,7 +5278,7 @@ Show # $type->currency->fossil $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3504] Blight - Oils
+#   [3604] Blight - Oils
 #------------------------------------
 # !! Override 660 : "Blight Oils"
 
@@ -5310,7 +5338,56 @@ Show # $type->currency->oil $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3505] Essences
+#   [3605] Expedition Currencies
+#------------------------------------
+# !! Override 661 : "Expedition"
+
+Show # $type->currency->expedition->reroll $tier->any
+	Class "Currency"
+	BaseType == "Astragali" "Burial Medallion" "Exotic Coinage" "Scrap Metal"
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 240 90 35 255
+	PlayAlertSound 2 300
+	PlayEffect Yellow
+	MinimapIcon 1 Yellow Circle
+
+Show # $type->currency->expedition->shards $tier->high
+	Class "Currency"
+	BaseType == "Grand Black Scythe Artifact" "Grand Broken Circle Artifact" "Grand Order Artifact" "Grand Sun Artifact" "Greater Black Scythe Artifact" "Greater Broken Circle Artifact" "Greater Order Artifact" "Greater Sun Artifact"
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 213 159 0 255
+	PlayAlertSound 2 300
+	PlayEffect White
+	MinimapIcon 2 White Circle
+
+Show # $type->currency->expedition->shards $tier->low
+	Class "Currency"
+	BaseType == "Common Black Scythe Artifact" "Common Broken Circle Artifact" "Common Order Artifact" "Common Sun Artifact" "Lesser Black Scythe Artifact" "Lesser Broken Circle Artifact" "Lesser Order Artifact" "Lesser Sun Artifact"
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 210 178 135 255
+	PlayAlertSound 2 300
+	PlayEffect Grey
+	MinimapIcon 2 Grey Circle
+
+Show # $type->currency->expedition->shards $tier->restex
+	Class "Currency"
+	BaseType "Artifact"
+	SetFontSize 45
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
+
+#------------------------------------
+#   [3606] Essences
 #------------------------------------
 # !! Override 670 : "Essences"
 
@@ -5372,7 +5449,7 @@ Show # %H1 $type->currency->essence $tier->t6
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [3506] Incubators
+#   [3607] Incubators
 #------------------------------------
 # !! Override 680 : "Incubators"
 
@@ -5442,7 +5519,7 @@ Show # $type->currency->incubators $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3507] Others
+#   [3608] Others
 #------------------------------------
 # !! Override 690 : "Harbinger Scrolls"
 
@@ -5469,7 +5546,7 @@ Show # $type->currency->others $tier->misc
 	MinimapIcon 0 Red Circle
 
 #===============================================================================================================
-# [[3600]] Currency - Prophecies
+# [[3700]] Currency - Prophecies
 #===============================================================================================================
 # !! Chapter "Currencylike item tierlists 2"
 # !! Override 710 : "Prophecies"
@@ -5567,7 +5644,7 @@ Show # $type->currency->prophecy $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3700]] Currency - Splinters
+# [[3800]] Currency - Splinters
 #===============================================================================================================
 #------------------------------------
 # [5112] Breach and Legion Splinters
@@ -5607,7 +5684,7 @@ Show # %HS3 $type->currency->splinter $tier->t3
 	MinimapIcon 2 Grey Kite
 
 #------------------------------------
-#   [3701] Simulacrum Splinters
+#   [3801] Simulacrum Splinters
 #------------------------------------
 
 Show # $type->currency->splinter->simulacrum $tier->t1
@@ -5670,7 +5747,7 @@ Show # %H5 $type->currency->splinter->simulacrum $tier->t5
 	MinimapIcon 2 Grey Kite
 
 #===============================================================================================================
-# [[3800]] Divination Cards
+# [[3900]] Divination Cards
 #===============================================================================================================
 # !! Override 730 : "Divination Cards"
 
@@ -5767,7 +5844,7 @@ Show # $type->divination $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[3900]] Remaining Currency
+# [[4000]] Remaining Currency
 #===============================================================================================================
 # !! Override 740 : "Remaining Currency"
 
@@ -5793,7 +5870,7 @@ Show # $type->currency $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4000]] Questlike-Items1 (override uniques)
+# [[4100]] Questlike-Items1 (override uniques)
 #===============================================================================================================
 # !! Override 750 : "Metamorph Samples"
 
@@ -5818,12 +5895,12 @@ Show # $type->heisttarget $tier->any
 	MinimapIcon 1 Green Pentagon
 
 #===============================================================================================================
-# [[4100]] Uniques
+# [[4200]] Uniques
 #===============================================================================================================
 # !! Override 760 : "All uniques"
 
 #------------------------------------
-#   [4101] Exceptions #1
+#   [4201] Exceptions #1
 #------------------------------------
 
 Show # $type->uniques $tier->extabula
@@ -5873,7 +5950,7 @@ Show # $type->uniques $tier->exharby
 	MinimapIcon 0 Blue Star
 
 #------------------------------------
-#   [4102] Tier 1 uniques
+#   [4202] Tier 1 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t1
@@ -5888,7 +5965,7 @@ Show # $type->uniques $tier->t1
 	MinimapIcon 0 Red Star
 
 #------------------------------------
-#   [4103] Exceptions #2
+#   [4203] Exceptions #2
 #------------------------------------
 
 Show # $type->uniques $tier->2xcorrupteduniques
@@ -5927,7 +6004,7 @@ Show # %D4 $type->uniques $tier->5link
 	MinimapIcon 0 Yellow Star
 
 #------------------------------------
-#   [4104] Tier 2 uniques
+#   [4204] Tier 2 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t2
@@ -5942,7 +6019,7 @@ Show # $type->uniques $tier->t2
 	MinimapIcon 0 Yellow Star
 
 #------------------------------------
-#   [4105] Multi-Unique bases.
+#   [4205] Multi-Unique bases.
 #------------------------------------
 # These bases have multiple uniques. One of the uniques, is a high value one
 # While others are cheap. We give them a high quality display, while making a normal unique
@@ -5996,7 +6073,7 @@ Show # $type->uniques $tier->exjewels
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [4106] Tier 3 uniques 
+#   [4206] Tier 3 uniques 
 #------------------------------------
 
 Show # $type->uniques $tier->t3boss
@@ -6033,7 +6110,7 @@ Show # %D2 $type->uniques $tier->recipeuniquerings
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [4107] Tier 4 uniques
+#   [4207] Tier 4 uniques
 #------------------------------------
 
 Show # %H4 $type->uniques $tier->hideable2
@@ -6069,7 +6146,7 @@ Show # $type->uniques $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4200]] Misc Map Items
+# [[4300]] Misc Map Items
 #===============================================================================================================
 # !! Override 780 : "Quest Items and Relic Keys"
 
@@ -6114,7 +6191,7 @@ Show # $type->miscmapitems $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4300]] Questlike-Items2
+# [[4400]] Questlike-Items2
 #===============================================================================================================
 
 Show # $type->questlike $tier->invitations
@@ -6158,7 +6235,7 @@ Show # $type->questlike $tier->questwatchstones
 	MinimapIcon 1 Green Pentagon
 
 #===============================================================================================================
-# [[4400]] Hide outdated leveling flasks
+# [[4500]] Hide outdated leveling flasks
 #===============================================================================================================
 # !! Chapter "Leveling - flasks, rares, 4links"
 # !! Override 810 : "All leveling rules incl. utility flasks"
@@ -6204,7 +6281,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 	DisableDropSound True
 
 #===============================================================================================================
-# [[4500]] Leveling - Flasks
+# [[4600]] Leveling - Flasks
 #===============================================================================================================
 #------------------------------------
 # [6002] Utility Flasks
@@ -6221,7 +6298,7 @@ Show # $type->leveling->flasks->utility $tier->quicksilver
 	MinimapIcon 1 Yellow Raindrop
 
 Show # $type->leveling->flasks->utility $tier->asortedutility
-	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
+	BaseType "Basalt Flask" "Diamond Flask" "Granite Flask" "Iron Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
 	SetFontSize 45
 	SetBorderColor 50 200 125
 	SetBackgroundColor 25 100 75
@@ -6260,7 +6337,7 @@ Show # %D1 $type->leveling->flasks->quality $tier->any
 	SetBackgroundColor 130 110 110 255
 
 #------------------------------------
-#   [4501] Hybrid flasks
+#   [4601] Hybrid flasks
 #------------------------------------
 # !! Override 820 : "leveling life and mana flasks"
 
@@ -6307,7 +6384,7 @@ Show # %H2 $type->leveling->flasks->hybrid $tier->t6
 	SetBorderColor 100 0 100
 
 #------------------------------------
-#   [4502] Life flasks
+#   [4602] Life flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->life $tier->t1
@@ -6395,7 +6472,7 @@ Show # $type->leveling->flasks->life $tier->t12
 	SetBorderColor 120 0 0
 
 #------------------------------------
-#   [4503] Mana flasks
+#   [4603] Mana flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->mana $tier->t1
@@ -6483,7 +6560,7 @@ Show # $type->leveling->flasks->mana $tier->t12
 	SetBorderColor 0 0 120
 
 #===============================================================================================================
-# [[4600]] Leveling - Rules
+# [[4700]] Leveling - Rules
 #===============================================================================================================
 # !! Override 830 : "leveling: 4links and chromatic socket items"
 #------------------------------------
@@ -6501,7 +6578,7 @@ Show # %D4 $type->leveling->rare->socketslinks $tier->4linkrares
 	MinimapIcon 2 Grey Diamond
 
 #------------------------------------
-#   [4601] Rares - Decorators
+#   [4701] Rares - Decorators
 #------------------------------------
 # !! Override 840 : "leveling: all rare rules"
 
@@ -6538,7 +6615,7 @@ Show # $type->decorators->leveling->rare $tier->tinyrares
 	Continue
 
 #------------------------------------
-#   [4602] Rares - Universal
+#   [4702] Rares - Universal
 #------------------------------------
 
 Show # %D5 $type->leveling->rare->universal $tier->rusticsash
@@ -6590,7 +6667,7 @@ Show # %D4 $type->leveling->rare->armours $tier->quivers
 	SetBackgroundColor 43 100 75 210
 
 #------------------------------------
-#   [4603] Rares - Caster
+#   [4703] Rares - Caster
 #------------------------------------
 # !! Override 850 : "leveling: class specific leveling weapons"
 
@@ -6610,7 +6687,7 @@ Show # %D4 $type->leveling->rare->caster $tier->general
 	SetBackgroundColor 43 43 100 210
 
 #------------------------------------
-#   [4604] Rares - Archer
+#   [4704] Rares - Archer
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->archer $tier->l1
@@ -6703,13 +6780,13 @@ Show # %D4 $type->leveling->rare->archer $tier->l10
 	SetBackgroundColor 43 100 75 210
 
 #------------------------------------
-#   [4605] Rares - Melee
+#   [4705] Rares - Melee
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->melee $tier->l1
 	ItemLevel <= 16
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 45
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6718,7 +6795,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l2
 	ItemLevel <= 20
 	DropLevel >= 8
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6727,7 +6804,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l3
 	ItemLevel <= 26
 	DropLevel >= 14
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6736,7 +6813,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l4
 	ItemLevel <= 32
 	DropLevel >= 20
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6745,7 +6822,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l5
 	ItemLevel <= 38
 	DropLevel >= 26
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6754,7 +6831,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l6
 	ItemLevel <= 44
 	DropLevel >= 32
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6763,7 +6840,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l7
 	ItemLevel <= 50
 	DropLevel >= 38
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6772,7 +6849,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l8
 	ItemLevel <= 56
 	DropLevel >= 44
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6781,7 +6858,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l9
 	ItemLevel <= 58
 	DropLevel >= 50
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6790,7 +6867,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l10
 	ItemLevel <= 68
 	DropLevel >= 56
 	Rarity Rare
-	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetFontSize 40
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
@@ -6831,7 +6908,7 @@ Show # %D3 $type->leveling->rare->remaining $tier->underlevel16
 	SetBackgroundColor 75 75 70 120
 
 #===============================================================================================================
-# [[4700]] Leveling - Useful magic and normal items
+# [[4800]] Leveling - Useful magic and normal items
 #===============================================================================================================
 # !! Chapter "Leveling - remaining normal and magic items"
 # !! Override 910 : "Linked Gear"
@@ -7018,7 +7095,7 @@ Show # %D2 $type->leveling->normalmagic->otheracts $tier->generalcrafting
 #	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4701] Normals
+#   [4801] Normals
 #------------------------------------
 # !! Override 930 : "first levels gear"
 
@@ -7048,7 +7125,7 @@ Show # %H3 $type->leveling->firstlevels $tier->firstareas
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4702] Weapon Progression
+#   [4802] Weapon Progression
 #------------------------------------
 # !! Override 940 : "weapon progression"
 
@@ -7056,7 +7133,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r01
 	ItemLevel <= 9
 	DropLevel >= 5
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7065,7 +7142,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r02
 	ItemLevel <= 11
 	DropLevel >= 8
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7074,7 +7151,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r03
 	ItemLevel <= 14
 	DropLevel >= 11
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7083,7 +7160,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r04
 	ItemLevel <= 16
 	DropLevel >= 13
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7092,7 +7169,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r05
 	ItemLevel <= 18
 	DropLevel >= 16
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7101,7 +7178,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r06
 	ItemLevel <= 20
 	DropLevel >= 18
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7110,7 +7187,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r07
 	ItemLevel <= 22
 	DropLevel >= 20
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7119,7 +7196,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r08
 	ItemLevel <= 24
 	DropLevel >= 22
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7128,7 +7205,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r09
 	ItemLevel <= 26
 	DropLevel >= 24
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7137,7 +7214,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r10
 	ItemLevel <= 28
 	DropLevel >= 26
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7146,7 +7223,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r11
 	ItemLevel <= 30
 	DropLevel >= 28
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7155,7 +7232,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r12
 	ItemLevel <= 32
 	DropLevel >= 30
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7164,7 +7241,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r13
 	ItemLevel <= 34
 	DropLevel >= 32
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7173,7 +7250,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r14
 	ItemLevel <= 36
 	DropLevel >= 34
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7182,7 +7259,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r15
 	ItemLevel <= 40
 	DropLevel >= 38
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7191,7 +7268,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r16
 	ItemLevel <= 42
 	DropLevel >= 40
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7200,7 +7277,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r17
 	ItemLevel <= 44
 	DropLevel >= 42
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7209,7 +7286,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r18
 	ItemLevel <= 46
 	DropLevel >= 44
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7218,7 +7295,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r19
 	ItemLevel <= 48
 	DropLevel >= 46
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7227,7 +7304,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r20
 	ItemLevel <= 50
 	DropLevel >= 48
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7236,7 +7313,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r21
 	ItemLevel <= 52
 	DropLevel >= 50
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7245,7 +7322,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r22
 	ItemLevel <= 54
 	DropLevel >= 52
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7254,7 +7331,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r23
 	ItemLevel <= 56
 	DropLevel >= 54
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7263,7 +7340,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r24
 	ItemLevel <= 58
 	DropLevel >= 56
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7272,7 +7349,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r25
 	ItemLevel <= 60
 	DropLevel >= 58
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7281,7 +7358,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r26
 	ItemLevel <= 62
 	DropLevel >= 60
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7290,7 +7367,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r27
 	ItemLevel <= 64
 	DropLevel >= 62
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7299,7 +7376,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r28
 	ItemLevel <= 66
 	DropLevel >= 64
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
@@ -7308,13 +7385,13 @@ Show # %H2 $type->leveling->weaponprogression $tier->r29
 	ItemLevel <= 68
 	DropLevel >= 66
 	Rarity <= Normal
-	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
+	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"
 	SetTextColor 180 180 180
 	SetBorderColor 0 0 0
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4703] Remaining Magics
+#   [4803] Remaining Magics
 #------------------------------------
 # !! Override 950 : "magic vendor items"
 
@@ -7398,7 +7475,7 @@ Hide # $type->hidelayer $tier->final
 	DisableDropSound True
 
 #------------------------------------
-#   [4704] Show All unknown Section
+#   [4804] Show All unknown Section
 #------------------------------------
 # THIS ENTRY IS CAUGHT IN 3 CASES:
 # 1) YOUR FILTER IS OUT OF DATE!
