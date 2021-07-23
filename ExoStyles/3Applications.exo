@@ -106,6 +106,7 @@ Style MainRules
 	## Heist-Map
 	Apply(heistmaps, HeistContracts => !HeistMapLike.Any);
 	Apply(heistmaps, HeistBlueprint => !HeistMapLikeHigh.Any);
+	Apply(heistmaps, Logbooks => !HeistMapLikeHigh.Any);
 
 	## Currency
 	Apply(currency.def, $currency.t1exalted => t1exalted);
