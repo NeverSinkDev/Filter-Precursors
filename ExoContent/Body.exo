@@ -298,6 +298,7 @@ Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID"),
 		Show Speed { Mod >= 1 movespeed[1]; }
 	}
 
+	## TODO: rework/remove for 3.16 - due to flask mods.
 	Section Flask
 	{
 		Show Mana { BaseType "Divine Mana Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"; Mod >= 2 "Enduring" "of Staunching" "of Heat" "of Warding" "of Reflexes" "of Iron Skin"; }
@@ -758,6 +759,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
 	{
+		Show High { %H4; !G4; !exotic.t2; ItemLevel >= 82; }
 		Show Any { %H3; !G5; !exotic.t3; Empty(); }
 	}
 
@@ -1169,12 +1171,12 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 
 Section Logbooks : Auto("Expedition->Logbook->High"), BaseType "Expedition Logbook"
 {
-	Show Any { !G4; Empty(); }
+	Show Any { !G2; Empty(); }
 }
 
 Section Logbooks : Auto("Expedition->Logbook->Any"), Class "Expedition Logbook"
 {
-	Show Any { !G4; Empty(); }
+	Show Any { !G2; Empty(); }
 }
 
 #===============================================================================================================
@@ -1207,6 +1209,32 @@ Section MapFragments : Class "Map Fragments"
 		Show t4 { !G4; %HS3; BaseType fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
+}
+
+#===============================================================================================================
+# [[4800]] TEMP 3.16 CURRENCY
+#===============================================================================================================
+#!! Chapter "TEMP 3.16 CURRENCY"
+#!! Override 605 : "TEMP 3.16 CURRENCY"
+
+Section StackedCurrencyTwo : Auto("Currency->StackedTwo"), Class "Currency", StackSize >= 2, !currency
+{
+	Show t2	{ !G2; !*t2divine; BaseType currency.stackedTwo.t2; }
+	Show t3	{ !G3; !*t3annul; BaseType currency.stackedTwo.t3 + currency.stackedTwo.t3; }
+	Show t4	{ !G3; %H5; !*t4chaos; BaseType currency.stackedTwo.t4 + currency.stackedTwo.t4; }
+	Show t5	{ !G4; %H4; !*t5alchemy; BaseType currency.stackedTwo.t5 + currency.stackedTwo.t5; }
+	Show t6	{ !G4; %H4; !*t6chrom; BaseType currency.stackedTwo.t6 + currency.stackedTwo.t6; }
+	Show t7	{ !G5; %H3; !*t7chance; BaseType currency.stackedTwo.t7 + currency.stackedTwo.t7; }
+}
+
+Section StackedCurrencyFour : Auto("Currency->StackedFour"), Class "Currency", StackSize >= 4, !currency
+{
+	Show t2	{ !G2; !*t2divine; BaseType currency.stackedFour.t2 + currency.stackedFourStatic.t2; }
+	Show t3	{ !G3; !*t3annul; BaseType currency.stackedFour.t3 + currency.stackedFourStatic.t3 ; }
+	Show t4	{ !G3; %H5; !*t4chaos; BaseType currency.stackedFour.t4 + currency.stackedFourStatic.t4; }
+	Show t5	{ !G4; %H4; !*t5alchemy; BaseType currency.stackedFour.t5 + currency.stackedFourStatic.t5; }
+	Show t6	{ !G4; %H4; !*t6chrom; BaseType currency.stackedFour.t6 + currency.stackedFourStatic.t6; }
+	Show t7	{ !G5; %H3; !*t7chance; BaseType currency.stackedFour.t7 + currency.stackedFourStatic.t7; }
 }
 
 #===============================================================================================================
