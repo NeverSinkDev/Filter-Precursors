@@ -1212,47 +1212,44 @@ Section MapFragments : Class "Map Fragments"
 }
 
 #===============================================================================================================
-# [[4800]] TEMP 3.16 CURRENCY
+# [[4800]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
-#!! Chapter "TEMP 3.16 CURRENCY"
-#!! Override 605 : "TEMP 3.16 CURRENCY"
+#!! Chapter "Currencylike item tierlists 1"
+#!! Override 610 : "Stacked Currency"
 
-Section StackedCurrencyTwo : Auto("Currency->StackedTwo"), Class "Currency", StackSize >= 2, !currency
-{
-	Show t2	{ !G2; !*t2divine; BaseType currency.stackedTwo.t2; }
-	Show t3	{ !G3; !*t3annul; BaseType currency.stackedTwo.t3 + currency.stackedTwo.t3; }
-	Show t4	{ !G3; %H5; !*t4chaos; BaseType currency.stackedTwo.t4 + currency.stackedTwo.t4; }
-	Show t5	{ !G4; %H4; !*t5alchemy; BaseType currency.stackedTwo.t5 + currency.stackedTwo.t5; }
-	Show t6	{ !G4; %H4; !*t6chrom; BaseType currency.stackedTwo.t6 + currency.stackedTwo.t6; }
-	Show t7	{ !G5; %H3; !*t7chance; BaseType currency.stackedTwo.t7 + currency.stackedTwo.t7; }
+Section StackedCurrencySupplies : Auto("Currency->StackedSupplies"), Class "Currency", !currency
+{	
+	Show high	{ !G4; !*t5alchemy; StackSize >= 10; BaseType currency.stacked.supplies; }
+	Show mid	{ %H5; !G4; !*t6chrom; StackSize >= 4; BaseType currency.stacked.supplies; }
+	Show low	{ %H4; !G5; !*t7chance; StackSize >= 2; BaseType currency.stacked.supplies; }
 }
 
 Section StackedCurrencyFour : Auto("Currency->StackedFour"), Class "Currency", StackSize >= 4, !currency
 {
 	Show t2	{ !G2; !*t2divine; BaseType currency.stackedFour.t2 + currency.stackedFourStatic.t2; }
 	Show t3	{ !G3; !*t3annul; BaseType currency.stackedFour.t3 + currency.stackedFourStatic.t3 ; }
-	Show t4	{ !G3; %H5; !*t4chaos; BaseType currency.stackedFour.t4 + currency.stackedFourStatic.t4; }
-	Show t5	{ !G4; %H4; !*t5alchemy; BaseType currency.stackedFour.t5 + currency.stackedFourStatic.t5; }
+	Show t4	{ !G3; !*t4chaos; BaseType currency.stackedFour.t4 + currency.stackedFourStatic.t4; }
+	Show t5	{ !G4; %H5; !*t5alchemy; BaseType currency.stackedFour.t5 + currency.stackedFourStatic.t5; }
 	Show t6	{ !G4; %H4; !*t6chrom; BaseType currency.stackedFour.t6 + currency.stackedFourStatic.t6; }
 	Show t7	{ !G5; %H3; !*t7chance; BaseType currency.stackedFour.t7 + currency.stackedFourStatic.t7; }
 }
 
-#===============================================================================================================
-# [[4800]] Currency - Exceptions - Stacked Currency
-#===============================================================================================================
-#!! Chapter "Currencylike item tierlists 1"
-#!! Override 610 : "Stacked Currency"
-
-Section StackedCurrency : Auto("Currency->Stacked"), Class "Currency", !currency
+Section StackedCurrencyTwo : Auto("Currency->StackedTwo"), Class "Currency", StackSize >= 2, !currency
 {
-	Show splinters_t1	{ !G4; !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
-	Show splinters_t2	{ !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
-	Show shards			{ !G5H; %H4; !*t5alchemy; StackSize >= 4; BaseType currency.stacked.shards; }
-	Show orbs_chaos		{ !G3; !*t3annul; StackSize >= 2; BaseType currency.stacked.chaos; }
-	Show orbs_alchemy	{ !G4; !*t4chaos; StackSize >= 2; BaseType currency.stacked.alch; }
-	Show orbs_alt		{ !G4; %H5; !*t5alchemy; StackSize >= 3; BaseType currency.stacked.alt; }
-	Show orbs_transmute	{ !G4; %H5; !*t5alchemy; StackSize >= 3; BaseType currency.stacked.trans; }
-	Show orbs_wisdom	{ !G4; !*t5alchemy; StackSize >= 4; BaseType currency.stacked.scroll; }
+	Show t2	{ !G2; !*t2divine; BaseType currency.stackedTwo.t2; }
+	Show t3	{ !G3; !*t3annul; BaseType currency.stackedTwo.t3 + currency.stackedTwo.t3; }
+	Show t4	{ !G3; !*t4chaos; BaseType currency.stackedTwo.t4 + currency.stackedTwo.t4; }
+	Show t5	{ !G4; %H5; !*t5alchemy; BaseType currency.stackedTwo.t5 + currency.stackedTwo.t5; }
+	Show t6	{ !G4; %H4; !*t6chrom; BaseType currency.stackedTwo.t6 + currency.stackedTwo.t6; }
+	Show t7	{ !G5; %H3; !*t7chance; BaseType currency.stackedTwo.t7 + currency.stackedTwo.t7; }
+}
+
+Section StackedCurrencySplinters : Auto("Currency->StackedSplinters"), Class "Currency", !currency
+{
+	Show splinters_t1high	{ !G3; !*t3annul; StackSize >= 7; BaseType currency.stacked.splinters1; }
+	Show splinters_t2high	{ !G4; !*t4chaos; StackSize >= 7; BaseType currency.stacked.splinters2; }
+	Show splinters_t1	{ !G3; !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
+	Show splinters_t2	{ %H5; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
 }
 
 #------------------------------------
