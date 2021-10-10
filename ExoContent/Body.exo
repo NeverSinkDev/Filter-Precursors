@@ -157,7 +157,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-		Section FastEleWeapons : BaseType == quickWeapons
+		Section FastEleWeapons : BaseType == quickWeapons, Corrupted False
 		{
 			Show 3HighEle { Mod >=3 veilP + w_cheatmods + w_temple_Caster + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + ws_attack_speed[1] + ws_attack_crit[2] + ws_critmulti[1] }
 			Show 4HighEle { Mod >=4 veilP + w_cheatmods + w_temple_Caster + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + ws_attack_speed[2] + ws_attack_crit[3] + ws_critmulti[2] }
@@ -468,132 +468,6 @@ Section ExoticVariations : !exotic
 			Show Helmets     { !GSH; !exotic.t2; Class "Helmets" }
 			Show GlovesBoots { !GS; %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
-	}
-}
-
-
-#===============================================================================================================
-# [[0200]] Jewels
-#===============================================================================================================
-#!! Chapter "Endgame crafting and recipe items"
-#!! Override 110 : "Jewel"
-
-Section Jewels : !jewels
-{
-#------------------------------------
-# [1234] Special Cases
-#------------------------------------
-	Section IdentifiedJewels : Identified True, Auto("jewels->special"), !UniqueSound, !GS
-	{
-		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
-		{
-			Show 1modcorrupted { !Special; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
-		}
-
-		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
-		{
-			Show 1moduncorrupted { !exotic.t3; %H4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
-		}
-	}
-#------------------------------------
-# [1234] Cluster Jewels
-#------------------------------------
-	Section ClusterJewelsEconomy : Auto("jewels->clustereco"), Rarity <= Rare, !*cluster
-	{
-		# Large Cluster Jewels
-		# Large N12 T1
-		Show N12_I84_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T1; }
-		Show N12_I75_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I75_T1; }
-		Show N12_I68_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I68_T1; }
-
-		# Large N12 T2
-		Show N12_I84_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T2; }
-		Show N12_I75_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I75_T2; }
-		Show N12_I68_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I68_T2; }
-
-		# Large N8 T1
-		Show N8_I84_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I84_T1; }
-		Show N8_I75_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I75_T1; }
-		Show N8_I68_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I68_T1; }
-
-		# Large N8 T2
-		Show N8_I84_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I84_T2; }
-		Show N8_I75_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I75_T2; }
-		Show N8_I68_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I68_T2; }
-
-		# Medium Cluster Jewels
-		# Medium N6 T1
-		Show N6_I84_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I84_T1; }
-		Show N6_I75_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I75_T1; }
-		Show N6_I68_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I68_T1; }
-
-		# Medium N6 T2
-		Show N6_I84_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I84_T2; }
-		Show N6_I75_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I75_T2; }
-		Show N6_I68_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I68_T2; }
-
-		# Medium N4-5 T1
-		Show N4_I84_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I84_T1; }
-		Show N4_I75_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I75_T1; }
-		Show N4_I68_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I68_T1; }
-
-		# Medium N4-5 T2
-		Show N4_I84_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I84_T2; }
-		Show N4_I75_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I75_T2; }
-		Show N4_I68_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I68_T2; }
-
-		# Small Cluster Jewels
-		# Small N3 T1
-		Show N3_I84_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I84_T1; }
-		Show N3_I75_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I75_T1; }
-		Show N3_I68_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I68_T1; }
-
-		# Small N3 T2
-		Show N3_I84_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I84_T2; }
-		Show N3_I75_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I75_T2; }
-		Show N3_I68_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I68_T2; }
-
-		# Small N2 T1
-		Show N2_I84_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I84_T1; }
-		Show N2_I75_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I75_T1; }
-		Show N2_I68_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T1; }
-
-		# Small N2 T2
-		Show N2_I84_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I84_T2; }
-		Show N2_I75_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I75_T2; }
-		Show N2_I68_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T2; }
-	}
-
-	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, !*cluster
-	{
-		Show OptimalHighLarge	{ !G2; !V2; !High; BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
-		Show HighLarge 			{ !G3; %D6; !V3; !High; BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large 				{ !G4; %D4; !V4; BaseType "Large Cluster Jewel"; }
-
-		Show OptimalHighMedium { !G2; !V2; !High; BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
-		Show HighMedium 	   { !G3; %D5; !V3; !High; BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium 		   { !G4; %D4; !V4; BaseType "Medium Cluster Jewel"; }
-
-		Show HighSmall { %D5; !G3; !V3; !High; BaseType "Small Cluster Jewel"; ItemLevel >= 84; }
-		Show Small 				{ %D4; !G4; !V4; BaseType "Small Cluster Jewel"; }
-	}
-#------------------------------------
-# [1234] Abyss Jewels
-#------------------------------------
-	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
-	{
-		Show HighRare  { %HS4; !G5H; !*rare;  !High; Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic { %HS3; !G6H; !*magic; !High; Rarity <= Magic; ItemLevel >= 82; }
-		Show AnyRare   { %HS3; !G5H; !*rare;  Rarity Rare; }
-		Show AnyMagic  { %HS2; !G6H; !*magic; Rarity <= Magic; }
-	}
-#------------------------------------
-# [1234] Generic Jewels
-#------------------------------------
-	Section GenericJewels : Class "Jewel", BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
-	{
-		Show AnyRare  { %HS3; !G5H; !*rare; !V4; Rarity Rare; }
-		Show AnyMagic { %H3; !G6H; !*magic; Rarity <= Magic; }
 	}
 }
 
@@ -939,6 +813,141 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 Section HideLayer2 : Auto("HideLayer")
 {
 	Hide RaresEndgame { ItemLevel >= 68; Rarity Rare; Class classes_equip; }
+}
+
+#===============================================================================================================
+# [[0200]] Jewels
+#===============================================================================================================
+#!! Chapter "Endgame crafting and recipe items"
+#!! Override 275 : "Jewel"
+
+Section Jewels : !jewels
+{
+#------------------------------------
+# [1234] Special Cases
+#------------------------------------
+	Section IdentifiedJewels : Identified True, Auto("jewels->special"), !UniqueSound, !GS
+	{
+		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
+		{
+			Show 1modcorrupted { !Special; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+		}
+
+		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
+		{
+			Show 1moduncorrupted { !exotic.t3; %H4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+		}
+	}
+
+#------------------------------------
+# [1234] Abyss Jewels
+#------------------------------------
+	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
+	{
+		Show HighRare  { %HS4; !G5H; !*rare;  !High; Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic { %HS3; !G6H; !*magic; !High; Rarity <= Magic; ItemLevel >= 82; }
+		Show AnyRare   { %HS3; !G5H; !*rare;  Rarity Rare; }
+		Show AnyMagic  { %HS2; !G6H; !*magic; Rarity <= Magic; }
+	}
+#------------------------------------
+# [1234] Generic Jewels
+#------------------------------------
+	Section GenericJewels : Class "Jewel", BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
+	{
+		Show AnyRare  { %HS3; !G5H; !*rare; !V4; Rarity Rare; }
+		Show AnyMagic { %H3; !G6H; !*magic; Rarity <= Magic; }
+	}
+
+#------------------------------------
+# [1234] Cluster Jewels: Eco-Based-Large
+#------------------------------------
+
+	Section ClusterJewelsEconomy : Auto("jewels->clustereco"), Rarity <= Rare, !*cluster
+	{
+		Section T1clusterjewels : !G2, !VF1, !High
+		{
+			# Large N12 T1
+			Show N12_I84_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T1; }
+			Show N12_I75_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I75_T1; }
+			Show N12_I68_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I68_T1; }
+
+			# Large N8 T1
+			Show N8_I84_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I84_T1; }
+			Show N8_I75_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I75_T1; }
+			Show N8_I68_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I68_T1; }
+
+			# Medium N6 T1
+			Show N6_I84_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I84_T1; }
+			Show N6_I75_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I75_T1; }
+			Show N6_I68_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I68_T1; }
+
+			# Medium N4-5 T1
+			Show N4_I84_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I84_T1; }
+			Show N4_I75_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I75_T1; }
+			Show N4_I68_T1 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I68_T1; }
+
+			# Small N3 T1
+			Show N3_I84_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I84_T1; }
+			Show N3_I75_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I75_T1; }
+			Show N3_I68_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I68_T1; }
+
+			# Small N2 T1
+			Show N2_I84_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I84_T1; }
+			Show N2_I75_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I75_T1; }
+			Show N2_I68_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T1; }
+		}
+
+		Section T2clusterjewels : !G3, !V2, !High
+		{
+			# Large N12 T2
+			Show N12_I84_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T2; }
+			Show N12_I75_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I75_T2; }
+			Show N12_I68_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I68_T2; }
+
+			# Large N8 T2
+			Show N8_I84_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I84_T2; }
+			Show N8_I75_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I75_T2; }
+			Show N8_I68_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I68_T2; }
+
+			# Medium N6 T2
+			Show N6_I84_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I84_T2; }
+			Show N6_I75_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I75_T2; }
+			Show N6_I68_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I68_T2; }
+
+			# Medium N4-5 T2
+			Show N4_I84_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I84_T2; }
+			Show N4_I75_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I75_T2; }
+			Show N4_I68_T2 { BaseType "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I68_T2; }
+
+			# Small N3 T2
+			Show N3_I84_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I84_T2; }
+			Show N3_I75_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I75_T2; }
+			Show N3_I68_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I68_T2; }
+
+			# Small N2 T2
+			Show N2_I84_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I84_T2; }
+			Show N2_I75_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I75_T2; }
+			Show N2_I68_T2 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T2; }
+		}
+	}
+
+#------------------------------------
+# [1234] Cluster Jewels: Random
+#------------------------------------
+
+	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, !*cluster
+	{
+		Show OptimalHighLarge	{ !G3; %D5; !V2; !High; BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
+		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
+		Show Large 				{ !G4; %D4; !V4; BaseType "Large Cluster Jewel"; }
+
+		Show OptimalHighMedium { !G3; %D5; !V2; !High; BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
+		Show HighMedium 	   { !G3; %D4; !V3; !High; BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
+		Show Medium 		   { !G4; %D4; !V4; BaseType "Medium Cluster Jewel"; }
+
+		Show HighSmall 			{ !G3; %D5; !V3; !High; BaseType "Small Cluster Jewel"; ItemLevel >= 84; }
+		Show Small 				{ !G4; %D4; !V4; BaseType "Small Cluster Jewel"; }
+	}
 }
 
 #===============================================================================================================
