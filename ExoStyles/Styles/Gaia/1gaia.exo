@@ -1,0 +1,81 @@
+## Base colors for tiering
+var lowvaluecurrency = 203 153 126 255;
+var midvaluecurrency = 203 153 126 255;
+var highcurrency1 = 173 220 60 255;
+var highcurrency2 = 250 190 67 255;
+
+## Uniques Base Pattern
+var uniqueBase = 163 41 162 255;
+var uniquest2 = uniqueBase;
+var unique.tx = uniqueBase;
+var unique.extra = 0 4 40 255;
+
+# exalted tier
+# var currency.acc.t1 =       highcurrency2;
+# divine/annul tiers
+var currency.acc.t2divine = highcurrency2;
+var currency.acc.t3annul =  highcurrency2;
+# chaos tier
+var currency.acc.t4chaos =  highcurrency1;
+# alchemy tier
+var currency.acc.t5alchemy =highcurrency1;
+# chromatic tiers
+var currency.acc.t6chrom =  midvaluecurrency;
+var currency.acc.t7chance = midvaluecurrency;
+# low tiers
+var currency.acc.t8trans =  lowvaluecurrency;
+var currency.acc.t9armour = lowvaluecurrency;
+# scrolls
+var currency.acc.tportal =  lowvaluecurrency;
+var currency.acc.twisdom =  lowvaluecurrency;
+
+## grey recipes
+var recipe.t1.acc = 0 19 50 255;
+var recipe.t2.acc = 0 19 50 150;
+
+# fragments and cards - fragments have a complete override
+# colors and fragments follow the same pattern as currency does
+var fragment.tx = midvaluecurrency;
+
+var divi.acc.t5 = lowvaluecurrency;
+var divi.acc.t4 = midvaluecurrency;
+var divi.acc.t3 = highcurrency1;
+var divi.acc.t2 = highcurrency1;
+var divi.acc.t1 = 255 0 0 255;
+var divi.acc.tnew = highcurrency1;
+
+# rares
+var rares.base.extra = 12 29 15 255;
+var rares.base.extralow = 12 29 15 200;
+var rares.base.jwl = 179 232 75 255;
+
+var rares.base.text = 187 215 151 255;
+
+var rares.low.acc = 0 0 0 200;
+var rares.notice = 175 175 175 255;
+
+## jewel overrides
+var jewel.magic.tx      = 0 35 255 255;
+var jewel.magic.extra   = 0 20 40 255;
+var jewel.rare.tx 	    = 255 255 0 255;
+var jewel.rare.extra    = 70 70 0 225;
+var jewel.cluster.tx    = 150 0 255 255;
+var jewel.cluster.extra = 34 0 67 255;
+
+## maps
+var maps.z1.acc = 100 0 0 255;
+var maps.z2.acc = 70 0 0 255;
+var maps.z3 = 120 120 0 255;
+var maps.z4 = 70 70 70 255;
+
+var maps.influenced = 100 0 122 255;
+var maps.special.extra = 85 0 85 255;
+var maps.special.low.extra = 85 0 85 255;
+
+## splinter base
+
+var splinters.text = sWhite;
+var splinters.extra = 20 77 80;
+var splinters.acc.t1 = 20 210 196 255;
+var splinters.acc.t2 = 60 150 145 255;
+var splinters.acc.t3 = 115 115 115 255;
