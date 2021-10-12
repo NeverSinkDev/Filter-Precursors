@@ -74,6 +74,20 @@ Style UniversalValueAccents
 		SetBorderColor accent.high.tx;
 	}
 
+	Func TierTwoColors()
+	{
+		SetBackgroundColor accent.high.tx;
+		SetTextColor 255 255 255 255;
+		SetBorderColor 255 255 255 255;
+	}
+
+	Func TopTierColors()
+	{
+		SetBorderColor accent.high.tx;
+		SetBackgroundColor 255 255 255 255;
+		SetBorderColor accent.high.tx;
+	}
+
 	Func Special ()
 	{
 		SetBorderColor exoticgear.tx;

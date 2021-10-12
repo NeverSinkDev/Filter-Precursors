@@ -99,13 +99,13 @@ Expand t9armour : PatternBlack
 Expand tportal
 {
     SetTextColor lowvaluecurrency;
-    SetBackgroundColor 0 0 0 150;
+    SetBackgroundColor 0 0 0 200;
 }
 
 Expand twisdom
 {
     SetTextColor lowvaluecurrency;
-    SetBackgroundColor 0 0 0 150;
+    SetBackgroundColor 0 0 0 200;
 }
 
 ## FRAGMENTS USE THE SAME SCHEME AS CURRENCY/DIVIS
@@ -129,8 +129,9 @@ Expand FragmentTierStrat
 
     Func T4()
     {
-        SetTextColor midvaluecurrency;
-        SetBorderColor midvaluecurrency;
+        SetTextColor sBlack;
+        SetBackgroundColor midvaluecurrency
+        SetBorderColor sBlack;
     }
 
     Func T5()
@@ -173,7 +174,7 @@ Expand GeneralMapProgressionStrategy.SpecialHigh
 
 Expand GeneralMapProgressionStrategy.SpecialLow
 {
-    SetFontSize 40;
+    SetFontSize 45;
     SetBorderColor sWhite;
     SetTextColor sWhite;
     SetBackgroundColor maps.special.extra
@@ -181,7 +182,7 @@ Expand GeneralMapProgressionStrategy.SpecialLow
 
 Expand GeneralMapProgressionStrategy.Z1
 {
-    SetFontSize 40;
+    SetFontSize 45;
     SetBorderColor sWhite;
     SetTextColor sWhite;
     SetBackgroundColor maps.z1.acc;
@@ -189,7 +190,7 @@ Expand GeneralMapProgressionStrategy.Z1
 
 Expand GeneralMapProgressionStrategy.Z2
 {
-    SetFontSize 40;
+    SetFontSize 45;
     SetBorderColor sWhite;
     SetTextColor sWhite;
     SetBackgroundColor maps.z2.acc;
@@ -197,7 +198,7 @@ Expand GeneralMapProgressionStrategy.Z2
 
 Expand GeneralMapProgressionStrategy.Z3
 {
-    SetFontSize 40;
+    SetFontSize 45;
     SetBorderColor sWhite;
     SetTextColor sWhite;
     SetBackgroundColor maps.z3;
@@ -205,7 +206,7 @@ Expand GeneralMapProgressionStrategy.Z3
 
 Expand GeneralMapProgressionStrategy.Z4
 {
-    SetFontSize 40;
+    SetFontSize 45;
     SetBorderColor sWhite;
     SetTextColor sWhite;
     SetBackgroundColor maps.z4;

@@ -366,7 +366,6 @@ Section IdModSectionSpecial : IdMods, !exotic
 	}
 }
 
-
 #===============================================================================================================
 # [[0200]] Exotic Item Classes
 #===============================================================================================================
@@ -864,7 +863,7 @@ Section Jewels : !jewels
 
 	Section ClusterJewelsEconomy : Auto("jewels->clustereco"), Rarity <= Rare, !*cluster
 	{
-		Section T1clusterjewels : !G2, !VF1, !High
+		Section T1clusterjewels : !G2, !VF1, !High, !TopTierColors
 		{
 			# Large N12 T1
 			Show N12_I84_T1 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T1; }
@@ -897,7 +896,7 @@ Section Jewels : !jewels
 			Show N2_I68_T1 { BaseType "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T1; }
 		}
 
-		Section T2clusterjewels : !G3, !V2, !High
+		Section T2clusterjewels : !G3, !V2, !High, !TierTwoColors
 		{
 			# Large N12 T2
 			Show N12_I84_T2 { BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T2; }
