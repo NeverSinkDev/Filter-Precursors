@@ -140,6 +140,15 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 #===============================================================================================================
 #!! Override 040 : "identified mod filtering"
 
+Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
+{
+#------------------------------------
+#   [1234] ID Mod exceptions - override id mod matching section
+#------------------------------------
+	Show t1veil     { %HS5; !GSH; !exotic.t1; Mod t1veiled; }
+	Show t2veil     { %HS5; !GSH; !exotic.t2; Mod t2veiled; }
+}
+
 Section IdModSection : IdMods
 {
 #------------------------------------
@@ -327,12 +336,11 @@ Section IdModSectionSpecial : IdMods, !exotic
 	Section Rare : Rarity "Rare", Auto("ExoticMods")
 	{
 #------------------------------------
-#   [1234] Veiled/Betrayal
+#   [1234] Veiled/Betrayal - low prio veiled items
 #------------------------------------
 #!! Override 050 : "veil, incursion, delve etc. mod items"
 
-		Show t1veil     { %HS5; !GSH; !exotic.t1; Mod t1veiled; }
-		Show t2veil     { %HS5; !GSH; !exotic.t2; Mod t2veiled; }
+
 		Show DuoVeil    { %D5; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
 		Show SmallVeil1 { %D5; !GS; !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
 		Show SmallVeil2 { %D5; !GS; !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
