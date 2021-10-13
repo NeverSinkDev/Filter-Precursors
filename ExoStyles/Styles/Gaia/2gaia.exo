@@ -109,7 +109,7 @@ Expand twisdom
 }
 
 ## FRAGMENTS USE THE SAME SCHEME AS CURRENCY/DIVIS
-Expand FragmentTierStrat
+Expand FragmentTierStrat 
 {
     Func T1()
     {
@@ -119,19 +119,23 @@ Expand FragmentTierStrat
 
     Func T2()
     {
+        SetTextColor tieringbase.low;
         SetBackgroundColor highcurrency2;
+        SetTextColor tieringbase.low;
     }
 
     Func T3()
     {
+        SetTextColor tieringbase.low;
         SetBackgroundColor highcurrency1;
+        SetTextColor tieringbase.low;
     }
 
     Func T4()
     {
-        SetTextColor sBlack;
+        SetTextColor tieringbase.low;
         SetBackgroundColor midvaluecurrency
-        SetBorderColor sBlack;
+        SetBorderColor tieringbase.low;
     }
 
     Func T5()
@@ -210,4 +214,58 @@ Expand GeneralMapProgressionStrategy.Z4
     SetBorderColor sWhite;
     SetTextColor sWhite;
     SetBackgroundColor maps.z4;
+}
+
+Expand t2divine
+{
+        SetTextColor tieringbase.High;
+        SetBorderColor tieringbase.High
+}
+
+Expand t3annul
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t4chaos
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t5alchemy
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t6chrom
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t7chance
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t2divi
+{
+        SetTextColor tieringbase.High;
+        SetBorderColor tieringbase.High
+}
+
+Expand t3divi
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t4divi
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
 }

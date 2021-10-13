@@ -1,18 +1,18 @@
-var tieringbase.low = sBlack;
-var tieringbase.high = sWhite;
+var tieringbase.High = 252 255 255 255;
+var tieringbase.Low = 252 255 180 255;
 
 ## Base colors for tiering
-var lowvaluecurrency = 81 135 54 255;
-var midvaluecurrency = 173 220 60 255;
-var highcurrency1 = 227 155 44 255;
-var highcurrency2 = 250 110 90 255;
+var lowvaluecurrency = 118 169 14 255;
+var midvaluecurrency = 100 120 60 255;
+var highcurrency1 =  146 131 0 255;
+var highcurrency2 = 217 127 10 255;
 
 ## Uniques Base Pattern
-var uniqueBase = 188 11 60 255;
+var uniqueBase = 169 46 0 255;
 
 ## grey recipes
-var recipe.t1.acc = 0 38 100 255;
-var recipe.t2.acc = 0 38 100 190;
+var recipe.t1.acc = 100 100 100 255;
+var recipe.t2.acc = 100 100 100 190;
 
 ## Uniques
 var uniquest2 = uniqueBase;
@@ -20,12 +20,17 @@ var unique.tx = uniqueBase;
 var unique.extra = 0 4 40 255;
 
 # rares
-var rares.base.extra = 12 29 15 255;
+var rares.base.extra = 0 60 80 255;
 var rares.base.extralow = 12 29 15 200;
-var rares.base.jwl = 179 232 75 255;
+var rares.base.jwl = 255 255 0 255;
 var rares.base.text = 210 210 0 255;
 var rares.low.acc = 0 0 0 200;
-var rares.notice = 175 175 175 255;
+var rares.notice = 200 200 200 255;
+
+# influenced
+var influenced.gear.t1 = 80 0 120 255;
+var influenced.gear.t2 = 80 0 120 255;
+var influenced.gear.t3 = 40 0 50 220;
 
 ## splinter base
 var splinters.text = sWhite;
@@ -34,9 +39,9 @@ var splinters.acc.t1 = 20 210 196 255;
 var splinters.acc.t2 = 60 150 145 255;
 var splinters.acc.t3 = 115 115 115 255;
 
-var heist.contracts.acc = 197 130 205 255;
-var heist.blueprints.acc = 197 130 205 255;
-var heist.blueprints.base = 40 0 30 255;
+var heist.contracts.acc = 152 110 157 255;
+var heist.blueprints.acc = 152 110 157 255;
+var heist.blueprints.base = 40 0 40 255;
 
 ## jewel overrides
 var jewel.magic.tx      = 0 35 255 255;
@@ -47,10 +52,10 @@ var jewel.cluster.tx    = 150 0 255 255;
 var jewel.cluster.extra = 34 0 67 255;
 
 ## maps
-var maps.z1.acc = 100 0 0 255;
+var maps.z1.acc = 120 0 0 255;
 var maps.z2.acc = 70 0 0 255;
 var maps.z3 = 120 120 0 255;
-var maps.z4 = 70 70 70 255;
+var maps.z4 = 0 0 0 255;
 
 var maps.influenced = 100 0 122 255;
 var maps.special.extra = 85 0 85 255;
