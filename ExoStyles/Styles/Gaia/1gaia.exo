@@ -6,9 +6,52 @@ var highcurrency2 = 250 110 90 255;
 
 ## Uniques Base Pattern
 var uniqueBase = 188 11 60 255;
+
+## grey recipes
+var recipe.t1.acc = 0 38 100 255;
+var recipe.t2.acc = 0 38 100 190;
+
+## Uniques
 var uniquest2 = uniqueBase;
 var unique.tx = uniqueBase;
 var unique.extra = 0 4 40 255;
+
+# rares
+var rares.base.extra = 12 29 15 255;
+var rares.base.extralow = 12 29 15 200;
+var rares.base.jwl = 179 232 75 255;
+var rares.base.text = 210 210 0 255;
+var rares.low.acc = 0 0 0 200;
+var rares.notice = 175 175 175 255;
+
+## splinter base
+var splinters.text = sWhite;
+var splinters.extra = 20 77 80;
+var splinters.acc.t1 = 20 210 196 255;
+var splinters.acc.t2 = 60 150 145 255;
+var splinters.acc.t3 = 115 115 115 255;
+
+var heist.contracts.acc = 197 130 205 255;
+var heist.blueprints.acc = 197 130 205 255;
+var heist.blueprints.base = 40 0 30 255;
+
+## jewel overrides
+var jewel.magic.tx      = 0 35 255 255;
+var jewel.magic.extra   = 0 20 40 255;
+var jewel.rare.tx 	    = 255 255 0 255;
+var jewel.rare.extra    = 70 70 0 225;
+var jewel.cluster.tx    = 150 0 255 255;
+var jewel.cluster.extra = 34 0 67 255;
+
+## maps
+var maps.z1.acc = 100 0 0 255;
+var maps.z2.acc = 70 0 0 255;
+var maps.z3 = 120 120 0 255;
+var maps.z4 = 70 70 70 255;
+
+var maps.influenced = 100 0 122 255;
+var maps.special.extra = 85 0 85 255;
+var maps.special.low.extra = 85 0 85 255;
 
 # exalted tier
 # var currency.acc.t1 =       highcurrency2;
@@ -29,10 +72,6 @@ var currency.acc.t9armour = lowvaluecurrency;
 var currency.acc.tportal =  lowvaluecurrency;
 var currency.acc.twisdom =  lowvaluecurrency;
 
-## grey recipes
-var recipe.t1.acc = 0 38 100 255;
-var recipe.t2.acc = 0 38 100 190;
-
 # fragments and cards - fragments have a complete override
 # colors and fragments follow the same pattern as currency does
 var fragment.tx = midvaluecurrency;
@@ -43,42 +82,3 @@ var divi.acc.t3 = highcurrency1;
 var divi.acc.t2 = highcurrency2;
 var divi.acc.t1 = 255 0 0 255;
 var divi.acc.tnew = highcurrency1;
-
-# rares
-var rares.base.extra = 12 29 15 255;
-var rares.base.extralow = 12 29 15 200;
-var rares.base.jwl = 179 232 75 255;
-
-var rares.base.text = 210 210 0 255;
-
-var rares.low.acc = 0 0 0 200;
-var rares.notice = 175 175 175 255;
-
-## jewel overrides
-var jewel.magic.tx      = 0 35 255 255;
-var jewel.magic.extra   = 0 20 40 255;
-var jewel.rare.tx 	    = 255 255 0 255;
-var jewel.rare.extra    = 70 70 0 225;
-var jewel.cluster.tx    = 150 0 255 255;
-var jewel.cluster.extra = 34 0 67 255;
-
-## maps
-var maps.z1.acc = 100 0 0 255;
-var maps.z2.acc = 70 0 0 255;
-var maps.z3 = 120 120 0 255;
-var maps.z4 = 70 70 70 255;
-
-var maps.influenced = 100 0 122 255;
-var maps.special.extra = 85 0 85 255;
-var maps.special.low.extra = 85 0 85 255;
-
-## splinter base
-var splinters.text = sWhite;
-var splinters.extra = 20 77 80;
-var splinters.acc.t1 = 20 210 196 255;
-var splinters.acc.t2 = 60 150 145 255;
-var splinters.acc.t3 = 115 115 115 255;
-
-var heist.contracts.acc = 197 130 205 255;
-var heist.blueprints.acc = 197 130 205 255;
-var heist.blueprints.base = 40 0 30 255;
