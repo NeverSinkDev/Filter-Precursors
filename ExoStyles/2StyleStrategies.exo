@@ -1213,6 +1213,28 @@ Style twisdom
 	}
 }
 
+Style tportHigh
+{
+	Func Any()
+	{ 
+		SetFontSize font.t4;
+		SetBorderColor currency.acc.tportal.high;
+		SetBackgroundColor currency.extra.tportal;
+		RemoveEffects();
+	}
+}
+
+Style twisdHigh
+{
+	Func Any()
+	{ 
+		SetFontSize font.t4;
+		SetBorderColor currency.acc.twisdom.high;
+		SetBackgroundColor currency.extra.twisdom;
+		RemoveEffects();
+	}
+}
+
 #------------------------------------
 # Currency Tiering
 #------------------------------------
