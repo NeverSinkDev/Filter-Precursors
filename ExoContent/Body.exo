@@ -104,6 +104,16 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 	}
 
 #------------------------------------
+#   [1234] Basetype Percentile
+#------------------------------------
+	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor, BaseDefencePercentile >= 99, HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	{
+		Show t11 { !G2; BaseType == bases.perfection.general.t1; }
+		Show t22 { !G3; BaseType == bases.perfection.general.t2; }
+		Show t23 { !G3; BaseType == bases.perfection.general.t3; }
+	}
+
+#------------------------------------
 #   [1234] Remaining
 #------------------------------------
 
@@ -306,15 +316,6 @@ Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID"),
 	{
 		Show Speed { Mod >= 1 movespeed[1]; }
 	}
-
-	## TODO: rework/remove for 3.16 - due to flask mods.
-	Section Flask
-	{
-		Show Mana { BaseType "Divine Mana Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"; Mod >= 2 "Enduring" "of Staunching" "of Heat" "of Warding" "of Reflexes" "of Iron Skin"; }
-		Show Life { BaseType "Divine Life Flask" "Eternal Life Flask"; Mod >= 2 "Bubbling" "Catalysed" "of Staunching"; }
-		Show QuickSlver { BaseType "Quicksilver Flask"; Mod >= 2 "Alchemist's" "Chemist's" "Experimenter's" "of Adrenaline"; }
-		Show Utility { Class "Utility Flasks";  Mod >= 2 "Alchemist's" "Chemist's" "Experimenter's" "of Staunching" "of Heat" "of Warding" "of Reflexes" "of Iron Skin" }
-	}
 }
 
 #===============================================================================================================
@@ -339,8 +340,6 @@ Section IdModSectionSpecial : IdMods, !exotic
 #   [1234] Veiled/Betrayal - low prio veiled items
 #------------------------------------
 #!! Override 050 : "veil, incursion, delve etc. mod items"
-
-
 		Show DuoVeil    { %D5; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
 		Show SmallVeil1 { %D5; !GS; !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
 		Show SmallVeil2 { %D5; !GS; !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
@@ -449,6 +448,16 @@ Section ExoticVariations : !exotic
 		{
 			Show AnyNonBelt { !GSH; !exotic.t2; Class classes_nonJwlryEquip; }
 		}
+
+#------------------------------------
+#   [1234] Scourged
+#------------------------------------
+		Section Scourged : Scourged True, Auto("exotic->scourged")
+		{
+			Show ScourgedSelected    { !GSH; %D5; !exotic.t2; BaseType bases.crafting.scourged.t1; }
+			Show ScourgedClasses     { !GSH; %D5; !exotic.t2; Class classes_scourged; }
+			Show ScourgedRandom      { !GSH; %D4; !exotic.t3; Scourged True; }
+		}
 #------------------------------------
 #   [1234] Synthesised
 #------------------------------------
@@ -476,11 +485,6 @@ Section ExoticVariations : !exotic
 			Show Helmets     { !GSH; !exotic.t2; Class "Helmets" }
 			Show GlovesBoots { !GS; %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
-
-		Section Scourged : AnyEnchantment True, Auto("exotic->scourged")
-		{
-			Show Random      { !GSH; !exotic.t2; Scourged True }
-		}
 	}
 }
 
@@ -507,6 +511,20 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 #!! Override 130 : "High level crafting bases"
 
 #------------------------------------
+# [1234] Perfection-Based-Filtering
+#------------------------------------
+
+Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !craftspecial, !craftgeneral
+{
+	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor
+	{
+		Show t1 { !G2; !craftspecial.I86; BaseType == bases.perfection.general.t1; }
+		Show t2 { !G3; !craftgeneral.I86; BaseType == bases.perfection.general.t2; }
+		Show t3 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.perfection.general.t3; }
+	}
+}
+
+#------------------------------------
 # [1234] ILVL 86
 #------------------------------------
 
@@ -526,7 +544,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 		Cont NormalDecorator { !Low; Class classes_nonJwlryEquip classes_jewellery; };
 	}
 
-	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
+	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, BaseDefencePercentile >= 94, Rarity <= Rare
 	{
 		Show t1 { !G3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
@@ -537,7 +555,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL 84
 #------------------------------------
 
-	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
+	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, BaseDefencePercentile >= 94, Rarity <= Rare
 	{
 		Show t1 { !G4; %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
@@ -548,7 +566,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL ANY
 #------------------------------------
 
-	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
+	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, BaseDefencePercentile >= 94, ItemLevel >= 68, Rarity <= Rare
 	{
 		Show t1  { !G5; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
 		Show t2  { !GEX; %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t2; }
@@ -566,7 +584,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
-Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
+Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, BaseDefencePercentile >= 94, ItemLevel <= 83, Clean()
 {
 	Show any { !GEX; %D2; BaseType bases.crafting.early; }
 }
@@ -614,6 +632,27 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing"), Mirrored False, !ch
 
 Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68, !utilflasks
 {
+
+#------------------------------------
+# [2701] Super Endgame Flasks
+#------------------------------------
+
+	Section HighQualitySuperEndgameFlasks : Quality >= 15, !GEX
+	{
+		Show QualUtility85  { !G3; !utilflasks.LT1; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
+		Show QualUtility84  { !G4; !utilflasks.LT1; %D4; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
+		Show QualUtility82  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
+		Show QualLifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
+	}
+
+	Section SuperEndgameFlasks : !GEX
+	{
+		Show Utility85  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
+		Show Utility84  { !G5; !utilflasks.LT2; %D3; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
+		Show Utility82  { !G5; !utilflasks.LT2; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
+		Show LifeMana82 { !G6; !recipe.t2; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
+	}
+
 #------------------------------------
 # [2701] High quality assorted flasks
 #------------------------------------
@@ -1127,10 +1166,11 @@ Section Maps : Class "Maps", !Maps
 #------------------------------------
 #!! Override 530 : "blighted maps, enchanted maps, maps with special mods"
 
-	Section BlightedMaps : BlightedMap True, Auto("maps->blighted")
+	Section BlightedMaps : Auto("maps->blighted")
 	{
-		Show t1  { !G2; !*SpecialHigh; MapTier >= Maps.Blighted.HighTier }
-		Show Any { %H5; !G3; !*SpecialLow; Empty(); }
+		Show uber { !G1; !currency.t1exalted; UberBlightedMap True; }
+		Show t1  { !G2; !*SpecialHigh; MapTier >= Maps.Blighted.HighTier; BlightedMap True; }
+		Show Any { %H5; !G3; !*SpecialLow; BlightedMap True; }
 	}
 
 #------------------------------------

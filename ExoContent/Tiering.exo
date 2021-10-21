@@ -15,10 +15,12 @@ var bases.chancing.any = "Gavel" "Occultist's Vestment" "Prophecy Wand" "Sadist 
 ## {META} CRAFTING
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+var classes_scourged = "Amulets" "Belt" "Bows" "Jewel" "Maps" "Rings" "Rune Daggers" "Sceptres" "Wands";
 var classes_synth = "Amulets" "Belt" "Bows" "Jewel" "Maps" "Rings" "Rune Daggers" "Sceptres" "Wands";
 var classes_fract = "Amulets" "Belt" "Jewel" "Maps" "Rings";
 var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves";
 
+var bases.crafting.scourged.t1 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather";
 var bases.crafting.synthesised.t1 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Bone Helmet" "Carnal Armour" "Colossal Tower Shield" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Ezomyte Tower Shield" "Fancy Foil" "Gemini Claw" "Glorious Plate" "Hubris Circlet" "Imperial Buckler" "Imperial Claw" "Imperial Staff" "Jewelled Foil" "Judgement Staff" "Karui Maul" "Lathi" "Lion Pelt" "Lion Sword" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Nightmare Mace" "Pinnacle Tower Shield" "Royal Burgonet" "Runic Hatchet" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Siege Axe" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiraled Foil" "Stealth Boots" "Supreme Spiked Shield" "Tempered Foil" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Greaves" "Vaal Regalia" "Zodiac Leather";
 var bases.crafting.fractured.t1 = "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather";
 
@@ -34,9 +36,13 @@ var bases.exotic.ritual.any = "Aetherwind Gloves" "Archdemon Crown" "Atonement M
 var bases.exotic.atlas.any = "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Convoking Wand" "Crystal Belt" "Fingerless Silk Gloves" "Gripped Gloves" "Marble Amulet" "Opal Ring" "Spiked Gloves" "Steel Ring" "Two-Toned Boots" "Vanguard Belt" "Vermillion Ring";
 var bases.exotic.misc.any = "Ornate Quiver" "Sacrificial Garb" "Stygian Vise";
 
-var bases.crafting.general.t1 = "Apothecary's Gloves" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Vermillion Ring";
+var bases.crafting.general.t1 = "Apothecary's Gloves" "Blue Pearl Amulet" "Bone Helmet" "Cerulean Ring" "Crystal Belt" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Iolite Ring" "Marble Amulet" "Opal Ring" "Ornate Quiver" "Sacrificial Garb" "Seaglass Amulet" "Spiked Gloves" "Steel Ring" "Stygian Vise" "Two-Toned Boots" "Unset Amulet" "Vermillion Ring";
 var bases.crafting.general.t2 = "Astral Plate" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Diamond Ring" "Eclipse Staff" "Eternal Burgonet" "Fossilised Spirit Shield" "Golden Kris" "Grappler" "Hubris Circlet" "Imbued Wand" "Jewelled Foil" "Karui Chopper" "Lion Pelt" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Platinum Kris" "Prismatic Ring" "Profane Wand" "Royal Burgonet" "Sambar Sceptre" "Siege Axe" "Sorcerer Boots" "Sorcerer Gloves" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring" "Vaal Regalia";
 var bases.crafting.general.t3 = "Agate Amulet" "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Assassin's Garb" "Citrine Amulet" "Copper Kris" "Deicide Mask" "Exquisite Blade" "Fleshripper" "Gemini Claw" "Harmonic Spirit Shield" "Imperial Maul" "Karui Maul" "Leather Belt" "Maraketh Bow" "Penetrating Arrow Quiver" "Pinnacle Tower Shield" "Runic Hatchet" "Rustic Sash" "Sadist Garb" "Sharktooth Arrow Quiver" "Slink Boots" "Slink Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Titan Gauntlets" "Titan Greaves" "Turquoise Amulet" "Unset Ring" "Vaal Axe" "Vanguard Belt" "Void Sceptre";
+
+var bases.perfection.general.t1 = "Apothecary's Gloves" "Archdemon Crown" "Blizzard Crown" "Bone Helmet" "Brimstone Treads" "Cold-attuned Buckler" "Debilitation Gauntlets" "Dreamquest Slippers" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Heat-attuned Tower Shield" "Nexus Gloves" "Penitent Mask" "Sinistral Gloves" "Spiked Gloves" "Stormrider Boots" "Transfer-attuned Spirit Shield" "Two-Toned Boots";
+var bases.perfection.general.t2 = "Archon Kite Shield" "Astral Plate" "Colossal Tower Shield" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Lion Pelt" "Royal Burgonet" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Vaal Regalia";
+var bases.perfection.general.t3 = "Assassin's Garb" "Carnal Armour" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Glorious Plate" "Imperial Buckler" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Praetor Crown" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Slink Boots" "Slink Gloves" "Stealth Boots" "Supreme Spiked Shield" "Titan Gauntlets" "Titan Greaves" "Triumphant Lamellar" "Zodiac Leather";
 
 var bases.crafting.early = "Imbued Wand" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring";
 
@@ -64,9 +70,14 @@ var bases.heist.tool.t2 = "Azurite Flashpowder" "Espionage Disguise Kit" "Fine L
 ## {META} FLASKS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+var bases.flask.superilvl85 = "Quicksilver Flask";
+var bases.flask.superilvl84 = "Jade Flask" "Granite Flask" "Basalt Flask";
+
 var bases.flask.utilityassorted = "Aquamarine Flask" "Basalt Flask" "Diamond Flask" "Granite Flask" "Iron Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask";
 var bases.flask.lifemanaassorted = "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask";
 
+var bases.flask.superilvl85 = "Quicksilver Flask";
+var bases.flask.superilvl84 = "Jade Flask" "Granite Flask" "Basalt Flask";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} TALISMANS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,7 +174,7 @@ var currency.stackedFour.t1 = BLANK;
 var currency.stackedFour.t2 = "Ancient Orb" "Exalted Shard" "Fertile Catalyst" "Harbinger's Orb" "Orb of Annulment" "Orb of Unmaking" "Unstable Catalyst" "Veiled Chaos Orb";
 var currency.stackedFour.t3 = "Accelerating Catalyst" "Awakened Sextant" "Blessed Orb" "Gemcutter's Prism" "Prime Sextant" "Prismatic Catalyst" "Stacked Deck" "Tempering Catalyst";
 var currency.stackedFour.t4 = "Abrasive Catalyst" "Cartographer's Chisel" "Chromatic Orb" "Glassblower's Bauble" "Intrinsic Catalyst" "Orb of Alteration" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Simple Sextant" "Turbulent Catalyst" "Vaal Orb";
-var currency.stackedFour.t5 = "Imbued Catalyst" "Jeweller's Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Binding" "Orb of Chance" "Silver Coin" ;
+var currency.stackedFour.t5 = "Imbued Catalyst" "Jeweller's Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Binding" "Orb of Chance" "Silver Coin";
 var currency.stackedFour.t6 = BLANK;
 var currency.stackedFour.t7 = BLANK;
 
@@ -172,7 +183,7 @@ var currency.stackedSix.t1 = BLANK;
 var currency.stackedSix.t2 = "Ancient Orb" "Awakened Sextant" "Exalted Shard" "Fertile Catalyst" "Harbinger's Orb" "Orb of Annulment" "Orb of Unmaking" "Prismatic Catalyst" "Unstable Catalyst" "Veiled Chaos Orb";
 var currency.stackedSix.t3 = "Accelerating Catalyst" "Blessed Orb" "Gemcutter's Prism" "Orb of Regret" "Orb of Scouring" "Prime Sextant" "Stacked Deck" "Tempering Catalyst" "Vaal Orb";
 var currency.stackedSix.t4 = "Abrasive Catalyst" "Cartographer's Chisel" "Chromatic Orb" "Glassblower's Bauble" "Imbued Catalyst" "Intrinsic Catalyst" "Jeweller's Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Chance" "Orb of Fusing" "Orb of Horizons" "Regal Orb" "Silver Coin" "Simple Sextant" "Turbulent Catalyst";
-var currency.stackedSix.t5 = ;
+var currency.stackedSix.t5 = BLANK;
 var currency.stackedSix.t6 = BLANK;
 var currency.stackedSix.t7 = BLANK;
 
@@ -230,14 +241,14 @@ var exotic.invitations.t3 = "Maven's Invitation: Glennach Cairns" "Maven's Invit
 var uniques.replicas.t1 = "Chain Belt" "Ebony Tower Shield" "Ezomyte Burgonet" "Great Crown" "Great Mallet" "Imperial Bow" "Leather Belt" "Maelström Staff" "Ornate Quiver" "Relic Chambers Map" "Soldier Boots" "Temple Map" "Terror Maul" "Triumphant Lamellar";
 var uniques.replicas.t2 = "Assassin's Boots" "Blood Raiment" "Cloth Belt" "Elegant Ringmail" "Ezomyte Dagger" "Glorious Plate" "Granite Flask" "Heavy Belt" "Lacquered Buckler" "Paua Amulet" "Ruby Ring" "Siege Axe" "Tornado Wand" "Vaal Claw" "Vaal Gauntlets" "Vaal Rapier";
 var uniques.replicas.multi = "Carnal Armour" "Jade Amulet";
-var uniques.replicas.t3 = "Arcanist Gloves" "Arcanist Slippers" "Boot Knife" "Bronzescale Boots" "Crusader Chainmail" "Death Bow" "Decimation Bow" "Dunes Map" "Elder Sword" "Engraved Wand" "Eternal Sword" "Ezomyte Axe" "Festival Mask" "Gnarled Branch" "Gold Amulet" "Great Helmet" "Grinning Fetish" "Gut Ripper" "Infernal Sword" "Jasper Chopper" "Laminated Kite Shield" "Murder Boots" "Nailed Fist" "Ornate Mace" "Paua Ring" "Royal Skean" "Rustic Sash" "Sage Wand" "Samite Gloves" "Sanctified Mana Flask" "Sapphire Ring" "Shadow Sceptre" "Shagreen Boots" "Short Bow" "Silk Slippers" "Sinner Tricorne" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Stiletto" "Sulphur Flask" "Titan Greaves" "Unset Ring" "Void Sceptre" "War Sword" "Zealot Gloves" "Zodiac Leather";
+var uniques.replicas.t3 = "Arcanist Gloves" "Arcanist Slippers" "Boot Knife" "Bronzescale Boots" "Crusader Chainmail" "Death Bow" "Decimation Bow" "Dunes Map" "Elder Sword" "Engraved Wand" "Eternal Sword" "Ezomyte Axe" "Festival Mask" "Gnarled Branch" "Gold Amulet" "Grinning Fetish" "Gut Ripper" "Infernal Sword" "Jasper Chopper" "Laminated Kite Shield" "Murder Boots" "Nailed Fist" "Ornate Mace" "Paua Ring" "Royal Skean" "Rustic Sash" "Sage Wand" "Samite Gloves" "Sanctified Mana Flask" "Sapphire Ring" "Shadow Sceptre" "Shagreen Boots" "Short Bow" "Silk Slippers" "Sinner Tricorne" "Sorcerer Gloves" "Spike-Point Arrow Quiver" "Stiletto" "Sulphur Flask" "Titan Greaves" "Unset Ring" "Void Sceptre" "War Sword" "Zealot Gloves" "Zodiac Leather";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} UNIQUES - MAPS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var uniques.maps.ex = "Harbinger Map";
-var uniques.maps.t1 = "Basilica Map" "Chateau Map" "Courthouse Map" "Courtyard Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map";
+var uniques.maps.t1 = "Basilica Map" "Courtyard Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map";
 var uniques.maps.t2 = "Cursed Crypt Map" "Harbinger Map" "Museum Map";
 var uniques.maps.t3 = "Cemetery Map" "Moon Temple Map" "Necropolis Map" "Primordial Blocks Map" "Promenade Map" "Shore Map" "Temple Map" "Underground River Map" "Underground Sea Map" "Vaal Pyramid Map";
 var uniques.maps.t4 = "Atoll Map" "Bone Crypt Map" "Dunes Map" "Overgrown Shrine Map" "Strand Map";
@@ -278,7 +289,7 @@ var currency.generic.t3annul = "Ancient Orb" "Blessing of Esh" "Blessing of Tul"
 var currency.generic.t4chaos = "Accelerating Catalyst" "Awakened Sextant" "Chaos Orb" "Gemcutter's Prism" "Prime Sextant" "Ritual Splinter" "Stacked Deck" "Tempering Catalyst";
 var currency.generic.t5alchemy = "Abrasive Catalyst" "Ancient Shard" "Annulment Shard" "Bestiary Orb" "Blessed Orb" "Enkindling Orb" "Facetor's Lens" "Harbinger's Shard" "Instilling Orb" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Fusing" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Simple Sextant" "Turbulent Catalyst" "Vaal Orb";
 ## SILVER COIN-CHROMATIC-TRANSMUTE
-var currency.generic.t6chrom = "Cartographer's Chisel" "Chromatic Orb" "Glassblower's Bauble" "Orb of Alteration" ;
+var currency.generic.t6chrom = "Cartographer's Chisel" "Chromatic Orb" "Glassblower's Bauble" "Orb of Alteration";
 var currency.generic.t7chance = "Imbued Catalyst" "Jeweller's Orb" "Noxious Catalyst" "Orb of Chance" "Silver Coin";
 var currency.generic.t8trans = "Blacksmith's Whetstone" "Chaos Shard" "Engineer's Orb" "Horizon Shard" "Orb of Augmentation" "Orb of Binding" "Orb of Transmutation" "Regal Shard";
 ## ARMOURER-PORTAL-WISDOM
@@ -378,7 +389,7 @@ var stacksize.perandus.t3 = 7;
 
 var currency.prophecy.t1 = "Darktongue's Shriek" "Fated Connections" "Monstrous Treasure" "Song of the Sekhema" "Thaumaturgical History III" "The Forgotten Garrison" "The Forgotten Soldiers" "The Plaguemaw V" "The Queen's Sacrifice" "The Unbreathing Queen V" "Trash to Treasure" "Unbearable Whispers V";
 var currency.prophecy.t2 = "A Dishonourable Death" "Against the Tide" "Anarchy's End IV" "Beyond Sight IV" "Day of Sacrifice IV" "Deadly Rivalry V" "Echoes of Witchcraft" "From Death Springs Life" "Path of Betrayal" "Pools of Wealth" "Storm on the Reef" "Thaumaturgical History II" "Thaumaturgical History IV" "The Bowstring's Music" "The Feral Lord V" "The Prison Key" "The Unbreathing Queen IV" "Unbearable Whispers III" "Unbearable Whispers IV" "Vaal Invasion" "Vaal Winds";
-var currency.prophecy.t3 = "A Prodigious Hand" "A Rift in Time" "A Vision of Ice and Fire" "A Whispered Prayer" "Abnormal Effulgence" "Battle Hardened" "Blood of the Betrayed" "Cleanser of Sins" "Cold Blooded Fury" "Day of Sacrifice III" "Deadly Rivalry II" "Deadly Rivalry III" "Fire and Ice" "Fire, Wood and Stone" "Flesh of the Beast" "In the Grasp of Corruption" "Last of the Wildmen" "Lost in the Pages" "Nature's Resilience" "Severed Limbs" "Storm on the Horizon" "The Ambitious Bandit III" "The Apex Predator" "The Bishop's Legacy" "The Child of Lunaris" "The Feral Lord III" "The Feral Lord IV" "The Flayed Man" "The Great Leader of the North" "The Great Mind of the North" "The Hollow Pledge" "The Jeweller's Touch" "The King's Path" "The Last Watch" "The Mentor" "The Plaguemaw III" "The Plaguemaw IV" "The Servant's Heart" "The Unbreathing Queen III" "The Watcher's Watcher" "Twice Enchanted" "Visions of the Drowned" "Weeping Death" "Wind and Thunder";
+var currency.prophecy.t3 = "A Prodigious Hand" "A Rift in Time" "A Vision of Ice and Fire" "A Whispered Prayer" "Abnormal Effulgence" "Battle Hardened" "Blood of the Betrayed" "Cleanser of Sins" "Cold Blooded Fury" "Day of Sacrifice III" "Deadly Rivalry II" "Deadly Rivalry III" "Fire and Ice" "Fire, Wood and Stone" "Flesh of the Beast" "In the Grasp of Corruption" "Last of the Wildmen" "Lost in the Pages" "Nature's Resilience" "Severed Limbs" "Storm on the Horizon" "The Ambitious Bandit III" "The Apex Predator" "The Bishop's Legacy" "The Child of Lunaris" "The Feral Lord III" "The Feral Lord IV" "The Flayed Man" "The Great Leader of the North" "The Great Mind of the North" "The Jeweller's Touch" "The King's Path" "The Last Watch" "The Mentor" "The Plaguemaw III" "The Plaguemaw IV" "The Servant's Heart" "The Unbreathing Queen III" "The Watcher's Watcher" "Twice Enchanted" "Visions of the Drowned" "Weeping Death" "Wind and Thunder";
 var currency.prophecy.t3mapping = "A Master Seeks Help" "Anarchy's End III" "Beyond Sight III" "Bountiful Traps" "Crushing Squall" "Deadly Rivalry IV" "Deadly Twins" "Fire from the Sky" "Hidden Reinforcements" "Hidden Vaal Pathways" "Ice from Above" "Lightning Falls" "Mysterious Invaders" "Overflowing Riches" "Plague of Frogs" "Plague of Rats" "Possessed Foe" "Reforged Bonds" "The Beautiful Guide" "The Cursed Choir" "The Dreamer's Dream" "The Fortune Teller's Collection" "The Four Feral Exiles" "The Hungering Swarm" "The Trembling Earth" "The Twins" "The Undead Storm" "The Warmongers III" "The Warmongers IV" "Waiting in Ambush";
 var currency.prophecy.t4upgrade = "A Forest of False Idols" "Agony at Dusk" "Ancient Doom" "Black Devotion" "Blind Faith" "Blinding Light" "Burning Dread" "Cold Greed" "Crimson Hues" "Dance of Steel" "Dark Instincts" "Dying Cry" "End of the Light" "Faith Exhumed" "Fire and Brimstone" "From The Void" "Greed's Folly" "Mouth of Horrors" "Pleasure and Pain" "Power Magnified" "Sun's Punishment" "The Beginning and the End" "The Bloody Flowers Redux" "The Dreaded Rhoa" "The Fall of an Empire" "The Flow of Energy" "The Karui Rebellion" "The King and the Brambles" "The Malevolent Witch" "The Misunderstood Queen" "The Nightmare Awakens" "The Silverwood" "The Snuffed Flame" "The Storm Spire" "Trapped in the Tower" "Winter's Mournful Melodies";
 var currency.prophecy.t4drop = "A Call into the Void" "A Firm Foothold" "Baptism by Death" "Blood in the Eyes" "Custodians of Silence" "Erasmus' Gift" "Fear's Wide Reach" "Graceful Flames" "Heart of the Fire" "Kalandra's Craft" "Notched Flesh" "Roth's Legacy" "Strong as a Bull" "The Brutal Enforcer" "The Eagle's Cry" "The God of Misfortune" "The Lady in Black" "The Lost Maps" "The Lost Undying" "The Mysterious Gift" "The Nest" "The Petrified" "The Prison Guard" "The Queen's Vaults" "The Sinner's Stone" "The Soulless Beast" "The Sword King's Passion" "The Vanguard" "The Walking Mountain" "The Ward's Ward";
@@ -514,21 +525,21 @@ var jewels.cluster.N8_I75_T2 = "Attack Damage while holding a Shield" "Axe and S
 var jewels.cluster.N8_I68_T2 = "Attack Damage while holding a Shield" "Chaos Damage" "Cold Damage" "Elemental Damage" "Lightning Damage" "Mace and Staff Damage" "Minion Damage" "Physical Damage";
 
 ## MEDIUM
-var jewels.cluster.N6_I84_T1 = "3% increased effect of Non-Curse Auras from your Skills";
+var jewels.cluster.N6_I84_T1 = BLANK;
 var jewels.cluster.N6_I75_T1 = BLANK;
 var jewels.cluster.N6_I68_T1 = BLANK;
 
-var jewels.cluster.N6_I84_T2 = "3% increased effect of Non-Curse Auras from your Skills" "3% increased Effect of your Curses" "Brand Damage" "Effect of Non-Damaging Ailments" "Totem Damage";
-var jewels.cluster.N6_I75_T2 = "3% increased effect of Non-Curse Auras from your Skills";
-var jewels.cluster.N6_I68_T2 = "3% increased effect of Non-Curse Auras from your Skills";
+var jewels.cluster.N6_I84_T2 = "Brand Damage" "Effect of Non-Damaging Ailments" "Totem Damage";
+var jewels.cluster.N6_I75_T2 = BLANK;
+var jewels.cluster.N6_I68_T2 = BLANK;
 
 var jewels.cluster.N4_I84_T1 = BLANK;
 var jewels.cluster.N4_I75_T1 = BLANK;
 var jewels.cluster.N4_I68_T1 = BLANK;
 
-var jewels.cluster.N4_I84_T2 = "3% increased effect of Non-Curse Auras from your Skills" "3% increased Effect of your Curses" "Area Damage" "Channelling Skill Damage" "Critical Chance" "Damage over Time" "Damage while you have a Herald" "Effect of Non-Damaging Ailments" "Exerted Attack Damage" "Fire Damage over Time" "Flask Duration" "Life and Mana recovery from Flasks" "Minion Damage while you have a Herald" "Minion Life" "Projectile Damage" "Totem Damage" "Trap and Mine Damage";
-var jewels.cluster.N4_I75_T2 = "3% increased effect of Non-Curse Auras from your Skills" "3% increased Effect of your Curses" "Channelling Skill Damage" "Critical Chance" "Damage over Time" "Exerted Attack Damage" "Fire Damage over Time" "Flask Duration" "Minion Life" "Totem Damage" "Trap and Mine Damage";
-var jewels.cluster.N4_I68_T2 = "3% increased effect of Non-Curse Auras from your Skills" "Critical Chance" "Damage over Time" "Exerted Attack Damage" "Minion Damage while you have a Herald" "Minion Life" "Totem Damage" "Trap and Mine Damage";
+var jewels.cluster.N4_I84_T2 = "Area Damage" "Channelling Skill Damage" "Critical Chance" "Damage over Time" "Damage while you have a Herald" "Effect of Non-Damaging Ailments" "Exerted Attack Damage" "Fire Damage over Time" "Flask Duration" "Life and Mana recovery from Flasks" "Minion Damage while you have a Herald" "Minion Life" "Projectile Damage" "Totem Damage" "Trap and Mine Damage";
+var jewels.cluster.N4_I75_T2 = "Channelling Skill Damage" "Critical Chance" "Damage over Time" "Exerted Attack Damage" "Fire Damage over Time" "Flask Duration" "Minion Life" "Totem Damage" "Trap and Mine Damage";
+var jewels.cluster.N4_I68_T2 = "Critical Chance" "Damage over Time" "Exerted Attack Damage" "Minion Damage while you have a Herald" "Minion Life" "Totem Damage" "Trap and Mine Damage";
 
 ## SMOL - spelling intended, don't make github issues
 var jewels.cluster.N3_I84_T1 = BLANK;
