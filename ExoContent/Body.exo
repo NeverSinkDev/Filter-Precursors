@@ -1305,6 +1305,10 @@ Section MapFragments : Class "Map Fragments"
 #!! Chapter "Currencylike item tierlists 1"
 #!! Override 610 : "Stacked Currency"
 
+#------------------------------------
+# [4702] Supplies: High Stacking
+#------------------------------------
+
 Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Currency", !currency
 {	
 	# Whetstones, augments and transmutes
@@ -1313,13 +1317,21 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Curr
 	Show t3	{ %H4; !*t8trans; !G6H; StackSize >= 2; BaseType == currency.stacked.supplies.higher; }
 }
 
+#------------------------------------
+# [4702] Supplies: Low Stacking
+#------------------------------------
+
 Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Currency", !currency
 {	
 	# armourers
-	Show t1	{ %H5; !G5; !*t8trans; StackSize >= 8; BaseType == currency.stacked.supplies.lower; }
-	Show t2	{ %H4; !G6H; !*t9armour; StackSize >= 5; BaseType == currency.stacked.supplies.lower; }
+	Show t1	{ %H5; !G5; !*t7chance; StackSize >= 8; BaseType == currency.stacked.supplies.lower; }
+	Show t2	{ %H4; !G5; !*t8trans; StackSize >= 5; BaseType == currency.stacked.supplies.lower; }
 	Show t3	{ %H3; !G6H; !*t9armour; StackSize >= 2; BaseType == currency.stacked.supplies.lower; }
 }
+
+#------------------------------------
+# [4702] Supplies: Portal Stacking
+#------------------------------------
 
 Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "Currency", !currency
 {	
@@ -1328,12 +1340,20 @@ Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "
 	Show t3	{ %H3; !G6H; !*tportal; StackSize >= 2; BaseType == currency.stacked.supplies.portal; }
 }
 
+#------------------------------------
+# [4702] Supplies: Wisdom Stacking
+#------------------------------------
+
 Section StackedCurrencyWisdom : Auto("Currency->StackedSuppliesWisdom"), Class "Currency", !currency
 {	
 	Show t1	{ %H5; !*twisdHigh; !G5; StackSize >= 8; BaseType == currency.stacked.supplies.wisdom; }
 	Show t2	{ %H4; !*twisdHigh; !G5; StackSize >= 5; BaseType == currency.stacked.supplies.wisdom; }
 	Show t3	{ %H3; !*twisdom; !G6H; StackSize >= 2; BaseType == currency.stacked.supplies.wisdom; }
 }
+
+#------------------------------------
+# [4702] Stacked Currencies: 6x
+#------------------------------------
 
 Section StackedCurrencySix : Auto("Currency->StackedSix"), Class "Currency", StackSize >= 6, !currency
 {
@@ -1346,6 +1366,10 @@ Section StackedCurrencySix : Auto("Currency->StackedSix"), Class "Currency", Sta
 	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
 }
 
+#------------------------------------
+# [4702] Stacked Currencies: 4x
+#------------------------------------
+
 Section StackedCurrencyFour : Auto("Currency->StackedFour"), Class "Currency", StackSize >= 4, !currency
 {
 	Show t1	{ !G1; !*t1exalted; BaseType == currency.stackedFour.t1 + currency.stackedFourStatic.t1; }
@@ -1356,6 +1380,10 @@ Section StackedCurrencyFour : Auto("Currency->StackedFour"), Class "Currency", S
 	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedFour.t6 + currency.stackedFourStatic.t6; }
 	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedFour.t7 + currency.stackedFourStatic.t7; }
 }
+
+#------------------------------------
+# [4702] Stacked Currencies: 2x
+#------------------------------------
 
 Section StackedCurrencyTwo : Auto("Currency->StackedTwo"), Class "Currency", StackSize >= 2, !currency
 {
@@ -1368,12 +1396,22 @@ Section StackedCurrencyTwo : Auto("Currency->StackedTwo"), Class "Currency", Sta
 	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedTwo.t7 + currency.stackedTwoStatic.t7; }
 }
 
-Section StackedCurrencySplinters : Auto("Currency->StackedSplinters"), Class "Currency", !currency
+#------------------------------------
+# [4702] Stacked Currencies: Splinters
+#------------------------------------
+
+Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class "Currency", !currency
 {
-	Show splinters_t1high	{ !G3; !*t3annul; StackSize >= 7; BaseType currency.stacked.splinters1; }
-	Show splinters_t2high	{ !G4; !*t4chaos; StackSize >= 7; BaseType currency.stacked.splinters2; }
-	Show splinters_t1	{ !G3; !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
-	Show splinters_t2	{ %H5; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
+	Show t1	{ !G2; !*t2divine; StackSize >= 25; BaseType currency.stacked.splinters1; }
+	Show t2	{ !G3; !*t3annul; StackSize >= 7; BaseType currency.stacked.splinters1; }
+	Show t3	{ !G3; !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
+}
+
+Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class "Currency", !currency
+{
+	Show t1	{ !G3; !*t3annul; StackSize >= 40; BaseType currency.stacked.splinters2; }
+	Show t2	{ !G3; !*t4chaos;   StackSize >= 7; BaseType currency.stacked.splinters2; }
+	Show t3	{ %H4; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
 }
 
 #------------------------------------
@@ -1393,8 +1431,8 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
 {
-	Show essences { %D4; !G4;  !*t5alchemy; !LevelCurrency; BaseType currency.leveling.essences; }
-	Show trans 	  { %D4; !G5H; !Currency.t8trans; !LevelCurrency; BaseType == currency.leveling.trans; }
+	Show essences { %D4; !G4;  !*t5alchemy; !Maximize; !LevelCurrency; BaseType currency.leveling.essences; }
+	Show trans 	  { %D4; !G5H; !Currency.t8trans; !Maximize; !LevelCurrency; BaseType == currency.leveling.trans; }
 	Show aug      { %D4; !G5;  !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
 	Show portal   { %D4; !G6H; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
 	Show wisdom   { %D4; !G6H; !Currency.twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
