@@ -74,6 +74,20 @@ Style UniversalValueAccents
 		SetBorderColor accent.high.tx;
 	}
 
+	Func TierTwoColors()
+	{
+		SetBackgroundColor accent.high.tx;
+		SetTextColor 255 255 255 255;
+		SetBorderColor 255 255 255 255;
+	}
+
+	Func TopTierColors()
+	{
+		SetBorderColor accent.high.tx;
+		SetBackgroundColor 255 255 255 255;
+		SetBorderColor accent.high.tx;
+	}
+
 	Func Special ()
 	{
 		SetBorderColor exoticgear.tx;
@@ -101,12 +115,6 @@ Style UniversalValueAccents
 		SetBorderColor accent.rare.tiny;
 	}
 
-	Func Purple
-	{
-		MM * Purple * ;
-		PlayEffect Purple;
-	}
-
 	Func Corrupt ()
 	{
 		SetBorderColor accent.corrupt.tx;
@@ -123,6 +131,23 @@ Style UniversalValueAccents
 	Func Maximize()
 	{
 		SetFontSize font.t3;
+	}
+
+	Func PerfectInfluenced()
+	{
+		SetFontSize font.t1;
+		SetBorderColor accent.perfection;
+		MinimapIcon 0 Red Moon;
+	}
+	
+	Func BestRolls()
+	{
+		SetFontSize font.t3;
+		PlayAlertSound sounds.unique;
+		PlayEffect Purple;
+		SetBorderColor accent.perfection;
+		MinimapIcon 0 Purple Moon;
+		SetTextColor accent.rare.ilvl86;
 	}
 
 	Func Shrink()
@@ -1195,6 +1220,28 @@ Style twisdom
 		SetFontSize font.t5;
 		SetBorderColor currency.acc.twisdom;
 		SetBackgroundColor sBlack;
+		RemoveEffects();
+	}
+}
+
+Style tportHigh
+{
+	Func Any()
+	{ 
+		SetFontSize font.t4;
+		SetBorderColor currency.acc.tportal.high;
+		SetBackgroundColor currency.extra.tportal;
+		RemoveEffects();
+	}
+}
+
+Style twisdHigh
+{
+	Func Any()
+	{ 
+		SetFontSize font.t4;
+		SetBorderColor currency.acc.twisdom.high;
+		SetBackgroundColor currency.extra.twisdom;
 		RemoveEffects();
 	}
 }

@@ -30,9 +30,9 @@ var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster";
 var ws_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
 var ws_burn = "of Conflagrating" "of Combusting" "of Burning";
 
-## var ws_fire = "of Ashes" "of Immolation" "of Flames";
-## var ws_cold = "of Glaciation" "of Floe" "of Rime";
-## var ws_light = "of Arcing" "of Discharge" "of Voltage";
+var ws_fire = "of Ashes";
+var ws_cold = "of Glaciation";
+var ws_light = "of Arcing";
 ## var w_t1res = "of Tzteosh" "of Haast" "of Ephij" "of Bameth";
 
 var ws_manaregen = "of Nirvana" "of Euphoria";
@@ -56,7 +56,7 @@ var w_extrachaos_cold = "Mortifying" "Festering";
 var w_extrachaos_fire = "Corrosive" "Dissolving";
 
 var wgems_alllevels_global = "Magister's";
-var wgems_alllevels = "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Lithomancer's";
+var wgems_alllevels = "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's";
 var wgems_alllevels_staff = "Lava Conjurer's" "Winter Beckoner's" "Tempest Master's" "Splintermind's" "Tecton's";
 
 var wgems_locallevelbow = "Paragon's" "Sharpshooter's";
@@ -241,6 +241,31 @@ var jewels_minion = "Master's" "of Resilience" "Leadership";
 ## Currently only for prefixes
 var veilP = "Veiled";
 var veilPS = "Veiled" "of the Veil";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## CASTER ABSTRACTIONS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## we treat +1 phys as a safe thing, because it's super versatile
+var casterCheatSafe = convokingLvl + w_temple_Caster + w_cheatmods + wgems_alllevels_global + veilP + "Lithomancer's";
+var casterCheatAll = casterCheatSafe + wgems_alllevels + convokingMods + veilPS + "Mad Lord's";
+
+var casterDmgExtra1 = wcast_spell[2] + ws_cast_crit[1] + ws_cast_speed[1] + ws_critmulti[1] + wcast_hspell[1] + wmana[1] + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
+var casterDmgExtra2 = wcast_spell[3] + ws_cast_crit[2] + ws_cast_speed[2] + ws_critmulti[2] + wcast_hspell[2] + wmana[2] + wsdmg_light[2] + wsdmg_light[2] + wsdmg_light[2] + ws_manaregen[1];
+var casterDmgExtra3 = wcast_spell[3] + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[3] + wcast_hspell[3] + wmana[3] + wsdmg_light[2] + wsdmg_light[2] + wsdmg_light[2] + ws_manaregen[2];
+
+var casterDotBase1 = ws_dot[1];
+var casterDotBase2 = ws_dot[2];
+
+## ws_fire (suffix) etc only has one tier for us
+var casterFire1 = w_extrachaos_fire[1] + wcast_fire[2] + ws_fire + "Flame Shaper's" + ws_burn[1] + wdot_fire[1];
+var casterFire2 = w_extrachaos_fire    + wcast_fire[3] + ws_fire + "Flame Shaper's" + ws_burn[2] + wdot_fire[2];
+
+var casterCold1 = w_extrachaos_cold[1] + wcast_cold[2] + ws_cold + "Frost Singer's" + wdot_cold[1];
+var casterCold2 = w_extrachaos_cold    + wcast_cold[3] + ws_cold + "Frost Singer's" + wdot_cold[2];
+
+var casterLight1 = w_extrachaos_light[1] + wcast_light[2] + ws_light + "Thunderhand's";
+var casterLight2 = w_extrachaos_light    + wcast_light[3] + ws_light + "Thunderhand's";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} IDENTIFIED MODS FOR OTHER SECTIONS

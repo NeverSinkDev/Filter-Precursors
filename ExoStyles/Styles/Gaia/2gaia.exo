@@ -1,0 +1,285 @@
+## ELDER DISABLES MOST DECORATORS
+Expand EndgameRareDecorators
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_map_zone12
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_map_zone34
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_mapup
+{
+    Disable;
+}
+
+## SIMPLIFIED RARE HIGHLIGHT
+Expand RaresJewellery.T1
+{
+    SetBorderColor rares.base.jwl;
+    SetTextColor rares.base.jwl;
+    SetBackgroundColor rares.base.extra;
+}
+
+Expand RaresJewellery.T2
+{
+    SetBorderColor rares.base.jwl;
+    SetTextColor rares.base.jwl;
+    SetBackgroundColor rares.base.extra;
+}
+
+Expand RaresJewellery.T3
+{
+    SetBorderColor rares.base.jwl;
+    SetTextColor rares.base.jwl;
+    SetBackgroundColor rares.base.extralow;
+}
+
+Expand RaresArmoursWeapons.T1
+{
+    SetBorderColor rares.notice;
+    SetBackgroundColor sBlack;
+    SetTextColor rares.base.text;
+}
+
+Expand RaresArmoursWeapons.T2
+{
+    SetBorderColor rares.notice;
+    SetBackgroundColor sBlack;
+    SetTextColor rares.base.text;
+}
+
+Expand RaresArmoursWeapons.T3
+{
+    SetBorderColor 0 0 0 255;
+    SetBackgroundColor rares.low.acc;
+    SetTextColor rares.base.text;
+}
+
+Expand RaresArmoursWeapons.T4
+{
+    SetBorderColor 0 0 0 255;
+    SetBackgroundColor rares.low.acc;
+    SetTextColor rares.base.text;
+}
+
+## GAIA REPLACES THE UNIQUE HIGHLIGHT WITH A UNIFIED COLOR
+Expand t1uni.T1
+{
+    SetTextColor uniquest2;
+}
+
+Expand t2uni.Any
+{
+   var acc = uniquest2;
+}
+
+Expand UniqueMapStrat
+{
+    Func T2()
+    {
+        SetBackgroundColor uniquest2;
+    }
+}
+
+## WE UNIFIE THE CURRENCY HIGHLIGHT
+
+Expand t9armour : PatternBlack
+{
+    SetBorderColor lowvaluecurrency;
+    SetTextColor lowvaluecurrency;
+}
+
+Expand tportal
+{
+    SetTextColor lowvaluecurrency;
+    SetBackgroundColor 0 0 0 200;
+}
+
+Expand twisdom
+{
+    SetTextColor lowvaluecurrency;
+    SetBackgroundColor 0 0 0 200;
+}
+
+Expand tportHigh
+{
+    SetTextColor lowvaluecurrency;
+    SetBackgroundColor sBlack;
+    SetFontSize 45;
+}
+
+Expand twisdHigh
+{
+    SetTextColor lowvaluecurrency;
+    SetBackgroundColor sBlack;
+    SetFontSize 45;
+}
+
+## FRAGMENTS USE THE SAME SCHEME AS CURRENCY/DIVIS
+Expand FragmentTierStrat 
+{
+    Func T1()
+    {
+        SetTextColor 255 0 0 255;
+        SetBorderColor 255 0 0 255;
+    }
+
+    Func T2()
+    {
+        SetTextColor tieringbase.low;
+        SetBackgroundColor highcurrency2;
+        SetTextColor tieringbase.low;
+    }
+
+    Func T3()
+    {
+        SetTextColor tieringbase.low;
+        SetBackgroundColor highcurrency1;
+        SetTextColor tieringbase.low;
+    }
+
+    Func T4()
+    {
+        SetTextColor tieringbase.low;
+        SetBackgroundColor midvaluecurrency
+        SetBorderColor tieringbase.low;
+    }
+
+    Func T5()
+    {
+        SetTextColor lowvaluecurrency;
+    }
+}
+
+## RESTORE GREY RECIPES, BY USING THE EXTRA COLOR SPACE
+Expand RecipeStrategy.T2
+{
+    SetTextColor 200 200 200 200;
+}
+
+Expand RecipeStrategy.T3
+{
+    SetTextColor 200 200 200 200;
+}
+
+## MAPS
+
+## Maps adjustments
+
+Expand InfluencedMapsStrategy
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+
+Expand GeneralMapProgressionStrategy.SpecialHigh
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+Expand GeneralMapProgressionStrategy.SpecialLow
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+Expand GeneralMapProgressionStrategy.Z1
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z1.acc;
+}
+
+Expand GeneralMapProgressionStrategy.Z2
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z2.acc;
+}
+
+Expand GeneralMapProgressionStrategy.Z3
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z3;
+}
+
+Expand GeneralMapProgressionStrategy.Z4
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.z4;
+}
+
+Expand t2divine
+{
+        SetTextColor tieringbase.High;
+        SetBorderColor tieringbase.High
+}
+
+Expand t3annul
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t4chaos
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t5alchemy
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t6chrom
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t7chance
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t2divi
+{
+        SetTextColor tieringbase.High;
+        SetBorderColor tieringbase.High
+}
+
+Expand t3divi
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t4divi
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
