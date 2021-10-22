@@ -544,7 +544,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 		Cont NormalDecorator { !Low; Class classes_nonJwlryEquip classes_jewellery; };
 	}
 
-	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, BaseDefencePercentile >= 94, Rarity <= Rare
+	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, BaseDefencePercentile >= 66, Rarity <= Rare
 	{
 		Show t1 { !G3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
@@ -555,7 +555,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL 84
 #------------------------------------
 
-	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, BaseDefencePercentile >= 94, Rarity <= Rare
+	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, BaseDefencePercentile >= 66, Rarity <= Rare
 	{
 		Show t1 { !G4; %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
@@ -566,7 +566,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL ANY
 #------------------------------------
 
-	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, BaseDefencePercentile >= 94, ItemLevel >= 68, Rarity <= Rare
+	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, BaseDefencePercentile >= 66, ItemLevel >= 68, Rarity <= Rare
 	{
 		Show t1  { !G5; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
 		Show t2  { !GEX; %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t2; }
@@ -584,7 +584,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
-Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, BaseDefencePercentile >= 94, ItemLevel <= 83, Clean()
+Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, BaseDefencePercentile >= 66, ItemLevel <= 83, Clean()
 {
 	Show any { !GEX; %D2; BaseType bases.crafting.early; }
 }
@@ -1352,9 +1352,9 @@ Section MapFragments : Class "Map Fragments"
 Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Currency", !currency
 {	
 	# Whetstones, augments and transmutes
-	Show t1	{ %H5; !*t6chrom; !G4; StackSize >= 8; BaseType == currency.stacked.supplies.higher; }
-	Show t2	{ %H4; !*t7chance; !G5; StackSize >= 5; BaseType == currency.stacked.supplies.higher; }
-	Show t3	{ %H4; !*t8trans; !G6H; StackSize >= 2; BaseType == currency.stacked.supplies.higher; }
+	Show t1	{      !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
+	Show t2	{ %H5; !*t6chrom; !G5;   StackSize >= 6; BaseType == currency.stacked.supplies.higher; }
+	Show t3	{ %H4; !*t7chance; !G6H; StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
 }
 
 #------------------------------------
@@ -1364,9 +1364,9 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Curr
 Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Currency", !currency
 {	
 	# armourers
-	Show t1	{ %H5; !G5; !*t7chance; StackSize >= 8; BaseType == currency.stacked.supplies.lower; }
-	Show t2	{ %H4; !G5; !*t8trans; StackSize >= 5; BaseType == currency.stacked.supplies.lower; }
-	Show t3	{ %H3; !G6H; !*t9armour; StackSize >= 2; BaseType == currency.stacked.supplies.lower; }
+	Show t1	{      !G5; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
+	Show t2	{ %H5; !G5; !*t7chance; StackSize >= 6; BaseType == currency.stacked.supplies.lower; }
+	Show t3	{ %H3; !G6H; !*t8trans; StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
 }
 
 #------------------------------------
@@ -1375,9 +1375,9 @@ Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Curren
 
 Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "Currency", !currency
 {	
-	Show t1	{ %H5; !G5; !*tportHigh; StackSize >= 8; BaseType == currency.stacked.supplies.portal; }
-	Show t2	{ %H4; !G5; !*tportHigh; StackSize >= 5; BaseType == currency.stacked.supplies.portal; }
-	Show t3	{ %H3; !G6H; !*tportal; StackSize >= 2; BaseType == currency.stacked.supplies.portal; }
+	Show t1	{ %H5; !G5; !*tportHigh; StackSize >= 10; BaseType == currency.stacked.supplies.portal; }
+	Show t2	{ %H4; !G5; !*tportHigh; StackSize >= 6; BaseType == currency.stacked.supplies.portal; }
+	Show t3	{ %H3; !G6H; !*tportal;  StackSize >= 3; BaseType == currency.stacked.supplies.portal; }
 }
 
 #------------------------------------
@@ -1386,9 +1386,9 @@ Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "
 
 Section StackedCurrencyWisdom : Auto("Currency->StackedSuppliesWisdom"), Class "Currency", !currency
 {	
-	Show t1	{ %H5; !*twisdHigh; !G5; StackSize >= 8; BaseType == currency.stacked.supplies.wisdom; }
-	Show t2	{ %H4; !*twisdHigh; !G5; StackSize >= 5; BaseType == currency.stacked.supplies.wisdom; }
-	Show t3	{ %H3; !*twisdom; !G6H; StackSize >= 2; BaseType == currency.stacked.supplies.wisdom; }
+	Show t1	{ %H5; !*twisdHigh; !G5; StackSize >= 10; BaseType == currency.stacked.supplies.wisdom; }
+	Show t2	{ %H4; !*twisdHigh; !G5; StackSize >= 6; BaseType == currency.stacked.supplies.wisdom; }
+	Show t3	{ %H3; !*twisdom; !G6H;  StackSize >= 3; BaseType == currency.stacked.supplies.wisdom; }
 }
 
 #------------------------------------
@@ -1403,37 +1403,22 @@ Section StackedCurrencySix : Auto("Currency->StackedSix"), Class "Currency", Sta
 	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedSix.t4 + currency.stackedSixStatic.t4; }
 	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedSix.t5 + currency.stackedSixStatic.t5; }
 	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedSix.t6 + currency.stackedSixStatic.t6; }
-	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
+	Show t7	{ !G5; %H4; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
 }
 
 #------------------------------------
-# [4702] Stacked Currencies: 4x
+# [4702] Stacked Currencies: 3x
 #------------------------------------
 
-Section StackedCurrencyFour : Auto("Currency->StackedFour"), Class "Currency", StackSize >= 4, !currency
+Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class "Currency", StackSize >= 3, !currency
 {
-	Show t1	{ !G1; !*t1exalted; BaseType == currency.stackedFour.t1 + currency.stackedFourStatic.t1; }
-	Show t2	{ !G2; !*t2divine; BaseType == currency.stackedFour.t2 + currency.stackedFourStatic.t2; }
-	Show t3	{ !G3; !*t3annul; BaseType == currency.stackedFour.t3 + currency.stackedFourStatic.t3 ; }
-	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedFour.t4 + currency.stackedFourStatic.t4; }
-	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedFour.t5 + currency.stackedFourStatic.t5; }
-	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedFour.t6 + currency.stackedFourStatic.t6; }
-	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedFour.t7 + currency.stackedFourStatic.t7; }
-}
-
-#------------------------------------
-# [4702] Stacked Currencies: 2x
-#------------------------------------
-
-Section StackedCurrencyTwo : Auto("Currency->StackedTwo"), Class "Currency", StackSize >= 2, !currency
-{
-	Show t1	{ !G1; !*t1exalted; BaseType == currency.stackedTwo.t1 + currency.stackedTwoStatic.t1; }
-	Show t2	{ !G2; !*t2divine; BaseType == currency.stackedTwo.t2 + currency.stackedTwoStatic.t2; }
-	Show t3	{ !G3; !*t3annul; BaseType == currency.stackedTwo.t3 + currency.stackedTwoStatic.t3; }
-	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedTwo.t4 + currency.stackedTwoStatic.t4; }
-	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedTwo.t5 + currency.stackedTwoStatic.t5; }
-	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedTwo.t6 + currency.stackedTwoStatic.t6; }
-	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedTwo.t7 + currency.stackedTwoStatic.t7; }
+	Show t1	{ !G1; !*t1exalted; BaseType == currency.stackedThree.t1 + currency.stackedThreeStatic.t1; }
+	Show t2	{ !G2; !*t2divine; BaseType == currency.stackedThree.t2 + currency.stackedThreeStatic.t2; }
+	Show t3	{ !G3; !*t3annul; BaseType == currency.stackedThree.t3 + currency.stackedThreeStatic.t3; }
+	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedThree.t4 + currency.stackedThreeStatic.t4; }
+	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedThree.t5 + currency.stackedThreeStatic.t5; }
+	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedThree.t6 + currency.stackedThreeStatic.t6; }
+	Show t7	{ !G5; %H4; !*t7chance; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
 }
 
 #------------------------------------
