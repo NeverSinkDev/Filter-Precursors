@@ -108,9 +108,9 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 #------------------------------------
 	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor, BaseDefencePercentile >= 99, HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 	{
-		Show t11 { !G2; BaseType == bases.perfection.general.t1; }
-		Show t22 { !G3; BaseType == bases.perfection.general.t2; }
-		Show t23 { !G3; BaseType == bases.perfection.general.t3; }
+		Show t11 { !G2; !PerfectInfluenced; BaseType == bases.perfection.general.t1; }
+		Show t22 { !G3; !PerfectInfluenced; BaseType == bases.perfection.general.t2; }
+		Show t23 { !G3; !PerfectInfluenced; BaseType == bases.perfection.general.t3; }
 	}
 
 #------------------------------------
@@ -207,7 +207,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Boots
 #------------------------------------
-		Section Boots : Class "Boots"
+		Section Boots : Class "Boots", Corrupted False
 		{
 			Show 3LifeBoots { Mod movespeed[2] + veilP; Mod >=2 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + wmana[1] }
 			Show 4LifeBoots { Mod movespeed[3]; Mod >=3 veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[3] + str[4] + dex[4] + int [4] + wmana[2] }
@@ -218,7 +218,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
-		Section Gloves : Class "Gloves"
+		Section Gloves : Class "Gloves", Corrupted False
 		{
 			Show 3LifeGloves { Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_hybridlife }
 			Show 4LifeGloves { Mod >=3 veilPS + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[4] + str[4] + dex[4] + int [4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + gloves_hybridlife + wmana[2] }
@@ -228,7 +228,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Helmets
 #------------------------------------
-		Section Helmets : Class "Helmets"
+		Section Helmets : Class "Helmets", Corrupted False
 		{
 			Show 3LifeHelmet { Mod helm_life[2]; Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int [3] + gloves_accu[2] + minionGems + helmLifeHybrid + wmana[2] }
 			Show 4LifeHelmet { Mod helm_life[3]; Mod >=3 res_fire[3] + veilPS + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int [4] + gloves_accu[3] + minionGems + helmLifeHybrid + wmana[3] }
@@ -249,7 +249,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Rings
 #------------------------------------		
-		Section Rings : Class "Rings"
+		Section Rings : Class "Rings", Corrupted False
 		{
 			Show 2ModRingAttack { Mod ring_life[2] + ring_es[1]; Mod >=2 merged_ring_attack2 + merged_ring_universal2 }
 			Show 3ModRingAttack { Mod veilPS + ring_life[3] + ring_es[2]; Mod >=3 merged_ring_attack3 + merged_ring_universal3 }
@@ -259,7 +259,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Quivers
 #------------------------------------	
-		Section Quivers : Class "Quivers"
+		Section Quivers : Class "Quivers", Corrupted False
 		{
 			Show 4ModQuiver { Mod belt_life[2]; Mod >=3 veilPS + quivermods2 + dex[3] + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] }
 			Show 5ModQuiver { Mod belt_life[4]; Mod >=4 veilPS + quivermods3 + dex[4] + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] }
@@ -275,7 +275,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
-		Section Shields : Class "Shields"
+		Section Shields : Class "Shields", Corrupted False
 		{
 			Show 2LifeCasterShield { Mod shields_life[2] + shields_es[2] + shield_esp[2]; Mod >=2 casterShieldStats2 + universalShieldStats + top2base; }
 			Show 2ESCasterShield { Mod >=2 shields_es[3] + shield_esp[3]; Mod casterShieldStats2 + universalShieldStats + top2base; }
@@ -514,13 +514,13 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 # [1234] Perfection-Based-Filtering
 #------------------------------------
 
-Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !craftspecial, !craftgeneral
+Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestrolls
 {
 	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor
 	{
-		Show t1 { !G2; !craftspecial.I86; BaseType == bases.perfection.general.t1; }
-		Show t2 { !G3; !craftgeneral.I86; BaseType == bases.perfection.general.t2; }
-		Show t3 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.perfection.general.t3; }
+		Show t1 { !G2;  BaseType == bases.perfection.general.t1; }
+		Show t2 { !G3;  BaseType == bases.perfection.general.t2; }
+		Show t3 { !GEX; %D4; BaseType == bases.perfection.general.t3; }
 	}
 }
 
@@ -649,8 +649,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	{
 		Show Utility85  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
 		Show Utility84  { !G5; !utilflasks.LT2; %D3; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
-		Show Utility82  { !G5; !utilflasks.LT2; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
-		Show LifeMana82 { !G6; !recipe.t2; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
+		Show Utility82  { !G5; !utilflasks.LT3; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
+		Show LifeMana82 { !G6; !Low; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
 	}
 
 #------------------------------------

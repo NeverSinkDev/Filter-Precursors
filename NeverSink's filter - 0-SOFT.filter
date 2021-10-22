@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.2.1
+# VERSION:  8.3.0
 # TYPE:     0-SOFT
 # STYLE:    DEFAULT
 # AUTHOR:   NeverSink
@@ -685,11 +685,11 @@ Show # $type->crafting->perfectarmours $tier->t11
 	BaseType == "Apothecary's Gloves" "Archdemon Crown" "Blizzard Crown" "Bone Helmet" "Brimstone Treads" "Cold-attuned Buckler" "Debilitation Gauntlets" "Dreamquest Slippers" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Heat-attuned Tower Shield" "Nexus Gloves" "Penitent Mask" "Sinistral Gloves" "Spiked Gloves" "Stormrider Boots" "Transfer-attuned Spirit Shield" "Two-Toned Boots"
 	SetFontSize 45
 	SetTextColor 50 130 165 255
-	SetBorderColor 50 130 165 255
+	SetBorderColor 176 0 198 255
 	SetBackgroundColor 255 255 255 255
 	PlayAlertSound 1 300
 	PlayEffect Red
-	MinimapIcon 0 Red Cross
+	MinimapIcon 0 Red Moon
 
 Show # $type->crafting->perfectarmours $tier->t22
 	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
@@ -697,14 +697,14 @@ Show # $type->crafting->perfectarmours $tier->t22
 	BaseDefencePercentile >= 99
 	Rarity <= Rare
 	Class "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Archon Kite Shield" "Astral Plate" "Colossal Tower Shield" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Lion Pelt" "Royal Burgonet" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Vaal Regalia"
+	BaseType == "Archon Kite Shield" "Astral Plate" "Colossal Tower Shield" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Lion Pelt" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Vaal Regalia"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
-	SetBorderColor 255 255 255 255
+	SetBorderColor 176 0 198 255
 	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 1 Yellow Cross
+	MinimapIcon 0 Red Moon
 
 Show # $type->crafting->perfectarmours $tier->t23
 	HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
@@ -712,14 +712,14 @@ Show # $type->crafting->perfectarmours $tier->t23
 	BaseDefencePercentile >= 99
 	Rarity <= Rare
 	Class "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Assassin's Garb" "Carnal Armour" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Glorious Plate" "Imperial Buckler" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Praetor Crown" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Slink Boots" "Slink Gloves" "Stealth Boots" "Supreme Spiked Shield" "Titan Gauntlets" "Titan Greaves" "Triumphant Lamellar" "Zodiac Leather"
+	BaseType == "Assassin's Garb" "Carnal Armour" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Glorious Plate" "Imperial Buckler" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Occultist's Vestment" "Praetor Crown" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Supreme Spiked Shield" "Titan Gauntlets" "Titan Greaves" "Triumphant Lamellar" "Zodiac Leather"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
-	SetBorderColor 255 255 255 255
+	SetBorderColor 176 0 198 255
 	SetBackgroundColor 20 110 220
 	PlayAlertSound 1 300
 	PlayEffect Yellow
-	MinimapIcon 1 Yellow Cross
+	MinimapIcon 0 Red Moon
 
 #------------------------------------
 #   [0209] Remaining
@@ -1098,6 +1098,7 @@ Show # $type->rareid $tier->4spellslinger
 
 Show # $type->rareid $tier->3lifeboots
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Boots"
 	HasExplicitMod "Hellion's" "Cheetah's" "Veiled"
@@ -1112,6 +1113,7 @@ Show # $type->rareid $tier->3lifeboots
 
 Show # $type->rareid $tier->4lifeboots
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Boots"
 	HasExplicitMod "Hellion's" "Cheetah's" "Gazelle's"
@@ -1126,6 +1128,7 @@ Show # $type->rareid $tier->4lifeboots
 
 Show # $type->rareid $tier->3esboots
 	Identified True
+	Corrupted False
 	DropLevel >= 55
 	Rarity Rare
 	Class "Boots"
@@ -1141,6 +1144,7 @@ Show # $type->rareid $tier->3esboots
 
 Show # $type->rareid $tier->4esboots
 	Identified True
+	Corrupted False
 	DropLevel >= 55
 	Rarity Rare
 	Class "Boots"
@@ -1156,6 +1160,7 @@ Show # $type->rareid $tier->4esboots
 
 Show # $type->rareid $tier->highstatboots
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Boots"
 	HasExplicitMod >=3 "Veiled" "of the Veil" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius"
@@ -1173,6 +1178,7 @@ Show # $type->rareid $tier->highstatboots
 
 Show # $type->rareid $tier->3lifegloves
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Gloves"
 	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "Athlete's" "Virile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Thirsty" "Remora's" "Prior's" "Urchin's" "Fawn's"
@@ -1186,6 +1192,7 @@ Show # $type->rareid $tier->3lifegloves
 
 Show # $type->rareid $tier->4lifegloves
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Gloves"
 	HasExplicitMod >=3 "Veiled" "of the Veil" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "Athlete's" "Virile" "Rotund" "Robust" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Thirsty" "Remora's" "Honed" "Crackling" "Burning" "Frigid" "Prior's" "Urchin's" "Fawn's" "Zaffre" "Blue"
@@ -1199,6 +1206,7 @@ Show # $type->rareid $tier->4lifegloves
 
 Show # $type->rareid $tier->3esgloves
 	Identified True
+	Corrupted False
 	DropLevel >= 55
 	Rarity Rare
 	Class "Gloves"
@@ -1213,6 +1221,7 @@ Show # $type->rareid $tier->3esgloves
 
 Show # $type->rareid $tier->4esgloves
 	Identified True
+	Corrupted False
 	DropLevel >= 55
 	Rarity Rare
 	Class "Gloves"
@@ -1231,6 +1240,7 @@ Show # $type->rareid $tier->4esgloves
 
 Show # $type->rareid $tier->3lifehelmet
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Helmets"
 	HasExplicitMod "Fecund" "Athlete's"
@@ -1245,6 +1255,7 @@ Show # $type->rareid $tier->3lifehelmet
 
 Show # $type->rareid $tier->4lifehelmet
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Helmets"
 	HasExplicitMod "Fecund" "Athlete's" "Virile"
@@ -1259,6 +1270,7 @@ Show # $type->rareid $tier->4lifehelmet
 
 Show # $type->rareid $tier->3eshelm
 	Identified True
+	Corrupted False
 	DropLevel >= 55
 	Rarity Rare
 	Class "Helmets"
@@ -1273,6 +1285,7 @@ Show # $type->rareid $tier->3eshelm
 
 Show # $type->rareid $tier->4eshelm
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Helmets"
 	HasExplicitMod >=4 "Prior's" "Deacon's" "Seraphim's" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Veiled" "of the Veil" "of Tzteosh" "of the Magma" "of the Volcano" "of Ephij" "of the Lightning" "of the Maelstrom" "of Haast" "of the Ice" "of the Polar Bear" "of Bameth" "of Exile" "of Expulsion" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Lioneye" "of the Ranger" "Priest's" "Abbot's" "Djinn's" "Naga's" "Necromancer's" "Summoner's" "Zaffre" "Blue"
@@ -1368,6 +1381,7 @@ Show # $type->rareid $tier->4highstatamu
 
 Show # $type->rareid $tier->2modringattack
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Rings"
 	HasExplicitMod "Virile" "Rotund" "Resplendent"
@@ -1382,6 +1396,7 @@ Show # $type->rareid $tier->2modringattack
 
 Show # $type->rareid $tier->3modringattack
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Rings"
 	HasExplicitMod "Veiled" "of the Veil" "Virile" "Rotund" "Robust" "Resplendent" "Incandescent"
@@ -1396,6 +1411,7 @@ Show # $type->rareid $tier->3modringattack
 
 Show # $type->rareid $tier->2modringcaster
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Rings"
 	HasExplicitMod "Virile" "Rotund" "Resplendent" "Incandescent"
@@ -1410,6 +1426,7 @@ Show # $type->rareid $tier->2modringcaster
 
 Show # $type->rareid $tier->3modringcaster
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Rings"
 	HasExplicitMod "Veiled" "of the Veil" "Virile" "Rotund" "Robust" "Resplendent" "Incandescent" "Scintillating"
@@ -1428,6 +1445,7 @@ Show # $type->rareid $tier->3modringcaster
 
 Show # $type->rareid $tier->4modquiver
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Quivers"
 	HasExplicitMod "Fecund" "Athlete's"
@@ -1442,6 +1460,7 @@ Show # $type->rareid $tier->4modquiver
 
 Show # $type->rareid $tier->5modquiver
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Quivers"
 	HasExplicitMod "Fecund" "Athlete's" "Virile" "Rotund"
@@ -1494,6 +1513,7 @@ Show # $type->rareid $tier->5modbelt
 
 Show # $type->rareid $tier->2lifecastershield
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod "Vigorous" "Fecund" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
@@ -1508,6 +1528,7 @@ Show # $type->rareid $tier->2lifecastershield
 
 Show # $type->rareid $tier->2escastershield
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod >=2 "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Indomitable"
@@ -1522,6 +1543,7 @@ Show # $type->rareid $tier->2escastershield
 
 Show # $type->rareid $tier->3lifecastershield
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod "Vigorous" "Fecund" "Athlete's" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Indomitable"
@@ -1536,6 +1558,7 @@ Show # $type->rareid $tier->3lifecastershield
 
 Show # $type->rareid $tier->3escastershield
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod "Incandescent" "Scintillating" "Blazing" "Seething" "Unfaltering" "Unassailable" "Indomitable" "Dauntless"
@@ -1550,6 +1573,7 @@ Show # $type->rareid $tier->3escastershield
 
 Show # $type->rareid $tier->3damagecastershield
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod >=3 "Veiled" "of the Veil" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Tul's" "Cryomancer's" "Esh's" "Ionising" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Baleful" "Excruciating" "Mortifying" "Corrosive" "of Expertise" "of Unmaking" "of Ruin" "of Nirvana" "of Euphoria" "Zaffre"
@@ -1563,6 +1587,7 @@ Show # $type->rareid $tier->3damagecastershield
 
 Show # $type->rareid $tier->4damagecastershield
 	Identified True
+	Corrupted False
 	Rarity Rare
 	Class "Shields"
 	HasExplicitMod >=4 "Veiled" "of the Veil" "Runic" "Glyphic" "Incanter's" "Occultist's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Baleful" "Inimical" "Excruciating" "Harrowing" "Mortifying" "Festering" "Corrosive" "Dissolving" "of Expertise" "of Nimbleness" "of Unmaking" "of Ruin" "of Calamity" "of Nirvana" "of Euphoria" "of Bliss" "Zaffre" "Blue" "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization" "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Titan" "of the Blur" "of the Wind" "of the Phantom" "of the Polymath" "of the Genius" "of the Virtuoso"
@@ -1576,6 +1601,7 @@ Show # $type->rareid $tier->4damagecastershield
 
 Show # $type->rareid $tier->highdefshields
 	Identified True
+	Corrupted False
 	DropLevel >= 50
 	Rarity Rare
 	Class "Shields"
@@ -1590,6 +1616,7 @@ Show # $type->rareid $tier->highdefshields
 
 Show # $type->rareid $tier->highstatshield
 	Identified True
+	Corrupted False
 	DropLevel >= 50
 	Rarity Rare
 	Class "Shields"
@@ -2028,7 +2055,7 @@ Show # $type->exotic->invitation $tier->t2
 
 Show # $type->exotic->invitation $tier->t3
 	Rarity <= Rare
-	BaseType == "Maven's Invitation: Glennach Cairns" "Maven's Invitation: Haewark Hamlet" "Maven's Invitation: Lex Ejoris" "Maven's Invitation: Lex Proxima" "Maven's Invitation: Lira Arthain" "Maven's Invitation: New Vastir" "Maven's Invitation: The Feared" "Maven's Invitation: The Forgotten" "Maven's Invitation: The Hidden" "Maven's Invitation: Tirn's End" "Maven's Invitation: Valdo's Rest"
+	BaseType == "Maven's Invitation: Glennach Cairns" "Maven's Invitation: Haewark Hamlet" "Maven's Invitation: Lira Arthain" "Maven's Invitation: The Feared" "Maven's Invitation: The Forgotten" "Maven's Invitation: The Hidden" "Maven's Invitation: Valdo's Rest"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -2094,7 +2121,7 @@ Show # $type->exotic->sockets $tier->anynonbelt
 Show # %D5 $type->exotic->scourged $tier->scourgedselected
 	Scourged True
 	Rarity <= Rare
-	BaseType "Ambusher" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Demon Dagger" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Sceptre" "Opal Wand" "Pinnacle Tower Shield" "Platinum Kris" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spiraled Foil" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Toned Boots" "Vaal Regalia" "Vaal Spirit Shield" "Void Sceptre" "Zodiac Leather"
+	BaseType "Ambusher" "Amethyst Ring" "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Behemoth Mace" "Bone Helmet" "Carnal Armour" "Cerulean Ring" "Citadel Bow" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Corsair Sword" "Crusader Boots" "Crusader Gloves" "Crystal Belt" "Deicide Mask" "Demon Dagger" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eclipse Staff" "Elegant Round Shield" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Fiend Dagger" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Gemini Claw" "Glorious Plate" "Golden Kris" "Gripped Gloves" "Harbinger Bow" "Harmonic Spirit Shield" "Heavy Belt" "Hubris Circlet" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Iolite Ring" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Maul" "Leather Belt" "Lion Pelt" "Lion Sword" "Maraketh Bow" "Mosaic Kite Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Opal Ring" "Opal Sceptre" "Opal Wand" "Penetrating Arrow Quiver" "Pinnacle Tower Shield" "Platinum Kris" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Runic Hatchet" "Rustic Sash" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Sambar Sceptre" "Siege Axe" "Skean" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Spike-Point Arrow Quiver" "Spiraled Foil" "Steel Ring" "Stygian Vise" "Supreme Spiked Shield" "Thicket Bow" "Tiger Hook" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Tornado Wand" "Triumphant Lamellar" "Two-Stone Ring" "Two-Toned Boots" "Unset Ring" "Vaal Regalia" "Vaal Spirit Shield" "Vanguard Belt" "Vermillion Ring" "Void Sceptre" "Zodiac Leather"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -2305,10 +2332,11 @@ Show # $type->crafting->perfectarmours $tier->t1
 	Class "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
 	BaseType == "Apothecary's Gloves" "Archdemon Crown" "Blizzard Crown" "Bone Helmet" "Brimstone Treads" "Cold-attuned Buckler" "Debilitation Gauntlets" "Dreamquest Slippers" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Heat-attuned Tower Shield" "Nexus Gloves" "Penitent Mask" "Sinistral Gloves" "Spiked Gloves" "Stormrider Boots" "Transfer-attuned Spirit Shield" "Two-Toned Boots"
 	SetFontSize 45
-	SetBorderColor 255 125 0 240
+	SetTextColor 255 140 0 255
+	SetBorderColor 176 0 198 255
 	PlayAlertSound 3 300
-	PlayEffect Blue
-	MinimapIcon 1 Blue Diamond
+	PlayEffect Purple
+	MinimapIcon 0 Purple Moon
 
 Show # $type->crafting->perfectarmours $tier->t2
 	Corrupted False
@@ -2316,8 +2344,13 @@ Show # $type->crafting->perfectarmours $tier->t2
 	BaseDefencePercentile >= 99
 	Rarity <= Rare
 	Class "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Archon Kite Shield" "Astral Plate" "Colossal Tower Shield" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Lion Pelt" "Royal Burgonet" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Vaal Regalia"
-	SetBorderColor 255 125 0 185
+	BaseType == "Archon Kite Shield" "Astral Plate" "Colossal Tower Shield" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Lion Pelt" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Vaal Regalia"
+	SetFontSize 45
+	SetTextColor 255 140 0 255
+	SetBorderColor 176 0 198 255
+	PlayAlertSound 3 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Moon
 
 Show # %D4 $type->crafting->perfectarmours $tier->t3
 	Corrupted False
@@ -2325,8 +2358,13 @@ Show # %D4 $type->crafting->perfectarmours $tier->t3
 	BaseDefencePercentile >= 99
 	Rarity <= Rare
 	Class "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Assassin's Garb" "Carnal Armour" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Glorious Plate" "Imperial Buckler" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Praetor Crown" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Slink Boots" "Slink Gloves" "Stealth Boots" "Supreme Spiked Shield" "Titan Gauntlets" "Titan Greaves" "Triumphant Lamellar" "Zodiac Leather"
-	SetBorderColor 255 125 0 185
+	BaseType == "Assassin's Garb" "Carnal Armour" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Glorious Plate" "Imperial Buckler" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Occultist's Vestment" "Praetor Crown" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Supreme Spiked Shield" "Titan Gauntlets" "Titan Greaves" "Triumphant Lamellar" "Zodiac Leather"
+	SetFontSize 45
+	SetTextColor 255 140 0 255
+	SetBorderColor 176 0 198 255
+	PlayAlertSound 3 300
+	PlayEffect Purple
+	MinimapIcon 0 Purple Moon
 
 #------------------------------------
 #   [0901] ILVL 86
@@ -2515,7 +2553,7 @@ Show # %D2 $type->normalcraft->extra $tier->any
 	ItemLevel <= 83
 	BaseDefencePercentile >= 66
 	Rarity < Magic
-	BaseType "Imbued Wand" "Sorcerer Boots" "Sorcerer Gloves" "Titanium Spirit Shield" "Two-Stone Ring"
+	BaseType "Colossal Tower Shield" "Imbued Wand" "Onyx Amulet" "Thicket Bow" "Titanium Spirit Shield" "Two-Stone Ring"
 	SetBorderColor 200 200 200 200
 
 #------------------------------------
@@ -2627,7 +2665,7 @@ Show # %D2 $type->chancing $tier->hh
 	Corrupted False
 	Mirrored False
 	Rarity Normal
-	BaseType == "Leather Belt"
+	BaseType == "Heavy Belt" "Leather Belt"
 	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBorderColor 0 150 0 90
@@ -2636,7 +2674,7 @@ Show # %D2 $type->chancing $tier->t2
 	Corrupted False
 	Mirrored False
 	Rarity Normal
-	BaseType == "Gavel" "Occultist's Vestment" "Prophecy Wand" "Sadist Garb" "Turquoise Amulet"
+	BaseType == "Elegant Round Shield" "Ezomyte Dagger" "Sadist Garb"
 	SetFontSize 35
 	SetTextColor 255 255 255 255
 	SetBorderColor 0 150 0 90
@@ -2726,19 +2764,16 @@ Show # %D2 $type->endgameflasks $tier->utility82
 	Rarity <= Magic
 	BaseType "Aquamarine Flask" "Basalt Flask" "Diamond Flask" "Granite Flask" "Iron Flask" "Jade Flask" "Quartz Flask" "Quicksilver Flask" "Silver Flask" "Stibnite Flask" "Sulphur Flask"
 	SetFontSize 40
-	SetBorderColor 50 200 125
+	SetBorderColor 0 0 0 255
 	SetBackgroundColor 25 100 75
-	PlayEffect Grey Temp
 
 Show # %D2 $type->endgameflasks $tier->lifemana82
 	ItemLevel >= 82
 	AreaLevel >= 68
 	Rarity <= Magic
 	BaseType "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask"
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 200 200 200 255
-	SetBackgroundColor 130 110 110 255
+	SetBorderColor 100 100 100 150
+	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
 #   [1102] High quality assorted flasks
@@ -3236,7 +3271,7 @@ Show # %D4 $type->rr $tier->t1weapons
 Show # %D4 $type->rr $tier->t1armours
 	ItemLevel >= 68
 	Rarity Rare
-	BaseType "Apothecary's Gloves" "Arcanist Slippers" "Assassin's Boots" "Bone Helmet" "Colossal Tower Shield" "Crusader Boots" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Fugitive Boots" "Goliath Greaves" "Gripped Gloves" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
+	BaseType "Apothecary's Gloves" "Arcanist Slippers" "Bone Helmet" "Colossal Tower Shield" "Crusader Boots" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Fingerless Silk Gloves" "Fossilised Spirit Shield" "Fugitive Boots" "Gripped Gloves" "Hubris Circlet" "Imperial Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spiked Gloves" "Stealth Boots" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Toned Boots" "Vaal Greaves"
 	SetFontSize 45
 	SetBackgroundColor 0 0 0 255
 
@@ -3255,7 +3290,7 @@ Show # %D3 $type->rr $tier->t2weapons
 Show # %D3 $type->rr $tier->t2armours
 	ItemLevel >= 68
 	Rarity Rare
-	BaseType "Ambush Boots" "Ancient Greaves" "Antique Greaves" "Arcanist Gloves" "Archon Kite Shield" "Assassin's Garb" "Assassin's Mitts" "Astral Plate" "Carnal Boots" "Conjurer Boots" "Conjurer Gloves" "Crusader Buckler" "Crusader Gloves" "Deicide Mask" "Ezomyte Burgonet" "Goliath Gauntlets" "Harmonic Spirit Shield" "Hydrascale Boots" "Hydrascale Gauntlets" "Legion Boots" "Mind Cage" "Mosaic Kite Shield" "Murder Mitts" "Nightmare Bascinet" "Pig-Faced Bascinet" "Pinnacle Tower Shield" "Praetor Crown" "Sadist Garb" "Samite Slippers" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Sinner Tricorne" "Soldier Boots" "Stealth Gloves" "Vaal Gauntlets" "Vaal Regalia" "Vaal Spirit Shield" "Wyrmscale Boots"
+	BaseType "Ambush Boots" "Ancient Greaves" "Antique Greaves" "Arcanist Gloves" "Archon Kite Shield" "Assassin's Boots" "Assassin's Garb" "Assassin's Mitts" "Astral Plate" "Carnal Boots" "Conjurer Boots" "Conjurer Gloves" "Crusader Buckler" "Crusader Gloves" "Elegant Round Shield" "Ezomyte Burgonet" "Fluted Bascinet" "Goliath Gauntlets" "Goliath Greaves" "Harmonic Spirit Shield" "Hydrascale Boots" "Hydrascale Gauntlets" "Legion Boots" "Mind Cage" "Pig-Faced Bascinet" "Pinnacle Tower Shield" "Praetor Crown" "Sadist Garb" "Samite Slippers" "Serpentscale Boots" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Sinner Tricorne" "Soldier Boots" "Stealth Gloves" "Vaal Gauntlets" "Vaal Mask" "Vaal Regalia" "Vaal Spirit Shield" "Wyrmscale Boots" "Wyrmscale Gauntlets"
 	SetFontSize 40
 	SetBackgroundColor 30 30 30 255
 
@@ -4787,7 +4822,7 @@ Show # $type->uniques->maps $tier->ex
 Show # $type->uniques->maps $tier->t1
 	Rarity Unique
 	Class "Maps"
-	BaseType "Basilica Map" "Courthouse Map" "Courtyard Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
+	BaseType "Basilica Map" "Courtyard Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
 	SetFontSize 45
 	SetTextColor 175 96 37 255
 	SetBorderColor 175 96 37 255

@@ -115,12 +115,6 @@ Style UniversalValueAccents
 		SetBorderColor accent.rare.tiny;
 	}
 
-	Func Purple
-	{
-		MM * Purple * ;
-		PlayEffect Purple;
-	}
-
 	Func Corrupt ()
 	{
 		SetBorderColor accent.corrupt.tx;
@@ -137,6 +131,23 @@ Style UniversalValueAccents
 	Func Maximize()
 	{
 		SetFontSize font.t3;
+	}
+
+	Func PerfectInfluenced()
+	{
+		SetFontSize font.t1;
+		SetBorderColor accent.perfection;
+		MinimapIcon 0 Red Moon;
+	}
+	
+	Func BestRolls()
+	{
+		SetFontSize font.t3;
+		PlayAlertSound sounds.unique;
+		PlayEffect Purple;
+		SetBorderColor accent.perfection;
+		MinimapIcon 0 Purple Moon;
+		SetTextColor accent.rare.ilvl86;
 	}
 
 	Func Shrink()
