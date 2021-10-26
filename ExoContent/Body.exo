@@ -454,9 +454,9 @@ Section ExoticVariations : !exotic
 #------------------------------------
 		Section Scourged : Scourged True, Auto("exotic->scourged")
 		{
-			Show ScourgedSelected    { !GSH; %D5; !exotic.t2; BaseType bases.crafting.scourged.t1; }
-			Show ScourgedClasses     { !GSH; %D5; !exotic.t2; Class classes_scourged; }
-			Show ScourgedRandom      { !GSH; %D4; !exotic.t3; Scourged True; }
+			Show ScourgedSelected    { !GSH; %D4; !exotic.t3; BaseType bases.crafting.scourged.t1; }
+			Show ScourgedClasses     { !GSH; %D4; !exotic.t3; Class classes_scourged; }
+			Show ScourgedRandom      { !GSH; %D3; !exotic.t4; Scourged True; }
 		}
 #------------------------------------
 #   [1234] Synthesised
@@ -544,7 +544,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 		Cont NormalDecorator { !Low; Class classes_nonJwlryEquip classes_jewellery; };
 	}
 
-	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, BaseDefencePercentile >= 66, Rarity <= Rare
+	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
 		Show t1 { !G3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
@@ -555,7 +555,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL 84
 #------------------------------------
 
-	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, BaseDefencePercentile >= 66, Rarity <= Rare
+	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
 		Show t1 { !G4; %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
@@ -566,7 +566,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL ANY
 #------------------------------------
 
-	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, BaseDefencePercentile >= 66, ItemLevel >= 68, Rarity <= Rare
+	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
 		Show t1  { !G5; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
 		Show t2  { !GEX; %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t2; }
@@ -584,7 +584,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
-Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, BaseDefencePercentile >= 66, ItemLevel <= 83, Clean()
+Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
 	Show any { !GEX; %D2; BaseType bases.crafting.early; }
 }
@@ -1183,6 +1183,12 @@ Section Maps : Class "Maps", !Maps
 		Show Any { %H5; !G4; !*SpecialLow; Empty(); }
 	}
 
+	Section ScourgedMap : Auto("maps->scourged")
+	{
+		Show t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Scourged True; }
+		Show Any { %H5; !G4; !*SpecialLow; Empty(); Scourged True; }
+	}
+
 #------------------------------------
 # [4406] Beyond-Nemesis Maps, for those juicy sextants.
 #------------------------------------
@@ -1364,7 +1370,7 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Curr
 Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Currency", !currency
 {	
 	# armourers
-	Show t1	{      !G5; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
+	Show t1	{      !G4; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
 	Show t2	{ %H5; !G5; !*t7chance; StackSize >= 6; BaseType == currency.stacked.supplies.lower; }
 	Show t3	{ %H3; !G6H; !*t8trans; StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
 }
