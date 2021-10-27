@@ -16,69 +16,55 @@ var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone"
 var rare_gear_classes =  "Rune Daggers" "Daggers" "Claws" "Wands" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Sceptres" "Warstaves" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows" "Boots" "Gloves" "Helmets" "Body Armours" "Shields" "Shields" "Quivers";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##   {META} ID Mods
+##   {META} GLOBALLY INTERESTING MODS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## WEAPONS
-var ws_cast_speed = "of Finesse" "of Sortilege" "of Prestidigitation" "of Legerdemain";
-var ws_attack_speed = "of Celebration" "of Infamy" "of Fame" "of Acclaim";
-var ws_attack_speed_smol = "of Acclaim" "of Renown" "of Mastery";
-var ws_attack_crit = "of Incision" "of Penetrating" "of Puncturing";
-var ws_critmulti = "of Destruction" "of Ferocity" "of Fury" "of Rage";
-var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster"; 
+## Veiled modifiers
+var veilP = "Veiled";
+var veilPS = "Veiled" "of the Veil";
 
-var ws_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
-var ws_burn = "of Conflagrating" "of Combusting" "of Burning";
+## CHEATMODS
+var w_cheatmods = "of the Underground" "Subterranean" "of Many";
+var w_temple_Phys = "of Tacati" "Tacati's";
+## var w_temple_Sumonner = "Citaqualotl's";
+var w_temple_Caster = "Matatl's" "Tacati" "Topotante's";
 
-var ws_fire = "of Ashes";
-var ws_cold = "of Glaciation";
-var ws_light = "of Arcing";
-## var w_t1res = "of Tzteosh" "of Haast" "of Ephij" "of Bameth";
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} WEAPON MODS - GLOBAL
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var ws_manaregen = "of Nirvana" "of Euphoria";
-
-var wcast_spell = "Runic" "Glyphic" "Incanter's" "Occultist's"; 
-var wcast_hspell = "Lich's" "Archmage's" "Mage's" "Warlock's";
-var wcast_fire = "Xoph's" "Pyroclastic" "Magmatic" "Volcanic";
-var wcast_cold = "Tul's" "Cryomancer's" "Crystalline" "Hailing";
-var wcast_light = "Esh's" "Ionising" "Smiting" "Striking";
-var wsdmg_fire = "Electrocuting" "Discharging" "Shocking" "Arcing";
-var wsdmg_cold = "Entombing" "Polar" "Glaciated" "Frozen";
-var wsdmg_light = "Cremating" "Blasting" "Incinerating" "Scorching";
-
-var wdot_fire = "Fanatical" "Zealous" "Ardent";
-var wdot_cold = "Heartstopping" "Gelid" "Boreal";
-var wdot_chaos = "Disintegrating" "Atrophying" "Deteriorating";
-
-var w_extrachaos_phys = "Baleful" "Inimical";
-var w_extrachaos_light = "Excruciating" "Harrowing";
-var w_extrachaos_cold = "Mortifying" "Festering";
-var w_extrachaos_fire = "Corrosive" "Dissolving";
-
+## Levels to all gems on wands, staves and similar
 var wgems_alllevels_global = "Magister's";
 var wgems_alllevels = "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's";
 var wgems_alllevels_staff = "Lava Conjurer's" "Winter Beckoner's" "Tempest Master's" "Splintermind's" "Tecton's";
-
 var wgems_locallevelbow = "Paragon's" "Sharpshooter's";
 
 ## SUMMONNER
 var convokingMods = "Empress's" "Queen's";
 var convokingLvl = "Martinet's"
 
-## WEAPON DAMAGE
+## MISC
+var ws_critmulti = "of Destruction" "of Ferocity" "of Fury" "of Rage";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} WEAPON MODS - ATTACK
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Speed and Crit
+var ws_attack_speed = "of Celebration" "of Infamy" "of Fame" "of Acclaim";
+var ws_attack_speed_smol = "of Acclaim" "of Renown" "of Mastery";
+var ws_attack_crit = "of Incision" "of Penetrating" "of Puncturing";
+
+## Phys percent, flat and hybrid
+var wdmg_pphys = "Merciless" "Tyrannical" "Cruel" "Bloodthirsty";
 var wdmg_phys = "Flaring" "Tempered" "Razor-sharp" "Annealed";
+var wdmg_hphys = "Dictator's" "Emperor's" "Conqueror's" "Champion's";
+
+## Ele flat
 var wdmg_fire = "Carbonising" "Cremating" "Blasting" "Incinerating";
 var wdmg_cold = "Crystalising" "Entombing" "Polar" "Glaciated";
 var wdmg_light = "Vapourising" "Electrocuting" "Discharging" "Shocking";
-var wdmg_pphys = "Merciless" "Tyrannical" "Cruel" "Bloodthirsty";
-var wdmg_hphys = "Dictator's" "Emperor's" "Conqueror's" "Champion's";
 var wdmg_chaos = "Malicious";
-var wmana = "Zaffre" "Blue" "Mazarine" "Chalybeous";
-
-var w_cheatmods = "of the Underground" "Subterranean" "of Many";
-var w_temple_Phys = "of Tacati" "Tacati's";
-## var w_temple_Sumonner = "Citaqualotl's";
-var w_temple_Caster = "Matatl's" "Tacati" "Topotante's";
 
 ## ARMORS
 var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
@@ -238,26 +224,69 @@ var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Re
 var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking";
 var jewels_minion = "Master's" "of Resilience" "Leadership";
 
-## Currently only for prefixes
-var veilP = "Veiled";
-var veilPS = "Veiled" "of the Veil";
-
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## CASTER ABSTRACTIONS
+##   {META} CASTER MODS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+## Other relevant mods: 
+##      ws_attack_speed, ws_attack_crit, ws_critmulti
+##      w_cheatmods, wgems_alllevels_global, wgems_alllevels
+
+## MISC
+var ws_cast_speed = "of Finesse" "of Sortilege" "of Prestidigitation" "of Legerdemain";
+var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster"; 
+var ws_manaregen = "of Nirvana" "of Euphoria";
+var wmana = "Zaffre" "Blue" "Mazarine" "Chalybeous";
+
+## PURE PERCENT DAMAGE
+var wcast_spell = "Runic" "Glyphic" "Incanter's" "Occultist's"; 
+var wcast_hspell = "Lich's" "Archmage's" "Mage's" "Warlock's";
+var wcast_fire = "Xoph's" "Pyroclastic" "Magmatic" "Volcanic";
+var wcast_cold = "Tul's" "Cryomancer's" "Crystalline" "Hailing";
+var wcast_light = "Esh's" "Ionising" "Smiting" "Striking";
+
+## SUFFIX DAMAGE
+var ws_fire = "of Ashes";
+var ws_cold = "of Glaciation";
+var ws_light = "of Arcing";
+
+## FLAT DAMAGE
+var wsdmg_fire = "Electrocuting" "Discharging" "Shocking" "Arcing";
+var wsdmg_cold = "Entombing" "Polar" "Glaciated" "Frozen";
+var wsdmg_light = "Cremating" "Blasting" "Incinerating" "Scorching";
+
+## DOT SECTION
+var ws_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
+var ws_burn = "of Conflagrating" "of Combusting" "of Burning";
+var wdot_fire = "Fanatical" "Zealous" "Ardent";
+var wdot_cold = "Heartstopping" "Gelid" "Boreal";
+var wdot_chaos = "Disintegrating" "Atrophying" "Deteriorating";
+
+## EXOTIC CASTER MODS
+var w_extrachaos_phys = "Baleful" "Inimical";
+var w_extrachaos_light = "Excruciating" "Harrowing";
+var w_extrachaos_cold = "Mortifying" "Festering";
+var w_extrachaos_fire = "Corrosive" "Dissolving";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## CASTER AND SPELLSLINGER ABSTRACTIONS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## ws_fire (suffix) etc only has one tier for us
 ## we treat +1 phys as a safe thing, because it's super versatile
+## ABS LVL 1
 var casterCheatSafe = convokingLvl + w_temple_Caster + w_cheatmods + wgems_alllevels_global + veilP + "Lithomancer's";
-var casterCheatAll = casterCheatSafe + wgems_alllevels + convokingMods + veilPS + "Mad Lord's";
+var casterCheatAll = casterCheatSafe + wgems_alllevels + convokingMods + "Mad Lord's";
 
-var casterDmgExtra1 = wcast_spell[2] + ws_cast_crit[1] + ws_cast_speed[1] + ws_critmulti[1] + wcast_hspell[1] + wmana[1] + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
-var casterDmgExtra2 = wcast_spell[3] + ws_cast_crit[2] + ws_cast_speed[2] + ws_critmulti[2] + wcast_hspell[2] + wmana[2] + wsdmg_light[2] + wsdmg_light[2] + wsdmg_light[2] + ws_manaregen[1];
-var casterDmgExtra3 = wcast_spell[3] + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[3] + wcast_hspell[3] + wmana[3] + wsdmg_light[2] + wsdmg_light[2] + wsdmg_light[2] + ws_manaregen[2];
+## CASTER - GENERAL
+var casterDmg1 = wcast_spell[2] + ws_cast_crit[1] + ws_cast_speed[1] + ws_critmulti[1] + wcast_hspell[1] + wmana[1] + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
+var casterDmg2 = wcast_spell[3] + ws_cast_crit[2] + ws_cast_speed[2] + ws_critmulti[2] + wcast_hspell[2] + wmana[2] + wsdmg_light[2] + wsdmg_light[2] + wsdmg_light[2] + ws_manaregen[1];
+var casterDmg3 = wcast_spell[3] + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[3] + wcast_hspell[3] + wmana[3] + wsdmg_light[2] + wsdmg_light[2] + wsdmg_light[2] + ws_manaregen[2];
 
 var casterDotBase1 = ws_dot[1];
 var casterDotBase2 = ws_dot[2];
 
-## ws_fire (suffix) etc only has one tier for us
+## CASTER - SPECIALIZED KIT
 var casterFire1 = w_extrachaos_fire[1] + wcast_fire[2] + ws_fire + "Flame Shaper's" + ws_burn[1] + wdot_fire[1];
 var casterFire2 = w_extrachaos_fire    + wcast_fire[3] + ws_fire + "Flame Shaper's" + ws_burn[2] + wdot_fire[2];
 
@@ -266,6 +295,42 @@ var casterCold2 = w_extrachaos_cold    + wcast_cold[3] + ws_cold + "Frost Singer
 
 var casterLight1 = w_extrachaos_light[1] + wcast_light[2] + ws_light + "Thunderhand's";
 var casterLight2 = w_extrachaos_light    + wcast_light[3] + ws_light + "Thunderhand's";
+
+## CASTER - CORE
+var casterCoreGeneral = casterCheatAll + wcast_spell[3];
+var casterFireCore = wcast_fire[3];
+var casterColdCore = wcast_cold[3];
+var casterLightCore = wcast_light[3];
+
+## CASTER - MODULES
+var xcaster_core = casterCoreGeneral + casterFireCore + casterColdCore + casterLightCore;
+
+var xcaster_firedmg_conf = casterCheatSafe + casterDmg1 + casterFire1 + casterDotBase1;
+var xcaster_firedmg_norm = casterCheatAll + casterDmg3 + casterFire2 + casterDotBase2;
+
+var xcaster_colddmg_conf = casterCheatSafe + casterDmg1 + casterCold1 + casterDotBase1;
+var xcaster_colddmg_norm = casterCheatAll + casterDmg3 + casterCold2 + casterDotBase2;
+
+var xcaster_lightdmg_conf = casterCheatSafe + casterDmg1 + casterLight1;
+var xcaster_lightdmg_norm = casterCheatAll + casterDmg3 + casterLight2;
+
+## SPELLSLINGER - GENERAL
+var slingerBase1 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + casterCheatAll + w_temple_Phys + wcast_spell[2];
+var slingerBase2 = wdmg_fire[4] + wdmg_cold[4] + wdmg_light[4] + casterCheatAll + w_temple_Phys + wcast_spell[3] + wdmg_chaos;
+
+var slingerExtras = ws_cast_speed[1] + ws_manaregen[1] + wmana[1];
+
+var slingerAux1 = ws_attack_speed[2] + ws_critmulti[2] + ws_cast_crit[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
+var slingerAux2 = ws_attack_speed[3] + ws_critmulti[3] + ws_cast_crit[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3];
+
+## SPELLSLINGER - SPECIALIZED KIT
+## SPELLSLINGER - CORE
+
+## SPELLSLINGER - MODULES
+var xslinger_core = slingerBase2;
+
+var xslinger_default_conf = slingerBase1 + slingerAux1;
+var xslinger_default_norm = xslinger_core + slingerAux2 + slingerExtras;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} IDENTIFIED MODS FOR OTHER SECTIONS

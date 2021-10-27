@@ -191,18 +191,26 @@ Section IdModSection : IdMods
 			Show GemModsStaves { Class classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
 		}
 #------------------------------------
-#   [1234] Caster and Spellslinger
+#   [1234] Caster
 #------------------------------------
-		Section Caster : Class == classes_1hcast
+		Section Caster : Class == classes_1hcast, Mod xcaster_core
 		{
-			Show 3HighCaster { Mod >= 3 veilP + convokingMods + convokingLvl + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_cast_speed[1] + ws_critmulti[1] + wmana[1] + wcast_hspell[1] }
-			Show 4HighCaster { Mod >= 4 veilPS + convokingMods + convokingLvl + veilPS + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + wcast_hspell[2] }
-			Show FireCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_fire[3] + wsdmg_fire[3] + "Lava Conjurer's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2] + ws_burn[2] + wdmg_fire[2] + wdot_fire[2] + w_extrachaos_phys[2] + w_extrachaos_fire[2] + wdot_fire[3] + wcast_hspell[1] }
-			Show ColdCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_cold[3] + wsdmg_cold[3] + "Winter Beckoner's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2] + wdmg_cold[2] + w_extrachaos_phys[2] + w_extrachaos_cold[2] + wdot_cold[3] + wcast_hspell[1] }
-			Show LightCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + wcast_light[3] + wsdmg_light[3] + "Tempest Master's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[1] + wmana[3] + ws_dot[2]  + wdmg_light[2] + w_extrachaos_phys[2] + w_extrachaos_light[2] + wcast_hspell[1] }
-			Show ChaosCaster { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[3] + "Mad Lord's" "Tecton's" + wgems_alllevels_global + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[2] + ws_manaregen[2] + wmana[3] + ws_dot[2] + w_extrachaos_phys[2] + wcast_hspell[1] + wdot_chaos[3] }
-			Show 3SpellSlinger { Mod >= 3 veilP + w_temple_Caster + w_cheatmods + wcast_spell[2] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[2] + ws_critmulti[1] + w_extrachaos_phys[1] + wcast_hspell[1] + wcast_fire[2] + wcast_cold[2] + wcast_light[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + wdmg_phys[1] + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + wdmg_pphys[3] + wdmg_chaos }
-			Show 4SpellSlinger { Mod >= 4 veilPS + w_temple_Caster + w_cheatmods + wcast_spell[3] + wgems_alllevels + wgems_alllevels_global + ws_cast_crit[3] + ws_critmulti[3] + w_extrachaos_phys[2] + wcast_hspell[1] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3] + wdmg_phys[2] + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg_pphys[3] + wdmg_chaos + ws_attack_speed_smol[1] }
+			## TODO: Decide on single treatment for these
+			Show CasterFireWeaponT1 { Mod >= 3 xcaster_firedmg_conf; }
+			Show CasterFireWeaponT2 { Mod >= 3 xcaster_firedmg_norm; }
+
+			Show CasterColdWeaponT1 { Mod >= 3 xcaster_colddmg_conf; }
+			Show CasterColdWeaponT2 { Mod >= 3 xcaster_colddmg_norm; }
+
+			Show CasterLightWeaponT1 { Mod >= 3 xcaster_lightdmg_conf; }
+			Show CasterLightWeaponT2 { Mod >= 3 xcaster_lightdmg_norm; }
+		}
+#------------------------------------
+#   [1234] Spellslinger
+#------------------------------------
+		Section Spellslinger : Class == "Wands", Mod xslinger_core
+		{
+			Show SlingerRandom { Mod >= 3 xslinger_default_norm; }
 		}
 #------------------------------------
 #   [1234] Boots
@@ -1346,10 +1354,24 @@ Section MapFragments : Class "Map Fragments"
 }
 
 #===============================================================================================================
+# [[4900]] Currency - Exceptions - Leveling Currencies
+#===============================================================================================================
+#!! Override 610 : "Leveling Currency"
+
+Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
+{
+	Show essences { %D4; !G4;  !*t5alchemy; !Maximize; !LevelCurrency; BaseType currency.leveling.essences; }
+	Show trans 	  { %D4; !G5H; !Currency.t8trans; !Maximize; !LevelCurrency; BaseType == currency.leveling.trans; }
+	Show aug      { %D4; !G5;  !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
+	Show portal   { %D4; !G6H; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
+	Show wisdom   { %D4; !G6H; !Currency.twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
+}
+
+#===============================================================================================================
 # [[4800]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
 #!! Chapter "Currencylike item tierlists 1"
-#!! Override 610 : "Stacked Currency"
+#!! Override 620 : "Stacked Currency"
 
 #------------------------------------
 # [4702] Supplies: High Stacking
@@ -1358,8 +1380,8 @@ Section MapFragments : Class "Map Fragments"
 Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Currency", !currency
 {	
 	# Whetstones, augments and transmutes
-	Show t1	{      !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
-	Show t2	{ %H5; !*t6chrom; !G5;   StackSize >= 6; BaseType == currency.stacked.supplies.higher; }
+	Show t1	{ %H5; !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
+	Show t2	{ %H4; !*t6chrom; !G5;   StackSize >= 6; BaseType == currency.stacked.supplies.higher; }
 	Show t3	{ %H4; !*t7chance; !G6H; StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
 }
 
@@ -1370,9 +1392,9 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Curr
 Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Currency", !currency
 {	
 	# armourers
-	Show t1	{      !G4; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
-	Show t2	{ %H5; !G5; !*t7chance; StackSize >= 6; BaseType == currency.stacked.supplies.lower; }
-	Show t3	{ %H3; !G6H; !*t8trans; StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
+	Show t1	{ %H5; !G4; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
+	Show t2	{ %H4; !G5H; !*t7chance; StackSize >= 6; BaseType == currency.stacked.supplies.lower; }
+	Show t3	{ %H3; !G5; !*t8trans; StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
 }
 
 #------------------------------------
@@ -1451,22 +1473,8 @@ Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Cla
 
 Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 {
-	Show HighStack { !G4; !Coins.Huge; StackSize >= 150; BaseType == "Rogue's Marker"; }
+	Show HighStack { %H5; !G4; !Coins.Huge; StackSize >= 500; BaseType == "Rogue's Marker"; }
 	Show Any { %H4; !G5; !Coins.Large; BaseType == "Rogue's Marker"; }
-}
-
-#===============================================================================================================
-# [[4900]] Currency - Exceptions - Leveling Currencies
-#===============================================================================================================
-#!! Override 620 : "Leveling Currency"
-
-Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
-{
-	Show essences { %D4; !G4;  !*t5alchemy; !Maximize; !LevelCurrency; BaseType currency.leveling.essences; }
-	Show trans 	  { %D4; !G5H; !Currency.t8trans; !Maximize; !LevelCurrency; BaseType == currency.leveling.trans; }
-	Show aug      { %D4; !G5;  !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
-	Show portal   { %D4; !G6H; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
-	Show wisdom   { %D4; !G6H; !Currency.twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
