@@ -203,7 +203,15 @@ Section IdModSection : IdMods
 #------------------------------------
 		Section Spellslinger : Class == "Wands", Mod xslinger_core
 		{
-			Show SlingerRandom { Mod >= 3 xslinger_default_norm; }
+			Show SlingerT2 { Mod >= 3 xslinger_default_norm; }
+		}
+#------------------------------------
+#   [1234] Helmets
+#------------------------------------
+		Section Helmets : Class "Helmets"
+		{
+			Show Helmet_Life_based { Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix2; }
+			Show Helmet_ES_based   { Mod xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; }
 		}
 #------------------------------------
 #   [1234] Boots
@@ -225,16 +233,6 @@ Section IdModSection : IdMods
 			Show 4LifeGloves { Mod >=3 veilPS + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[4] + str[4] + dex[4] + int [4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + gloves_hybridlife + wmana[2] }
 			Show 3ESGloves { DropLevel >= 55; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" }
 			Show 4ESGloves { DropLevel >= 55; Mod >= 4 "Prior's" "Deacon's" "Seraphim's" "Seething" "Pulsing" "Radiating" "Unassailable" "Indomitable" "Dauntless" + veilPS + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + wmana[2] }
-		}
-#------------------------------------
-#   [1234] Helmets
-#------------------------------------
-		Section Helmets : Class "Helmets", Corrupted False
-		{
-			Show 3LifeHelmet { Mod helm_life[2]; Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int [3] + gloves_accu[2] + minionGems + helmLifeHybrid + wmana[2] }
-			Show 4LifeHelmet { Mod helm_life[3]; Mod >=3 res_fire[3] + veilPS + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int [4] + gloves_accu[3] + minionGems + helmLifeHybrid + wmana[3] }
-			Show 3ESHelm { Mod >= 2 helmES; DropLevel >= 55; }
-			Show 4ESHelm { Mod >= 4 "Prior's" "Deacon's" "Seraphim's" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" + veilPS + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] + gloves_accu[2] + helmEsHybrid + minionGems + wmana[2] }
 		}
 #------------------------------------
 #   [1234] Amulets
@@ -519,8 +517,8 @@ Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestroll
 {
 	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor
 	{
-		Show t1 { !G2;  BaseType == bases.perfection.general.t1; }
-		Show t2 { !G3;  BaseType == bases.perfection.general.t2; }
+		Show t1 { !G2;  %D6; BaseType == bases.perfection.general.t1; }
+		Show t2 { !G3;  %D5; BaseType == bases.perfection.general.t2; }
 		Show t3 { !GEX; %D4; BaseType == bases.perfection.general.t3; }
 	}
 }
