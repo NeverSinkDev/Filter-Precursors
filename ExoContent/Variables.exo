@@ -46,26 +46,6 @@ var convokingLvl = "Martinet's"
 ## MISC
 var ws_critmulti = "of Destruction" "of Ferocity" "of Fury" "of Rage";
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##   {META} WEAPON MODS - ATTACK
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-## Speed and Crit
-var ws_attack_speed = "of Celebration" "of Infamy" "of Fame" "of Acclaim";
-var ws_attack_speed_smol = "of Acclaim" "of Renown" "of Mastery";
-var ws_attack_crit = "of Incision" "of Penetrating" "of Puncturing";
-
-## Phys percent, flat and hybrid
-var wdmg_pphys = "Merciless" "Tyrannical" "Cruel" "Bloodthirsty";
-var wdmg_phys = "Flaring" "Tempered" "Razor-sharp" "Annealed";
-var wdmg_hphys = "Dictator's" "Emperor's" "Conqueror's" "Champion's";
-
-## Ele flat
-var wdmg_fire = "Carbonising" "Cremating" "Blasting" "Incinerating";
-var wdmg_cold = "Crystalising" "Entombing" "Polar" "Glaciated";
-var wdmg_light = "Vapourising" "Electrocuting" "Discharging" "Shocking";
-var wdmg_chaos = "Malicious";
-
 ## ARMORS
 var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
 var gloves_fdmg = "Honed" "Crackling" "Burning" "Frigid";
@@ -225,6 +205,56 @@ var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surgi
 var jewels_minion = "Master's" "of Resilience" "Leadership";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} WEAPON MODS - ATTACK
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Speed and Crit
+var ws_attack_speed = "of Celebration" "of Infamy" "of Fame" "of Acclaim";
+var ws_attack_speed_smol = "of Acclaim" "of Renown" "of Mastery";
+var ws_attack_crit = "of Incision" "of Penetrating" "of Puncturing";
+var ws_wed = "Devastating" "Overpowering";
+var ws_dot = "of Dissolution" "of Melting";
+
+## Phys percent, flat and hybrid
+var wdmg_pphys = "Merciless" "Tyrannical" "Cruel" "Bloodthirsty";
+var wdmg_phys = "Flaring" "Tempered" "Razor-sharp" "Annealed";
+var wdmg_hphys = "Dictator's" "Emperor's" "Conqueror's" "Champion's";
+
+## Ele flat
+var wdmg_fire = "Carbonising" "Cremating" "Blasting" "Incinerating";
+var wdmg_cold = "Crystalising" "Entombing" "Polar" "Glaciated";
+var wdmg_light = "Vapourising" "Electrocuting" "Discharging" "Shocking";
+var wdmg_chaos = "Malicious";
+
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## WEAPON ABSTRACTIONS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var attphys_CheatMods = veilP + w_cheatmods + w_temple_Phys;
+var attele_CheatMods = veilP + w_cheatmods + w_temple_Caster;
+
+var attphys1 = wdmg_pphys[2] + wdmg_phys[1] + wdmg_hphys[2] + ws_attack_speed[1] + ws_attack_crit[1] + ws_dot[1];
+var attphys2 = wdmg_pphys[3] + wdmg_phys[2] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[2] + ws_dot[2];
+
+var attele_base1 = wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + w_temple_Caster;
+var attele_base2 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + w_temple_Caster;
+
+var attele_aux1 = ws_attack_speed[2] + ws_attack_crit[2] + ws_critmulti[2] + ws_wed[1];
+var attele_aux2 = ws_attack_speed[3] + ws_attack_crit[3] + ws_critmulti[3] + ws_wed[2];
+ 
+## usable elements
+var xattackphys_Core = wdmg_pphys[3] + attphys_CheatMods;
+
+var xattackphys_Conf = attphys1 + attphys_CheatMods;
+var xattackphys_Norm = attphys2 + attphys_CheatMods;
+
+var xattackele_Core = attele_base2 + attele_CheatMods;
+
+var xattackele_Conf = attele_base1 + attele_aux1 + attele_CheatMods;
+var xattackele_Norm = attele_base2 + attele_aux2 + attele_CheatMods;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} CASTER MODS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -256,11 +286,15 @@ var wsdmg_cold = "Entombing" "Polar" "Glaciated" "Frozen";
 var wsdmg_light = "Cremating" "Blasting" "Incinerating" "Scorching";
 
 ## DOT SECTION
-var ws_dot = "of Liquefaction" "of Dispersion" "of Acrimony";
-var ws_burn = "of Conflagrating" "of Combusting" "of Burning";
-var wdot_fire = "Fanatical" "Zealous" "Ardent";
-var wdot_cold = "Heartstopping" "Gelid" "Boreal";
-var wdot_chaos = "Disintegrating" "Atrophying" "Deteriorating";
+var ws_dot = "of Dissolution" "of Melting" "of Liquefaction";
+
+var ws_burn = "of Conflagrating" "of Combusting";
+
+var wdot_fire = "of the Fanatical" "of the Zealous" "of the Ardent";
+var wdot_cold = "of the Heartstopping" "of the Gelid" "of the Boreal";
+
+var wdot_chaos = "of Disintegrating" "of Atrophying" "of Deteriorating";
+var wdot_phys = "of Exsanguinating" "of Hemorrhaging" "of Phlebotomising";
 
 ## EXOTIC CASTER MODS
 var w_extrachaos_phys = "Baleful" "Inimical";
@@ -296,6 +330,12 @@ var casterCold2 = w_extrachaos_cold    + wcast_cold[3] + ws_cold + "Frost Singer
 var casterLight1 = w_extrachaos_light[1] + wcast_light[2] + ws_light + "Thunderhand's";
 var casterLight2 = w_extrachaos_light    + wcast_light[3] + ws_light + "Thunderhand's";
 
+var casterPhys1 = wdot_phys[2] + "Lithomancer's";
+var casterPhys2 = wdot_phys[3] + "Lithomancer's";
+
+var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
+var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
+
 ## CASTER - CORE
 var casterCoreGeneral = casterCheatAll + wcast_spell[3];
 var casterFireCore = wcast_fire[3];
@@ -313,6 +353,12 @@ var xcaster_colddmg_norm = casterCheatAll + casterDmg3 + casterCold2 + casterDot
 
 var xcaster_lightdmg_conf = casterCheatSafe + casterDmg1 + casterLight1;
 var xcaster_lightdmg_norm = casterCheatAll + casterDmg3 + casterLight2;
+
+var xcaster_physdmg_conf = casterCheatSafe + casterDmg1 + casterPhys1;
+var xcaster_physdmg_norm = casterCheatAll + casterDmg3 + casterPhys2;
+
+var xcaster_chaosdmg_conf = casterCheatSafe + casterDmg1 + casterChaos1;
+var xcaster_chaosdmg_norm = casterCheatAll + casterDmg3 + casterChaos2;
 
 ## SPELLSLINGER - GENERAL
 var slingerBase1 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + casterCheatAll + w_temple_Phys + wcast_spell[2];

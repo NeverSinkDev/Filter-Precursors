@@ -166,27 +166,23 @@ Section IdModSection : IdMods
 #------------------------------------
 	Section Rare : Rarity "Rare", Auto("RareID"), !GSH
 	{
-		Section Weapons : Class classes_attack, DropLevel >= 55
+		Section Weapons : Class classes_attack, DropLevel >= 55, Mod xattackphys_Core
 		{
-			Show VeiledPhys { Mod >= 1 wdmg_phys[1] + wdmg_pphys[1] + veilP; }
-			Show 2HighPhys  { Mod >=2 w_cheatmods + w_temple_Phys + wdmg_phys[2] + wdmg_pphys[2] + wdmg_hphys[2] + ws_attack_speed[1] }
-			Show 3HighPhys  { Mod >=3 veilP + w_cheatmods + w_temple_Phys + wdmg_phys[3] + wdmg_pphys[3] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[1] + ws_critmulti[1] }
-			Show 4HighPhys  { Mod >=4 veilP + w_cheatmods + w_temple_Phys + wdmg_phys[4] + wdmg_pphys[4] + wdmg_hphys[4] + ws_attack_speed[3] + ws_attack_crit[2] + ws_critmulti[2] }
+			Show AttackPhys_T2 { Mod >= 2 xattackphys_Conf; }
 		}
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-		Section FastEleWeapons : BaseType == quickWeapons, Corrupted False
+		Section FastEleWeapons : BaseType == quickWeapons, Corrupted False, Mod xattackele_Core
 		{
-			Show 3HighEle { Mod >=3 veilP + w_cheatmods + w_temple_Caster + wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + ws_attack_speed[1] + ws_attack_crit[2] + ws_critmulti[1] }
-			Show 4HighEle { Mod >=4 veilP + w_cheatmods + w_temple_Caster + wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + ws_attack_speed[2] + ws_attack_crit[3] + ws_critmulti[2] }
+			Show AttackEle_T2 { Mod >= 3 xattackele_Norm; }
 		}
 #------------------------------------
 #   [1234] Gembased
 #------------------------------------
 		Section GemLevels
 		{
-			Show GemModsBow { Class "Bows"; Mod >=2 wgems_locallevelbow }
+			Show GemModsBow { Class "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
 			Show GemModsCaster { Class classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
 			Show GemModsStaves { Class classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
 		}
@@ -196,14 +192,11 @@ Section IdModSection : IdMods
 		Section Caster : Class == classes_1hcast, Mod xcaster_core
 		{
 			## TODO: Decide on single treatment for these
-			Show CasterFireWeaponT1 { Mod >= 3 xcaster_firedmg_conf; }
 			Show CasterFireWeaponT2 { Mod >= 3 xcaster_firedmg_norm; }
-
-			Show CasterColdWeaponT1 { Mod >= 3 xcaster_colddmg_conf; }
 			Show CasterColdWeaponT2 { Mod >= 3 xcaster_colddmg_norm; }
-
-			Show CasterLightWeaponT1 { Mod >= 3 xcaster_lightdmg_conf; }
 			Show CasterLightWeaponT2 { Mod >= 3 xcaster_lightdmg_norm; }
+			Show CasterPhysWeaponT2 { Mod >= 3 xcaster_physdmg_norm; }
+			Show CasterChaosWeaponT2 { Mod >= 3 xcaster_chaosdmg_norm; }
 		}
 #------------------------------------
 #   [1234] Spellslinger
