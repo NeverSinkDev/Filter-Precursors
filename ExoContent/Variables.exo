@@ -65,7 +65,6 @@ var res_omni = "of the Span" "of the Rainbow" "of Variegation" "of the Kaleidosc
 
 var accuracy = "of Lioneye" "of the Ranger" "of the Marksman";
 
-var movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 
 ## ARMORS
 var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
@@ -85,6 +84,7 @@ var es_fasterstart = "of Second Wind" "of Vigour" "of Galvanising";
 var es_recharge = "of Ardour" "of Buffering" "of Dispersal";
 var lifeonblock = "of Revitalization" "of Rebounding";
 var critdmgreduction = "of Obstruction" "of Interference" "of Deadening";
+var regen_rate = "of Everlasting" "of Youth" "of Vivification" "of Perpetuity";
 
 ## HELMETS SPECIAL
 var minionGems = "Necromancer's" "Summoner's";
@@ -250,23 +250,45 @@ var smallitem_es_defense2 = helmet_fes[3] + helmet_pes[2] + helmet_hybrid_es + h
 var helmet_cheatMod = "of Puhuarte" + veilPS;
 
 var helmet_life = "Fecund" "Athlete's" "Virile";
-var helmet_regen_rate = "of Everlasting" "of Youth" "of Vivification" "of Perpetuity";
 var helmet_regen = "of Recuperation";
 
 ## combinations
 
-var helmet_aux1 = aux_stats1 + minionGems[1] + suppress[2] + es_recharge[2] + accuracy[2] + helmet_regen_rate[2];
-var helmet_aux2 = aux_stats2 + minionGems[2] + suppress[3] + es_recharge[3] + accuracy[3] + helmet_regen_rate[3] + helmet_regen;
+var helmet_aux1 = aux_stats1 + minionGems[1] + suppress[2] + es_recharge[2] + accuracy[2] + regen_rate[2];
+var helmet_aux2 = aux_stats2 + minionGems[2] + suppress[3] + es_recharge[3] + accuracy[3] + regen_rate[3] + helmet_regen;
 
 ## usable elements
 var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + helmet_life[1] + minionGems[1];
-var xhelmet_life_core = helmet_life[3] + minionGems[1] + helmet_regen_rate[2];
+var xhelmet_life_core = helmet_life[3] + minionGems[1] + regen_rate[2];
 
 var xhelmet_life_mix1 = helmet_cheatMod + helmet_aux1 + combined_smitem_defenses1 + helmet_life[2];
 var xhelmet_life_mix2 = helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3];
 
 var xhelmet_es_mix1 = helmet_cheatMod + helmet_aux1 + smallitem_es_defense1 + helmet_life[1];
 var xhelmet_es_mix2 = helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + helmet_life[2];
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} BOOTS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var boots_temple = "Matatl's";
+
+var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
+var boots_life = "Athlete's" "Virile" "Rotund";
+
+
+var boots_aux1 = aux_stats1 + suppress[2] + es_recharge[2] + regen_rate[2];
+var boots_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3];
+
+## usable elements
+var xboots_life_core = boots_life[1] + boots_movespeed[2];
+var xboots_es_core = boots_movespeed[2];
+
+var xboots_life_mix1 = boots_aux1 + combined_smitem_defenses1 + boots_life[2] + boots_movespeed[2] + boots_temple + veilPS;
+var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + boots_movespeed[2] + boots_temple + veilPS;
+
+var xboots_es_mix1 = boots_aux1 + smallitem_es_defense1 + boots_life[1] + boots_movespeed[2] + boots_temple + veilPS;
+var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_life[2] + boots_movespeed[2] + boots_temple + veilPS;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK

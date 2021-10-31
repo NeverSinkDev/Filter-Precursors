@@ -216,14 +216,12 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Boots
 #------------------------------------
-		Section Boots : Class "Boots", Corrupted False
+		Section Boots : Class "Boots"
 		{
-			Show 3LifeBoots { Mod movespeed[2] + veilP; Mod >=2 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + wmana[1] }
-			Show 4LifeBoots { Mod movespeed[3]; Mod >=3 veilP + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[3] + str[4] + dex[4] + int [4] + wmana[2] }
-			Show 3ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + str[3] + dex[3] + int [3] }
-			Show 4ESBoots {  DropLevel >= 55; Mod movespeed[3] + veilP; Mod >= 3 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] }
-			Show HighStatBoots { Mod >= 3 veilPS + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[1] + str[2] + dex[2] + int[2] }
+			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; }
+			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; }
 		}
+
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
@@ -557,7 +555,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
 		Show t1 { !G4; %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
-		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
+		Show t2 { !GEX; %D1; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
 		ShowD t3 { !GEX; !craftgeneral.I84; BaseType == bases.crafting.general.t3; }
 	}
 
@@ -1455,7 +1453,7 @@ Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Cla
 {
 	Show t1	{ !G3; !*t3annul; StackSize >= 40; BaseType currency.stacked.splinters2; }
 	Show t2	{ !G3; !*t4chaos;   StackSize >= 7; BaseType currency.stacked.splinters2; }
-	Show t3	{ %H4; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
+	Show t3	{ %H5; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
 }
 
 #------------------------------------
@@ -1640,9 +1638,9 @@ Section CurrencyProphecy : Auto("currency->prophecy"), Class "Currency", BaseTyp
 
 Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency", !Splinters
 {
-	Show t1 { %H5; !G4; !*t1; BaseType == currency.splinters.t1; }
-	Show t2 { %HS4; !G5; !*t2; BaseType == currency.splinters.t2; }
-	Show t3 { %HS3; !G5; !*t3; BaseType == currency.splinters.t3; }
+	Show t1 { %H6; !G4; !*t1; BaseType == currency.splinters.t1; }
+	Show t2 { %H5; !G5; !*t2; BaseType == currency.splinters.t2; }
+	Show t3 { %H4; !G5; !*t3; BaseType == currency.splinters.t3; }
 }
 
 #------------------------------------
