@@ -109,8 +109,8 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor, BaseDefencePercentile >= 99, HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 	{
 		Show t11 { !G2; !PerfectInfluenced; BaseType == bases.perfection.general.t1; }
-		Show t22 { !G3; !PerfectInfluenced; BaseType == bases.perfection.general.t2; }
-		Show t23 { !G3; !PerfectInfluenced; BaseType == bases.perfection.general.t3; }
+		Show t22 { !G3; %D6; !PerfectInfluenced; BaseType == bases.perfection.general.t2; }
+		Show t23 { !G3; %D5; !PerfectInfluenced; BaseType == bases.perfection.general.t3; }
 	}
 
 #------------------------------------
@@ -121,7 +121,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 	{
 		Show AnyTrinket  { %D4; !GI; Class "Amulet" "Belts" "Rings"; }
 		Show AnyTopLevel { %D5; !GI; !tiny; ItemLevel >= 86; }
-		Show Any 		 { %D4; !GI; Empty(); }
+		Show Any 		 { %D3; !GI; Empty(); }
 	}
 }
 
@@ -156,7 +156,7 @@ Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
 #   [1234] ID Mod exceptions - override id mod matching section
 #------------------------------------
 	Show t1veil     { %HS5; !GSH; !exotic.t1; Mod t1veiled; }
-	Show t2veil     { %HS5; !GSH; !exotic.t2; Mod t2veiled; }
+	Show t2veil     { %HS4; !GSH; !exotic.t2; Mod t2veiled; }
 }
 
 Section IdModSection : IdMods
@@ -337,23 +337,23 @@ Section IdModSectionSpecial : IdMods, !exotic
 #   [1234] Veiled/Betrayal - low prio veiled items
 #------------------------------------
 #!! Override 050 : "veil, incursion, delve etc. mod items"
-		Show DuoVeil    { %D5; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
-		Show SmallVeil1 { %D5; !GS; !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
-		Show SmallVeil2 { %D5; !GS; !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
-		Show VeilRest   { %D4; !GS; !exotic.t4; Mod "Veil"; }
+		Show DuoVeil    { %D4; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
+		Show SmallVeil1 { %D4; !GS; !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
+		Show SmallVeil2 { %D4; !GS; !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
+		Show VeilRest   { %D3; !GS; !exotic.t4; Mod "Veil"; }
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
-		Show IncursionSpeedTraps { !GSH; !exotic.t2; Mod "Matatl's"; Class "Boots"; }
-		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
-		Show IncursionSumonner   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionSpeedTraps { !GSH; %D5; !exotic.t2; Mod "Matatl's"; Class "Boots"; }
 		Show IncursionCaster     { !GSH; %D5; !exotic.t2; Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptres" "Staves" "Wands" "Sceptres"; }
 		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
-		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
-		Show IncursionGloveHelm  { !GSH; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
 		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
-		Show IncursionMagic		 { !GS; %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
-		Show IncursionRandom     { !GS; %D3; !exotic.t3; Mod exotic_incursion; }
+		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
+		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
+		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
+		Show IncursionSumonner   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
+		Show IncursionRandom     { !GS;  %D3; !exotic.t3; Mod exotic_incursion; }
 
 #------------------------------------
 #   [1234] Bestiary
@@ -364,10 +364,10 @@ Section IdModSectionSpecial : IdMods, !exotic
 #   [1234] Other
 #------------------------------------
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; };
-		Show Delve    { !GSH; !exotic.t2; Mod exotic_delve };
-		Show Warband  { !GS; %D4; !exotic.t3; Mod exotic_warband };
-		Show Essence  { !GSH; !exotic.t2; Mod "of the Essence" };
-		Show Crafting { !GS; %D2 !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
+		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve };
+		Show Warband  { !GS;  %D4; !exotic.t3; Mod exotic_warband };
+		Show Essence  { !GSH; %D6; !exotic.t2; Mod "of the Essence" };
+		Show Crafting { !GS;  %D2; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
 
@@ -414,7 +414,7 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 {
 	Show T1 { !G1; BaseType == exotic.invitations.t1 }
 	Show T2 { !G2; BaseType == exotic.invitations.t2 }
-	Show T3 { !G3; BaseType == exotic.invitations.t3 }
+	Show T3 { !G3; %D6; BaseType == exotic.invitations.t3 }
 }
 
 
@@ -433,7 +433,7 @@ Section ExoticVariations : !exotic
 		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
 			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t1; Class "Amulet" "Belt" "Jewel" "Ring"; }
-			Show DoubleCorruptedAny   { !GS; %D5; !exotic.t2; Empty(); }
+			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t2; Empty(); }
 		}
 	}
 #------------------------------------
@@ -451,9 +451,9 @@ Section ExoticVariations : !exotic
 #------------------------------------
 		Section Scourged : Scourged True, Auto("exotic->scourged")
 		{
-			Show ScourgedSelected    { !GSH; %D4; !exotic.t3; BaseType bases.crafting.scourged.t1; }
-			Show ScourgedClasses     { !GSH; %D4; !exotic.t3; Class classes_scourged; }
-			Show ScourgedRandom      { !GSH; %D3; !exotic.t4; Scourged True; }
+			Show ScourgedSelected    { !GSH; %D3; !exotic.t3; BaseType bases.crafting.scourged.t1; }
+			Show ScourgedClasses     { !GSH; %D3; !exotic.t3; Class classes_scourged; }
+			Show ScourgedRandom      { !GSH; %D2; !exotic.t4; Scourged True; }
 		}
 #------------------------------------
 #   [1234] Synthesised
@@ -462,7 +462,7 @@ Section ExoticVariations : !exotic
 		{
 			Show SynthSelected { !GSH; %D6; !exotic.t1; BaseType bases.crafting.synthesised.t1 }
 			Show SynthClasses  { !GSH; %D6; !exotic.t1; Class classes_synth }
-			Show SynthRandom   { !GS; %D5; !exotic.t2; Empty(); }
+			Show SynthRandom   { !GS;  %D5; !exotic.t2; Empty(); }
 		}
 #------------------------------------
 #   [1234] Fractured
@@ -470,16 +470,16 @@ Section ExoticVariations : !exotic
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
 			Show FractSelected { !GSH; %D5; !exotic.t2; BaseType bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS; %D5; !exotic.t2; Class classes_fract }
-			Show FractRandom   { !GS; %D4; !exotic.t3; Empty(); }
+			Show FractClasses  { !GS;  %D4; !exotic.t2; Class classes_fract }
+			Show FractRandom   { !GS;  %D3; !exotic.t3; Empty(); }
 		}
 #------------------------------------
 #   [1234] Enchanted
 #------------------------------------
 		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
-			Show Exotic      { !GSH; !exotic.t1; Class classes_exoticEnch }
-			Show Helmets     { !GSH; !exotic.t2; Class "Helmets" }
+			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
+			Show Helmets     { !GSH; %D6; !exotic.t2; Class "Helmets" }
 			Show GlovesBoots { !GS; %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
 	}
@@ -515,9 +515,9 @@ Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestroll
 {
 	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor
 	{
-		Show t1 { !G2;  %D6; BaseType == bases.perfection.general.t1; }
-		Show t2 { !G3;  %D5; BaseType == bases.perfection.general.t2; }
-		Show t3 { !GEX; %D4; BaseType == bases.perfection.general.t3; }
+		Show t1 { !G2;  %D5; BaseType == bases.perfection.general.t1; }
+		Show t2 { !G3;  %D4; BaseType == bases.perfection.general.t2; }
+		Show t3 { !GEX; %D2; BaseType == bases.perfection.general.t3; }
 	}
 }
 
@@ -543,7 +543,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
-		Show t1 { !G3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
+		Show t1 { !G3;  %D6; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
 		Show t3 { !GEX; %D3; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
 	}
@@ -554,7 +554,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
-		Show t1 { !G4; %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
+		Show t1 { !G4;  %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
 		ShowD t3 { !GEX; !craftgeneral.I84; BaseType == bases.crafting.general.t3; }
 	}
@@ -583,7 +583,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
-	Show any { !GEX; %D2; BaseType bases.crafting.early; }
+	Show any { !GEX; %D1; BaseType bases.crafting.early; }
 }
 
 #------------------------------------
@@ -595,8 +595,8 @@ Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 67, Auto("En
 {
 	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width <=2; Height <=2; }
 	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width <=1; Height <=4; }
-	Show RGBLarge	{ !G6; %H0; !*t3; !SF40; Width >=2; Height >=4; }
-	Show RGBMedium	{ !G6; %H1; !*t3; !SF40; Width >=2; Height = 3; }
+	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width >=2; Height >=4; }
+	Show RGBMedium	{ !G6;  %H1; !*t3; !SF40; Width >=2; Height = 3; }
 }
 #------------------------------------
 # [1234] Chisel Recipes
@@ -618,7 +618,7 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 Section Chancing : Clean(), Rarity Normal, Auto("chancing"), Mirrored False, !chancing, !GEX
 {
 	Show hh { %D2; BaseType == bases.chancing.higher; }
-	Show t2 { %D2; BaseType == bases.chancing.any; }
+	Show t2 { %D1; BaseType == bases.chancing.any; }
 }
 
 
@@ -646,8 +646,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	{
 		Show Utility85  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
 		Show Utility84  { !G5; !utilflasks.LT2; %D3; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
-		Show Utility82  { !G5; !utilflasks.LT3; %D1; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
-		Show LifeMana82 { !G6; !Low; %D1; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
+		Show Utility82  { !G5; !utilflasks.LT3; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
+		Show LifeMana82 { !G6; !Low; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
 	}
 
 #------------------------------------
@@ -670,7 +670,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 	Section UtilityEndgameFlasks
 	{
-		Show AsortedUtility { %D2; !G6H; !*lt2; BaseType bases.flask.utilityassorted; AreaLevel <= 77; }
+		Show AsortedUtility { %D2; !G6H; !*lt2; BaseType bases.flask.utilityassorted; AreaLevel <= 75; }
 		Show AnyUtility 	{ %D2; !G6; !*lt3; Class "Utility Flasks"; AreaLevel <= 72; }
 	}
 
@@ -696,7 +696,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity < Rare, !GEX
 {
-	Show Overquality { %D2; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
+	Show Overquality { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
@@ -749,7 +749,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
 	{
 		Show High { %H4; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any { %H3; !G5; !exotic.t3; Empty(); }
+		Show Any { %H2; !G5; !exotic.t3; Empty(); }
 	}
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
@@ -879,7 +879,7 @@ Section Jewels : !jewels
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
 		{
-			Show 1modcorrupted { !Special; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+			Show 1modcorrupted { !Special; %H5; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
 		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
@@ -1073,6 +1073,7 @@ Section Gems : Class "Gems", !Gems
 		Show 2020z 	{ !G2; !*T1; Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
 		Show 2120 	{ !G2; !*T1; Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120 }
 		Show 2123 	{ !G2; !*T1; Quality >= 23; GemLevel >= 21; BaseType gems.t1_2123 }
+		Show SpecialWorldDrops { !G1; !*T1; BaseType gems.t1_normal; }
 	}
 
 #------------------------------------
@@ -1085,6 +1086,7 @@ Section Gems : Class "Gems", !Gems
 		Show ex6lvlgems { !G2; !*P1; BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
 
 		Show exSpecialE4 { !G1; !*T1; BaseType gems.untiered.empowerclassgems; GemLevel >= 4; }
+
 		Show exSpecialE2 { !G1; !*P1; BaseType gems.untiered.empowerclassgems; GemLevel >= 2; }
 		Show exSpecialEQ { !G2; !*P1; BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
 		Show exSpecial { !G3; !*P2; BaseType gems.untiered.specialGems; }
