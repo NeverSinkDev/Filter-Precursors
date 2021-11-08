@@ -227,10 +227,8 @@ Section IdModSection : IdMods
 #------------------------------------
 		Section Gloves : Class "Gloves", Corrupted False
 		{
-			Show 3LifeGloves { Mod >=3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + lifeShort[2] + str[3] + dex[3] + int [3] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_hybridlife }
-			Show 4LifeGloves { Mod >=3 veilPS + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + lifeShort[4] + str[4] + dex[4] + int [4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + gloves_hybridlife + wmana[2] }
-			Show 3ESGloves { DropLevel >= 55; Mod >= 2 "Seething" "Pulsing" "Unassailable" "Indomitable" "Dauntless" }
-			Show 4ESGloves { DropLevel >= 55; Mod >= 4 "Prior's" "Deacon's" "Seraphim's" "Seething" "Pulsing" "Radiating" "Unassailable" "Indomitable" "Dauntless" + veilPS + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4] + gloves_ias[2] + gloves_accu[2] + gloves_leech + gloves_fdmg + wmana[2] }
+			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; }
+			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; }
 		}
 #------------------------------------
 #   [1234] Amulets
@@ -447,15 +445,6 @@ Section ExoticVariations : !exotic
 		}
 
 #------------------------------------
-#   [1234] Scourged
-#------------------------------------
-		Section Scourged : Scourged True, Auto("exotic->scourged")
-		{
-			Show ScourgedSelected    { !GSH; %D3; !exotic.t3; BaseType bases.crafting.scourged.t1; }
-			Show ScourgedClasses     { !GSH; %D3; !exotic.t3; Class classes_scourged; }
-			Show ScourgedRandom      { !GSH; %D2; !exotic.t4; Scourged True; }
-		}
-#------------------------------------
 #   [1234] Synthesised
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
@@ -500,6 +489,21 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 67; }
 	Show 6Sockets		{ %D4; !G5H; !*t1; Sockets >= 6; }
+}
+
+#===============================================================================================================
+# [[0200]] Low Priority Exotics
+#===============================================================================================================
+#!! Override 120 : "5links and 6sockets"
+
+Section ExoticVariationsLowPrio : !exotic
+{	
+	Section Scourged : Scourged True, Auto("exotic->scourged"), Rarity <= Rare
+	{
+		Show ScourgedSelected    { !GSH; %D3; !exotic.t3; BaseType bases.crafting.scourged.t1; }
+		Show ScourgedClasses     { !GSH; %D3; !exotic.t3; Class classes_scourged; }
+		Show ScourgedRandom      { !GSH; %H2; !exotic.t4; Scourged True; Class classes_equip; }
+	}
 }
 
 #===============================================================================================================
@@ -688,7 +692,6 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	}
 }
 
-
 #===============================================================================================================
 # [[0200]] Misc Rules
 #===============================================================================================================
@@ -802,8 +805,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #!! Override 240 : "T1 rares - handpicked"	
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1weapons { !GR1; %D4; BaseType bases.rares.eg.t1.weapons }
-		Show T1armours { !GR1; %D4; BaseType bases.rares.eg.t1.armours }
+		Show T1weapons { !GR1; %D3; BaseType bases.rares.eg.t1.weapons }
+		Show T1armours { !GR1; %D3; BaseType bases.rares.eg.t1.armours }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T2 - handpicked
@@ -1105,14 +1108,14 @@ Section Gems : Class "Gems", !Gems
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
 		Show QT2 { !G3; %D5; !*P2; Quality >= 19 }
-		Show LT2 { !G4; %D4; !*P2; GemLevel >= 19 }
+		Show LT2 { !G4; %D4; !*P3; GemLevel >= 20 }
 
 		Show QT3 { !G4; %D3; !*P3; Quality >= 14 }
-		Show LT3 { !G5; %D3; !*P3; GemLevel >= 18 }
+		Show LT3 { !G5; %D2; !*P4; GemLevel >= 18 }
 
 		Show QT4Lvl { %D4; !G5; !*P3; Quality >= 1; AreaLevel <= 67 }	
 		Show QT4 { %D2; !G5; !*P4; Quality >= 1; }	
-		Show LT4 { %D2; !G6; !*P4; GemLevel >= 2; }
+		Show LT4 { %D0; !G6; !*P4; GemLevel >= 2; }
 
 		Show  FirstZone    { !GS; !*FirstLevel; AreaLevel 1; }
 		Show  LevelingVaal { %H4; !G4; !*VaalLvl; AreaLevel <= 67; BaseType "Vaal"; }
@@ -1327,7 +1330,7 @@ Section MapFragments : Class "Map Fragments"
 		Show t1 { !G1; BaseType fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType fragments.scarabs.t2; }
 		Show t3 { !G3; BaseType fragments.scarabs.t3; }
-		Show t4 { !G4; %H4; BaseType fragments.scarabs.t4; }
+		Show t4 { !G4; %H5; BaseType fragments.scarabs.t4; }
 		Show restex { BaseType "Scarab"; }
 	}
 
@@ -1373,7 +1376,7 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Curr
 	# Whetstones, augments and transmutes
 	Show t1	{ %H5; !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
 	Show t2	{ %H4; !*t6chrom; !G5;   StackSize >= 6; BaseType == currency.stacked.supplies.higher; }
-	Show t3	{ %H4; !*t7chance; !G6H; StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
+	Show t3	{ %H3; !*t7chance; !G6H; StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
 }
 
 #------------------------------------
@@ -1537,8 +1540,8 @@ Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency", !Curre
 {
 	Show t1 { !G1; !*t1exalted; BaseType == currency.fossil.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.fossil.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.fossil.t3; }
-	Show t4 { !G5H; %H4; !*t6chrom; BaseType == currency.fossil.t4; }
+	Show t3 { !G4; %HS5; !*t4chaos; BaseType == currency.fossil.t3; }
+	Show t4 { !G5H; %HS4; !*t6chrom; BaseType == currency.fossil.t4; }
 	Show restex { BaseType "Fossil"; }
 }
 
@@ -1551,8 +1554,8 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", !Currency
 {
 	Show t1 { !G1; !*t1exalted; BaseType == currency.oil.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.oil.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.oil.t3; }
-	Show t4 { !G5; %H3; !*t6chrom; BaseType == currency.oil.t4; }
+	Show t3 { !G4; %HS5; !*t4chaos; BaseType == currency.oil.t3; }
+	Show t4 { !G5; %HS4; !*t6chrom; BaseType == currency.oil.t4; }
 	Show restex { BaseType "Oil"; }
 }
 
@@ -1596,7 +1599,7 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 	Show t1 { !G1; !*t1exalted; BaseType == currency.incubators.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.incubators.t2; }
 	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t3; }
-	Show t4 { !G4; %H4; !*t6chrom; BaseType == currency.incubators.t4; }
+	Show t4 { !G4; %H3; !*t6chrom; BaseType == currency.incubators.t4; }
 	Show restex { Empty(); }
 }
 
@@ -1672,7 +1675,7 @@ Section DivinationCards : Auto("divination"), Class "Divination", !divi
 	Show t4c 	{ %H5; !G4; !*t4;	BaseType == divination.t4c; }
 	Show t5c 	{ %H3; !G5; !*t5;	BaseType == divination.t5c; }
 	Show t4 	{ %H4; !G5H; !*t4;	BaseType == divination.t4; }
-	Show t5 	{ %H2; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
+	Show t5 	{ %H1; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
 	Show restex { Empty(); }
 }
 
@@ -1714,6 +1717,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5701] Exceptions #1
 #------------------------------------
+	Show theSquire{ !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
@@ -1739,6 +1743,9 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # While others are cheap. We give them a high quality display, while making a normal unique
 # Sound to prevent false excitement.
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
+	
+# We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour	
+	Show scourged { %D5; !GSH; !*t3; !SpecialNoB; Scourged True; }
 
 #!! Override 770 : "Only low tier uniques"
 

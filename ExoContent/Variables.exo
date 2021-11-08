@@ -276,7 +276,6 @@ var boots_temple = "Matatl's";
 var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 var boots_life = "Athlete's" "Virile" "Rotund";
 
-
 var boots_aux1 = aux_stats1 + suppress[2] + es_recharge[2] + regen_rate[2];
 var boots_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3];
 
@@ -289,6 +288,35 @@ var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + 
 
 var xboots_es_mix1 = boots_aux1 + smallitem_es_defense1 + boots_life[1] + boots_movespeed[2] + boots_temple + veilPS;
 var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_life[2] + boots_movespeed[2] + boots_temple + veilPS;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} GLOVES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var gloves_life = "Athlete's" "Virile" "Rotund";
+
+## gloves specific special mods
+var gloves_temple = "of Puhuarte";
+var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
+var gloves_accu = "of Lioneye" "of the Ranger";
+var gloves_mana = "Zaffre" "Blue";
+
+var glovesMisc1 = gloves_ias[1] + gloves_accu[1] + gloves_mana[1];
+var glovesMisc2 = gloves_ias[2] + gloves_accu[2] + gloves_mana[1];
+
+## combinations for aux
+var gloves_aux1 = aux_stats1 + suppress[2] + es_recharge[2] + regen_rate[2] + glovesMisc1; 
+var gloves_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3] + glovesMisc2;
+
+## usable elements
+var xgloves_es_core = smallitem_es_defense1 + gloves_life[1] + gloves_temple;
+var xgloves_life_core = gloves_life[2] + gloves_temple;
+
+var xgloves_life_mix1 = gloves_aux1 + combined_smitem_defenses1 + gloves_life[2] + gloves_temple;
+var xgloves_life_mix2 = gloves_aux2 + combined_smitem_defenses2 + gloves_life[3] + gloves_temple;
+
+var xgloves_es_mix1 = gloves_aux1 + smallitem_es_defense1 + gloves_life[1] + gloves_temple + veilPS;
+var xgloves_es_mix2 = gloves_aux2 + smallitem_es_defense2 + gloves_life[2] + gloves_temple + veilPS;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK
