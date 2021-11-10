@@ -50,6 +50,8 @@ var ws_critmulti = "of Destruction" "of Ferocity" "of Fury" "of Rage";
 ##   {META} GENERAL MODS - GLOBAL
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+var a_cheatMods = "of the Underground" "Subterranean";
+
 ## BASIC STATS
 var life = "Prime" "Rapturous" "Vigorous" "Fecund" "Athlete's" "Virile" "Rotund" "Robust";
 
@@ -204,8 +206,8 @@ var aux_stats2 = str[4] + dex[4] + int[4] + res_chaos[4] + res_fire[4] + res_col
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## includes both hybrid types life/es + mana/es
-var helmet_pes = "Blazing" "Seething" "Pulsing";
-var helmet_fes = "Unassailable" "Indomitable" "Dauntless";
+var helmet_fes = "Blazing" "Seething" "Pulsing";
+var helmet_pes = "Unassailable" "Indomitable" "Dauntless";
 var helmet_hybrid_es = "Priest's" "Abbot's";
 var helmet_hybrid_esstun = "Seraphim's" "Djinn's" "Naga's";
 
@@ -225,6 +227,26 @@ var helmet_pares = "Inspired" "Interpolated" "Inculcated";
 var helmet_feves = "Spirit's" "Cherub's" "Sylph's";
 var helmet_peves = "Illusory" "Unreal" "Evanescent";
 
+## SHIELD - defenses
+
+var shields_fes = "Incandescent" "Scintillating" + helmet_fes;
+var shields_pes = "Unfaltering" + helmet_pes;
+
+var shields_far = "Unmoving" "Abating" + helmet_far;
+var shields_par = "Impenetrable" + helmet_par;
+
+var shields_fev = "Lissome" "Adroit" + helmet_fev;
+var shields_pev = "Illusion's" + helmet_pev;
+
+var shields_farev = "Adaptable" "Resilient" + helmet_farev;
+var shields_parev = "Victor's" + helmet_parev;
+
+var shields_fares = "Saintly" "Consecrated" + helmet_fares;
+var shields_pares = "Interpermeated" + helmet_pares;
+
+var shields_feves = "Apparition's" "Eidolon's" + helmet_feves;
+var shields_peves = "Incorporeal" + helmet_peves;
+
 ## hybrid life-defenses
 var helmet_life_hybrid1 = "Ram's" "Abbot's" "Nautilus's";
 var helmet_life_hybrid2 = "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's";
@@ -239,15 +261,29 @@ var combined_flat_defenses2 = helmet_far[2] + helmet_fev[2] + helmet_farev[2] + 
 var combined_smitem_defenses1 = combined_percentual_defenses1 + combined_flat_defenses1 + helmet_life_hybrid1;
 var combined_smitem_defenses2 = combined_percentual_defenses2 + combined_flat_defenses2 + helmet_life_hybrid2;
 
-## combined defenses
+## combined defenses - small items
 var smallitem_es_defense1 = helmet_fes[2] + helmet_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[1];
 var smallitem_es_defense2 = helmet_fes[3] + helmet_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[2];
+
+## combined defenses - shields
+var shields_combined_percentual_defenses1 = shields_par[1] + shields_pev[1] + shields_parev[1] + shields_pares[1] + shields_peves[1]; 
+var shields_combined_percentual_defenses2 = shields_par[2] + shields_pev[2] + shields_parev[2] + shields_pares[2] + shields_peves[2];
+
+var shields_combined_flat_defenses1 = shields_far[1] + shields_fev[1] + shields_farev[1] + shields_fares[1] + shields_feves[1];
+var shields_combined_flat_defenses2 = shields_far[2] + shields_fev[2] + shields_farev[2] + shields_fares[2] + shields_feves[2];
+
+var shields_combined_defenses1 = shields_combined_percentual_defenses1 + shields_combined_flat_defenses1 + helmet_life_hybrid1;
+var shields_combined_defenses2 = shields_combined_percentual_defenses2 + shields_combined_flat_defenses2 + helmet_life_hybrid2;
+
+## combined defenses - shields
+var shields_es_defense1 = shields_fes[2] + shields_pes[2] + shields_hybrid_es + shields_hybrid_esstun[1];
+var shields_es_defense2 = shields_fes[3] + shields_pes[2] + shields_hybrid_es + shields_hybrid_esstun[2];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} HELMETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var helmet_cheatMod = "of Puhuarte" + veilPS;
+var helmet_cheatMod = "of Puhuarte" + veilPS + a_cheatMods;
 
 var helmet_life = "Fecund" "Athlete's" "Virile";
 var helmet_regen = "of Recuperation";
@@ -271,7 +307,7 @@ var xhelmet_es_mix2 = helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + he
 ##   {META} BOOTS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var boots_temple = "Matatl's";
+var boots_cheat = "Matatl's" + a_cheatMods;
 
 var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 var boots_life = "Athlete's" "Virile" "Rotund";
@@ -283,11 +319,11 @@ var boots_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3];
 var xboots_life_core = boots_life[1] + boots_movespeed[2];
 var xboots_es_core = boots_movespeed[2];
 
-var xboots_life_mix1 = boots_aux1 + combined_smitem_defenses1 + boots_life[2] + boots_movespeed[2] + boots_temple + veilPS;
-var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + boots_movespeed[2] + boots_temple + veilPS;
+var xboots_life_mix1 = boots_aux1 + combined_smitem_defenses1 + boots_life[2] + boots_movespeed[2] + boots_cheat + veilPS;
+var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + boots_movespeed[2] + boots_cheat + veilPS;
 
-var xboots_es_mix1 = boots_aux1 + smallitem_es_defense1 + boots_life[1] + boots_movespeed[2] + boots_temple + veilPS;
-var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_life[2] + boots_movespeed[2] + boots_temple + veilPS;
+var xboots_es_mix1 = boots_aux1 + smallitem_es_defense1 + boots_life[1] + boots_movespeed[2] + boots_cheat + veilPS;
+var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_life[2] + boots_movespeed[2] + boots_cheat + veilPS;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOVES
@@ -296,7 +332,7 @@ var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_life[2] + boots_
 var gloves_life = "Athlete's" "Virile" "Rotund";
 
 ## gloves specific special mods
-var gloves_temple = "of Puhuarte";
+var gloves_cheat = "of Puhuarte" + a_cheatMods;
 var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
 var gloves_accu = "of Lioneye" "of the Ranger";
 var gloves_mana = "Zaffre" "Blue";
@@ -309,14 +345,14 @@ var gloves_aux1 = aux_stats1 + suppress[2] + es_recharge[2] + regen_rate[2] + gl
 var gloves_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3] + glovesMisc2;
 
 ## usable elements
-var xgloves_es_core = smallitem_es_defense1 + gloves_life[1] + gloves_temple;
-var xgloves_life_core = gloves_life[2] + gloves_temple;
+var xgloves_es_core = smallitem_es_defense1 + gloves_life[1] + gloves_cheat;
+var xgloves_life_core = gloves_life[2] + gloves_cheat;
 
-var xgloves_life_mix1 = gloves_aux1 + combined_smitem_defenses1 + gloves_life[2] + gloves_temple;
-var xgloves_life_mix2 = gloves_aux2 + combined_smitem_defenses2 + gloves_life[3] + gloves_temple;
+var xgloves_life_mix1 = gloves_aux1 + combined_smitem_defenses1 + gloves_life[2] + gloves_cheat;
+var xgloves_life_mix2 = gloves_aux2 + combined_smitem_defenses2 + gloves_life[3] + gloves_cheat;
 
-var xgloves_es_mix1 = gloves_aux1 + smallitem_es_defense1 + gloves_life[1] + gloves_temple + veilPS;
-var xgloves_es_mix2 = gloves_aux2 + smallitem_es_defense2 + gloves_life[2] + gloves_temple + veilPS;
+var xgloves_es_mix1 = gloves_aux1 + smallitem_es_defense1 + gloves_life[1] + gloves_cheat + veilPS;
+var xgloves_es_mix2 = gloves_aux2 + smallitem_es_defense2 + gloves_life[2] + gloves_cheat + veilPS;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK
@@ -414,6 +450,60 @@ var w_extrachaos_phys = "Baleful" "Inimical";
 var w_extrachaos_light = "Excruciating" "Harrowing";
 var w_extrachaos_cold = "Mortifying" "Festering";
 var w_extrachaos_fire = "Corrosive" "Dissolving";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} SHIELDS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## dex: accuracy, attack speed
+## str: only defensive mods
+## int: caster stuff
+
+## var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster"; 
+## var ws_manaregen = "of Nirvana" "of Euphoria";
+## var wmana = "Zaffre" "Blue" "Mazarine" "Chalybeous";
+
+## universal shield stats
+
+var shield_cheatMods = a_cheatMods + "Topotante's";
+var shield_life = "Vigorous" "Fecund" "Athlete's" "Virile";
+
+var shield_specialDefenses1 = life_regen[2] + phys_reduction[2] + suppress[2] + ailment_avoid[2] + block[2] + spellblock[1] + es_fasterstart[1] + es_recharge[1] + lifeonblock[1] + critdmgreduction[2] + regen_rate[2];
+var shield_specialDefenses2 = life_regen[3] + phys_reduction[3] + suppress[3] + ailment_avoid[3] + block[3] + spellblock[2] + es_fasterstart[2] + es_recharge[2] + lifeonblock[2] + critdmgreduction[3] + regen_rate[3];
+
+var shield_casterAux1 = shield_casterCrit[2];
+var shield_casterAux2 = shield_casterCrit[3] + ws_manaregen[1];
+var shield_attackerAux = "of the Ranger" "of Mastery";
+
+var shield_aux1 = aux_stats1 + shield_specialDefenses1 + res_omni[2] + shield_casterAux1;
+var shield_aux2 = aux_stats2 + shield_attackerAux + shield_specialDefenses2 + res_omni[3] + shield_casterAux2;
+
+## combinations: 
+var shield_core_auxfocus = suppress[1] + block[1] + spellblock[1] + critdmgreduction[1] + shield_casterCrit[1];
+
+## ES/CASTER MODS ONLY
+## exclusive caster stats
+var shield_caster_gemLevels = "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's";
+var shield_caster_damage1 = wcast_spell[2] + wcast_fire[2] + wcast_cold[2] + wcast_light[2];
+var shield_caster_damage2 = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3];
+
+## combinations for caster mods
+var shield_core_es_defenses1 = shields_fes[2] + shields_pes[2] + shield_life[2];
+var shield_caster_core = shield_caster_gemLevels + shield_caster_damage2 + shield_life[3];
+
+var shield_es_defense = shields_es_defense2 + shield_life[3];
+var shield_es_damage = shield_caster_damage2 + shield_caster_gemLevels;
+
+## ES/CASTER - usable sections
+var xshield_es_core = shield_cheatMods + VeilPS + shield_core_es_defenses1 + shield_caster_core + shield_core_auxfocus;
+var xshield_caster_mix = xshield_es_core + shield_aux2 + shield_es_defense + shield_es_damage;
+
+## NON-ES SHIELDS
+## exclusive non caster stats
+
+## combinations for random shields
+var xshield_random_core = shield_cheatMods + VeilPS + shields_combined_flat_defenses2 + shields_combined_flat_defenses2 + shield_life[3] + shield_core_auxfocus;
+var xshield_random_mix = xshield_random_core + shields_combined_defenses2 + shield_life[3] + shield_aux2;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## CASTER AND SPELLSLINGER ABSTRACTIONS

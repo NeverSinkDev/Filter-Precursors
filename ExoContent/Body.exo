@@ -272,14 +272,8 @@ Section IdModSection : IdMods
 #------------------------------------			
 		Section Shields : Class "Shields", Corrupted False
 		{
-			Show 2LifeCasterShield { Mod shields_life[2] + shields_es[2] + shield_esp[2]; Mod >=2 casterShieldStats2 + universalShieldStats + top2base; }
-			Show 2ESCasterShield { Mod >=2 shields_es[3] + shield_esp[3]; Mod casterShieldStats2 + universalShieldStats + top2base; }
-			Show 3LifeCasterShield { Mod shields_life[3] + shields_es[3] + shield_esp[3]; Mod >=3 casterShieldStats3 + universalShieldStats + top3base; }
-			Show 3ESCasterShield { Mod shields_es[4] + shield_esp[4]; Mod >=2 casterShieldStats3 + universalShieldStats + top3base; }
-			Show 3DamageCasterShield { Mod >= 3 veilPS + casterShieldStats2 }
-			Show 4DamageCasterShield { Mod >= 4 veilPS + casterShieldStats3 + universalShieldStats + top2base }
-			Show HighDefShields { Mod >= 2 shields_highDefense; DropLevel >= 50; }
-			Show HighStatShield { Mod >= 4 shields_highDefense + universalShieldStats + shields_life[2] + top2base; DropLevel >= 50; }
+			Show Shield_ES_based   { Mod xshield_es_core; Mod >= 4 xshield_caster_mix; }
+			Show Shield_Life_based { Mod xshield_random_core; Mod >= 4 xshield_random_mix; }
 		}
 #------------------------------------
 #   [1234] Jewels
