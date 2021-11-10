@@ -198,8 +198,11 @@ var jewels_minion = "Master's" "of Resilience" "Leadership";
 ##   {META} SHARED ARMOUR/JEWELERY ITEMS STATS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var aux_stats1 = str[3] + dex[3] + int[3] + res_chaos[3] + res_fire[3] + res_cold[3] + res_light[3];
-var aux_stats2 = str[4] + dex[4] + int[4] + res_chaos[4] + res_fire[4] + res_cold[4] + res_light[4];
+var aux_stats1 = str[3] + dex[3] + int[3] + res_chaos[3] + res_fire[3] + res_cold[3] + res_light[3] + res_omni[2];
+var aux_stats2 = str[4] + dex[4] + int[4] + res_chaos[4] + res_fire[4] + res_cold[4] + res_light[4] + res_omni[3];
+
+var aux_stats_rfocus1 = str[2] + dex[2] + int[2] + res_chaos[3] + res_fire[3] + res_cold[3] + res_light[3] + res_omni[2];
+var aux_stats_rfocus2 = str[2] + dex[2] + int[2] + res_chaos[4] + res_fire[4] + res_cold[4] + res_light[4] + res_omni[3];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} SMALL ITEM-DEFENSES (HELMET)
@@ -290,8 +293,8 @@ var helmet_regen = "of Recuperation";
 
 ## combinations
 
-var helmet_aux1 = aux_stats1 + minionGems[1] + suppress[2] + es_recharge[2] + accuracy[2] + regen_rate[2];
-var helmet_aux2 = aux_stats2 + minionGems[2] + suppress[3] + es_recharge[3] + accuracy[3] + regen_rate[3] + helmet_regen;
+var helmet_aux1 = aux_stats_rfocus1 + minionGems[1] + suppress[2] + es_recharge[2] + accuracy[2] + regen_rate[2];
+var helmet_aux2 = aux_stats_rfocus2 + minionGems[2] + suppress[3] + es_recharge[3] + accuracy[3] + regen_rate[3] + helmet_regen;
 
 ## usable elements
 var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + helmet_life[1] + minionGems[1];
@@ -312,8 +315,8 @@ var boots_cheat = "Matatl's" + a_cheatMods;
 var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 var boots_life = "Athlete's" "Virile" "Rotund";
 
-var boots_aux1 = aux_stats1 + suppress[2] + es_recharge[2] + regen_rate[2];
-var boots_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3];
+var boots_aux1 = aux_stats_rfocus1 + suppress[2] + es_recharge[2] + regen_rate[2];
+var boots_aux2 = aux_stats_rfocus2 + suppress[3] + es_recharge[3] + regen_rate[3];
 
 ## usable elements
 var xboots_life_core = boots_life[1] + boots_movespeed[2];
@@ -341,8 +344,8 @@ var glovesMisc1 = gloves_ias[1] + gloves_accu[1] + gloves_mana[1];
 var glovesMisc2 = gloves_ias[2] + gloves_accu[2] + gloves_mana[1];
 
 ## combinations for aux
-var gloves_aux1 = aux_stats1 + suppress[2] + es_recharge[2] + regen_rate[2] + glovesMisc1; 
-var gloves_aux2 = aux_stats2 + suppress[3] + es_recharge[3] + regen_rate[3] + glovesMisc2;
+var gloves_aux1 = aux_stats_rfocus1 + suppress[2] + es_recharge[2] + regen_rate[2] + glovesMisc1; 
+var gloves_aux2 = aux_stats_rfocus2 + suppress[3] + es_recharge[3] + regen_rate[3] + glovesMisc2;
 
 ## usable elements
 var xgloves_es_core = smallitem_es_defense1 + gloves_life[1] + gloves_cheat;
@@ -466,44 +469,41 @@ var w_extrachaos_fire = "Corrosive" "Dissolving";
 ## universal shield stats
 
 var shield_cheatMods = a_cheatMods + "Topotante's";
+
 var shield_life = "Vigorous" "Fecund" "Athlete's" "Virile";
 
 var shield_specialDefenses1 = life_regen[2] + phys_reduction[2] + suppress[2] + ailment_avoid[2] + block[2] + spellblock[1] + es_fasterstart[1] + es_recharge[1] + lifeonblock[1] + critdmgreduction[2] + regen_rate[2];
 var shield_specialDefenses2 = life_regen[3] + phys_reduction[3] + suppress[3] + ailment_avoid[3] + block[3] + spellblock[2] + es_fasterstart[2] + es_recharge[2] + lifeonblock[2] + critdmgreduction[3] + regen_rate[3];
 
-var shield_casterAux1 = shield_casterCrit[2];
-var shield_casterAux2 = shield_casterCrit[3] + ws_manaregen[1];
-var shield_attackerAux = "of the Ranger" "of Mastery";
+var shield_casterAux1 = ws_cast_crit[2];
+var shield_casterAux2 = ws_cast_crit[3] + ws_manaregen[1];
 
-var shield_aux1 = aux_stats1 + shield_specialDefenses1 + res_omni[2] + shield_casterAux1;
-var shield_aux2 = aux_stats2 + shield_attackerAux + shield_specialDefenses2 + res_omni[3] + shield_casterAux2;
-
-## combinations: 
-var shield_core_auxfocus = suppress[1] + block[1] + spellblock[1] + critdmgreduction[1] + shield_casterCrit[1];
-
-## ES/CASTER MODS ONLY
-## exclusive caster stats
 var shield_caster_gemLevels = "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's";
 var shield_caster_damage1 = wcast_spell[2] + wcast_fire[2] + wcast_cold[2] + wcast_light[2];
 var shield_caster_damage2 = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3];
 
-## combinations for caster mods
-var shield_core_es_defenses1 = shields_fes[2] + shields_pes[2] + shield_life[2];
-var shield_caster_core = shield_caster_gemLevels + shield_caster_damage2 + shield_life[3];
+## CORE VALUES: 
+var shield_global_core = a_cheatMods + shield_cheatMods + VeilPS;
 
-var shield_es_defense = shields_es_defense2 + shield_life[3];
-var shield_es_damage = shield_caster_damage2 + shield_caster_gemLevels;
+var xshield_es_core =       shield_global_core + shields_fes[3] + shields_pes[2];
+var xshield_aux_core =      shield_global_core + suppress[1] + block[1] + spellblock[1] + critdmgreduction[1] + ws_cast_crit[1];
+var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[3] + block[2] + spellblock[1] + critdmgreduction[2] + regen_rate[2];
+var xshield_caster_core =   shield_global_core + shield_caster_gemLevels + shield_caster_damage2 + ws_cast_crit[1];
+var xshield_life_core =     shield_global_core + shield_life[2];
 
-## ES/CASTER - usable sections
-var xshield_es_core = shield_cheatMods + VeilPS + shield_core_es_defenses1 + shield_caster_core + shield_core_auxfocus;
-var xshield_caster_mix = xshield_es_core + shield_aux2 + shield_es_defense + shield_es_damage;
+## MIXED VALUED:
+var shield_combined_highdefenses_esonly = shields_fes[2] + shields_pes[2];
+var shield_combined_highdefenses = shield_specialDefenses2 + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shields_fes[2] + shields_pes[2];
+var shield_combined_lifemods = shield_life[3];
+var shield_combined_castermods = shield_caster_gemLevels + shield_caster_damage2 + ws_manaregen[1] + ws_cast_crit[3];
+var shield_combined_attackermods = "of the Ranger" "of Mastery";
 
-## NON-ES SHIELDS
-## exclusive non caster stats
+var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses2 + ws_cast_crit[1] + shield_life[1];
 
-## combinations for random shields
-var xshield_random_core = shield_cheatMods + VeilPS + shields_combined_flat_defenses2 + shields_combined_flat_defenses2 + shield_life[3] + shield_core_auxfocus;
-var xshield_random_mix = xshield_random_core + shields_combined_defenses2 + shield_life[3] + shield_aux2;
+var xshield_defense_mix =   shield_spice + shield_combined_lifemods + shield_combined_attackermods + shields_combined_defenses2;
+var xshield_life_mix =      shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses;
+var xshield_caster_mix =    shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses_esonly;
+var xshield_es_mix =        shield_spice + shields_es_defense2      + shield_combined_castermods;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## CASTER AND SPELLSLINGER ABSTRACTIONS

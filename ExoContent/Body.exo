@@ -270,10 +270,12 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
-		Section Shields : Class "Shields", Corrupted False
+		Section Shields : Class "Shields"
 		{
-			Show Shield_ES_based   { Mod xshield_es_core; Mod >= 4 xshield_caster_mix; }
-			Show Shield_Life_based { Mod xshield_random_core; Mod >= 4 xshield_random_mix; }
+			Show ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
+			Show DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; }
+			Show CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
+			Show LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; }
 		}
 #------------------------------------
 #   [1234] Jewels
