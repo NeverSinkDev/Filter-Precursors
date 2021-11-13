@@ -168,14 +168,16 @@ Section IdModSection : IdMods
 	{
 		Section Weapons : Class classes_attack, DropLevel >= 55, Mod xattackphys_Core
 		{
-			Show AttackPhys_T2 { Mod >= 2 xattackphys_Conf; }
+			Show AttackPhys     { Mod >= 3 xattackphys_Conf; }
+			Show AttackPhysPure { Mod >= 2 xattackphys_Conf; Corrupted False; }
 		}
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
 		Section FastEleWeapons : BaseType == quickWeapons, Corrupted False, Mod xattackele_Core
 		{
-			Show AttackEle_T2 { Mod >= 3 xattackele_Norm; }
+			Show AttackEle { Mod >= 4 xattackele_Norm; }
+			Show AttackElePure { Mod >= 3 xattackele_Norm; Corrupted False; }
 		}
 #------------------------------------
 #   [1234] Gembased
@@ -192,10 +194,10 @@ Section IdModSection : IdMods
 		Section Caster : Class == classes_1hcast, Mod xcaster_core
 		{
 			## TODO: Decide on single treatment for these
-			Show CasterFireWeaponT2 { Mod >= 3 xcaster_firedmg_norm; }
-			Show CasterColdWeaponT2 { Mod >= 3 xcaster_colddmg_norm; }
+			Show CasterFireWeaponT2  { Mod >= 3 xcaster_firedmg_norm; }
+			Show CasterColdWeaponT2  { Mod >= 3 xcaster_colddmg_norm; }
 			Show CasterLightWeaponT2 { Mod >= 3 xcaster_lightdmg_norm; }
-			Show CasterPhysWeaponT2 { Mod >= 3 xcaster_physdmg_norm; }
+			Show CasterPhysWeaponT2  { Mod >= 3 xcaster_physdmg_norm; }
 			Show CasterChaosWeaponT2 { Mod >= 3 xcaster_chaosdmg_norm; }
 		}
 #------------------------------------
@@ -272,7 +274,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
-		Section Belts : Class "Belts", Corrupted False
+		Section Belts : Class "Belts"
 		{
 			Show General { Mod xbelt_core; Mod >= 4 xbelt_mix; }
 		}
@@ -294,17 +296,17 @@ Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID"),
 {
 	Section Weapons : Class classes_attack, DropLevel >= 56
 	{
-		Show Phys { Mod >= 1 wdmg_pphys[2] + "of Many"; }
+		Show Phys { %D4; Mod >= 1 wdmg_pphys[1] + "of Many"; }
 	}
 
 	Section Caster : Class "Wands" "Sceptres" "Shields" "Rune Daggers"
 	{
-		Show DamageMods { Mod >= 1 wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + wgems_alllevels_global + convokingMods[1] + convokingLvl; }
+		Show DamageMods { %D4; Mod >= 1 wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + wgems_alllevels_global + convokingMods[1] + convokingLvl; }
 	}
 
 	Section Boots : Class "Boots"
 	{
-		Show Speed { Mod >= 1 boots_movespeed[1]; }
+		Show Speed { %D4; Mod >= 1 boots_movespeed[1]; }
 	}
 }
 
@@ -346,7 +348,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
 		Show IncursionSumonner   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
 		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
-		Show IncursionRandom     { !GS;  %D3; !exotic.t3; Mod exotic_incursion; }
+		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
 
 #------------------------------------
 #   [1234] Bestiary
@@ -360,7 +362,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve };
 		Show Warband  { !GS;  %D4; !exotic.t3; Mod exotic_warband };
 		Show Essence  { !GSH; %D6; !exotic.t2; Mod "of the Essence" };
-		Show Crafting { !GS;  %D2; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
+		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
 
@@ -464,7 +466,7 @@ Section ExoticVariations : !exotic
 		{
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
 			Show Helmets     { !GSH; %D6; !exotic.t2; Class "Helmets" }
-			Show GlovesBoots { !GS; %D2; !exotic.t4; Class "Gloves" "Boots" }
+			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
 	}
 }
@@ -512,11 +514,11 @@ Section ExoticVariationsLowPrio : !exotic
 
 Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestrolls
 {
-	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor
+	Section PerfectArmours86 : Auto("Crafting->PerfectArmours"), ItemLevel >= 86, Rarity <= Rare, Class classes_armor
 	{
-		Show t1 { !G2;  %D5; BaseType == bases.perfection.general.t1; }
-		Show t2 { !G3;  %D4; BaseType == bases.perfection.general.t2; }
-		Show t3 { !GEX; %D2; BaseType == bases.perfection.general.t3; }
+		Show t1 { !G2;  %D6; BaseType == bases.perfection.general.t1; }
+		Show t2 { !G3;  %D5; BaseType == bases.perfection.general.t2; }
+		Show t3 { !GEX; %D4; BaseType == bases.perfection.general.t3; }
 	}
 }
 
@@ -553,8 +555,8 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
-		Show t1 { !G4;  %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
-		Show t2 { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
+		Show t1  { !G4;  %D4; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
+		Show t2  { !GEX; %D2; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
 		ShowD t3 { !GEX; !craftgeneral.I84; BaseType == bases.crafting.general.t3; }
 	}
 
@@ -564,7 +566,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
-		Show t1  { !G5; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
+		Show t1  { !G5;  %D2; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
 		Show t2  { !GEX; %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t2; }
 		ShowD t3 { !GEX; !craftgeneral.ANY; BaseType == bases.crafting.general.t3; }
 	}
@@ -637,14 +639,14 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	{
 		Show QualUtility85  { !G3; !utilflasks.LT1; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
 		Show QualUtility84  { !G4; !utilflasks.LT1; %D4; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
-		Show QualUtility82  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
+		Show QualUtility82  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
 		Show QualLifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
 	}
 
 	Section SuperEndgameFlasks : !GEX
 	{
 		Show Utility85  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
-		Show Utility84  { !G5; !utilflasks.LT2; %D3; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
+		Show Utility84  { !G5; !utilflasks.LT2; %D2; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
 		Show Utility82  { !G5; !utilflasks.LT3; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
 		Show LifeMana82 { !G6; !Low; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
 	}
@@ -670,7 +672,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	Section UtilityEndgameFlasks
 	{
 		Show AsortedUtility { %D2; !G6H; !*lt2; BaseType bases.flask.utilityassorted; AreaLevel <= 75; }
-		Show AnyUtility 	{ %D2; !G6; !*lt3; Class "Utility Flasks"; AreaLevel <= 72; }
+		Show AnyUtility 	{ %D2; !G6;  !*lt3; Class "Utility Flasks"; AreaLevel <= 72; }
 	}
 
 	Section QualityEndgameFlasks
@@ -694,7 +696,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity < Rare, !GEX
 {
-	Show Overquality { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
+	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
@@ -746,8 +748,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
 	{
-		Show High { %H4; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any { %H2; !G5; !exotic.t3; Empty(); }
+		Show High { %H3; !G4; !exotic.t2; ItemLevel >= 82; }
+		Show Any  { %H2; !G5; !exotic.t3; Empty(); }
 	}
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
@@ -874,7 +876,7 @@ Section Jewels : !jewels
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
 		{
-			Show 1modcorrupted { !Special; %H5; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+			Show 1modcorrupted { !Special; %H4; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
 		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
@@ -983,13 +985,13 @@ Section Jewels : !jewels
 	{
 		Show OptimalHighLarge	{ !G3; %D5; !V2; !High; BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
 		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large 				{ !G4; %D4; !V4; BaseType "Large Cluster Jewel"; }
+		Show Large 				{ !G4; %D3; !V4; BaseType "Large Cluster Jewel"; }
 
-		Show OptimalHighMedium { !G3; %D5; !V2; !High; BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
+		Show OptimalHighMedium { !G3; %D4; !V2; !High; BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
 		Show HighMedium 	   { !G3; %D4; !V3; !High; BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium 		   { !G4; %D4; !V4; BaseType "Medium Cluster Jewel"; }
+		Show Medium 		   { !G4; %D3; !V4; BaseType "Medium Cluster Jewel"; }
 
-		Show HighSmall 			{ !G3; %D5; !V3; !High; BaseType "Small Cluster Jewel"; ItemLevel >= 84; }
+		Show HighSmall 			{ !G3; %D4; !V3; !High; BaseType "Small Cluster Jewel"; ItemLevel >= 84; }
 		Show Small 				{ !G4; %D4; !V4; BaseType "Small Cluster Jewel"; }
 	}
 }
@@ -1288,8 +1290,8 @@ Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 {
-	Show HandPicked { !G4; %H5; BaseType Heist.Blueprint.Handpicked; }
-	Show Any { !G4; %H5; Empty(); }
+	Show HandPicked { !G4; BaseType Heist.Blueprint.Handpicked; }
+	Show Any { !G4; Empty(); }
 }
 
 #===============================================================================================================
@@ -1390,8 +1392,8 @@ Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Curren
 Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "Currency", !currency
 {	
 	Show t1	{ %H5; !G5; !*tportHigh; StackSize >= 10; BaseType == currency.stacked.supplies.portal; }
-	Show t2	{ %H4; !G5; !*tportHigh; StackSize >= 6; BaseType == currency.stacked.supplies.portal; }
-	Show t3	{ %H3; !G6H; !*tportal;  StackSize >= 3; BaseType == currency.stacked.supplies.portal; }
+	Show t2	{ %H3; !G5; !*tportHigh; StackSize >= 6; BaseType == currency.stacked.supplies.portal; }
+	Show t3	{ %H2; !G6H; !*tportal;  StackSize >= 3; BaseType == currency.stacked.supplies.portal; }
 }
 
 #------------------------------------
@@ -1401,8 +1403,8 @@ Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "
 Section StackedCurrencyWisdom : Auto("Currency->StackedSuppliesWisdom"), Class "Currency", !currency
 {	
 	Show t1	{ %H5; !*twisdHigh; !G5; StackSize >= 10; BaseType == currency.stacked.supplies.wisdom; }
-	Show t2	{ %H4; !*twisdHigh; !G5; StackSize >= 6; BaseType == currency.stacked.supplies.wisdom; }
-	Show t3	{ %H3; !*twisdom; !G6H;  StackSize >= 3; BaseType == currency.stacked.supplies.wisdom; }
+	Show t2	{ %H3; !*twisdHigh; !G5; StackSize >= 6; BaseType == currency.stacked.supplies.wisdom; }
+	Show t3	{ %H2; !*twisdom; !G6H;  StackSize >= 3; BaseType == currency.stacked.supplies.wisdom; }
 }
 
 #------------------------------------
@@ -1417,7 +1419,7 @@ Section StackedCurrencySix : Auto("Currency->StackedSix"), Class "Currency", Sta
 	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedSix.t4 + currency.stackedSixStatic.t4; }
 	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedSix.t5 + currency.stackedSixStatic.t5; }
 	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedSix.t6 + currency.stackedSixStatic.t6; }
-	Show t7	{ !G5; %H4; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
+	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
 }
 
 #------------------------------------
@@ -1432,7 +1434,7 @@ Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class "Currency",
 	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedThree.t4 + currency.stackedThreeStatic.t4; }
 	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedThree.t5 + currency.stackedThreeStatic.t5; }
 	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedThree.t6 + currency.stackedThreeStatic.t6; }
-	Show t7	{ !G5; %H4; !*t7chance; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
+	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
 }
 
 #------------------------------------
@@ -1474,13 +1476,13 @@ Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 	Show t2divine 	{ !G2; !*t2divine; BaseType == currency.generic.t2divine; }
 	Show t3annul 	{ !G3; !*t3annul; BaseType == currency.generic.t3annul; }
 	Show t4chaos 	{ !G4; !*t4chaos; BaseType == currency.generic.t4chaos; }
-	Show t5alchemy 	{ !G4; %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy; }
+	Show t5alchemy 	{ !G4;  %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy; }
 	Show t6chrom 	{ !G5H; %H4; !*t6chrom; BaseType == currency.generic.t6chrom; }
-	Show t7chance 	{ !G5; %H4; !*t7chance; BaseType == currency.generic.t7chance; }
+	Show t7chance 	{ !G5;  %H3; !*t7chance; BaseType == currency.generic.t7chance; }
 	Show t8trans 	{ !G6H; %H3; !*t8trans; BaseType == currency.generic.t8trans; }
 	Show t9armour 	{ !G6H; %H2; !*t9armour; BaseType == currency.generic.t9armour; }
-	Show tportal 	{ !G6; %H2; !*tportal; BaseType == currency.generic.tportal; }
-	Show twisdom 	{ !G6; %H2; !*twisdom; BaseType == currency.generic.twisdom; }
+	Show tportal 	{ !G6;  %H2; !*tportal; BaseType == currency.generic.tportal; }
+	Show twisdom 	{ !G6;  %H2; !*twisdom; BaseType == currency.generic.twisdom; }
 }
 
 #===============================================================================================================
@@ -1532,7 +1534,7 @@ Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency", !Curre
 {
 	Show t1 { !G1; !*t1exalted; BaseType == currency.fossil.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.fossil.t2; }
-	Show t3 { !G4; %HS5; !*t4chaos; BaseType == currency.fossil.t3; }
+	Show t3 { !G4;  %HS5; !*t4chaos; BaseType == currency.fossil.t3; }
 	Show t4 { !G5H; %HS4; !*t6chrom; BaseType == currency.fossil.t4; }
 	Show restex { BaseType "Fossil"; }
 }
@@ -1547,7 +1549,7 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", !Currency
 	Show t1 { !G1; !*t1exalted; BaseType == currency.oil.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.oil.t2; }
 	Show t3 { !G4; %HS5; !*t4chaos; BaseType == currency.oil.t3; }
-	Show t4 { !G5; %HS4; !*t6chrom; BaseType == currency.oil.t4; }
+	Show t4 { !G5; %HS3; !*t6chrom; BaseType == currency.oil.t4; }
 	Show restex { BaseType "Oil"; }
 }
 
@@ -1573,10 +1575,10 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 {
 	Show t1 { !G2; !*t2divine; BaseType currency.essence.t1; }
 	Show t2 { !G3; !*t3annul; BaseType currency.essence.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType currency.essence.t3; }
-	Show t4 { !G5; %H3; !*t7chance; BaseType currency.essence.t4; }
+	Show t3 { !G4;  %H5; !*t4chaos; BaseType currency.essence.t3; }
+	Show t4 { !G5;  %H3; !*t7chance; BaseType currency.essence.t4; }
 	Show t5 { !G5H; %H2; !*t8trans; BaseType currency.essence.t5; }
-	Show t6 { !G5; %H1; !*t8trans; BaseType currency.essence.t6; }
+	Show t6 { !G5;  %H1; !*t8trans; BaseType currency.essence.t6; }
 }
 
 #------------------------------------
@@ -1618,7 +1620,7 @@ Section CurrencyProphecy : Auto("currency->prophecy"), Class "Currency", BaseTyp
 	Show t2 { !G2; Prophecy == currency.prophecy.t2; }
 	Show t3 { !G3; %H5; Prophecy == currency.prophecy.t3; }
 	Show t3mapping { !G4; %H5; !High; Prophecy == currency.prophecy.t3mapping; }
-	Show t4upgrade { !G5; %H4; !SpecialB; Prophecy == currency.prophecy.t4upgrade; }
+	Show t4upgrade { !G5; %H3; !SpecialB; Prophecy == currency.prophecy.t4upgrade; }
 	Show t4drop { !G5; %H3; Prophecy == currency.prophecy.t4drop; }
 	Show t5 { !G6; %H2; Prophecy == currency.prophecy.t5; }
 	Show restex { Empty(); }
@@ -1709,7 +1711,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5701] Exceptions #1
 #------------------------------------
-	Show theSquire{ !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
+	Show exSquire{  !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
@@ -1739,23 +1741,25 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour	
 	Show scourged { %D5; !GSH; !*t3; !SpecialNoB; Scourged True; }
 
-#!! Override 770 : "Only low tier uniques"
+# For those 6 sockets	
+	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
 
+#!! Override 770 : "Only low tier uniques"
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	Show highvinktar { !G3; %D4; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
-	Show exjewels { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; Class "Jewel"; }
+	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; Class "Jewel"; }
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss { !G4; !*t4; BaseType == uniques.generic.t3boss; }
+	Show t3boss {  !G4; !*t4; BaseType == uniques.generic.t3boss; }
 	Show t3 	{  !G4; %H5; !*t4; BaseType == uniques.generic.t3; }
 
 	Show recipeUniqueRings { !G5H; %D2; !*t4; !special; Class "Rings"; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
-	Show hideable2 { !G5H; %H4; !*t5; BaseType == uniques.generic.hideable2; }
-	Show hideable  { !G5H; %H4; !*t5; BaseType == uniques.generic.hideable; }
+	Show hideable2 { !G5H; %HS3; !*t5; BaseType == uniques.generic.hideable2; }
+	Show hideable  { !G5H; %HS3; !*t5; BaseType == uniques.generic.hideable; }
 	Show restex { Empty(); }
 }
 
