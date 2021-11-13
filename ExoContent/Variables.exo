@@ -201,8 +201,8 @@ var shields_combined_defenses1 = shields_combined_percentual_defenses1 + shields
 var shields_combined_defenses2 = shields_combined_percentual_defenses2 + shields_combined_flat_defenses2 + helmet_life_hybrid2;
 
 ## combined defenses - shields
-var shields_es_defense1 = shields_fes[2] + shields_pes[2] + shields_hybrid_es + shields_hybrid_esstun[1];
-var shields_es_defense2 = shields_fes[3] + shields_pes[2] + shields_hybrid_es + shields_hybrid_esstun[2];
+var shields_es_defense1 = shields_fes[2] + shields_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[1];
+var shields_es_defense2 = shields_fes[3] + shields_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[2];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} HELMETS
@@ -588,7 +588,7 @@ var amu_cheat = acc_cheat + "of Puhuarte" "Guatelitzi's";
 var amu_aux_stats = VeilPS + amu_cheat + aux_stats2 + acc_allat[3] + acc_manaregen[2] + acc_par[1] + acc_pev[1] + acc_pes[1];
 
 ## important general stats on amulets enhanced with life/mana
-var amu_aux_stats_full = amu_aux_stats2 + acc_life[3] + acc_mana[1] + acc_fes[2];
+var amu_aux_stats_full = amu_aux_stats + acc_life[3] + acc_mana[1] + acc_fes[2];
 
 ## ...enchanced with damage stats
 var xamu_caster_mix = amu_aux_stats_full + acc_cast_speed[2] + acc_cast_spell[3] + acc_manaregen[2] + acc_mana[2] + acc_dmg_firep[2] + acc_dmg_coldp[2] + acc_dmg_lightp[2] + acc_dot_mult[2] + acc_crit_dmg[3] + acc_crit_chance[2];

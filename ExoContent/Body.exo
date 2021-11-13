@@ -304,7 +304,7 @@ Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID"),
 
 	Section Boots : Class "Boots"
 	{
-		Show Speed { Mod >= 1 movespeed[1]; }
+		Show Speed { Mod >= 1 boots_movespeed[1]; }
 	}
 }
 
@@ -752,15 +752,12 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
 	{
-		Show T1AttackTalisman { %H5; !G3; BaseType bases.talismans.attack.any + bases.talismans.universal.any; Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=3 top2base + merged_amu_attack2 + universal2 }
-		Show T1CasterTalisman { %H5; !G3; BaseType bases.talismans.caster.any + bases.talismans.universal.any; Mod amu_life[2] + "Dazzling" "Resplendent";  Mod >=3 top2base + merged_amu_caster2 + universal2 + amu_esp[2]; }
-		Show T2AttackTalisman { %H4; !G4; BaseType bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod amu_life[3] + "Dazzling" "Resplendent"; Mod >=3 top3base + merged_amu_attack3 + universal3 }
-		Show T2CasterTalisman { %H4; !G4; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod amu_life[3] + "Dazzling" "Resplendent";  Mod >=3 top3base + merged_amu_caster3 + universal3 + amu_esp[2]; }
+		Show T1AttackTalisman { %H5; !G3; BaseType bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_attack_mix }
+		Show T1CasterTalisman { %H5; !G3; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_caster_mix; }
+		Show T1DotTalisman    { %H5; !G3; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_dot_mix; }
 
-		Show T1StatTalisman { %H5; !G4; BaseType bases.talismans.stats.any; Mod amu_life[2]; Mod amu_allat[3]; Mod str[2] + dex[2] + int[2]; }
-		Show T2StatTalisman { %H4; !G5; BaseType bases.talismans.stats.any; Mod amu_allat[3]; Mod str[3] + dex[3] + int[3]; }
+		Show T2StatTalisman   { %H4; !G4; BaseType bases.talismans.stats.any; Mod acc_allat[3]; Mod str[3] + dex[3] + int[3]; }
 
-		Show T3DecentModsTalisman { %H4; !G4; BaseType "Talisman"; Mod >= 3 amu_life[3] + top2base + merged_amu_attack3 + merged_amu_caster3 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent"; }
 		Show T3DecentTypeTalisman { %H3; !G4; BaseType bases.talismans.universal.any; };
 		
 		Show Any { %H2; !G5; BaseType "Talisman"; }
