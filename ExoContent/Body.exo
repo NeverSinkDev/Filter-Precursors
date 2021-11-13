@@ -256,7 +256,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Rings
 #------------------------------------		
-		Section Rings : Class "Rings", Corrupted False
+		Section Rings : Class "Rings"
 		{
 			Show Caster { Mod xring_core; Mod >= 4 xring_cast_mix; }
 			Show Attack { Mod xring_core; Mod >= 4 xring_attack_mix; }
@@ -264,18 +264,17 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Quivers
 #------------------------------------	
-		Section Quivers : Class "Quivers", Corrupted False
+		Section Quivers : Class "Quivers"
 		{
-			Show 4ModQuiver { Mod belt_life[2]; Mod >=3 veilPS + quivermods2 + dex[3] + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] }
-			Show 5ModQuiver { Mod belt_life[4]; Mod >=4 veilPS + quivermods3 + dex[4] + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] }
+			Show Hit { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_hit; }
+			Show Dot { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_dot; }
 		}
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
 		Section Belts : Class "Belts", Corrupted False
 		{
-			Show 4ModBelt { Mod veilPS + belt_life[2] + belt_es[1]; Mod >=3 belt_mana[1] + belt_wed[2] + belt_arm[2] + flasks + top2base }
-			Show 5ModBelt { Mod veilPS + belt_life[3] + belt_es[2]; Mod >=4 belt_mana[1] + belt_wed[3] + belt_arm[3] + flasks + top3base }
+			Show General { Mod xbelt_core; Mod >= 4 xbelt_mix; }
 		}
 #------------------------------------
 #   [1234] Jewels

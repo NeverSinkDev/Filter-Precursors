@@ -426,6 +426,41 @@ var xshield_caster_mix =    shield_spice + shield_combined_lifemods + shield_com
 var xshield_life_mix =      shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## QUIVERS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var quiver_cheatMods = a_cheatMods;
+
+var quiver_life = "Fecund" "Athlete's" "Virile";
+
+## prefix flat/wed damages
+var quiver_wed = "Devastating" "Overpowering" "Unleashed";
+var quiver_fphys = "Flaring" "Tempered" "Razor-sharp";
+var quiver_ffire = "Cremating" "Blasting" "Incinerating";
+var quiver_fcold = "Entombing" "Polar" "Glaciated";
+var quiver_flight = "Electrocuting" "Discharging" "Shocking";
+
+## suffix combat stats
+var quiver_crit_chance = "of Rending" "of Incision" "of Penetrating" "of Rupturing";
+var quiver_crit_multi = "of Destruction" "of Ferocity" "of Fury" "of Rage";
+var quiver_attackspeed = "of Mastery" "of Ease";
+
+var quiver_accuracy = "of the Ranger" "of the Marksman";
+var quiver_dot = "of Dissolution" "of Melting" "of Liquefaction";
+var quiver_projspeed = "of the Gale" "of the Zephyr";
+
+var quiver_mix_aux = quiver_cheatMods + quiver_life + dex[3] + res_fire[3] + res_cold[3] + res_light[3] + res_chaos[3] + VeilPS;
+
+## dotquiver
+var quiver_hit_prefixdmg = quiver_fphys[2] + quiver_ffire[2] + quiver_fcold[2] + quiver_flight[2] + quiver_wed[2];
+var quiver_dot_prefixdmg = quiver_ffire[2] + quiver_fphys[2] + quiver_wed[2];
+
+var xquiver_core_mods = quiver_cheatMods + quiver_life[3] + quiver_crit_multi[2] + quiver_attackspeed[1] + quiver_dot[2] + quiver_crit_chance[1] + quiver_wed[1];
+
+var xquiver_mix_dot = quiver_mix_aux + quiver_dot_prefixdmg + quiver_attackspeed + quiver_accuracy[2] + quiver_dot + quiver_projspeed[1] + quiver_crit_multi[1] + quiver_crit_chance[1];
+var xquiver_mix_hit = quiver_mix_aux + quiver_hit_prefixdmg + quiver_attackspeed + quiver_accuracy[2] + quiver_dot[1] + quiver_projspeed[1] + quiver_crit_multi[3] + quiver_crit_chance[3];
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## CASTER AND SPELLSLINGER ABSTRACTIONS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -578,6 +613,29 @@ var xring_core = rings_cheat + acc_life[3] + acc_fes[2] + acc_att_accu[1] + acc_
 
 var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[3] + acc_dmg_physf[2] + acc_dmg_firef[2] + acc_dmg_coldf[2] + acc_dmg_lightf[2] + ring_ias + ring_pdmg;
 var xring_cast_mix = ring_aux_stats_full + ring_castspeed + ring_pdmg + acc_mana;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## RINGS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var belts_cheat = acc_cheat + "Guatelitzi's";
+
+## prefixes
+var belts_life = "Fecund" "Athlete's" "Virile";
+var belts_mana = "Blue" "Mazarine";
+var belts_es = "Dazzling" "Resplendent" "Incandescent" "Scintillating";
+var belts_arm = "Enveloped" "Encased" "Carapaced" "Plated";
+var belts_wed = "Devastating" "Overpowering" "Unleashed" "Empowering";
+var belts_flaskeffect = "Magnifying" "Condensing";
+
+var belts_liferegen = "of Recuperation";
+var belts_flaskdur = "of Reveling" "of Relishing" "of Savouring";
+
+var belts_aux = str[4] + res_fire[3] + res_cold[3] + res_light[3] + res_chaos[3] + belts_liferegen;
+var belts_special_aux = belts_arm[3] + belts_flaskeffect + belts_flaskdur[2] + belts_wed[3] + belts_mana[2];
+
+var xbelt_mix = belts_cheat + belts_life + belts_es[2] + belts_aux + belts_special_aux + VeilPS;
+var xbelt_core = belts_cheat + belts_life[2] + belts_es[1] + belts_wed[1] + belts_flaskeffect[1] + belts_flaskdur[1] + belts_mana[1] + str[1];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} IDENTIFIED MODS FOR OTHER SECTIONS
