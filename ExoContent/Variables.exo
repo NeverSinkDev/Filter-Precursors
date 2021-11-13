@@ -91,73 +91,6 @@ var regen_rate = "of Everlasting" "of Youth" "of Vivification" "of Perpetuity";
 ## HELMETS SPECIAL
 var minionGems = "Necromancer's" "Summoner's";
 
-## AMULETS/GENERAL
-var amu_life = "Athlete's" "Virile" "Rotund" "Robust";
-var amu_evp = "Vaporous" "Phased";
-var amu_arp = "Impregnable" "Girded";
-
-var amu_allat = "of the Multiverse" "of the Infinite" "of the Universe" "of the Galaxy" "of the Heavens";
-var amu_castspeed = "of Expertise" "of Nimbleness";
-
-var amu_dmg_spell = "Wizard's" "Thaumaturgist's";
-var amu_dmg_wed = "Devastating" "Overpowering" "Unleashed" "Empowering";
-var amu_dmg_firep = "of Immolation" "of Flames" "of Cinders";
-var amu_dmg_coldp = "of Floe" "of Rime" "of Ice";
-var amu_dmg_lightp = "of Discharge" "of Voltage" "of Electricity";
-
-var amu_dmg_firef = "Cremating" "Blasting" "Incinerating";
-var amu_dmg_coldf = "Entombing" "Polar" "Glaciated";
-var amu_dmg_lightf = "Electrocuting" "Discharging" "Shocking";
-
-var amu_accu = "of the Ranger" "of the Marksman" "of the Sniper";
-var amu_manaregen = "of Nirvana" "of Euphoria" "of Bliss";
-
-var top2base = res_fire[2] + res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[3] + dex[3] + int[3];
-var top3base = res_fire[3] + res_fire[3] + res_light[3] + res_cold[3] + res_chaos[3] + str[4] + dex[4] + int[4];
-
-var merged_amu_attack2 = amu_accu[2] + amu_dmg_wed[3] + amu_dmg_firef[1] + amu_dmg_coldf[1] + amu_dmg_lightf[1] + "Flaring" "Tempered";
-var merged_amu_attack3 = amu_accu[3] + amu_dmg_wed[4] + amu_dmg_firef[2] + amu_dmg_coldf[2] + amu_dmg_lightf[2] + "Flaring" "Tempered" "Razor-sharp";
-
-var merged_amu_caster2 = amu_castspeed + wmana[2] + amu_manaregen[2] + amu_dmg_spell[2] + amu_dmg_firep[2] + amu_dmg_coldp[2] + amu_dmg_lightp[2];
-var merged_amu_caster3 = amu_castspeed + wmana[3] + amu_manaregen[3] + amu_dmg_spell[3] + amu_dmg_firep[3] + amu_dmg_coldp[3] + amu_dmg_lightp[3];
-
-var universal2 = res_omni[2] + amu_allat[2] + ws_attack_crit[2] + ws_critmulti[2];
-var universal3 = res_omni[3] + amu_allat[3] + ws_attack_crit[3] + ws_critmulti[3];
-
-var amu_esp = "Unassailable" "Indomitable" "Dauntless";
-
-## RINGS
-var ring_life = "Virile" "Rotund" "Robust";
-var ring_mana = "Ultramarine" "Zaffre" "Blue";
-var ring_es = "Resplendent" "Incandescent" "Scintillating";
-var ring_wed = "Overpowering" "Unleashed" "Empowering";
-var ring_fire_d = "Cremating" "Blasting" "Incinerating";
-var ring_cold_d = "Entombing" "Polar" "Glaciated";
-var ring_light_d = "Electrocuting" "Discharging" "Shocking";
-var ring_phys_d = "Annealed" "Gleaming" "Honed";
-
-var ring_ias = "of Skill";
-var ring_fcr = "of Talent";
-var ring_leech = "Thirsty" "Remora's";
-var ring_res_prism = "of the Rainbow" "of Variegation" "of the Kaleidoscope";
-var ring_all_atr = "of the Comet" "of the Meteor";
-var ring_accu = "of the Ranger" "of the Marksman" "of the Sniper";
-var ring_mana_regen = "of Nirvana" "of Euphoria" "of Bliss";
-var ring_ele_dmg = "of Flames" "of Rime" "of Voltage";
-var ring_unset = "Quintessential" "Flawless";
-
-var merged_ring_attack2 = ring_wed[2] + ring_fire_d[2] + ring_cold_d[2] + ring_light_d[2] + ring_phys_d[2] + ring_ias + ring_leech + ring_accu[2] + ring_ele_dmg;
-var merged_ring_attack3 = ring_wed[3] + ring_fire_d[3] + ring_cold_d[3] + ring_light_d[3] + ring_phys_d[3] + ring_ias + ring_leech + ring_accu[3] + ring_ele_dmg;
-
-var merged_ring_caster2 = ring_mana[2] + ring_ias + ring_fcr + ring_mana_regen[2] + ring_ele_dmg;
-var merged_ring_caster3 = ring_mana[3] + ring_ias + ring_fcr + ring_mana_regen[3] + ring_ele_dmg;
-
-var merged_ring_universal2 = ring_res_prism[2] + ring_all_atr[1] + top2base + ring_unset;
-var merged_ring_universal3 = ring_res_prism[3] + ring_all_atr[2] + top3base + ring_unset;
-
-## var top4base = res_fire[4] + res_fire[4] + res_light[4] + res_cold[4] + res_chaos + str[4] + dex[4] + int[4];
-## var merged_ring_universal4 = ring_res_prism[3] + ring_all_atr[2] + top4base + ring_unset;
-
 ## BELTS
 var belt_life = "Fecund" "Athlete's"  "Virile" "Rotund" "Robust";
 var belt_mana = "Blue" "Mazarine";
@@ -176,17 +109,6 @@ var projSpeed = "of the Gale" "of the Zephyr" "of Propulsion";
 
 var quivermods2 = amu_accu[2] + quiver_leech + quiver_ias[2] + quiver_critc[2] + ws_critmulti[3] + quiver_dot[2] + projSpeed[2];
 var quivermods3 = amu_accu[3] + quiver_leech + quiver_ias[3] + quiver_critc[4] + ws_critmulti[4] + quiver_dot[3] + projSpeed[3] + quiver_dmg;
-
-## Shields
-var shields_life = "Vigorous" "Fecund" "Athlete's" "Virile" "Rotund" "Robust";
-var shields_es = "Incandescent" "Scintillating" "Blazing" "Seething" "Pulsing" "Radiating";
-var shield_esp = "Unfaltering" "Unassailable" "Indomitable" "Dauntless";
-var shieldCastSpeed = "of Expertise" "of Nimbleness";
-
-var casterShieldStats2 = wcast_spell[3] + wcast_fire[2] + wcast_cold[2] + wcast_light[2] + wgems_alllevels + w_extrachaos_phys[1] + w_extrachaos_light[1] + w_extrachaos_cold[1] + w_extrachaos_fire[1] + shieldCastSpeed[1] + ws_cast_crit[2] + amu_manaregen[2] + wmana[1];
-var casterShieldStats3 = wcast_spell[4] + wcast_fire[3] + wcast_cold[3] + wcast_light[3] + wgems_alllevels + w_extrachaos_phys + w_extrachaos_light + w_extrachaos_cold + w_extrachaos_fire + shieldCastSpeed[2] + ws_cast_crit[3] + amu_manaregen[3] + wmana[2];
-var universalShieldStats = "of Blocking" "of the Bulwark" "of the Span" "of the Rainbow" "of Sanctuary" "of Revitalization";
-var shields_highDefense = "Impenetrable" "Impregnable" "Carapaced" "Plated" "Phased" "Blurred" "Illusion's" "Mirage's" "Interpermeated" "Inspired" "Consecrated" "Beatified" "Incorporeal" "Illusory" "Eidolon's" "Spirit's" + shields_es[2] + shield_esp[2];
 
 ## Jewels
 var jewels_priority = "Vivid" "Shimmering" "of Potency";
@@ -486,7 +408,6 @@ var shield_caster_damage2 = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wca
 var shield_global_core = a_cheatMods + shield_cheatMods + VeilPS;
 
 var xshield_es_core =       shield_global_core + shields_fes[3] + shields_pes[2];
-var xshield_aux_core =      shield_global_core + suppress[1] + block[1] + spellblock[1] + critdmgreduction[1] + ws_cast_crit[1];
 var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[3] + block[2] + spellblock[1] + critdmgreduction[2] + regen_rate[2];
 var xshield_caster_core =   shield_global_core + shield_caster_gemLevels + shield_caster_damage2 + ws_cast_crit[1];
 var xshield_life_core =     shield_global_core + shield_life[2];
@@ -497,13 +418,12 @@ var shield_combined_highdefenses = shield_specialDefenses2 + shields_combined_fl
 var shield_combined_lifemods = shield_life[3];
 var shield_combined_castermods = shield_caster_gemLevels + shield_caster_damage2 + ws_manaregen[1] + ws_cast_crit[3];
 var shield_combined_attackermods = "of the Ranger" "of Mastery";
-
 var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses2 + ws_cast_crit[1] + shield_life[1];
 
-var xshield_defense_mix =   shield_spice + shield_combined_lifemods + shield_combined_attackermods + shields_combined_defenses2;
-var xshield_life_mix =      shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses;
-var xshield_caster_mix =    shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses_esonly;
 var xshield_es_mix =        shield_spice + shields_es_defense2      + shield_combined_castermods;
+var xshield_defense_mix =   shield_spice + shield_combined_lifemods + shield_combined_attackermods + shields_combined_defenses2;
+var xshield_caster_mix =    shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses_esonly;
+var xshield_life_mix =      shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## CASTER AND SPELLSLINGER ABSTRACTIONS
@@ -580,6 +500,84 @@ var xslinger_core = slingerBase2;
 
 var xslinger_default_conf = slingerBase1 + slingerAux1;
 var xslinger_default_norm = xslinger_core + slingerAux2 + slingerExtras;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## ACCESSOIRE  STATS 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var acc_cheat = "of the Underground" "Subterranean";
+
+## RINGS spawn these starting with T2
+var acc_life = "Athlete's" "Virile" "Rotund" "Robust";
+var acc_mana = "Ultramarine" "Zaffre" "Blue";
+var acc_fes = "Dazzling" "Resplendent" "Incandescent" "Scintillating";
+
+## Stats and utility
+var acc_pes = "Unassailable" "Indomitable" "Dauntless";
+var acc_par = "Impregnable" "Girded" "Thickened";
+var acc_pev = "Vaporous" "Phased" "Blurred";
+
+var acc_allat = "of the Multiverse" "of the Infinite" "of the Universe" "of the Galaxy" "of the Heavens";
+var acc_manaregen = "of Nirvana" "of Euphoria" "of Bliss";
+
+## damage mods
+var acc_crit_dmg = "of Destruction" "of Ferocity" "of Fury" "of Rage";
+var acc_crit_chance = "of Incision" "of Penetrating" "of Rupturing";
+
+var acc_dmg_firef = "Cremating" "Blasting" "Incinerating";
+var acc_dmg_coldf = "Entombing" "Polar" "Glaciated";
+var acc_dmg_lightf = "Electrocuting" "Discharging" "Shocking";
+var acc_dmg_physf = "Flaring" "Tempered";
+
+var acc_dmg_firep = "of Immolation" "of Flames" "of Cinders";
+var acc_dmg_coldp = "of Floe" "of Rime" "of Ice";
+var acc_dmg_lightp = "of Discharge" "of Voltage" "of Electricity";
+
+var acc_dot_mult = "of Dissolution" "of Melting" "of Liquefaction";
+var acc_att_wed = "Devastating" "Overpowering" "Unleashed" "Empowering";
+var acc_att_accu = "of the Ranger" "of the Marksman" "of the Sniper";
+
+var acc_cast_speed = "of Expertise" "of Nimbleness";
+var acc_cast_spell = "Wizard's" "Thaumaturgist's";
+
+## special
+var acc_unset_levels = "Quintessential" "Flawless";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## AMULETS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var amu_cheat = acc_cheat + "of Puhuarte" "Guatelitzi's";
+
+## important general stats on amulets
+var amu_aux_stats = VeilPS + amu_cheat + aux_stats2 + acc_allat[3] + acc_manaregen[2] + acc_par[1] + acc_pev[1] + acc_pes[1];
+
+## important general stats on amulets enhanced with life/mana
+var amu_aux_stats_full = amu_aux_stats2 + acc_life[3] + acc_mana[1] + acc_fes[2];
+
+## ...enchanced with damage stats
+var xamu_caster_mix = amu_aux_stats_full + acc_cast_speed[2] + acc_cast_spell[3] + acc_manaregen[2] + acc_mana[2] + acc_dmg_firep[2] + acc_dmg_coldp[2] + acc_dmg_lightp[2] + acc_dot_mult[2] + acc_crit_dmg[3] + acc_crit_chance[2];
+var xamu_dot_mix    = amu_aux_stats_full + acc_crit_dmg[1] + acc_cast_speed[1] + acc_cast_spell[2] + acc_att_wed[2] + acc_att_accu[2] + acc_dmg_firep[1] + acc_dmg_coldp[1] + acc_dot_mult[3];
+var xamu_attack_mix = amu_aux_stats_full + acc_crit_dmg[4] + acc_crit_chance[2] + acc_dmg_firef[1] + acc_dmg_coldf[1] + acc_dmg_lightf[1] + acc_att_accu[2] + acc_att_wed[3] + acc_dmg_physf[2];
+
+var xamu_aux_singlecore = acc_life[3] + acc_fes[1] + amu_cheat + acc_crit_dmg[1] + acc_dot_mult[1] + acc_allat[1] + acc_pes[1];
+var xamu_aux_multicore  = VeilPS + acc_life[4] + acc_fes[3] + amu_cheat + acc_crit_dmg[2] + acc_dot_mult[2] + acc_allat[2] + acc_pes[2];
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## RINGS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var rings_cheat = acc_cheat + acc_unset_levels[1] + "Guatelitzi's" + VeilPS;
+var ring_aux_stats_full = rings_cheat + acc_life[4] + acc_fes[3] + aux_stats2 + acc_manaregen[2] + "of the Comet";
+
+var ring_ias = "of Skill";
+var ring_castspeed = "of Talent";
+var ring_pdmg = "of Flames" "of Rime" "of Voltage";
+
+var xring_core = rings_cheat + acc_life[3] + acc_fes[2] + acc_att_accu[1] + acc_mana[1];
+
+var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[3] + acc_dmg_physf[2] + acc_dmg_firef[2] + acc_dmg_coldf[2] + acc_dmg_lightf[2] + ring_ias + ring_pdmg;
+var xring_cast_mix = ring_aux_stats_full + ring_castspeed + ring_pdmg + acc_mana;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} IDENTIFIED MODS FOR OTHER SECTIONS

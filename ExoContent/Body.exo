@@ -221,7 +221,6 @@ Section IdModSection : IdMods
 			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; }
 			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; }
 		}
-
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
@@ -231,25 +230,36 @@ Section IdModSection : IdMods
 			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; }
 		}
 #------------------------------------
+#   [1234] Shields
+#------------------------------------			
+		Section Shields : Class "Shields"
+		{
+			Show ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
+			Show DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; }
+			Show CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
+			Show LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; }
+		}
+#------------------------------------
 #   [1234] Amulets
 #------------------------------------
-		Section Amulets : Class "Amulets", Corrupted False
+		Section Amulets : Class "Amulets"
 		{
-			Show 3ModAttackAmu { Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=2 top2base + merged_amu_attack2 + universal2 + amu_esp[1] + amu_evp[1] + amu_arp[1] }
-			Show 4ModAttackAmu { Mod amu_life[3] + "Dazzling" "Resplendent" "Incandescent"; Mod >=3 veilPS + top3base + merged_amu_attack3 + universal3 + amu_esp[2] + amu_evp[2] + amu_arp[2] }
-			Show 3ModCasterAmu { Mod amu_life[2] + "Dazzling" "Resplendent"; Mod >=2 top2base + merged_amu_caster2 + universal2 + amu_esp[2] }
-			Show 4ModCasterAmu { Mod amu_life[3] + "Dazzling" "Resplendent" "Incandescent"; Mod >=3 veilPS + top3base + merged_amu_caster3 + universal3 + amu_esp[3] }
-			Show 4HighStatAmu { Mod >= 4 veilPS + amu_life[3] + top2base + merged_amu_attack2 + universal2 + amu_esp[1] + amu_arp[1] + amu_evp[1] + "Dazzling" "Resplendent" }
+			Show 1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; }
+			Show 2CoreCaster{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
+
+			Show 1CoreDot	{ Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; }
+			Show 2CoreDot	{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
+
+			Show 1CoreAttack{ Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; }
+			Show 2CoreAttack{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
 		}
 #------------------------------------
 #   [1234] Rings
 #------------------------------------		
 		Section Rings : Class "Rings", Corrupted False
 		{
-			Show 2ModRingAttack { Mod ring_life[2] + ring_es[1]; Mod >=2 merged_ring_attack2 + merged_ring_universal2 }
-			Show 3ModRingAttack { Mod veilPS + ring_life[3] + ring_es[2]; Mod >=3 merged_ring_attack3 + merged_ring_universal3 }
-			Show 2ModRingCaster { Mod ring_life[2] + ring_es[2]; Mod >=2 merged_ring_caster2 + merged_ring_universal2 }
-			Show 3ModRingCaster { Mod veilPS + ring_life[3] + ring_es[3]; Mod >=3 merged_ring_caster3 + merged_ring_universal3 }
+			Show Caster { Mod xring_core; Mod >= 4 xring_cast_mix; }
+			Show Attack { Mod xring_core; Mod >= 4 xring_attack_mix; }
 		}
 #------------------------------------
 #   [1234] Quivers
@@ -266,16 +276,6 @@ Section IdModSection : IdMods
 		{
 			Show 4ModBelt { Mod veilPS + belt_life[2] + belt_es[1]; Mod >=3 belt_mana[1] + belt_wed[2] + belt_arm[2] + flasks + top2base }
 			Show 5ModBelt { Mod veilPS + belt_life[3] + belt_es[2]; Mod >=4 belt_mana[1] + belt_wed[3] + belt_arm[3] + flasks + top3base }
-		}
-#------------------------------------
-#   [1234] Shields
-#------------------------------------			
-		Section Shields : Class "Shields"
-		{
-			Show ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
-			Show DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; }
-			Show CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
-			Show LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; }
 		}
 #------------------------------------
 #   [1234] Jewels
