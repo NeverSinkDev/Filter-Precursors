@@ -140,7 +140,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	## TODO: == and + together mess up parsing
 	Show ExoticHeistBases 	  { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { !GSH; BaseType bases.exotic.ritual.any }
-	Show ExoticExpeditionBases{ !GSH; BaseType bases.exotic.expedition.any }
+	Show ExoticExpeditionBases{ %D5; !GSH; BaseType bases.exotic.expedition.any }
 	Show ExoticTalismanBases  { !GSH; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
 }
@@ -159,7 +159,7 @@ Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
 	Show t2veil     { %HS4; !GSH; !exotic.t2; Mod t2veiled; }
 }
 
-Section IdModSection : IdMods
+Section IdModSection : IdMods, !highvalueidmod
 {
 #------------------------------------
 #   [1234] Physical
@@ -168,44 +168,43 @@ Section IdModSection : IdMods
 	{
 		Section Weapons : Class classes_attack, DropLevel >= 55, Mod xattackphys_Core
 		{
-			Show AttackPhys     { Mod >= 3 xattackphys_Conf; }
-			Show AttackPhysPure { Mod >= 2 xattackphys_Conf; Corrupted False; }
+			Show Weapon_Phys     { Mod >= 3 xattackphys_Conf; }
+			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Corrupted False; }
 		}
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-		Section FastEleWeapons : BaseType == quickWeapons, Corrupted False, Mod xattackele_Core
+		Section FastEleWeapons : BaseType == quickWeapons, Mod xattackele_Core
 		{
-			Show AttackEle { Mod >= 4 xattackele_Norm; }
-			Show AttackElePure { Mod >= 3 xattackele_Norm; Corrupted False; }
+			Show Weapon_Ele { Mod >= 4 xattackele_Norm; }
+			Show Weapon_ElePure { Mod >= 3 xattackele_Norm; Corrupted False; }
 		}
 #------------------------------------
 #   [1234] Gembased
 #------------------------------------
 		Section GemLevels
 		{
-			Show GemModsBow { Class "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
-			Show GemModsCaster { Class classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
-			Show GemModsStaves { Class classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
+			Show Gem_Bow { Class "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
+			Show Gem_Caster { Class classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
+			Show Gem_Staves { Class classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
 		}
 #------------------------------------
 #   [1234] Caster
 #------------------------------------
 		Section Caster : Class == classes_1hcast, Mod xcaster_core
 		{
-			## TODO: Decide on single treatment for these
-			Show CasterFireWeaponT2  { Mod >= 3 xcaster_firedmg_norm; }
-			Show CasterColdWeaponT2  { Mod >= 3 xcaster_colddmg_norm; }
-			Show CasterLightWeaponT2 { Mod >= 3 xcaster_lightdmg_norm; }
-			Show CasterPhysWeaponT2  { Mod >= 3 xcaster_physdmg_norm; }
-			Show CasterChaosWeaponT2 { Mod >= 3 xcaster_chaosdmg_norm; }
+			Show Caster_FireWeaponT2  { Mod >= 3 xcaster_firedmg_norm; }
+			Show Caster_ColdWeaponT2  { Mod >= 3 xcaster_colddmg_norm; }
+			Show Caster_LightWeaponT2 { Mod >= 3 xcaster_lightdmg_norm; }
+			Show Caster_PhysWeaponT2  { Mod >= 3 xcaster_physdmg_norm; }
+			Show Caster_ChaosWeaponT2 { Mod >= 3 xcaster_chaosdmg_norm; }
 		}
 #------------------------------------
 #   [1234] Spellslinger
 #------------------------------------
 		Section Spellslinger : Class == "Wands", Mod xslinger_core
 		{
-			Show SlingerT2 { Mod >= 3 xslinger_default_norm; }
+			Show Caster_SlingerT2 { Mod >= 3 xslinger_default_norm; }
 		}
 #------------------------------------
 #   [1234] Helmets
@@ -226,7 +225,7 @@ Section IdModSection : IdMods
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
-		Section Gloves : Class "Gloves", Corrupted False
+		Section Gloves : Class "Gloves"
 		{
 			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; }
 			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; }
@@ -236,47 +235,56 @@ Section IdModSection : IdMods
 #------------------------------------			
 		Section Shields : Class "Shields"
 		{
-			Show ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
-			Show DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; }
-			Show CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
-			Show LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; }
+			Show Shield_ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
+			Show Shield_DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; }
+			Show Shield_CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
+			Show Shield_LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; }
 		}
 #------------------------------------
 #   [1234] Amulets
 #------------------------------------
 		Section Amulets : Class "Amulets"
 		{
-			Show 1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; }
-			Show 2CoreCaster{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
+			Show Amu_1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; }
+			Show Amu_2CoreCaster{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
 
-			Show 1CoreDot	{ Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; }
-			Show 2CoreDot	{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
+			Show Amu_1CoreDot	{ Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; }
+			Show Amu_2CoreDot	{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
 
-			Show 1CoreAttack{ Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; }
-			Show 2CoreAttack{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
+			Show Amu_1CoreAttack{ Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; }
+			Show Amu_2CoreAttack{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
 		}
 #------------------------------------
 #   [1234] Rings
 #------------------------------------		
 		Section Rings : Class "Rings"
 		{
-			Show Caster { Mod xring_core; Mod >= 4 xring_cast_mix; }
-			Show Attack { Mod xring_core; Mod >= 4 xring_attack_mix; }
+			Show Ring_Caster { Mod xring_core; Mod >= 4 xring_cast_mix; }
+			Show Ring_Attack { Mod xring_core; Mod >= 4 xring_attack_mix; }
 		}
 #------------------------------------
 #   [1234] Quivers
 #------------------------------------	
 		Section Quivers : Class "Quivers"
 		{
-			Show Hit { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_hit; }
-			Show Dot { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_dot; }
+			Show Quiv_Hit { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_hit; }
+			Show Quiv_Dot { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_dot; }
+		}
+#------------------------------------
+#   [1234] Body Armours
+#------------------------------------	
+		Section Body : Class "Body Armours"
+		{
+			Show Body_Life { Mod body_core_life; Mod >= 5 body_aux_life; }
+			Show Body_Defense { Mod >= 2 body_core_defense; Mod >= 4 body_aux_life; }
+			Show Body_ES { Mod >= 2 body_core_es; Mod >= 4 body_aux_es; }
 		}
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
 		Section Belts : Class "Belts"
 		{
-			Show General { Mod xbelt_core; Mod >= 4 xbelt_mix; }
+			Show Belt_General { Mod xbelt_core; Mod >= 4 xbelt_mix; }
 		}
 #------------------------------------
 #   [1234] Jewels
@@ -285,10 +293,6 @@ Section IdModSection : IdMods
 		{
 			Show PotentiallyValuableJewel { Mod >= 3 jewels_priority + jewels_general + jewels_mult + jewels_minion }
 		}
-#------------------------------------
-#   [1234] Misc
-#------------------------------------
-		Show HighResStat { Mod >= 3 res_fire[2] + res_light[2] + res_cold[2] + res_chaos[2] + str[2] + dex[2] + int[2] + res_omni[2]  }
 	}
 }
 
@@ -485,7 +489,7 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel <= 67; }
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 67; }
-	Show 6Sockets		{ %D4; !G5H; !*t1; Sockets >= 6; }
+	Show 6Sockets		{ %DS3; !G5H; !*t1; Sockets >= 6; }
 }
 
 #===============================================================================================================
@@ -498,7 +502,7 @@ Section ExoticVariationsLowPrio : !exotic
 	Section Scourged : Scourged True, Auto("exotic->scourged"), Rarity <= Rare
 	{
 		Show ScourgedSelected    { !GSH; %D3; !exotic.t3; BaseType bases.crafting.scourged.t1; }
-		Show ScourgedClasses     { !GSH; %D3; !exotic.t3; Class classes_scourged; }
+		Show ScourgedClasses     { !GSH; %D2; !exotic.t3; Class classes_scourged; }
 		Show ScourgedRandom      { !GSH; %H2; !exotic.t4; Scourged True; Class classes_equip; }
 	}
 }
@@ -618,7 +622,7 @@ Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("Chi
 
 Section Chancing : Clean(), Rarity Normal, Auto("chancing"), Mirrored False, !chancing, !GEX
 {
-	Show hh { %D2; BaseType == bases.chancing.higher; }
+	Show hh { %D1; BaseType == bases.chancing.higher; }
 	Show t2 { %D1; BaseType == bases.chancing.any; }
 }
 
@@ -748,8 +752,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
 	{
-		Show High { %H3; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any  { %H2; !G5; !exotic.t3; Empty(); }
+		Show High { %HS2; !G4; !exotic.t2; ItemLevel >= 82; }
+		Show Any  { %HS1; !G5; !exotic.t3; Empty(); }
 	}
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
@@ -985,11 +989,11 @@ Section Jewels : !jewels
 	{
 		Show OptimalHighLarge	{ !G3; %D5; !V2; !High; BaseType "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
 		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large 				{ !G4; %D3; !V4; BaseType "Large Cluster Jewel"; }
+		Show Large 				{ !G4; %D4; !V4; BaseType "Large Cluster Jewel"; }
 
 		Show OptimalHighMedium { !G3; %D4; !V2; !High; BaseType "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
 		Show HighMedium 	   { !G3; %D4; !V3; !High; BaseType "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium 		   { !G4; %D3; !V4; BaseType "Medium Cluster Jewel"; }
+		Show Medium 		   { !G4; %D4; !V4; BaseType "Medium Cluster Jewel"; }
 
 		Show HighSmall 			{ !G3; %D4; !V3; !High; BaseType "Small Cluster Jewel"; ItemLevel >= 84; }
 		Show Small 				{ !G4; %D4; !V4; BaseType "Small Cluster Jewel"; }
@@ -1083,7 +1087,6 @@ Section Gems : Class "Gems", !Gems
 		Show ex6lvlgems { !G2; !*P1; BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
 
 		Show exSpecialE4 { !G1; !*T1; BaseType gems.untiered.empowerclassgems; GemLevel >= 4; }
-
 		Show exSpecialE2 { !G1; !*P1; BaseType gems.untiered.empowerclassgems; GemLevel >= 2; }
 		Show exSpecialEQ { !G2; !*P1; BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
 		Show exSpecial { !G3; !*P2; BaseType gems.untiered.specialGems; }
@@ -1196,7 +1199,6 @@ Section Maps : Class "Maps", !Maps
 #===============================================================================================================
 # [[0200]] Normal Map Progression
 #===============================================================================================================
-
 
 #------------------------------------
 # [4403] Generic Decorators
@@ -1324,7 +1326,7 @@ Section MapFragments : Class "Map Fragments"
 		Show t1 { !G1; BaseType fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType fragments.scarabs.t2; }
 		Show t3 { !G3; BaseType fragments.scarabs.t3; }
-		Show t4 { !G4; %H5; BaseType fragments.scarabs.t4; }
+		Show t4 { !G4; %HS4; BaseType fragments.scarabs.t4; }
 		Show restex { BaseType "Scarab"; }
 	}
 
@@ -1668,7 +1670,7 @@ Section DivinationCards : Auto("divination"), Class "Divination", !divi
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
 	Show t4c 	{ %H5; !G4; !*t4;	BaseType == divination.t4c; }
 	Show t5c 	{ %H3; !G5; !*t5;	BaseType == divination.t5c; }
-	Show t4 	{ %H4; !G5H; !*t4;	BaseType == divination.t4; }
+	Show t4 	{ %HS3; !G5H; !*t4;	BaseType == divination.t4; }
 	Show t5 	{ %H1; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
 	Show restex { Empty(); }
 }

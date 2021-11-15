@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.3.1
+# VERSION:  8.4.0
 # TYPE:     0-SOFT
 # STYLE:    DEFAULT
 # AUTHOR:   NeverSink
@@ -70,9 +70,9 @@
 #   [0411] Amulets
 #   [0412] Rings
 #   [0413] Quivers
-#   [0414] Belts
-#   [0415] Jewels
-#   [0416] Misc
+#   [0414] Body Armours
+#   [0415] Belts
+#   [0416] Jewels
 # [[0500]] Exotic Mods Filtering
 #   [0501] Veiled/Betrayal - low prio veiled items
 #   [0502] Incursion/Temple Mods
@@ -784,7 +784,7 @@ Show # $type->exoticbases $tier->exoticritualbases
 	PlayEffect Blue
 	MinimapIcon 0 Blue Diamond
 
-Show # $type->exoticbases $tier->exoticexpeditionbases
+Show # %D5 $type->exoticbases $tier->exoticexpeditionbases
 	Rarity <= Rare
 	BaseType "Iron Flask" "Runic Crest" "Runic Crown" "Runic Gages" "Runic Gauntlets" "Runic Gloves" "Runic Greaves" "Runic Helm" "Runic Sabatons" "Runic Sollerets"
 	SetFontSize 45
@@ -854,7 +854,7 @@ Show # %HS4 $type->exoticmods $tier->t2veil
 #   [0402] Physical
 #------------------------------------
 
-Show # $type->rareid $tier->attackphys
+Show # $type->rareid $tier->weapon_phys
 	Identified True
 	DropLevel >= 55
 	Rarity Rare
@@ -864,12 +864,12 @@ Show # $type->rareid $tier->attackphys
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->attackphyspure
+Show # $type->rareid $tier->weapon_physpure
 	Identified True
 	Corrupted False
 	DropLevel >= 55
@@ -880,7 +880,7 @@ Show # $type->rareid $tier->attackphyspure
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -889,9 +889,8 @@ Show # $type->rareid $tier->attackphyspure
 #   [0403] Elemental
 #------------------------------------
 
-Show # $type->rareid $tier->attackele
+Show # $type->rareid $tier->weapon_ele
 	Identified True
-	Corrupted False
 	Rarity Rare
 	BaseType == "Ambusher" "Corsair Sword" "Eye Gouger" "Fancy Foil" "Gemini Claw" "Grove Bow" "Hellion's Paw" "Imbued Wand" "Imperial Bow" "Imperial Claw" "Imperial Skean" "Jewelled Foil" "Maraketh Bow" "Spiraled Foil" "Thicket Bow"
 	HasExplicitMod "Carbonising" "Cremating" "Blasting" "Crystalising" "Entombing" "Polar" "Vapourising" "Electrocuting" "Discharging" "Matatl's" "Tacati" "Topotante's" "Veiled" "of the Underground" "Subterranean" "of Many"
@@ -899,12 +898,12 @@ Show # $type->rareid $tier->attackele
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->attackelepure
+Show # $type->rareid $tier->weapon_elepure
 	Identified True
 	Corrupted False
 	Rarity Rare
@@ -914,7 +913,7 @@ Show # $type->rareid $tier->attackelepure
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -923,7 +922,7 @@ Show # $type->rareid $tier->attackelepure
 #   [0404] Gembased
 #------------------------------------
 
-Show # $type->rareid $tier->gemmodsbow
+Show # $type->rareid $tier->gem_bow
 	Identified True
 	Rarity Rare
 	Class "Bows"
@@ -931,12 +930,12 @@ Show # $type->rareid $tier->gemmodsbow
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->gemmodscaster
+Show # $type->rareid $tier->gem_caster
 	Identified True
 	Rarity Rare
 	Class "Rune Daggers" "Sceptres" "Wands"
@@ -944,12 +943,12 @@ Show # $type->rareid $tier->gemmodscaster
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->gemmodsstaves
+Show # $type->rareid $tier->gem_staves
 	Identified True
 	Rarity Rare
 	Class "Staves"
@@ -957,7 +956,7 @@ Show # $type->rareid $tier->gemmodsstaves
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -966,7 +965,7 @@ Show # $type->rareid $tier->gemmodsstaves
 #   [0405] Caster
 #------------------------------------
 
-Show # $type->rareid $tier->casterfireweapont2
+Show # $type->rareid $tier->caster_fireweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -975,12 +974,12 @@ Show # $type->rareid $tier->casterfireweapont2
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->castercoldweapont2
+Show # $type->rareid $tier->caster_coldweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -989,12 +988,12 @@ Show # $type->rareid $tier->castercoldweapont2
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->casterlightweapont2
+Show # $type->rareid $tier->caster_lightweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -1003,35 +1002,35 @@ Show # $type->rareid $tier->casterlightweapont2
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->casterphysweapont2
+Show # $type->rareid $tier->caster_physweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Veiled" "Lithomancer's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Empress's" "Queen's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting"
-	HasExplicitMod >=3 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Veiled" "Lithomancer's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Empress's" "Queen's" "Runic" "Glyphic" "Incanter's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Mazarine" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "of Nirvana" "of Euphoria" "of Exsanguinating" "of Hemorrhaging" "of Phlebotomising"
+	HasExplicitMod >=3 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Veiled" "Lithomancer's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Empress's" "Queen's" "Runic" "Glyphic" "Incanter's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Mazarine" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "of Nirvana" "of Euphoria" "of Exsanguinating" "of Hemorrhaging" "of Phlebotomising" "of Dissolution" "of Melting"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->casterchaosweapont2
+Show # $type->rareid $tier->caster_chaosweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Veiled" "Lithomancer's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Empress's" "Queen's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting"
-	HasExplicitMod >=3 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Veiled" "Lithomancer's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Empress's" "Queen's" "Runic" "Glyphic" "Incanter's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Mazarine" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "of Nirvana" "of Euphoria" "of Disintegrating" "of Atrophying" "of Deteriorating"
+	HasExplicitMod >=3 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Veiled" "Lithomancer's" "Flame Shaper's" "Frost Singer's" "Thunderhand's" "Mad Lord's" "Empress's" "Queen's" "Runic" "Glyphic" "Incanter's" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Mazarine" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "of Nirvana" "of Euphoria" "of Disintegrating" "of Atrophying" "of Deteriorating" "of Dissolution" "of Melting"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1040,7 +1039,7 @@ Show # $type->rareid $tier->casterchaosweapont2
 #   [0406] Spellslinger
 #------------------------------------
 
-Show # $type->rareid $tier->slingert2
+Show # $type->rareid $tier->caster_slingert2
 	Identified True
 	Rarity Rare
 	Class == "Wands"
@@ -1049,7 +1048,7 @@ Show # $type->rareid $tier->slingert2
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1063,11 +1062,11 @@ Show # $type->rareid $tier->helmet_life_based
 	Rarity Rare
 	Class "Helmets"
 	HasExplicitMod "Fecund" "Athlete's" "Virile" "Necromancer's" "of Everlasting" "of Youth"
-	HasExplicitMod >=4 "of Puhuarte" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Necromancer's" "Summoner's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Fecund" "Athlete's" "Virile"
+	HasExplicitMod >=4 "of Puhuarte" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Necromancer's" "Summoner's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Fecund" "Athlete's" "Virile"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1077,11 +1076,11 @@ Show # $type->rareid $tier->helmet_es_based
 	Rarity Rare
 	Class "Helmets"
 	HasExplicitMod "Unassailable" "Indomitable" "Blazing" "Seething" "Fecund" "Necromancer's"
-	HasExplicitMod >=4 "of Puhuarte" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Necromancer's" "Summoner's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Fecund" "Athlete's"
+	HasExplicitMod >=4 "of Puhuarte" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Necromancer's" "Summoner's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Fecund" "Athlete's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1095,11 +1094,11 @@ Show # $type->rareid $tier->boots_life_based
 	Rarity Rare
 	Class "Boots"
 	HasExplicitMod "Athlete's" "Hellion's" "Cheetah's"
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Athlete's" "Virile" "Rotund" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Veiled" "of the Veil"
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Athlete's" "Virile" "Rotund" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "Veiled" "of the Veil"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1109,11 +1108,11 @@ Show # $type->rareid $tier->boots_es_based
 	Rarity Rare
 	Class "Boots"
 	HasExplicitMod "Hellion's" "Cheetah's"
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Veiled" "of the Veil"
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "Veiled" "of the Veil"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1124,30 +1123,28 @@ Show # $type->rareid $tier->boots_es_based
 
 Show # $type->rareid $tier->gloves_life_based
 	Identified True
-	Corrupted False
 	Rarity Rare
 	Class "Gloves"
-	HasExplicitMod "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean"
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean"
+	HasExplicitMod "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
 Show # $type->rareid $tier->gloves_es_based
 	Identified True
-	Corrupted False
 	Rarity Rare
 	Class "Gloves"
-	HasExplicitMod "Blazing" "Seething" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Athlete's" "of Puhuarte" "of the Underground" "Subterranean"
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Veiled" "of the Veil"
+	HasExplicitMod "Blazing" "Seething" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Athlete's" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "Veiled" "of the Veil"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1156,58 +1153,58 @@ Show # $type->rareid $tier->gloves_es_based
 #   [0410] Shields
 #------------------------------------ 		
 
-Show # $type->rareid $tier->esfocus
+Show # $type->rareid $tier->shield_esfocus
 	Identified True
 	Rarity Rare
 	Class "Shields"
-	HasExplicitMod >=2 "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->defensefocus
+Show # $type->rareid $tier->shield_defensefocus
 	Identified True
 	Rarity Rare
 	Class "Shields"
-	HasExplicitMod >=2 "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Vigorous" "Fecund" "Athlete's" "of the Citadel" "of the Sentinel" "of the Bastion" "of Obstruction" "of Interference" "of Everlasting" "of Youth"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "of the Ranger" "of Mastery" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Vigorous" "Fecund" "Athlete's" "of the Citadel" "of the Sentinel" "of the Bastion" "of Obstruction" "of Interference" "of Everlasting" "of Youth"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "of the Ranger" "of Mastery" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->casterfocus
+Show # $type->rareid $tier->shield_casterfocus
 	Identified True
 	Rarity Rare
 	Class "Shields"
-	HasExplicitMod "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Unmaking"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Unmaking"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->lifefocus
+Show # $type->rareid $tier->shield_lifefocus
 	Identified True
 	Rarity Rare
 	Class "Shields"
-	HasExplicitMod "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "Vigorous" "Fecund"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "Vigorous" "Fecund"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1216,7 +1213,7 @@ Show # $type->rareid $tier->lifefocus
 #   [0411] Amulets
 #------------------------------------
 
-Show # $type->rareid $tier->1corecaster
+Show # $type->rareid $tier->amu_1corecaster
 	Identified True
 	Rarity Rare
 	Class "Amulets"
@@ -1225,12 +1222,12 @@ Show # $type->rareid $tier->1corecaster
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->2corecaster
+Show # $type->rareid $tier->amu_2corecaster
 	Identified True
 	Rarity Rare
 	Class "Amulets"
@@ -1239,12 +1236,12 @@ Show # $type->rareid $tier->2corecaster
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->1coredot
+Show # $type->rareid $tier->amu_1coredot
 	Identified True
 	Rarity Rare
 	Class "Amulets"
@@ -1253,12 +1250,12 @@ Show # $type->rareid $tier->1coredot
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->2coredot
+Show # $type->rareid $tier->amu_2coredot
 	Identified True
 	Rarity Rare
 	Class "Amulets"
@@ -1267,12 +1264,12 @@ Show # $type->rareid $tier->2coredot
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->1coreattack
+Show # $type->rareid $tier->amu_1coreattack
 	Identified True
 	Rarity Rare
 	Class "Amulets"
@@ -1281,12 +1278,12 @@ Show # $type->rareid $tier->1coreattack
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->2coreattack
+Show # $type->rareid $tier->amu_2coreattack
 	Identified True
 	Rarity Rare
 	Class "Amulets"
@@ -1295,7 +1292,7 @@ Show # $type->rareid $tier->2coreattack
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1304,7 +1301,7 @@ Show # $type->rareid $tier->2coreattack
 #   [0412] Rings
 #------------------------------------ 	
 
-Show # $type->rareid $tier->caster
+Show # $type->rareid $tier->ring_caster
 	Identified True
 	Rarity Rare
 	Class "Rings"
@@ -1313,12 +1310,12 @@ Show # $type->rareid $tier->caster
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->attack
+Show # $type->rareid $tier->ring_attack
 	Identified True
 	Rarity Rare
 	Class "Rings"
@@ -1327,7 +1324,7 @@ Show # $type->rareid $tier->attack
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -1336,39 +1333,85 @@ Show # $type->rareid $tier->attack
 #   [0413] Quivers
 #------------------------------------
 
-Show # $type->rareid $tier->hit
+Show # $type->rareid $tier->quiv_hit
 	Identified True
 	Rarity Rare
 	Class "Quivers"
-	HasExplicitMod "of the Underground" "Subterranean" "Fecund" "Athlete's" "Virile" "of Destruction" "of Ferocity" "of Mastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "Veiled" "of the Veil" "Flaring" "Tempered" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Devastating" "Overpowering" "of Mastery" "of Ease" "of the Ranger" "of the Marksman" "of Dissolution" "of the Gale" "of Destruction" "of Ferocity" "of Fury" "of Rending" "of Incision" "of Penetrating"
+	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Fecund" "Athlete's" "Virile" "of Destruction" "of Ferocity" "of Mastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "Veiled" "of the Veil" "Flaring" "Tempered" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Devastating" "Overpowering" "of Mastery" "of Ease" "of the Ranger" "of the Marksman" "of Dissolution" "of the Gale" "of Destruction" "of Ferocity" "of Fury" "of Rending" "of Incision" "of Penetrating"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->dot
+Show # $type->rareid $tier->quiv_dot
 	Identified True
 	Rarity Rare
 	Class "Quivers"
-	HasExplicitMod "of the Underground" "Subterranean" "Fecund" "Athlete's" "Virile" "of Destruction" "of Ferocity" "of Mastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "Veiled" "of the Veil" "Cremating" "Blasting" "Flaring" "Tempered" "Devastating" "Overpowering" "of Mastery" "of Ease" "of the Ranger" "of the Marksman" "of Dissolution" "of Melting" "of Liquefaction" "of the Gale" "of Destruction" "of Rending"
+	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Fecund" "Athlete's" "Virile" "of Destruction" "of Ferocity" "of Mastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "Veiled" "of the Veil" "Cremating" "Blasting" "Flaring" "Tempered" "Devastating" "Overpowering" "of Mastery" "of Ease" "of the Ranger" "of the Marksman" "of Dissolution" "of Melting" "of Liquefaction" "of the Gale" "of Destruction" "of Rending"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0414] Belts
+#   [0414] Body Armours
 #------------------------------------
 
-Show # $type->rareid $tier->general
+Show # $type->rareid $tier->body_life
+	Identified True
+	Rarity Rare
+	Class "Body Armours"
+	HasExplicitMod "Prime" "Rapturous" "Vigorous" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
+	HasExplicitMod >=5 "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Revoking" "of Second Wind" "of Vigour" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 20 5 60 255
+	PlayAlertSound 3 300
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
+
+Show # $type->rareid $tier->body_defense
+	Identified True
+	Rarity Rare
+	Class "Body Armours"
+	HasExplicitMod >=2 "Prime" "Rapturous" "Vigorous" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	HasExplicitMod >=4 "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Revoking" "of Second Wind" "of Vigour" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 20 5 60 255
+	PlayAlertSound 3 300
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
+
+Show # $type->rareid $tier->body_es
+	Identified True
+	Rarity Rare
+	Class "Body Armours"
+	HasExplicitMod >=2 "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
+	HasExplicitMod >=4 "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Revoking" "of Second Wind" "of Vigour" "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "Seraphim's" "Djinn's" "Bishop's" "Priest's" "Exarch's" "Abbot's" "of Tacati" "Prime" "Rapturous"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 20 5 60 255
+	PlayAlertSound 3 300
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
+
+#------------------------------------
+#   [0415] Belts
+#------------------------------------
+
+Show # $type->rareid $tier->belt_general
 	Identified True
 	Rarity Rare
 	Class "Belts"
@@ -1377,13 +1420,13 @@ Show # $type->rareid $tier->general
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
 #------------------------------------
-#   [0415] Jewels
+#   [0416] Jewels
 #------------------------------------
 
 Show # $type->rareid $tier->potentiallyvaluablejewel
@@ -1394,23 +1437,7 @@ Show # $type->rareid $tier->potentiallyvaluablejewel
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 3 300
-	PlayEffect Purple
-	MinimapIcon 1 Purple Diamond
-
-#------------------------------------
-#   [0416] Misc
-#------------------------------------
-
-Show # $type->rareid $tier->highresstat
-	Identified True
-	Rarity Rare
-	HasExplicitMod >=3 "of Tzteosh" "of the Magma" "of Ephij" "of the Lightning" "of Haast" "of the Ice" "of Bameth" "of Exile" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of the Span" "of the Rainbow"
-	SetFontSize 45
-	SetTextColor 0 240 190 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
+	SetBackgroundColor 20 5 60 255
 	PlayAlertSound 3 300
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
@@ -2021,7 +2048,7 @@ Show # %D3 $type->socketslinks $tier->5links
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-Show # %D4 $type->socketslinks $tier->6sockets
+Show # %DS3 $type->socketslinks $tier->6sockets
 	Sockets >= 6
 	Rarity <= Rare
 	SetFontSize 45
@@ -2047,7 +2074,7 @@ Show # %D3 $type->exotic->scourged $tier->scourgedselected
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-Show # %D3 $type->exotic->scourged $tier->scourgedclasses
+Show # %D2 $type->exotic->scourged $tier->scourgedclasses
 	Scourged True
 	Rarity <= Rare
 	Class "Amulets" "Rings"
@@ -2400,7 +2427,7 @@ Show # %D0 $type->chiselrecipe $tier->chiselanyqualnormal
 #===============================================================================================================
 # !! Override 150 : "Chancing bases"
 
-Show # %D2 $type->chancing $tier->hh
+Show # %D1 $type->chancing $tier->hh
 	Corrupted False
 	Mirrored False
 	Rarity Normal
@@ -2770,7 +2797,7 @@ Show # $type->decorators->rareeg $tier->corruptedraresimplicit
 #===============================================================================================================
 # !! Override 220 : "Talismans"
 
-Show # %H3 $type->rare->exotic->breachrings $tier->high
+Show # %HS2 $type->rare->exotic->breachrings $tier->high
 	ItemLevel >= 82
 	Rarity Rare
 	Class "Rings"
@@ -2783,7 +2810,7 @@ Show # %H3 $type->rare->exotic->breachrings $tier->high
 	PlayEffect Blue
 	MinimapIcon 1 Blue Diamond
 
-Show # %H2 $type->rare->exotic->breachrings $tier->any
+Show # %HS1 $type->rare->exotic->breachrings $tier->any
 	ItemLevel >= 68
 	Rarity Rare
 	Class "Rings"
@@ -3849,7 +3876,7 @@ Show # %D4 $type->jewels->cluster $tier->highlarge
 	PlayEffect White
 	MinimapIcon 2 White Pentagon
 
-Show # %D3 $type->jewels->cluster $tier->large
+Show # %D4 $type->jewels->cluster $tier->large
 	Rarity <= Rare
 	BaseType "Large Cluster Jewel"
 	SetFontSize 45
@@ -3885,7 +3912,7 @@ Show # %D4 $type->jewels->cluster $tier->highmedium
 	PlayEffect White
 	MinimapIcon 2 White Pentagon
 
-Show # %D3 $type->jewels->cluster $tier->medium
+Show # %D4 $type->jewels->cluster $tier->medium
 	Rarity <= Rare
 	BaseType "Medium Cluster Jewel"
 	SetFontSize 45
@@ -4244,7 +4271,7 @@ Show # $type->gems-exceptional $tier->2123
 
 Show # $type->gems-exceptional $tier->specialworlddrops
 	Class "Gems"
-	BaseType "Empower" "Empower Support" "Enlighten" "Enlighten Support"
+	BaseType "Empower Support" "Enlighten Support"
 	SetFontSize 45
 	SetTextColor 0 0 125 255
 	SetBorderColor 0 0 125 255
@@ -5178,7 +5205,7 @@ Show # $type->fragments->scarabs $tier->t3
 	PlayEffect Yellow
 	MinimapIcon 1 Yellow Hexagon
 
-Show # %H5 $type->fragments->scarabs $tier->t4
+Show # %HS4 $type->fragments->scarabs $tier->t4
 	Class "Map Fragments"
 	BaseType "Polished Bestiary Scarab" "Polished Metamorph Scarab" "Polished Shaper Scarab" "Polished Torment Scarab" "Rusted Abyss Scarab" "Rusted Bestiary Scarab" "Rusted Breach Scarab" "Rusted Cartography Scarab" "Rusted Metamorph Scarab" "Rusted Reliquary Scarab" "Rusted Shaper Scarab" "Rusted Sulphite Scarab" "Rusted Torment Scarab"
 	SetFontSize 45
@@ -5465,7 +5492,7 @@ Show # $type->currency->stackedsix $tier->t1
 Show # $type->currency->stackedsix $tier->t2
 	StackSize >= 6
 	Class "Currency"
-	BaseType == "Ancient Orb" "Exalted Shard" "Fertile Catalyst" "Harbinger's Orb" "Orb of Unmaking" "Prismatic Catalyst" "Tainted Blessing" "Tainted Chaos Orb" "Tainted Exalted Orb" "Tainted Mythic Orb"
+	BaseType == "Ancient Orb" "Chaos Orb" "Exalted Shard" "Fertile Catalyst" "Harbinger's Orb" "Orb of Unmaking" "Prismatic Catalyst" "Tainted Blessing" "Tainted Chaos Orb" "Tainted Exalted Orb" "Tainted Mythic Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -5477,7 +5504,7 @@ Show # $type->currency->stackedsix $tier->t2
 Show # $type->currency->stackedsix $tier->t3
 	StackSize >= 6
 	Class "Currency"
-	BaseType == "Accelerating Catalyst" "Ancient Shard" "Awakened Sextant" "Chaos Orb" "Gemcutter's Prism" "Orb of Annulment" "Prime Sextant" "Stacked Deck" "Tainted Chromatic Orb" "Tainted Orb of Fusing" "Tempering Catalyst" "Unstable Catalyst" "Veiled Chaos Orb"
+	BaseType == "Accelerating Catalyst" "Ancient Shard" "Awakened Sextant" "Gemcutter's Prism" "Orb of Annulment" "Prime Sextant" "Stacked Deck" "Tainted Chromatic Orb" "Tainted Orb of Fusing" "Tempering Catalyst" "Unstable Catalyst" "Veiled Chaos Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5549,7 +5576,7 @@ Show # $type->currency->stackedthree $tier->t1
 Show # $type->currency->stackedthree $tier->t2
 	StackSize >= 3
 	Class "Currency"
-	BaseType == "Ancient Orb" "Ancient Shard" "Exalted Shard" "Orb of Unmaking" "Tainted Blessing" "Tainted Mythic Orb"
+	BaseType == "Ancient Orb" "Exalted Shard" "Orb of Unmaking" "Tainted Blessing" "Tainted Mythic Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -5573,7 +5600,7 @@ Show # $type->currency->stackedthree $tier->t3
 Show # $type->currency->stackedthree $tier->t4
 	StackSize >= 3
 	Class "Currency"
-	BaseType == "Abrasive Catalyst" "Annulment Shard" "Blessed Orb" "Gemcutter's Prism" "Intrinsic Catalyst" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Simple Sextant" "Tainted Jeweller's Orb" "Turbulent Catalyst" "Vaal Orb"
+	BaseType == "Abrasive Catalyst" "Ancient Shard" "Blessed Orb" "Gemcutter's Prism" "Intrinsic Catalyst" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Simple Sextant" "Tainted Jeweller's Orb" "Turbulent Catalyst" "Vaal Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5585,7 +5612,7 @@ Show # $type->currency->stackedthree $tier->t4
 Show # %H5 $type->currency->stackedthree $tier->t5
 	StackSize >= 3
 	Class "Currency"
-	BaseType == "Cartographer's Chisel" "Chaos Shard" "Chromatic Orb" "Enkindling Orb" "Glassblower's Bauble" "Harbinger's Shard" "Horizon Shard" "Imbued Catalyst" "Instilling Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Chance" "Orb of Fusing" "Regal Shard" "Silver Coin" "Tainted Armourer's Scrap" "Tainted Blacksmith's Whetstone"
+	BaseType == "Annulment Shard" "Cartographer's Chisel" "Chaos Shard" "Chromatic Orb" "Enkindling Orb" "Glassblower's Bauble" "Harbinger's Shard" "Horizon Shard" "Imbued Catalyst" "Instilling Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Chance" "Orb of Fusing" "Regal Shard" "Silver Coin" "Tainted Armourer's Scrap" "Tainted Blacksmith's Whetstone"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5597,7 +5624,7 @@ Show # %H5 $type->currency->stackedthree $tier->t5
 Show # %H4 $type->currency->stackedthree $tier->t6
 	StackSize >= 3
 	Class "Currency"
-	BaseType == "Alchemy Shard" "Alteration Shard" "Binding Shard" "Engineer's Orb" "Jeweller's Orb"
+	BaseType == "Alchemy Shard" "Alteration Shard" "Engineer's Orb" "Jeweller's Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5609,7 +5636,7 @@ Show # %H4 $type->currency->stackedthree $tier->t6
 Show # %H3 $type->currency->stackedthree $tier->t7
 	StackSize >= 3
 	Class "Currency"
-	BaseType == "Engineer's Shard"
+	BaseType == "Binding Shard" "Engineer's Shard"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -6521,7 +6548,7 @@ Show # %H3 $type->divination $tier->t5c
 	SetBackgroundColor 0 0 0 255
 	PlayAlertSound 2 300
 
-Show # %H4 $type->divination $tier->t4
+Show # %HS3 $type->divination $tier->t4
 	Class "Divination"
 	BaseType == "A Dab of Ink" "A Sea of Blue" "Akil's Prophecy" "Alone in the Darkness" "Assassin's Favour" "Atziri's Arsenal" "Baited Expectations" "Blind Venture" "Boundless Realms" "Brush, Paint and Palette" "Cameria's Cut" "Cursed Words" "Deathly Designs" "Dying Light" "Earth Drinker" "Friendship" "Gemcutter's Promise" "Glimmer of Hope" "Haunting Shadows" "Heterochromia" "Hubris" "Hunter's Resolve" "Jack in the Box" "Left to Fate" "Merciless Armament" "Mitts" "Perfection" "Prejudice" "Prometheus' Armoury" "Rebirth" "Reckless Ambition" "Scholar of the Seas" "Terrible Secret of Space" "The Admirer" "The Aesthete" "The Avenger" "The Battle Born" "The Betrayal" "The Blessing of Moosh" "The Body" "The Breach" "The Brittle Emperor" "The Cache" "The Cataclysm" "The Craving" "The Dark Mage" "The Deep Ones" "The Doppelganger" "The Easy Stroll" "The Emptiness" "The Encroaching Darkness" "The Endurance" "The Eye of the Dragon" "The Fishmonger" "The Fletcher" "The Formless Sea" "The Garish Power" "The Gentleman" "The Gladiator" "The Hale Heart" "The Hook" "The Hunger" "The Insatiable" "The Jester" "The Jeweller's Boon" "The King's Heart" "The Landing" "The Last One Standing" "The Last Supper" "The Lion" "The Lord in Black" "The Mad King" "The Master" "The Mercenary" "The Messenger" "The Mind's Eyes" "The Obscured" "The One With All" "The Pact" "The Penitent" "The Poet" "The Porcupine" "The Price of Prescience" "The Price of Protection" "The Primordial" "The Prince of Darkness" "The Queen" "The Realm" "The Rite of Elements" "The Road to Power" "The Scavenger" "The Soul" "The Standoff" "The Stormcaller" "The Sword King's Salute" "The Thaumaturgist" "The Throne" "The Tower" "The Traitor" "The Tumbleweed" "The Tyrant" "The Undisputed" "The Unexpected Prize" "The Valley of Steel Boxes" "The Vast" "The Warlord" "The Whiteout" "The Wilted Rose" "The Wolf" "The Wolf's Legacy" "The Wolverine" "The Wretched" "Time-Lost Relic" "Triskaidekaphobia" "Unchained" "Vile Power" "Volatile Power"
 	SetFontSize 45
