@@ -145,6 +145,11 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
 }
 
+Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Corrupted False, !exotic
+{
+	Show ExoticSacrificial { !GSH; !exotic.t2; BaseType == "Sacrificial Garb"; }
+}
+
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING
 #===============================================================================================================
@@ -1167,7 +1172,7 @@ Section Maps : Class "Maps", !Maps
 
 	Section BlightedMaps : Auto("maps->blighted")
 	{
-		Show uber { !G1; !currency.t1exalted; UberBlightedMap True; }
+		Show uber { !G2; !*SpecialHigh; UberBlightedMap True; }
 		Show t1  { !G2; !*SpecialHigh; MapTier >= Maps.Blighted.HighTier; BlightedMap True; }
 		Show Any { %H5; !G3; !*SpecialLow; BlightedMap True; }
 	}
@@ -1446,14 +1451,14 @@ Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class "Currency",
 Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class "Currency", !currency
 {
 	Show t1	{ !G2; !*t2divine; StackSize >= 25; BaseType currency.stacked.splinters1; }
-	Show t2	{ !G3; !*t3annul; StackSize >= 7; BaseType currency.stacked.splinters1; }
+	Show t2	{ !G3; !*t3annul; StackSize >= 6; BaseType currency.stacked.splinters1; }
 	Show t3	{ !G3; !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
 }
 
 Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class "Currency", !currency
 {
 	Show t1	{ !G3; !*t3annul; StackSize >= 40; BaseType currency.stacked.splinters2; }
-	Show t2	{ !G3; !*t4chaos;   StackSize >= 7; BaseType currency.stacked.splinters2; }
+	Show t2	{ !G3; !*t4chaos;   StackSize >= 6; BaseType currency.stacked.splinters2; }
 	Show t3	{ %H5; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
 }
 
@@ -1578,7 +1583,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 	Show t1 { !G2; !*t2divine; BaseType currency.essence.t1; }
 	Show t2 { !G3; !*t3annul; BaseType currency.essence.t2; }
 	Show t3 { !G4;  %H5; !*t4chaos; BaseType currency.essence.t3; }
-	Show t4 { !G5;  %H3; !*t7chance; BaseType currency.essence.t4; }
+	Show t4 { !G5;  %HS3; !*t7chance; BaseType currency.essence.t4; }
 	Show t5 { !G5H; %H2; !*t8trans; BaseType currency.essence.t5; }
 	Show t6 { !G5;  %H1; !*t8trans; BaseType currency.essence.t6; }
 }
