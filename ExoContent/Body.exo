@@ -280,9 +280,9 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------	
 		Section Body : Class "Body Armours"
 		{
-			Show Body_Life { Mod body_core_life; Mod >= 5 body_aux_life; }
-			Show Body_Defense { Mod >= 2 body_core_defense; Mod >= 4 body_aux_life; }
-			Show Body_ES { Mod >= 2 body_core_es; Mod >= 4 body_aux_es; }
+			Show Body_Life { Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
+			Show Body_Defense { Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; }
+			Show Body_ES { Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; }
 		}
 #------------------------------------
 #   [1234] Belts
@@ -342,9 +342,9 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #!! Override 050 : "veil, incursion, delve etc. mod items"
 		Show DuoVeil    { %D4; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
-		Show SmallVeil1 { %D4; !GS; !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
-		Show SmallVeil2 { %D4; !GS; !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
-		Show VeilRest   { %D3; !GS; !exotic.t4; Mod "Veil"; }
+		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
+		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
+		Show VeilRest   { %D3; !GS;  !exotic.t4; Mod "Veil"; }
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
@@ -464,9 +464,9 @@ Section ExoticVariations : !exotic
 #------------------------------------		
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
-			Show FractSelected { !GSH; %D5; !exotic.t2; BaseType bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS;  %D4; !exotic.t2; Class classes_fract }
-			Show FractRandom   { !GS;  %D3; !exotic.t3; Empty(); }
+			Show FractSelected { !GSH; %D5; !exotic.t3; BaseType bases.crafting.fractured.t1 }
+			Show FractClasses  { !GS;  %D4; !exotic.t3; Class classes_fract }
+			Show FractRandom   { !GS;  %D2; !exotic.t4; Empty(); }
 		}
 #------------------------------------
 #   [1234] Enchanted
@@ -763,11 +763,11 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
 	{
-		Show T1AttackTalisman { %H5; !G3; BaseType bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_attack_mix }
-		Show T1CasterTalisman { %H5; !G3; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_caster_mix; }
-		Show T1DotTalisman    { %H5; !G3; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_dot_mix; }
+		Show T1AttackTalisman { %H5; !GSH; BaseType bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_attack_mix }
+		Show T1CasterTalisman { %H5; !GSH; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_caster_mix; }
+		Show T1DotTalisman    { %H5; !GSH; BaseType bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_dot_mix; }
 
-		Show T2StatTalisman   { %H4; !G4; BaseType bases.talismans.stats.any; Mod acc_allat[3]; Mod str[3] + dex[3] + int[3]; }
+		Show T2StatTalisman   { %H4; !GS; BaseType bases.talismans.stats.any; Mod acc_allat[3]; Mod str[3] + dex[3] + int[3]; }
 
 		Show T3DecentTypeTalisman { %H3; !G4; BaseType bases.talismans.universal.any; };
 		
@@ -841,15 +841,15 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show t3axes1h { !GR3; %D2; DropLevel >= bases.rares.eg.t3axes1h; Class "One Hand Axes"; }
 		Show t3sceptres { !GR3; %D2; DropLevel >= bases.rares.eg.t3sceptres; Class "Sceptres"; }
 		Show t3warstaves { !GR3; %D2; DropLevel >= bases.rares.eg.t3warstaves; Class "Warstaves"; }
-		Show t3staves { !GR3; %D2; DropLevel >= bases.rares.eg.t3staves; Class "Staves"; }
+		Show t3staves  { !GR3; %D2; DropLevel >= bases.rares.eg.t3staves; Class "Staves"; }
 		Show t3swords2h { !GR3; %D2; DropLevel >= bases.rares.eg.t3swords2h; Class "Two Hand Swords"; }
-		Show t3axes2h { !GR3; %D2; DropLevel >= bases.rares.eg.t3axes2h; Class "Two Hand Axes"; }
+		Show t3axes2h  { !GR3; %D2; DropLevel >= bases.rares.eg.t3axes2h; Class "Two Hand Axes"; }
 		Show t3maces2h { !GR3; %D2; DropLevel >= bases.rares.eg.t3maces2h; Class "Two Hand Maces"; }
-		Show t3bows { !GR3; %D2; DropLevel >= bases.rares.eg.t3bows; Class "Bows"; }
-		Show t3boots { !GR3; %D2; DropLevel >= bases.rares.eg.t3boots; Class "Boots"; }
-		Show t3gloves { !GR3; %D2; DropLevel >= bases.rares.eg.t3gloves; Class "Gloves"; }
+		Show t3bows    { !GR3; %D2; DropLevel >= bases.rares.eg.t3bows; Class "Bows"; }
+		Show t3boots   { !GR3; %D2; DropLevel >= bases.rares.eg.t3boots; Class "Boots"; }
+		Show t3gloves  { !GR3; %D2; DropLevel >= bases.rares.eg.t3gloves; Class "Gloves"; }
 		Show t3helmets { !GR3; %D2; DropLevel >= bases.rares.eg.t3helmets; Class "Helmets"; }
-		Show t3body { !GR3; %D2; DropLevel >= bases.rares.eg.t3body; Class "Body Armours"; }
+		Show t3body    { !GR3; %D2; DropLevel >= bases.rares.eg.t3body; Class "Body Armours"; }
 		Show t3shields { !GR3; %D2; DropLevel >= bases.rares.eg.t3shields; Class "Shields"; }
 		Show t3quivers { !GR3; %D2; DropLevel >= bases.rares.eg.t3quivers; Class "Quivers"; }
 
@@ -899,10 +899,12 @@ Section Jewels : !jewels
 #------------------------------------
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
-		Show HighRare  { %HS4; !G5H; !*rare;  !High; Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic { %HS3; !G6H; !*magic; !High; Rarity <= Magic; ItemLevel >= 82; }
-		Show AnyRare   { %HS3; !G5H; !*rare;  Rarity Rare; }
-		Show AnyMagic  { %HS2; !G6H; !*magic; Rarity <= Magic; }
+		Show VeryHighRare  { %H5;  !G4;  !*rare;  !High; Rarity Rare; ItemLevel >= 86; }
+		Show VeryHighMagic { %H5;  !G4;  !*magic; !High; Rarity <= Magic; ItemLevel >= 86; }
+		Show HighRare      { %H3;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic     { %HS3; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
+		Show AnyRare       { %HS2; !G5H; !*rare;  Rarity Rare; }
+		Show AnyMagic      { %H2;  !G6H; !*magic; Rarity <= Magic; }
 	}
 #------------------------------------
 # [1234] Generic Jewels
@@ -1020,7 +1022,7 @@ Section HeistFollowerGear : Rarity <= Rare
 		Show t1highlevel { !G3; %HS5; BaseType bases.heist.cloak.t1; ItemLevel >= levels_t1_heist_cloak; }
 		Show t1 { !G3; %H5; BaseType bases.heist.cloak.t1; }
 		Show t2 { !G4; %HS4; BaseType bases.heist.cloak.t2; }
-		Show t3any { !G5; %HS3; Empty(); }
+		Show t3any { !G5; %H3; Empty(); }
 	}
 #------------------------------------
 # [3002] Heist Brooch
@@ -1031,7 +1033,7 @@ Section HeistFollowerGear : Rarity <= Rare
 		Show t1highlevel { !G3; %HS5;  BaseType bases.heist.brooch.t1; ItemLevel >= levels_t1_heist_brooch; }
 		Show t1 { !G3; %H5;  BaseType bases.heist.brooch.t1; }
 		Show t2 { !G4; %HS4;  BaseType bases.heist.brooch.t2; }
-		Show t3any { !G5; %HS3;  Empty(); }
+		Show t3any { !G5; %H3;  Empty(); }
 	}
 #------------------------------------
 # [3003] Heist Gear
@@ -1042,7 +1044,7 @@ Section HeistFollowerGear : Rarity <= Rare
 		Show t1highlevel { !G3; %HS5;  BaseType bases.heist.gear.t1; ItemLevel >= levels_t1_heist_gear; }
 		Show t1 { !G3; %H5;  BaseType bases.heist.gear.t1; }
 		Show t2 { !G4; %HS4;  BaseType bases.heist.gear.t2; }
-		Show t3any { !G5; %HS3;  Empty(); }
+		Show t3any { !G5; %H3;  Empty(); }
 	}
 #------------------------------------
 # [3004] Heist Tool
@@ -1053,7 +1055,7 @@ Section HeistFollowerGear : Rarity <= Rare
 		Show t1highlevel { !G3; %HS5; BaseType bases.heist.tool.t1; ItemLevel >= levels_t1_heist_tool; }
 		Show t1 { !G3; %H5; BaseType bases.heist.tool.t1; }
 		Show t2 { !G4; %HS4; BaseType bases.heist.tool.t2; }
-		Show t3any { !G5; %HS3; Empty(); }
+		Show t3any { !G5; %H3; Empty(); }
 	}
 }
 
@@ -1198,7 +1200,7 @@ Section Maps : Class "Maps", !Maps
 #------------------------------------
 	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
 	{
-		Show NemesisBeyond { %H5; !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
+		Show NemesisBeyond { %D5; !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
 	}
 
 #===============================================================================================================
@@ -1323,6 +1325,14 @@ Section Logbooks : Auto("Expedition->Logbook->Any"), Class "Expedition Logbook"
 
 Section MapFragments : Class "Map Fragments"
 {
+#------------------------------------
+# [4701] Exceptions
+#------------------------------------
+	Section StackedFragments : Auto("Fragments->stacked")
+	{
+		Show t3 { !G3; %HS4; BaseType fragments.generic.t4; StackSize >= 3; }
+	}
+
 #------------------------------------
 # [4701] Scarabs
 #------------------------------------
@@ -1718,7 +1728,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5701] Exceptions #1
 #------------------------------------
-	Show exSquire{  !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
+	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
@@ -1759,14 +1769,14 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5708] Tier 3 uniques 
 #------------------------------------	
 	Show t3boss {  !G4; !*t4; BaseType == uniques.generic.t3boss; }
-	Show t3 	{  !G4; %H5; !*t4; BaseType == uniques.generic.t3; }
+	Show t3 	{  !G4; %H4; !*t4; BaseType == uniques.generic.t3; }
 
 	Show recipeUniqueRings { !G5H; %D2; !*t4; !special; Class "Rings"; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
-	Show hideable2 { !G5H; %HS3; !*t5; BaseType == uniques.generic.hideable2; }
-	Show hideable  { !G5H; %HS3; !*t5; BaseType == uniques.generic.hideable; }
+	Show hideable2 { !G5H; %H3; !*t5; BaseType == uniques.generic.hideable2; }
+	Show hideable  { !G5H; %H3; !*t5; BaseType == uniques.generic.hideable; }
 	Show restex { Empty(); }
 }
 
