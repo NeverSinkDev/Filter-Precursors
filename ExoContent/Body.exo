@@ -1146,7 +1146,7 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 	Show t1 { !G1; BaseType == uniques.replicas.t1; }
 	Show t2 { !G2; BaseType == uniques.replicas.t2; }
 	Show multi { !G3; BaseType == uniques.replicas.multi; }
-	Show t3 { !G4; BaseType === uniques.replicas.t3; }
+	Show t3 { !G4; BaseType == uniques.replicas.t3; }
 	Show restex { Empty(); }
 }
 
