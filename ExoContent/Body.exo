@@ -241,9 +241,9 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Shields : Class "Shields"
 		{
 			Show Shield_ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
-			Show Shield_DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; }
+			Show Shield_DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
 			Show Shield_CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
-			Show Shield_LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; }
+			Show Shield_LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; }
 		}
 #------------------------------------
 #   [1234] Amulets
@@ -278,7 +278,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Body Armours
 #------------------------------------	
-		Section Body : Class "Body Armours"
+		Section Body : Class "Body Armours", DropLevel >= 55
 		{
 			Show Body_Life { Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
 			Show Body_Defense { Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; }
@@ -1074,13 +1074,17 @@ Section Gems : Class "Gems", !Gems
 	{
 		Show AwaT1 	{ !G1; !*T1; BaseType gems.t1awa; }
 		Show AwaAny { !G2; !*P1; BaseType "Awakened"; }
+		
 		Show DivT1 	{ !G1; !*T1; GemQualityType Divergent; BaseType gems.t1div; }
 		Show AnoT1 	{ !G1; !*T1; GemQualityType Anomalous; BaseType gems.t1ano; }
 		Show PhaT1 	{ !G1; !*T1; GemQualityType Phantasmal; BaseType gems.t1pha; }
 		Show AltAny { !G2; !*P1; AlternateQuality True; }
+		
 		Show 2020z 	{ !G2; !*T1; Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
 		Show 2120 	{ !G2; !*T1; Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120 }
 		Show 2123 	{ !G2; !*T1; Quality >= 23; GemLevel >= 21; BaseType gems.t1_2123 }
+		
+		## Empower-class gems that are currently super-expensive
 		Show SpecialWorldDrops { !G1; !*T1; BaseType gems.t1_normal; }
 	}
 
@@ -1139,10 +1143,10 @@ Section Gems : Class "Gems", !Gems
 
 Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 {
-	Show t1 { !G1; BaseType uniques.replicas.t1; }
-	Show t2 { !G2; BaseType uniques.replicas.t2; }
-	Show multi { !G3; BaseType uniques.replicas.multi; }
-	Show t3 { !G4; BaseType uniques.replicas.t3; }
+	Show t1 { !G1; BaseType == uniques.replicas.t1; }
+	Show t2 { !G2; BaseType == uniques.replicas.t2; }
+	Show multi { !G3; BaseType == uniques.replicas.multi; }
+	Show t3 { !G4; BaseType === uniques.replicas.t3; }
 	Show restex { Empty(); }
 }
 
@@ -1160,10 +1164,10 @@ Section Maps : Class "Maps", !Maps
 	Section UniqueMaps : Rarity Unique, Auto("uniques->maps")
 	{
 		Show ex { !G1; !Maps.HighHarbingerMap; BaseType uniques.maps.ex; MapTier 16; }
-		Show t1 { !G1; BaseType uniques.maps.t1; }
-		Show t2 { !G2; BaseType uniques.maps.t2; }
-		Show t3 { !G3; %H5; BaseType uniques.maps.t3; }
-		Show t4 { !G4; %H4; BaseType uniques.maps.t4; }
+		Show t1 { !G1; BaseType == uniques.maps.t1; }
+		Show t2 { !G2; BaseType == uniques.maps.t2; }
+		Show t3 { !G3; %H5; BaseType == uniques.maps.t3; }
+		Show t4 { !G4; %H4; BaseType == uniques.maps.t4; }
 		Show restex { Empty(); }
 	}
 
@@ -1338,10 +1342,10 @@ Section MapFragments : Class "Map Fragments"
 #------------------------------------
 	Section Scarabs : Auto("Fragments->scarabs")
 	{
-		Show t1 { !G1; BaseType fragments.scarabs.t1; }
-		Show t2 { !G2; BaseType fragments.scarabs.t2; }
-		Show t3 { !G3; BaseType fragments.scarabs.t3; }
-		Show t4 { !G4; %HS4; BaseType fragments.scarabs.t4; }
+		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
+		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
+		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
+		Show t4 { !G4; %HS4; BaseType == fragments.scarabs.t4; }
 		Show restex { BaseType "Scarab"; }
 	}
 
@@ -1350,10 +1354,10 @@ Section MapFragments : Class "Map Fragments"
 #------------------------------------
 	Section FragsGeneric : Auto("Fragments")
 	{
-		Show t1 { !G1; BaseType fragments.generic.t1; }
-		Show t2 { !G2; BaseType fragments.generic.t2; }
-		Show t3 { !G3; %H5; BaseType fragments.generic.t3; }
-		Show t4 { !G4; %HS3; BaseType fragments.generic.t4; }
+		Show t1 { !G1; BaseType == fragments.generic.t1; }
+		Show t2 { !G2; BaseType == fragments.generic.t2; }
+		Show t3 { !G3; %H5; BaseType == fragments.generic.t3; }
+		Show t4 { !G4; %HS3; BaseType == fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
 }
@@ -1513,9 +1517,9 @@ Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 
 Section CurrencyVials : Auto("vials"), Class "Currency", !Currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType currency.vials.t1; }
-	Show t2 { !G2; !*t2divine; BaseType currency.vials.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType currency.vials.t3; }
+	Show t1 { !G1; !*t1exalted; BaseType == currency.vials.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.vials.t2; }
+	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.vials.t3; }
 	Show restex { BaseType "Vial of"; }
 }
 
@@ -1525,9 +1529,9 @@ Section CurrencyVials : Auto("vials"), Class "Currency", !Currency
 
 Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class "Currency", !Currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType currency.deliriumorb.t1; }
-	Show t2 { !G2; !*t2divine; BaseType currency.deliriumorb.t2; }
-	Show t3 { !G4; !*t4chaos; BaseType currency.deliriumorb.t3; }
+	Show t1 { !G1; !*t1exalted; BaseType == currency.deliriumorb.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.deliriumorb.t2; }
+	Show t3 { !G4; !*t4chaos; BaseType == currency.deliriumorb.t3; }
 }
 
 #------------------------------------

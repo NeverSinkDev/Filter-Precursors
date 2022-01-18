@@ -133,12 +133,15 @@ var bases.rares.eg.t3quivers = 28;
 ## {META} !!SPECIAL!! STACKED CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+## This list gets injected and their prices manually calculated into the normal currency overview
+var currency.shards.extra = "Ancient Shard" "Exalted Shard" "Annulment Shard" "Chaos Shard" "Horizon Shard" "Regal Shard" "Harbinger's Shard" "Alchemy Shard" "Alteration Shard" "Binding Shard";
+
 ## SIX - STATIC
 var currency.stackedSixStatic.t1 = "Divine Orb";
 var currency.stackedSixStatic.t2 = "Chaos Orb" "Exalted Shard";
 var currency.stackedSixStatic.t3 = "Ancient Shard";
-var currency.stackedSixStatic.t4 = "Annulment Shard" "Harbinger's Shard";
-var currency.stackedSixStatic.t5 = "Chaos Shard" "Horizon Shard" "Regal Shard";
+var currency.stackedSixStatic.t4 = "Annulment Shard";
+var currency.stackedSixStatic.t5 = "Chaos Shard" "Horizon Shard" "Regal Shard" "Harbinger's Shard";
 var currency.stackedSixStatic.t6 = "Alchemy Shard" "Alteration Shard" "Binding Shard";
 var currency.stackedSixStatic.t7 = BLANK;
 
@@ -208,6 +211,7 @@ var gems.t1_2020z = "Blood and Sand" "Chance to Bleed Support" "Controlled Destr
 var gems.t1_2120 = "Absolution" "Advanced Traps Support" "Anger" "Animate Guardian" "Animate Weapon" "Arrogance Support" "Barrage Support" "Blade Flurry" "Block Chance Reduction Support" "Blood Rage" "Bloodthirst Support" "Bonechill Support" "Caustic Arrow" "Close Combat Support" "Combustion Support" "Concentrated Effect Support" "Corrupting Fever" "Cruelty Support" "Cyclone" "Damage on Full Life Support" "Defiance Banner" "Despair" "Determination" "Discipline" "Efficacy Support" "Elemental Army Support" "Elemental Hit" "Elemental Weakness" "Exsanguinate" "Eye of Winter" "Feeding Frenzy Support" "Flicker Strike" "Forbidden Rite" "Fortify Support" "Freezing Pulse" "Frost Blades" "Frostbite" "General's Cry" "Greater Multiple Projectiles Support" "Greater Volley Support" "Hatred" "Herald of Ash" "Herald of Ice" "Herald of Purity" "Herald of Thunder" "Hexblast" "Hypothermia Support" "Ice Bite Support" "Ice Nova" "Ice Shot" "Ice Spear" "Ignite Proliferation Support" "Increased Critical Damage Support" "Increased Critical Strikes Support" "Increased Duration Support" "Infused Channelling Support" "Inspiration Support" "Item Rarity Support" "Less Duration Support" "Lifetap Support" "Lightning Arrow" "Malevolence" "Minion Life Support" "Mirage Archer Support" "Multiple Totems Support" "Multistrike Support" "Nightblade Support" "Physical to Lightning Support" "Pierce Support" "Pinpoint Support" "Power Charge On Critical Support" "Precision" "Predator Support" "Pride" "Pulverise Support" "Purity of Elements" "Purity of Fire" "Purity of Ice" "Purity of Lightning" "Rage Support" "Raise Spectre" "Raise Zombie" "Ruthless Support" "Seismic Trap" "Shockwave Support" "Sniper's Mark" "Spellslinger" "Storm Brand" "Summon Carrion Golem" "Summon Stone Golem" "Temporal Chains" "Toxic Rain" "Trap and Mine Damage Support" "Trinity Support" "Vaal Ancestral Warchief" "Vaal Arc" "Vaal Blade Vortex" "Vaal Cyclone" "Vaal Detonate Dead" "Vaal Discipline" "Vaal Double Strike" "Vaal Grace" "Vaal Haste" "Vaal Ice Nova" "Vaal Lightning Strike" "Vaal Molten Shell" "Vaal Righteous Fire" "Vaal Spark" "Vaal Summon Skeletons" "Vitality" "Volley Support" "Vortex" "Wave of Conviction" "Withering Touch Support" "Wrath" "Zealotry";
 var gems.t1_2123 = "Ancestral Warchief" "Arc" "Bane" "Cluster Traps Support" "Cold to Fire Support" "Detonate Dead" "Essence Drain" "Haste" "Molten Shell" "Plague Bearer" "Poisonous Concoction" "Righteous Fire" "Summon Skitterbots" "Vaal Blight" "Void Manipulation Support" "Whirling Blades";
 var gems.t1_normal = "Empower Support" "Enlighten Support";
+var gems.t2_2020vaal = "Vaal Grace";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} Craftable Invitations
@@ -232,7 +236,7 @@ var uniques.replicas.t3 = "Arcanist Gloves" "Arcanist Slippers" "Assassin's Boot
 
 var uniques.maps.ex = "Harbinger Map";
 var uniques.maps.t1 = "Basilica Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map";
-var uniques.maps.t2 = "Courthouse Map" "Courtyard Map" "Cursed Crypt Map" "Harbinger Map" "Museum Map";
+var uniques.maps.t2 = "Courtyard Map" "Cursed Crypt Map" "Harbinger Map" "Museum Map";
 var uniques.maps.t3 = "Cemetery Map" "Moon Temple Map" "Necropolis Map" "Primordial Blocks Map" "Promenade Map" "Shore Map" "Temple Map" "Underground River Map" "Vaal Pyramid Map";
 var uniques.maps.t4 = "Atoll Map" "Bone Crypt Map" "Dunes Map" "Overgrown Shrine Map" "Strand Map" "Underground Sea Map";
 
@@ -270,9 +274,9 @@ var currency.generic.t2divine = "Ancient Orb" "Blessing of Chayula" "Crescent Sp
 ## ANNUL-CHAOS-ALCH
 var currency.generic.t3annul = "Awakened Sextant" "Blessing of Esh" "Blessing of Tul" "Blessing of Uul-Netol" "Blessing of Xoph" "Exalted Shard" "Fertile Catalyst" "Orb of Unmaking" "Prismatic Catalyst" "Tainted Chaos Orb" "Tainted Exalted Orb" "Tainted Mythic Orb";
 var currency.generic.t4chaos = "Accelerating Catalyst" "Chaos Orb" "Harbinger's Orb" "Infused Engineer's Orb" "Orb of Annulment" "Prime Sextant" "Ritual Splinter" "Ritual Vessel" "Stacked Deck" "Tainted Chromatic Orb" "Tainted Orb of Fusing" "Tempering Catalyst" "Unstable Catalyst" "Veiled Chaos Orb";
-var currency.generic.t5alchemy = "Abrasive Catalyst" "Ancient Shard" "Annulment Shard" "Bestiary Orb" "Blessed Orb" "Facetor's Lens" "Gemcutter's Prism" "Harbinger's Shard" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Simple Sextant" "Tainted Armourer's Scrap" "Tainted Jeweller's Orb" "Turbulent Catalyst" "Vaal Orb";
+var currency.generic.t5alchemy = "Abrasive Catalyst" "Ancient Shard" "Annulment Shard" "Bestiary Orb" "Blessed Orb" "Facetor's Lens" "Gemcutter's Prism" "Intrinsic Catalyst" "Orb of Alchemy" "Orb of Horizons" "Orb of Regret" "Orb of Scouring" "Regal Orb" "Simple Sextant" "Tainted Armourer's Scrap" "Tainted Jeweller's Orb" "Turbulent Catalyst" "Vaal Orb";
 ## SILVER COIN-CHROMATIC-TRANSMUTE
-var currency.generic.t6chrom = "Cartographer's Chisel" "Enkindling Orb" "Glassblower's Bauble" "Imbued Catalyst" "Instilling Orb" "Noxious Catalyst" "Orb of Alteration" "Tainted Blacksmith's Whetstone";
+var currency.generic.t6chrom = "Cartographer's Chisel" "Harbinger's Shard" "Enkindling Orb" "Glassblower's Bauble" "Imbued Catalyst" "Instilling Orb" "Noxious Catalyst" "Orb of Alteration" "Tainted Blacksmith's Whetstone";
 var currency.generic.t7chance = "Chromatic Orb" "Jeweller's Orb" "Orb of Binding" "Orb of Chance" "Orb of Fusing" "Silver Coin";
 var currency.generic.t8trans = "Blacksmith's Whetstone" "Chaos Shard" "Engineer's Orb" "Horizon Shard" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard";
 ## ARMOURER-PORTAL-WISDOM
@@ -494,6 +498,30 @@ var jewels.cluster.N12_I68_T1 = BLANK;
 var jewels.cluster.N12_I84_T2 = "Attack Damage while holding a Shield" "Attack Damage" "Axe and Sword Damage" "Bow Damage" "Chaos Damage" "Cold Damage" "Dagger and Claw Damage" "Damage with Two Handed Melee Weapons" "Fire Damage" "Lightning Damage" "Mace and Staff Damage" "Minion Damage" "Physical Damage" "Spell Damage" "Wand Damage";
 var jewels.cluster.N12_I75_T2 = "Attack Damage while holding a Shield" "Minion Damage";
 var jewels.cluster.N12_I68_T2 = "Minion Damage";
+
+var jewels.cluster.N11_I84_T1 = "Cold Damage";
+var jewels.cluster.N11_I75_T1 = "Cold Damage";
+var jewels.cluster.N11_I68_T1 = "Cold Damage";
+
+var jewels.cluster.N11_I84_T2 = "Cold Damage";
+var jewels.cluster.N11_I75_T2 = "Cold Damage";
+var jewels.cluster.N11_I68_T2 = "Cold Damage";
+
+var jewels.cluster.N10_I84_T1 = "Cold Damage";
+var jewels.cluster.N10_I75_T1 = "Cold Damage";
+var jewels.cluster.N10_I68_T1 = "Cold Damage";
+
+var jewels.cluster.N10_I84_T2 = "Cold Damage";
+var jewels.cluster.N10_I75_T2 = "Cold Damage";
+var jewels.cluster.N10_I68_T2 = "Cold Damage";
+
+var jewels.cluster.N9_I84_T1 = "Cold Damage";
+var jewels.cluster.N9_I75_T1 = "Cold Damage";
+var jewels.cluster.N9_I68_T1 = "Cold Damage";
+
+var jewels.cluster.N9_I84_T2 = "Cold Damage";
+var jewels.cluster.N9_I75_T2 = "Cold Damage";
+var jewels.cluster.N9_I68_T2 = "Cold Damage";
 
 var jewels.cluster.N8_I84_T1 = "Cold Damage";
 var jewels.cluster.N8_I75_T1 = "Cold Damage";
