@@ -4604,7 +4604,7 @@ Show # $type->uniques->maps $tier->ex
 Show # $type->uniques->maps $tier->t1
 	Rarity Unique
 	Class "Maps"
-	BaseType == "Basilica Map" "Courthouse Map" "Courtyard Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
+	BaseType == "Basilica Map" "Courtyard Map" "Haunted Mansion Map" "Maze Map" "Park Map" "Relic Chambers Map" "Siege Map"
 	SetFontSize 45
 	SetTextColor 175 96 37 255
 	SetBorderColor 175 96 37 255
@@ -5981,16 +5981,26 @@ Show # $type->currency->deliriumorbs $tier->t2
 	PlayEffect Red
 	MinimapIcon 0 Red Circle
 
-Show # $type->currency->deliriumorbs $tier->t3
+#Show # $type->currency->deliriumorbs $tier->t3
+#	Class "Currency"
+#	SetFontSize 45
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 0 0 0 255
+#	SetBackgroundColor 249 150 25 255
+#	PlayAlertSound 2 300
+#	PlayEffect White
+#	MinimapIcon 2 White Circle
+
+Show # $type->currency->deliriumorbs $tier->restex
 	Class "Currency"
-	BaseType == "Delirium Orb"
+	BaseType "Delirium Orb"
 	SetFontSize 45
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 249 150 25 255
-	PlayAlertSound 2 300
-	PlayEffect White
-	MinimapIcon 2 White Circle
+	SetTextColor 255 0 255 255
+	SetBorderColor 255 0 255 255
+	SetBackgroundColor 100 0 100 255
+	PlayAlertSound 3 300
+	PlayEffect Pink
+	MinimapIcon 0 Pink Circle
 
 #------------------------------------
 #   [3702] Delve - Resonators
