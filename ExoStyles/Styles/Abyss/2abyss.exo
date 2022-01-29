@@ -16,9 +16,9 @@ Expand t3annul : PatternGlow
 
 Expand t4chaos : PatternGlow
 {
-        SetTextColor tieringbase.mid1;
-        SetBorderColor tieringbase.mid1;
-        SetBackgroundColor tieringbase.midbg1;
+        SetTextColor tieringbase.mid2;
+        SetBorderColor tieringbase.mid2;
+        SetBackgroundColor tieringbase.midbg2;
 }
 
 Expand t5alchemy : PatternBlack
@@ -68,6 +68,20 @@ Expand t4divi
     SetTextColor tieringbase.mid2;
     SetBorderColor tieringbase.mid2;
     SetBackgroundColor tieringbase.midbg2;
+}
+
+Expand t5divi
+{
+    SetTextColor tieringbase.low;
+    SetBorderColor tieringbase.low.bd.t2;
+    SetBackgroundColor tieringbase.low.bg.t2;
+}
+
+Expand tnewdivi
+{
+    SetTextColor tieringbase.mid1;
+    SetBorderColor tieringbase.mid1;
+    SetBackgroundColor tieringbase.midbg1;
 }
 
 ## DISABLES MOST DECORATORS
@@ -186,8 +200,8 @@ Expand twisdom
 Expand tportHigh
 {
     SetTextColor tieringbase.low;
-    SetBorderColor tieringbase.low.bd.t3;
-    SetBackgroundColor tieringbase.low.bg.t3;
+    SetBorderColor tieringbase.low.bd.t2;
+    SetBackgroundColor tieringbase.low.bg.t2;
 }
 
 Expand twisdHigh
@@ -236,6 +250,13 @@ Expand FragmentTierStrat
 }
 
 ## RESTORE GREY RECIPES, BY USING THE EXTRA COLOR SPACE
+Expand RecipeStrategy.TS1
+{
+    SetTextColor recipe.t1.acc;
+    SetBorderColor recipe.t1.acc;
+    SetBackgroundColor 0 5 40 255;
+}
+
 Expand RecipeStrategy.T1
 {
     SetTextColor recipe.t1.acc;
@@ -363,4 +384,96 @@ Expand LowerValueTiering.LT3
     SetTextColor flasks.utility.t2.acc;
     SetBorderColor flasks.utility.t2.acc;
     SetBackgroundColor sBlack;
+}
+
+## Invitations
+
+Expand ExoticFragments : T3BlackPiece
+{
+    SetTextColor tieringbase.mid1;
+    SetBorderColor tieringbase.mid1;
+    SetBackgroundColor tieringbase.midbg1;
+}
+
+Expand InvitationTierList
+{
+    Func T2()
+    {
+        SetTextColor tieringbase.high;
+        SetBorderColor tieringbase.high;
+        SetBackgroundColor tieringbase.highbg;
+    }
+
+    Func T3()
+    {
+        SetTextColor tieringbase.mid1;
+        SetBorderColor tieringbase.mid1;
+        SetBackgroundColor tieringbase.midbg1;
+    }
+}
+
+## Special rulings to handle leveling and font size rules
+
+Expand UniversalValueAccents.Maximize
+{
+    SetFontSize 40;
+    SetBackgroundColor sBlack;
+}
+
+## Craft exceptions
+
+Expand CraftSpecialStrategy.I86
+{
+    SetFontSize 45;
+    SetBorderColor accent.level.i86.high;
+    SetBackgroundColor sBlack;
+}
+
+Expand CraftSpecialStrategy.I84
+{
+    SetFontSize 40;
+    SetBorderColor accent.level.i84.high;
+    SetBackgroundColor sBlack;
+}
+
+Expand CraftSpecialStrategy.ANY
+{
+    SetFontSize 40;
+    SetBackgroundColor sBlack;
+}
+
+Expand CraftGeneralStrategy.I86
+{
+    SetFontSize 40;
+    SetBorderColor accent.level.i86.high;
+    SetBackgroundColor sBlack;
+}
+
+Expand CraftGeneralStrategy.I84
+{
+    SetFontSize 32;
+    SetBorderColor accent.level.i84.high;
+    SetBackgroundColor sBlack;
+}
+
+Expand CraftGeneralStrategy.ANY
+{
+    SetFontSize 32;
+    SetBackgroundColor sBlack;
+}
+
+## Coins 
+
+Expand Coins.Huge
+{
+    SetTextColor tieringbase.mid2;
+    SetBorderColor tieringbase.mid2;
+    SetBackgroundColor tieringbase.midbg2;
+}
+
+Expand Coins.Large
+{
+    SetTextColor tieringbase.low;
+    SetBorderColor tieringbase.low.bd.t1;
+    SetBackgroundColor tieringbase.low.bg.t1;
 }

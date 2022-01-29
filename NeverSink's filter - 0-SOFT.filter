@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.4.1
+# VERSION:  8.5.0
 # TYPE:     0-SOFT
 # STYLE:    DEFAULT
 # AUTHOR:   NeverSink
@@ -80,9 +80,8 @@
 #   [0504] Other
 # [[0600]] Exotic Item Classes
 #   [0601] Trinkets
-#   [0602] Magic Watchstones
-#   [0603] Secret Society Equipment
-#   [0604] Craftable Invitations
+#   [0602] Secret Society Equipment
+#   [0603] Craftable Invitations
 # [[0700]] Exotic Item Variations
 #   [0701] Double Corruptions
 #   [0702] Abyss Jeweled Rares
@@ -164,38 +163,37 @@
 #   [3706] Essences
 #   [3707] Incubators
 #   [3708] Others
-# [[3800]] Currency - Prophecies
-# [[3900]] Currency - Splinters
-#   [3901] Simulacrum Splinters
-# [[4000]] Divination Cards
-# [[4100]] Remaining Currency
-# [[4200]] Questlike-Items1 (override uniques)
-# [[4300]] Uniques
-#   [4301] Exceptions #1
-#   [4302] Tier 1 uniques
-#   [4303] Exceptions #2
-#   [4304] Tier 2 uniques
-#   [4305] Multi-Unique bases.
-#   [4306] Tier 3 uniques 
-#   [4307] Tier 4 uniques
-# [[4400]] Misc Map Items
-# [[4500]] Questlike-Items2
-# [[4600]] Hide outdated leveling flasks
-# [[4700]] Leveling - Flasks
-#   [4701] Hybrid flasks
-#   [4702] Life flasks
-#   [4703] Mana flasks
-# [[4800]] Leveling - Rules
-#   [4801] Rares - Decorators
-#   [4802] Rares - Universal
-#   [4803] Rares - Caster
-#   [4804] Rares - Archer
-#   [4805] Rares - Melee
-# [[4900]] Leveling - Useful magic and normal items
-#   [4901] Normals
-#   [4902] Weapon Progression
-#   [4903] Remaining Magics
-#   [4904] Show All unknown Section
+# [[3800]] Currency - Splinters
+#   [3801] Simulacrum Splinters
+# [[3900]] Divination Cards
+# [[4000]] Remaining Currency
+# [[4100]] Questlike-Items1 (override uniques)
+# [[4200]] Uniques
+#   [4201] Exceptions #1
+#   [4202] Tier 1 uniques
+#   [4203] Exceptions #2
+#   [4204] Tier 2 uniques
+#   [4205] Multi-Unique bases.
+#   [4206] Tier 3 uniques 
+#   [4207] Tier 4 uniques
+# [[4300]] Misc Map Items
+# [[4400]] Questlike-Items2
+# [[4500]] Hide outdated leveling flasks
+# [[4600]] Leveling - Flasks
+#   [4601] Hybrid flasks
+#   [4602] Life flasks
+#   [4603] Mana flasks
+# [[4700]] Leveling - Rules
+#   [4701] Rares - Decorators
+#   [4702] Rares - Universal
+#   [4703] Rares - Caster
+#   [4704] Rares - Archer
+#   [4705] Rares - Melee
+# [[4800]] Leveling - Useful magic and normal items
+#   [4801] Normals
+#   [4802] Weapon Progression
+#   [4803] Remaining Magics
+#   [4804] Show All unknown Section
 
 #===============================================================================================================
 # [[0100]] Global overriding rules
@@ -1788,22 +1786,7 @@ Show # $type->artefact->trinkets $tier->anytrinket
 	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
-#   [0602] Magic Watchstones
-#------------------------------------
-
-Show # $type->artefact->watchstones $tier->craftablewatchstone
-	Rarity <= Unique
-	BaseType "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone"
-	SetFontSize 45
-	SetTextColor 240 0 0 255
-	SetBorderColor 240 0 0 255
-	SetBackgroundColor 70 0 20 255
-	PlayAlertSound 3 300
-	PlayEffect Orange
-	MinimapIcon 0 Orange Pentagon
-
-#------------------------------------
-#   [0603] Secret Society Equipment
+#   [0602] Secret Society Equipment
 #------------------------------------
 
 Show # $type->artefact->redacted $tier->scp3889
@@ -1817,7 +1800,7 @@ Show # $type->artefact->redacted $tier->scp3889
 	MinimapIcon 0 Orange Pentagon
 
 #------------------------------------
-#   [0604] Craftable Invitations
+#   [0603] Craftable Invitations
 #------------------------------------
 
 Show # $type->questlikeexception $tier->questitems
@@ -5826,7 +5809,7 @@ Show # $type->currency->stackedsix $tier->t3
 Show # $type->currency->stackedsix $tier->t4
 	StackSize >= 6
 	Class "Currency"
-	BaseType == "Abrasive Catalyst" "Annulment Shard" "Cartographer's Chisel" "Chromatic Orb" "Enkindling Orb" "Glassblower's Bauble" "Imbued Catalyst" "Instilling Orb" "Intrinsic Catalyst" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Fusing" "Orb of Horizons" "Regal Orb" "Silver Coin" "Simple Sextant" "Tainted Armourer's Scrap" "Tainted Blacksmith's Whetstone" "Tainted Jeweller's Orb" "Tempering Catalyst" "Turbulent Catalyst" "Vaal Orb"
+	BaseType == "Abrasive Catalyst" "Annulment Shard" "Cartographer's Chisel" "Chromatic Orb" "Enkindling Orb" "Glassblower's Bauble" "Imbued Catalyst" "Instilling Orb" "Intrinsic Catalyst" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Fusing" "Orb of Horizons" "Regal Orb" "Simple Sextant" "Tainted Armourer's Scrap" "Tainted Blacksmith's Whetstone" "Tainted Jeweller's Orb" "Tempering Catalyst" "Turbulent Catalyst" "Vaal Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -5922,7 +5905,7 @@ Show # $type->currency->stackedthree $tier->t4
 Show # %H5 $type->currency->stackedthree $tier->t5
 	StackSize >= 3
 	Class "Currency"
-	BaseType == "Abrasive Catalyst" "Annulment Shard" "Cartographer's Chisel" "Chaos Shard" "Chromatic Orb" "Glassblower's Bauble" "Harbinger's Shard" "Horizon Shard" "Imbued Catalyst" "Intrinsic Catalyst" "Jeweller's Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Chance" "Orb of Fusing" "Regal Shard" "Silver Coin"
+	BaseType == "Abrasive Catalyst" "Annulment Shard" "Cartographer's Chisel" "Chaos Shard" "Chromatic Orb" "Glassblower's Bauble" "Harbinger's Shard" "Horizon Shard" "Imbued Catalyst" "Intrinsic Catalyst" "Jeweller's Orb" "Noxious Catalyst" "Orb of Alchemy" "Orb of Alteration" "Orb of Binding" "Orb of Chance" "Orb of Fusing" "Regal Shard"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -6058,7 +6041,7 @@ Show # %H4 $type->currency->heist $tier->any
 
 Show # $type->currency $tier->t1exalted
 	Class "Currency"
-	BaseType == "Albino Rhoa Feather" "Awakener's Orb" "Crusader's Exalted Orb" "Elevated Sextant" "Eternal Orb" "Exalted Orb" "Hunter's Exalted Orb" "Maven's Orb" "Mirror of Kalandra" "Mirror Shard" "Prime Regrading Lens" "Redeemer's Exalted Orb" "Sacred Orb" "Secondary Regrading Lens" "Tailoring Orb" "Tainted Blessing" "Tainted Divine Teardrop" "Tempering Orb" "Warlord's Exalted Orb"
+	BaseType == "Albino Rhoa Feather" "Awakener's Orb" "Crusader's Exalted Orb" "Elevated Sextant" "Eternal Orb" "Exalted Orb" "Hunter's Exalted Orb" "Mirror of Kalandra" "Mirror Shard" "Prime Regrading Lens" "Redeemer's Exalted Orb" "Sacred Orb" "Secondary Regrading Lens" "Tailoring Orb" "Tainted Blessing" "Tainted Divine Teardrop" "Tempering Orb" "Warlord's Exalted Orb"
 	SetFontSize 45
 	SetTextColor 255 0 0 255
 	SetBorderColor 255 0 0 255
@@ -6124,7 +6107,7 @@ Show # %H4 $type->currency $tier->t6chrom
 
 Show # %H3 $type->currency $tier->t7chance
 	Class "Currency"
-	BaseType == "Imbued Catalyst" "Jeweller's Orb" "Orb of Binding" "Orb of Chance" "Silver Coin"
+	BaseType == "Imbued Catalyst" "Jeweller's Orb" "Orb of Binding" "Orb of Chance"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -6229,7 +6212,7 @@ Show # $type->currency->deliriumorbs $tier->t1
 
 Show # $type->currency->deliriumorbs $tier->t2
 	Class "Currency"
-	BaseType == "Abyssal Delirium Orb" "Amorphous Delirium Orb" "Armoursmith's Delirium Orb" "Blacksmith's Delirium Orb" "Blighted Delirium Orb" "Cartographer's Delirium Orb" "Diviner's Delirium Orb" "Fine Delirium Orb" "Foreboding Delirium Orb" "Fossilised Delirium Orb" "Fragmented Delirium Orb" "Imperial Delirium Orb" "Jeweller's Delirium Orb" "Obscured Delirium Orb" "Portentous Delirium Orb" "Primal Delirium Orb" "Singular Delirium Orb" "Thaumaturge's Delirium Orb" "Timeless Delirium Orb" "Whispering Delirium Orb"
+	BaseType == "Abyssal Delirium Orb" "Amorphous Delirium Orb" "Armoursmith's Delirium Orb" "Blacksmith's Delirium Orb" "Blighted Delirium Orb" "Cartographer's Delirium Orb" "Diviner's Delirium Orb" "Fine Delirium Orb" "Foreboding Delirium Orb" "Fossilised Delirium Orb" "Fragmented Delirium Orb" "Imperial Delirium Orb" "Jeweller's Delirium Orb" "Obscured Delirium Orb" "Primal Delirium Orb" "Singular Delirium Orb" "Thaumaturge's Delirium Orb" "Timeless Delirium Orb" "Whispering Delirium Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -6600,105 +6583,7 @@ Show # $type->currency->others $tier->misc
 	MinimapIcon 0 Red Circle
 
 #===============================================================================================================
-# [[3800]] Currency - Prophecies
-#===============================================================================================================
-# !! Chapter "Currencylike item tierlists 2"
-# !! Override 710 : "Prophecies"
-
-Show # $type->currency->prophecy $tier->t1
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "Anarchy's End IV" "Battle Hardened" "Darktongue's Shriek" "Deadly Rivalry V" "Fated Connections" "Song of the Sekhema" "The Queen's Sacrifice" "The Unbreathing Queen V" "Trash to Treasure"
-	SetFontSize 45
-	SetTextColor 159 15 213 255
-	SetBorderColor 159 15 213 255
-	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
-	PlayEffect Red
-	MinimapIcon 0 Red Star
-
-Show # $type->currency->prophecy $tier->t2
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "A Dishonourable Death" "Against the Tide" "Beyond Sight IV" "Day of Sacrifice IV" "Deadly Rivalry IV" "Fire, Wood and Stone" "Last of the Wildmen" "Lost in the Pages" "Monstrous Treasure" "Roth's Legacy" "Thaumaturgical History III" "The Bowstring's Music" "The Feral Lord V" "The Mentor" "The Twins" "The Warmongers IV" "Unbearable Whispers V" "Vaal Winds" "Wind and Thunder"
-	SetFontSize 45
-	SetTextColor 255 255 255 255
-	SetBorderColor 255 255 255 255
-	SetBackgroundColor 159 15 213 255
-	PlayAlertSound 1 300
-	PlayEffect Red
-	MinimapIcon 0 Red Hexagon
-
-Show # %H5 $type->currency->prophecy $tier->t3
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "A Call into the Void" "A Prodigious Hand" "A Whispered Prayer" "Abnormal Effulgence" "Agony at Dusk" "Anarchy's End II" "Baptism by Death" "Blind Faith" "Blinding Light" "Blood in the Eyes" "Blood of the Betrayed" "Burning Dread" "Cleanser of Sins" "Cold Blooded Fury" "Cold Greed" "Dance of Steel" "Dark Instincts" "Day of Sacrifice III" "Deadly Rivalry II" "Deadly Rivalry III" "Dying Cry" "End of the Light" "Erasmus' Gift" "Fear's Wide Reach" "Fire and Ice" "Flesh of the Beast" "From Death Springs Life" "Greed's Folly" "Holding the Bridge" "In the Grasp of Corruption" "Kalandra's Craft" "Living Fires" "Nature's Resilience" "Power Magnified" "Rebirth" "Severed Limbs" "Storm on the Horizon" "Storm on the Reef" "Thaumaturgical History IV" "The Ambitious Bandit II" "The Ambitious Bandit III" "The Apex Predator" "The Bishop's Legacy" "The Dreaded Rhoa" "The Dream Trial" "The Feral Lord III" "The Feral Lord IV" "The Flayed Man" "The Great Leader of the North" "The Great Mind of the North" "The Jeweller's Touch" "The King and the Brambles" "The King's Path" "The Last Watch" "The Lost Undying" "The Malevolent Witch" "The Misunderstood Queen" "The Nightmare Awakens" "The Plaguemaw III" "The Plaguemaw IV" "The Plaguemaw V" "The Prison Guard" "The Prison Key" "The Servant's Heart" "The Silverwood" "The Soulless Beast" "The Sword King's Passion" "The Unbreathing Queen III" "The Unbreathing Queen IV" "The Walking Mountain" "The Watcher's Watcher" "Twice Enchanted" "Unbearable Whispers IV" "Undead Uprising" "Visions of the Drowned" "Vital Transformation"
-	SetFontSize 45
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 159 15 213 255
-	PlayAlertSound 2 300
-	PlayEffect Yellow
-	MinimapIcon 1 Yellow Hexagon
-
-Show # %H5 $type->currency->prophecy $tier->t3mapping
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "A Master Seeks Help" "Anarchy's End III" "Beyond Sight III" "Bountiful Traps" "Crushing Squall" "Deadly Twins" "Fire from the Sky" "Hidden Reinforcements" "Hidden Vaal Pathways" "Ice from Above" "Lightning Falls" "Mysterious Invaders" "Overflowing Riches" "Plague of Frogs" "Plague of Rats" "Possessed Foe" "Reforged Bonds" "The Beautiful Guide" "The Cursed Choir" "The Dreamer's Dream" "The Fortune Teller's Collection" "The Four Feral Exiles" "The Hungering Swarm" "The Trembling Earth" "The Undead Storm" "The Warmongers III" "Waiting in Ambush"
-	SetFontSize 45
-	SetTextColor 0 0 0 255
-	SetBorderColor 240 100 0 255
-	SetBackgroundColor 159 15 213 255
-	PlayAlertSound 2 300
-	PlayEffect Yellow
-	MinimapIcon 1 Yellow Hexagon
-
-Show # %H3 $type->currency->prophecy $tier->t4upgrade
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "A Forest of False Idols" "A Rift in Time" "A Vision of Ice and Fire" "Ancient Doom" "Black Devotion" "Crimson Hues" "Faith Exhumed" "Fire and Brimstone" "From The Void" "Mouth of Horrors" "Pleasure and Pain" "Sun's Punishment" "The Beginning and the End" "The Bloody Flowers Redux" "The Fall of an Empire" "The Flow of Energy" "The Karui Rebellion" "The Snuffed Flame" "The Storm Spire" "Trapped in the Tower" "Winter's Mournful Melodies"
-	SetFontSize 45
-	SetTextColor 159 15 213 255
-	SetBorderColor 0 240 190 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 2 300
-	PlayEffect White
-	MinimapIcon 2 White Hexagon
-
-Show # %H3 $type->currency->prophecy $tier->t4drop
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "A Firm Foothold" "Custodians of Silence" "Graceful Flames" "Heart of the Fire" "Notched Flesh" "Strong as a Bull" "The Brutal Enforcer" "The Eagle's Cry" "The God of Misfortune" "The Lady in Black" "The Lost Maps" "The Mysterious Gift" "The Nest" "The Petrified" "The Queen's Vaults" "The Sinner's Stone" "The Vanguard" "The Ward's Ward" "Weeping Death"
-	SetFontSize 45
-	SetTextColor 159 15 213 255
-	SetBorderColor 159 15 213 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 2 300
-	PlayEffect White
-	MinimapIcon 2 White Hexagon
-
-Show # %H2 $type->currency->prophecy $tier->t5
-	Class "Currency"
-	BaseType "Prophecy"
-	Prophecy == "A Regal Death" "A Valuable Combination" "An Unseen Peril" "Anarchy's End I" "Beyond Sight I" "Beyond Sight II" "Day of Sacrifice I" "Day of Sacrifice II" "Deadly Rivalry I" "Defiled in the Sceptre" "Echoes of Witchcraft" "Ending the Torment" "Erased from Memory" "Fallow At Last" "Forceful Exorcism" "Gilded Within" "Golden Touch" "Heavy Blows" "Hunter's Lesson" "Lasting Impressions" "Nemesis of Greed" "Path of Betrayal" "Pools of Wealth" "Resistant to Change" "Risen Blood" "Smothering Tendrils" "Soil, Worms and Blood" "Thaumaturgical History I" "Thaumaturgical History II" "The Alchemist" "The Ambitious Bandit I" "The Brothers of Necromancy" "The Child of Lunaris" "The Corrupt" "The Feral Lord I" "The Feral Lord II" "The Forgotten Garrison" "The Forgotten Soldiers" "The Hardened Armour" "The Invader" "The Plaguemaw I" "The Plaguemaw II" "The Scout" "The Sharpened Blade" "The Singular Spirit" "The Stockkeeper" "The Unbreathing Queen I" "The Unbreathing Queen II" "The Undead Brutes" "The Warmongers I" "The Warmongers II" "The Wealthy Exile" "Touched by the Wind" "Unbearable Whispers I" "Unbearable Whispers II" "Unbearable Whispers III" "Unnatural Energy" "Vaal Invasion"
-	SetFontSize 40
-	SetTextColor 159 15 213 255
-	SetBorderColor 0 0 0
-	PlayEffect Grey Temp
-
-Show # $type->currency->prophecy $tier->restex
-	Class "Currency"
-	BaseType "Prophecy"
-	SetFontSize 45
-	SetTextColor 255 0 255 255
-	SetBorderColor 255 0 255 255
-	SetBackgroundColor 100 0 100 255
-	PlayAlertSound 3 300
-	PlayEffect Pink
-	MinimapIcon 0 Pink Circle
-
-#===============================================================================================================
-# [[3900]] Currency - Splinters
+# [[3800]] Currency - Splinters
 #===============================================================================================================
 #------------------------------------
 # [5112] Breach and Legion Splinters
@@ -6738,7 +6623,7 @@ Show # %H4 $type->currency->splinter $tier->t3
 	MinimapIcon 2 Grey Kite
 
 #------------------------------------
-#   [3901] Simulacrum Splinters
+#   [3801] Simulacrum Splinters
 #------------------------------------
 
 Show # $type->currency->splinter->simulacrum $tier->t1
@@ -6801,7 +6686,7 @@ Show # %H5 $type->currency->splinter->simulacrum $tier->t5
 	MinimapIcon 2 Grey Kite
 
 #===============================================================================================================
-# [[4000]] Divination Cards
+# [[3900]] Divination Cards
 #===============================================================================================================
 # !! Override 730 : "Divination Cards"
 
@@ -6898,7 +6783,7 @@ Show # $type->divination $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4100]] Remaining Currency
+# [[4000]] Remaining Currency
 #===============================================================================================================
 # !! Override 740 : "Remaining Currency"
 
@@ -6924,7 +6809,7 @@ Show # $type->currency $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4200]] Questlike-Items1 (override uniques)
+# [[4100]] Questlike-Items1 (override uniques)
 #===============================================================================================================
 # !! Override 750 : "Metamorph Samples"
 
@@ -6949,12 +6834,12 @@ Show # $type->heisttarget $tier->any
 	MinimapIcon 1 Green Pentagon
 
 #===============================================================================================================
-# [[4300]] Uniques
+# [[4200]] Uniques
 #===============================================================================================================
 # !! Override 760 : "All uniques"
 
 #------------------------------------
-#   [4301] Exceptions #1
+#   [4201] Exceptions #1
 #------------------------------------
 
 Show # $type->uniques $tier->exsquire
@@ -7016,7 +6901,7 @@ Show # $type->uniques $tier->exharby
 	MinimapIcon 0 Blue Star
 
 #------------------------------------
-#   [4302] Tier 1 uniques
+#   [4202] Tier 1 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t1
@@ -7031,7 +6916,7 @@ Show # $type->uniques $tier->t1
 	MinimapIcon 0 Red Star
 
 #------------------------------------
-#   [4303] Exceptions #2
+#   [4203] Exceptions #2
 #------------------------------------
 
 Show # $type->uniques $tier->2xcorrupteduniques
@@ -7070,7 +6955,7 @@ Show # %D4 $type->uniques $tier->5link
 	MinimapIcon 0 Yellow Star
 
 #------------------------------------
-#   [4304] Tier 2 uniques
+#   [4204] Tier 2 uniques
 #------------------------------------
 
 Show # $type->uniques $tier->t2
@@ -7085,7 +6970,7 @@ Show # $type->uniques $tier->t2
 	MinimapIcon 0 Yellow Star
 
 #------------------------------------
-#   [4305] Multi-Unique bases.
+#   [4205] Multi-Unique bases.
 #------------------------------------
 # These bases have multiple uniques. One of the uniques, is a high value one
 # While others are cheap. We give them a high quality display, while making a normal unique
@@ -7165,7 +7050,7 @@ Show # $type->uniques $tier->exjewels
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [4306] Tier 3 uniques 
+#   [4206] Tier 3 uniques 
 #------------------------------------
 
 Show # $type->uniques $tier->t3boss
@@ -7202,7 +7087,7 @@ Show # %D2 $type->uniques $tier->recipeuniquerings
 	MinimapIcon 2 Blue Star
 
 #------------------------------------
-#   [4307] Tier 4 uniques
+#   [4207] Tier 4 uniques
 #------------------------------------
 
 Show # %H3 $type->uniques $tier->hideable2
@@ -7238,7 +7123,7 @@ Show # $type->uniques $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4400]] Misc Map Items
+# [[4300]] Misc Map Items
 #===============================================================================================================
 # !! Override 780 : "Quest Items and Relic Keys"
 
@@ -7283,7 +7168,7 @@ Show # $type->miscmapitems $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #===============================================================================================================
-# [[4500]] Questlike-Items2
+# [[4400]] Questlike-Items2
 #===============================================================================================================
 
 Show # $type->questlike $tier->invitations
@@ -7316,18 +7201,8 @@ Show # $type->questlike $tier->incursionconsumable
 	PlayEffect Green
 	MinimapIcon 1 Green Pentagon
 
-Show # $type->questlike $tier->questwatchstones
-	Class "Atlas Region Upgrade Item"
-	SetFontSize 45
-	SetTextColor 74 230 58 255
-	SetBorderColor 74 230 58 255
-	SetBackgroundColor 0 0 0 255
-	PlayAlertSound 3 300
-	PlayEffect Green
-	MinimapIcon 1 Green Pentagon
-
 #===============================================================================================================
-# [[4600]] Hide outdated leveling flasks
+# [[4500]] Hide outdated leveling flasks
 #===============================================================================================================
 # !! Chapter "Leveling - flasks, rares, 4links"
 # !! Override 810 : "All leveling rules incl. utility flasks"
@@ -7373,7 +7248,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 	DisableDropSound True
 
 #===============================================================================================================
-# [[4700]] Leveling - Flasks
+# [[4600]] Leveling - Flasks
 #===============================================================================================================
 #------------------------------------
 # [6002] Utility Flasks
@@ -7429,7 +7304,7 @@ Show # %D1 $type->leveling->flasks->quality $tier->any
 	SetBackgroundColor 130 110 110 255
 
 #------------------------------------
-#   [4701] Hybrid flasks
+#   [4601] Hybrid flasks
 #------------------------------------
 # !! Override 820 : "leveling life and mana flasks"
 
@@ -7476,7 +7351,7 @@ Show # %H2 $type->leveling->flasks->hybrid $tier->t6
 	SetBorderColor 100 0 100
 
 #------------------------------------
-#   [4702] Life flasks
+#   [4602] Life flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->life $tier->t1
@@ -7564,7 +7439,7 @@ Show # $type->leveling->flasks->life $tier->t12
 	SetBorderColor 120 0 0
 
 #------------------------------------
-#   [4703] Mana flasks
+#   [4603] Mana flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->mana $tier->t1
@@ -7652,7 +7527,7 @@ Show # $type->leveling->flasks->mana $tier->t12
 	SetBorderColor 0 0 120
 
 #===============================================================================================================
-# [[4800]] Leveling - Rules
+# [[4700]] Leveling - Rules
 #===============================================================================================================
 # !! Override 830 : "leveling: 4links and chromatic socket items"
 #------------------------------------
@@ -7670,7 +7545,7 @@ Show # %D4 $type->leveling->rare->socketslinks $tier->4linkrares
 	MinimapIcon 2 Grey Diamond
 
 #------------------------------------
-#   [4801] Rares - Decorators
+#   [4701] Rares - Decorators
 #------------------------------------
 # !! Override 840 : "leveling: all rare rules"
 
@@ -7707,7 +7582,7 @@ Show # $type->decorators->leveling->rare $tier->tinyrares
 	Continue
 
 #------------------------------------
-#   [4802] Rares - Universal
+#   [4702] Rares - Universal
 #------------------------------------
 
 Show # %D5 $type->leveling->rare->universal $tier->rusticsash
@@ -7759,7 +7634,7 @@ Show # %D4 $type->leveling->rare->armours $tier->quivers
 	SetBackgroundColor 43 100 75 210
 
 #------------------------------------
-#   [4803] Rares - Caster
+#   [4703] Rares - Caster
 #------------------------------------
 # !! Override 850 : "leveling: class specific leveling weapons"
 
@@ -7779,7 +7654,7 @@ Show # %D4 $type->leveling->rare->caster $tier->general
 	SetBackgroundColor 43 43 100 210
 
 #------------------------------------
-#   [4804] Rares - Archer
+#   [4704] Rares - Archer
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->archer $tier->l1
@@ -7872,7 +7747,7 @@ Show # %D4 $type->leveling->rare->archer $tier->l10
 	SetBackgroundColor 43 100 75 210
 
 #------------------------------------
-#   [4805] Rares - Melee
+#   [4705] Rares - Melee
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->melee $tier->l1
@@ -8000,7 +7875,7 @@ Show # %D3 $type->leveling->rare->remaining $tier->underlevel16
 	SetBackgroundColor 75 75 70 120
 
 #===============================================================================================================
-# [[4900]] Leveling - Useful magic and normal items
+# [[4800]] Leveling - Useful magic and normal items
 #===============================================================================================================
 # !! Chapter "Leveling - remaining normal and magic items"
 # !! Override 910 : "Linked Gear"
@@ -8187,7 +8062,7 @@ Show # %D2 $type->leveling->normalmagic->otheracts $tier->generalcrafting
 #	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4901] Normals
+#   [4801] Normals
 #------------------------------------
 # !! Override 930 : "first levels gear"
 
@@ -8217,7 +8092,7 @@ Show # %H3 $type->leveling->firstlevels $tier->firstareas
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4902] Weapon Progression
+#   [4802] Weapon Progression
 #------------------------------------
 # !! Override 940 : "weapon progression"
 
@@ -8483,7 +8358,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r29
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4903] Remaining Magics
+#   [4803] Remaining Magics
 #------------------------------------
 # !! Override 950 : "magic vendor items"
 
@@ -8567,7 +8442,7 @@ Hide # $type->hidelayer $tier->final
 	DisableDropSound True
 
 #------------------------------------
-#   [4904] Show All unknown Section
+#   [4804] Show All unknown Section
 #------------------------------------
 # THIS ENTRY IS CAUGHT IN 3 CASES:
 # 1) YOUR FILTER IS OUT OF DATE!

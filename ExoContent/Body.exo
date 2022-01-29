@@ -390,13 +390,6 @@ Section ArtefactItemClasses
 		Show AnyTrinket { !G3; Empty(); }
 	}
 #------------------------------------
-#   [1234] Magic Watchstones
-#------------------------------------	
-	Section Watchstones : Rarity <= Unique, Auto("artefact->watchstones")
-	{
-		Show CraftableWatchstone { !G3; BaseType bases_watchstones }
-	}
-#------------------------------------
 #   [1234] Secret Society Equipment
 #------------------------------------
 	Section Fishing : Class "Fishing Rod", Auto("artefact->redacted")
@@ -1664,24 +1657,6 @@ Section CurrencyExotic : Auto("currency->others"), Class "Currency", !Currency
 }
 
 #===============================================================================================================
-# [[4900]] Currency - Prophecies
-#===============================================================================================================
-#!! Chapter "Currencylike item tierlists 2"
-#!! Override 710 : "Prophecies"
-
-Section CurrencyProphecy : Auto("currency->prophecy"), Class "Currency", BaseType "Prophecy"
-{
-	Show t1 { !G1; Prophecy == currency.prophecy.t1; }
-	Show t2 { !G2; Prophecy == currency.prophecy.t2; }
-	Show t3 { !G3; %H5; Prophecy == currency.prophecy.t3; }
-	Show t3mapping { !G4; %H5; !High; Prophecy == currency.prophecy.t3mapping; }
-	Show t4upgrade { !G5; %H3; !SpecialB; Prophecy == currency.prophecy.t4upgrade; }
-	Show t4drop { !G5; %H3; Prophecy == currency.prophecy.t4drop; }
-	Show t5 { !G6; %H2; Prophecy == currency.prophecy.t5; }
-	Show restex { Empty(); }
-}
-
-#===============================================================================================================
 # [[4900]] Currency - Splinters
 #===============================================================================================================
 
@@ -1800,9 +1775,11 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
 
 #!! Override 770 : "Only low tier uniques"
+	Show fatedbossdrop    { !GSH; !*t4; !special; BaseType == uniques.generic.fatedbossdrop; }
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	Show highvinktar { !G3; %D4; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; Class "Jewel"; }
+	
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
@@ -1844,7 +1821,6 @@ Section Questlike : Auto("Questlike")
 	Show Invitations { !QuestLike; BaseType "Maven's"; }
 	Show LabyrinthConsumable { !QuestLike; Class "Labyrinth"; }
 	Show IncursionConsumable { !QuestLike; Class "Incursion Item"; }
-	Show QuestWatchStones { !QuestLike; Class "Atlas Region Upgrade Item"; }
 }
 
 #===============================================================================================================
