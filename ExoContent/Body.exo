@@ -35,82 +35,117 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 {	
 	Show InfShaper { !G2; !maps.T1; HasInfluence Shaper; }
 	Show InfElder { !G2; !maps.T1; HasInfluence Elder; }
+	Show InfConquerors { !G2; !maps.T1; HasInfluence Crusader Hunter Redeemer Warlord; }
 }
+
 #------------------------------------
-#   [1234] Crusader
+#   [1234] Common Tier - T1
 #------------------------------------
+
+Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+{
+	## Common influenced High Exclusivity Items like Ritual items and heist items. Shouldn't drop by default, but always highlighted.
+	Show ExclusiveT1 { !G2; BaseType bases.influenced.exotic1.t1; }
+}
+
+#------------------------------------
+#   [1234] Specialised Tier - T1
+#------------------------------------
+
+Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
+{
+	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Crusader.t10; }
+	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Crusader.t11; }
+	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Crusader.t12; }
+}
+
+Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
+{
+	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Warlord.t10; }
+	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Warlord.t11; }
+	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Warlord.t12; }
+}
+
+Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
+{
+	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Redeemer.t10; }
+	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Redeemer.t11; }
+	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Redeemer.t12; }
+}
+
+Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
+{
+	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Hunter.t10; }
+	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Hunter.t11; }
+	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Hunter.t12; }
+}
+
+Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
+{
+	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Shaper.t10; }
+	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Shaper.t11; }
+	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Shaper.t12; }
+}
+
+Section Elder : HasInfluence Elder, Auto("rare->elder")
+{
+	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Elder.t10; }
+	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Elder.t11; }
+	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Elder.t12; }
+}
+
+#------------------------------------
+#   [1234] Common Tier - T2
+#------------------------------------
+
+Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+{
+	## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
+	Show ExclusiveT2 { !G4; %D5; BaseType bases.influenced.exotic2.t1; }
+	## Top Tier Common items of top item level
+	Show TopTier86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common1.t1; };
+	## Top Tier Common items of item level 86+
+	## Show HighTier86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common2.t1; };
+}
+
+#------------------------------------
+#   [1234] Specialised Tier - T2
+#------------------------------------
+
 	Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
 	{
-		Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Crusader.t11; }
-		Show t12 { !G2; ItemLevel >= 84; BaseType Influenced.Crusader.t12; }
-		Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Crusader.t13; }
 		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType Influenced.Crusader.t21; }
 		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType Influenced.Crusader.t22; }
 	}
-#------------------------------------
-#   [1234] Warlord
-#------------------------------------
+
 	Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
 	{
-		Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Warlord.t11; }
-		Show t12 { !G2; ItemLevel >= 84; BaseType Influenced.Warlord.t12; }
-		Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Warlord.t13; }
 		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType Influenced.Warlord.t21; }
 		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType Influenced.Warlord.t22; }
 	}
-#------------------------------------
-#   [1234] Redeemer
-#------------------------------------
+
 	Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
 	{
-		Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Redeemer.t11; }
-		Show t12 { !G2; ItemLevel >= 84; BaseType Influenced.Redeemer.t12; }
-		Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Redeemer.t13; }
 		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType Influenced.Redeemer.t21; }
 		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType Influenced.Redeemer.t22; }
 	}
-#------------------------------------
-#   [1234] Hunter
-#------------------------------------
+
 	Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
 	{
-		Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Hunter.t11; }
-		Show t12 { !G2; ItemLevel >= 84; BaseType Influenced.Hunter.t12; }
-		Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Hunter.t13; }
 		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType Influenced.Hunter.t21; }
 		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType Influenced.Hunter.t22; }
 	}
-#------------------------------------
-#   [1234] Shaper
-#------------------------------------
+
 	Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
 	{
-		Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Shaper.t11; }
-		Show t12 { !G2; ItemLevel >= 84; BaseType Influenced.Shaper.t12; }
-		Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Shaper.t13; }
 		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType Influenced.Shaper.t21; }
 		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType Influenced.Shaper.t22; }
 	}
-#------------------------------------
-#   [1234] Elder
-#------------------------------------
+
 	Section Elder : HasInfluence Elder, Auto("rare->elder")
 	{
-		Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Elder.t11; }
-		Show t12 { !G2; ItemLevel >= 84; BaseType Influenced.Elder.t12; }
-		Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Elder.t13; }
 		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType Influenced.Elder.t21; }
 		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType Influenced.Elder.t22; }
-	}
-
-#------------------------------------
-#   [1234] Basetype Percentile
-#------------------------------------
-	Section PerfectArmours85 : Auto("Crafting->PerfectArmours"), ItemLevel >= 85, Rarity <= Rare, Class classes_armor, BaseDefencePercentile >= 99, HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-	{
-		Show t11 { !G2; !PerfectInfluenced; BaseType == bases.perfection.general.t1; }
-		Show t22 { !G3; %D6; !PerfectInfluenced; BaseType == bases.perfection.general.t2; }
-		Show t23 { !G3; %D5; !PerfectInfluenced; BaseType == bases.perfection.general.t3; }
 	}
 
 #------------------------------------
@@ -120,7 +155,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
 	{
 		Show AnyTrinket  { %D4; !GI; Class "Amulet" "Belts" "Rings"; }
-		Show AnyTopLevel { %D5; !GI; !tiny; ItemLevel >= 86; }
+		Show AnyTopLevel { %D4; !GI; !tiny; ItemLevel >= 86; }
 		Show Any 		 { %D3; !GI; Empty(); }
 	}
 }
@@ -140,7 +175,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	## TODO: == and + together mess up parsing
 	Show ExoticHeistBases 	  { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { !GSH; BaseType bases.exotic.ritual.any }
-	Show ExoticExpeditionBases{ %D5; !GSH; BaseType bases.exotic.expedition.any }
+	Show ExoticExpeditionBases{ %D5; !GSH; BaseType bases.exotic.expedition.any + "Iron Flask" }
 	Show ExoticTalismanBases  { !GSH; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
 }
@@ -488,21 +523,6 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 67; }
 	Show 6Sockets		{ %DS3; !G5H; !*t1; Sockets >= 6; }
-}
-
-#===============================================================================================================
-# [[0200]] Low Priority Exotics
-#===============================================================================================================
-#!! Override 120 : "5links and 6sockets"
-
-Section ExoticVariationsLowPrio : !exotic
-{	
-	Section Scourged : Scourged True, Auto("exotic->scourged"), Rarity <= Rare
-	{
-		Show ScourgedSelected    { !GSH; %D3; !exotic.t3; BaseType bases.crafting.scourged.t1; }
-		Show ScourgedClasses     { !GSH; %D2; !exotic.t3; Class classes_scourged; }
-		Show ScourgedRandom      { !GSH; %H2; !exotic.t4; Scourged True; Class classes_equip; }
-	}
 }
 
 #===============================================================================================================
