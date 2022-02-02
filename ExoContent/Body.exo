@@ -45,7 +45,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps"
 Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 {
 	## Common influenced High Exclusivity Items like Ritual items and heist items. Shouldn't drop by default, but always highlighted.
-	Show ExclusiveT1 { !G2; BaseType bases.influenced.exotic1.t1; }
+	Show t1_exo { !G2; BaseType bases.influenced.exotic1.t1; }
 }
 
 #------------------------------------
@@ -101,9 +101,9 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 {
 	## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
-	Show ExclusiveT2 { !G4; %D5; BaseType bases.influenced.exotic2.t1; }
+	Show t2_exo { !G4; %D5; BaseType bases.influenced.exotic2.t1; }
 	## Top Tier Common items of top item level
-	Show TopTier86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common1.t1; };
+	Show t2_86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common1.t1; };
 	## Top Tier Common items of item level 86+
 	## Show HighTier86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common2.t1; };
 }
