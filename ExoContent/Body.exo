@@ -417,6 +417,15 @@ Section IdModSectionSpecial : IdMods, !exotic
 
 Section ArtefactItemClasses
 {	
+
+#------------------------------------
+#   [1234] Voidstones
+#------------------------------------	
+	Section Voidstones : Auto("artefact->trinkets")
+	{
+		Show Any { !G3; BaseType exotic.voidstones.t1; }
+	}
+
 #------------------------------------
 #   [1234] Trinkets
 #------------------------------------	
@@ -1539,11 +1548,11 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 {
-	Show t1exalted 	{ !G1; !*t1exalted; BaseType == currency.generic.t1; }
-	Show t2divine 	{ !G2; !*t2divine; BaseType == currency.generic.t2divine; }
-	Show t3annul 	{ !G3; !*t3annul; BaseType == currency.generic.t3annul; }
-	Show t4chaos 	{ !G4; !*t4chaos; BaseType == currency.generic.t4chaos; }
-	Show t5alchemy 	{ !G4;  %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy; }
+	Show t1exalted 	{ !G1; !*t1exalted; BaseType == currency.generic.t1 + "Eldritch Exalted Orb" "Orb of Dominance" "Orb of Conflict"; }
+	Show t2divine 	{ !G2; !*t2divine; BaseType == currency.generic.t2divine + "Eldritch Orb of Annulment" "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor"; }
+	Show t3annul 	{ !G3; !*t3annul; BaseType == currency.generic.t3annul + "Oil Extractor" "Eldritch Chaos Orb" "Grand Eldritch Ichor" "Grand Eldritch Ember"; }
+	Show t4chaos 	{ !G4; !*t4chaos; BaseType == currency.generic.t4chaos + "Surveyor's Compass" "Charged Compass" "Greater Eldritch Ember" "Greater Eldritch Ichor"; }
+	Show t5alchemy 	{ !G4;  %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy + "Lesser Eldritch Ichor" "Lesser Eldritch Ember"; }
 	Show t6chrom 	{ !G5H; %H4; !*t6chrom; BaseType == currency.generic.t6chrom; }
 	Show t7chance 	{ !G5;  %H3; !*t7chance; BaseType == currency.generic.t7chance; }
 	Show t8trans 	{ !G6H; %H3; !*t8trans; BaseType == currency.generic.t8trans; }
@@ -1579,6 +1588,18 @@ Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class "Currency", !Curren
 	Show t2 { !G2; !*t2divine; BaseType == currency.deliriumorb.t2; }
 	Show t3 { !G4; !*t4chaos; BaseType == currency.deliriumorb.t3; }
 	Show restex { BaseType "Delirium Orb"; }
+}
+
+#------------------------------------
+# [5104] Reports
+#------------------------------------
+
+Section Reports : Auto("currency->reports"), Class "Currency", !Currency
+{
+	Show t1 { !G1; !*t1exalted; BaseType == currency.reports.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.reports.t2; }
+	Show t3 { !G4; !*t4chaos; BaseType == currency.reports.t3; }
+	Show restex { BaseType "Report"; }
 }
 
 #------------------------------------
@@ -1663,6 +1684,11 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t3; }
 	Show t4 { !G4; %H3; !*t6chrom; BaseType == currency.incubators.t4; }
 	Show restex { Empty(); }
+}
+
+Section Archnemesis : Auto("exotic->archnemesis"), Class "Archnemesis Mod"
+{
+	Show Any { !G4; !QuestLike; Empty(); }
 }
 
 #------------------------------------
