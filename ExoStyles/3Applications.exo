@@ -17,11 +17,14 @@ Style MainRules
 	Apply(6L, 6Links.arm => SixLinkVariant.t1);
 	Apply(6L, 6Links.wep => SixLinkVariant.t2);
 
-	## influenced
+	## influenced and eldritch
 	Apply(influenced, $Maps.T1 => InfluencedMapsStrategy)
 	Apply(influenced, Influenced.t1* => InfluencedVariant.t1);
 	Apply(influenced, Influenced.t2* => InfluencedVariant.t2);
 	Apply(influenced, Influenced.Any* => !InfluencedRandom.Any);
+
+	Apply(influenced, Eldritch.t2* => InfluencedVariant.t2);
+	Apply(influenced, Eldritch.Any* => !InfluencedRandom.Any);
 
 	## Special Sauce
 	Apply(special.exotic, exoticbases => !UniversalExotic.t1);
