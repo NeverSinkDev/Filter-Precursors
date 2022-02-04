@@ -54,44 +54,44 @@ Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Eld
 
 Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
 {
-	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Crusader.t10; }
-	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Crusader.t11; }
-	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Crusader.t12; }
+	Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Crusader.t11; }
+	Show t12 { !G2; ItemLevel >= 85; BaseType Influenced.Crusader.t12; }
+	Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Crusader.t13; }
 }
 
 Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
 {
-	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Warlord.t10; }
-	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Warlord.t11; }
-	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Warlord.t12; }
+	Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Warlord.t11; }
+	Show t12 { !G2; ItemLevel >= 85; BaseType Influenced.Warlord.t12; }
+	Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Warlord.t13; }
 }
 
 Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
 {
-	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Redeemer.t10; }
-	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Redeemer.t11; }
-	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Redeemer.t12; }
+	Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Redeemer.t11; }
+	Show t12 { !G2; ItemLevel >= 85; BaseType Influenced.Redeemer.t12; }
+	Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Redeemer.t13; }
 }
 
 Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
 {
-	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Hunter.t10; }
-	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Hunter.t11; }
-	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Hunter.t12; }
+	Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Hunter.t11; }
+	Show t12 { !G2; ItemLevel >= 85; BaseType Influenced.Hunter.t12; }
+	Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Hunter.t13; }
 }
 
 Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
 {
-	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Shaper.t10; }
-	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Shaper.t11; }
-	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Shaper.t12; }
+	Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Shaper.t11; }
+	Show t12 { !G2; ItemLevel >= 85; BaseType Influenced.Shaper.t12; }
+	Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Shaper.t13; }
 }
 
 Section Elder : HasInfluence Elder, Auto("rare->elder")
 {
-	Show t10 { !G2; ItemLevel >= 82; BaseType Influenced.Elder.t10; }
-	Show t11 { !G2; ItemLevel >= 85; BaseType Influenced.Elder.t11; }
-	Show t12 { !G2; ItemLevel >= 86; BaseType Influenced.Elder.t12; }
+	Show t11 { !G2; ItemLevel >= 82; BaseType Influenced.Elder.t11; }
+	Show t12 { !G2; ItemLevel >= 85; BaseType Influenced.Elder.t12; }
+	Show t13 { !G2; ItemLevel >= 86; BaseType Influenced.Elder.t13; }
 }
 
 #------------------------------------
@@ -160,7 +160,27 @@ Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Eld
 	}
 }
 
+#===============================================================================================================
+# [[9999]] ELDRITCH ITEMS
+#===============================================================================================================
+#!! Override 045 : "eldritch items"
 
+Section Eldritch : Rarity <= Rare
+{
+	Section Exarch : Auto("rare->exarch")
+	{
+		Show t2high { !G3; %D5; HasSearingExarchImplicit >= 5; }
+		Show t2base { !G3; %D5; HasSearingExarchImplicit >= 3; BaseType == bases.eldritch.common.t1; }
+		Show Any {     !GI; %D5; HasSearingExarchImplicit >= 1; }
+	}
+
+	Section Eater : Auto("rare->eater")
+	{
+		Show t2high { !G3; %D5; HasEaterOfWorldsImplicit >= 5; }
+		Show t2base { !G3; %D5; HasEaterOfWorldsImplicit >= 3; BaseType == bases.eldritch.common.t1; }
+		Show Any {     !GI; %D5; HasEaterOfWorldsImplicit >= 1; }
+	}
+}
 
 #===============================================================================================================
 # [[0200]] Exotic Bases
@@ -1824,7 +1844,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show fatedbossdrop    { !GSH; !*t4; !special; BaseType == uniques.generic.fatedbossdrop; }
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	Show highvinktar { !G3; %D4; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
-	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; Class "Jewel"; }
+	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
 	
 #------------------------------------
 # [5708] Tier 3 uniques 
