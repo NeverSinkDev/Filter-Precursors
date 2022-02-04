@@ -3,40 +3,50 @@
 GENERAL TODO LIST:
     PREPARATION:
         ☐ Start FB, FPZ, precursor repo, commit state
-        ☐ Prepare matching economy state
-        ☐ Adjust league start mode
-        ☐ Check FilterPolishZ new command implementation
-    ECNOMY-BASED-TIERLIST ADJUSTMENT:
+        ☐ Prepare matching economy state - reset to new state, then to old
+        ☐ Adjust league start mode and dates
+        ☐ Adjust changelog
+        ☐ Check todo again and adjust all sources
+        ✔ Check FilterPolishZ new command implementation @done(22-02-04 02:22)
+    EXISTiNG ECONOMY-BASED-TIERLIST ADJUSTMENT:
         ☐ Ask twitch chat for help
         ☐ Aspect Analysis: Buffed Uniques
         ☐ Aspect Analysis: Nerfed Uniques
         ☐ Aspect Analysis: Early league uniques
         ☐ Aspect Analysis: Early league divination cards, currencies, fragments
+        ☐ Check for prophecy type artefacts
         ☐ Tier known items
-        ☐ Ensure that "blank" items are not causing bugs
+        ☐ COMMIT
+
+    INTEGRATE NEW ITEMS:
+        ✔ Ensure that "blank" items are not causing bugs @done(22-02-04 02:22)
         ☐ Migrate quivers
         ☐ Implement new Uniques
         ☐ Implement new Divination Cards
-        ☐ Implement new fragments, currencies etc.
-        ☐ Test on Alpha
         ☐ Adjust Changelog
         ☐ Commit state
+        ☐ Currency
+        ☐ Reports
+        ☐ Invitations
+        ☐ Test on Alpha
     NON-ECO-BASED TIERLIST ADJUSTMENT:
+        ☐ Abyss jewels - new rule
         ☐ Adjust chancing list
         ☐ Review rare tiering based on balance changes - casters, bows?
         ✔ Review tiering groups, such as synthesis/fractured/scourged tiering. @done(22-02-03 22:39)
         ☐ Review "early harvest bases" based on balance changes
         ✘ Implement new mods if needed - NO MOD NAMES @cancelled(22-02-03 22:40)
         ☐ Adjust Changelog
-        ☐ Invitations and watchstones
+        ✔ Invitations and watchstones @done(22-02-04 12:28)
+
     ADDITIONAL TODOS:
-        ☐ Check League-Specific TODO List
-        ☐ Test on Alpha
+        ☐ Final test Alpha
+        ☐ Ensure Eldritch is enabled, all invitatios added post alpha
         ☐ Adjust Changelog
         ☐ Check abyss
+
     TECHNICAL PREPARATIONS:
         ✔ Check filter version @done(22-02-03 22:40)
-        ☐ Talk about auto-updater
         ☐ Adjust Changelog
         ☐ Adjust fblast meta file
         ☐ Commit FilterPolishZ (merge to main)
@@ -46,6 +56,7 @@ GENERAL TODO LIST:
         ☐ Commit FilterBlade changes (merge to main)
         ☐ Test FilterBlade on beta (+ test)
         ☐ Create GitHub release
+        ☐ Talk about updating and auto-updater while long operations run.
         ☐ Run lambda functions
             ☐ SC
             ☐ HC
@@ -55,8 +66,10 @@ GENERAL TODO LIST:
         ☐ Elaborate invalidations this league
         ☐ Elaborate early league potential problems and social medias
         ☐ Create reddit post:
-        ☐ Timeline, Changelog
-        ☐ Publish filterblade on prod
+            ☐ Timeline, Changelog
+            ☐ Publish filterblade on prod
+            ☐ Autoupdater
+
     POST-RELEASE ACTIONS:
         ☐ Adjust FilterBlade news
         ☐ Q&A FilterBlade
@@ -68,3 +81,95 @@ GENERAL TODO LIST:
         ☐ Adjust personal filter
         ☐ Raid someone on twitch and take a break.
         ☐ Order Sushi
+
+Item Class: Misc Map Item:
+    ☐ Writhing Invitation
+    ☐ Screaming Invitation
+    ☐ Polaric Invitation
+    ☐ Incandescent Invitation
+    ☐ Maven's Invitation: The Atlas
+    ☐ Maven's Invitation: The Elderslayers
+
+Item Class: Divination Card:
+    ☐ Judging Voices
+    ☐ Bijoux
+    ☐ Silence and Frost
+    ☐ Misery in Darkness
+    ☐ The Tireless Extractor
+    ☐ Justified Ambition
+    ☐ Parasitic Passengers
+    ☐ Duality
+    ☐ The One That Got Away
+    ☐ The Transformation
+    ☐ Magnum Opus
+    ☐ Imperfect Memories
+    ☐ The Magma Crab
+        
+Item Class: Stackable Currency
+    ☐ "Surveyor's Compass"
+    ☐ "Charged Compass"
+
+    ☐ "Lesser Eldritch Ember"
+    ☐ "Greater Eldritch Ember"
+    ☐ "Grand Eldritch Ember"
+    ☐ "Exceptional Eldritch Ember"
+    ☐ "Lesser Eldritch Ichor"
+    ☐ "Greater Eldritch Ichor"
+    ☐ "Grand Eldritch Ichor"
+    ☐ "Exceptional Eldritch Ichor"
+
+    ☐ "Orb of Conflict"
+    ☐ "Orb of Dominance"
+
+    ☐ "Eldritch Chaos Orb"
+    ☐ "Eldritch Exalted Orb"
+    ☐ "Eldritch Orb of Annulment"
+
+    ☐ "Oil Extractor"
+
+    ☐ "Singular Scouting Report"
+    ☐ "Otherworldly Scouting Report"
+    ☐ "Comprehensive Scouting Report"
+    ☐ "Vaal Scouting Report"
+    ☐ "Delirious Scouting Report"
+    ☐ "Operative's Scouting Report"
+    ☐ "Blighted Scouting Report"
+    ☐ "Influenced Scouting Report"
+    ☐ "Explorer's Scouting Report"
+
+Removed Items:
+    ✔ Portentous Delirium Orb: @done(22-02-04 12:23)
+    ✔ Maven's Orb: @done(22-02-04 12:23)
+    ✔ Simple Sextant: @done(22-02-04 12:23)
+    ✔ Prime Sextant: @done(22-02-04 12:23)
+    ✔ All itemised Prophecies: @done(22-02-04 12:23)
+    ✔ Silver Coin: @done(22-02-04 12:23)
+    ✔ Watchstones: @done(22-02-04 12:23)
+    ✔ Maven's Invitation: Haewark Hamlet: @done(22-02-04 12:23)
+    ✔ Maven's Invitation: Glennach Cairns: @done(22-02-04 12:23)
+    ✔ Maven's Invitation: Valdo's Rest: @done(22-02-04 12:23)
+    ✔ Maven's Invitation: Lira Arthain: @done(22-02-04 12:23)
+    ✔ Eber's Key: @done(22-02-04 12:23)
+    ✔ Yriel's Key: @done(22-02-04 12:23)
+    ✔ Inya's Key: @done(22-02-04 12:23)
+    ✔ Volkuur's Key @done(22-02-04 12:23)
+
+New Base Types : Item Class: Quiver
+    ✔ Feathered Arrow Quiver @done(22-02-04 12:24)
+    ✔ Blazing Arrow Quiver @done(22-02-04 12:24)
+    ✔ Vile Arrow Quiver @done(22-02-04 12:24)
+    ✔ Heavy Arrow Quiver @done(22-02-04 12:24)
+    ✔ Primal Arrow Quiver @done(22-02-04 12:24)
+    ✔ Archnemesis @done(22-02-04 12:24)
+
+Item Class: Atlas Upgrade Item
+    ✔ Ceremonial Voidstone @done(22-02-04 12:24)
+    ✔ Decayed Voidstone @done(22-02-04 12:24)
+    ✔ Grasping Voidstone @done(22-02-04 12:24)
+    ✔ Omniscient Voidstone @done(22-02-04 12:24)
+
+Item Class: Map Fragment
+    ✔ Al-Hezmin's Crest @done(22-02-04 12:25)
+    ✔ Baran's Crest @done(22-02-04 12:25)
+    ✔ Drox's Crest @done(22-02-04 12:25)
+    ✔ Veritania's Crest @done(22-02-04 12:25)

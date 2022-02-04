@@ -425,7 +425,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; };
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve };
 		Show Warband  { !GS;  %D4; !exotic.t3; Mod exotic_warband };
-		Show Essence  { !GSH; %D6; !exotic.t2; Mod "of the Essence" };
+		Show Essence  { !GSH; %D6; !exotic.t2; Mod "of the Essence" "Essences" };
 		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
@@ -688,15 +688,15 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 	Section HighQualitySuperEndgameFlasks : Quality >= 15, !GEX
 	{
-		Show QualUtility85  { !G3; !utilflasks.LT1; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
-		Show QualUtility84  { !G4; !utilflasks.LT1; %D4; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
+		Show QualUtility85  { !G3; !utilflasks.LT1; %D5; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
+		Show QualUtility84  { !G4; !utilflasks.LT1; %D5; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
 		Show QualUtility82  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
 		Show QualLifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
 	}
 
 	Section SuperEndgameFlasks : !GEX
 	{
-		Show Utility85  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
+		Show Utility85  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
 		Show Utility84  { !G5; !utilflasks.LT2; %D2; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
 		Show Utility82  { !G5; !utilflasks.LT3; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
 		Show LifeMana82 { !G6; !Low; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
@@ -1568,11 +1568,11 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 
 Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 {
-	Show t1exalted 	{ !G1; !*t1exalted; BaseType == currency.generic.t1 + "Eldritch Exalted Orb" "Orb of Dominance" "Orb of Conflict"; }
-	Show t2divine 	{ !G2; !*t2divine; BaseType == currency.generic.t2divine + "Eldritch Orb of Annulment" "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor"; }
-	Show t3annul 	{ !G3; !*t3annul; BaseType == currency.generic.t3annul + "Oil Extractor" "Eldritch Chaos Orb" "Grand Eldritch Ichor" "Grand Eldritch Ember"; }
-	Show t4chaos 	{ !G4; !*t4chaos; BaseType == currency.generic.t4chaos + "Surveyor's Compass" "Charged Compass" "Greater Eldritch Ember" "Greater Eldritch Ichor"; }
-	Show t5alchemy 	{ !G4;  %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy + "Lesser Eldritch Ichor" "Lesser Eldritch Ember"; }
+	Show t1exalted 	{ !G1; !*t1exalted; BaseType == currency.generic.t1; }
+	Show t2divine 	{ !G2; !*t2divine; BaseType == currency.generic.t2divine; }
+	Show t3annul 	{ !G3; !*t3annul; BaseType == currency.generic.t3annul; }
+	Show t4chaos 	{ !G4; !*t4chaos; BaseType == currency.generic.t4chaos; }
+	Show t5alchemy 	{ !G4;  %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy ; }
 	Show t6chrom 	{ !G5H; %H4; !*t6chrom; BaseType == currency.generic.t6chrom; }
 	Show t7chance 	{ !G5;  %H3; !*t7chance; BaseType == currency.generic.t7chance; }
 	Show t8trans 	{ !G6H; %H3; !*t8trans; BaseType == currency.generic.t8trans; }
