@@ -943,6 +943,9 @@ Section Jewels : !jewels
 	{
 		Show VeryHighRare  { %H5;  !G4;  !*rare;  !High; Rarity Rare; ItemLevel >= 86; }
 		Show VeryHighMagic { %H5;  !G4;  !*magic; !High; Rarity <= Magic; ItemLevel >= 86; }
+		
+		Show CorruptedAbyssJewel { %H5; !G4; !*rare; !High; Rarity Rare; Corrupted True; }
+		
 		Show HighRare      { %H3;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
 		Show HighMagic     { %HS3; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
 		Show AnyRare       { %HS2; !G5H; !*rare;  Rarity Rare; }
@@ -2138,7 +2141,7 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), !low, !G7, !GLVL2
 	{
-		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType leveling.bases.quivers.best; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act4 }
+		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType leveling.bases.quivers.best; }
 		Show FireResistGear  { %D2; !NoticeNM2; !SF35; BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
 		Show GeneralCrafting { %D2; !NoticeNM2; !SF35; AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
 		ShowD SummonShield { !NoticeNM2; !SF40; AreaLevel <= leveling.keylevels.act5; BaseType "Bone Spirit Shield" }
