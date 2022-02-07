@@ -398,8 +398,10 @@ var shield_cheatMods = a_cheatMods + "Topotante's";
 
 var shield_life = "Vigorous" "Fecund" "Athlete's" "Virile";
 
-var shield_specialDefenses1 = life_regen[2] + phys_reduction[2] + suppress[2] + ailment_avoid[2] + block[2] + spellblock[1] + es_fasterstart[1] + es_recharge[1] + lifeonblock[1] + critdmgreduction[2] + regen_rate[2];
-var shield_specialDefenses2 = life_regen[3] + phys_reduction[3] + suppress[3] + ailment_avoid[3] + block[3] + spellblock[2] + es_fasterstart[2] + es_recharge[2] + lifeonblock[2] + critdmgreduction[3] + regen_rate[3];
+var shield_maxres = "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm";
+
+var shield_specialDefenses1 = life_regen[2] + phys_reduction[2] + suppress[2] + ailment_avoid[2] + block[2] + spellblock[1] + es_fasterstart[1] + es_recharge[1] + lifeonblock[1] + critdmgreduction[2] + regen_rate[2] + shield_maxres;
+var shield_specialDefenses2 = life_regen[3] + phys_reduction[3] + suppress[3] + ailment_avoid[3] + block[3] + spellblock[2] + es_fasterstart[2] + es_recharge[2] + lifeonblock[2] + critdmgreduction[3] + regen_rate[3] + shield_maxres;
 
 var shield_casterAux1 = ws_cast_crit[2];
 var shield_casterAux2 = ws_cast_crit[3] + ws_manaregen[1];
@@ -457,7 +459,7 @@ var xbody_core_es = body_es + body_cheatMods;
 ## "QUIVERS"
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var quiver_cheatMods = a_cheatMods;
+var quiver_cheatMods = a_cheatMods + "of Splintering";
 
 var quiver_life = "Fecund" "Athlete's" "Virile";
 
@@ -467,6 +469,7 @@ var quiver_fphys = "Flaring" "Tempered" "Razor-sharp";
 var quiver_ffire = "Cremating" "Blasting" "Incinerating";
 var quiver_fcold = "Entombing" "Polar" "Glaciated";
 var quiver_flight = "Electrocuting" "Discharging" "Shocking";
+var quiver_bowdmg = "Impaling" "Lacerating" "Incisive";
 
 ## suffix combat stats
 var quiver_crit_chance = "of Rending" "of Incision" "of Penetrating" "of Rupturing";
@@ -477,13 +480,13 @@ var quiver_accuracy = "of the Ranger" "of the Marksman";
 var quiver_dot = "of Dissolution" "of Melting" "of Liquefaction";
 var quiver_projspeed = "of the Gale" "of the Zephyr";
 
-var quiver_mix_aux = quiver_cheatMods + quiver_life + dex[3] + res_fire[3] + res_cold[3] + res_light[3] + res_chaos[3] + VeilPS;
+var quiver_mix_aux = quiver_bowdmg + quiver_cheatMods + quiver_life + dex[3] + res_fire[3] + res_cold[3] + res_light[3] + res_chaos[3] + VeilPS;
 
 ## dotquiver
 var quiver_hit_prefixdmg = quiver_fphys[2] + quiver_ffire[2] + quiver_fcold[2] + quiver_flight[2] + quiver_wed[2];
 var quiver_dot_prefixdmg = quiver_ffire[2] + quiver_fphys[2] + quiver_wed[2];
 
-var xquiver_core_mods = quiver_cheatMods + quiver_life[3] + quiver_crit_multi[2] + quiver_attackspeed[1] + quiver_dot[2] + quiver_crit_chance[1] + quiver_wed[1];
+var xquiver_core_mods = quiver_bowdmg[1] + quiver_cheatMods + quiver_life[3] + quiver_crit_multi[2] + quiver_attackspeed[1] + quiver_dot[2] + quiver_crit_chance[1] + quiver_wed[1];
 
 var xquiver_mix_dot = quiver_mix_aux + quiver_dot_prefixdmg + quiver_attackspeed + quiver_accuracy[2] + quiver_dot + quiver_projspeed[1] + quiver_crit_multi[1] + quiver_crit_chance[1];
 var xquiver_mix_hit = quiver_mix_aux + quiver_hit_prefixdmg + quiver_attackspeed + quiver_accuracy[2] + quiver_dot[1] + quiver_projspeed[1] + quiver_crit_multi[3] + quiver_crit_chance[3];
@@ -600,7 +603,7 @@ var acc_dot_mult = "of Dissolution" "of Melting" "of Liquefaction";
 var acc_att_wed = "Devastating" "Overpowering" "Unleashed" "Empowering";
 var acc_att_accu = "of the Ranger" "of the Marksman" "of the Sniper";
 
-var acc_cast_speed = "of Expertise" "of Nimbleness";
+var acc_cast_speed = "of Legerdemain" "of Expertise" "of Nimbleness";
 var acc_cast_spell = "Wizard's" "Thaumaturgist's";
 
 ## special
@@ -610,7 +613,8 @@ var acc_unset_levels = "Quintessential" "Flawless";
 ## AMULETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var amu_cheat = acc_cheat + "of Puhuarte" "Guatelitzi's";
+var amu_skills = "Exalter's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's";
+var amu_cheat = acc_cheat + "of Puhuarte" "Guatelitzi's" + amu_skills;
 
 ## important general stats on amulets
 var amu_aux_stats = VeilPS + amu_cheat + aux_stats2 + acc_allat[3] + acc_manaregen[2] + acc_par[1] + acc_pev[1] + acc_pes[1];
@@ -634,13 +638,12 @@ var rings_cheat = acc_cheat + acc_unset_levels[1] + "Guatelitzi's" + VeilPS;
 var ring_aux_stats_full = rings_cheat + acc_life[4] + acc_fes[3] + aux_stats2 + acc_manaregen[2] + "of the Comet";
 
 var ring_ias = "of Skill";
-var ring_castspeed = "of Talent";
 var ring_pdmg = "of Flames" "of Rime" "of Voltage";
 
 var xring_core = rings_cheat + acc_life[3] + acc_fes[2] + acc_att_accu[1] + acc_mana[1];
 
 var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[3] + acc_dmg_physf[2] + acc_dmg_firef[2] + acc_dmg_coldf[2] + acc_dmg_lightf[2] + ring_ias + ring_pdmg;
-var xring_cast_mix = ring_aux_stats_full + ring_castspeed + ring_pdmg + acc_mana;
+var xring_cast_mix = ring_aux_stats_full + acc_cast_speed[2] + ring_pdmg + acc_mana;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RINGS

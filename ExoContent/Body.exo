@@ -171,14 +171,14 @@ Section Eldritch : Rarity <= Rare
 	{
 		Show t2high { !G3; %D5; HasSearingExarchImplicit >= 5; }
 		Show t2base { !G3; %D5; HasSearingExarchImplicit >= 3; BaseType == bases.eldritch.common.t1; }
-		Show Any {     !GI; %D5; HasSearingExarchImplicit >= 1; }
+		Show Any {    !GI; %D4; HasSearingExarchImplicit >= 1; }
 	}
 
 	Section Eater : Auto("rare->eater")
 	{
 		Show t2high { !G3; %D5; HasEaterOfWorldsImplicit >= 5; }
 		Show t2base { !G3; %D5; HasEaterOfWorldsImplicit >= 3; BaseType == bases.eldritch.common.t1; }
-		Show Any {     !GI; %D5; HasEaterOfWorldsImplicit >= 1; }
+		Show Any {    !GI; %D4; HasEaterOfWorldsImplicit >= 1; }
 	}
 }
 
@@ -305,6 +305,8 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 		Section Amulets : Class "Amulets"
 		{
+			Show Amu_exalter { Mod "Exalter's"; Corrupted False; Mirrored False; }
+
 			Show Amu_1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; }
 			Show Amu_2CoreCaster{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
 
@@ -531,7 +533,8 @@ Section ExoticVariations : !exotic
 		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
-			Show Helmets     { !GSH; %D6; !exotic.t2; Class "Helmets" }
+			Show Helmets     { !GSH; %D6; !exotic.t2; Class "Helmets";}
+			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class "Amulets" "Rings"; Corrupted False; }
 			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
 	}
@@ -1711,7 +1714,11 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 
 Section Archnemesis : Auto("exotic->archnemesis"), Class "Archnemesis Mod"
 {
-	Show Any { !G4; !QuestLike; Empty(); }
+	Show reagents { !G4; !QuestLite; ArchnemesisMod archnemesis.reagents; }
+	Show special  { !G4; !QuestLike; ArchnemesisMod archnemesis.special; }
+	Show results  { !G4; !QuestLike; ArchnemesisMod archnemesis.reciperesults; }
+	
+	Show restex { !G4; !QuestLike; Empty(); }
 }
 
 #------------------------------------
