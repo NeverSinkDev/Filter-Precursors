@@ -169,16 +169,16 @@ Section Eldritch : Rarity <= Rare
 {
 	Section Exarch : Auto("rare->exarch")
 	{
-		Show t2high { !G3; %D5; HasSearingExarchImplicit >= 5; }
-		Show t2base { !G3; %D5; HasSearingExarchImplicit >= 3; BaseType == bases.eldritch.common.t1; }
-		Show Any {    !GI; %D4; HasSearingExarchImplicit >= 1; }
+		Show t2high  { !G3; %D5; HasSearingExarchImplicit >= 5; }
+		Show AnyHigh { !G3; %D4; HasSearingExarchImplicit >= 3; BaseType == bases.eldritch.common.t1; }
+		Show Any 	 { !GI; %D3; HasSearingExarchImplicit >= 1; }
 	}
 
 	Section Eater : Auto("rare->eater")
 	{
-		Show t2high { !G3; %D5; HasEaterOfWorldsImplicit >= 5; }
-		Show t2base { !G3; %D5; HasEaterOfWorldsImplicit >= 3; BaseType == bases.eldritch.common.t1; }
-		Show Any {    !GI; %D4; HasEaterOfWorldsImplicit >= 1; }
+		Show t2high  { !G3; %D5; HasEaterOfWorldsImplicit >= 5; }
+		Show AnyHigh { !G3; %D4; HasEaterOfWorldsImplicit >= 3; BaseType == bases.eldritch.common.t1; }
+		Show Any 	 { !GI; %D3; HasEaterOfWorldsImplicit >= 1; }
 	}
 }
 
@@ -563,6 +563,15 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 #!! Override 130 : "High level crafting bases"
 
 #------------------------------------
+# [1234] Expensive Atlas 86 Bases - matched by economy
+#------------------------------------
+
+Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity <= Rare
+{
+	Show Any { !GSH; !exotic.t1; %D6; BaseType == expensivebases.any; }
+}
+
+#------------------------------------
 # [1234] Perfection-Based-Filtering
 #------------------------------------
 
@@ -689,20 +698,12 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 # [2701] Super Endgame Flasks
 #------------------------------------
 
-	Section HighQualitySuperEndgameFlasks : Quality >= 15, !GEX
-	{
-		Show QualUtility85  { !G3; !utilflasks.LT1; %D5; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
-		Show QualUtility84  { !G4; !utilflasks.LT1; %D5; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
-		Show QualUtility82  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
-		Show QualLifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
-	}
-
 	Section SuperEndgameFlasks : !GEX
 	{
-		Show Utility85  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 85;  BaseType bases.flask.superilvl85; }
-		Show Utility84  { !G5; !utilflasks.LT2; %D2; ItemLevel >= 84; BaseType bases.flask.superilvl84; }
-		Show Utility82  { !G5; !utilflasks.LT3; %D2; ItemLevel >= 82; BaseType bases.flask.utilityassorted; }
-		Show LifeMana82 { !G6; !Low; %D2; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
+		Show Utility85  { !G3; !utilflasks.LT1; %D4; ItemLevel >= 85; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
+		Show Utility84  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 84; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
+		Show Utility82  { !G4; !utilflasks.LT3; %D3; ItemLevel >= 82; Class "Utility Flasks"; }
+		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
 	}
 
 #------------------------------------
@@ -1617,18 +1618,6 @@ Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class "Currency", !Curren
 }
 
 #------------------------------------
-# [5104] Reports
-#------------------------------------
-
-Section Reports : Auto("currency->reports"), Class "Currency", !Currency
-{
-	Show t1 { !G1; !*t1exalted; BaseType == currency.reports.t1; }
-	Show t2 { !G2; !*t2divine; BaseType == currency.reports.t2; }
-	Show t3 { !G4; !*t4chaos; BaseType == currency.reports.t3; }
-	Show restex { BaseType "Report"; }
-}
-
-#------------------------------------
 # [5104] Delve - Resonators
 #------------------------------------
 #!! Override 650 : "Resonators, Fossils"
@@ -1836,6 +1825,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5704] Tier 2 uniques
 #------------------------------------
 	Show t2 { !G2; !*t2; BaseType == uniques.generic.t2; }	
+
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
@@ -1850,12 +1840,22 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # For those 6 sockets	
 	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
 
+#------------------------------------
+# [5701] Exceptions Fated Uniques
+#------------------------------------
+
+	Show fated1    { !G2; !*t2; BaseType == uniques.generic.fatedt1; Identified True; Corrupted False; }
+	Show fated2    { !GSH; %H4; !*t4; !special; BaseType == uniques.generic.fatedt2; Identified True; Corrupted False; }
+
+#------------------------------------
+# [5701] Low tier exceptions
+#------------------------------------
+
 #!! Override 770 : "Only low tier uniques"
-	Show fatedbossdrop    { !GSH; !*t4; !special; BaseType == uniques.generic.fatedbossdrop; }
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	Show highvinktar { !G3; %D4; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
-	
+
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
