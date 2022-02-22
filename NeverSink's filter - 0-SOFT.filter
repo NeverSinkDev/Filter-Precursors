@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.5.1
+# VERSION:  8.5.2
 # TYPE:     0-SOFT
 # STYLE:    DEFAULT
 # AUTHOR:   NeverSink
@@ -2548,7 +2548,7 @@ Show # %D4 $type->endgameflasks $tier->utility85
 	PlayEffect Grey
 	MinimapIcon 2 Grey Circle
 
-Show # %D4 $type->endgameflasks $tier->utility84
+Show # %D3 $type->endgameflasks $tier->utility84
 	ItemLevel >= 84
 	AreaLevel >= 68
 	Rarity <= Magic
@@ -2559,7 +2559,7 @@ Show # %D4 $type->endgameflasks $tier->utility84
 	SetBackgroundColor 25 100 75
 	PlayEffect Grey Temp
 
-Show # %D3 $type->endgameflasks $tier->utility82
+Show # %D2 $type->endgameflasks $tier->utility82
 	ItemLevel >= 82
 	AreaLevel >= 68
 	Rarity <= Magic
@@ -2569,6 +2569,7 @@ Show # %D3 $type->endgameflasks $tier->utility82
 	SetBackgroundColor 25 100 75
 
 Show # %D3 $type->endgameflasks $tier->lifemana82
+	Quality >= 15
 	ItemLevel >= 82
 	AreaLevel >= 68
 	Rarity <= Magic
@@ -3338,7 +3339,7 @@ Show # %H5 $type->jewels->abyss $tier->corruptedabyssjewel
 	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
-Show # %H3 $type->jewels->abyss $tier->highrare
+Show # %HS3 $type->jewels->abyss $tier->highrare
 	ItemLevel >= 82
 	Rarity Rare
 	Class "Abyss Jewel"
@@ -3349,7 +3350,7 @@ Show # %H3 $type->jewels->abyss $tier->highrare
 	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
-Show # %HS3 $type->jewels->abyss $tier->highmagic
+Show # %HS2 $type->jewels->abyss $tier->highmagic
 	ItemLevel >= 82
 	Rarity <= Magic
 	Class "Abyss Jewel"
