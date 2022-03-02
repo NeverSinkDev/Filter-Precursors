@@ -88,13 +88,15 @@
 #   [0804] Fractured
 #   [0805] Enchanted
 # [[0900]] Recipes and 5links
+#   [0901] Link Based
 # [[1000]] High Level Crafting Bases
-#   [1001] Perfection-Based-Filtering
-#   [1002] ILVL 86
-#   [1003] ILVL 84
-#   [1004] ILVL ANY
-#   [1005] RGB Endgame
-#   [1006] Chisel Recipes
+#   [1001] Expensive Atlas 86 Bases - matched by economy
+#   [1002] Perfection-Based-Filtering
+#   [1003] ILVL 86
+#   [1004] ILVL 84
+#   [1005] ILVL ANY
+#   [1006] RGB Endgame
+#   [1007] Chisel Recipes
 # [[1100]] Chancing Bases
 # [[1200]] Endgame Flasks
 #   [1201] Super Endgame Flasks
@@ -135,8 +137,9 @@
 #   [2903] Delirium/Blight/Enchanted Maps!
 #   [2904] Beyond-Nemesis Maps, for those juicy sextants.
 # [[3000]] Normal Map Progression
-#   [3001] Map progression
-#   [3002] Labyrinth items, Offerings
+#   [3001] Generic Decorators
+#   [3002] Map progression
+#   [3003] Labyrinth items, Offerings
 # [[3100]] Heist Contracts and Blueprints
 # [[3200]] Expedition Logbooks
 # [[3300]] Fragments
@@ -145,25 +148,28 @@
 #   [3303] Regular Fragment Tiering
 # [[3400]] Currency - Exceptions - Leveling Currencies
 # [[3500]] Currency - Exceptions - Stacked Currency
-#   [3501] Supplies: Low Stacking
-#   [3502] Supplies: Portal Stacking
-#   [3503] Supplies: Wisdom Stacking
-#   [3504] Stacked Currencies: 6x
-#   [3505] Stacked Currencies: 3x
-#   [3506] Stacked Currencies: Splinters
-#   [3507] Heist Coins
+#   [3501] Supplies: High Stacking
+#   [3502] Supplies: Low Stacking
+#   [3503] Supplies: Portal Stacking
+#   [3504] Supplies: Wisdom Stacking
+#   [3505] Stacked Currencies: 6x
+#   [3506] Stacked Currencies: 3x
+#   [3507] Stacked Currencies: Splinters
+#   [3508] Heist Coins
 # [[3600]] Currency - Regular Currency Tiering
 # [[3700]] Currency - SPECIAL
-#   [3701] Delirum Orbs
-#   [3702] Delve - Resonators
-#   [3703] Delve - Fossils
-#   [3704] Blight - Oils
-#   [3705] Expedition Currencies
-#   [3706] Essences
-#   [3707] Incubators
-#   [3708] Others
+#   [3701] Incursion - Vials
+#   [3702] Delirum Orbs
+#   [3703] Delve - Resonators
+#   [3704] Delve - Fossils
+#   [3705] Blight - Oils
+#   [3706] Expedition Currencies
+#   [3707] Essences
+#   [3708] Incubators
+#   [3709] Others
 # [[3800]] Currency - Splinters
-#   [3801] Simulacrum Splinters
+#   [3801] Breach and Legion Splinters
+#   [3802] Simulacrum Splinters
 # [[3900]] Divination Cards
 # [[4000]] Remaining Currency
 # [[4100]] Questlike-Items1 (override uniques)
@@ -181,20 +187,24 @@
 # [[4400]] Questlike-Items2
 # [[4500]] Hide outdated leveling flasks
 # [[4600]] Leveling - Flasks
-#   [4601] Hybrid flasks
-#   [4602] Life flasks
-#   [4603] Mana flasks
+#   [4601] Utility Flasks
+#   [4602] Hybrid flasks
+#   [4603] Life flasks
+#   [4604] Mana flasks
 # [[4700]] Leveling - Rules
-#   [4701] Rares - Decorators
-#   [4702] Rares - Universal
-#   [4703] Rares - Caster
-#   [4704] Rares - Archer
-#   [4705] Rares - Melee
+#   [4701] Links and Sockets
+#   [4702] Rares - Decorators
+#   [4703] Rares - Universal
+#   [4704] Rares - Caster
+#   [4705] Rares - Archer
+#   [4706] Rares - Melee
 # [[4800]] Leveling - Useful magic and normal items
-#   [4801] Normals
-#   [4802] Weapon Progression
-#   [4803] Remaining Magics
-#   [4804] Show All unknown Section
+#   [4801] Purpose Picked Items
+#   [4802] Normals
+#   [4803] Weapon Progression
+#   [4804] Remaining Magics
+#   [4805] Hide All known Section
+#   [4806] Show All unknown Section
 
 #===============================================================================================================
 # [[0100]] Global overriding rules
@@ -2107,7 +2117,7 @@ Show # %D2 $type->exotic->enchanted $tier->glovesboots
 #===============================================================================================================
 # !! Override 120 : "5links and 6sockets"
 #------------------------------------
-# [1234] Link Based
+#   [0901] Link Based
 #------------------------------------
 
 Show # %D4 $type->socketslinks $tier->5linksleveling
@@ -2160,7 +2170,7 @@ Show # %DS3 $type->socketslinks $tier->6sockets
 #===============================================================================================================
 # !! Override 130 : "High level crafting bases"
 #------------------------------------
-# [1234] Expensive Atlas 86 Bases - matched by economy
+#   [1001] Expensive Atlas 86 Bases - matched by economy
 #------------------------------------
 
 Show # %D6 $type->crafting->expensive $tier->any
@@ -2177,7 +2187,7 @@ Show # %D6 $type->crafting->expensive $tier->any
 	MinimapIcon 0 Blue Diamond
 
 #------------------------------------
-#   [1001] Perfection-Based-Filtering
+#   [1002] Perfection-Based-Filtering
 #------------------------------------
 
 Show # %D6 $type->crafting->perfectarmours $tier->t1
@@ -2223,7 +2233,7 @@ Show # %D4 $type->crafting->perfectarmours $tier->t3
 	MinimapIcon 0 Purple Moon
 
 #------------------------------------
-#   [1002] ILVL 86
+#   [1003] ILVL 86
 #------------------------------------
 
 Show # $type->decorator->craftingrare $tier->raredecoratorilvl75
@@ -2300,7 +2310,7 @@ Show # %D3 $type->normalcraft->i86 $tier->t3
 	SetBorderColor 255 125 0 185
 
 #------------------------------------
-#   [1003] ILVL 84
+#   [1004] ILVL 84
 #------------------------------------
 
 Show # %D4 $type->normalcraft->i84 $tier->t1
@@ -2329,7 +2339,7 @@ Show # %D2 $type->normalcraft->i84 $tier->t2
 #	SetBorderColor 200 200 0 185
 
 #------------------------------------
-#   [1004] ILVL ANY
+#   [1005] ILVL ANY
 #------------------------------------
 
 Show # %D2 $type->normalcraft->rest $tier->t1
@@ -2403,7 +2413,7 @@ Show # %D1 $type->normalcraft->extra $tier->any
 	SetBorderColor 100 100 100 150
 
 #------------------------------------
-#   [1005] RGB Endgame
+#   [1006] RGB Endgame
 #------------------------------------
 # !! Override 140 : "Chromatic and Chisel Recipes"
 
@@ -2452,7 +2462,7 @@ Show # %H1 $type->endgamergb $tier->rgbmedium
 	SetBackgroundColor 130 110 110 255
 
 #------------------------------------
-#   [1006] Chisel Recipes
+#   [1007] Chisel Recipes
 #------------------------------------
 
 Show # %D1 $type->chiselrecipe $tier->chisel20
@@ -4407,7 +4417,7 @@ Show # %H5 $type->heist->gear $tier->t1
 Show # %HS4 $type->heist->gear $tier->t2
 	Rarity <= Rare
 	Class "Heist Gear"
-	BaseType "Aggregator Charm" "Fine Sharpening Stone" "Fragmenting Arrowhead"
+	BaseType "Aggregator Charm" "Fine Sharpening Stone" "Hollowpoint Arrowhead"
 	SetFontSize 45
 	SetBorderColor 255 85 85 200
 	SetBackgroundColor 30 30 30 255
@@ -5069,7 +5079,7 @@ Show # %D5 $type->maps->identified $tier->nemesisbeyond
 # [[3000]] Normal Map Progression
 #===============================================================================================================
 #------------------------------------
-# [4403] Generic Decorators
+#   [3001] Generic Decorators
 #------------------------------------
 # !! Override 540 : "Map decorators"
 
@@ -5101,7 +5111,7 @@ Show # $type->maps $tier->deco_zone4general
 	Continue
 
 #------------------------------------
-#   [3001] Map progression
+#   [3002] Map progression
 #------------------------------------
 # !! Override 541 : "T11-T16 maps"
 
@@ -5392,7 +5402,7 @@ Show # $type->maps $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3002] Labyrinth items, Offerings
+#   [3003] Labyrinth items, Offerings
 #------------------------------------
 # !! Override 570 : "labyrinth offerings"
 
@@ -5694,7 +5704,7 @@ Show # %D4 $type->currency->leveling $tier->wisdom
 # !! Chapter "Currencylike item tierlists 1"
 # !! Override 620 : "Stacked Currency"
 #------------------------------------
-# [4702] Supplies: High Stacking
+#   [3501] Supplies: High Stacking
 #------------------------------------
 
 # Whetstones, augments and transmutes
@@ -5733,7 +5743,7 @@ Show # %H3 $type->currency->stackedsupplieshigh $tier->t3
 	SetBackgroundColor 210 178 135 255
 
 #------------------------------------
-#   [3501] Supplies: Low Stacking
+#   [3502] Supplies: Low Stacking
 #------------------------------------
 
 # armourers
@@ -5769,7 +5779,7 @@ Show # %H3 $type->currency->stackedsupplieslow $tier->t3
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [3502] Supplies: Portal Stacking
+#   [3503] Supplies: Portal Stacking
 #------------------------------------
 
 Show # %H5 $type->currency->stackedsuppliesportal $tier->t1
@@ -5797,7 +5807,7 @@ Show # %H2 $type->currency->stackedsuppliesportal $tier->t3
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [3503] Supplies: Wisdom Stacking
+#   [3504] Supplies: Wisdom Stacking
 #------------------------------------
 
 Show # %H5 $type->currency->stackedsupplieswisdom $tier->t1
@@ -5825,7 +5835,7 @@ Show # %H2 $type->currency->stackedsupplieswisdom $tier->t3
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [3504] Stacked Currencies: 6x
+#   [3505] Stacked Currencies: 6x
 #------------------------------------
 
 Show # $type->currency->stackedsix $tier->t1
@@ -5909,7 +5919,7 @@ Show # %H4 $type->currency->stackedsix $tier->t6
 #	SetBackgroundColor 210 178 135 255
 
 #------------------------------------
-#   [3505] Stacked Currencies: 3x
+#   [3506] Stacked Currencies: 3x
 #------------------------------------
 
 Show # $type->currency->stackedthree $tier->t1
@@ -5993,7 +6003,7 @@ Show # %H3 $type->currency->stackedthree $tier->t7
 	SetBackgroundColor 210 178 135 255
 
 #------------------------------------
-#   [3506] Stacked Currencies: Splinters
+#   [3507] Stacked Currencies: Splinters
 #------------------------------------
 
 Show # $type->currency->stackedsplintershigh $tier->t1
@@ -6069,7 +6079,7 @@ Show # %H5 $type->currency->stackedsplinterslow $tier->t3
 	MinimapIcon 2 White Circle
 
 #------------------------------------
-#   [3507] Heist Coins
+#   [3508] Heist Coins
 #------------------------------------
 
 Show # %H5 $type->currency->heist $tier->highstack
@@ -6204,7 +6214,7 @@ Show # %H2 $type->currency $tier->twisdom
 # [[3700]] Currency - SPECIAL
 #===============================================================================================================
 #------------------------------------
-# [5103] Incursion - Vials
+#   [3701] Incursion - Vials
 #------------------------------------
 # !! Override 640 : "Vials, Delirium Orbs"
 
@@ -6253,7 +6263,7 @@ Show # $type->vials $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3701] Delirum Orbs
+#   [3702] Delirum Orbs
 #------------------------------------
 
 Show # $type->currency->deliriumorbs $tier->t1
@@ -6300,7 +6310,7 @@ Show # $type->currency->deliriumorbs $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3702] Delve - Resonators
+#   [3703] Delve - Resonators
 #------------------------------------
 # !! Override 650 : "Resonators, Fossils"
 
@@ -6347,7 +6357,7 @@ Show # $type->currency->resonator $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3703] Delve - Fossils
+#   [3704] Delve - Fossils
 #------------------------------------
 
 #Show # $type->currency->fossil $tier->t1
@@ -6405,7 +6415,7 @@ Show # $type->currency->fossil $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3704] Blight - Oils
+#   [3705] Blight - Oils
 #------------------------------------
 # !! Override 660 : "Blight Oils"
 
@@ -6464,7 +6474,7 @@ Show # $type->currency->oil $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3705] Expedition Currencies
+#   [3706] Expedition Currencies
 #------------------------------------
 # !! Override 661 : "Expedition"
 
@@ -6480,7 +6490,7 @@ Show # $type->currency->expedition->reroll $tier->any
 	MinimapIcon 1 Yellow Circle
 
 #------------------------------------
-#   [3706] Essences
+#   [3707] Essences
 #------------------------------------
 # !! Override 670 : "Essences"
 
@@ -6542,7 +6552,7 @@ Show # %H1 $type->currency->essence $tier->t6
 	SetBackgroundColor 0 0 0 255
 
 #------------------------------------
-#   [3707] Incubators
+#   [3708] Incubators
 #------------------------------------
 # !! Override 680 : "Incubators"
 
@@ -6655,7 +6665,7 @@ Show # $type->exotic->archnemesis $tier->restex
 	MinimapIcon 0 Green Pentagon
 
 #------------------------------------
-#   [3708] Others
+#   [3709] Others
 #------------------------------------
 # !! Override 690 : "Harbinger Scrolls"
 
@@ -6685,7 +6695,7 @@ Show # $type->currency->others $tier->misc
 # [[3800]] Currency - Splinters
 #===============================================================================================================
 #------------------------------------
-# [5112] Breach and Legion Splinters
+#   [3801] Breach and Legion Splinters
 #------------------------------------
 # !! Override 720 : "Breach and Simulacrum Splinters"
 
@@ -6722,7 +6732,7 @@ Show # %H4 $type->currency->splinter $tier->t3
 	MinimapIcon 2 Grey Kite
 
 #------------------------------------
-#   [3801] Simulacrum Splinters
+#   [3802] Simulacrum Splinters
 #------------------------------------
 
 Show # $type->currency->splinter->simulacrum $tier->t1
@@ -7382,7 +7392,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 # [[4600]] Leveling - Flasks
 #===============================================================================================================
 #------------------------------------
-# [6002] Utility Flasks
+#   [4601] Utility Flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->utility $tier->quicksilver
@@ -7435,7 +7445,7 @@ Show # %D1 $type->leveling->flasks->quality $tier->any
 	SetBackgroundColor 130 110 110 255
 
 #------------------------------------
-#   [4601] Hybrid flasks
+#   [4602] Hybrid flasks
 #------------------------------------
 # !! Override 820 : "leveling life and mana flasks"
 
@@ -7482,7 +7492,7 @@ Show # %H2 $type->leveling->flasks->hybrid $tier->t6
 	SetBorderColor 100 0 100
 
 #------------------------------------
-#   [4602] Life flasks
+#   [4603] Life flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->life $tier->t1
@@ -7570,7 +7580,7 @@ Show # $type->leveling->flasks->life $tier->t12
 	SetBorderColor 120 0 0
 
 #------------------------------------
-#   [4603] Mana flasks
+#   [4604] Mana flasks
 #------------------------------------
 
 Show # $type->leveling->flasks->mana $tier->t1
@@ -7662,7 +7672,7 @@ Show # $type->leveling->flasks->mana $tier->t12
 #===============================================================================================================
 # !! Override 830 : "leveling: 4links and chromatic socket items"
 #------------------------------------
-# [6002] Links and Sockets
+#   [4701] Links and Sockets
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->socketslinks $tier->4linkrares
@@ -7676,7 +7686,7 @@ Show # %D4 $type->leveling->rare->socketslinks $tier->4linkrares
 	MinimapIcon 2 Grey Diamond
 
 #------------------------------------
-#   [4701] Rares - Decorators
+#   [4702] Rares - Decorators
 #------------------------------------
 # !! Override 840 : "leveling: all rare rules"
 
@@ -7713,7 +7723,7 @@ Show # $type->decorators->leveling->rare $tier->tinyrares
 	Continue
 
 #------------------------------------
-#   [4702] Rares - Universal
+#   [4703] Rares - Universal
 #------------------------------------
 
 Show # %D5 $type->leveling->rare->universal $tier->rusticsash
@@ -7765,7 +7775,7 @@ Show # %D4 $type->leveling->rare->armours $tier->quivers
 	SetBackgroundColor 4 67 4 210
 
 #------------------------------------
-#   [4703] Rares - Caster
+#   [4704] Rares - Caster
 #------------------------------------
 # !! Override 850 : "leveling: class specific leveling weapons"
 
@@ -7785,7 +7795,7 @@ Show # %D4 $type->leveling->rare->caster $tier->general
 	SetBackgroundColor 43 43 100 210
 
 #------------------------------------
-#   [4704] Rares - Archer
+#   [4705] Rares - Archer
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->archer $tier->l1
@@ -7878,7 +7888,7 @@ Show # %D4 $type->leveling->rare->archer $tier->l10
 	SetBackgroundColor 4 67 4 210
 
 #------------------------------------
-#   [4705] Rares - Melee
+#   [4706] Rares - Melee
 #------------------------------------
 
 Show # %D4 $type->leveling->rare->melee $tier->l1
@@ -8011,7 +8021,7 @@ Show # %D3 $type->leveling->rare->remaining $tier->underlevel16
 # !! Chapter "Leveling - remaining normal and magic items"
 # !! Override 910 : "Linked Gear"
 #------------------------------------
-# [6002] Purpose Picked Items
+#   [4801] Purpose Picked Items
 #------------------------------------
 
 Show # %D4 $type->leveling->normalmagic->4l $tier->general
@@ -8191,7 +8201,7 @@ Show # %D2 $type->leveling->normalmagic->otheracts $tier->generalcrafting
 #	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4801] Normals
+#   [4802] Normals
 #------------------------------------
 # !! Override 930 : "first levels gear"
 
@@ -8221,7 +8231,7 @@ Show # %H3 $type->leveling->firstlevels $tier->firstareas
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4802] Weapon Progression
+#   [4803] Weapon Progression
 #------------------------------------
 # !! Override 940 : "weapon progression"
 
@@ -8487,7 +8497,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r29
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [4803] Remaining Magics
+#   [4804] Remaining Magics
 #------------------------------------
 # !! Override 950 : "magic vendor items"
 
@@ -8560,7 +8570,7 @@ Show # %H3 $type->leveling->magic->remaining $tier->firstlevels
 
 # !! Override 960 : "don't override anything"
 #------------------------------------
-# [6002] Hide All known Section
+#   [4805] Hide All known Section
 #------------------------------------
 
 Hide # $type->hidelayer $tier->final
@@ -8571,7 +8581,7 @@ Hide # $type->hidelayer $tier->final
 	DisableDropSound True
 
 #------------------------------------
-#   [4804] Show All unknown Section
+#   [4806] Show All unknown Section
 #------------------------------------
 # THIS ENTRY IS CAUGHT IN 3 CASES:
 # 1) YOUR FILTER IS OUT OF DATE!

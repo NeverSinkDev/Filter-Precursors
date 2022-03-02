@@ -223,7 +223,7 @@ var helmet_aux1 = aux_stats_rfocus1 + minionGems[1] + suppress[2] + es_recharge[
 var helmet_aux2 = aux_stats_rfocus2 + minionGems[2] + suppress[3] + es_recharge[3] + accuracy[3] + regen_rate[3] + helmet_regen;
 
 ## usable elements
-var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + helmet_life[1] + minionGems[1];
+var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + minionGems[1];
 var xhelmet_life_core = helmet_life[3] + minionGems[1] + regen_rate[2];
 
 var xhelmet_life_mix1 = helmet_cheatMod + helmet_aux1 + combined_smitem_defenses1 + helmet_life[2];
@@ -498,13 +498,13 @@ var xquiver_mix_hit = quiver_mix_aux + quiver_hit_prefixdmg + quiver_attackspeed
 ## ws_fire (suffix) etc only has one tier for us
 ## we treat +1 phys as a safe thing, because it's super versatile
 ## ABS LVL 1
-var casterCheatSafe = convokingLvl + w_temple_Caster + w_cheatmods + wgems_alllevels_global + veilP + "Lithomancer's";
-var casterCheatAll = casterCheatSafe + wgems_alllevels + convokingMods + "Mad Lord's";
+var casterCheatSafe = convokingLvl + w_temple_Caster + w_cheatmods + wgems_alllevels_global;
+var casterCheatAll = casterCheatSafe + convokingMods + "Lithomancer's";
 
 ## CASTER - GENERAL
 var casterDmg1 = wcast_spell[2] + ws_cast_crit[1] + ws_cast_speed[1] + ws_critmulti[1] + wcast_hspell[1] + wmana[1] + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
-var casterDmg2 = wcast_spell[3] + ws_cast_crit[2] + ws_cast_speed[2] + ws_critmulti[2] + wcast_hspell[2] + wmana[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + ws_manaregen[1];
-var casterDmg3 = wcast_spell[3] + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[3] + wcast_hspell[3] + wmana[3] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2] + ws_manaregen[2];
+var casterDmg2 = wcast_spell[3] + ws_cast_crit[2] + ws_cast_speed[2] + ws_critmulti[2] + wcast_hspell[2] + wmana[1] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
+var casterDmg3 = wcast_spell[3] + ws_cast_crit[3] + ws_cast_speed[2] + ws_critmulti[3] + wcast_hspell[3] + wmana[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
 
 var casterDotBase1 = ws_dot[1];
 var casterDotBase2 = ws_dot[2];
@@ -525,35 +525,33 @@ var casterPhys2 = wdot_phys[3] + "Lithomancer's";
 var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
 var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
 
+
 ## CASTER - CORE
 var casterCoreGeneral = casterCheatAll + wcast_spell[3];
-var casterFireCore = wcast_fire[3];
-var casterColdCore = wcast_cold[3];
-var casterLightCore = wcast_light[3];
+
+## CASTER - CORE - SPECIALIZED KIT
+var casterFireCore  = casterCoreGeneral + wcast_fire[3]  + "Flame Shaper's" + wsdmg_fire[3] + wsdmg_cold[1] + wsdmg_light[1];
+var casterColdCore  = casterCoreGeneral + wcast_cold[3]  + "Frost Singer's" + wsdmg_fire[1] + wsdmg_cold[3] + wsdmg_light[1];
+var casterLightCore = casterCoreGeneral + wcast_light[3] + "Thunderhand's"  + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[3];
+var casterMiscPhys =  casterCoreGeneral + "Lithomancer's" + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
+var casterMiscChaos = casterCoreGeneral + "Mad Lord's" + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
 
 ## CASTER - MODULES
-var xcaster_core = casterCoreGeneral + casterFireCore + casterColdCore + casterLightCore;
+var xcaster_firedmg_conf =  casterFireCore + casterDmg1 + casterFire1 + casterDotBase1 + VeilP;
+var xcaster_colddmg_conf =  casterColdCore + casterDmg1 + casterCold1 + casterDotBase1 + VeilP;
+var xcaster_lightdmg_conf = casterLightCore + casterDmg1 + casterLight1 + VeilP;
+var xcaster_physdmg_conf =  casterMiscPhys + casterDmg1 + casterPhys1 + casterDotBase1 + VeilP;
+var xcaster_chaosdmg_conf = casterMiscChaos + casterDmg1 + casterChaos1 + casterDotBase1 + VeilP;
 
-var xcaster_firedmg_conf = casterCheatSafe + casterDmg1 + casterFire1 + casterDotBase1;
-var xcaster_firedmg_norm = casterCheatAll + casterDmg3 + casterFire2 + casterDotBase2;
-
-var xcaster_colddmg_conf = casterCheatSafe + casterDmg1 + casterCold1 + casterDotBase1;
-var xcaster_colddmg_norm = casterCheatAll + casterDmg3 + casterCold2 + casterDotBase2;
-
-var xcaster_lightdmg_conf = casterCheatSafe + casterDmg1 + casterLight1;
-var xcaster_lightdmg_norm = casterCheatAll + casterDmg3 + casterLight2;
-
-var xcaster_physdmg_conf = casterCheatSafe + casterDmg1 + casterPhys1 + casterDotBase1;
-var xcaster_physdmg_norm = casterCheatAll + casterDmg3 + casterPhys2 + casterDotBase2;
-
-var xcaster_chaosdmg_conf = casterCheatSafe + casterDmg1 + casterChaos1 + casterDotBase1;
-var xcaster_chaosdmg_norm = casterCheatAll + casterDmg3 + casterChaos2 + casterDotBase2;
+var xcaster_firedmg_norm =  casterFireCore + casterDmg3 + casterFire2 + casterDotBase2 + VeilPS;
+var xcaster_colddmg_norm =  casterColdCore + casterDmg3 + casterCold2 + casterDotBase2 + VeilPS;
+var xcaster_lightdmg_norm = casterLightCore + casterDmg3 + casterLight2 + VeilPS;
+var xcaster_physdmg_norm =  casterMiscPhys + casterDmg3 + casterPhys2 + casterDotBase2 + VeilPS;
+var xcaster_chaosdmg_norm = casterMiscChaos + casterDmg3 + casterChaos2 + casterDotBase2 + VeilPS;
 
 ## SPELLSLINGER - GENERAL
 var slingerBase1 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + casterCheatAll + w_temple_Phys + wcast_spell[2];
 var slingerBase2 = wdmg_fire[4] + wdmg_cold[4] + wdmg_light[4] + casterCheatAll + w_temple_Phys + wcast_spell[3] + wdmg_chaos;
-
-var slingerExtras = ws_cast_speed[1] + ws_manaregen[1] + wmana[1];
 
 var slingerAux1 = ws_attack_speed[2] + ws_critmulti[2] + ws_cast_crit[2] + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
 var slingerAux2 = ws_attack_speed[3] + ws_critmulti[3] + ws_cast_crit[3] + wsdmg_fire[3] + wsdmg_cold[3] + wsdmg_light[3];
@@ -562,10 +560,10 @@ var slingerAux2 = ws_attack_speed[3] + ws_critmulti[3] + ws_cast_crit[3] + wsdmg
 ## SPELLSLINGER - CORE
 
 ## SPELLSLINGER - MODULES
-var xslinger_core = slingerBase2;
+var xslinger_core = slingerBase2 + wgems_alllevels_global;
 
-var xslinger_default_conf = slingerBase1 + slingerAux1;
-var xslinger_default_norm = xslinger_core + slingerAux2 + slingerExtras;
+var xslinger_default_conf = slingerBase1  + VeilP + slingerAux1 + wgems_alllevels + wgems_alllevels_global;
+var xslinger_default_norm = xslinger_core + VeilPS + slingerAux2 + slingerExtras + wgems_alllevels + wgems_alllevels_global;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## ACCESSOIRE  STATS 
