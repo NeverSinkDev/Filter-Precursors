@@ -273,7 +273,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Helmets : Class "Helmets"
 		{
 			Show Helmet_Life_based { Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix2; }
-			Show Helmet_ES_based   { Mod xhelmet_es_core >= 2; Mod >= 4 xhelmet_es_mix2; }
+			Show Helmet_ES_based   { Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; }
 		}
 #------------------------------------
 #   [1234] Boots
