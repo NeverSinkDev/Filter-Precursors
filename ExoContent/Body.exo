@@ -251,20 +251,21 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Caster
 #------------------------------------
-		Section Caster : Class == classes_1hcast, Mod xcaster_core
+		
+		Section CasterSpecialized : Class == classes_1hcast
 		{
-			Show Caster_FireWeaponT2  { Mod >= 3 xcaster_firedmg_norm; }
-			Show Caster_ColdWeaponT2  { Mod >= 3 xcaster_colddmg_norm; }
-			Show Caster_LightWeaponT2 { Mod >= 3 xcaster_lightdmg_norm; }
-			Show Caster_PhysWeaponT2  { Mod >= 3 xcaster_physdmg_norm; }
-			Show Caster_ChaosWeaponT2 { Mod >= 3 xcaster_chaosdmg_norm; }
+			Show Caster_FireWeaponT2  { Mod casterFireCore; Mod >= 4 xcaster_firedmg_norm; }
+			Show Caster_ColdWeaponT2  { Mod casterColdCore; Mod >= 4 xcaster_colddmg_norm; }
+			Show Caster_LightWeaponT2 { Mod casterLightCore; Mod >= 4 xcaster_lightdmg_norm; }
+			Show Caster_PhysWeaponT2  { Mod casterMiscPhys; Mod >= 4 xcaster_physdmg_norm; }
+			Show Caster_ChaosWeaponT2 { Mod casterMiscChaos; Mod >= 4 xcaster_chaosdmg_norm; }
 		}
 #------------------------------------
 #   [1234] Spellslinger
 #------------------------------------
-		Section Spellslinger : Class == "Wands", Mod xslinger_core
+		Section Spellslinger : Class == "Wands", Mod slingerBase1
 		{
-			Show Caster_SlingerT2 { Mod >= 3 xslinger_default_norm; }
+			Show Caster_SlingerT2 { Mod >= 3 xslinger_default_conf; }
 		}
 #------------------------------------
 #   [1234] Helmets
@@ -272,7 +273,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Helmets : Class "Helmets"
 		{
 			Show Helmet_Life_based { Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix2; }
-			Show Helmet_ES_based   { Mod xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; }
+			Show Helmet_ES_based   { Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; }
 		}
 #------------------------------------
 #   [1234] Boots
@@ -338,7 +339,8 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Body : Class "Body Armours", DropLevel >= 55
 		{
 			Show Body_Life { Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
-			Show Body_Defense { Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; }
+			Show Body_Defense { Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Corrupted False; }
+			Show Body_LifeDefense { Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
 			Show Body_ES { Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; }
 		}
 #------------------------------------
@@ -701,9 +703,9 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	Section SuperEndgameFlasks : !GEX
 	{
 		Show Utility85  { !G3; !utilflasks.LT1; %D4; ItemLevel >= 85; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
-		Show Utility84  { !G4; !utilflasks.LT2; %D4; ItemLevel >= 84; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
-		Show Utility82  { !G4; !utilflasks.LT3; %D3; ItemLevel >= 82; Class "Utility Flasks"; }
-		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82;  BaseType bases.flask.lifemanaassorted; }
+		Show Utility84  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 84; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
+		Show Utility82  { !G4; !utilflasks.LT3; %D2; ItemLevel >= 82; Class "Utility Flasks"; }
+		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 15; BaseType bases.flask.lifemanaassorted; }
 	}
 
 #------------------------------------
@@ -950,8 +952,8 @@ Section Jewels : !jewels
 		
 		Show CorruptedAbyssJewel { %H5; !G4; !*rare; !High; Rarity Rare; Corrupted True; }
 		
-		Show HighRare      { %H3;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic     { %HS3; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
+		Show HighRare      { %HS3;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic     { %HS2; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
 		Show AnyRare       { %HS2; !G5H; !*rare;  Rarity Rare; }
 		Show AnyMagic      { %H2;  !G6H; !*magic; Rarity <= Magic; }
 	}
@@ -1471,8 +1473,8 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaL
 Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Currency", !currency
 {	
 	# Whetstones, augments and transmutes
-	Show t1	{ %H5; !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
-	Show t2	{ %H4; !*t6chrom; !G5;   StackSize >= 6; BaseType == currency.stacked.supplies.higher; }
+	Show t1	{ %HS4; !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
+	Show t2	{ %HS3; !*t6chrom; !G5;   StackSize >= 6; BaseType == currency.stacked.supplies.higher; }
 	Show t3	{ %H3; !*t7chance; !G6H; StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
 }
 
@@ -1483,8 +1485,8 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class "Curr
 Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Currency", !currency
 {	
 	# armourers
-	Show t1	{ %H5; !G4; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
-	Show t2	{ %H4; !G5H; !*t7chance; StackSize >= 6; BaseType == currency.stacked.supplies.lower; }
+	Show t1	{ %HS4; !G4; !*t6chrom;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
+	Show t2	{ %HS3; !G5H; !*t7chance; StackSize >= 6; BaseType == currency.stacked.supplies.lower; }
 	Show t3	{ %H3; !G5; !*t8trans; StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
 }
 
@@ -1494,8 +1496,8 @@ Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class "Curren
 
 Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "Currency", !currency
 {	
-	Show t1	{ %H5; !G5; !*tportHigh; StackSize >= 10; BaseType == currency.stacked.supplies.portal; }
-	Show t2	{ %H3; !G5; !*tportHigh; StackSize >= 6; BaseType == currency.stacked.supplies.portal; }
+	Show t1	{ %HS4; !G5; !*tportHigh; StackSize >= 10; BaseType == currency.stacked.supplies.portal; }
+	Show t2	{ %HS2; !G5; !*tportHigh; StackSize >= 6; BaseType == currency.stacked.supplies.portal; }
 	Show t3	{ %H2; !G6H; !*tportal;  StackSize >= 3; BaseType == currency.stacked.supplies.portal; }
 }
 
@@ -1505,8 +1507,8 @@ Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class "
 
 Section StackedCurrencyWisdom : Auto("Currency->StackedSuppliesWisdom"), Class "Currency", !currency
 {	
-	Show t1	{ %H5; !*twisdHigh; !G5; StackSize >= 10; BaseType == currency.stacked.supplies.wisdom; }
-	Show t2	{ %H3; !*twisdHigh; !G5; StackSize >= 6; BaseType == currency.stacked.supplies.wisdom; }
+	Show t1	{ %HS4; !*twisdHigh; !G5; StackSize >= 10; BaseType == currency.stacked.supplies.wisdom; }
+	Show t2	{ %HS2; !*twisdHigh; !G5; StackSize >= 6; BaseType == currency.stacked.supplies.wisdom; }
 	Show t3	{ %H2; !*twisdom; !G6H;  StackSize >= 3; BaseType == currency.stacked.supplies.wisdom; }
 }
 
@@ -1520,8 +1522,8 @@ Section StackedCurrencySix : Auto("Currency->StackedSix"), Class "Currency", Sta
 	Show t2	{ !G2; !*t2divine; BaseType == currency.stackedSix.t2 + currency.stackedSixStatic.t2; }
 	Show t3	{ !G3; !*t3annul; BaseType == currency.stackedSix.t3 + currency.stackedSixStatic.t3 ; }
 	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedSix.t4 + currency.stackedSixStatic.t4; }
-	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedSix.t5 + currency.stackedSixStatic.t5; }
-	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedSix.t6 + currency.stackedSixStatic.t6; }
+	Show t5	{ !G4; %HS4; !*t5alchemy; BaseType == currency.stackedSix.t5 + currency.stackedSixStatic.t5; }
+	Show t6	{ !G4; %HS3; !*t6chrom; BaseType == currency.stackedSix.t6 + currency.stackedSixStatic.t6; }
 	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
 }
 
@@ -1535,27 +1537,9 @@ Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class "Currency",
 	Show t2	{ !G2; !*t2divine; BaseType == currency.stackedThree.t2 + currency.stackedThreeStatic.t2; }
 	Show t3	{ !G3; !*t3annul; BaseType == currency.stackedThree.t3 + currency.stackedThreeStatic.t3; }
 	Show t4	{ !G3; !*t4chaos; BaseType == currency.stackedThree.t4 + currency.stackedThreeStatic.t4; }
-	Show t5	{ !G4; %H5; !*t5alchemy; BaseType == currency.stackedThree.t5 + currency.stackedThreeStatic.t5; }
-	Show t6	{ !G4; %H4; !*t6chrom; BaseType == currency.stackedThree.t6 + currency.stackedThreeStatic.t6; }
+	Show t5	{ !G4; %HS4; !*t5alchemy; BaseType == currency.stackedThree.t5 + currency.stackedThreeStatic.t5; }
+	Show t6	{ !G4; %HS3; !*t6chrom; BaseType == currency.stackedThree.t6 + currency.stackedThreeStatic.t6; }
 	Show t7	{ !G5; %H3; !*t7chance; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
-}
-
-#------------------------------------
-# [4702] Stacked Currencies: Splinters
-#------------------------------------
-
-Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class "Currency", !currency
-{
-	Show t1	{ !G2; !*t2divine; StackSize >= 25; BaseType currency.stacked.splinters1; }
-	Show t2	{ !G3; !*t3annul; StackSize >= 6; BaseType currency.stacked.splinters1; }
-	Show t3	{ !G3; !*t4chaos; StackSize >= 2; BaseType currency.stacked.splinters1; }
-}
-
-Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class "Currency", !currency
-{
-	Show t1	{ !G3; !*t3annul; StackSize >= 40; BaseType currency.stacked.splinters2; }
-	Show t2	{ !G3; !*t4chaos;   StackSize >= 6; BaseType currency.stacked.splinters2; }
-	Show t3	{ %H5; !G4; !*t5alchemy; StackSize >= 2; BaseType currency.stacked.splinters2; }
 }
 
 #------------------------------------
@@ -1579,8 +1563,8 @@ Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 	Show t2divine 	{ !G2; !*t2divine; BaseType == currency.generic.t2divine; }
 	Show t3annul 	{ !G3; !*t3annul; BaseType == currency.generic.t3annul; }
 	Show t4chaos 	{ !G4; !*t4chaos; BaseType == currency.generic.t4chaos; }
-	Show t5alchemy 	{ !G4;  %H5; !*t5alchemy; BaseType == currency.generic.t5alchemy ; }
-	Show t6chrom 	{ !G5H; %H4; !*t6chrom; BaseType == currency.generic.t6chrom; }
+	Show t5alchemy 	{ !G4;  %HS4; !*t5alchemy; BaseType == currency.generic.t5alchemy ; }
+	Show t6chrom 	{ !G5H; %HS3; !*t6chrom; BaseType == currency.generic.t6chrom; }
 	Show t7chance 	{ !G5;  %H3; !*t7chance; BaseType == currency.generic.t7chance; }
 	Show t8trans 	{ !G6H; %H3; !*t8trans; BaseType == currency.generic.t8trans; }
 	Show t9armour 	{ !G6H; %H2; !*t9armour; BaseType == currency.generic.t9armour; }
@@ -1601,7 +1585,7 @@ Section CurrencyVials : Auto("vials"), Class "Currency", !Currency
 {
 	Show t1 { !G1; !*t1exalted; BaseType == currency.vials.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.vials.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.vials.t3; }
+	Show t3 { !G4; %HS4; !*t4chaos; BaseType == currency.vials.t3; }
 	Show restex { BaseType "Vial of"; }
 }
 
@@ -1726,15 +1710,33 @@ Section CurrencyExotic : Auto("currency->others"), Class "Currency", !Currency
 #===============================================================================================================
 
 #------------------------------------
-# [5112] Breach and Legion Splinters
+# [5112] Breach and Legion Splinters - stacked
+#------------------------------------
+#!! Override 720 : "Breach and Simulacrum Splinters"
+
+Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class "Currency", !currency
+{
+	Show t1	{ !G2; !*t3annul; StackSize >= 10; BaseType fragments.generic.t1splinters; }
+	Show t2	{ %HS5; !G3; !*t4chaos;  StackSize >= 5; BaseType fragments.generic.t1splinters; }
+	Show t3	{ %HS4; !G3; !*t4chaos;  StackSize >= 2; BaseType fragments.generic.t1splinters; }
+}
+
+Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class "Currency", !currency
+{
+	Show t1	{ %H5;   !G3; !*t4chaos; StackSize >= 10; BaseType fragments.generic.t2splinters; }
+	Show t2	{ %HS4;  !G4; !*t5alchemy; StackSize >= 5; BaseType fragments.generic.t2splinters; }
+	Show t3	{ %HS3;  !G4; !*t5alchemy; StackSize >= 2; BaseType fragments.generic.t2splinters; }
+}
+
+#------------------------------------
+# [5112] Breach and Legion Splinters - single
 #------------------------------------
 #!! Override 720 : "Breach and Simulacrum Splinters"
 
 Section CurrencySplintersRegular : Auto("currency->splinter"), Class "Currency", !Splinters
 {
-	Show t1 { %H6; !G4; !*t1; BaseType == currency.splinters.t1; }
-	Show t2 { %H5; !G5; !*t2; BaseType == currency.splinters.t2; }
-	Show t3 { %H4; !G5; !*t3; BaseType == currency.splinters.t3; }
+	Show t1 { %HS4; !G4; !*t1; BaseType == fragments.generic.t1splinters; }
+	Show t3 { %HS3; !G5; !*t3; BaseType == fragments.generic.t2splinters; }
 }
 
 #------------------------------------
@@ -1762,7 +1764,7 @@ Section DivinationCards : Auto("divination"), Class "Divination", !divi
 	Show t3 	{ !G3;!*t3;	BaseType == divination.t3; }
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
 	Show t4c 	{ %H5; !G4; !*t4;	BaseType == divination.t4c; }
-	Show t5c 	{ %H3; !G5; !*t5;	BaseType == divination.t5c; }
+	Show t5c 	{ %HS2; !G5; !*t5;	BaseType == divination.t5c; }
 	Show t4 	{ %HS3; !G5H; !*t4;	BaseType == divination.t4; }
 	Show t5 	{ %H1; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
 	Show restex { Empty(); }
@@ -1852,6 +1854,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 
 #!! Override 770 : "Only low tier uniques"
+	Show recipeUniqueRings { !G5H; %D2; !*t4; !special; Class "Rings"; }
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	Show highvinktar { !G3; %D4; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
@@ -1861,8 +1864,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------	
 	Show t3boss {  !G4; !*t4; BaseType == uniques.generic.t3boss; }
 	Show t3 	{  !G4; %H4; !*t4; BaseType == uniques.generic.t3; }
-
-	Show recipeUniqueRings { !G5H; %D2; !*t4; !special; Class "Rings"; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
