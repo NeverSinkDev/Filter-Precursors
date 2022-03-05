@@ -2575,7 +2575,7 @@ Show # %D4 $type->endgameflasks $tier->utility85
 	PlayEffect Grey
 	MinimapIcon 2 Grey Circle
 
-Show # %D3 $type->endgameflasks $tier->utility84
+Show # %D4 $type->endgameflasks $tier->utility84
 	ItemLevel >= 84
 	AreaLevel >= 68
 	Rarity <= Magic
@@ -2586,7 +2586,7 @@ Show # %D3 $type->endgameflasks $tier->utility84
 	SetBackgroundColor 25 100 75
 	PlayEffect Grey Temp
 
-Show # %D2 $type->endgameflasks $tier->utility82
+Show # %D3 $type->endgameflasks $tier->utility82
 	ItemLevel >= 82
 	AreaLevel >= 68
 	Rarity <= Magic
@@ -2596,7 +2596,6 @@ Show # %D2 $type->endgameflasks $tier->utility82
 	SetBackgroundColor 25 100 75
 
 Show # %D3 $type->endgameflasks $tier->lifemana82
-	Quality >= 15
 	ItemLevel >= 82
 	AreaLevel >= 68
 	Rarity <= Magic
@@ -3366,7 +3365,7 @@ Show # %H5 $type->jewels->abyss $tier->corruptedabyssjewel
 	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
-Show # %HS3 $type->jewels->abyss $tier->highrare
+Show # %H3 $type->jewels->abyss $tier->highrare
 	ItemLevel >= 82
 	Rarity Rare
 	Class "Abyss Jewel"
@@ -3377,7 +3376,7 @@ Show # %HS3 $type->jewels->abyss $tier->highrare
 	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
-Show # %HS2 $type->jewels->abyss $tier->highmagic
+Show # %HS3 $type->jewels->abyss $tier->highmagic
 	ItemLevel >= 82
 	Rarity <= Magic
 	Class "Abyss Jewel"
@@ -3983,7 +3982,11 @@ Show # $type->jewels->clustereco $tier->n8_i84_t2
 	Rarity <= Rare
 	EnchantmentPassiveNum 8
 	BaseType "Large Cluster Jewel"
+<<<<<<< HEAD
+	EnchantmentPassiveNode "Attack Damage" "Attack Damage while Dual Wielding" "Attack Damage while holding a Shield" "Axe and Sword Damage" "Bow Damage" "Chaos Damage" "Cold Damage" "Dagger and Claw Damage" "Fire Damage" "Lightning Damage" "Mace and Staff Damage" "Minion Damage" "Physical Damage"
+=======
 	EnchantmentPassiveNode "Attack Damage" "Attack Damage while holding a Shield" "Axe and Sword Damage" "Bow Damage" "Chaos Damage" "Cold Damage" "Dagger and Claw Damage" "Elemental Damage" "Fire Damage" "Lightning Damage" "Mace and Staff Damage" "Minion Damage" "Physical Damage"
+>>>>>>> prerelease
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
