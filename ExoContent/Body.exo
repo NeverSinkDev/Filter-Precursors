@@ -1813,6 +1813,14 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 	Show exHarby  { !G3; !*HarbyUnique; Class "Piece"; }
+
+#------------------------------------
+# [5701] Exceptions Fated Uniques
+#------------------------------------
+
+	Show fated1    { !G2; !*t2; BaseType == uniques.generic.fatedt1; Identified True; Corrupted False; }
+	Show fated2    { !GSH; %H4; !*t4; !special; BaseType == uniques.generic.fatedt2; Identified True; Corrupted False; }
+
 #------------------------------------
 # [5702] Tier 1 uniques
 #------------------------------------
@@ -1841,13 +1849,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 
 # For those 6 sockets	
 	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
-
-#------------------------------------
-# [5701] Exceptions Fated Uniques
-#------------------------------------
-
-	Show fated1    { !G2; !*t2; BaseType == uniques.generic.fatedt1; Identified True; Corrupted False; }
-	Show fated2    { !GSH; %H4; !*t4; !special; BaseType == uniques.generic.fatedt2; Identified True; Corrupted False; }
 
 #------------------------------------
 # [5701] Low tier exceptions
