@@ -372,6 +372,11 @@ Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID"),
 		Show DamageMods { %D4; Mod >= 1 wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + wgems_alllevels_global + convokingMods[1] + convokingLvl; }
 	}
 
+	Section Amulets : Class "Amulets"
+	{
+		Show AllSkills { %D4; Mod >= 1 "Exalter's"; }
+	}
+
 	Section Boots : Class "Boots"
 	{
 		Show Speed { %D4; Mod >= 1 boots_movespeed[1]; }
@@ -497,8 +502,8 @@ Section ExoticVariations : !exotic
 	{
 		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
-			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t1; Class "Amulet" "Belt" "Jewel" "Ring"; }
-			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t2; Empty(); }
+			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; Class "Amulet" "Belt" "Jewel" "Ring"; }
+			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; Empty(); }
 		}
 	}
 #------------------------------------
@@ -516,9 +521,9 @@ Section ExoticVariations : !exotic
 #------------------------------------
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
-			Show SynthSelected { !GSH; %D6; !exotic.t1; BaseType bases.crafting.synthesised.t1 }
-			Show SynthClasses  { !GSH; %D6; !exotic.t1; Class classes_synth }
-			Show SynthRandom   { !GS;  %D5; !exotic.t2; Empty(); }
+			Show SynthSelected { !GSH; %D6; !exotic.t2; BaseType bases.crafting.synthesised.t1 }
+			Show SynthClasses  { !GSH; %D6; !exotic.t2; Class classes_synth }
+			Show SynthRandom   { !GS;  %D5; !exotic.t3; Empty(); }
 		}
 #------------------------------------
 #   [1234] Fractured
@@ -933,12 +938,12 @@ Section Jewels : !jewels
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
 		{
-			Show 1modcorrupted { !Special; %H4; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+			Show 1modcorrupted { !Special; %D4; Mod jewels_corruptedModsMinimum; BaseType "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
 		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
 		{
-			Show 1moduncorrupted { !exotic.t3; %H4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
 	}
 
@@ -1822,28 +1827,24 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show fated2    { !GSH; %H4; !*t4; !special; BaseType == uniques.generic.fatedt2; Identified True; Corrupted False; }
 
 #------------------------------------
-# [5702] Tier 1 uniques
+# [5702] Tier 1 and 2 uniques
 #------------------------------------
 	Show t1 { !G1; !*t1; BaseType == uniques.generic.t1; }
+	Show t2 { !G2; !*t2; BaseType == uniques.generic.t2; }	
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
 	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class "Boots" "Gloves" "Helmets" }
-	Show 5link 				{ %D4; !G3; !*t2; LinkedSockets 5; }
-#------------------------------------
-# [5704] Tier 2 uniques
-#------------------------------------
-	Show t2 { !G2; !*t2; BaseType == uniques.generic.t2; }	
-
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
 # These bases have multiple uniques. One of the uniques, is a high value one
 # While others are cheap. We give them a high quality display, while making a normal unique
 # Sound to prevent false excitement.
+	Show 5link 		  { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
-	
+
 # We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour	
 	Show scourged { %D5; !GSH; !*t3; !SpecialNoB; Scourged True; }
 
