@@ -1647,19 +1647,6 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", !Currency
 }
 
 #------------------------------------
-# [5104] Expedition Currencies
-#------------------------------------
-#!! Override 661 : "Expedition"
-
-Section Expedition : Class "Currency", !Currency
-{
-	Section : Auto("currency->expedition->reroll")
-	{
-		Show Any { !G3; !*t3annul; BaseType == currency.expedition.reroll; }
-	}
-}
-
-#------------------------------------
 # [5104] Essences
 #------------------------------------
 #!! Override 670 : "Essences"
