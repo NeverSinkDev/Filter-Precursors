@@ -98,6 +98,11 @@ Style UniversalValueAccents
 		SetBackgroundColor 20 5 60 255;
 	}
 
+	Func brightrare()
+	{
+		SetTextColor 255 255 0 255;
+	}
+
 	Func Special ()
 	{
 		SetBorderColor exoticgear.tx;
@@ -962,6 +967,16 @@ Style GemStrategy : T1
 		MM 1 tier.t4.cmap icon;
 	}
 
+		# high qual gems
+	Func P3S ()
+	{
+		BD questlike.tx.acc; TX gems.norm;
+		SetFontSize font.t4;
+		Sound sounds.currency;
+		Beam tier.t5.cray; 
+		MM 1 Green icon;
+	}
+
 	# low qual/vaal gems
 	Func P4 ()
 	{
@@ -1101,6 +1116,39 @@ Style LowerValueTiering
 #------------------------------------
 # Currency Tiering
 #------------------------------------
+
+Style Sentinel
+{
+	Func stalker ()
+	{
+		BD league.sentinel.acc.stalker;
+		BG league.playerequippable;
+		MM 1 league.color league.icon;
+		PlayAlertSound sounds.unique;
+		Beam league.color;
+		SetFontSize font.t4;
+	}
+
+	Func pandemonium ()
+	{
+		BD league.sentinel.acc.pandemonium;
+		BG league.playerequippable;
+		MM 1 league.color league.icon;
+		PlayAlertSound sounds.unique;
+		Beam league.color;
+		SetFontSize font.t4;
+	}
+
+	Func apex ()
+	{
+		BD league.sentinel.acc.apex;
+		BG league.playerequippable;
+		MM 1 league.color league.icon;
+		PlayAlertSound sounds.unique;
+		Beam league.color;
+		SetFontSize font.t4;
+	}
+}
 
 Style Coins
 {

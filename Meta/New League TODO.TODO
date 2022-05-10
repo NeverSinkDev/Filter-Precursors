@@ -1,58 +1,65 @@
+☐ Build base structure for sentinels
+☐ Improve the common influenced bases
+☐ Improve structure for common bases
+
+☐ Review state of unique tiering -> integrate easier "earlyleaguemode"
+☐ Improve economy integration -> display current prices and allow easier configuration
+
+☐ Re-introduce identified mod filtering for flasks
+☐ Add automated filtering for goddess invitations
+☐ Better tiering UI (price, transitions etc)
+☐ Create a tiering/tierlist UI for streams
+☐ Review leveling algorithms and rules
+☐ Build a new style
+☐ Review and improve presets
+
 // this list needs to be done every league
 // in addition to all the other more complex changes.
 GENERAL TODO LIST:
     PREPARATION:
-        ✔ Start FB, FPZ, precursor repo, commit state @done(22-02-04 13:25)
-        ✔ Prepare matching economy state - reset to new state, then to old @done(22-02-04 13:38)
-        ✔ Adjust league start mode and dates @done(22-02-04 13:38)
-        ✔ Adjust changelog @done(22-02-04 13:38)
-        ✔ Check todo again and adjust all sources @done(22-02-04 13:38)
-        ✔ Check FilterPolishZ new command implementation @done(22-02-04 02:22)
+        ☐ Start FB, FPZ, precursor repo, commit state
+        ☐ Prepare matching economy state - reset to new state, then to old
+        ☐ Adjust league start mode and dates
+        ☐ Adjust changelog
+        ☐ Check todo again and adjust all sources
+        ☐ Check FilterPolishZ new command implementation
     EXISTiNG ECONOMY-BASED-TIERLIST ADJUSTMENT:
-        ✔ Ask twitch chat for help @done(22-02-04 13:41)
-        ✔ Aspect Analysis: Buffed Uniques @done(22-02-04 14:04)
-        ✔ Aspect Analysis: Nerfed Uniques @done(22-02-04 14:06)
-        ✔ Aspect Analysis: Early league uniques @done(22-02-04 14:04)
-        ✔ Aspect Analysis: Early league divination cards, currencies, fragments @done(22-02-04 14:19)
-        ✔ Check for prophecy type artefacts @done(22-02-04 14:26)
-        ✔ Tier known items @done(22-02-04 14:28)
-        ✔ COMMIT @done(22-02-04 14:28)
+        ☐ Ask twitch chat for help
+        ☐ Aspect Analysis: Buffed Uniques
+        ☐ Aspect Analysis: Nerfed Uniques
+        ☐ Aspect Analysis: Early league uniques
+        ☐ Aspect Analysis: Early league divination cards, currencies, fragments
+        ☐ Tier known items
+        ☐ COMMIT
 
     INTEGRATE NEW ITEMS:
-        ✔ Ensure that "blank" items are not causing bugs @done(22-02-04 02:22)
-        ✔ Migrate quivers @done(22-02-04 17:23)
-        ✘ Implement new Uniques @cancelled(22-02-04 17:23)
-        ✔ Implement new Divination Cards @done(22-02-04 14:58)
-        ✔ Adjust Changelog @done(22-02-04 14:59)
-        ✔ Commit state @done(22-02-04 15:00)
-        ✔ Currency @done(22-02-04 15:18)
-        ✔ Reports @done(22-02-04 15:18)
-        ✔ Invitations @done(22-02-04 15:45)
-        ✔ Test on Alpha @done(22-02-04 15:22)
+        ☐ Implement new Uniques
+        ☐ Implement new Divination Cards
+        ☐ Adjust Changelog
+        ☐ Commit state
+        ☐ Currency
+        ☐ Test on Alpha
     NON-ECO-BASED TIERLIST ADJUSTMENT:
-        ✔ Abyss jewels - new rule @done(22-02-04 15:45)
-        ✔ Adjust chancing list @done(22-02-04 16:03)
-        ✔ Review rare tiering based on balance changes - casters, bows? @done(22-02-04 16:49)
-        ✔ Review tiering groups, such as synthesis/fractured/scourged tiering. @done(22-02-03 22:39)
-        ✔ Review "early harvest bases" based on balance changes @done(22-02-04 17:02)
-        ✘ Implement new mods if needed - NO MOD NAMES @cancelled(22-02-03 22:40)
-        ✔ Adjust Changelog @done(22-02-04 17:02)
-        ✔ Invitations and watchstones @done(22-02-04 12:28)
+        ☐ Adjust chancing list
+        ☐ Review rare tiering based on balance changes - casters, bows?
+        ☐ Review tiering groups, such as synthesis/fractured/scourged tiering.
+        ☐ Review "early harvest bases" based on balance changes
+        ☐ Adjust Changelog
+        ☐ Invitations and watchstones
 
     ADDITIONAL TODOS:
-        ✔ Final test Alpha @done(22-02-04 17:33)
-        ✔ Ensure Eldritch is enabled, all invitatios added post alpha @done(22-02-04 17:33)
-        ✔ Adjust Changelog @done(22-02-04 17:33)
-        ✔ Check abyss @done(22-02-04 17:33)
+        ☐ Final test Alpha
+        ☐ Adjust Changelog
+        ☐ Check abyss
 
     TECHNICAL PREPARATIONS:
-        ✔ Check filter version @done(22-02-03 22:40)
+        ☐ Check filter version
         ☐ Adjust Changelog
         ☐ Adjust fblast meta file
         ☐ Commit FilterPolishZ (merge to main)
         ☐ Commit Item Aspects (merge to main)
         ☐ Commit Filter Precursors (merge to main)
-        ✔ Hide Mirrors @done(21-10-27 21:18)
+        ✔ Hide Mirrors @done(22-05-09 19:55)
         ☐ Commit FilterBlade changes (merge to main)
         ☐ Test FilterBlade on beta (+ test)
         ☐ Create GitHub release
@@ -62,6 +69,8 @@ GENERAL TODO LIST:
             ☐ HC
             ☐ Confirm ladder state
     ACTIONS:
+        ☐ Elaborate new Basetype Matrix
+        ☐ Elaborate new Global Styles
         ☐ Elaborate saveload procedure
         ☐ Elaborate invalidations this league
         ☐ Elaborate early league potential problems and social medias
@@ -82,105 +91,3 @@ GENERAL TODO LIST:
         ☐ Raid someone on twitch and take a break.
         ☐ Order Sushi
 
-Item Class: Misc Map Item:
-    ☐ Writhing Invitation
-    ☐ Screaming Invitation
-    ☐ Polaric Invitation
-    ☐ Incandescent Invitation
-    ☐ Maven's Invitation: The Atlas
-    ☐ Maven's Invitation: The Elderslayers
-
-Item Class: Divination Card:
-    ☐ Judging Voices
-    ☐ Bijoux
-    ☐ Silence and Frost
-    ☐ Misery in Darkness
-    ☐ The Tireless Extractor
-    ☐ Justified Ambition
-    ☐ Parasitic Passengers
-    ☐ Duality
-    ☐ The One That Got Away
-    ☐ The Transformation
-    ☐ Magnum Opus
-    ☐ Imperfect Memories
-    ☐ The Magma Crab
-        
-Item Class: Stackable Currency
-    ✔ "Surveyor's Compass" @done(22-02-04 15:02)
-    ✔ "Charged Compass" @done(22-02-04 15:02)
-
-    ✔ "Lesser Eldritch Ember" "Lesser Eldritch Ichor" @done(22-02-04 15:05)
-    ✔ "Greater Eldritch Ichor" "Greater Eldritch Ember" @done(22-02-04 15:05)
-    ✔ "Grand Eldritch Ember" "Grand Eldritch Ichor" @done(22-02-04 15:05)
-    ✔ "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor" @done(22-02-04 15:05)
-
-    ✔ "Orb of Dominance" "Orb of Conflict" @done(22-02-04 15:12)
-
-    ✔ "Eldritch Chaos Orb" @done(22-02-04 15:13)
-    ✔ "Eldritch Exalted Orb" @done(22-02-04 15:13)
-    ✔ "Eldritch Orb of Annulment" @done(22-02-04 15:13)
-
-    ✔ "Oil Extractor" @done(22-02-04 15:13)
-
-    ✔ "Singular Scouting Report" @done(22-02-04 15:17)
-    ✔ "Otherworldly Scouting Report" @done(22-02-04 15:17)
-    ✔ "Comprehensive Scouting Report" @done(22-02-04 15:17)
-    ✔ "Vaal Scouting Report" @done(22-02-04 15:17)
-    ✔ "Delirious Scouting Report" @done(22-02-04 15:17)
-    ✔ "Operative's Scouting Report" @done(22-02-04 15:17)
-    ✔ "Blighted Scouting Report" @done(22-02-04 15:17)
-    ✔ "Influenced Scouting Report" @done(22-02-04 15:17)
-    ✔ "Explorer's Scouting Report" @done(22-02-04 15:17)
-
-Removed Items:
-    ✔ Portentous Delirium Orb: @done(22-02-04 12:23)
-    ✔ Maven's Orb: @done(22-02-04 12:23)
-    ✔ Simple Sextant: @done(22-02-04 12:23)
-    ✔ Prime Sextant: @done(22-02-04 12:23)
-    ✔ All itemised Prophecies: @done(22-02-04 12:23)
-    ✔ Silver Coin: @done(22-02-04 12:23)
-    ✔ Watchstones: @done(22-02-04 12:23)
-    ✔ Maven's Invitation: Haewark Hamlet: @done(22-02-04 12:23)
-    ✔ Maven's Invitation: Glennach Cairns: @done(22-02-04 12:23)
-    ✔ Maven's Invitation: Valdo's Rest: @done(22-02-04 12:23)
-    ✔ Maven's Invitation: Lira Arthain: @done(22-02-04 12:23)
-    ✔ Eber's Key: @done(22-02-04 12:23)
-    ✔ Yriel's Key: @done(22-02-04 12:23)
-    ✔ Inya's Key: @done(22-02-04 12:23)
-    ✔ Volkuur's Key @done(22-02-04 12:23)
-
-New Base Types : Item Class: Quiver
-    ✔ Feathered Arrow Quiver @done(22-02-04 12:24)
-    ✔ Blazing Arrow Quiver @done(22-02-04 12:24)
-    ✔ Vile Arrow Quiver @done(22-02-04 12:24)
-    ✔ Heavy Arrow Quiver @done(22-02-04 12:24)
-    ✔ Primal Arrow Quiver @done(22-02-04 12:24)
-    ✔ Archnemesis @done(22-02-04 12:24)
-
-Item Class: Atlas Upgrade Item
-    ✔ Ceremonial Voidstone @done(22-02-04 12:24)
-    ✔ Decayed Voidstone @done(22-02-04 12:24)
-    ✔ Grasping Voidstone @done(22-02-04 12:24)
-    ✔ Omniscient Voidstone @done(22-02-04 12:24)
-
-Item Class: Map Fragment
-    ✔ Al-Hezmin's Crest @done(22-02-04 12:25)
-    ✔ Baran's Crest @done(22-02-04 12:25)
-    ✔ Drox's Crest @done(22-02-04 12:25)
-    ✔ Veritania's Crest @done(22-02-04 12:25)
-
-
-Portentous Delirium Orb
-    Maven's Orb
-    "Simple Sextant"
-    "Prime Sextant"
-    "Silver Coin"
-    "Watchstones"
-    "Maven's Invitation: Haewark Hamlet"
-    "Maven's Invitation: Glennach Cairns"
-    "Maven's Invitation: Valdo's Rest"
-    "Maven's Invitation: Lira Arthain"
-    "Eber's Key"
-    "Yriel's Key"
-    "Inya's Key"
-    "Volkuur's Key"
