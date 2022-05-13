@@ -1,20 +1,5 @@
-☐ Build base structure for sentinels
-☐ Improve the common influenced bases
-☐ Improve structure for common bases
-
-☐ Review state of unique tiering -> integrate easier "earlyleaguemode"
-☐ Improve economy integration -> display current prices and allow easier configuration
-
-☐ Re-introduce identified mod filtering for flasks
-☐ Add automated filtering for goddess invitations
-☐ Better tiering UI (price, transitions etc)
-☐ Create a tiering/tierlist UI for streams
-☐ Review leveling algorithms and rules
-☐ Build a new style
-☐ Review and improve presets
-
 // this list needs to be done every league
-// in addition to all the other more complex changes.
+// these don't include all of the structural and architectural changes that are being included
 GENERAL TODO LIST:
     PREPARATION:
         ☐ Start FB, FPZ, precursor repo, commit state
@@ -23,15 +8,17 @@ GENERAL TODO LIST:
         ☐ Adjust changelog
         ☐ Check todo again and adjust all sources
         ☐ Check FilterPolishZ new command implementation
-    EXISTiNG ECONOMY-BASED-TIERLIST ADJUSTMENT:
+    ADJUST EXISTING FEATURES:
         ☐ Ask twitch chat for help
-        ☐ Aspect Analysis: Buffed Uniques  
-        ☐ Aspect Analysis: Nerfed Uniques
+        ✔ Aspect Analysis: Buffed Uniques @done(22-05-13 11:47)
+        ✔ Aspect Analysis: Nerfed Uniques @done(22-05-13 11:47)
         ☐ Aspect Analysis: Early league uniques
         ☐ Aspect Analysis: Early league divination cards, currencies, fragments
+        ☐ Check reworked divination cards
         ☐ Tier known items
         ☐ COMMIT
-
+        ☐ Review leveling algorithms and rules
+        ☐ Review and improve presets
     INTEGRATE NEW ITEMS:
         ☐ Implement new Uniques
         ☐ Implement new Divination Cards
@@ -40,18 +27,20 @@ GENERAL TODO LIST:
         ☐ Currency
         ☐ Test on Alpha
     NON-ECO-BASED TIERLIST ADJUSTMENT:
+        ☐ Review rare tiering
+        ☐ Review endgame tiering
+        ☐ Review eldritch bases
+        ☐ Review synthesised, fractured bases
+        ☐ Add descriptions to filterblade recipes
         ☐ Adjust chancing list
-        ☐ Review rare tiering based on balance changes - casters, bows?
-        ☐ Review tiering groups, such as synthesis/fractured/scourged tiering.
         ☐ Review "early harvest bases" based on balance changes
+        ✔ Review rare tiering based on balance changes @done(22-05-13 12:03)
+        ☐ Review tiering groups, such as synthesis/fractured/scourged tiering.
         ☐ Adjust Changelog
         ☐ Invitations and watchstones
-
     ADDITIONAL TODOS:
-        ☐ Final test Alpha
+        ☐ Final test Alpha - TEST WITH ALL OPTIONAL MODULES ENABLED
         ☐ Adjust Changelog
-        ☐ Check abyss
-
     TECHNICAL PREPARATIONS:
         ☐ Check filter version
         ☐ Adjust Changelog
@@ -69,16 +58,16 @@ GENERAL TODO LIST:
             ☐ HC
             ☐ Confirm ladder state
     ACTIONS:
-        ☐ Elaborate new Basetype Matrix
-        ☐ Elaborate new Global Styles
-        ☐ Elaborate saveload procedure
-        ☐ Elaborate invalidations this league
-        ☐ Elaborate early league potential problems and social medias
+        ☐ Explain new Basetype Matrix + new functions
+        ☐ Explain new Global Styles
+        ☐ Explain new optional modules
+        ☐ Explain saveload procedure
+        ☐ Explain invalidations this league
+        ☐ Explain early league potential problems and social medias
         ☐ Create reddit post:
             ☐ Timeline, Changelog
             ☐ Publish filterblade on prod
             ☐ Autoupdater
-
     POST-RELEASE ACTIONS:
         ☐ Adjust FilterBlade news
         ☐ Q&A FilterBlade
