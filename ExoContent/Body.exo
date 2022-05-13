@@ -888,8 +888,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show t3daggers 	{ !GR3; %D2; BaseType bases.rares.eg.t3daggers; Class "Daggers"; }
 		Show t3claws { !GR3; %D2; BaseType bases.rares.eg.t3claws; Class "Claws"; }
 		Show t3wands { !GR3; %D2; BaseType bases.rares.eg.t3wands; Class "Wands"; }
-		Show t3foils { !GR3; %D2; BaseType bases.rares.eg.t3foils; Class "Thrusting One Hand Swords"; Height 4; }
-		Show t3swords1h { !GR3; %D2; BaseType bases.rares.eg.t3swords1h; Class "One Hand Swords"; Height < 4 }
+		Show t3foils { !GR3; %D2; BaseType bases.rares.eg.t3foils; Class "Thrusting One Hand Swords"; }
+		Show t3swords1h { !GR3; %D2; BaseType bases.rares.eg.t3swords1h; Class "One Hand Swords"; }
 		Show t3maces1h { !GR3; %D2; BaseType bases.rares.eg.t3maces1h; Class "One Hand Maces"; }
 		Show t3axes1h { !GR3; %D2; BaseType bases.rares.eg.t3axes1h; Class "One Hand Axes"; }
 		Show t3sceptres { !GR3; %D2; BaseType bases.rares.eg.t3sceptres; Class "Sceptres"; }
@@ -1695,12 +1695,13 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 #------------------------------------
 # [5104] Sentinel
 #------------------------------------
-#!! Override 680 : "Incubators"
+#!! Override 671 : "Sentinel"
 
-Section CurrencyIncubators : Auto("currency->sentinel"), Class "Currency", !Currency
+Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
 {
-	Show t2 { !G2; !*t3annul; BaseType == currency.sentinel.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.sentinel.t3; }
+	Show Recombine 	   { !G2; !*t3annul; BaseType == currency.sentinel.t1; }
+	Show CoreSpecial   { !G2; !*t3annul; BaseType == currency.sentinel.t2; }
+	Show CoreAny       { !G4; %H5; !*t4chaos; BaseType == currency.sentinel.t3; }
 }
 
 #------------------------------------
