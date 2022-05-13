@@ -147,6 +147,11 @@ Style MainRules
 	Apply(uniques.def, $unique.t4 => t4uni);
 	Apply(uniques.def, $unique.t5 => t5uni);
 	Apply(uniques.harby, $unique.harbyunique => harbyunique);
+
+	## League
+	Apply(league, $stalker => Sentinel.stalker);
+	Apply(league, $pandemonium => Sentinel.pandemonium);
+	Apply(league, $apex => Sentinel.apex);
 }
 
 Style GlobalAccents
