@@ -434,7 +434,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; };
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve };
 		Show Warband  { !GS;  %D4; !exotic.t3; Mod exotic_warband };
-		Show Essence  { !GSH; %D6; !exotic.t2; Mod "of the Essence" "Essences" };
+		Show Essence  { !GSH; %D2; !exotic.t3; Mod "of the Essence" "Essences" };
 		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
@@ -531,8 +531,8 @@ Section ExoticVariations : !exotic
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
 			Show FractSelected { !GSH; %D5; !exotic.t3; BaseType bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS;  %D4; !exotic.t3; Class classes_fract }
-			Show FractRandom   { !GS;  %D2; !exotic.t4; Empty(); }
+			Show FractClasses  { !GS;  %D5; !exotic.t3; Class classes_fract }
+			Show FractRandom   { !GS;  %D4; !exotic.t4; Empty(); }
 		}
 #------------------------------------
 #   [1234] Enchanted
@@ -1099,22 +1099,37 @@ Section Jewels : !jewels
 
 Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
 {
-	Section Stalker : BaseType == sentinels.stalker, !stalker
+	Section Stalker : !stalker
 	{
-		Show stalkerm 	{ !GSH; %D5; Rarity <= Magic; }
-		Show stalkerr 	{ !GSH; %D6; !brightrare; Rarity <= Rare; }
+		Show stalkert1  { !GSH; %D6; BaseType == sentinels.stalker.t1; Rarity Rare; !brightrare; }
+		Show stalkert2  { !GSH; %D4; BaseType == sentinels.stalker.t2; Rarity Rare; }
+
+		Show stalkerr 	{ !GSH; %D2; BaseType == sentinels.stalker.any; Rarity Rare; }
+		Show stalkerm 	{ !GSH; %D1; BaseType == sentinels.stalker.any; Rarity <= Magic; }
+		
+		Show stalkerlvl { !GSH; %D4; BaseType == sentinels.stalker.any; ItemLevel <= 67; }
 	}
 
-	Section Pandemonium : BaseType == sentinels.pandemonium, !pandemonium
+	Section Pandemonium : !pandemonium
 	{
-		Show pandem 	{ !GSH; %D5; Rarity <= Magic; }
-		Show pander 	{ !GSH; %D6; !brightrare; Rarity <= Rare; }
+		Show pandet1    { !GSH; %D6; BaseType == sentinels.pandemonium.t1; Rarity Rare; !brightrare; }
+		Show pandet2    { !GSH; %D4; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
+
+		Show pander 	{ !GSH; %D2; BaseType == sentinels.pandemonium.any; Rarity Rare; }
+		Show pandem 	{ !GSH; %D1; BaseType == sentinels.pandemonium.any; Rarity <= Magic; }
+		
+		Show pandelvl { !GSH; %D4; BaseType == sentinels.pandemonium.any; ItemLevel <= 67; }
 	}
 
-	Section Apex : BaseType == sentinels.apex, !apex
+	Section Apex : !apex
 	{
-		Show apexm 	{ !GSH; %D5; Rarity <= Magic; }
-		Show apexr  { !GSH; %D6; !brightrare; Rarity <= Rare; }
+		Show apext1 { !GSH; %D6; BaseType == sentinels.apex.t1; Rarity Rare; !brightrare; }
+		Show apext2 { !GSH; %D4; BaseType == sentinels.apex.t2; Rarity Rare; }
+		
+		Show apexr  { !GSH; %D2; BaseType == sentinels.apex.any; Rarity Rare; }
+		Show apexm 	{ !GSH; %D1; BaseType == sentinels.apex.any; Rarity <= Magic; }
+		
+		Show apexlvl { !GSH; %D4; BaseType == sentinels.apex.any; ItemLevel <= 67; }
 	}
 }
 
