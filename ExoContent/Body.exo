@@ -206,7 +206,7 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Corrupted F
 }
 
 #===============================================================================================================
-# [[9999]] IDENTIFIED MOD FILTERING
+# [[9999]] IDENTIFIED MOD FILTERING - COMBINATIONS
 #===============================================================================================================
 #!! Override 040 : "identified mod filtering"
 
@@ -360,26 +360,49 @@ Section IdModSection : IdMods, !highvalueidmod
 	}
 }
 
-Section IdModSection : IdMods, Corrupted False, Rarity "Magic", Auto("MagicID"), !GSH
+#===============================================================================================================
+# [[9999]] IDENTIFIED MOD FILTERING - RECOMBINATION MATERIAL
+#===============================================================================================================
+#!! Override 045 : "recombination material"
+
+Section IdModSection : IdMods, Auto("MagicID"), !GSH
 {
-	Section Weapons : Class classes_attack, DropLevel >= 56
-	{
-		Show Phys { %D4; Mod >= 1 wdmg_pphys[1] + "of Many"; }
-	}
+#------------------------------------
+#   [1234] Top Value
+#------------------------------------	
 
-	Section Caster : Class "Wands" "Sceptres" "Shields" "Rune Daggers"
+## This section is designed to fish for super rare single mods for Sentinel Recombinators. Even if the item is corrupted.
+	Section TopValue : Rarity <= Rare
 	{
-		Show DamageMods { %D4; Mod >= 1 wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + wgems_alllevels_global + convokingMods[1] + convokingLvl; }
+		# +1 to all global spell skill levels + convoking minion levels
+		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		# +2 proj ranged weapons
+		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
+		# plus one to all spell skills
+		Show t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
 	}
+#------------------------------------
+#   [1234] Uncorrupted Mods
+#------------------------------------	
 
-	Section Amulets : Class "Amulets"
+## In these cases we're looking for a singe high mod
+	Section HighHybridPure : Corrupted False, Rarity <= Rare
 	{
-		Show AllSkills { %D4; Mod >= 1 "Exalter's"; }
-	}
-
-	Section Boots : Class "Boots"
-	{
-		Show Speed { %D4; Mod >= 1 boots_movespeed[1]; }
+		# +1 to all global elemental gems + spell damage t1
+		Show t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		# +1 to all global elemental gems and DOT t1
+		Show t2amu		{ %D5; Mod >= 1 xr_amu1; Class "Amulets"; }
+		# +2 to all maximum resists shield
+		Show t2shield		{ %D5; Mod >= 1 xr_shields1; Class "Shields"; }
+		# Uncorrupted Suppression Gear from Dexterity Equip
+		Show t2suppress   { %D5; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
+		# Uncorrupted Tyrranical weapons
+		Show t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1]; Class classes_attack; }
+		# DOT Sceptres and Wands
+		Show t2dotwand 	{ %D5; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
+		Show t2sceptre { %D5; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
+		# Elemental Weapons
+		Show t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Thrusting One Hand Swords" "Claws" "Wands" "Bows"; }
 	}
 }
 
@@ -1102,10 +1125,10 @@ Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
 	Section Stalker : !stalker
 	{
 		Show stalkert1  { !GSH; %D6; BaseType == sentinels.stalker.t1; Rarity Rare; !brightrare; }
-		Show stalkert2  { !GSH; %D5; BaseType == sentinels.stalker.t2; Rarity Rare; }
+		Show stalkert2  { !GSH; %D6; BaseType == sentinels.stalker.t2; Rarity Rare; }
 
-		Show stalkerr 	{ !GSH; %D4; BaseType == sentinels.stalker.any; Rarity Rare; }
-		Show stalkerm 	{ !GSH; %D3; BaseType == sentinels.stalker.any; Rarity <= Magic; }
+		Show stalkerr 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Rare; }
+		Show stalkerm 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Magic; }
 		
 		Show stalkerlvl { !GSH; %D4; BaseType == sentinels.stalker.any; ItemLevel <= 67; }
 	}
@@ -1113,10 +1136,10 @@ Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
 	Section Pandemonium : !pandemonium
 	{
 		Show pandet1    { !GSH; %D6; BaseType == sentinels.pandemonium.t1; Rarity Rare; !brightrare; }
-		Show pandet2    { !GSH; %D5; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
+		Show pandet2    { !GSH; %D6; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
 
-		Show pander 	{ !GSH; %D4; BaseType == sentinels.pandemonium.any; Rarity Rare; }
-		Show pandem 	{ !GSH; %D3; BaseType == sentinels.pandemonium.any; Rarity <= Magic; }
+		Show pander 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Rare; }
+		Show pandem 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Magic; }
 		
 		Show pandelvl { !GSH; %D4; BaseType == sentinels.pandemonium.any; ItemLevel <= 67; }
 	}
@@ -1126,8 +1149,8 @@ Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
 		Show apext1 { !GSH; %D6; BaseType == sentinels.apex.t1; Rarity Rare; !brightrare; }
 		Show apext2 { !GSH; %D5; BaseType == sentinels.apex.t2; Rarity Rare; }
 		
-		Show apexr  { !GSH; %D4; BaseType == sentinels.apex.any; Rarity Rare; }
-		Show apexm 	{ !GSH; %D3; BaseType == sentinels.apex.any; Rarity <= Magic; }
+		Show apexr  { !GSH; %D5; BaseType == sentinels.apex.any; Rarity Rare; }
+		Show apexm 	{ !GSH; %D5; BaseType == sentinels.apex.any; Rarity Magic; }
 		
 		Show apexlvl { !GSH; %D4; BaseType == sentinels.apex.any; ItemLevel <= 67; }
 	}
