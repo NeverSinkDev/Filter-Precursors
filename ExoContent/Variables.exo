@@ -122,6 +122,10 @@ var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Re
 var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking";
 var jewels_minion = "Master's" "of Resilience" "Leadership";
 
+## Sentinel
+var sentinel_rewards_t1 = "of Archaeology" "of Skittering" "of Mystery" "of the Underground";
+var sentinel_rewards_t2 = "of Metamorphosis" "of Divination" "of Luxury" "of Prosperity" "of the Bounty" "of Smuggling";
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} SHARED ARMOUR/JEWELERY ITEMS STATS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -630,6 +634,7 @@ var xamu_attack_mix = amu_aux_stats_full + acc_crit_dmg[4] + acc_crit_chance[2] 
 var xamu_aux_singlecore = acc_life[3] + acc_fes[1] + amu_cheat + acc_crit_dmg[1] + acc_dot_mult[1] + acc_allat[1] + acc_pes[1];
 var xamu_aux_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_crit_dmg[2] + acc_dot_mult[2] + acc_allat[2] + acc_pes[2];
 
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RINGS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -689,4 +694,28 @@ var xr_shields1 = shield_maxres[1];
 ## AMULETS
 var xr_amu1 = "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of Dissolution";
 
+
 var xr_eleweapons1 = "Carbonising" "Crystalising" "Vapourising";
+var xr_quiver1 = "of Splintering";
+
+## Stats and high expense stats for recombination stuff
+var xr_shared_stats = str[2] + dex[2] + int[2] + res_chaos[1] + suppress[1];
+
+var xr_boots_mix = boots_life[1] + boots_movespeed[1];
+var xr_gloves_mix = gloves_life[1] + gloves_ias[1];
+var xr_helmet_mix = helmet_life[1];
+var xr_rings_mix = "Virile" "Overpowering";
+
+var xr_caster_shared = wgems_alllevels_global + wcast_hspell[1] + wcast_spell[1];
+var xr_caster_fire = "Flame Shaper's" + xr_caster_shared + wcast_fire[1] + wdot_fire[1] + ws_dot[1];
+var xr_caster_cold = "Frost Singer's" + xr_caster_shared + wcast_cold[1] + wdot_cold[1] + ws_dot[1];
+var xr_caster_light = "Thunderhand's" + xr_caster_shared + wcast_light[1];
+var xr_caster_phys = "Lithomancer's" + xr_caster_shared + wdot_phys[1] + ws_dot[1];
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## OIL EXTRACTION
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var oil_enchant_gold = "Arc Tower Chain" "Empowering Tower Special" "Fireball Tower Special" "Imbuing Tower Damage" "Lightning Storm Tower Explosion Area" "Seismic Tower Additional Cascade" "Seismic Tower Special" "Shock Nova Tower Shock Effect" "Shock Nova Tower Special" "Smothering Tower Reduced Damage" "Stone Gaze Tower Petrify Tick Speed" "Temporal Tower Action Speed" "Tower Synergy";
+var oil_enchant_silver = "Arc Tower Repeat" "Chilling Tower Special" "Empowering Tower Cast Speed" "Empowering Tower Damage" "Imbuing Tower Critical" "Lightning Storm Tower Targeting" "Scout Tower Additional Minion" "Seismic Tower Stun Duration" "Stone Gaze Tower Cooldown" "Summoning Tower Life" "Summoning Tower Special" "Temporal Tower Reduced Tick Speed";
+var oil_enchant_opal = "Fireball Tower Additional Projectile" "Flamethrower Tower Cast Speed" "Glacial Cage Tower Area of Effect" "Glacial Cage Tower Increased Damage" "Meteor Tower Additional Meteor" "Scout Tower Speed" "Sentinel Tower Life" "Sentinel Tower Speed" "Shock Nova Tower Full Damage" "Smothering Tower Reduced Speed" "Summoning Tower Speed";

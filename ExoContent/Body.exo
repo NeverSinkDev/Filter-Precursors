@@ -297,7 +297,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Shields : Class "Shields"
 		{
 			Show Shield_ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
-			Show Shield_DefenseFocus   { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
+			Show Shield_DefenseFocus    { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
 			Show Shield_CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
 			Show Shield_LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; }
 		}
@@ -338,10 +338,10 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------	
 		Section Body : Class "Body Armours", DropLevel >= 55
 		{
-			Show Body_Life { Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
-			Show Body_Defense { Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Corrupted False; }
-			Show Body_LifeDefense { Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
-			Show Body_ES { Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; }
+			Show Body_Life { %D5; Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
+			Show Body_Defense { %D5; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Corrupted False; }
+			Show Body_LifeDefense { %D5; Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
+			Show Body_ES { %D5; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; }
 		}
 #------------------------------------
 #   [1234] Belts
@@ -381,6 +381,24 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		# plus one to all spell skills
 		Show t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
 	}
+
+#------------------------------------
+#   [1234] Multiple Mods
+#------------------------------------	
+## This section is designed to look for multiple T1 mods in corrupted items for use in recombinators
+	Section MultipleMods : Rarity <= Rare
+	{
+		Show RecoGloves    { %D6; Class "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
+		Show RecoBoots     { %D6; Class "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
+		Show RecoHelmets   { %D6; Class "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
+		Show RecoWeapons   { %D6; Class "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
+		Show RecoRings	   { %D6; Class "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
+
+		Show RecoCasterFire	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_fire; }
+		Show RecoCasterCold	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_cold; }
+		Show RecoCasterLight 	 { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_light; }
+		Show RecoCasterPhys 	 { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_phys; }
+	}
 #------------------------------------
 #   [1234] Uncorrupted Mods
 #------------------------------------	
@@ -388,6 +406,8 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 ## In these cases we're looking for a singe high mod
 	Section HighHybridPure : Corrupted False, Rarity <= Rare
 	{
+		# +1 to all arrows quivers
+		Show t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
 		# +1 to all global elemental gems + spell damage t1
 		Show t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +1 to all global elemental gems and DOT t1
@@ -397,12 +417,19 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		# Uncorrupted Suppression Gear from Dexterity Equip
 		Show t2suppress   { %D5; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
 		# Uncorrupted Tyrranical weapons
-		Show t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1]; Class classes_attack; }
+		Show t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
 		# DOT Sceptres and Wands
 		Show t2dotwand 	{ %D5; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
 		Show t2sceptre { %D5; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
 		# Elemental Weapons
-		Show t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Thrusting One Hand Swords" "Claws" "Wands" "Bows"; }
+		Show t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
+	}
+
+	Section Sentinel : Rarity <= Rare
+	{
+		# Useful stalker and pandemonium mods
+		Show t1sentinel { %D6; Mod >= 1 sentinel_rewards_t1; BaseType "Stalker" "Pandemonium"; }
+		Show t2sentinel { %D5; Mod >= 1 sentinel_rewards_t2; BaseType "Stalker" "Pandemonium"; }
 	}
 }
 
@@ -562,8 +589,12 @@ Section ExoticVariations : !exotic
 #------------------------------------
 		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
+			# Optional modules for enchanment based filtering
+			ShowD EnchantedRingsGoldOil   { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_gold; }
+			ShowD EnchantedRingsSilverOil { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_silver; }
+
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
-			Show Helmets     { !GSH; %D6; !exotic.t2; Class "Helmets";}
+			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class "Amulets" "Rings"; Corrupted False; }
 			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
@@ -1872,6 +1903,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5701] Exceptions #1
 #------------------------------------
+	Show exUberImpresence { !G1; !*t1; BaseType "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
