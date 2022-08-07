@@ -1,0 +1,64 @@
+### Unique Sentinels:
+
+Show exSentinel { !GSH; !*t3; !SpecialNoB; Class "Sentinel Drone"; }
+
+### Identified Mods:
+
+Section Sentinel : Rarity <= Rare
+{
+    # Useful stalker and pandemonium mods
+    Show t1sentinel { %D6; Mod >= 1 sentinel_rewards_t1; BaseType "Stalker" "Pandemonium"; }
+    Show t2sentinel { %D5; Mod >= 1 sentinel_rewards_t2; BaseType "Stalker" "Pandemonium"; }
+}
+
+#===============================================================================================================
+# [[9999]] TEMP SENTINEL GEAR
+#===============================================================================================================
+
+Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
+{
+	Section Stalker : !stalker
+	{
+		Show stalkert1  { !GSH; %D6; BaseType == sentinels.stalker.t1; Rarity Rare; !brightrare; }
+		Show stalkert2  { !GSH; %D6; BaseType == sentinels.stalker.t2; Rarity Rare; }
+
+		Show stalkerr 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Rare; }
+		Show stalkerm 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Magic; }
+		
+		Show stalkerlvl { !GSH; %D4; BaseType == sentinels.stalker.any; ItemLevel <= 67; }
+	}
+
+	Section Pandemonium : !pandemonium
+	{
+		Show pandet1    { !GSH; %D6; BaseType == sentinels.pandemonium.t1; Rarity Rare; !brightrare; }
+		Show pandet2    { !GSH; %D6; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
+
+		Show pander 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Rare; }
+		Show pandem 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Magic; }
+		
+		Show pandelvl { !GSH; %D4; BaseType == sentinels.pandemonium.any; ItemLevel <= 67; }
+	}
+
+	Section Apex : !apex
+	{
+		Show apext1 { !GSH; %D6; BaseType == sentinels.apex.t1; Rarity Rare; !brightrare; }
+		Show apext2 { !GSH; %D5; BaseType == sentinels.apex.t2; Rarity Rare; }
+		
+		Show apexr  { !GSH; %D5; BaseType == sentinels.apex.any; Rarity Rare; }
+		Show apexm 	{ !GSH; %D5; BaseType == sentinels.apex.any; Rarity Magic; }
+		
+		Show apexlvl { !GSH; %D4; BaseType == sentinels.apex.any; ItemLevel <= 67; }
+	}
+}
+
+#------------------------------------
+# [5104] Sentinel Currencies
+#------------------------------------
+#!! Override 671 : "Sentinel"
+
+Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
+{
+	Show Recombine 	   { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
+	Show CoreSpecial   { !G2; !*t3annul; BaseType == currency.sentinel.t2; }
+	Show CoreAny       { !G4; %H5; !*t4chaos; BaseType == currency.sentinel.t3; }
+}

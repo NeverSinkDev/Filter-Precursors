@@ -355,7 +355,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------	
 		Section Jewels : Class "Jewel"
 		{
-			Show PotentiallyValuableJewel { Mod >= 3 jewels_priority + jewels_general + jewels_mult + jewels_minion }
+			Show PotentiallyValuableJewel { %D6; Mod >= 3 jewels_priority + jewels_general + jewels_mult + jewels_minion }
 		}
 	}
 }
@@ -371,15 +371,14 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #   [1234] Top Value
 #------------------------------------	
 
-## This section is designed to fish for super rare single mods for Sentinel Recombinators. Even if the item is corrupted.
 	Section TopValue : Rarity <= Rare
 	{
 		# +1 to all global spell skill levels + convoking minion levels
-		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		ShowD t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 proj ranged weapons
-		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
+		ShowD t1proj 	{ %D6; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
 		# plus one to all spell skills
-		Show t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
+		ShowD t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
 	}
 
 #------------------------------------
@@ -388,16 +387,16 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 ## This section is designed to look for multiple T1 mods in corrupted items for use in recombinators
 	Section MultipleMods : Rarity <= Rare
 	{
-		Show RecoGloves    { %D6; Class "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
-		Show RecoBoots     { %D6; Class "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
-		Show RecoHelmets   { %D6; Class "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
-		Show RecoWeapons   { %D6; Class "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
-		Show RecoRings	   { %D6; Class "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
+		ShowD RecoGloves    { %D6; Class "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
+		ShowD RecoBoots     { %D6; Class "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
+		ShowD RecoHelmets   { %D6; Class "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
+		ShowD RecoWeapons   { %D6; Class "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
+		ShowD RecoRings	    { %D6; Class "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
 
-		Show RecoCasterFire	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_fire; }
-		Show RecoCasterCold	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_cold; }
-		Show RecoCasterLight 	 { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_light; }
-		Show RecoCasterPhys 	 { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_phys; }
+		ShowD RecoCasterFire	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_fire; }
+		ShowD RecoCasterCold	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_cold; }
+		ShowD RecoCasterLight 	 	{ %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_light; }
+		ShowD RecoCasterPhys 	 	{ %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_phys; }
 	}
 #------------------------------------
 #   [1234] Uncorrupted Mods
@@ -407,29 +406,22 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 	Section HighHybridPure : Corrupted False, Rarity <= Rare
 	{
 		# +1 to all arrows quivers
-		Show t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
+		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
 		# +1 to all global elemental gems + spell damage t1
-		Show t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +1 to all global elemental gems and DOT t1
-		Show t2amu		{ %D5; Mod >= 1 xr_amu1; Class "Amulets"; }
+		ShowD t2amu		{ %D5; Mod >= 1 xr_amu1; Class "Amulets"; }
 		# +2 to all maximum resists shield
-		Show t2shield		{ %D5; Mod >= 1 xr_shields1; Class "Shields"; }
+		ShowD t2shield		{ %D5; Mod >= 1 xr_shields1; Class "Shields"; }
 		# Uncorrupted Suppression Gear from Dexterity Equip
-		Show t2suppress   { %D5; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
+		ShowD t2suppress   { %D5; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
 		# Uncorrupted Tyrranical weapons
-		Show t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
+		ShowD t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
 		# DOT Sceptres and Wands
-		Show t2dotwand 	{ %D5; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
-		Show t2sceptre { %D5; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
+		ShowD t2dotwand 	{ %D5; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
+		ShowD t2sceptre { %D5; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
 		# Elemental Weapons
-		Show t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
-	}
-
-	Section Sentinel : Rarity <= Rare
-	{
-		# Useful stalker and pandemonium mods
-		Show t1sentinel { %D6; Mod >= 1 sentinel_rewards_t1; BaseType "Stalker" "Pandemonium"; }
-		Show t2sentinel { %D5; Mod >= 1 sentinel_rewards_t2; BaseType "Stalker" "Pandemonium"; }
+		ShowD t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
 	}
 }
 
@@ -527,6 +519,7 @@ Section ArtefactItemClasses
 
 Section QuestItemException : Auto("QuestlikeException")
 {
+	Show QuestHeist { !QuestLike; BaseType "Contract:"; Class "Quest"; }
 	Show QuestItems { !QuestLike; Class "Pantheon Soul" "Quest"; }
 }
 
@@ -756,27 +749,19 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 {
 
 #------------------------------------
-# [2701] Super Endgame Flasks
+# [2701] Endgame Flasks
 #------------------------------------
 
 	Section SuperEndgameFlasks : !GEX
 	{
-		Show Utility85  { !G3; !utilflasks.LT1; %D4; ItemLevel >= 85; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
-		Show Utility84  { !G4; !utilflasks.LT2; %D3; ItemLevel >= 84; Class "Utility Flasks"; BaseType bases.flask.utilityassorted; }
-		Show Utility82  { !G4; !utilflasks.LT3; %D3; ItemLevel >= 82; Class "Utility Flasks"; }
-		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 15; BaseType bases.flask.lifemanaassorted; }
+		Show Utility85  { !G3; !utilflasks.LT1; %D5; ItemLevel >= 85; Class "Utility Flasks"; }
+		Show Utility84  { !G4; !utilflasks.LT2; %D5; ItemLevel >= 84; Class "Utility Flasks"; }
+		Show Utility82  { !G4; !utilflasks.LT3; %D4; ItemLevel >= 82; Class "Utility Flasks"; }
+		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType bases.flask.lifemanaassorted; }
 	}
-
 #------------------------------------
-# [2701] High quality assorted flasks
+# [2701] Quality High
 #------------------------------------
-
-	Section HighQualityEndgameFlasks : Quality >= 15, !GEX
-	{
-		Show HighQualUtility  { !G5; %D3; !*lt1; AreaLevel <= 77; BaseType bases.flask.utilityassorted; }
-		Show HighQUalLifeMana { !G6; %D2; !recipe.t2; AreaLevel <= 72; BaseType bases.flask.lifemanaassorted; }
-	}
-
 	Section 20QualEndgameFlasks : Quality >= 20, !G5
 	{
 		Show Any20QualFlask { %D3; !recipe.ts1; BaseType "Flask"; }
@@ -784,13 +769,14 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Utility OR quality flasks
 #------------------------------------
-
 	Section UtilityEndgameFlasks
 	{
-		Show AsortedUtility { %D2; !G6H; !*lt2; BaseType bases.flask.utilityassorted; AreaLevel <= 75; }
-		Show AnyUtility 	{ %D2; !G6;  !*lt3; Class "Utility Flasks"; AreaLevel <= 72; }
+		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; Class "Utility Flasks"; AreaLevel >= 68; AreaLevel <= 75;  }
+		Show AnyUtility 	{ %D2; 	!G4; !utilflasks.LT3; Class "Utility Flasks"; AreaLevel >= 68; }
 	}
-
+#------------------------------------
+# [2701] Quality Low
+#------------------------------------
 	Section QualityEndgameFlasks
 	{
 		Show QualityHigh { %D1; !G6H; !recipe.t2; BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
@@ -1148,46 +1134,6 @@ Section Jewels : !jewels
 }
 
 #===============================================================================================================
-# [[9999]] TEMP SENTINEL GEAR
-#===============================================================================================================
-
-Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
-{
-	Section Stalker : !stalker
-	{
-		Show stalkert1  { !GSH; %D6; BaseType == sentinels.stalker.t1; Rarity Rare; !brightrare; }
-		Show stalkert2  { !GSH; %D6; BaseType == sentinels.stalker.t2; Rarity Rare; }
-
-		Show stalkerr 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Rare; }
-		Show stalkerm 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Magic; }
-		
-		Show stalkerlvl { !GSH; %D4; BaseType == sentinels.stalker.any; ItemLevel <= 67; }
-	}
-
-	Section Pandemonium : !pandemonium
-	{
-		Show pandet1    { !GSH; %D6; BaseType == sentinels.pandemonium.t1; Rarity Rare; !brightrare; }
-		Show pandet2    { !GSH; %D6; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
-
-		Show pander 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Rare; }
-		Show pandem 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Magic; }
-		
-		Show pandelvl { !GSH; %D4; BaseType == sentinels.pandemonium.any; ItemLevel <= 67; }
-	}
-
-	Section Apex : !apex
-	{
-		Show apext1 { !GSH; %D6; BaseType == sentinels.apex.t1; Rarity Rare; !brightrare; }
-		Show apext2 { !GSH; %D5; BaseType == sentinels.apex.t2; Rarity Rare; }
-		
-		Show apexr  { !GSH; %D5; BaseType == sentinels.apex.any; Rarity Rare; }
-		Show apexm 	{ !GSH; %D5; BaseType == sentinels.apex.any; Rarity Magic; }
-		
-		Show apexlvl { !GSH; %D4; BaseType == sentinels.apex.any; ItemLevel <= 67; }
-	}
-}
-
-#===============================================================================================================
 # [[0200]] Heist Gear
 #===============================================================================================================
 #!! Chapter "Heist Gear"
@@ -1260,12 +1206,11 @@ Section Gems : Class "Gems", !Gems
 		Show PhaT1 	{ !G1; !*T1; GemQualityType Phantasmal; BaseType gems.t1pha; }
 		Show AltAny { !G2; !*P1; AlternateQuality True; }
 		
-		Show 2020z 	{ !G2; !*T1; Quality >= 20; GemLevel >= 20; BaseType gems.t1_2020z }
-		Show 2120 	{ !G2; !*T1; Quality >= 20; GemLevel >= 21; BaseType gems.t1_2120 }
-		Show 2123 	{ !G2; !*T1; Quality >= 23; GemLevel >= 21; BaseType gems.t1_2123 }
-		
-        ## Empower-class gems that are currently super-expensive
-		Show SpecialWorldDrops { !G1; !*T1; BaseType gems.t1_normal; }
+		Show 2020z 	{ !G3; !*P1; Quality >= 20; GemLevel >= 20; BaseType gems.t2_2020z }
+		Show 2120 	{ !G3; !*P1; Quality >= 20; GemLevel >= 21; BaseType gems.t2_2120 }
+		Show 2023 	{ !G3; !*P1; Quality >= 23; GemLevel >= 20; BaseType gems.t2_2023 }
+		Show 2123 	{ !G3; !*P1; Quality >= 23; GemLevel >= 21; BaseType gems.t2_2123 }
+
 
 		## Quality Vaal gems worth leveling
 		Show Vaal20 { !G2; !*P1; Quality >= 20; BaseType gems.t2_2020vaal }
@@ -1274,16 +1219,21 @@ Section Gems : Class "Gems", !Gems
 #------------------------------------
 # [3901] Exceptional Gems - Special gems
 #------------------------------------
-#!! Override 420 : "empower and enlighten type gems"
+#!! Override 420 : "exception class gems"
 
 	Section GemsSpecial : Auto("gems-special")
 	{
-		Show ex6lvlgems { !G2; !*P1; BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
+		## Empower-class gems that are currently super-expensive
+		Show SpecialWorldDrops { !G1; !*T1; BaseType gems.t1_normal; }
+		## Empower class leveled gems
+		Show exSpecialE3 { !G1; !*T1; BaseType gems.untiered.empowerclassgems; GemLevel >= 3; Corrupted False; }
 
-		Show exSpecialE4 { !G1; !*T1; BaseType gems.untiered.empowerclassgems; GemLevel >= 4; }
-		Show exSpecialE2 { !G1; !*P1; BaseType gems.untiered.empowerclassgems; GemLevel >= 2; }
-		Show exSpecialEQ { !G2; !*P1; BaseType gems.untiered.empowerclassgems; Quality >= 15; Corrupted False; }
-		Show exSpecial { !G3; !*P2; BaseType gems.untiered.specialGems; }
+		## All other 'special' gems
+		Show exSpecial { !G3; !*P1; BaseType gems.untiered.specialGems; }
+
+		## noteworthy, but not really expensive
+		Show ex6lvlgems { !G3; !*P2; BaseType gems.untiered.sixlevelgems; GemLevel >= 6; }
+		Show exPortal { !G3; !*P2; BaseType "Portal"; }
 	}
 
 #------------------------------------
@@ -1293,8 +1243,8 @@ Section Gems : Class "Gems", !Gems
 
 	Section GemsGeneric : Auto("gems-generic")
 	{
-		Show LT1 { !G2; !G2; !*P1; GemLevel >= 21 }
-		Show QT1 { !G3; !G2; !*P1; Quality >= 23 }
+		Show LT1 { !G3; !*P2; GemLevel >= 21 }
+		Show QT1 { !G3; !*P2; Quality >= 23 }
 
 		ShowD PlusOneGemCold  { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.cold ; }
 		ShowD PlusOneGemFire  { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.fire ; }
@@ -1335,7 +1285,10 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 	Show t1 { !G1; BaseType == uniques.replicas.t1; }
 	Show t2 { !G2; BaseType == uniques.replicas.t2; }
 	Show multi { !G3; BaseType == uniques.replicas.multi; }
+	Show jewels { !G3;  BaseType == uniques.jewels; }
+	
 	Show t3 { !G4; BaseType == uniques.replicas.t3; }
+
 	Show restex { Empty(); }
 }
 
@@ -1463,17 +1416,6 @@ Section Maps : Class "Maps", !Maps
 	}
 }
 
-#------------------------------------
-# [4403] Labyrinth items, Offerings
-#------------------------------------
-#!! Override 570 : "labyrinth offerings"
-
-Section Labyrinth : Auto("LabyrinthOfferings")
-{
-	Show Offerings { !G4; %H4; BaseType "Offering to the Goddess"; }
-	Show OfferingsUpgraded { !G3; BaseType "Dedication to the Goddess" "Gift to the Goddess" "Tribute to the Goddess"; }
-}
-
 #===============================================================================================================
 # [[4500]] Heist Contracts and Blueprints
 #===============================================================================================================
@@ -1545,7 +1487,7 @@ Section MapFragments : Class "Map Fragments"
 	{
 		Show t1 { !G1; BaseType == fragments.generic.t1; }
 		Show t2 { !G2; BaseType == fragments.generic.t2; }
-		Show t3 { !G3; %H5; BaseType == fragments.generic.t3; }
+		Show t3 { !G3; %HS5; BaseType == fragments.generic.t3; }
 		Show t4 { !G4; %HS3; BaseType == fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
@@ -1762,18 +1704,6 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 }
 
 #------------------------------------
-# [5104] Sentinel
-#------------------------------------
-#!! Override 671 : "Sentinel"
-
-Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
-{
-	Show Recombine 	   { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
-	Show CoreSpecial   { !G2; !*t3annul; BaseType == currency.sentinel.t2; }
-	Show CoreAny       { !G4; %H5; !*t4chaos; BaseType == currency.sentinel.t3; }
-}
-
-#------------------------------------
 # [5104] Incubators
 #------------------------------------
 #!! Override 680 : "Incubators"
@@ -1859,6 +1789,9 @@ Section DivinationCards : Auto("divination"), Class "Divination", !divi
 	Show t3 	{ !G3;!*t3;	BaseType == divination.t3; }
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
 	Show t4c 	{ %H5; !G4; !*t4;	BaseType == divination.t4c; }
+
+	Show exStack { %H4; !G5H; !*t4; StackSize >= 3; }
+
 	Show t5c 	{ %HS2; !G5; !*t5;	BaseType == divination.t5c; }
 	Show t4 	{ %HS3; !G5H; !*t4;	BaseType == divination.t4; }
 	Show t5 	{ %H1; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
@@ -1909,8 +1842,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 	Show exHarby  { !G3; !*HarbyUnique; Class "Piece"; }
-	
-	Show exSentinel { !GSH; !*t3; !SpecialNoB; Class "Sentinel Drone"; }
 
 #------------------------------------
 # [5701] Exceptions Fated Uniques
@@ -1951,8 +1882,8 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Override 770 : "Only low tier uniques"
 	Show recipeUniqueRings { !G5H; %D2; !*t4; !special; Class "Rings"; }
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
-	Show highvinktar { !G3; %D4; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
-	Show exjewels    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel" "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
+	Show highvinktar { !G3; %D0; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
+	Show exjewels    { !GSH; !*t4; !special; BaseType == uniques.jewels; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
@@ -2337,7 +2268,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Rarity = Magic, !G7
 
 Section HideLayerFinal : Auto("HideLayer")
 {
-	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Sentinel Drone" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
+	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
 }
 
 #------------------------------------

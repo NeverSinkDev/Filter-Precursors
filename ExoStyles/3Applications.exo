@@ -1,6 +1,36 @@
-#------------------------------------
-# Applications - PRE-RARE
-#------------------------------------
+## Usage Guide:
+## The application styles are logical structures that contain application rules
+## The appplication styles are applied in order, the application rules are applied on demand, when BOTH a filter selector and a style selector match.
+##
+## The specifications here define how the exo-filter file and the exo-style files will be merged.
+## Basic rules. The structure of every apply command is:
+##
+## Apply(<INTERNALNAME>,<FILTERSELECTOR> => <STYLESELECTOR>)
+## The internal name is only important for inheritance and allows disabling or overriding specific styles in inherited styles
+##
+## The <FILTERSELECTOR> is checking if the filter rule applies
+## The <STYLESELECTOR> is checking if the style rule applies
+## Both sides need to match/agree to apply something
+##
+## FILTERSELECTOR:
+##
+## ALL => STYLE 			every single filter rule matches the selector. Equal to *
+## FOO.BAR => STYLE 		the filter rule with the type "FOO" and the name "BAR" matches
+## FOO.* => STYLE 			every rule of the type "FOO" matches
+## *.BAR => STYLE 			every rule with the name "BAR" matches
+## FOO.BAR* => STYLE 		every rule with the type "FOO" that starts with BAR matches
+## $TREE.TX => STYLE 		every rule tagged with "$TREE.TX" matches - note that tags have a similar structure to TYPE.NAME rules, it's just a different source
+## Invitations => STYLE 	every rule will be individually matched against the list of style selectors
+##
+## STYLESELECTOR:
+## 
+## FILTER => STYLE 				every rule within the tagged filter section is matched against every rule within the tagged style section. For instance if both have a T1 rule, they're applied onto each other
+## FILTER => STYLE.RULE			the rule within the style is matched against every rule within the selected filter scope. Matching rules are applied onto each other
+## FILTER => STYLE.!RULE		the rule is applied onto every filter rule that is matched against it.
+## FILTER => STYLE.ApplyToAll	hardcoded rule that force applies every rule in the style to every selected filter entry
+##
+## If the style section includes only one rule, it is directly applied, if there's a match.
+## If the STYLE has a RULE ANY() that is applied onto matching sections.
 
 Style Global
 {
@@ -82,6 +112,7 @@ Style MainRules
 
 	## tierlists and Maps
 	Apply(tier.uniquereplica, Replicas => ReplicaTierList);
+	Apply(tier.uniquereplica, Replicas.jewels => ReplicaTierList.multi);
 	Apply(tier.uniquemaps, UniqueMaps => UniqueMapStrat);
 
 	## Gems
@@ -93,11 +124,6 @@ Style MainRules
 
 	## Fragments
 	Apply(tier.fragments, Labyrinth => ExoticFragments);
-	Apply(tier.fragments, CurrencyProphecy.t1* => FragmentTierStrat.t1);
-	Apply(tier.fragments, CurrencyProphecy.t2* => FragmentTierStrat.t2);
-	Apply(tier.fragments, CurrencyProphecy.t3* => FragmentTierStrat.t3);
-	Apply(tier.fragments, CurrencyProphecy.t4* => FragmentTierStrat.t4);
-	Apply(tier.fragments, CurrencyProphecy.t5* => FragmentTierStrat.t5);
 	Apply(tier.fragments, MapFragments => FragmentTierStrat);
 	Apply(tier.fragments, MapFragments.T1p => FragmentExceptions.Any);
 	Apply(tier.fragments, $fragments => FragmentTierStrat);
@@ -136,7 +162,7 @@ Style MainRules
 	Apply(divi, $divi.t5 => t5divi);
 	Apply(divi, $divi.tnew => tnewdivi);
 
-	## Exotic Currency
+	## Exotic Currency - PARTIALLY UNUSED
 	Apply(currency.coins, $Coins => Coins);
 	Apply(currency.splinters, $Splinters => SplinterStrategy);
 
@@ -148,7 +174,7 @@ Style MainRules
 	Apply(uniques.def, $unique.t5 => t5uni);
 	Apply(uniques.harby, $unique.harbyunique => harbyunique);
 
-	## League
+	## League - UNUSED
 	Apply(league, $stalker => Sentinel.stalker);
 	Apply(league, $pandemonium => Sentinel.pandemonium);
 	Apply(league, $apex => Sentinel.apex);
