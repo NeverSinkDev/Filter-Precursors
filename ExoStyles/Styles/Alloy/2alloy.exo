@@ -185,9 +185,9 @@ Expand FragmentTierStrat
 ## RESTORE GREY RECIPES, BY USING THE EXTRA COLOR SPACE
 Expand RecipeStrategy.T1
 {
-    SetBorderColor sWhite;
+    SetBorderColor 220 220 220 255;
     SetBackgroundColor rares.bg;
-    SetTextColor sWhite;
+    SetTextColor 220 220 220 255;
 }
 
 Expand RecipeStrategy.T2
@@ -309,14 +309,14 @@ Expand t2divi
 
 Expand t3divi
 {
-        SetTextColor tieringbase.Low;
-        SetBorderColor tieringbase.Low;
+    SetTextColor tieringbase.Low;
+    SetBorderColor tieringbase.Low;
 }
 
 Expand t4divi
 {
-        SetTextColor tieringbase.Low;
-        SetBorderColor tieringbase.Low;
+    SetTextColor tieringbase.Low;
+    SetBorderColor tieringbase.Low;
 }
 
 ## Influcend gear
@@ -328,9 +328,9 @@ Expand InfluencedVariant.T1
 
 Expand InfluencedVariant.T2
 {
-    SetBorderColor sBlack;
-    SetBackgroundColor influenced.gear.t2;
-    SetTextColor sBlack;
+    SetBorderColor influenced.gear.t3;
+    SetBackgroundColor 80 0 0 255;
+    SetTextColor influenced.gear.t3;
 }
 
 Expand InfluencedRandom
@@ -341,6 +341,12 @@ Expand InfluencedRandom
 }
 
 ## Special bases - exceptions
+
+Expand UniversalExotic.T1
+{
+    SetBackgroundColor 6 43 83 255;
+    SetFontSize 45;
+}
 
 Expand UniversalExotic.T2
 {
@@ -360,4 +366,42 @@ Expand UniversalExotic.T4
     SetBackgroundColor rares.bg;
     SetTextColor exoticgear.tx.low;
     SetFontSize 40;
+}
+
+Expand CraftSpecialStrategy.I86
+{
+    SetBorderColor exoticgear.tx;
+    SetTextColor 250 150 0 255;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftSpecialStrategy.I84
+{
+    SetBorderColor exoticgear.tx;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftSpecialStrategy.ANY
+{
+    SetBorderColor exoticgear.tx;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftGeneralStrategy.I86
+{
+    SetBorderColor 250 200 0 255;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftGeneralStrategy.I84
+{
+    SetBorderColor 250 200 0 255;
+    SetBackgroundColor rares.bg;
+    Disable();
+}
+
+Expand CraftGeneralStrategy.ANY
+{
+    SetBackgroundColor rares.bg;
+    Disable();
 }
