@@ -228,40 +228,40 @@ Expand GeneralMapProgressionStrategy.SpecialHigh
 Expand GeneralMapProgressionStrategy.SpecialLow
 {
     SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
     SetBackgroundColor maps.special.extra
 }
 
 Expand GeneralMapProgressionStrategy.Z1
 {
     SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
     SetBackgroundColor maps.z1.acc;
 }
 
 Expand GeneralMapProgressionStrategy.Z2
 {
     SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
     SetBackgroundColor maps.z2.acc;
 }
 
 Expand GeneralMapProgressionStrategy.Z3
 {
     SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
     SetBackgroundColor maps.z3;
 }
 
 Expand GeneralMapProgressionStrategy.Z4
 {
     SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
     SetBackgroundColor maps.z4;
 }
 
@@ -317,6 +317,14 @@ Expand t4divi
 {
     SetTextColor tieringbase.Low;
     SetBorderColor tieringbase.Low;
+}
+
+Expand t5divi
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 45;
 }
 
 ## Influcend gear
@@ -404,4 +412,73 @@ Expand CraftGeneralStrategy.ANY
 {
     SetBackgroundColor rares.bg;
     Disable();
+}
+
+### GEM EXPANSION
+
+Expand GemStrategy.P4
+{
+    TX gems.norm;
+    SetFontSize font.t5;
+}
+
+Expand GemStrategy.Leveling
+{
+    TX gems.norm;
+}
+
+Expand GemStrategy.VaalGem
+{
+    SetBackgroundColor gems.vaal;
+    SetFontSize 40;
+    TX gems.norm;
+}
+
+Expand GemStrategy.VaalLvl
+{
+    SetFontSize 45;
+    SetBackgroundColor gems.vaal;
+    MinimapIcon 2 White icon;
+    TX gems.norm;
+}
+
+Expand GemStrategy.FirstLevel
+{
+    SetFontSize 45;
+    TX gems.norm;
+}
+
+## UNIFY LEVELING HIGHLIGHT
+
+Expand UniversalValueAccents.LVLCaster
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Expand UniversalValueAccents.LVLMelee
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Expand UniversalValueAccents.LVLArcher
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Style FontUniversalSize
+{
+    Func Any()
+    {
+        SetFontSize 45;
+        SetTextColor 255 0 0 255;
+    }
 }

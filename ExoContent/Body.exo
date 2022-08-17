@@ -195,6 +195,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	## TODO: == and + together mess up parsing
 	Show ExoticHeistBases 	  { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { !GSH; BaseType bases.exotic.ritual.any }
+	Show ExoticLakeKala 	  { !GSH; BaseType bases.exotic.lakeKala.any }
 	Show ExoticExpeditionBases{ %D5; !GSH; BaseType bases.exotic.expedition.any + "Iron Flask" }
 	Show ExoticTalismanBases  { !GSH; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
@@ -504,6 +505,7 @@ Section ArtefactItemClasses
 	{
 		Show AnyTrinket { !G3; Empty(); }
 	}
+
 #------------------------------------
 #   [1234] Secret Society Equipment
 #------------------------------------
@@ -511,6 +513,15 @@ Section ArtefactItemClasses
 	{
 		Show SCP3889 { !G1; Empty(); }
 	}
+
+#------------------------------------
+#   [1234] Pieces
+#------------------------------------
+	Section Pieces : Class "Piece", Auto("artefact->piece")
+	{
+		Show Ultimatum { !G3; BaseType "Ultimatum Aspect"; }
+		Show Any { !G3; Rarity "Unique"; }
+	}	
 }
 
 #------------------------------------
@@ -663,7 +674,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 	{
 		Show t1 { !G3;  %D6; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
-		Show t3 { !GEX; %D3; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
+		Show t3 { !GEX; %D2; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
 	}
 
 #------------------------------------
@@ -1301,6 +1312,14 @@ Section Maps : Class "Maps", !Maps
 {
 
 #------------------------------------
+# [4402] Ultimatum
+#------------------------------------
+	Section Ultimatum : Auto("ExoticMap->Ultimatum")
+	{
+		Show Handpicked { !exomap.high; !G2; BaseType "Engraved Ultimatum"; }
+	}
+
+#------------------------------------
 # [4402] Unique Maps
 #------------------------------------
 	Section UniqueMaps : Rarity Unique, Auto("uniques->maps")
@@ -1428,14 +1447,14 @@ Section HeistUniqueMapLike : Rarity Unique, Class "Blueprint" "Contract", Auto("
 
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 {
-	Show HandPicked { !G5; %H5; BaseType Heist.Contract.Handpicked; }
-	Show Any { !G5; %H5; Empty(); }
+	Show HandPicked { !G5; !exomap.low; %H5; BaseType Heist.Contract.Handpicked; }
+	Show Any { !G5; !exomap.low; %H5; Empty(); }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 {
-	Show HandPicked { !G4; BaseType Heist.Blueprint.Handpicked; }
-	Show Any { !G4; Empty(); }
+	Show HandPicked { !exomap.high; !G4; BaseType Heist.Blueprint.Handpicked; }
+	Show Any { !exomap.high; !G4; Empty(); }
 }
 
 #===============================================================================================================
@@ -1445,12 +1464,23 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 
 Section Logbooks : Auto("Expedition->Logbook->High"), BaseType "Expedition Logbook"
 {
-	Show Any { !G2; Empty(); }
+	Show Any { !exomap.high; !G2; Empty(); }
 }
 
 Section Logbooks : Auto("Expedition->Logbook->Any"), Class "Expedition Logbook"
 {
-	Show Any { !G2; Empty(); }
+	Show Any { !exomap.high; !G2; Empty(); }
+}
+
+#===============================================================================================================
+# [[4500]] Memories
+#===============================================================================================================
+#!! Override 581 : "memories"
+
+Section Logbooks : Auto("ExoticMap->Memory")
+{
+	Show Handpicked { !exomap.high; !G2; BaseType == "Niko's Memory" "Alva's Memory" "Kirac's Memory" "Einhar's Memory"; }
+	Show Any { !exomap.high; !G2; Class "Memory"; }
 }
 
 #===============================================================================================================
@@ -1841,7 +1871,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
-	Show exHarby  { !G3; !*HarbyUnique; Class "Piece"; }
 
 #------------------------------------
 # [5701] Exceptions Fated Uniques
@@ -1907,7 +1936,7 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { !G1; !Currency.t1exalted; BaseType miscmap.keys; }
 	Show InscribedUltimatum { !G2; !fragments.t2; BaseType "Inscribed Ultimatum"; }
-	Show AlvaTemple { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl"; }
+	Show AlvaTemple { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet"; }
 }
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
@@ -2068,6 +2097,16 @@ Section LevelingRareGear : Rarity Rare
 	}
 
 #------------------------------------
+# [6002] Sumonner
+#------------------------------------
+#!! Override 850 : "leveling: class specific leveling weapons"
+
+	Section Sumonner : Auto("Leveling->Rare->sumonner"), !LVLCaster, !GR2
+	{
+		Show General     { %D4; !LVLCaster; !Maximize; BaseType "Bone Ring" "Calling Wand" "Convening Wand" "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
+	}
+
+#------------------------------------
 # [6002] Rares - Caster
 #------------------------------------
 #!! Override 850 : "leveling: class specific leveling weapons"
@@ -2178,7 +2217,9 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType leveling.bases.quivers.best; }
 		Show FireResistGear  { %D2; !NoticeNM2; !SF35; BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
 		Show GeneralCrafting { %D2; !NoticeNM2; !SF35; AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
-		ShowD SummonShield { !NoticeNM2; !SF40; AreaLevel <= leveling.keylevels.act5; BaseType "Bone Spirit Shield" }
+		
+		Show SumonnerWands { %D3; !NoticeNM2; !SF35; BaseType "Calling Wand" "Convening Wand"; }
+		ShowD SumonnerShields { !NoticeNM2; !SF40; BaseType "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
 	}
 }
 

@@ -133,9 +133,8 @@ Style MainRules
 	Apply(uniques.maps, $Maps.HighHarbingerMap => UniqueMapStrat.t1);
 
 	## Heist-Map
-	Apply(heistmaps, HeistContracts => !HeistMapLike.Any);
-	Apply(heistmaps, HeistBlueprint => !HeistMapLikeHigh.Any);
-	Apply(heistmaps, Logbooks => !HeistMapLikeHigh.Any);
+	Apply(exomaps, $exomap.low; => !HeistMapLike.Any);
+	Apply(exomaps, $exomap.high; => !HeistMapLikeHigh.Any);
 
 	## Currency
 	Apply(currency.def, $currency.t1exalted => t1exalted);

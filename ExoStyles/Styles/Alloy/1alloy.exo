@@ -12,10 +12,6 @@ var highcurrency2 = 234 178 43 255;
 ## Uniques Base Pattern
 var uniqueBase = 0 129 171 255;
 
-## grey recipes
-var recipe.t1.acc = 0 38 100 255;
-var recipe.t2.acc = 0 38 100 190;
-
 ## Uniques
 var uniquest2 = uniqueBase;
 var unique.tx = uniqueBase;
@@ -33,11 +29,11 @@ var rares.notice = 100 100 100 255;
 var rares.bg = 53 53 53 255;
 
 ## splinter base
-var splinters.text = sWhite;
-var splinters.extra = 20 77 80;
-var splinters.acc.t1 = 20 210 196 255;
-var splinters.acc.t2 = 60 150 145 255;
-var splinters.acc.t3 = 115 115 115 255;
+var splinters.text = sBlack;
+var splinters.extra = midvaluecurrency;
+var splinters.acc.t1 = sBlack;
+var splinters.acc.t2 = sBlack;
+var splinters.acc.t3 = sBlack;
 
 var heist.contracts.acc = 197 130 205 255;
 var heist.blueprints.acc = 197 130 205 255;
@@ -52,10 +48,10 @@ var jewel.cluster.tx    = 150 0 255 255;
 var jewel.cluster.extra = rares.bg;
 
 ## maps
-var maps.z1.acc = 100 0 0 255;
-var maps.z2.acc = 70 0 0 255;
-var maps.z3 = 120 120 0 255;
-var maps.z4 = 70 70 70 255;
+var maps.z1.acc = 220 135 120 255;
+var maps.z2.acc = 220 135 120 255;
+var maps.z3 = 215 215 115 255;
+var maps.z4 = 170 200 180 255;
 
 var maps.influenced = 100 0 122 255;
 var maps.special.extra = 85 0 85 255;
@@ -103,3 +99,14 @@ var league.sentinel.acc.apex = 220 20 20 255;
 
 var exoticgear.tx = 0 200 250 255;
 var exoticgear.tx.low = 0 200 250 200;
+
+var gems.t1 = 240 125 125 255;
+var gems.high = 240 125 125 255;
+var gems.norm = 220 153 220 255;
+var gems.low =  220 153 220 255;
+var gems.base = 60 10 60 255;
+var gems.vaal = 20 0 70 255;
+
+## grey recipes
+var recipe.t1.acc = rares.bg;
+var recipe.t2.acc = rares.bg;
