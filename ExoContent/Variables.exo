@@ -116,12 +116,6 @@ var projSpeed = "of the Gale" "of the Zephyr" "of Propulsion";
 var quivermods2 = amu_accu[2] + quiver_leech + quiver_ias[2] + quiver_critc[2] + ws_critmulti[3] + quiver_dot[2] + projSpeed[2];
 var quivermods3 = amu_accu[3] + quiver_leech + quiver_ias[3] + quiver_critc[4] + ws_critmulti[4] + quiver_dot[3] + projSpeed[3] + quiver_dmg;
 
-## Jewels
-var jewels_priority = "Vivid" "Shimmering" "of Potency";
-var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Resistance" "of Combat" "of Archery" "of Wounding" "of Enchanting";
-var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking";
-var jewels_minion = "Master's" "of Resilience" "Leadership";
-
 ## Sentinel
 var sentinel_rewards_t1 = "of Archaeology" "of Skittering" "of Mystery" "of the Underground";
 var sentinel_rewards_t2 = "of Metamorphosis" "of Divination" "of Luxury" "of Prosperity" "of the Bounty" "of Smuggling";
@@ -674,12 +668,6 @@ var xbelt_mix = belts_cheat + belts_life + belts_es[2] + belts_aux + belts_speci
 var xbelt_core = belts_cheat + belts_life[2] + belts_es[1] + belts_wed[1] + belts_flaskeffect[1] + belts_flaskdur[1] + belts_mana[1] + str[1];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##   {META} IDENTIFIED MODS FOR OTHER SECTIONS
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Blasting" "of Wounding" "Surging" "Arctic" "Infernal" "Puncturing" "Rupturing" "Piercing" "Vivid" "Shimmering" "of Potency" "of Demolishing" "of Unmaking" "of the Elements" "of Exsanguinating" "of Atrophy" "of Order" "Leadership";
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RECOMBINATIONS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -719,3 +707,83 @@ var xr_caster_phys = "Lithomancer's" + xr_caster_shared + wdot_phys[1] + ws_dot[
 var oil_enchant_gold = "Arc Tower Chain" "Empowering Tower Special" "Fireball Tower Special" "Imbuing Tower Damage" "Lightning Storm Tower Explosion Area" "Seismic Tower Additional Cascade" "Seismic Tower Special" "Shock Nova Tower Shock Effect" "Shock Nova Tower Special" "Smothering Tower Reduced Damage" "Stone Gaze Tower Petrify Tick Speed" "Temporal Tower Action Speed" "Tower Synergy";
 var oil_enchant_silver = "Arc Tower Repeat" "Chilling Tower Special" "Empowering Tower Cast Speed" "Empowering Tower Damage" "Imbuing Tower Critical" "Lightning Storm Tower Targeting" "Scout Tower Additional Minion" "Seismic Tower Stun Duration" "Stone Gaze Tower Cooldown" "Summoning Tower Life" "Summoning Tower Special" "Temporal Tower Reduced Tick Speed";
 var oil_enchant_opal = "Fireball Tower Additional Projectile" "Flamethrower Tower Cast Speed" "Glacial Cage Tower Area of Effect" "Glacial Cage Tower Increased Damage" "Meteor Tower Additional Meteor" "Scout Tower Speed" "Sentinel Tower Life" "Sentinel Tower Speed" "Shock Nova Tower Full Damage" "Smothering Tower Reduced Speed" "Summoning Tower Speed";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} JEWELS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Jewels
+var jewels_priority = "Vivid" "Shimmering" "of Potency";
+var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Resistance" "of Combat" "of Archery" "of Wounding" "of Enchanting";
+var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking";
+var jewels_minion = "Master's" "of Resilience" "Leadership";
+
+var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Blasting" "of Wounding" "Surging" "Arctic" "Infernal" "Puncturing" "Rupturing" "Piercing" "Vivid" "Shimmering" "of Potency" "of Demolishing" "of Unmaking" "of the Elements" "of Exsanguinating" "of Atrophy" "of Order" "Leadership";
+
+## Jewels have generally interesting mods, such as life, ES.
+## These usually need to pair with one or multiple powerful generic mods
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} JEWEL-ID-MOD-FILTERING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Life or ES, we count these as one full mod
+var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
+var jwl_core = "Vivid" "Shimmering";
+
+## Generally good stats, like double/tripple res/attributes, chaos res, general damage
+var jwl_aux = "of Order" "of Resistance" "of Insulation" "of the Hearth" "of Shelter" "of Spirit" "of Athletics" "of Cunning" "of Adaptation" "of Wounding" "Thwarting";
+var jwl_dot_aux = "of Entropy" "Decrepifying";
+## Generally good DOT stats
+var jwl_dot_core = "of Acrimony";
+## Specific dot stats. One build wants at most one of these.
+var jwl_dot_unique =  "of Exsanguinating" "of Zealousness" "of Atrophy" "of Gelidity";
+
+## Components
+var xJwl_dot_core = jwl_core + jwl_dot_core;
+var xJwl_dot_mix = jwl_core + jwl_aux + jwl_dot_aux + jwl_dot_core + jwl_dot_unique;
+
+## Uncompromising good crit stats. We want X of them
+var jwl_crit_core_raw = "of Potency" "of the Elements";
+var jwl_crit_aux = "of Menace" "Arctic" "Surging" "Infernal" "Puncturing";
+## General crit core used by all jewels
+var jwl_crit_core = jwl_crit_core_raw + jwl_core;
+
+## Attack exclusive section
+
+var jwl_crit_core_attack = "of Demolishing";
+var jwl_crit_unique_attack = "Piercing" "Rupturing";
+var jwl_crit_attack_extra = "of Berserking" "Sharpened" "Humming" "Chaotic" "Flaming" "Chilling" "of Zeal";
+
+var xJwl_crit_core_attack = jwl_crit_core + jwl_crit_core_attack;
+var xJwl_crit_subCore_attack = xJwl_crit_core_attack + jwl_crit_unique_attack + jwl_crit_aux + jwl_aux;
+var xJwl_crit_mix_attack = xJwl_crit_subCore_attack + jwl_crit_attack_extra;
+
+## Spell exclusive section
+var jwl_crit_unique_spell = "of Unmaking";
+var jwl_crit_spell_extra = "of Mysticism" "of Blasting" "of Archery" "Chilling" "Trapping" "Sharpened" "Humming" "Chaotic" "Flaming" "Chilling" "Battlemage's" "Warding" "Sorcerer's";
+
+var xJwl_crit_core_spell = jwl_crit_core + jwl_crit_unique_spell;
+var xJwl_crit_subCore_spell = xJwl_crit_core_spell + jwl_crit_aux + jwl_aux;
+var xJwl_crit_mix_spell = xJwl_crit_subCore_spell + jwl_crit_spell_extra;
+
+## As many as possible, but at least 2?
+var jwl_minion = "Leadership" "Master's" "of Resilience";
+
+## Attack speed?
+var jewels_speed = "of Berserking" "of Zeal";
+
+var xJwl_minion_core = jwl_core + jwl_minion;
+var xJwl_minion_mix = xJwl_minion_core + jwl_aux + "of Training" "Enlightened" "of Efficiency";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} ABYSS JEWEL-ID-MOD-FILTERING
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var aj_core = "Sanguine" "Stalwart" "Resplendent" "Incandescent";
+var aj_aux = "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order";
+
+var aj_attackUtility = "of Blinding" "of the Ranger" "of the Deadeye"
+
+## flat mana regen, mana recoup
+var aj_misc = "Resonating" "Motivating";

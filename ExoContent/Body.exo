@@ -356,7 +356,10 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------	
 		Section Jewels : Class "Jewel"
 		{
-			Show PotentiallyValuableJewel { %D6; Mod >= 3 jewels_priority + jewels_general + jewels_mult + jewels_minion }
+			Show IdJewel_Minion { Mod >= 2 xJwl_minion_core; Mod >= 3 xJwl_minion_mix; BaseType genericJewels; }
+			Show IdJewel_DOT { Mod >= 1 xJwl_dot_core; Mod <= 1 jwl_dot_unique; Mod >= 3 xJwl_dot_mix; BaseType genericJewels; }
+			Show IdJewel_CritAttack {  Mod >= 1 xJwl_crit_core_attack;  Mod >= 2 xJwl_crit_subCore_attack; Mod >= 3 xJwl_crit_mix_attack; BaseType genericJewels; }
+			Show IdJewel_CritSpell { Mod >= 1 xJwl_crit_core_spell; Mod >= 2 xJwl_crit_subCore_spell; Mod >= 3 xJwl_crit_mix_spell; BaseType genericJewels; }
 		}
 	}
 }
@@ -372,14 +375,40 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #   [1234] Top Value
 #------------------------------------	
 
-	Section TopValue : Rarity <= Rare
+	Section TopValue : Rarity <= Rare, Corrupted False
 	{
 		# +1 to all global spell skill levels + convoking minion levels
-		ShowD t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		Show t1caster 	{ %D4; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 proj ranged weapons
-		ShowD t1proj 	{ %D6; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
+		Show t1proj 	{ %D4; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
 		# plus one to all spell skills
-		ShowD t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
+		Show t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
+	}
+
+#------------------------------------
+#   [1234] Uncorrupted Mods
+#------------------------------------	
+
+## In these cases we're looking for a singe high mod
+	Section HighHybridPure : Corrupted False, Rarity <= Rare
+	{
+		# +1 to all global elemental gems and DOT t1
+		Show t2amu		{ %D4; Mod >= 1 xr_amu1; Class "Amulets"; }
+		# +1 to all arrows quivers
+		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
+		# +1 to all global elemental gems + spell damage t1
+		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		# +2 to all maximum resists shield
+		ShowD t2shield		{ %D5; Mod >= 1 xr_shields1; Class "Shields"; }
+		# Uncorrupted Suppression Gear from Dexterity Equip
+		ShowD t2suppress   { %D5; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
+		# Uncorrupted Tyrranical weapons
+		ShowD t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
+		# DOT Sceptres and Wands
+		ShowD t2dotwand 	{ %D5; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
+		ShowD t2sceptre { %D5; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
+		# Elemental Weapons
+		ShowD t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
 	}
 
 #------------------------------------
@@ -398,32 +427,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		ShowD RecoCasterCold	     { %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_cold; }
 		ShowD RecoCasterLight 	 	{ %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_light; }
 		ShowD RecoCasterPhys 	 	{ %D6; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_phys; }
-	}
-#------------------------------------
-#   [1234] Uncorrupted Mods
-#------------------------------------	
-
-## In these cases we're looking for a singe high mod
-	Section HighHybridPure : Corrupted False, Rarity <= Rare
-	{
-		# +1 to all arrows quivers
-		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
-		# +1 to all global elemental gems + spell damage t1
-		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
-		# +1 to all global elemental gems and DOT t1
-		ShowD t2amu		{ %D5; Mod >= 1 xr_amu1; Class "Amulets"; }
-		# +2 to all maximum resists shield
-		ShowD t2shield		{ %D5; Mod >= 1 xr_shields1; Class "Shields"; }
-		# Uncorrupted Suppression Gear from Dexterity Equip
-		ShowD t2suppress   { %D5; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
-		# Uncorrupted Tyrranical weapons
-		ShowD t2purephys 	{ %D5; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
-		# DOT Sceptres and Wands
-		ShowD t2dotwand 	{ %D5; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
-		ShowD t2sceptre { %D5; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
-		# Elemental Weapons
-		ShowD t2eleweapons 	{ %D5; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
-	}
+	}	
 }
 
 #===============================================================================================================
@@ -462,7 +466,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
 		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
 		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
-		Show IncursionSumonner   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
 		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
 		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
 
@@ -477,7 +481,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; };
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve };
 		Show Warband  { !GS;  %D4; !exotic.t3; Mod exotic_warband };
-		Show Essence  { !GSH; %D2; !exotic.t3; Mod "of the Essence" "Essences" };
+		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
 		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
@@ -807,8 +811,11 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #===============================================================================================================
 #!! Override 170 : "Overquality and endgame 4links"
 
-Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity < Rare, !GEX
+Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
+	Show WhiteSocketWeapons1H { %D4; !exotic.t4; !G4; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Shield" "Wand"; Sockets >= "3WWW"; }
+	Show WhiteSocketWeapons2H { %D6; !exotic.t1; !G2; Class "Staves" "Two Hand" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
+
 	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
@@ -1257,11 +1264,11 @@ Section Gems : Class "Gems", !Gems
 		Show LT1 { !G3; !*P2; GemLevel >= 21 }
 		Show QT1 { !G3; !*P2; Quality >= 23 }
 
-		ShowD PlusOneGemCold  { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.cold ; }
-		ShowD PlusOneGemFire  { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.fire ; }
-		ShowD PlusOneGemLight { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.light ; }
-		ShowD PlusOneGemChaos { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.chaos ; }
-		ShowD PlusOneGemPhys  { !G4; !*P3S; Quality >= 5; BaseType gems.plusone.phys ; }
+		ShowD PlusOneGemCold  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.cold ; }
+		ShowD PlusOneGemFire  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.fire ; }
+		ShowD PlusOneGemLight { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.light ; }
+		ShowD PlusOneGemChaos { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.chaos ; }
+		ShowD PlusOneGemPhys  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.phys ; }
 
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
@@ -1296,8 +1303,6 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 	Show t1 { !G1; BaseType == uniques.replicas.t1; }
 	Show t2 { !G2; BaseType == uniques.replicas.t2; }
 	Show multi { !G3; BaseType == uniques.replicas.multi; }
-	Show jewels { !G3;  BaseType == uniques.jewels; }
-	
 	Show t3 { !G4; BaseType == uniques.replicas.t3; }
 
 	Show restex { Empty(); }
@@ -1310,21 +1315,13 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 
 Section Maps : Class "Maps", !Maps
 {
-
-#------------------------------------
-# [4402] Ultimatum
-#------------------------------------
-	Section Ultimatum : Auto("ExoticMap->Ultimatum")
-	{
-		Show Handpicked { !exomap.high; !G2; BaseType "Engraved Ultimatum"; }
-	}
-
 #------------------------------------
 # [4402] Unique Maps
 #------------------------------------
 	Section UniqueMaps : Rarity Unique, Auto("uniques->maps")
 	{
-		Show ex { !G1; !Maps.HighHarbingerMap; BaseType uniques.maps.ex; MapTier 16; }
+		Show exUltimatum { !exomap.high; !G2; BaseType "Engraved Ultimatum"; }
+		Show exHarbinger { !G1; !Maps.HighHarbingerMap; BaseType uniques.maps.ex; MapTier 16; }
 		Show t1 { !G1; BaseType == uniques.maps.t1; }
 		Show t2 { !G2; BaseType == uniques.maps.t2; }
 		Show t3 { !G3; %H5; BaseType == uniques.maps.t3; }
@@ -1336,7 +1333,6 @@ Section Maps : Class "Maps", !Maps
 # [4404] Blighted maps
 #------------------------------------
 #!! Override 530 : "blighted maps, enchanted maps, maps with special mods"
-
 	Section BlightedMaps : Auto("maps->blighted")
 	{
 		Show uber { !G2; !*SpecialHigh; UberBlightedMap True; }
@@ -1436,13 +1432,18 @@ Section Maps : Class "Maps", !Maps
 }
 
 #===============================================================================================================
-# [[4500]] Heist Contracts and Blueprints
+# [[4500]] Pseudo-Map-Items
 #===============================================================================================================
 #!! Override 580 : "heist contracts and blueprints"
 
 Section HeistUniqueMapLike : Rarity Unique, Class "Blueprint" "Contract", Auto("Uniques->Heist")
 {
 	Show Any { !G4; Empty(); }
+}
+
+Section Logbooks : Auto("Expedition->Logbook"), BaseType "Expedition Logbook"
+{
+	Show Any { !exomap.high; !G2; Empty(); }
 }
 
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
@@ -1457,29 +1458,9 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 	Show Any { !exomap.high; !G4; Empty(); }
 }
 
-#===============================================================================================================
-# [[4500]] Expedition Logbooks
-#===============================================================================================================
-#!! Override 581 : "logboookss"
-
-Section Logbooks : Auto("Expedition->Logbook->High"), BaseType "Expedition Logbook"
+Section Memories : Auto("ExoticMap->Memory")
 {
-	Show Any { !exomap.high; !G2; Empty(); }
-}
-
-Section Logbooks : Auto("Expedition->Logbook->Any"), Class "Expedition Logbook"
-{
-	Show Any { !exomap.high; !G2; Empty(); }
-}
-
-#===============================================================================================================
-# [[4500]] Memories
-#===============================================================================================================
-#!! Override 581 : "memories"
-
-Section Logbooks : Auto("ExoticMap->Memory")
-{
-	Show Handpicked { !exomap.high; !G2; BaseType == "Niko's Memory" "Alva's Memory" "Kirac's Memory" "Einhar's Memory"; }
+	Show HandPicked { !exomap.high; !G2; BaseType == "Niko's Memory" "Alva's Memory" "Kirac's Memory" "Einhar's Memory"; }
 	Show Any { !exomap.high; !G2; Class "Memory"; }
 }
 
@@ -1530,6 +1511,7 @@ Section MapFragments : Class "Map Fragments"
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
 {
+	Show binding { %D4; !G3;  !*t4chaos; !Maximize; !LevelCurrency; BaseType "Orb of Binding"; }
 	Show essences { %D4; !G4;  !*t5alchemy; !Maximize; !LevelCurrency; BaseType currency.leveling.essences; }
 	Show trans 	  { %D4; !G5H; !Currency.t8trans; !Maximize; !LevelCurrency; BaseType == currency.leveling.trans; }
 	Show aug      { %D4; !G5;  !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
@@ -1873,13 +1855,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 
 #------------------------------------
-# [5701] Exceptions Fated Uniques
-#------------------------------------
-
-	Show fated1    { !G2; !*t2; BaseType == uniques.generic.fatedt1; Identified True; Corrupted False; }
-	Show fated2    { !GSH; %H4; !*t4; !special; BaseType == uniques.generic.fatedt2; Identified True; Corrupted False; }
-
-#------------------------------------
 # [5702] Tier 1 and 2 uniques
 #------------------------------------
 	Show t1 { !G1; !*t1; BaseType == uniques.generic.t1; }
@@ -1935,8 +1910,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { !G1; !Currency.t1exalted; BaseType miscmap.keys; }
-	Show InscribedUltimatum { !G2; !fragments.t2; BaseType "Inscribed Ultimatum"; }
-	Show AlvaTemple { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet"; }
+	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum"; }
 }
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
@@ -2079,6 +2053,11 @@ Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), Rarity Rare,
 
 Section LevelingRareGear : Rarity Rare
 {
+	Section Minion : Auto("Leveling->Rare->minion"), !GR2
+	{
+		Show General { %D4; !LVLMinion; !Maximize; BaseType "Bone Ring" "Calling Wand" "Convening Wand" "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
+	}
+
 	Section Universal : Auto("Leveling->Rare->universal") !raredeco.t1jewellery, !GRJ1
 	{
 		Show RusticSash { %D5; !SF45; BaseType "Rustic Sash"; !LVLMelee; !FixMelee; }
@@ -2094,16 +2073,6 @@ Section LevelingRareGear : Rarity Rare
 		Show BodyArmours{ %D4; !raredeco.t2equip; !SF40; Class == "Body Armours"; }
 		Show Shields 	{ %D4; !raredeco.t2equip; !SF40; Class == "Shields"; }
 		Show Quivers 	{ %D4; !LVLArcher; !SF40; Class == "Quivers"; }
-	}
-
-#------------------------------------
-# [6002] Sumonner
-#------------------------------------
-#!! Override 850 : "leveling: class specific leveling weapons"
-
-	Section Sumonner : Auto("Leveling->Rare->sumonner"), !LVLCaster, !GR2
-	{
-		Show General     { %D4; !LVLCaster; !Maximize; BaseType "Bone Ring" "Calling Wand" "Convening Wand" "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
 	}
 
 #------------------------------------
@@ -2217,9 +2186,12 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType leveling.bases.quivers.best; }
 		Show FireResistGear  { %D2; !NoticeNM2; !SF35; BaseType "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
 		Show GeneralCrafting { %D2; !NoticeNM2; !SF35; AreaLevel >= leveling.keylevels.act3; BaseType leveling.bases.generalcrafting; }
-		
-		Show SumonnerWands { %D3; !NoticeNM2; !SF35; BaseType "Calling Wand" "Convening Wand"; }
-		ShowD SumonnerShields { !NoticeNM2; !SF40; BaseType "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
+	}
+
+	Section MinionItems : Auto("Leveling->NormalMagic->minion"), !low, !G7, !GLVL2
+	{
+		Show MinionGear      { %D2; !NoticeNM2; !LVLMinion; !SF35; BaseType "Convoking Wand" "Calling Wand" "Convening Wand" "Bone Ring"; }
+		ShowD MinionShields  { !NoticeNM2; !LVLMinion; !SF35; BaseType "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
 	}
 }
 
