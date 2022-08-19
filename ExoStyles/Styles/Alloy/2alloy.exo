@@ -1,0 +1,492 @@
+## DISABLE MOST DECORATORS
+Expand EndgameRareDecorators
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_map_zone12
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_map_zone34
+{
+    Disable;
+}
+
+Expand GeneralMapProgressionStrategy.deco_mapup
+{
+    Disable;
+}
+
+## SIMPLIFIED RARE HIGHLIGHT
+Expand RaresJewellery.T1
+{
+    SetBorderColor rares.base.jwl;
+    SetTextColor rares.base.jwl;
+    SetBackgroundColor rares.bg;
+    SetFontSize 45;
+}
+
+Expand RaresJewellery.T2
+{
+    SetBorderColor rares.base.jwl;
+    SetTextColor rares.base.jwl;
+    SetBackgroundColor rares.bg;
+    SetFontSize 40;
+}
+
+Expand RaresJewellery.T3
+{
+    SetBorderColor sBlack;
+    SetTextColor rares.base.jwl;
+    SetBackgroundColor rares.bg;
+    SetFontSize 40;
+}
+
+Expand RaresArmoursWeapons.T1
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 40;
+}
+
+Expand RaresArmoursWeapons.T2
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 40;
+}
+
+Expand RaresArmoursWeapons.T3
+{
+    SetBorderColor sBlack;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 40;
+}
+
+Expand RaresArmoursWeapons.T4
+{
+    SetBorderColor sBlack;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 40;
+}
+
+## UNIFIED UNIQUE COLORS
+Expand t1uni.T1
+{
+    SetTextColor uniquest2;
+}
+
+Expand t2uni.Any
+{
+   var acc = uniquest2;
+}
+
+Expand UniqueMapStrat
+{
+    Func T2()
+    {
+        SetBackgroundColor uniquest2;
+    }
+}
+
+## UNIFIED CURRENCY HIGHLIGHT
+
+Expand t8trans : PatternBlack
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 45;
+}
+
+Expand t9armour : PatternBlack
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 40;
+}
+
+Expand tportal
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 40;
+}
+
+Expand twisdom
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 40;
+}
+
+Expand tportHigh
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 40;
+}
+
+Expand twisdHigh
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 40;
+}
+
+## FRAGMENT TIERING
+Expand FragmentTierStrat 
+{
+    Func T1()
+    {
+        SetTextColor 255 0 0 255;
+        SetBorderColor 255 0 0 255;
+    }
+
+    Func T2()
+    {
+        SetTextColor tieringbase.low;
+        SetBackgroundColor highcurrency2;
+        SetTextColor tieringbase.low;
+    }
+
+    Func T3()
+    {
+        SetTextColor tieringbase.low;
+        SetBackgroundColor highcurrency1;
+        SetTextColor tieringbase.low;
+    }
+
+    Func T4()
+    {
+        SetTextColor tieringbase.low;
+        SetBackgroundColor midvaluecurrency
+        SetBorderColor tieringbase.low;
+    }
+
+    Func T5()
+    {
+        SetTextColor lowvaluecurrency;
+        SetFontSize 40;
+    }
+}
+
+## RESTORE GREY RECIPES, BY USING THE EXTRA COLOR SPACE
+Expand RecipeStrategy.T1
+{
+    SetBorderColor 220 220 220 255;
+    SetBackgroundColor rares.bg;
+    SetTextColor 220 220 220 255;
+}
+
+Expand RecipeStrategy.T2
+{
+    SetBorderColor 150 150 150 255;
+    SetBackgroundColor rares.bg;
+    SetTextColor 150 150 150 255;
+}
+
+Expand RecipeStrategy.T3
+{
+    SetBorderColor 150 150 150 255;
+    SetBackgroundColor rares.bg;
+    SetTextColor 150 150 150 255;
+}
+
+## MAPS
+
+## Maps adjustments
+
+Expand InfluencedMapsStrategy
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+
+Expand GeneralMapProgressionStrategy.SpecialHigh
+{
+    SetFontSize 45;
+    SetBorderColor sWhite;
+    SetTextColor sWhite;
+    SetBackgroundColor maps.special.extra
+}
+
+Expand GeneralMapProgressionStrategy.SpecialLow
+{
+    SetFontSize 45;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
+    SetBackgroundColor maps.special.extra
+}
+
+Expand GeneralMapProgressionStrategy.Z1
+{
+    SetFontSize 45;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
+    SetBackgroundColor maps.z1.acc;
+}
+
+Expand GeneralMapProgressionStrategy.Z2
+{
+    SetFontSize 45;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
+    SetBackgroundColor maps.z2.acc;
+}
+
+Expand GeneralMapProgressionStrategy.Z3
+{
+    SetFontSize 45;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
+    SetBackgroundColor maps.z3;
+}
+
+Expand GeneralMapProgressionStrategy.Z4
+{
+    SetFontSize 45;
+    SetBorderColor sBlack;
+    SetTextColor sBlack;
+    SetBackgroundColor maps.z4;
+}
+
+Expand t2divine
+{
+        SetTextColor tieringbase.High;
+        SetBorderColor tieringbase.High
+}
+
+Expand t3annul
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t4chaos
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t5alchemy
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t6chrom
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t7chance
+{
+        SetTextColor tieringbase.Low;
+        SetBorderColor tieringbase.Low;
+}
+
+Expand t2divi
+{
+        SetTextColor tieringbase.High;
+        SetBorderColor tieringbase.High
+}
+
+Expand t3divi
+{
+    SetTextColor tieringbase.Low;
+    SetBorderColor tieringbase.Low;
+}
+
+Expand t4divi
+{
+    SetTextColor tieringbase.Low;
+    SetBorderColor tieringbase.Low;
+}
+
+Expand t5divi
+{
+    SetTextColor sBlack;
+    SetBorderColor sBlack;
+    SetBackgroundColor lowvaluecurrency;
+    SetFontSize 45;
+}
+
+## Influcend gear
+
+Expand InfluencedVariant.T1
+{
+    SetTextColor influenced.gear.t1;
+}
+
+Expand InfluencedVariant.T2
+{
+    SetBorderColor influenced.gear.t3;
+    SetBackgroundColor 80 0 0 255;
+    SetTextColor influenced.gear.t3;
+}
+
+Expand InfluencedRandom
+{
+    SetBorderColor influenced.gear.t3;
+    SetBackgroundColor rares.bg;
+    SetTextColor influenced.gear.t3;
+}
+
+## Special bases - exceptions
+
+Expand UniversalExotic.T1
+{
+    SetBackgroundColor 6 43 83 255;
+    SetFontSize 45;
+}
+
+Expand UniversalExotic.T2
+{
+    SetBackgroundColor rares.bg;
+    SetFontSize 45;
+}
+
+Expand UniversalExotic.T3
+{
+    SetBackgroundColor rares.bg;
+    SetTextColor exoticgear.tx;
+    SetFontSize 45;
+}
+
+Expand UniversalExotic.T4
+{
+    SetBackgroundColor rares.bg;
+    SetTextColor exoticgear.tx.low;
+    SetFontSize 40;
+}
+
+Expand CraftSpecialStrategy.I86
+{
+    SetBorderColor exoticgear.tx;
+    SetTextColor 250 150 0 255;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftSpecialStrategy.I84
+{
+    SetBorderColor exoticgear.tx;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftSpecialStrategy.ANY
+{
+    SetBorderColor exoticgear.tx;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftGeneralStrategy.I86
+{
+    SetBorderColor 250 200 0 255;
+    SetBackgroundColor rares.bg;
+}
+
+Expand CraftGeneralStrategy.I84
+{
+    SetBorderColor 250 200 0 255;
+    SetBackgroundColor rares.bg;
+    Disable();
+}
+
+Expand CraftGeneralStrategy.ANY
+{
+    SetBackgroundColor rares.bg;
+    Disable();
+}
+
+### GEM EXPANSION
+
+Expand GemStrategy.P4
+{
+    TX gems.norm;
+    SetFontSize font.t5;
+}
+
+Expand GemStrategy.Leveling
+{
+    TX gems.norm;
+}
+
+Expand GemStrategy.VaalGem
+{
+    SetBackgroundColor gems.vaal;
+    SetFontSize 40;
+    TX gems.norm;
+}
+
+Expand GemStrategy.VaalLvl
+{
+    SetFontSize 45;
+    SetBackgroundColor gems.vaal;
+    MinimapIcon 2 White icon;
+    TX gems.norm;
+}
+
+Expand GemStrategy.FirstLevel
+{
+    SetFontSize 45;
+    TX gems.norm;
+}
+
+## UNIFY LEVELING HIGHLIGHT
+
+Expand UniversalValueAccents.LVLMinion
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Expand UniversalValueAccents.LVLCaster
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Expand UniversalValueAccents.LVLMelee
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Expand UniversalValueAccents.LVLArcher
+{
+    SetBorderColor rares.base.text;
+    SetBackgroundColor rares.bg;
+    SetTextColor rares.base.text;
+    SetFontSize 45;
+}
+
+Style FontUniversalSize
+{
+    Func Any()
+    {
+        SetFontSize 45;
+        SetTextColor 255 0 0 255;
+    }
+}

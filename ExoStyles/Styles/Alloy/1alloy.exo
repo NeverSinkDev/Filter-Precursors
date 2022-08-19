@@ -1,0 +1,112 @@
+var tieringbase.low = sBlack;
+var tieringbase.high = sWhite;
+
+## Base colors for tiering
+var lowvaluecurrency = 120 113 109 255;
+var midvaluecurrency = 200 138 101 255;
+var highcurrency1 = 201 192 187 255;
+var highcurrency2 = 234 178 43 255;
+
+## electric blue: 89 203 232 255
+
+## Uniques Base Pattern
+var uniqueBase = 0 129 171 255;
+
+## Uniques
+var uniquest2 = uniqueBase;
+var unique.tx = uniqueBase;
+var unique.extra = 0 4 40 255;
+
+# rares
+var rares.base.jwl = 124 222 111 255;
+var rares.base.text = 222 192 111 255;
+
+var rares.base.extra = 0 0 0 255;
+var rares.base.extralow = 0 0 0 255;
+var rares.low.acc = 0 0 0 255;
+var rares.notice = 100 100 100 255;
+
+var rares.bg = 53 53 53 255;
+
+## splinter base
+var splinters.text = sBlack;
+var splinters.extra = midvaluecurrency;
+var splinters.acc.t1 = sBlack;
+var splinters.acc.t2 = sBlack;
+var splinters.acc.t3 = sBlack;
+
+var heist.contracts.acc = 197 130 205 255;
+var heist.blueprints.acc = 197 130 205 255;
+var heist.blueprints.base = 40 0 30 255;
+
+## jewel overrides
+var jewel.magic.tx      = 93 152 238 255;
+var jewel.magic.extra   = rares.bg;
+var jewel.rare.tx 	    = 255 255 0 255;
+var jewel.rare.extra    = rares.bg;
+var jewel.cluster.tx    = 150 0 255 255;
+var jewel.cluster.extra = rares.bg;
+
+## maps
+var maps.z1.acc = 220 135 120 255;
+var maps.z2.acc = 220 135 120 255;
+var maps.z3 = 215 215 115 255;
+var maps.z4 = 170 200 180 255;
+
+var maps.influenced = 100 0 122 255;
+var maps.special.extra = 85 0 85 255;
+var maps.special.low.extra = 85 0 85 255;
+
+# exalted tier
+# var currency.acc.t1 =       highcurrency2;
+# divine/annul tiers
+var currency.acc.t2divine = highcurrency2;
+var currency.acc.t3annul =  highcurrency2;
+# chaos tier
+var currency.acc.t4chaos =  highcurrency1;
+# alchemy tier
+var currency.acc.t5alchemy =highcurrency1;
+# chromatic tiers
+var currency.acc.t6chrom =  midvaluecurrency;
+var currency.acc.t7chance = midvaluecurrency;
+# low tiers
+var currency.acc.t8trans =  lowvaluecurrency;
+var currency.acc.t9armour = lowvaluecurrency;
+# scrolls
+var currency.acc.tportal =  lowvaluecurrency;
+var currency.acc.twisdom =  lowvaluecurrency;
+
+# fragments and cards - fragments have a complete override
+# colors and fragments follow the same pattern as currency does
+var fragment.tx = midvaluecurrency;
+
+var divi.acc.t5 = lowvaluecurrency;
+var divi.acc.t4 = midvaluecurrency;
+var divi.acc.t3 = highcurrency1;
+var divi.acc.t2 = highcurrency2;
+var divi.acc.t1 = 255 0 0 255;
+var divi.acc.tnew = highcurrency1;
+
+var influenced.gear.t1 = 199 21 72 255;
+var influenced.gear.t2 = 199 21 72 255;
+var influenced.gear.t3 = 199 21 72 255;
+
+var league.playerequippable = 80 20 20 225;
+
+var league.sentinel.acc.stalker = 220 20 20 255;
+var league.sentinel.acc.pandemonium = 220 20 20 255;
+var league.sentinel.acc.apex = 220 20 20 255;
+
+var exoticgear.tx = 0 200 250 255;
+var exoticgear.tx.low = 0 200 250 200;
+
+var gems.t1 = 240 125 125 255;
+var gems.high = 240 125 125 255;
+var gems.norm = 220 153 220 255;
+var gems.low =  220 153 220 255;
+var gems.base = 60 10 60 255;
+var gems.vaal = 20 0 70 255;
+
+## grey recipes
+var recipe.t1.acc = rares.bg;
+var recipe.t2.acc = rares.bg;
