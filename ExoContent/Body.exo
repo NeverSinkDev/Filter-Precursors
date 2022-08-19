@@ -360,6 +360,11 @@ Section IdModSection : IdMods, !highvalueidmod
 			Show IdJewel_DOT { Mod >= 1 xJwl_dot_core; Mod <= 1 jwl_dot_unique; Mod >= 3 xJwl_dot_mix; BaseType genericJewels; }
 			Show IdJewel_CritAttack {  Mod >= 1 xJwl_crit_core_attack;  Mod >= 2 xJwl_crit_subCore_attack; Mod >= 3 xJwl_crit_mix_attack; BaseType genericJewels; }
 			Show IdJewel_CritSpell { Mod >= 1 xJwl_crit_core_spell; Mod >= 2 xJwl_crit_subCore_spell; Mod >= 3 xJwl_crit_mix_spell; BaseType genericJewels; }
+
+			Show IdAj_Attack { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
+			Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
+			Show IdAj_Minion { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
+			Show IdAj_Mixer { Mod >= 4 xAj_attack_aux + xAj_caster_aux + xAj_minion_aux; BaseType == "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel" "Ghastly Eye Jewel"; }
 		}
 	}
 }
