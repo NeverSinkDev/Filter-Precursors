@@ -370,9 +370,9 @@ Section IdModSection : IdMods, !highvalueidmod
 }
 
 #===============================================================================================================
-# [[9999]] IDENTIFIED MOD FILTERING - RECOMBINATION MATERIAL
+# [[9999]] IDENTIFIED MOD FILTERING - SINGLE MODS
 #===============================================================================================================
-#!! Override 045 : "recombination material"
+#!! Override 045 : "single mods"
 
 Section IdModSection : IdMods, Auto("MagicID"), !GSH
 {
@@ -388,6 +388,8 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		Show t1proj 	{ %D4; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
 		# plus one to all spell skills
 		Show t1amu	{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
+		# plus 2 to minions helmet
+		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class "Helmets"; }
 	}
 
 #------------------------------------
@@ -818,8 +820,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
-	Show WhiteSocketWeapons1H { %D4; !exotic.t4; !G4; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Shield" "Wand"; Sockets >= "3WWW"; }
-	Show WhiteSocketWeapons2H { %D6; !exotic.t1; !G2; Class "Staves" "Two Hand" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
+	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Shield" "Wand"; Sockets >= "3WWW"; }
+	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class "Staves" "Two Hand" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
 
 	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
@@ -887,7 +889,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 		Show T3DecentTypeTalisman { %H3; !G4; BaseType bases.talismans.universal.any; };
 		
-		Show Any { %H2; !G5; BaseType "Talisman"; }
+		Show Any { %H1; !G5; BaseType "Talisman"; }
 	}
 
 #===============================================================================================================
@@ -1278,7 +1280,7 @@ Section Gems : Class "Gems", !Gems
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
 		Show QT2 { !G3; %D5; !*P2; Quality >= 19 }
-		Show LT2 { !G4; %D4; !*P3; GemLevel >= 20 }
+		Show LT2 { !G4; %DS4; !*P3; GemLevel >= 20 }
 
 		Show QT3 { !G4; %D3; !*P3; Quality >= 14 }
 		Show LT3 { !G5; %D2; !*P4; GemLevel >= 18 }
@@ -1889,10 +1891,11 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 
 #!! Override 770 : "Only low tier uniques"
-	Show recipeUniqueRings { !G5H; %D2; !*t4; !special; Class "Rings"; }
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
-	Show highvinktar { !G3; %D0; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	Show exjewels    { !GSH; !*t4; !special; BaseType == uniques.jewels; }
+	
+	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
+	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class "Rings"; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
