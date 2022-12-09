@@ -1296,7 +1296,7 @@ Section Gems : Class "Gems", !Gems
 
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
-		Show QT2 { !G3; %D5; !*P2; Quality >= 19 }
+		Show QT2 { !G3; %D5; !*P2; Quality >= 20 }
 		Show LT2 { !G4; %DS4; !*P3; GemLevel >= 20 }
 
 		Show QT3 { !G4; %D3; !*P3; Quality >= 14 }
@@ -1917,7 +1917,9 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 
 #!! Override 770 : "Only low tier uniques"
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
-	Show exjewels    { !GSH; !*t4; !special; BaseType == uniques.jewels; }
+	
+	Show exjewelscorrupted    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Corrupted True; }
+	Show exjewels    		  { !GSH; !*t3; !SpecialNoB; BaseType == uniques.jewels; }
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class "Rings"; }
