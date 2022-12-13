@@ -1537,8 +1537,8 @@ Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class "Cu
 {
 	Show trans 	  { %D4; !G5H; !*t7chance; !Maximize; !LevelCurrency; StackSize >= 3; BaseType == currency.leveling.trans; }
 	Show aug      { %D4; !G5H; !t8trans; !Maximize;   StackSize >= 3; BaseType == currency.leveling.aug; }
-	Show portal   { %D4; !G5; !*twisdHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.portal; }
-	Show wisdom   { %D4; !G5; !*tportHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.wisdom; }
+	Show portal   { %D4; !G5; !*tportHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.portal; }
+	Show wisdom   { %D4; !G5; !*twisdHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.wisdom; }
 }
 
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
