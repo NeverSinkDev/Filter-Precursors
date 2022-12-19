@@ -98,15 +98,13 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 #   [1234] Common Tier - T2
 #------------------------------------
 
-Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-{
-	## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
-	Show t2_exo { !G4; %D5; BaseType bases.influenced.exotic2.t1; }
-	## Top Tier Common items of top item level
-	Show t2_86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common1.t1; };
-	## Top Tier Common items of item level 86+
-	## Show HighTier86 { !G4; %D5; ItemLevel >= 86; BaseType bases.influenced.common2.t1; };
-}
+	Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
+	{
+		## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
+		Show t2_exo { !G4; %D5; BaseType bases.influenced.exotic2.t1; }
+		## Top Tier Common items of top item level
+		Show t2_86 { !G4; %D4; ItemLevel >= 84; BaseType bases.rares.jwl.ringsamu.t1 + bases.rares.jwl.ringsamu.t2 + bases.rares.jwl.belts.t1 + bases.rares.jwl.belts.t2 + bases.rares.eg.t1.weapons + bases.rares.eg.t1.armours + bases.rares.eg.t2.weapons + bases.rares.eg.t2.armours; };
+	}
 
 #------------------------------------
 #   [1234] Specialised Tier - T2
@@ -155,7 +153,7 @@ Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Eld
 	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
 	{
 		Show AnyTrinket  { %D4; !GI; Class "Amulet" "Belts" "Rings"; }
-		Show AnyTopLevel { %D4; !GI; !tiny; ItemLevel >= 86; }
+		Show AnyTopLevel { %D3; !GI; !tiny; ItemLevel >= 86; }
 		Show Any 		 { %D3; !GI; Empty(); }
 	}
 }
@@ -602,9 +600,9 @@ Section ExoticVariations : !exotic
 #------------------------------------		
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
-			Show FractSelected { !GSH; %D6; !exotic.t3; BaseType bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS;  %D6; !exotic.t3; Class classes_fract }
-			Show FractRandom   { !GS;  %D5; !exotic.t4; Empty(); }
+			Show FractSelected { !GSH; %D6; !exotic.t2; BaseType bases.crafting.fractured.t1 }
+			Show FractClasses  { !GS;  %D5; !exotic.t3; Class classes_fract }
+			Show FractRandom   { !GS;  %D3; !exotic.t4; Empty(); }
 		}
 #------------------------------------
 #   [1234] Enchanted

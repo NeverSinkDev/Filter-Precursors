@@ -447,7 +447,7 @@ Style PatternHighWhite
 
 Style PatternLowWhite
 {
-	var fsize = font.t4;
+	var fsize = font.t5;
 	var msize = 0;
 	var acc = tier.error;
 	var base = sWhite;
@@ -1520,6 +1520,7 @@ Style InfluencedVariant : T1, T2YellowPiece
 	var icon = Cross;
 	var tier.t1.icon = Cross;
 	var sounds.t1 = sounds.t2;
+	var sounds.t2 = sounds.unique;
 
 	Func T1()
 	{ 
