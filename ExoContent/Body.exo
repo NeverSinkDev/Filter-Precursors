@@ -781,6 +781,12 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 # [2701] Endgame Flasks
 #------------------------------------
 
+	Section OverQualityFlasks : !GEX
+	{
+		Show OverQualUtil  { !G3; !exotic.t1; %D6; ItemLevel >= 82; Quality >= 29; Class "Utility Flasks"; }
+		Show OverQualLife  { !G3; !exotic.t1; %D6; ItemLevel >= 82; Quality >= 29; BaseType bases.flask.lifemanaassorted; }
+	}
+
 	Section SuperEndgameFlasks : !GEX
 	{
 		Show Utility85  { !G3; !utilflasks.LT1; %D5; ItemLevel >= 85; Class "Utility Flasks"; }
