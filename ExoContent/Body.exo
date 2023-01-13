@@ -167,13 +167,13 @@ Section Eldritch : Rarity <= Rare
 {
 	Section Exarch : Auto("rare->exarch")
 	{
-		Show AnyHigh { !G3; %D4; HasSearingExarchImplicit >= 2; BaseType == bases.eldritch.common.t1; }
+		Show AnyHigh { !G3; %D3; HasSearingExarchImplicit >= 2; BaseType == bases.eldritch.common.t1; }
 		Show Any 	 { !GI; %D3; HasSearingExarchImplicit >= 1; }
 	}
 
 	Section Eater : Auto("rare->eater")
 	{
-		Show AnyHigh { !G3; %D4; HasEaterOfWorldsImplicit >= 2; BaseType == bases.eldritch.common.t1; }
+		Show AnyHigh { !G3; %D3; HasEaterOfWorldsImplicit >= 2; BaseType == bases.eldritch.common.t1; }
 		Show Any 	 { !GI; %D3; HasEaterOfWorldsImplicit >= 1; }
 	}
 }
@@ -1253,11 +1253,11 @@ Section Gems : Class "Gems", !Gems
 		Show PhaT1 	{ !G1; !*T1; GemQualityType Phantasmal; BaseType gems.t1pha; }
 		Show AltAny { !G2; !*P1; AlternateQuality True; }
 		
-		Show 2020z 	{ !G3; !*P1; Quality >= 20; GemLevel >= 20; BaseType gems.t2_2020z }
+		Show 2020z 	{ !G3; !*P1; Quality >= 20; GemLevel >= 20; BaseType gems.t2_2020z; Corrupted False; }
 		Show 2120 	{ !G3; !*P1; Quality >= 20; GemLevel >= 21; BaseType gems.t2_2120 }
 		Show 2023 	{ !G3; !*P1; Quality >= 23; GemLevel >= 20; BaseType gems.t2_2023 }
-		Show 2123 	{ !G3; !*P1; Quality >= 23; GemLevel >= 21; BaseType gems.t2_2123 }
 
+		Show 2123any { !G3; !*P1; Quality >= 23; GemLevel >= 21; }
 
 		## Quality Vaal gems worth leveling
 		Show Vaal20 { !G2; !*P1; Quality >= 20; BaseType gems.t2_2020vaal }
@@ -1939,6 +1939,8 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class "Rings"; }
+	
+	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class uniques.classes.corrupted; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
@@ -1961,6 +1963,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { !G1; !Currency.t1exalted; BaseType miscmap.keys; }
+	Show RelicKeysSafe { !G1; !Currency.t1exalted; BaseType "Reliquary Key"; }
 	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum"; }
 }
 
