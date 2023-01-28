@@ -3,17 +3,28 @@
 ##   {META} CLASSES AND BASES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields"
-var classes_attack = "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves" "Wands";
+var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields";
+
+var classes_1hattack = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Wands";
+var classes_2hattack = "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows"; 
+var classes_attack = classes_1hattack + classes_2hattack;
+
 var classes_2hcast = "Staves";
 var classes_1hcast = "Rune Daggers" "Sceptres" "Wands";
-var classes_nonJwlryEquip = classes_armor + classes_attack + classes_2hcast + classes_1hcast + "Quivers";
-var classes_equip = "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand" "Wands" "Warstaves";
+var classes_cast = classes_2hcast + classes_1hcast;
+
+var classes_weapons = classes_cast + classes_attack;
+var classes_1h = classes_1hattack + classes_1hcast + "Shields";
+var classes_2h = classes_2hattack + classes_2hcast;
+
+var classes_weapons_melee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
+var classes_weapons_ranged = "Wands" "Bows";
+
+var classes_nonJwlryEquip = classes_armor + classes_weapons + "Quivers";
 var classes_jewellery = "Amulets" "Belts" "Rings";
+var classes_equip = classes_nonJwlryEquip + classes_jewellery;
 
 var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
-
-var rare_gear_classes =  "Rune Daggers" "Daggers" "Claws" "Wands" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Sceptres" "Warstaves" "Staves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows" "Boots" "Gloves" "Helmets" "Body Armours" "Shields" "Shields" "Quivers";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOBALLY INTERESTING MODS

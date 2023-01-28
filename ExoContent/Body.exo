@@ -467,9 +467,9 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
 		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
 		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
-		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
+		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class classes_attack; }
 		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
-		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class classes_cast + classes_1hattack; }
 		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
 		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
 
@@ -833,8 +833,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
-	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Shield" "Wand"; Sockets >= "3WWW"; }
-	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class "Staves" "Two Hand" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
+	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class classes_weapons_melee; Sockets >= "3WWW"; }
+	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class classes_2h; Sockets >= "6WWWWWW"; }
 
 	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
@@ -842,10 +842,10 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !G
 
 Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 {
-	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand" "Warstaves";}
-	ShowD normalranged { Rarity Normal; Class "Bows" "Wands";}
-	ShowD magicmelee   { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand" "Warstaves";}
-	ShowD magicranged  { Rarity Magic; Class "Bows" "Wands";}
+	ShowD normalmelee  { Rarity Normal; Class classes_weapons_melee;}
+	ShowD normalranged { Rarity Normal; Class classes_weapons_ranged;}
+	ShowD magicmelee   { Rarity Magic; Class classes_weapons_melee;}
+	ShowD magicranged  { Rarity Magic; Class classes_weapons_ranged;}
 }
 
 #===============================================================================================================
@@ -989,7 +989,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 #!! Override 270 : "T4 rares remaining"
 
-		Show t4endgamerares { !GR4; %D1; Class rare_gear_classes; }
+		Show t4endgamerares { !GR4; %D1; Class classes_nonJwlryEquip; }
 	}
 }
 
