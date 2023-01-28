@@ -152,7 +152,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 
 	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
 	{
-		Show AnyTrinket  { %D4; !GI; Class "Amulets" "Belts" "Rings"; }
+		Show AnyTrinket  { %D4; !GI; Class == classes_jewellery; }
 		Show AnyTopLevel { %D3; !GI; !tiny; ItemLevel >= 86; }
 		Show Any 		 { %D3; !GI; Empty(); }
 	}
@@ -379,13 +379,13 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 	Section TopValue : Rarity <= Rare, Corrupted False
 	{
 		# +1 to all global spell skill levels + convoking minion levels
-		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 proj ranged weapons
-		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
+		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class == "Bows" "Wands"; }
 		# plus one to all spell skills
-		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
+		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class == "Amulets"; }
 		# plus 2 to minions helmet
-		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class "Helmets"; }
+		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class == "Helmets"; }
 	}
 
 #------------------------------------
@@ -396,22 +396,22 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 	Section HighHybridPure : Corrupted False, Rarity <= Rare
 	{
 		# +1 to all global elemental gems and DOT t1
-		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class "Amulets"; }
+		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
 		# +1 to all arrows quivers
-		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
+		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
 		# +1 to all global elemental gems + spell damage t1
-		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 to all maximum resists shield
-		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class "Shields"; }
+		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
 		# Uncorrupted Suppression Gear from Dexterity Equip
-		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
+		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == "Gloves" "Boots" "Helmets"; }
 		# Uncorrupted Tyrranical weapons
-		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
+		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
 		# DOT Sceptres and Wands
-		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
-		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
+		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
+		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
 		# Elemental Weapons
-		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
+		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == "Claws" "Wands" "Bows"; }
 	}
 
 #------------------------------------
@@ -420,16 +420,16 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 ## This section is designed to look for multiple T1 mods in corrupted items for use in recombinators
 	Section MultipleMods : Rarity <= Rare
 	{
-		ShowD RecoGloves    { %D4; Class "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
-		ShowD RecoBoots     { %D4; Class "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
-		ShowD RecoHelmets   { %D4; Class "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
-		ShowD RecoWeapons   { %D4; Class "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
-		ShowD RecoRings	    { %D4; Class "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
+		ShowD RecoGloves    { %D4; Class == "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
+		ShowD RecoBoots     { %D4; Class == "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
+		ShowD RecoHelmets   { %D4; Class == "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
+		ShowD RecoWeapons   { %D4; Class == "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
+		ShowD RecoRings	    { %D4; Class == "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
 
-		ShowD RecoCasterFire	    { %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_fire; }
-		ShowD RecoCasterCold	    { %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_cold; }
-		ShowD RecoCasterLight 	 	{ %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_light; }
-		ShowD RecoCasterPhys 	 	{ %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_phys; }
+		ShowD RecoCasterFire	    { %D4; Class == classes_1hcast; Mod >= 2 xr_caster_fire; }
+		ShowD RecoCasterCold	    { %D4; Class == classes_1hcast; Mod >= 2 xr_caster_cold; }
+		ShowD RecoCasterLight 	 	{ %D4; Class == classes_1hcast; Mod >= 2 xr_caster_light; }
+		ShowD RecoCasterPhys 	 	{ %D4; Class == classes_1hcast; Mod >= 2 xr_caster_phys; }
 	}	
 }
 
@@ -573,7 +573,7 @@ Section ExoticVariations : !exotic
 	{
 		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
-			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; Class classes_trinkets; }
+			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; Class == classes_trinkets; }
 			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; Empty(); }
 		}
 	}
@@ -584,7 +584,7 @@ Section ExoticVariations : !exotic
 	{
 		Section AbyssJewelItems : SocketGroup "A", Auto("exotic->sockets")
 		{
-			Show AnyNonBelt { !GSH; !exotic.t2; Class classes_nonJwlryEquip; }
+			Show AnyNonBelt { !GSH; !exotic.t2; Class == classes_nonJwlryEquip; }
 		}
 
 #------------------------------------
@@ -593,7 +593,7 @@ Section ExoticVariations : !exotic
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
 			Show SynthSelected { !GSH; %D6; !exotic.t2; BaseType bases.crafting.synthesised.t1 }
-			Show SynthClasses  { !GSH; %D6; !exotic.t2; Class classes_synth }
+			Show SynthClasses  { !GSH; %D6; !exotic.t2; Class == classes_synth }
 			Show SynthRandom   { !GS;  %D5; !exotic.t3; Empty(); }
 		}
 #------------------------------------
@@ -602,7 +602,7 @@ Section ExoticVariations : !exotic
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
 			Show FractSelected { !GSH; %D6; !exotic.t2; BaseType bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS;  %D5; !exotic.t3; Class classes_fract }
+			Show FractClasses  { !GS;  %D5; !exotic.t3; Class == classes_fract }
 			Show FractRandom   { !GS;  %D3; !exotic.t4; Empty(); }
 		}
 #------------------------------------
@@ -833,10 +833,10 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
-	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class classes_weapons_melee; Sockets >= "3WWW"; }
+	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class == classes_weapons_melee; Sockets >= "3WWW"; }
 	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class == classes_2h; Sockets >= "6WWWWWW"; }
 
-	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
+	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class == classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class == "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
@@ -1211,6 +1211,7 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 # [3003] Heist Gear
 #------------------------------------
+
 #!! Override 330 : "Heist Gear"
 	Section HeistGear : Class "Heist Gear", Auto("Heist->Gear")
 	{
@@ -1911,7 +1912,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5703] Exceptions #2
 #------------------------------------
 	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
-	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class "Boots" "Gloves" "Helmets" }
+	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class == "Boots" "Gloves" "Helmets" }
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
@@ -1940,7 +1941,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class "Rings"; }
 	
-	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class uniques.classes.corrupted; }
+	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == uniques.classes.corrupted; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
@@ -2026,7 +2027,7 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 #------------------------------------
 #!! Override 820 : "leveling life and mana flasks"
 
-Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
+Section LevelingHybridFlasks : Class "Hybrid Flasks", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
 {
 	Show t1 { %H2; FlaskHighlight(20, "Small");}
 	Show t2 { %H2; FlaskHighlight(30, "Medium");}
@@ -2039,7 +2040,7 @@ Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hyb
 #------------------------------------
 # [6002] Life flasks
 #------------------------------------
-Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
+Section LevelingLifeFlasks : Class "Life Flasks", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
 {
 	Show t1  { FlaskHighlight(5, "Small");}
 	Show t2  { FlaskHighlight(8, "Medium");}
@@ -2058,7 +2059,7 @@ Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"),
 #------------------------------------
 # [6002] Mana flasks
 #------------------------------------
-Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
+Section LevelingManaFlasks : Class "Mana Flasks", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
 {
 	Show t1 {FlaskHighlight(5, "Small");}
 	Show t2 {FlaskHighlight(8, "Medium");}
@@ -2220,13 +2221,13 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1"), !G6H, !GLVL1
 	{
-		Show CasterWeapons { %D4; !LVLCaster; !ThreeLink; !SF40; Sockets >= 3; Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
+		Show CasterWeapons { %D4; !LVLCaster; !ThreeLink; !SF40; Sockets >= 3; Class == "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
 		Show CasterCraftRings { %D4; !NoticeNM0; !SF40; BaseType leveling.bases.act1.craftrings; }
 		Show General { %D4; !NoticeNM0; !SF40; BaseType leveling.bases.act1.general; }
 		Show Boots { %D4; !NoticeNM0; !SF40; Rarity Magic; Class "Boots"; }
 		Show Quivers { %D4; !LVLArcher; !SF40; Class "Quivers" }
 		Show Physical { %D4; !NoticeNM0; !SF40; BaseType "Rustic Sash" "Iron Ring"; }
-		Show Jewellery { %D4; !NoticeNM1; !SF40; Class classes_jewellery; }
+		Show Jewellery { %D4; !NoticeNM1; !SF40; Class == classes_jewellery; }
 	}
 	
 	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2"), !G6, !GLVL2
@@ -2256,8 +2257,8 @@ Section LevelingMiscGear : Rarity <= Magic
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
-	Show EarlyBodyArmours	{ %H2; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; }
-	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
+	Show EarlyBodyArmours	{ %H2; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class == "Body Armours"; }
+	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields"; }
 	Show FirstAreas 		{ %H3; !G7; !NoticeNM3;  !SF35; AreaLevel <= 4; Rarity Normal; }
 }
 
