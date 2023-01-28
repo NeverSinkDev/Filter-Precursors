@@ -467,7 +467,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
 		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
 		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
-		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand" "Warstaves"; }
+		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"; }
 		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
 		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
 		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
@@ -834,7 +834,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
 	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Shield" "Wand"; Sockets >= "3WWW"; }
-	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class "Staves" "Two Hand" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
+	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
 
 	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
 	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
@@ -842,9 +842,9 @@ Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !G
 
 Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 {
-	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand" "Warstaves";}
+	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves";}
 	ShowD normalranged { Rarity Normal; Class "Bows" "Wands";}
-	ShowD magicmelee   { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand" "Warstaves";}
+	ShowD magicmelee   { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves";}
 	ShowD magicranged  { Rarity Magic; Class "Bows" "Wands";}
 }
 
@@ -2338,7 +2338,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class classes_equip
 
 Section HideLayerFinal : Auto("HideLayer")
 {
-	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
+	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves"; }
 }
 
 #------------------------------------
