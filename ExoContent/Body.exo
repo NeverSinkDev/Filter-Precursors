@@ -152,7 +152,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 
 	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
 	{
-		Show AnyTrinket  { %D4; !GI; Class "Amulet" "Belts" "Rings"; }
+		Show AnyTrinket  { %D4; !GI; Class == classes_jewellery; }
 		Show AnyTopLevel { %D3; !GI; !tiny; ItemLevel >= 86; }
 		Show Any 		 { %D3; !GI; Empty(); }
 	}
@@ -223,7 +223,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 	Section Rare : Rarity "Rare", Auto("RareID"), !GSH
 	{
-		Section Weapons : Class classes_attack, DropLevel >= 55, Mod xattackphys_Core
+		Section Weapons : Class == classes_attack, DropLevel >= 55, Mod xattackphys_Core
 		{
 			Show Weapon_Phys     { Mod >= 3 xattackphys_Conf; }
 			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Corrupted False; }
@@ -241,9 +241,9 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 		Section GemLevels
 		{
-			Show Gem_Bow 	{ Class "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
-			Show Gem_Caster { Class classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
-			Show Gem_Staves { Class classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
+			Show Gem_Bow 	{ Class == "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
+			Show Gem_Caster { Class == classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
+			Show Gem_Staves { Class == classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
 		}
 #------------------------------------
 #   [1234] Caster
@@ -267,7 +267,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Helmets
 #------------------------------------
-		Section Helmets : Class "Helmets"
+		Section Helmets : Class == "Helmets"
 		{
 			Show Helmet_Life_based { Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix2; }
 			Show Helmet_ES_based   { Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; }
@@ -275,7 +275,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Boots
 #------------------------------------
-		Section Boots : Class "Boots"
+		Section Boots : Class == "Boots"
 		{
 			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; }
 			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; }
@@ -283,7 +283,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
-		Section Gloves : Class "Gloves"
+		Section Gloves : Class == "Gloves"
 		{
 			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; }
 			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; }
@@ -291,7 +291,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
-		Section Shields : Class "Shields"
+		Section Shields : Class == "Shields"
 		{
 			Show Shield_ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
 			Show Shield_DefenseFocus    { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
@@ -301,7 +301,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Amulets
 #------------------------------------
-		Section Amulets : Class "Amulets"
+		Section Amulets : Class == "Amulets"
 		{
 			Show Amu_exalter { Mod "Exalter's"; Corrupted False; Mirrored False; }
 
@@ -317,7 +317,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Rings
 #------------------------------------		
-		Section Rings : Class "Rings"
+		Section Rings : Class == "Rings"
 		{
 			Show Ring_Caster { Mod xring_core; Mod >= 4 xring_cast_mix; }
 			Show Ring_Attack { Mod xring_core; Mod >= 4 xring_attack_mix; }
@@ -325,7 +325,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Quivers
 #------------------------------------	
-		Section Quivers : Class "Quivers"
+		Section Quivers : Class == "Quivers"
 		{
 			Show Quiv_Hit { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_hit; }
 			Show Quiv_Dot { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_dot; }
@@ -333,7 +333,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Body Armours
 #------------------------------------	
-		Section Body : Class "Body Armours", DropLevel >= 55
+		Section Body : Class == "Body Armours", DropLevel >= 55
 		{
 			Show Body_Life 		  { %D5; Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
 			Show Body_Defense 	  { %D5; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Corrupted False; }
@@ -343,7 +343,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
-		Section Belts : Class "Belts"
+		Section Belts : Class == "Belts"
 		{
 			Show Belt_General {  %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; }
 		}
@@ -379,13 +379,13 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 	Section TopValue : Rarity <= Rare, Corrupted False
 	{
 		# +1 to all global spell skill levels + convoking minion levels
-		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 proj ranged weapons
-		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class "Bows" "Wands"; }
+		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class == "Bows" "Wands"; }
 		# plus one to all spell skills
-		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class "Amulets"; }
+		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class == "Amulets"; }
 		# plus 2 to minions helmet
-		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class "Helmets"; }
+		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class == "Helmets"; }
 	}
 
 #------------------------------------
@@ -396,22 +396,22 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 	Section HighHybridPure : Corrupted False, Rarity <= Rare
 	{
 		# +1 to all global elemental gems and DOT t1
-		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class "Amulets"; }
+		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
 		# +1 to all arrows quivers
-		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class "Quivers"; }
+		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
 		# +1 to all global elemental gems + spell damage t1
-		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 to all maximum resists shield
-		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class "Shields"; }
+		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
 		# Uncorrupted Suppression Gear from Dexterity Equip
-		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class "Gloves" "Boots" "Helmets"; }
+		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == "Gloves" "Boots" "Helmets"; }
 		# Uncorrupted Tyrranical weapons
-		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class classes_attack; }
+		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
 		# DOT Sceptres and Wands
-		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class "Wands" "Rune Daggers"; }
-		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class "Sceptres"; }
+		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
+		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
 		# Elemental Weapons
-		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class "Claws" "Wands" "Bows"; }
+		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == "Claws" "Wands" "Bows"; }
 	}
 
 #------------------------------------
@@ -420,16 +420,16 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 ## This section is designed to look for multiple T1 mods in corrupted items for use in recombinators
 	Section MultipleMods : Rarity <= Rare
 	{
-		ShowD RecoGloves    { %D4; Class "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
-		ShowD RecoBoots     { %D4; Class "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
-		ShowD RecoHelmets   { %D4; Class "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
-		ShowD RecoWeapons   { %D4; Class "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
-		ShowD RecoRings	    { %D4; Class "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
+		ShowD RecoGloves    { %D4; Class == "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
+		ShowD RecoBoots     { %D4; Class == "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
+		ShowD RecoHelmets   { %D4; Class == "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
+		ShowD RecoWeapons   { %D4; Class == "Wands" "Bows" "Claws"; Mod >= 2 xr_eleweapons1; }
+		ShowD RecoRings	    { %D4; Class == "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
 
-		ShowD RecoCasterFire	    { %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_fire; }
-		ShowD RecoCasterCold	    { %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_cold; }
-		ShowD RecoCasterLight 	 	{ %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_light; }
-		ShowD RecoCasterPhys 	 	{ %D4; Class "Rune Daggers" "Wands" "Sceptres"; Mod >= 2 xr_caster_phys; }
+		ShowD RecoCasterFire	    { %D4; Class == classes_1hcast; Mod >= 2 xr_caster_fire; }
+		ShowD RecoCasterCold	    { %D4; Class == classes_1hcast; Mod >= 2 xr_caster_cold; }
+		ShowD RecoCasterLight 	 	{ %D4; Class == classes_1hcast; Mod >= 2 xr_caster_light; }
+		ShowD RecoCasterPhys 	 	{ %D4; Class == classes_1hcast; Mod >= 2 xr_caster_phys; }
 	}	
 }
 
@@ -462,14 +462,14 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
-		Show IncursionSpeedTraps { !GSH; %D5; !exotic.t2; Mod "Matatl's"; Class "Boots"; }
-		Show IncursionCaster     { !GSH; %D5; !exotic.t2; Mod "Matatl's" "Tacati" "Topotante's"; Class "Shields" "Rune Dagger" "Sceptres" "Staves" "Wands" "Sceptres"; }
-		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class "Bows" "Claws" "Daggers" "Thrusting"; }
-		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class "Amulets" "Belts" "Rings"; }
-		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class "Gloves" "Helmets"; }
-		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class "Bows" "Claws" "Daggers" "One Hand" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves"; }
-		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class "Body Armours"; }
-		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class "Claws" "Daggers" "One Hand" "Sceptres" "Staves" "Wands"; }
+		Show IncursionSpeedTraps { !GSH; %D5; !exotic.t2; Mod "Matatl's"; Class == "Boots"; }
+		Show IncursionCaster     { !GSH; %D5; !exotic.t2; Mod "Matatl's" "Tacati" "Topotante's"; Class == "Shields" "Rune Daggers" "Sceptres" "Staves" "Wands" "Sceptres"; }
+		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class == "Bows" "Claws" "Daggers" "Thrusting One Hand Swords"; }
+		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class == "Amulets" "Belts" "Rings"; }
+		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class == "Gloves" "Helmets"; }
+		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class == classes_attack; }
+		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class == "Body Armours"; }
+		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class == classes_cast + classes_1hattack; }
 		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
 		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
 
@@ -573,7 +573,7 @@ Section ExoticVariations : !exotic
 	{
 		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2, Auto("exotic->corruptions")
 		{
-			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; Class "Amulet" "Belt" "Jewel" "Ring"; }
+			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; Class == classes_trinkets; }
 			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; Empty(); }
 		}
 	}
@@ -584,7 +584,7 @@ Section ExoticVariations : !exotic
 	{
 		Section AbyssJewelItems : SocketGroup "A", Auto("exotic->sockets")
 		{
-			Show AnyNonBelt { !GSH; !exotic.t2; Class classes_nonJwlryEquip; }
+			Show AnyNonBelt { !GSH; !exotic.t2; Class == classes_nonJwlryEquip; }
 		}
 
 #------------------------------------
@@ -593,7 +593,7 @@ Section ExoticVariations : !exotic
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
 			Show SynthSelected { !GSH; %D6; !exotic.t2; BaseType bases.crafting.synthesised.t1 }
-			Show SynthClasses  { !GSH; %D6; !exotic.t2; Class classes_synth }
+			Show SynthClasses  { !GSH; %D6; !exotic.t2; Class == classes_synth }
 			Show SynthRandom   { !GS;  %D5; !exotic.t3; Empty(); }
 		}
 #------------------------------------
@@ -602,7 +602,7 @@ Section ExoticVariations : !exotic
 		Section Fractured : FracturedItem True, Auto("exotic->fractured")
 		{
 			Show FractSelected { !GSH; %D6; !exotic.t2; BaseType bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS;  %D5; !exotic.t3; Class classes_fract }
+			Show FractClasses  { !GS;  %D5; !exotic.t3; Class == classes_fract }
 			Show FractRandom   { !GS;  %D3; !exotic.t4; Empty(); }
 		}
 #------------------------------------
@@ -833,19 +833,19 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
-	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Shield" "Wand"; Sockets >= "3WWW"; }
-	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves" "Bows"; Sockets >= "6WWWWWW"; }
+	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class == classes_weapons_melee; Sockets >= "3WWW"; }
+	Show WhiteSocketWeapons2H { %D5; !exotic.t1; !G2; Class == classes_2h; Sockets >= "6WWWWWW"; }
 
-	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class classes_equip }
-	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class "Body Armours" "Boots" "Gloves" "Helmets"; }
+	Show Overquality       { %D1; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class == classes_equip }
+	Show EarlyEndgame4Link { %D1; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class == "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
 Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 {
-	ShowD normalmelee  { Rarity Normal; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves";}
-	ShowD normalranged { Rarity Normal; Class "Bows" "Wands";}
-	ShowD magicmelee   { Rarity Magic; Class "Claws" "Daggers" "One Hand" "Rune Dagger" "Thrusting" "Sceptres" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves";}
-	ShowD magicranged  { Rarity Magic; Class "Bows" "Wands";}
+	ShowD normalmelee  { Rarity Normal; Class classes_weapons_melee;}
+	ShowD normalranged { Rarity Normal; Class classes_weapons_ranged;}
+	ShowD magicmelee   { Rarity Magic; Class classes_weapons_melee;}
+	ShowD magicranged  { Rarity Magic; Class classes_weapons_ranged;}
 }
 
 #===============================================================================================================
@@ -911,7 +911,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section OptionalRare : Auto("RareOptional")
 	{
-		HideD IdHider { !GEX; !Shrink; Identified True; Class classes_equip; }
+		HideD IdHider { !GEX; !Shrink; Identified True; Class == classes_equip; }
 	}
 
 #===============================================================================================================
@@ -955,41 +955,41 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 #!! Override 255 : "Identified Item Handling"
 
-		Show IdentifiedItemHandling { %D3; !GS; !exotic.t4; Identified True; Corrupted False; Mirrored False; Class classes_equip; }
+		Show IdentifiedItemHandling { %D3; !GS; !exotic.t4; Identified True; Corrupted False; Mirrored False; Class == classes_equip; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
 #===============================================================================================================
 #!! Override 260 : "T3 rares - droplevel-based"
 
-		Show t3runedaggers { !GR3; %D2; BaseType bases.rares.eg.t3runedaggers; Class "Rune Daggers"; }
-		Show t3daggers 	{ !GR3; %D2; BaseType bases.rares.eg.t3daggers; Class "Daggers"; }
-		Show t3claws { !GR3; %D2; BaseType bases.rares.eg.t3claws; Class "Claws"; }
-		Show t3wands { !GR3; %D2; BaseType bases.rares.eg.t3wands; Class "Wands"; }
-		Show t3foils { !GR3; %D2; BaseType bases.rares.eg.t3foils; Class "Thrusting One Hand Swords"; }
-		Show t3swords1h { !GR3; %D2; BaseType bases.rares.eg.t3swords1h; Class "One Hand Swords"; }
-		Show t3maces1h { !GR3; %D2; BaseType bases.rares.eg.t3maces1h; Class "One Hand Maces"; }
-		Show t3axes1h { !GR3; %D2; BaseType bases.rares.eg.t3axes1h; Class "One Hand Axes"; }
-		Show t3sceptres { !GR3; %D2; BaseType bases.rares.eg.t3sceptres; Class "Sceptres"; }
-		Show t3warstaves { !GR3; %D2; BaseType bases.rares.eg.t3warstaves; Class "Warstaves"; }
-		Show t3staves  { !GR3; %D2; BaseType bases.rares.eg.t3staves; Class "Staves"; }
-		Show t3swords2h { !GR3; %D2; BaseType bases.rares.eg.t3swords2h; Class "Two Hand Swords"; }
-		Show t3axes2h  { !GR3; %D2; BaseType bases.rares.eg.t3axes2h; Class "Two Hand Axes"; }
-		Show t3maces2h { !GR3; %D2; BaseType bases.rares.eg.t3maces2h; Class "Two Hand Maces"; }
-		Show t3bows    { !GR3; %D2; BaseType bases.rares.eg.t3bows; Class "Bows"; }
-		Show t3boots   { !GR3; %D2; BaseType bases.rares.eg.t3boots; Class "Boots"; }
-		Show t3gloves  { !GR3; %D2; BaseType bases.rares.eg.t3gloves; Class "Gloves"; }
-		Show t3helmets { !GR3; %D2; BaseType bases.rares.eg.t3helmets; Class "Helmets"; }
-		Show t3body    { !GR3; %D2; BaseType bases.rares.eg.t3body; Class "Body Armours"; }
-		Show t3shields { !GR3; %D2; BaseType bases.rares.eg.t3shields; Class "Shields"; }
-		Show t3quivers { !GR3; %D2; BaseType bases.rares.eg.t3quivers; Class "Quivers"; }
+		Show t3runedaggers { !GR3; %D2; BaseType bases.rares.eg.t3runedaggers; Class == "Rune Daggers"; }
+		Show t3daggers 	{ !GR3; %D2; BaseType bases.rares.eg.t3daggers; Class == "Daggers"; }
+		Show t3claws { !GR3; %D2; BaseType bases.rares.eg.t3claws; Class == "Claws"; }
+		Show t3wands { !GR3; %D2; BaseType bases.rares.eg.t3wands; Class == "Wands"; }
+		Show t3foils { !GR3; %D2; BaseType bases.rares.eg.t3foils; Class == "Thrusting One Hand Swords"; }
+		Show t3swords1h { !GR3; %D2; BaseType bases.rares.eg.t3swords1h; Class == "One Hand Swords"; }
+		Show t3maces1h { !GR3; %D2; BaseType bases.rares.eg.t3maces1h; Class == "One Hand Maces"; }
+		Show t3axes1h { !GR3; %D2; BaseType bases.rares.eg.t3axes1h; Class == "One Hand Axes"; }
+		Show t3sceptres { !GR3; %D2; BaseType bases.rares.eg.t3sceptres; Class == "Sceptres"; }
+		Show t3warstaves { !GR3; %D2; BaseType bases.rares.eg.t3warstaves; Class == "Warstaves"; }
+		Show t3staves  { !GR3; %D2; BaseType bases.rares.eg.t3staves; Class == "Staves"; }
+		Show t3swords2h { !GR3; %D2; BaseType bases.rares.eg.t3swords2h; Class == "Two Hand Swords"; }
+		Show t3axes2h  { !GR3; %D2; BaseType bases.rares.eg.t3axes2h; Class == "Two Hand Axes"; }
+		Show t3maces2h { !GR3; %D2; BaseType bases.rares.eg.t3maces2h; Class == "Two Hand Maces"; }
+		Show t3bows    { !GR3; %D2; BaseType bases.rares.eg.t3bows; Class == "Bows"; }
+		Show t3boots   { !GR3; %D2; BaseType bases.rares.eg.t3boots; Class == "Boots"; }
+		Show t3gloves  { !GR3; %D2; BaseType bases.rares.eg.t3gloves; Class == "Gloves"; }
+		Show t3helmets { !GR3; %D2; BaseType bases.rares.eg.t3helmets; Class == "Helmets"; }
+		Show t3body    { !GR3; %D2; BaseType bases.rares.eg.t3body; Class == "Body Armours"; }
+		Show t3shields { !GR3; %D2; BaseType bases.rares.eg.t3shields; Class == "Shields"; }
+		Show t3quivers { !GR3; %D2; BaseType bases.rares.eg.t3quivers; Class == "Quivers"; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T4 - rest
 #===============================================================================================================
 #!! Override 270 : "T4 rares remaining"
 
-		Show t4endgamerares { !GR4; %D1; Class rare_gear_classes; }
+		Show t4endgamerares { !GR4; %D1; Class classes_nonJwlryEquip; }
 	}
 }
 
@@ -1211,6 +1211,7 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 # [3003] Heist Gear
 #------------------------------------
+
 #!! Override 330 : "Heist Gear"
 	Section HeistGear : Class "Heist Gear", Auto("Heist->Gear")
 	{
@@ -1913,7 +1914,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5703] Exceptions #2
 #------------------------------------
 	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
-	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class "Boots" "Gloves" "Helmets" }
+	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class == "Boots" "Gloves" "Helmets" }
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
@@ -1942,7 +1943,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class "Rings"; }
 	
-	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class uniques.classes.corrupted; }
+	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == uniques.classes.corrupted; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
@@ -2028,7 +2029,7 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 #------------------------------------
 #!! Override 820 : "leveling life and mana flasks"
 
-Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
+Section LevelingHybridFlasks : Class "Hybrid Flasks", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
 {
 	Show t1 { %H2; FlaskHighlight(20, "Small");}
 	Show t2 { %H2; FlaskHighlight(30, "Medium");}
@@ -2041,7 +2042,7 @@ Section LevelingHybridFlasks : Class "Hybrid Flask", Auto("Leveling->Flasks->Hyb
 #------------------------------------
 # [6002] Life flasks
 #------------------------------------
-Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
+Section LevelingLifeFlasks : Class "Life Flasks", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
 {
 	Show t1  { FlaskHighlight(5, "Small");}
 	Show t2  { FlaskHighlight(8, "Medium");}
@@ -2060,7 +2061,7 @@ Section LevelingLifeFlasks : Class "Life Flask", Auto("Leveling->Flasks->Life"),
 #------------------------------------
 # [6002] Mana flasks
 #------------------------------------
-Section LevelingManaFlasks : Class "Mana Flask", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
+Section LevelingManaFlasks : Class "Mana Flasks", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
 {
 	Show t1 {FlaskHighlight(5, "Small");}
 	Show t2 {FlaskHighlight(8, "Medium");}
@@ -2222,13 +2223,13 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1"), !G6H, !GLVL1
 	{
-		Show CasterWeapons { %D4; !LVLCaster; !ThreeLink; !SF40; Sockets >= 3; Class "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
+		Show CasterWeapons { %D4; !LVLCaster; !ThreeLink; !SF40; Sockets >= 3; Class == "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
 		Show CasterCraftRings { %D4; !NoticeNM0; !SF40; BaseType leveling.bases.act1.craftrings; }
 		Show General { %D4; !NoticeNM0; !SF40; BaseType leveling.bases.act1.general; }
 		Show Boots { %D4; !NoticeNM0; !SF40; Rarity Magic; Class "Boots"; }
 		Show Quivers { %D4; !LVLArcher; !SF40; Class "Quivers" }
 		Show Physical { %D4; !NoticeNM0; !SF40; BaseType "Rustic Sash" "Iron Ring"; }
-		Show Jewellery { %D4; !NoticeNM1; !SF40; Class classes_jewellery; }
+		Show Jewellery { %D4; !NoticeNM1; !SF40; Class == classes_jewellery; }
 	}
 	
 	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2"), !G6, !GLVL2
@@ -2258,8 +2259,8 @@ Section LevelingMiscGear : Rarity <= Magic
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
-	Show EarlyBodyArmours	{ %H2; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class "Body Armours"; }
-	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class "Boots" "Gloves" "Helmets" "Shields"; }
+	Show EarlyBodyArmours	{ %H2; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class == "Body Armours"; }
+	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields"; }
 	Show FirstAreas 		{ %H3; !G7; !NoticeNM3;  !SF35; AreaLevel <= 4; Rarity Normal; }
 }
 
