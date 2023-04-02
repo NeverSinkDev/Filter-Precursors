@@ -189,7 +189,7 @@ Section Eldritch : Rarity <= Rare
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
-	Show ExoticHeistBases 	  { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticHeistBases 	  { !GSH; BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { !GSH; BaseType bases.exotic.ritual.any }
 	Show ExoticLakeKala 	  { !GSH; BaseType bases.exotic.lakeKala.any }
 	Show ExoticExpeditionBases{ %D5; !GSH; BaseType bases.exotic.expedition.any + "Iron Flask" }
@@ -1380,10 +1380,10 @@ Section Maps : Class "Maps", !Maps
 		Show Any { %H5; !G4; !*SpecialLow; Empty(); }
 	}
 
-	Section ScourgedMap : Auto("maps->scourged")
+	Section ImplicitModMaps : HasImplicitMod True, Auto("maps->implicitmod")
 	{
-		Show t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Scourged True; }
-		Show Any { %H5; !G4; !*SpecialLow; Empty(); Scourged True; }
+		Show t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
+		Show Any { %H5; !G4; !*SpecialLow; Empty(); }
 	}
 
 #------------------------------------
@@ -1391,7 +1391,7 @@ Section Maps : Class "Maps", !Maps
 #------------------------------------
 	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
 	{
-		Show NemesisBeyond { %D5; !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
+		ShowD NemesisBeyond { !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
 	}
 
 #===============================================================================================================
@@ -1478,13 +1478,13 @@ Section Logbooks : Auto("Expedition->Logbook"), BaseType "Expedition Logbook"
 
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 {
-	Show HandPicked { !G5; !exomap.low; %H5; BaseType Heist.Contract.Handpicked; }
+	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; }
 	Show Any { !G5; !exomap.low; %H5; Empty(); }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 {
-	Show HandPicked { !exomap.high; !G4; BaseType Heist.Blueprint.Handpicked; }
+	Show HandPicked { !exomap.high; !G4; BaseType == Heist.Blueprint.Handpicked; }
 	Show Any { !exomap.high; !G4; Empty(); }
 }
 
@@ -1532,6 +1532,14 @@ Section MapFragments : Class "Map Fragments"
 		Show t4 { !G4; %HS4; BaseType == fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
+}
+
+Section Breachstone : Class "Breachstone", Auto("Breachstone")
+{
+	Show t1 { !G1; BaseType == breachstone.t1; }
+	Show t2 { !G2; BaseType == breachstone.t2; }
+	Show t3 { !G3; BaseType == breachstone.t3; }
+	Show restex { Empty(); }
 }
 
 #===============================================================================================================
@@ -1775,9 +1783,7 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 
 Section SanctumInvocations : Auto("currency->invocations"), Class "Currency", !Currency
 {
-	Show t1 { !G1; !*t2divine; BaseType == currency.sanctuminvocations.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.sanctuminvocations.t2; }
-	Show t3 { !G3; !*t3annul; BaseType == currency.sanctuminvocations.t3; }
 }
 
 #------------------------------------
@@ -1900,6 +1906,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exUberImpresence { !G1; !*t1; BaseType "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
+	Show exForgeSword { !G1; !*t1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
 	
 	Show exRationalJewel  { !G1; !*t1; Class "Jewel"; SynthesisedItem True; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
@@ -1923,9 +1930,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # Sound to prevent false excitement.
 	Show 5link 		  { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
-
-# We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour	
-	Show scourged { %D5; !GSH; !*t3; !SpecialNoB; Scourged True; }
 
 # For those 6 sockets	
 	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }

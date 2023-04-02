@@ -128,6 +128,7 @@ Style MainRules
 	Apply(tier.fragments, MapFragments => FragmentTierStrat);
 	Apply(tier.fragments, MapFragments.T1p => FragmentExceptions.Any);
 	Apply(tier.fragments, $fragments => FragmentTierStrat);
+	Apply(tier.fragments, Breachstone => FragmentTierStrat);
 
 	## Unique-Map-Hybrid
 	Apply(uniques.heistmap, HeistUniqueMapLike => !UniqueMapStrat.T2);
