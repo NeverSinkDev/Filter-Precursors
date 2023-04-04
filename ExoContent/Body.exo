@@ -360,7 +360,7 @@ Section IdModSection : IdMods, !highvalueidmod
 			Show IdAj_Attack  { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
 			Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
 			Show IdAj_Minion  { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
-			Show IdAj_Mixer   { Mod >= 4 xAj_attack_aux + xAj_caster_aux + xAj_minion_aux; BaseType == "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel" "Ghastly Eye Jewel"; }
+			Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel" "Ghastly Eye Jewel"; }
 		}
 	}
 }
@@ -618,6 +618,13 @@ Section ExoticVariations : !exotic
 			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class "Amulets" "Rings"; Corrupted False; }
 			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
+		}
+#------------------------------------
+#   [1234] Crucible
+#------------------------------------
+		Section Crucible : HasCruciblePassiveTree True, Auto("exotic->crucible")
+		{
+			Show CrucibleAny   { !GS;  %D3; !exotic.t3; Empty(); }
 		}
 	}
 }
@@ -1787,6 +1794,17 @@ Section SanctumInvocations : Auto("currency->invocations"), Class "Currency", !C
 }
 
 #------------------------------------
+# [5104] Crucible
+#------------------------------------
+
+Section CrucibleCurrency : Auto("currency->crucible"), Class "Currency", !Currency
+{
+	Show t1 { !G1; !*t1exalted; BaseType == currency.crucible.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.crucible.t2; }
+	Show t3 { !G3; !*t3annul; BaseType == currency.crucible.t3; }
+}
+
+#------------------------------------
 # [5104] Others
 #------------------------------------
 #!! Override 690 : "Harbinger Scrolls"
@@ -1920,8 +1938,11 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
+
 	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class == "Boots" "Gloves" "Helmets" }
+	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
+
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
@@ -1971,7 +1992,7 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { !G1; !Currency.t1exalted; BaseType miscmap.keys; }
 	Show RelicKeysSafe { !G1; !Currency.t1exalted; BaseType "Reliquary Key"; }
-	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum"; }
+	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum" "Primordial Remnant" "Primeval Remnant"; }
 }
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
@@ -2186,8 +2207,8 @@ Section LevelingRareGear : Rarity Rare
 	Section Vendorable : Auto("Leveling->Rare->Remaining"), !raredeco.t4equip
 	{
 		Show ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
-		Show UnderLevel68 { %D1; !GR3; !SF40; AreaLevel >=42; }
-		Show UnderLevel42 { %D1; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 42; }
+		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; }
+		Show UnderLevel42 { %D2; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 42; }
 		Show UnderLevel24 { %D2; !GR3; !SF40; AreaLevel >=16; ItemLevel <= 24; }
 		Show UnderLevel16 { %D3; !GR3; !SF40; AreaLevel >=1;  ItemLevel <= 16; }
 	}
