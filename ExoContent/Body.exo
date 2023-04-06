@@ -1306,6 +1306,7 @@ Section Gems : Class "Gems", !Gems
 		ShowD PlusOneGemLight { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.light ; }
 		ShowD PlusOneGemChaos { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.chaos ; }
 		ShowD PlusOneGemPhys  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.phys ; }
+		ShowD PlusOneGemMinion { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.minion ; }
 
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
@@ -1991,7 +1992,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { !G1; !Currency.t1exalted; BaseType miscmap.keys; }
-	Show RelicKeysSafe { !G1; !Currency.t1exalted; BaseType "Reliquary Key"; }
+	Show RelicKeysSafe { !G1; !Currency.t1exalted; Class "Vault Key"; }
 	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum" "Primordial Remnant" "Primeval Remnant"; }
 }
 
