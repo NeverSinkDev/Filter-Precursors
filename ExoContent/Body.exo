@@ -1963,7 +1963,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Override 770 : "Only low tier uniques"
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	
-	Show exjewelscorrupted    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Corrupted True; }
+	Show exjewelscorrupted    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; CorruptedMods = 0; Corrupted True; }
 	Show exjewels    		  { !GSH; !*t3; !SpecialNoB; BaseType == uniques.jewels; }
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
