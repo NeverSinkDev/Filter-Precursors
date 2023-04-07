@@ -66,6 +66,8 @@ Style MainRules
 
 	## Crafting
 	Apply(crafting, AdditionalCrafting.any => CraftGeneralStrategy.ANY);
+	Apply(crafting, CrucibleCrafting.any => CraftGeneralStrategy.ANY);
+
 	Apply(crafting, $craftspecial => CraftSpecialStrategy);
 	Apply(crafting, $craftgeneral => CraftGeneralStrategy);
 

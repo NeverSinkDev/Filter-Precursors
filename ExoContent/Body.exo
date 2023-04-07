@@ -545,7 +545,7 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 {
 	Show T1 { !G1; BaseType == exotic.invitations.t1 }
 	Show T2 { !G2; BaseType == exotic.invitations.t2 }
-	Show T3 { !G3; %D6; BaseType == exotic.invitations.t3 }
+	Show T3 { !G3; %H6; BaseType == exotic.invitations.t3 }
 }
 
 #------------------------------------
@@ -735,9 +735,14 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
+Section CrucibleCrafting : Auto("normalcraft->crucible"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 86, Clean()
+{
+	Show any { !GEX; %D3; BaseType bases.crucible.early; }
+}
+
 Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
-	Show any { !GEX; %D1; BaseType bases.crafting.early; }
+	Show any { !GEX; %D0; BaseType bases.crafting.early; }
 }
 
 #------------------------------------
