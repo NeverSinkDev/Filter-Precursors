@@ -189,7 +189,7 @@ Section Eldritch : Rarity <= Rare
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
-	Show ExoticHeistBases 	  { !GSH; BaseType bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticHeistBases 	  { !GSH; BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { !GSH; BaseType bases.exotic.ritual.any }
 	Show ExoticLakeKala 	  { !GSH; BaseType bases.exotic.lakeKala.any }
 	Show ExoticExpeditionBases{ %D5; !GSH; BaseType bases.exotic.expedition.any + "Iron Flask" }
@@ -360,7 +360,7 @@ Section IdModSection : IdMods, !highvalueidmod
 			Show IdAj_Attack  { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
 			Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
 			Show IdAj_Minion  { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
-			Show IdAj_Mixer   { Mod >= 4 xAj_attack_aux + xAj_caster_aux + xAj_minion_aux; BaseType == "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel" "Ghastly Eye Jewel"; }
+			Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel" "Ghastly Eye Jewel"; }
 		}
 	}
 }
@@ -545,7 +545,7 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 {
 	Show T1 { !G1; BaseType == exotic.invitations.t1 }
 	Show T2 { !G2; BaseType == exotic.invitations.t2 }
-	Show T3 { !G3; %D6; BaseType == exotic.invitations.t3 }
+	Show T3 { !G3; %H6; BaseType == exotic.invitations.t3 }
 }
 
 #------------------------------------
@@ -618,6 +618,13 @@ Section ExoticVariations : !exotic
 			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class "Amulets" "Rings"; Corrupted False; }
 			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
+		}
+#------------------------------------
+#   [1234] Crucible
+#------------------------------------
+		Section Crucible : HasCruciblePassiveTree True, Auto("exotic->crucible")
+		{
+			Show CrucibleAny   { !GS;  %D3; !exotic.t3; Empty(); }
 		}
 	}
 }
@@ -728,9 +735,14 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
+Section CrucibleCrafting : Auto("normalcraft->crucible"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 86, Clean()
+{
+	Show any { !GEX; %D3; BaseType bases.crucible.early; }
+}
+
 Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
-	Show any { !GEX; %D1; BaseType bases.crafting.early; }
+	Show any { !GEX; %D0; BaseType bases.crafting.early; }
 }
 
 #------------------------------------
@@ -1299,6 +1311,7 @@ Section Gems : Class "Gems", !Gems
 		ShowD PlusOneGemLight { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.light ; }
 		ShowD PlusOneGemChaos { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.chaos ; }
 		ShowD PlusOneGemPhys  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.phys ; }
+		ShowD PlusOneGemMinion { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.minion ; }
 
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
@@ -1380,10 +1393,10 @@ Section Maps : Class "Maps", !Maps
 		Show Any { %H5; !G4; !*SpecialLow; Empty(); }
 	}
 
-	Section ScourgedMap : Auto("maps->scourged")
+	Section ImplicitModMaps : HasImplicitMod True, Auto("maps->implicitmod")
 	{
-		Show t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Scourged True; }
-		Show Any { %H5; !G4; !*SpecialLow; Empty(); Scourged True; }
+		Show t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
+		Show Any { %H5; !G4; !*SpecialLow; Empty(); }
 	}
 
 #------------------------------------
@@ -1391,7 +1404,7 @@ Section Maps : Class "Maps", !Maps
 #------------------------------------
 	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
 	{
-		Show NemesisBeyond { %D5; !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
+		ShowD NemesisBeyond { !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; HasExplicitMod "Antagonist's"; }
 	}
 
 #===============================================================================================================
@@ -1478,13 +1491,13 @@ Section Logbooks : Auto("Expedition->Logbook"), BaseType "Expedition Logbook"
 
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 {
-	Show HandPicked { !G5; !exomap.low; %H5; BaseType Heist.Contract.Handpicked; }
+	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; }
 	Show Any { !G5; !exomap.low; %H5; Empty(); }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 {
-	Show HandPicked { !exomap.high; !G4; BaseType Heist.Blueprint.Handpicked; }
+	Show HandPicked { !exomap.high; !G4; BaseType == Heist.Blueprint.Handpicked; }
 	Show Any { !exomap.high; !G4; Empty(); }
 }
 
@@ -1532,6 +1545,14 @@ Section MapFragments : Class "Map Fragments"
 		Show t4 { !G4; %HS4; BaseType == fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
+}
+
+Section Breachstone : Class "Breachstone", Auto("Breachstone")
+{
+	Show t1 { !G1; BaseType == breachstone.t1; }
+	Show t2 { !G2; BaseType == breachstone.t2; }
+	Show t3 { !G3; BaseType == breachstone.t3; }
+	Show restex { Empty(); }
 }
 
 #===============================================================================================================
@@ -1775,9 +1796,18 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 
 Section SanctumInvocations : Auto("currency->invocations"), Class "Currency", !Currency
 {
-	Show t1 { !G1; !*t2divine; BaseType == currency.sanctuminvocations.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.sanctuminvocations.t2; }
-	Show t3 { !G3; !*t3annul; BaseType == currency.sanctuminvocations.t3; }
+}
+
+#------------------------------------
+# [5104] Crucible
+#------------------------------------
+
+Section CrucibleCurrency : Auto("currency->crucible"), Class "Currency", !Currency
+{
+	Show t1 { !G1; !*t1exalted; BaseType == currency.crucible.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.crucible.t2; }
+	Show t3 { !G3; !*t3annul; BaseType == currency.crucible.t3; }
 }
 
 #------------------------------------
@@ -1900,6 +1930,9 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exUberImpresence { !G1; !*t1; BaseType "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
+	Show exForgeSword { !G1; !*t1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
+	
+	Show exRationalJewel  { !G1; !*t1; Class "Jewel"; SynthesisedItem True; }
 	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 
@@ -1911,8 +1944,11 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
+
 	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; Class == "Boots" "Gloves" "Helmets" }
+	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
+
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
@@ -1921,9 +1957,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # Sound to prevent false excitement.
 	Show 5link 		  { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
-
-# We treat 2x scourged uniques as multispecial items as well, since we don't know their mods or behaviour	
-	Show scourged { %D5; !GSH; !*t3; !SpecialNoB; Scourged True; }
 
 # For those 6 sockets	
 	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
@@ -1935,7 +1968,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Override 770 : "Only low tier uniques"
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	
-	Show exjewelscorrupted    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; Corrupted True; }
+	Show exjewelscorrupted    { !GSH; !*t4; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; CorruptedMods = 0; Corrupted True; }
 	Show exjewels    		  { !GSH; !*t3; !SpecialNoB; BaseType == uniques.jewels; }
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
@@ -1964,8 +1997,8 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show RelicKeys { !G1; !Currency.t1exalted; BaseType miscmap.keys; }
-	Show RelicKeysSafe { !G1; !Currency.t1exalted; BaseType "Reliquary Key"; }
-	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum"; }
+	Show RelicKeysSafe { !G1; !Currency.t1exalted; Class "Vault Key"; }
+	Show ItemizedLeagues { !G2; !fragments.t2; BaseType "Chronicle of Atzoatl" "Mirrored Tablet" "Inscribed Ultimatum" "Primordial Remnant" "Primeval Remnant"; }
 }
 
 Section MiscMapItems : Class "Misc Map Items", Auto("MiscMapItems")
@@ -2180,8 +2213,8 @@ Section LevelingRareGear : Rarity Rare
 	Section Vendorable : Auto("Leveling->Rare->Remaining"), !raredeco.t4equip
 	{
 		Show ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
-		Show UnderLevel68 { %D1; !GR3; !SF40; AreaLevel >=42; }
-		Show UnderLevel42 { %D1; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 42; }
+		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; }
+		Show UnderLevel42 { %D2; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 42; }
 		Show UnderLevel24 { %D2; !GR3; !SF40; AreaLevel >=16; ItemLevel <= 24; }
 		Show UnderLevel16 { %D3; !GR3; !SF40; AreaLevel >=1;  ItemLevel <= 16; }
 	}
@@ -2337,7 +2370,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class classes_equip
 
 Section HideLayerFinal : Auto("HideLayer")
 {
-	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand" "Wand" "Warstaves"; }
+	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves"; }
 }
 
 #------------------------------------

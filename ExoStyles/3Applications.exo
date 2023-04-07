@@ -66,6 +66,8 @@ Style MainRules
 
 	## Crafting
 	Apply(crafting, AdditionalCrafting.any => CraftGeneralStrategy.ANY);
+	Apply(crafting, CrucibleCrafting.any => CraftGeneralStrategy.ANY);
+
 	Apply(crafting, $craftspecial => CraftSpecialStrategy);
 	Apply(crafting, $craftgeneral => CraftGeneralStrategy);
 
@@ -128,6 +130,7 @@ Style MainRules
 	Apply(tier.fragments, MapFragments => FragmentTierStrat);
 	Apply(tier.fragments, MapFragments.T1p => FragmentExceptions.Any);
 	Apply(tier.fragments, $fragments => FragmentTierStrat);
+	Apply(tier.fragments, Breachstone => FragmentTierStrat);
 
 	## Unique-Map-Hybrid
 	Apply(uniques.heistmap, HeistUniqueMapLike => !UniqueMapStrat.T2);

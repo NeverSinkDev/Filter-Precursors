@@ -794,13 +794,15 @@ var xJwl_minion_mix = xJwl_minion_core + jwl_aux + "of Training" "Enlightened" "
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var aj_core = "Sanguine" "Stalwart" "Healthy" "Resplendent" "Incandescent" "of the Deadeye";
-var aj_aux = "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order" "of Unwavering";
+var aj_aux = "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order";
 
 var aj_damage = "Acuminate" "Flaring" "Electrocuting" "Discharging" "Cremating" "Blasting" "Entombing" "Polar" "Vile";
 var aj_damage_suffix = "of Potency" "of the Inquisitor" "of Menace" "of Blinding" "of the Assassin" "of Taunting" "of Phasing" "of Ashes" "of Glaciation" "of Arcing" "of Collision" "of the Inferno";
 var aj_damage_suffix_caster = "of Abuse" "of Enchanting" "of Hindering";
 var aj_damage_suffix_attack = "of Opportunity" "of Berserking" "of the Ranger" "of the Deadeye" "Lancing" "of Unholy Might";
 var aj_minion_suffix_util = "of Stifling" "of Distraction" "of Delaying" "of Training" "of Vampirism" "of Command" "of Acclimatisation" "of Authority";
+
+var aj_avoidance = "of Fireproofing" "of Heating" "of the Lightning Rod" "of Poise" "of the Tourniquet";
 
 ## curse effectiveness, ailments, etc.
 var aj_misc = "of Shocking" "of Chilling" "Resonating" "Motivating" "Foul-tongued";
@@ -811,3 +813,4 @@ var xAj_core = aj_core + aj_damage;
 var xAj_attack_aux = aj_aux_mix + aj_damage_suffix_attack;
 var xAj_caster_aux = aj_aux_mix + aj_damage_suffix_caster + aj_damage_suffix_caster;
 var xAj_minion_aux = aj_aux_mix + aj_minion_suffix_util + aj_misc;
+var xAj_mixer_aux = xAj_attack_aux + xAj_caster_aux + xAj_minion_aux + aj_avoidance;
