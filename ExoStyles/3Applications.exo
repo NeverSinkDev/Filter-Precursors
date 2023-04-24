@@ -61,12 +61,14 @@ Style MainRules
 	Apply(special.exotic, $exotic => UniversalExotic);
 	Apply(special.id, IdModSection => !IdModsMulti.t2);
 	Apply(special.artefact, ArtefactItemClasses => !Artefact.t1);
+	Apply(special.artefact, $artefactex => !Artefact.t1);
 	Apply(special.sanctum, 	SanctumRelics.AnySanctified => !Artefact.t1);
 	Apply(special.invitation, Invitations => InvitationTierList);
 
 	## Crafting
 	Apply(crafting, AdditionalCrafting.any => CraftGeneralStrategy.ANY);
 	Apply(crafting, CrucibleCrafting.any => CraftGeneralStrategy.ANY);
+	Apply(crafting, Lowcraft.* => !CraftGeneralStrategy.ANY);
 
 	Apply(crafting, $craftspecial => CraftSpecialStrategy);
 	Apply(crafting, $craftgeneral => CraftGeneralStrategy);
