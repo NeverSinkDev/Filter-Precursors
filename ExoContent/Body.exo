@@ -441,9 +441,9 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 
 Section IdModCorrupted : IdMods, Corrupted True, CorruptedMods 1, Auto("CorruptedID"), !exotic
 {
-	Show Gloves_Life_based { %D5; !exotic.t1; !corruptstrong; !GS; Mod xgloves_life_core; Mod >= 3 xgloves_life_mix2; }
-	Show Quiv_Hit { %D5; !exotic.t1; !corruptstrong; !GS; Mod xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_hit; }
-	Show Quiv_Dot { %D5; !exotic.t1; !corruptstrong; !GS; Mod xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_dot; }
+	Show Gloves_Life_based { %D4; !exotic.t2; !corruptstrong; !GS; Class == "Gloves"; Mod >= 1 xgloves_life_core; Mod >= 3 xgloves_life_mix2; }
+	Show Quiv_Hit { %D4; !exotic.t2; !corruptstrong; !GS; Class == "Quivers"; Mod >= 1 xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_hit; }
+	Show Quiv_Dot { %D4; !exotic.t2; !corruptstrong; !GS; Class == "Quivers"; Mod >= 1 xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_dot; }
 }
 
 #===============================================================================================================
@@ -595,7 +595,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 		Section SingleCorrupted : Corrupted True, CorruptedMods >= 1
 		{
-			Show SingleCorruptedQuivers { !GS; %D4; !exotic.t4; !corruptstrong; Class == "Quivers"; ItemLevel >= 80; }
+			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; Class == "Quivers"; ItemLevel >= 80; }
 		}
 	}
 #------------------------------------
@@ -665,7 +665,8 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 68; }
 	Show WhiteSocketWeapons2H { %DS4; !exotic.t3; !G2; Class == classes_2h; Sockets >= "6WWWWWW"; }
-	Show 6Sockets		{ %DS3; !G5H; !*t1; Sockets >= 6; }
+	Show 6Sockets4H		{ %D3;  !G5H;  !*t1; Sockets >= 6; Height = 4; }
+	Show 6Sockets		{ %DS3; !G5H; !*t1; Sockets >= 6; Height = 3; }
 }
 
 #===============================================================================================================
@@ -2009,7 +2010,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss {  !G4; !*t4; BaseType == uniques.generic.t3boss; }
+	Show t3boss {  !G4; !*t4; !SpecialNoB; BaseType == uniques.generic.t3boss; }
 	Show t3 	{  !G4; %H4; !*t4; BaseType == uniques.generic.t3; }
 #------------------------------------
 # [5709] Tier 4 uniques
