@@ -15,7 +15,7 @@ Func Clean(){ Corrupted False; Mirrored False; }
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
-	Show arm { !G2; Corrupted False; Class "Body Armours"; }
+	Show arm { !G2; Clean(); Class "Body Armours"; }
 	Show wep { !G2; Empty(); }
 }
 
@@ -198,7 +198,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
 }
 
-Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Corrupted False, !exotic
+Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !exotic
 {
 	Show ExoticSacrificial { !GSH; !exotic.t2; %D6; BaseType == "Sacrificial Garb"; }
 }
@@ -227,7 +227,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Weapons : Class == classes_attack, DropLevel >= 55, Mod xattackphys_Core
 		{
 			Show Weapon_Phys     { Mod >= 3 xattackphys_Conf; }
-			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Corrupted False; }
+			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Clean(); }
 		}
 #------------------------------------
 #   [1234] Elemental
@@ -235,7 +235,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section FastEleWeapons : BaseType == quickWeapons, Mod xattackele_Core
 		{
 			Show Weapon_Ele 	{ Mod >= 4 xattackele_Norm; }
-			Show Weapon_ElePure { Mod >= 3 xattackele_Norm; Corrupted False; }
+			Show Weapon_ElePure { Mod >= 3 xattackele_Norm; Clean(); }
 		}
 #------------------------------------
 #   [1234] Gembased
@@ -304,7 +304,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 		Section Amulets : Class == "Amulets"
 		{
-			Show Amu_exalter { Mod "Exalter's"; Corrupted False; Mirrored False; }
+			Show Amu_exalter { Mod "Exalter's"; Clean(); }
 
 			Show Amu_1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; }
 			Show Amu_2CoreCaster{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
@@ -337,7 +337,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Body : Class == "Body Armours", DropLevel >= 55
 		{
 			Show Body_Life 		  { %D5; Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
-			Show Body_Defense 	  { %D5; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Corrupted False; }
+			Show Body_Defense 	  { %D5; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Clean(); }
 			Show Body_LifeDefense { %D5; Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
 			Show Body_ES 		  { %D5; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; }
 		}
@@ -377,7 +377,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #   [1234] Top Value
 #------------------------------------	
 
-	Section TopValue : Rarity <= Rare, Corrupted False
+	Section TopValue : Rarity <= Rare, Clean()
 	{
 		# +1 to all global spell skill levels + convoking minion levels
 		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
@@ -394,7 +394,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #------------------------------------	
 
 ## In these cases we're looking for a singe high mod
-	Section HighHybridPure : Corrupted False, Rarity <= Rare
+	Section HighHybridPure : Clean(), Rarity <= Rare
 	{
 		# +1 to all global elemental gems and DOT t1
 		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
@@ -637,7 +637,7 @@ Section ExoticVariations : !exotic
 
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
 			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
-			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class "Amulets" "Rings"; Corrupted False; }
+			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class "Amulets" "Rings"; Clean(); }
 			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
 		}
 #------------------------------------
@@ -776,7 +776,7 @@ Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLev
 Section Lowcraft : Auto("normalcraft->lowstrict"), ItemLevel >= 68, ItemLevel <= 83, Clean()
 {
 	Show Overquality       { %D1; !GEX; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class == classes_equip; }
-	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Class == "Body Armours" "Boots" "Gloves" "Helmets"; }
+	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Rarity <= Rare; Class == "Body Armours" "Boots" "Gloves" "Helmets"; }
 }
 
 #------------------------------------
@@ -786,10 +786,10 @@ Section Lowcraft : Auto("normalcraft->lowstrict"), ItemLevel >= 68, ItemLevel <=
 
 Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("EndgameRGB"), !recipe
 {
-	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width <=2; Height <=2; }
-	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width <=1; Height <=4; }
-	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width >=2; Height >=4; }
-	Show RGBMedium	{ !G6;  %H0; !*t3; !SF40; Width >=2; Height = 3; }
+	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width 2; Height 2; }
+	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width 1; Height <=4; }
+	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 4; }
+	Show RGBMedium	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 3; }
 }
 #------------------------------------
 # [1234] Chisel Recipes
@@ -797,10 +797,10 @@ Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("En
 Section ChiselRecipe : BaseType "Gavel" "Rock Breaker" "Stone Hammer", Auto("ChiselRecipe"), !recipe, !GEX
 {
 	Show Chisel20 				{ %D1; !*t2; Quality >= 20; Rarity < Unique; }
-	Show ChiselHighQualNormal 	{ %D0; !*t3; Corrupted False; Quality > 14; Rarity Normal; }
-	Show ChiselHighQualMagic  	{ %D0; !*t3; Corrupted False; Quality > 17; Rarity Magic; }
-	Show ChiselAnyQualMagic  	{ %D0; !*t3; Corrupted False; Rarity Magic; }
-	Show ChiselAnyQualNormal 	{ %D0; !*t3; Corrupted False; Rarity Normal; }
+	Show ChiselHighQualNormal 	{ %D0; !*t3; Clean(); Quality >= 15; Rarity Normal; }
+	Show ChiselHighQualMagic  	{ %D0; !*t3; Clean(); Quality >= 18; Rarity Magic; }
+	Show ChiselAnyQualMagic  	{ %D0; !*t3; Clean(); Rarity Magic; }
+	Show ChiselAnyQualNormal 	{ %D0; !*t3; Clean(); Rarity Normal; }
 }
 
 #===============================================================================================================
@@ -997,12 +997,12 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 #!! Override 255 : "Identified Item Handling"
 
-		Show IdentifiedItemHandling { %D1; !GS; !exotic.t4; Identified True; Corrupted False; Mirrored False; Class == classes_equip; }
+		Show IdentifiedItemHandling { %D1; !GS; !exotic.t4; Identified True; Clean(); Class == classes_equip; }
 
 #===============================================================================================================
-# [[0200]] Endgame - Rare - Gear - T3 - droplevel-based
+# [[0200]] Endgame - Rare - Gear - T3 - subpar bases
 #===============================================================================================================
-#!! Override 260 : "T3 rares - droplevel-based"
+#!! Override 260 : "T3 rares"
 
 		Show t3runedaggers { !GR3; %D2; BaseType bases.rares.eg.t3runedaggers; Class == "Rune Daggers"; }
 		Show t3daggers 	{ !GR3; %D2; BaseType bases.rares.eg.t3daggers; Class == "Daggers"; }
@@ -1960,6 +1960,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exUberImpresence { !G1; !*t1; BaseType "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
+	Show exTriadGrip { !G2; !*t2; BaseType == "Mesh Gloves"; Sockets >= "4WWWW"; }
 	Show exForgeSword { !G1; !*t1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
 	
 	Show exRationalJewel  { !G1; !*t1; Class "Jewel"; SynthesisedItem True; }
@@ -2079,7 +2080,7 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 	Show Any 				{ !G5; %H3; !utilflasks.LT3; Class "Utility Flask"; }
 }
 
-Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
+Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask", Rarity Normal
 {
 	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; }
 	Show high { !G6; %D1; !recipe.t2; Quality >= 15; }
@@ -2269,10 +2270,10 @@ Section LevelingMiscGear : Rarity <= Magic
 
 	Section Chromatic : Auto("Leveling->NormalMagic->RGB"), SocketGroup "RGB", !G5
 	{
-		Show RGBSmall1	{ %D3; !Recipe.t2; !SF40; Width <=2; Height <=2; }
-		Show RGBSmall2	{ %D3; !Recipe.t2; !SF40; Width <=1; Height <=4; }
-		Show RGBLarge	{ %D2; !Recipe.t3; !SF40; Width >=2; Height >=4; }
-		Show RGBMedium	{ %D2; !Recipe.t3; !SF40; Width >=2; Height = 3; }
+		Show RGBSmall1	{ %D3; !Recipe.t2; !SF40; Width 2; Height 2; }
+		Show RGBSmall2	{ %D3; !Recipe.t2; !SF40; Width 1; Height <=4; }
+		Show RGBLarge	{ %D2; !Recipe.t3; !SF40; Width 2; Height 4; }
+		Show RGBMedium	{ %D2; !Recipe.t3; !SF40; Width 2; Height 3; }
 	}
 
 	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L"), !G6H, !GLVL1
