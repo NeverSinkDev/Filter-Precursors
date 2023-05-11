@@ -642,8 +642,8 @@ Section ExoticVariations : !exotic
 		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
 			# Optional modules for enchanment based filtering
-			ShowD EnchantedRingsGoldOil   { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_gold; }
-			ShowD EnchantedRingsSilverOil { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_silver; }
+			ShowD EnchantedRingsGoldOil   { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_gold; Clean(); }
+			ShowD EnchantedRingsSilverOil { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_silver; Clean(); }
 
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
 			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
