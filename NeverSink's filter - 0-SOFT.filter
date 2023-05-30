@@ -105,11 +105,11 @@
 # [[1200]] High Level Crafting Bases
 #   [1201] Expensive Atlas 86 Bases - matched by economy
 #   [1202] Perfection-Based-Filtering
-#   [1203] ILVL 86
-#   [1204] ILVL 84
-#   [1205] ILVL ANY
-#   [1206] Early Endgame Crafting projects
-#   [1207] RGB Endgame
+#   [1203] RGB Endgame
+#   [1204] ILVL 86
+#   [1205] ILVL 84
+#   [1206] ILVL ANY
+#   [1207] Early Endgame Crafting projects
 #   [1208] Chisel Recipes
 # [[1300]] Chancing Bases
 # [[1400]] Endgame Flasks
@@ -222,7 +222,7 @@
 #===============================================================================================================
 # [[0100]] Global overriding rules
 #===============================================================================================================
-# !! Waypoint c0.alpha : "ALL Rules"
+# !! Waypoint c0.alpha : "All Rules - Highest priority - DANGER ZONE"
 
 Show # $type->6l $tier->arm
 	Corrupted False
@@ -292,7 +292,7 @@ Show # $type->maps->influenced $tier->infconquerors
 	PlayEffect Red
 	MinimapIcon 0 Red Square
 
-# !! Waypoint c1.infl.all : "all influenced rules"
+# !! Waypoint c1.infl.all : "All rules - except 6links and influenced maps"
 
 #------------------------------------
 #   [0202] Common Tier - T1
@@ -771,7 +771,7 @@ Show # %D3 $type->rare->any $tier->any
 #===============================================================================================================
 # [[0300]] ELDRITCH ITEMS
 #===============================================================================================================
-# !! Waypoint c1.eldritch.all : "all eldritch items"
+# !! Waypoint c1.eldritch.all : "Eldritch Items - Exarch and Eater"
 
 Show # %D3 $type->rare->exarch $tier->anyhigh
 	HasSearingExarchImplicit >= 2
@@ -814,7 +814,7 @@ Show # %D3 $type->rare->eater $tier->any
 #===============================================================================================================
 # [[0400]] Exotic Bases
 #===============================================================================================================
-# !! Waypoint c1.exotic.all : "all exotic bases"
+# !! Waypoint c1.exotic.all : "Exotic - Expedition, exotic Talismans, Sacrificial garbs"
 # These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
 # These are bases such as heist and ritual bases.
 
@@ -900,7 +900,7 @@ Show # %D6 $type->exoticbaseslower $tier->exoticsacrificial
 #===============================================================================================================
 # [[0500]] IDENTIFIED MOD FILTERING - COMBINATIONS
 #===============================================================================================================
-# !! Waypoint c1.idmod.all : "identified mod filtering - all rules"
+# !! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
 #------------------------------------
 #   [0501] ID Mod exceptions - override id mod matching section
@@ -941,6 +941,7 @@ Show # $type->rareid $tier->weapon_phys
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
 	HasExplicitMod "Merciless" "Tyrannical" "Cruel" "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's"
 	HasExplicitMod >=3 "Merciless" "Tyrannical" "Flaring" "Dictator's" "Emperor's" "of Celebration" "of Incision" "of Dissolution" "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's"
+	HasExplicitMod =0 "Heavy" "Serrated" "Wicked" "Vicious" "Glinting" "Burnished" "Polished" "Honed" "of Needling" "of Skill"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -958,6 +959,7 @@ Show # $type->rareid $tier->weapon_physpure
 	Class == "Bows" "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
 	HasExplicitMod "Merciless" "Tyrannical" "Cruel" "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's"
 	HasExplicitMod >=2 "Merciless" "Tyrannical" "Flaring" "Dictator's" "Emperor's" "of Celebration" "of Incision" "of Dissolution" "of the Underground" "Subterranean" "of Many" "of Tacati" "Tacati's"
+	HasExplicitMod =0 "Heavy" "Serrated" "Wicked" "Vicious" "Glinting" "Burnished" "Polished" "Honed" "of Needling" "of Skill"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -976,6 +978,7 @@ Show # $type->rareid $tier->weapon_ele
 	BaseType == "Ambusher" "Corsair Sword" "Eye Gouger" "Fancy Foil" "Gemini Claw" "Grove Bow" "Hellion's Paw" "Imbued Wand" "Imperial Bow" "Imperial Claw" "Imperial Skean" "Jewelled Foil" "Maraketh Bow" "Spine Bow" "Spiraled Foil" "Thicket Bow"
 	HasExplicitMod "Carbonising" "Cremating" "Blasting" "Crystalising" "Entombing" "Polar" "Vapourising" "Electrocuting" "Discharging" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many"
 	HasExplicitMod >=4 "Carbonising" "Cremating" "Blasting" "Crystalising" "Entombing" "Polar" "Vapourising" "Electrocuting" "Discharging" "Matatl's" "Tacati" "Topotante's" "of Celebration" "of Infamy" "of Fame" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Devastating" "Overpowering" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of Many"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Burning" "Frosted" "Chilled" "Icy" "Frigid" "Humming" "Buzzing" "Snapping" "Crackling" "of Needling" "of Skill" "Glinting" "Heavy"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -992,6 +995,7 @@ Show # $type->rareid $tier->weapon_elepure
 	BaseType == "Ambusher" "Corsair Sword" "Eye Gouger" "Fancy Foil" "Gemini Claw" "Grove Bow" "Hellion's Paw" "Imbued Wand" "Imperial Bow" "Imperial Claw" "Imperial Skean" "Jewelled Foil" "Maraketh Bow" "Spine Bow" "Spiraled Foil" "Thicket Bow"
 	HasExplicitMod "Carbonising" "Cremating" "Blasting" "Crystalising" "Entombing" "Polar" "Vapourising" "Electrocuting" "Discharging" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many"
 	HasExplicitMod >=3 "Carbonising" "Cremating" "Blasting" "Crystalising" "Entombing" "Polar" "Vapourising" "Electrocuting" "Discharging" "Matatl's" "Tacati" "Topotante's" "of Celebration" "of Infamy" "of Fame" "of Incision" "of Penetrating" "of Puncturing" "of Destruction" "of Ferocity" "of Fury" "Devastating" "Overpowering" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of Many"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Burning" "Frosted" "Chilled" "Icy" "Frigid" "Humming" "Buzzing" "Snapping" "Crackling" "of Needling" "of Skill" "Glinting" "Heavy"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1053,6 +1057,7 @@ Show # $type->rareid $tier->caster_fireweapont2
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Flame Shaper's" "Electrocuting" "Discharging" "Shocking" "Entombing" "Cremating"
 	HasExplicitMod >=4 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Flame Shaper's" "Electrocuting" "Discharging" "Shocking" "Entombing" "Cremating" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Polar" "Blasting" "Corrosive" "Dissolving" "of Ashes" "of Conflagrating" "of Combusting" "of the Fanatical" "of the Zealous" "of Dissolution" "of Melting" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Frosted" "Chilled" "Icy" "Humming" "Buzzing" "Snapping" "Apprentice's" "Adept's" "Scholar's" "Searing" "Sizzling" "Blistering" "Bitter" "Biting" "Alpine" "Charged" "Hissing" "Bolting" "of Talent"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1067,6 +1072,7 @@ Show # $type->rareid $tier->caster_coldweapont2
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Tul's" "Cryomancer's" "Crystalline" "Frost Singer's" "Electrocuting" "Entombing" "Polar" "Glaciated" "Cremating"
 	HasExplicitMod >=4 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Tul's" "Cryomancer's" "Crystalline" "Frost Singer's" "Electrocuting" "Entombing" "Polar" "Glaciated" "Cremating" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Discharging" "Blasting" "Mortifying" "Festering" "of Glaciation" "of Heartstopping" "of the Gelid" "of Dissolution" "of Melting" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Frosted" "Chilled" "Icy" "Humming" "Buzzing" "Snapping" "Apprentice's" "Adept's" "Scholar's" "Searing" "Sizzling" "Blistering" "Bitter" "Biting" "Alpine" "Charged" "Hissing" "Bolting" "of Talent"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1081,6 +1087,7 @@ Show # $type->rareid $tier->caster_lightweapont2
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Esh's" "Ionising" "Smiting" "Thunderhand's" "Electrocuting" "Entombing" "Cremating" "Blasting" "Incinerating"
 	HasExplicitMod >=4 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Esh's" "Ionising" "Smiting" "Thunderhand's" "Electrocuting" "Entombing" "Cremating" "Blasting" "Incinerating" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Discharging" "Polar" "Excruciating" "Harrowing" "of Arcing" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Frosted" "Chilled" "Icy" "Humming" "Buzzing" "Snapping" "Apprentice's" "Adept's" "Scholar's" "Searing" "Sizzling" "Blistering" "Bitter" "Biting" "Alpine" "Charged" "Hissing" "Bolting" "of Talent"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1095,6 +1102,7 @@ Show # $type->rareid $tier->caster_physweapont2
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting"
 	HasExplicitMod >=4 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Electrocuting" "Discharging" "Entombing" "Polar" "Cremating" "Blasting" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "of Exsanguinating" "of Hemorrhaging" "of Phlebotomising" "of Dissolution" "of Melting" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Frosted" "Chilled" "Icy" "Humming" "Buzzing" "Snapping" "Apprentice's" "Adept's" "Scholar's" "Searing" "Sizzling" "Blistering" "Bitter" "Biting" "Alpine" "Charged" "Hissing" "Bolting" "of Talent"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1109,6 +1117,7 @@ Show # $type->rareid $tier->caster_chaosweapont2
 	Class == "Rune Daggers" "Sceptres" "Wands"
 	HasExplicitMod "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Mad Lord's" "Electrocuting" "Entombing" "Cremating"
 	HasExplicitMod >=4 "Martinet's" "Matatl's" "Tacati" "Topotante's" "of the Underground" "Subterranean" "of Many" "Magister's" "Empress's" "Queen's" "Lithomancer's" "Runic" "Glyphic" "Incanter's" "Mad Lord's" "Electrocuting" "Entombing" "Cremating" "of Unmaking" "of Ruin" "of Calamity" "of Finesse" "of Sortilege" "of Destruction" "of Ferocity" "of Fury" "Lich's" "Archmage's" "Mage's" "Zaffre" "Blue" "Discharging" "Polar" "Blasting" "of Disintegrating" "of Atrophying" "of Deteriorating" "of Dissolution" "of Melting" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Heated" "Smouldering" "Smoking" "Frosted" "Chilled" "Icy" "Humming" "Buzzing" "Snapping" "Apprentice's" "Adept's" "Scholar's" "Searing" "Sizzling" "Blistering" "Bitter" "Biting" "Alpine" "Charged" "Hissing" "Bolting" "of Talent"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1145,6 +1154,7 @@ Show # $type->rareid $tier->helmet_life_based
 	Class == "Helmets"
 	HasExplicitMod "Fecund" "Athlete's" "Virile" "Overseer's" "of Everlasting" "of Youth"
 	HasExplicitMod >=4 "of Puhuarte" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Overseer's" "Taskmaster's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Fecund" "Athlete's" "Virile"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1159,6 +1169,7 @@ Show # $type->rareid $tier->helmet_es_based
 	Class == "Helmets"
 	HasExplicitMod >=2 "Unassailable" "Indomitable" "Blazing" "Seething" "Overseer's"
 	HasExplicitMod >=4 "of Puhuarte" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Overseer's" "Taskmaster's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Fecund" "Athlete's"
+	HasExplicitMod =0 "Hale" "Shining" "Glimmering" "Glittering" "Protective" "Strong-Willed" "Resolute"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1177,6 +1188,7 @@ Show # $type->rareid $tier->boots_life_based
 	Class == "Boots"
 	HasExplicitMod "Athlete's" "Hellion's" "Cheetah's"
 	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Athlete's" "Virile" "Rotund" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Runner's" "Sprinter's" "Stallion's" "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1191,6 +1203,7 @@ Show # $type->rareid $tier->boots_es_based
 	Class == "Boots"
 	HasExplicitMod "Hellion's" "Cheetah's"
 	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Runner's" "Sprinter's" "Stallion's" "Shining" "Glimmering" "Glittering" "Protective" "Strong-Willed" "Resolute" "Hale"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1209,6 +1222,7 @@ Show # $type->rareid $tier->gloves_life_based
 	Class == "Gloves"
 	HasExplicitMod "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
 	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1223,6 +1237,7 @@ Show # $type->rareid $tier->gloves_es_based
 	Class == "Gloves"
 	HasExplicitMod "Blazing" "Seething" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Athlete's" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
 	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Runner's" "Sprinter's" "Stallion's" "Shining" "Glimmering" "Glittering" "Protective" "Strong-Willed" "Resolute" "Hale"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1241,6 +1256,7 @@ Show # $type->rareid $tier->shield_esfocus
 	Class == "Shields"
 	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable"
 	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Vigorous" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity"
+	HasExplicitMod =0 "Shining" "Glimmering" "Glittering" "Glowing" "Protective" "Strong-Willed" "Resolute" "Fearless"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1285,6 +1301,7 @@ Show # $type->rareid $tier->shield_lifefocus
 	Class == "Shields"
 	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "Vigorous" "Fecund"
 	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine" "Stalwart" "Stout"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1318,6 +1335,7 @@ Show # $type->rareid $tier->amu_1corecaster
 	Class == "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "of the Underground" "Subterranean" "of Puhuarte" "Guatelitzi's" "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of Destruction" "of Dissolution" "of the Multiverse" "Unassailable"
 	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of Puhuarte" "Guatelitzi's" "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Nirvana" "of Euphoria" "Impregnable" "Vaporous" "Unassailable" "Athlete's" "Virile" "Rotund" "Ultramarine" "Dazzling" "Resplendent" "of Legerdemain" "of Expertise" "Wizard's" "Thaumaturgist's" "Zaffre" "of Immolation" "of Flames" "of Floe" "of Rime" "of Discharge" "of Voltage" "of Dissolution" "of Melting" "of Destruction" "of Ferocity" "of Fury" "of Incision" "of Penetrating"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1346,6 +1364,7 @@ Show # $type->rareid $tier->amu_1coredot
 	Class == "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "of the Underground" "Subterranean" "of Puhuarte" "Guatelitzi's" "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of Destruction" "of Dissolution" "of the Multiverse" "Unassailable"
 	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of Puhuarte" "Guatelitzi's" "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Nirvana" "of Euphoria" "Impregnable" "Vaporous" "Unassailable" "Athlete's" "Virile" "Rotund" "Ultramarine" "Dazzling" "Resplendent" "of Destruction" "of Legerdemain" "Wizard's" "Thaumaturgist's" "Devastating" "Overpowering" "of the Ranger" "of the Marksman" "of Immolation" "of Floe" "of Dissolution" "of Melting" "of Liquefaction"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1374,6 +1393,7 @@ Show # $type->rareid $tier->amu_1coreattack
 	Class == "Amulets"
 	HasExplicitMod "Athlete's" "Virile" "Rotund" "Dazzling" "of the Underground" "Subterranean" "of Puhuarte" "Guatelitzi's" "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of Destruction" "of Dissolution" "of the Multiverse" "Unassailable"
 	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "of Puhuarte" "Guatelitzi's" "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of the Multiverse" "of the Infinite" "of the Universe" "of Nirvana" "of Euphoria" "Impregnable" "Vaporous" "Unassailable" "Athlete's" "Virile" "Rotund" "Ultramarine" "Dazzling" "Resplendent" "of Destruction" "of Ferocity" "of Fury" "of Rage" "of Incision" "of Penetrating" "Cremating" "Entombing" "Electrocuting" "of the Ranger" "of the Marksman" "Devastating" "Overpowering" "Unleashed" "Flaring" "Tempered"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1406,6 +1426,7 @@ Show # $type->rareid $tier->ring_caster
 	Class == "Rings"
 	HasExplicitMod "of the Underground" "Subterranean" "Quintessential" "Guatelitzi's" "of the Essence" "Essences" "Veiled" "of the Veil" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "of the Ranger" "Ultramarine"
 	HasExplicitMod >=4 "of the Underground" "Subterranean" "Quintessential" "Guatelitzi's" "of the Essence" "Essences" "Veiled" "of the Veil" "Athlete's" "Virile" "Rotund" "Robust" "Dazzling" "Resplendent" "Incandescent" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nirvana" "of Euphoria" "of the Comet" "of Legerdemain" "of Expertise" "of Flames" "of Rime" "of Voltage" "Ultramarine" "Zaffre" "Blue"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1438,6 +1459,7 @@ Show # $type->rareid $tier->quiv_hit
 	Class == "Quivers"
 	HasExplicitMod "Impaling" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "Virile" "of Destruction" "of Ferocity" "of Mastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
 	HasExplicitMod >=4 "Impaling" "Lacerating" "Incisive" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "of the Essence" "Essences" "Veiled" "of the Veil" "Flaring" "Tempered" "Cremating" "Blasting" "Entombing" "Polar" "Electrocuting" "Discharging" "Devastating" "Overpowering" "of Mastery" "of Ease" "of the Ranger" "of the Marksman" "of Dissolution" "of the Gale" "of Destruction" "of Ferocity" "of Fury" "of Rending" "of Incision" "of Penetrating"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1452,6 +1474,7 @@ Show # $type->rareid $tier->quiv_dot
 	Class == "Quivers"
 	HasExplicitMod "Impaling" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "Virile" "of Destruction" "of Ferocity" "of Mastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
 	HasExplicitMod >=4 "Impaling" "Lacerating" "Incisive" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of the Phantom" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "of the Essence" "Essences" "Veiled" "of the Veil" "Cremating" "Blasting" "Flaring" "Tempered" "Devastating" "Overpowering" "of Mastery" "of Ease" "of the Ranger" "of the Marksman" "of Dissolution" "of Melting" "of Liquefaction" "of the Gale" "of Destruction" "of Rending"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1471,6 +1494,7 @@ Show # %D5 $type->rareid $tier->body_life
 	Class == "Body Armours"
 	HasExplicitMod "Prime" "Rapturous" "Vigorous" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
 	HasExplicitMod >=5 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Second Wind" "of Vigour" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine" "Stalwart" "Stout"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1519,6 +1543,7 @@ Show # %D5 $type->rareid $tier->body_es
 	Class == "Body Armours"
 	HasExplicitMod >=2 "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
 	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Second Wind" "of Vigour" "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "Seraphim's" "Djinn's" "Bishop's" "Priest's" "Exarch's" "Abbot's" "of Tacati" "Prime" "Rapturous"
+	HasExplicitMod =0 "Shining" "Glimmering" "Glittering" "Glowing" "Protective" "Strong-Willed" "Resolute" "Fearless"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1537,6 +1562,7 @@ Show # %D5 $type->rareid $tier->belt_general
 	Class == "Belts"
 	HasExplicitMod "of the Underground" "Subterranean" "Guatelitzi's" "Fecund" "Athlete's" "Dazzling" "Devastating" "Magnifying" "of Reveling" "Blue" "of the Godslayer"
 	HasExplicitMod >=4 "of the Underground" "Subterranean" "Guatelitzi's" "Fecund" "Athlete's" "Virile" "Dazzling" "Resplendent" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "of Recuperation" "Enveloped" "Encased" "Carapaced" "Magnifying" "Condensing" "of Reveling" "of Relishing" "Devastating" "Overpowering" "Unleashed" "Blue" "Mazarine" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1674,7 +1700,7 @@ Show # $type->rareid $tier->idaj_mixer
 #===============================================================================================================
 # [[0600]] IDENTIFIED MOD FILTERING - SINGLE MODS
 #===============================================================================================================
-# !! Waypoint c1.idmod.singlemod.all : "identified mod filtering - single mod and recombinator items"
+# !! Waypoint c1.idmod.singlemod.all : "Identified Mods - Single Mods and low priority combinations"
 
 #------------------------------------
 #   [0601] Top Value
@@ -2027,7 +2053,7 @@ Show # %D5 $type->magicid $tier->t2amu
 #===============================================================================================================
 # [[0700]] IDENTIFIED MOD - CORRUPTED ITEMS
 #===============================================================================================================
-# !! Waypoint c1.idmod.corruptedmod : "identified mod filtering - corrupted with implicit"
+# !! Waypoint c1.idmod.corruptedmod : "Identified Mods - Items with corrupted implicits"
 
 Show # %D4 $type->corruptedid $tier->gloves_life_based
 	Identified True
@@ -2083,7 +2109,7 @@ Show # %D4 $type->corruptedid $tier->quiv_dot
 #------------------------------------
 #   [0801] Veiled/Betrayal - low prio veiled items
 #------------------------------------
-# !! Waypoint c1.idmod.veil.all : "veiled items"
+# !! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)"
 
 Show # %D4 $type->exoticmods $tier->duoveil
 	Identified True
@@ -2131,7 +2157,7 @@ Show # %D3 $type->exoticmods $tier->veilrest
 #------------------------------------
 #   [0802] Incursion/Temple Mods
 #------------------------------------
-# !! Waypoint c1.idmod.league.all : "incursion, delve and other league based id-mod filtering"
+# !! Waypoint c1.idmod.league.all : "Identified Mods - Incursion mod filtering"
 
 Show # %D5 $type->exoticmods $tier->incursionspeedtraps
 	Identified True
@@ -2341,7 +2367,7 @@ Show # %D1 $type->exoticmods $tier->crafting
 #===============================================================================================================
 # [[0900]] Exotic Item Classes
 #===============================================================================================================
-# !! Waypoint c2.exotic.artefacts.all : "voidstones, trinkets, fishing rods"
+# !! Waypoint c2.exotic.artefacts.all : "Exotic - Voidstones, Trinkets, Fishing items, Pieces"
 
 #------------------------------------
 #   [0901] Voidstones
@@ -2414,7 +2440,7 @@ Show # $type->artefact->piece $tier->any
 #------------------------------------
 #   [0905] Craftable Invitations
 #------------------------------------
-# !! Waypoint c2.exotic.invitations.all : "maven invitations and quest items"
+# !! Waypoint c2.exotic.invitations.all : "Exotic - Invitations and Quest items"
 
 Show # $type->questlikeexception $tier->questheist
 	Class "Quest"
@@ -2517,7 +2543,7 @@ Show # $type->artefact->sanctifiedrelics $tier->anyrelic
 #===============================================================================================================
 # [[1000]] Exotic Item Variations
 #===============================================================================================================
-# !! Waypoint c2.exotic.doublecorrupted.all : "doublecorrupted rares"
+# !! Waypoint c2.exotic.doublecorrupted.all : "SpecialGear - Double corrupted rare items"
 
 #------------------------------------
 #   [1001] Double Corruptions
@@ -2549,7 +2575,7 @@ Show # %D5 $type->exotic->corruptions $tier->doublecorruptedany
 #------------------------------------
 #   [1002] Specific Single Corruptions
 #------------------------------------
-# !! Waypoint c2.exotic.singlecorrupted.all : "singlecorrupted quivers with implicit"
+# !! Waypoint c2.exotic.singlecorrupted.all : "SpecialGear - Single corrupted rare items with implicits"
 
 Show # %D3 $type->exotic->corruptions $tier->singlecorruptedquivers
 	Corrupted True
@@ -2564,7 +2590,7 @@ Show # %D3 $type->exotic->corruptions $tier->singlecorruptedquivers
 #------------------------------------
 #   [1003] Abyss Jeweled Rares
 #------------------------------------
-# !! Waypoint c2.exotic.abysssocketed : "rares  with abyss sockets"
+# !! Waypoint c2.exotic.abysssocketed : "SpecialGear - Rares with Abyss Sockets"
 
 Show # $type->exotic->sockets $tier->anynonbelt
 	Rarity Normal Magic Rare
@@ -2581,7 +2607,7 @@ Show # $type->exotic->sockets $tier->anynonbelt
 #------------------------------------
 #   [1004] Synthesised
 #------------------------------------
-# !! Waypoint c2.exotic.synthesised.all : "all synthesised items"
+# !! Waypoint c2.exotic.synthesised.all : "SpecialGear - All synthesised items"
 
 Show # %D6 $type->exotic->synthesised $tier->synthselected
 	SynthesisedItem True
@@ -2619,7 +2645,7 @@ Show # %D5 $type->exotic->synthesised $tier->synthrandom
 #------------------------------------
 #   [1005] Fractured
 #------------------------------------ 	
-# !! Waypoint c2.exotic.fractured.all : "all fractured items"
+# !! Waypoint c2.exotic.fractured.all : "SpecialGear - All fractured items"
 
 Show # %D6 $type->exotic->fractured $tier->fractselected
 	FracturedItem True
@@ -2659,7 +2685,7 @@ Show # %D3 $type->exotic->fractured $tier->fractrandom
 #------------------------------------
 #   [1006] Enchanted
 #------------------------------------
-# !! Waypoint c2.exotic.enchanted.all : "all enchanted items"
+# !! Waypoint c2.exotic.enchanted.all : "SpecialGear - All enchanted items"
 
 # Optional modules for enchanment based filtering
 
@@ -2742,7 +2768,7 @@ Show # %D2 $type->exotic->enchanted $tier->glovesboots
 #------------------------------------
 #   [1007] Crucible
 #------------------------------------
-# !! Waypoint c2.exotic.others : "others exotic items"
+# !! Waypoint c2.exotic.others : "SpecialGear - Others exotic items"
 
 Show # %D3 $type->exotic->crucible $tier->crucibleany
 	HasCruciblePassiveTree True
@@ -2756,7 +2782,7 @@ Show # %D3 $type->exotic->crucible $tier->crucibleany
 #===============================================================================================================
 # [[1100]] Recipes and 5links
 #===============================================================================================================
-# !! Waypoint c3.gear.alllinks.all : "5 linked and 6 socketed items"
+# !! Waypoint c3.gear.alllinks.all : "SpecialGear - 5-links and 6-socketed items"
 #------------------------------------
 #   [1101] Link Based
 #------------------------------------
@@ -2832,7 +2858,7 @@ Show # %DS3 $type->socketslinks $tier->6sockets
 #===============================================================================================================
 # [[1200]] High Level Crafting Bases
 #===============================================================================================================
-# !! Waypoint c3.gear.valuableilvl86 : "high value ilvl86 crafting bases"
+# !! Waypoint c3.gear.valuableilvl86 : "Crafting Bases - ilvl86 crafting bases"
 #------------------------------------
 #   [1201] Expensive Atlas 86 Bases - matched by economy
 #------------------------------------
@@ -2854,7 +2880,7 @@ Show # %D6 $type->crafting->expensive $tier->any
 #------------------------------------
 #   [1202] Perfection-Based-Filtering
 #------------------------------------
-# !! Waypoint c3.gear.perfectionbased.all : "perfection based"
+# !! Waypoint c3.gear.perfectionbased.all : "Crafting Bases - Items with perfect variable defense rolls (Sacred Orb roll)"
 
 Show # %D6 $type->crafting->perfectarmours $tier->t1
 	Corrupted False
@@ -2902,10 +2928,59 @@ Show # %D4 $type->crafting->perfectarmours $tier->t3
 	MinimapIcon 0 Purple Moon
 
 #------------------------------------
-#   [1203] ILVL 86
+#   [1203] RGB Endgame
+#------------------------------------
+# !! Waypoint c4.recipes.rgb.all : "Recipes - Endgame chromatic recipes (normal and magic RGBs)"
+
+Show # %H2 $type->endgamergb $tier->rgbsmall1
+	Width 2
+	Height 2
+	Rarity Normal Magic
+	SocketGroup "RGB"
+	AreaLevel >= 68
+	SetFontSize 40
+	SetTextColor 0 0 0 255
+	SetBorderColor 200 200 200 255
+	SetBackgroundColor 130 110 110 255
+
+Show # %H2 $type->endgamergb $tier->rgbsmall2
+	Width 1
+	Height <= 4
+	Rarity Normal Magic
+	SocketGroup "RGB"
+	AreaLevel >= 68
+	SetFontSize 40
+	SetTextColor 0 0 0 255
+	SetBorderColor 200 200 200 255
+	SetBackgroundColor 130 110 110 255
+
+Show # %H0 $type->endgamergb $tier->rgblarge
+	Width 2
+	Height 4
+	Rarity Normal Magic
+	SocketGroup "RGB"
+	AreaLevel >= 68
+	SetFontSize 40
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 130 110 110 255
+
+Show # %H0 $type->endgamergb $tier->rgbmedium
+	Width 2
+	Height 3
+	Rarity Normal Magic
+	SocketGroup "RGB"
+	AreaLevel >= 68
+	SetFontSize 40
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 130 110 110 255
+
+#------------------------------------
+#   [1204] ILVL 86
 #------------------------------------
 
-# !! Waypoint c3.gear.crafting-decorators : "crafting - decorators"
+# !! Waypoint c3.gear.crafting-decorators : "Crafting Bases - decorators"
 
 Show # $type->decorator->craftingrare $tier->raredecoratorilvl75
 	Corrupted False
@@ -2971,7 +3046,7 @@ Show # $type->decorator->craftingrare $tier->normaldecorator
 	SetBackgroundColor 0 0 0 180
 	Continue
 
-# !! Waypoint c3.gear.crafting86.all : "crafting - level 86 bases (rare and normal)"
+# !! Waypoint c3.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
 
 Show # %D6 $type->normalcraft->i86 $tier->t1
 	Corrupted False
@@ -3002,9 +3077,9 @@ Show # %D2 $type->normalcraft->i86 $tier->t3
 	SetBorderColor 255 125 0 185
 
 #------------------------------------
-#   [1204] ILVL 84
+#   [1205] ILVL 84
 #------------------------------------
-# !! Waypoint c3.gear.crafting84.all : "crafting - level 84 bases (rare and normal)"
+# !! Waypoint c3.gear.crafting84.all : "Crafting Bases - High level basetypes - ILVL84"
 
 Show # %D4 $type->normalcraft->i84 $tier->t1
 	Corrupted False
@@ -3035,9 +3110,9 @@ Show # %D1 $type->normalcraft->i84 $tier->t2
 #	SetBorderColor 200 200 0 185
 
 #------------------------------------
-#   [1205] ILVL ANY
+#   [1206] ILVL ANY
 #------------------------------------
-# !! Waypoint c3.gear.crafting-others : "crafting other bases (rare and normal)"
+# !! Waypoint c3.gear.crafting-others : "Crafting Bases - High level basetypes - others"
 
 Show # %D3 $type->normalcraft->rest $tier->t1
 	Corrupted False
@@ -3105,7 +3180,7 @@ Show # $type->decorator->craftinggeneric $tier->normaldecoratorremover
 	Continue
 
 #------------------------------------
-#   [1206] Early Endgame Crafting projects
+#   [1207] Early Endgame Crafting projects
 #------------------------------------
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
@@ -3155,58 +3230,9 @@ Show # %D1 $type->normalcraft->lowstrict $tier->earlyendgame4link
 	SetBackgroundColor 0 0 0 180
 
 #------------------------------------
-#   [1207] RGB Endgame
-#------------------------------------
-# !! Waypoint c4.recipes.rgb.all : "endgame chromatic recipes (normal and magic)"
-
-Show # %H2 $type->endgamergb $tier->rgbsmall1
-	Width 2
-	Height 2
-	Rarity Normal Magic
-	SocketGroup "RGB"
-	AreaLevel >= 68
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 200 200 200 255
-	SetBackgroundColor 130 110 110 255
-
-Show # %H2 $type->endgamergb $tier->rgbsmall2
-	Width 1
-	Height <= 4
-	Rarity Normal Magic
-	SocketGroup "RGB"
-	AreaLevel >= 68
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 200 200 200 255
-	SetBackgroundColor 130 110 110 255
-
-Show # %H0 $type->endgamergb $tier->rgblarge
-	Width 2
-	Height 4
-	Rarity Normal Magic
-	SocketGroup "RGB"
-	AreaLevel >= 68
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
-
-Show # %H0 $type->endgamergb $tier->rgbmedium
-	Width 2
-	Height 3
-	Rarity Normal Magic
-	SocketGroup "RGB"
-	AreaLevel >= 68
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
-
-#------------------------------------
 #   [1208] Chisel Recipes
 #------------------------------------
-# !! Waypoint c4.recipes.chisel.all : "chisel recipes"
+# !! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
 
 Show # %D1 $type->chiselrecipe $tier->chisel20
 	Quality >= 20
@@ -3262,7 +3288,7 @@ Show # %D0 $type->chiselrecipe $tier->chiselanyqualnormal
 #===============================================================================================================
 # [[1300]] Chancing Bases
 #===============================================================================================================
-# !! Waypoint c4.chancing : "chancing bases"
+# !! Waypoint c4.chancing : "Chancing bases"
 
 Show # %D1 $type->chancing $tier->hh
 	Corrupted False
@@ -3289,7 +3315,7 @@ Show # %D1 $type->chancing $tier->t2
 #------------------------------------
 #   [1401] Endgame Flasks
 #------------------------------------
-# !! Waypoint c4.flasks.all : "endgame flasks - all"
+# !! Waypoint c4.flasks.all : "Endgame Flasks - All non-unique"
 
 Show # %D6 $type->endgameflasks $tier->overqualutil
 	Mirrored False
@@ -3321,7 +3347,7 @@ Show # %D6 $type->endgameflasks $tier->overquallife
 	PlayEffect Blue
 	MinimapIcon 0 Blue Diamond
 
-# !! Waypoint c4.flasks.eg : "flasks - high level utility and life flasks"
+# !! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
 
 Show # %D5 $type->endgameflasks $tier->utility85
 	Mirrored False
@@ -3373,7 +3399,7 @@ Show # %D3 $type->endgameflasks $tier->lifemana82
 #------------------------------------
 #   [1402] Quality High
 #------------------------------------
-# !! Waypoint c4.flasks.others : "flasks - others"
+# !! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
 
 Show # %D3 $type->endgameflasks $tier->any20qualflask
 	Quality >= 20
@@ -3448,7 +3474,7 @@ Show # %D2 $type->endgameflasks $tier->earlymappinglifemana
 #===============================================================================================================
 # [[1500]] Misc Rules
 #===============================================================================================================
-# !! Waypoint c4.misc.others : "overquality items and optional animated weapon module"
+# !! Waypoint c4.misc.others : "SpecialGear - Overquality items and optional animated weapon module"
 
 Show # %D3 $type->miscendgamerules $tier->whitesocketweapons1h
 	Corrupted False
@@ -3488,7 +3514,7 @@ Show # %D3 $type->miscendgamerules $tier->whitesocketweapons1h
 #	SetBorderColor 230 0 0 255
 #	SetBackgroundColor 0 0 0 100
 
-# !! Waypoint c5.hidelayer.normalmagic : "hidelayer - magic and normal endgame items"
+# !! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
 #===============================================================================================================
 # [[1600]] Hide Layer 1 - Normal and Magic Endgame Gear
 #===============================================================================================================
@@ -3505,7 +3531,7 @@ Hide # $type->hidelayer $tier->normalmagicendgame
 #===============================================================================================================
 # [[1700]] Rare Item Decorators
 #===============================================================================================================
-# !! Waypoint c6.rare.decorator.all : "decorators - rare items"
+# !! Waypoint c6.rare.decorator.all : "Rare Endgame Items - decorators"
 
 Show # $type->decorators->rareeg $tier->largerares
 	Width >= 2
@@ -3591,7 +3617,7 @@ Show # $type->decorators->rareeg $tier->corruptedraresimplicit
 #===============================================================================================================
 # [[1800]] Endgame - Rare - Exotic Corrupted Items
 #===============================================================================================================
-# !! Waypoint c6.rare.breach.all : "breach rings"
+# !! Waypoint c6.rare.breach.all : "Rare Endgame Items - Breach rings"
 
 Show # %HS3 $type->rare->exotic->breachrings $tier->high
 	ItemLevel >= 82
@@ -3618,7 +3644,7 @@ Show # %HS1 $type->rare->exotic->breachrings $tier->any
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-# !! Waypoint c6.rare.talisman.all : "talismans"
+# !! Waypoint c6.rare.talisman.all : "Rare Endgame Items - Talismans"
 
 Show # %H5 $type->rare->exotic->talisman $tier->t1attacktalisman
 	AnyEnchantment True
@@ -3711,7 +3737,7 @@ Show # %H1 $type->rare->exotic->talisman $tier->any
 #===============================================================================================================
 # [[1900]] Endgame - Rare - Accessoires
 #===============================================================================================================
-# !! Waypoint c6.rare.generic.all : "rares - all generic rares"
+# !! Waypoint c6.rare.generic.all : "Rare Endgame Items - (Optional) Hiding identified rares"
 
 #Hide # $type->rareoptional $tier->idhider
 #	Identified True
@@ -3724,7 +3750,7 @@ Show # %H1 $type->rare->exotic->talisman $tier->any
 #===============================================================================================================
 # [[2000]] Endgame - Rare - Accessoires
 #===============================================================================================================
-# !! Waypoint c6.rare.trinkets.all : "rares - all rings, amulets"
+# !! Waypoint c6.rare.trinkets.all : "Rare Endgame Items - Amulets, Rings"
 
 Show # %D4 $type->rr->amuring $tier->t1
 	ItemLevel >= 68
@@ -3750,7 +3776,7 @@ Show # %D2 $type->rr->amuring $tier->t3
 	SetFontSize 40
 	SetBackgroundColor 0 0 0 255
 
-# !! Waypoint c6.rare.belts.all : "rares - all belt rules"
+# !! Waypoint c6.rare.belts.all : "Rare Endgame Items - Belts"
 
 Show # %D4 $type->rr->belts $tier->t1
 	ItemLevel >= 68
@@ -3779,7 +3805,7 @@ Show # %D2 $type->rr->belts $tier->t3
 #===============================================================================================================
 # [[2100]] Endgame - Rare - Gear - T1 - handpicked
 #===============================================================================================================
-# !! Waypoint c6.rare.t1.all : "rares - t1"
+# !! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1"
 
 Show # %D3 $type->rr $tier->t1weapons
 	ItemLevel >= 68
@@ -3798,7 +3824,7 @@ Show # %D3 $type->rr $tier->t1armours
 #===============================================================================================================
 # [[2200]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
-# !! Waypoint c6.rare.t2.all : "rares - t2"
+# !! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2"
 
 Show # %D3 $type->rr $tier->t2weapons
 	ItemLevel >= 68
@@ -3817,7 +3843,7 @@ Show # %D3 $type->rr $tier->t2armours
 #===============================================================================================================
 # [[2300]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
-# !! Waypoint c6.rare.idhandling.all : "rares - identified item handling"
+# !! Waypoint c6.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
 
 Show # %D1 $type->rr $tier->identifieditemhandling
 	Identified True
@@ -3833,7 +3859,7 @@ Show # %D1 $type->rr $tier->identifieditemhandling
 #===============================================================================================================
 # [[2400]] Endgame - Rare - Gear - T3 - subpar bases
 #===============================================================================================================
-# !! Waypoint c6.rare.t3.all : "rares - t3"
+# !! Waypoint c6.rare.t3.all : "Rare Endgame Items - t3"
 
 Show # %D2 $type->rr $tier->t3runedaggers
 	ItemLevel >= 68
@@ -4006,7 +4032,7 @@ Show # %D2 $type->rr $tier->t3quivers
 #===============================================================================================================
 # [[2500]] Endgame - Rare - Gear - T4 - rest
 #===============================================================================================================
-# !! Waypoint c6.rare.t4.all : "rares - t4"
+# !! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4"
 
 Show # %D1 $type->rr $tier->t4endgamerares
 	ItemLevel >= 68
@@ -4031,7 +4057,7 @@ Hide # $type->hidelayer $tier->raresendgame
 #===============================================================================================================
 # [[2700]] Jewels
 #===============================================================================================================
-# !! Waypoint c7.jewels.identified : "jewels - special, identified, corrupted"
+# !! Waypoint c7.jewels.identified : "Jewels - Identified with interesting mods"
 
 #------------------------------------
 #   [2701] Special Cases
@@ -4067,7 +4093,7 @@ Show # %D4 $type->jewels->special $tier->1moduncorrupted
 #------------------------------------
 #   [2702] Leveling Exceptions
 #------------------------------------
-# !! Waypoint c7.jewels.leveling : "jewels - while leveling"
+# !! Waypoint c7.jewels.leveling : "Jewels - Leveling Overrides"
 
 Show # %D4 $type->jewels->leveling $tier->abyss
 	ItemLevel <= 67
@@ -4090,7 +4116,7 @@ Show # %D4 $type->jewels->leveling $tier->generic
 #------------------------------------
 #   [2703] Abyss Jewels
 #------------------------------------
-# !! Waypoint c7.jewels.abyss.all : "jewels - abyss jewels"
+# !! Waypoint c7.jewels.abyss.all : "Jewels - Abyss Jewels"
 
 Show # %H5 $type->jewels->abyss $tier->veryhighrare
 	ItemLevel >= 86
@@ -4164,7 +4190,7 @@ Show # %H2 $type->jewels->abyss $tier->anymagic
 #------------------------------------
 #   [2704] Generic Jewels
 #------------------------------------
-# !! Waypoint c7.jewels.generic.all : "jewels - generic jewels"
+# !! Waypoint c7.jewels.generic.all : "Jewels - Generic Jewels"
 
 Show # %HS3 $type->jewels->generic $tier->anyrare
 	Rarity Rare
@@ -4189,7 +4215,7 @@ Show # %H3 $type->jewels->generic $tier->anymagic
 #------------------------------------
 #   [2705] Cluster Jewels: Eco-Based-Large
 #------------------------------------
-# !! Waypoint c7.jewels.cluster.all : "cluster jewels - all"
+# !! Waypoint c7.jewels.cluster.all : "Jewels - Cluster - Economy-Based-Tiering"
 
 # Large N12 T1
 
@@ -4961,7 +4987,7 @@ Show # $type->jewels->clustereco $tier->n2_i68_t2
 	PlayEffect Yellow
 	MinimapIcon 1 Yellow Pentagon
 
-# !! Waypoint c7.jewels.cluster.good : "cluster jewels - non-economy-matched"
+# !! Waypoint c7.jewels.cluster.good : "Jewels - Cluster - Others"
 #------------------------------------
 #   [2706] Cluster Jewels: Random
 #------------------------------------
@@ -5065,7 +5091,7 @@ Show # %D4 $type->jewels->cluster $tier->small
 # [[2800]] Heist Gear
 #===============================================================================================================
 
-# !! Waypoint c7.heist.all : "heist gear - all"
+# !! Waypoint c7.heist.all : "Heist Gear"
 #------------------------------------
 #   [2801] Heist Cloak
 #------------------------------------
@@ -5265,7 +5291,7 @@ Show # %H3 $type->heist->tool $tier->t3any
 #===============================================================================================================
 # [[2900]] Gem Tierlists
 #===============================================================================================================
-# !! Waypoint c8.gems.all : "gem rules - all"
+# !! Waypoint c8.gems.all : "Gem Rules - Override All"
 
 #------------------------------------
 #   [2901] Exceptional Gems - Awakened and AltQuality
@@ -5407,7 +5433,7 @@ Show # $type->gems-exceptional $tier->vaal20
 #------------------------------------
 #   [2902] Exceptional Gems - Special gems
 #------------------------------------
-# !! Waypoint c8.gems.empowerclass : "gem rules - empower class"
+# !! Waypoint c8.gems.empowerclass : "Gem Rules - Empower Class"
 
 Show # $type->gems-special $tier->specialworlddrops
 	Class "Gems"
@@ -5470,7 +5496,7 @@ Show # $type->gems-special $tier->exportal
 #------------------------------------
 #   [2903] High Quality and Leveled Gems
 #------------------------------------
-# !! Waypoint c8.gems.qualityandlevel : "gem rules - quality and leveled gems"
+# !! Waypoint c8.gems.qualityandlevel : "Gem Rules - Quality and Leveled versions"
 
 Show # $type->gems-generic $tier->lt1
 	GemLevel >= 21
@@ -5631,7 +5657,7 @@ Show # %D0 $type->gems-generic $tier->lt4
 	SetTextColor 30 190 190 255
 	SetBorderColor 40 130 130 255
 
-# !! Waypoint c8.gems.low : "gem rules - generic, leveling and vaal gems"
+# !! Waypoint c8.gems.low : "Gem Rules - First Zones, Leveling, Vaal"
 
 Show # $type->gems-generic $tier->firstzone
 	Class "Gems"
@@ -5670,7 +5696,7 @@ Show # %H0 $type->gems-generic $tier->any
 #===============================================================================================================
 # [[3000]] REPLICA UNIQUES
 #===============================================================================================================
-# !! Waypoint c9.replicas.all : "replicas - all"
+# !! Waypoint c9.replicas.all : "Tierlists - Replicas"
 
 Show # $type->uniques->replicas $tier->t1
 	Replica True
@@ -5734,7 +5760,7 @@ Show # $type->uniques->replicas $tier->restex
 #===============================================================================================================
 # [[3100]] Special Maps
 #===============================================================================================================
-# !! Waypoint c9.maps.all : "maps - all"
+# !! Waypoint c9.maps.all : "Maps - All"
 
 #------------------------------------
 #   [3101] Unique Maps
@@ -5765,7 +5791,7 @@ Show # $type->uniques->maps $tier->exharbinger
 	PlayEffect Red
 	MinimapIcon 0 Red Star
 
-# !! Waypoint c9.maps.unique.all : "maps - all unique maps"
+# !! Waypoint c9.maps.unique.all : "Maps - Unique Tierlists"
 
 Show # $type->uniques->maps $tier->t1
 	Rarity Unique
@@ -5829,7 +5855,7 @@ Show # $type->uniques->maps $tier->restex
 #------------------------------------
 #   [3102] Blighted maps
 #------------------------------------
-# !! Waypoint c9.maps.special.all : "maps - blighted, enchanted, delirium maps"
+# !! Waypoint c9.maps.special.all : "Maps - Blighted, Enchanted, Delirium maps"
 
 Show # $type->maps->blighted $tier->uber
 	UberBlightedMap True
@@ -5937,7 +5963,7 @@ Show # %D5 $type->maps->implicitmod $tier->any
 #------------------------------------
 #   [3201] Generic Decorators
 #------------------------------------
-# !! Waypoint c9.maps.decorators.all : "maps - decorators"
+# !! Waypoint c9.maps.decorators.all : "Maps - decorators"
 
 Show # $type->maps $tier->deco_zone1general
 	MapTier >= 14
@@ -5969,7 +5995,7 @@ Show # $type->maps $tier->deco_zone4general
 #------------------------------------
 #   [3202] Map progression
 #------------------------------------
-# !! Waypoint c9.maps.generic.t16 : "maps - t14-t16"
+# !! Waypoint c9.maps.generic.t16 : "Maps - t14-t16 - high reds"
 
 Show # $type->maps $tier->deco_mapup_t16
 	MapTier >= 16
@@ -6022,7 +6048,7 @@ Show # $type->maps $tier->maps_a_t14
 	PlayEffect Yellow
 	MinimapIcon 1 Red Square
 
-# !! Waypoint c9.maps.generic.t14 : "maps - t11-t13"
+# !! Waypoint c9.maps.generic.t14 : "Maps - t11-t13 - low reds"
 
 Show # %D4 $type->maps $tier->deco_mapup_t13
 	MapTier >= 13
@@ -6075,7 +6101,7 @@ Show # %H5 $type->maps $tier->maps_b_t11
 	PlayEffect Yellow
 	MinimapIcon 1 Red Square
 
-# !! Waypoint c9.maps.generic.t10 : "maps - yellow maps"
+# !! Waypoint c9.maps.generic.t10 : "Maps - t6-t10 - yellow maps"
 
 Show # %D3 $type->maps $tier->deco_mapup_t10
 	MapTier >= 10
@@ -6162,7 +6188,7 @@ Show # %H4 $type->maps $tier->maps_c_t6
 	PlayEffect White
 	MinimapIcon 1 Yellow Square
 
-# !! Waypoint c9.maps.generic.t5 : "maps - white maps"
+# !! Waypoint c9.maps.generic.t5 : "maps - T1-T5 - white maps"
 
 Show # %D3 $type->maps $tier->deco_mapup_t5
 	MapTier >= 5
@@ -6262,7 +6288,7 @@ Show # $type->maps $tier->restex
 #===============================================================================================================
 # [[3300]] Pseudo-Map-Items
 #===============================================================================================================
-# !! Waypoint c9.maplike.all : "all special maplike items - contracts, logbooks, blueprints, memories"
+# !! Waypoint c9.maplike.all : "Maplike - contracts, logbooks, blueprints, memories"
 
 Show # $type->uniques->heist $tier->any
 	Rarity Unique
@@ -6356,7 +6382,7 @@ Show # $type->exoticmap->memory $tier->any
 #===============================================================================================================
 # [[3400]] Fragments
 #===============================================================================================================
-# !! Waypoint c9.fragments.all : "fragments - all"
+# !! Waypoint c9.fragments.all : "Tierlist - Fragments"
 
 #------------------------------------
 #   [3401] Exceptions
@@ -6536,7 +6562,7 @@ Show # $type->breachstone $tier->restex
 #===============================================================================================================
 # [[3500]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
-# !! Waypoint c9.currency.leveling.all : "currency - all, including stacked and leveling currencies"
+# !! Waypoint c9.currency.leveling.all : "Tierlist - Currency - Leveling Stacked Currency"
 
 Show # %D4 $type->currency->levelingstacked $tier->trans
 	StackSize >= 3
@@ -6574,6 +6600,8 @@ Show # %D4 $type->currency->levelingstacked $tier->wisdom
 	SetFontSize 45
 	SetBorderColor 200 100 60 255
 	SetBackgroundColor 30 5 5 255
+
+# !! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 
 Show # %D5 $type->currency->leveling $tier->binding
 	Class "Currency"
@@ -6637,7 +6665,7 @@ Show # %D3 $type->currency->leveling $tier->wisdom
 #===============================================================================================================
 # [[3600]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
-# !! Waypoint c9.currency.stacked.all : "currency - endgame stacked currencies"
+# !! Waypoint c9.currency.stacked.all : "Tierlist - Currency - Endgame Stacked"
 #------------------------------------
 #   [3601] Supplies: High Stacking
 #------------------------------------
@@ -6935,7 +6963,7 @@ Show # %D3 $type->currency->stackedthree $tier->t7
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 210 178 135 255
 
-# !! Waypoint c9.currency.heistcoins : "currency - heist coins"
+# !! Waypoint c9.currency.heistcoins : "Tierlist - Currency - Heist Coins"
 #------------------------------------
 #   [3607] Heist Coins
 #------------------------------------
@@ -6968,7 +6996,7 @@ Hide # $type->currency->heist $tier->exhide
 #===============================================================================================================
 # [[3700]] Currency - Regular Currency Tiering
 #===============================================================================================================
-# !! Waypoint c9.currency.single : "currency - single endgame currencies"
+# !! Waypoint c9.currency.single : "Tierlist - Currency - General"
 
 Show # $type->currency $tier->t1exalted
 	Class "Currency"
@@ -7080,7 +7108,7 @@ Show # %H1 $type->currency $tier->twisdom
 #------------------------------------
 #   [3801] Incursion - Vials
 #------------------------------------
-# !! Waypoint c9.currency.vials.all : "vials - all"
+# !! Waypoint c9.currency.vials.all : "Tierlist - Currency - Vials"
 
 Show # $type->vials $tier->t1
 	Class "Currency"
@@ -7129,7 +7157,7 @@ Show # $type->vials $tier->restex
 #------------------------------------
 #   [3802] Delirum Orbs
 #------------------------------------
-# !! Waypoint c9.currency.delirium.all : "delirium orbs - all"
+# !! Waypoint c9.currency.delirium.all : "Tierlist - Currency - Delirium Orbs"
 
 #Show # $type->currency->deliriumorbs $tier->t1
 #	Class "Currency"
@@ -7177,7 +7205,7 @@ Show # $type->currency->deliriumorbs $tier->restex
 #------------------------------------
 #   [3803] Delve - Resonators
 #------------------------------------
-# !! Waypoint c9.currency.resonators.all : "resonators - all"
+# !! Waypoint c9.currency.resonators.all : "Tierlist - Resonators"
 
 Show # $type->currency->resonator $tier->t1
 	Class "Delve Stackable Socketable Currency"
@@ -7224,7 +7252,7 @@ Show # $type->currency->resonator $tier->restex
 #------------------------------------
 #   [3804] Delve - Fossils
 #------------------------------------
-# !! Waypoint c9.currency.fossils.all : "fossils - all"
+# !! Waypoint c9.currency.fossils.all : "Tierlist - Fossils"
 
 Show # $type->currency->fossil $tier->t1
 	Class "Currency"
@@ -7284,7 +7312,7 @@ Show # $type->currency->fossil $tier->restex
 #------------------------------------
 #   [3805] Blight - Oils
 #------------------------------------
-# !! Waypoint c9.currency.oils.all : "oils - all"
+# !! Waypoint c9.currency.oils.all : "Tierlist - Oils"
 
 Show # $type->currency->oil $tier->t1
 	Class "Currency"
@@ -7350,7 +7378,7 @@ Show # $type->currency->oil $tier->restex
 #------------------------------------
 #   [3806] Essences
 #------------------------------------
-# !! Waypoint c9.currency.essences.all : "essences - all"
+# !! Waypoint c9.currency.essences.all : "Tierlist - Essences"
 
 Show # $type->currency->essence $tier->t1
 	Class "Currency"
@@ -7418,7 +7446,7 @@ Hide # $type->currency->essence $tier->exhide
 #------------------------------------
 #   [3807] Incubators
 #------------------------------------
-# !! Waypoint c9.currency.incubators.all : "incubators - all"
+# !! Waypoint c9.currency.incubators.all : "Tierlist - Incubators"
 
 Show # %H5 $type->currency->incubators $tier->leveledex
 	ItemLevel >= 81
@@ -7495,7 +7523,7 @@ Show # $type->currency->incubators $tier->restex
 #------------------------------------
 #   [3808] Invocations
 #------------------------------------
-# !! Waypoint c9.currency.misc.all : "misc currencies - new leagues, exotic currency etc"
+# !! Waypoint c9.currency.misc.all : "Misc Currency-Like - New and Exotic Items"
 
 Show # $type->currency->invocations $tier->t2
 	Class "Currency"
@@ -7576,7 +7604,7 @@ Show # $type->currency->others $tier->misc
 #------------------------------------
 #   [3901] Breach and Legion Splinters - stacked
 #------------------------------------
-# !! Waypoint c9.splinters.all : "splinters - all - stacked and single"
+# !! Waypoint c9.splinters.all : "Tierlist - Splinters"
 
 Show # %D6 $type->currency->stackedsplintershigh $tier->t1
 	StackSize >= 10
@@ -7741,7 +7769,7 @@ Show # %H4 $type->currency->splinter->simulacrum $tier->t5
 #===============================================================================================================
 # [[4000]] Divination Cards
 #===============================================================================================================
-# !! Waypoint c9.divination.all : "cards - all"
+# !! Waypoint c9.divination.all : "Tierlist - Cards - All"
 
 Show # $type->divination $tier->t1
 	Class "Divination"
@@ -7786,7 +7814,7 @@ Show # $type->divination $tier->t3
 #	PlayEffect Yellow
 #	MinimapIcon 1 Yellow Triangle
 
-# !! Waypoint c9.divination.t4 : "cards - t4, t4c and lower"
+# !! Waypoint c9.divination.t4 : "Tierlist - Cards - T4, T4c and lower"
 
 Show # %H5 $type->divination $tier->t4c
 	Class "Divination"
@@ -7876,7 +7904,7 @@ Show # $type->currency $tier->restex
 #===============================================================================================================
 # [[4200]] Questlike-Items1 (override uniques)
 #===============================================================================================================
-# !! Waypoint c9.metamorph.all : "metamorph - all"
+# !! Waypoint c9.metamorph.all : "Metamorph Organs"
 
 Show # $type->metamorph $tier->any
 	Class "Metamorph"
@@ -7901,7 +7929,7 @@ Show # $type->heisttarget $tier->any
 #===============================================================================================================
 # [[4300]] Uniques
 #===============================================================================================================
-# !! Waypoint c10.uniques.all : "uniques - all"
+# !! Waypoint c10.uniques.all : "Tierlist - Uniques - All"
 
 #------------------------------------
 #   [4301] Exceptions #1
@@ -8006,7 +8034,7 @@ Show # $type->uniques $tier->ex6link
 #------------------------------------
 #   [4302] Tier 1 and 2 uniques
 #------------------------------------
-# !! Waypoint c10.uniques.t1 : "uniques - t1 and t2"
+# !! Waypoint c10.uniques.t1 : "Tierlist - Uniques - T1, T2"
 
 Show # $type->uniques $tier->t1
 	Rarity Unique
@@ -8126,7 +8154,7 @@ Show # %D5 $type->uniques $tier->6s
 #------------------------------------
 #   [4305] Low tier exceptions
 #------------------------------------
-# !! Waypoint c10.uniques.t1 : "uniques - only low tier uniques"
+# !! Waypoint c10.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
 
 #Show # %H4 $type->uniques $tier->earlyleague
 #	Rarity Unique
@@ -8263,7 +8291,7 @@ Show # $type->uniques $tier->restex
 #===============================================================================================================
 # [[4400]] Misc Map Items
 #===============================================================================================================
-# !! Waypoint c10.relics.all : "relics - all"
+# !! Waypoint c10.relics.all : "Relic Keys, Itemized Leagues"
 
 Show # $type->miscmapitemsextra $tier->relickeys
 	BaseType == "Ancient Reliquary Key" "Archive Reliquary Key" "Cosmic Reliquary Key" "Decaying Reliquary Key" "Forgotten Reliquary Key" "Oubliette Reliquary Key" "Shiny Reliquary Key" "Timeworn Reliquary Key" "Vaal Reliquary Key" "Visceral Reliquary Key" "Voidborn Reliquary Key"
@@ -8342,7 +8370,7 @@ Show # $type->questlike $tier->incursionconsumable
 #===============================================================================================================
 # [[4600]] Hide outdated leveling flasks
 #===============================================================================================================
-# !! Waypoint c11.leveling.all : "leveling - all rules"
+# !! Waypoint c11.leveling.all : "Leveling - ALL rules"
 
 Hide # $type->hidelayer $tier->outdatedlevelflaska
 	Quality 0
@@ -8390,7 +8418,7 @@ Hide # $type->hidelayer $tier->outdatedlevelflaskd
 #------------------------------------
 #   [4701] Utility Flasks
 #------------------------------------
-# !! Waypoint c11.leveling.utilflasks : "leveling - utility flasks"
+# !! Waypoint c11.leveling.utilflasks : "Leveling - Utility flasks and Quality Flasks"
 
 Show # $type->leveling->flasks->utility $tier->quicksilver
 	BaseType == "Quicksilver Flask"
@@ -8447,7 +8475,7 @@ Show # %D0 $type->leveling->flasks->quality $tier->any
 #------------------------------------
 #   [4702] Hybrid flasks
 #------------------------------------
-# !! Waypoint c11.leveling.lifeflasks : "leveling - life, mana, hybrid flasks"
+# !! Waypoint c11.leveling.lifeflasks : "Leveling - Life, Mana, Hybrid flasks"
 
 Show # %H2 $type->leveling->flasks->hybrid $tier->t1
 	Class "Hybrid Flasks"
@@ -8670,7 +8698,7 @@ Show # $type->leveling->flasks->mana $tier->t12
 #===============================================================================================================
 # [[4800]] Leveling - Rules
 #===============================================================================================================
-# !! Waypoint c11.leveling.gear.all : "leveling - all gear"
+# !! Waypoint c11.leveling.gear.all : "Leveling - Gear - All non-unique"
 #------------------------------------
 #   [4801] Links and Sockets
 #------------------------------------
@@ -8688,7 +8716,7 @@ Show # %D4 $type->leveling->rare->socketslinks $tier->4linkrares
 #------------------------------------
 #   [4802] Rares - Decorators
 #------------------------------------
-# !! Waypoint c11.leveling.decorators.all : "leveling - decorators"
+# !! Waypoint c11.leveling.decorators.all : "Leveling - Rares - Decorators"
 
 Show # $type->decorators->leveling->rare $tier->largerares
 	Width >= 2
@@ -8726,7 +8754,7 @@ Show # $type->decorators->leveling->rare $tier->tinyrares
 #   [4803] Rares - Universal
 #------------------------------------
 
-# !! Waypoint c11.leveling.rares.minions : "leveling rares - minion gear"
+# !! Waypoint c11.leveling.rares.minions : "Leveling - Rares - Minion Items"
 
 Show # %D4 $type->leveling->rare->minion $tier->general
 	Rarity Rare
@@ -8735,7 +8763,7 @@ Show # %D4 $type->leveling->rare->minion $tier->general
 	SetBorderColor 150 50 150 255
 	SetBackgroundColor 111 67 117 210
 
-# !! Waypoint c11.leveling.rares.trinkets : "leveling rares - belts, rings, amulets"
+# !! Waypoint c11.leveling.rares.trinkets : "Leveling - Rares - Belts, Rings, Amulets"
 
 Show # %D5 $type->leveling->rare->universal $tier->rusticsash
 	Rarity Rare
@@ -8750,7 +8778,7 @@ Show # %D5 $type->leveling->rare->universal $tier->jewellery
 	SetFontSize 45
 	SetBackgroundColor 0 80 30 255
 
-# !! Waypoint c11.leveling.rares.armors : "leveling rares - armor pieces"
+# !! Waypoint c11.leveling.rares.armors : "Leveling - Rares - Armour Pieces"
 
 Show # %D4 $type->leveling->rare->armours $tier->bootsfocus
 	Rarity Rare
@@ -8788,7 +8816,7 @@ Show # %D4 $type->leveling->rare->armours $tier->quivers
 #------------------------------------
 #   [4804] Rares - Caster
 #------------------------------------
-# !! Waypoint c11.leveling.rares.caster : "leveling rares - caster gear"
+# !! Waypoint c11.leveling.rares.caster : "Leveling - Rares - Caster"
 
 Show # %D4 $type->leveling->rare->caster $tier->earlylevels
 	ItemLevel <= 16
@@ -8808,7 +8836,7 @@ Show # %D4 $type->leveling->rare->caster $tier->general
 #------------------------------------
 #   [4805] Rares - Archer
 #------------------------------------
-# !! Waypoint c11.leveling.rares.archer : "leveling rares - archer gear"
+# !! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Archer"
 
 Show # %D4 $type->leveling->rare->archer $tier->l1
 	ItemLevel <= 16
@@ -8902,7 +8930,7 @@ Show # %D4 $type->leveling->rare->archer $tier->l10
 #------------------------------------
 #   [4806] Rares - Melee
 #------------------------------------
-# !! Waypoint c11.leveling.rares.archer : "leveling rares - melee gear"
+# !! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Melee"
 
 Show # %D4 $type->leveling->rare->melee $tier->l1
 	ItemLevel <= 16
@@ -8993,7 +9021,7 @@ Show # %D4 $type->leveling->rare->melee $tier->l10
 	SetBorderColor 150 50 50 255
 	SetBackgroundColor 100 43 43 210
 
-# !! Waypoint c11.leveling.rares.low : "leveling - low tier gear"
+# !! Waypoint c11.leveling.rares.low : "Leveling - Gear - Low Tier"
 
 Show # %D3 $type->leveling->rare->remaining $tier->chromaticrares
 	Rarity Rare
@@ -9031,7 +9059,7 @@ Show # %D3 $type->leveling->rare->remaining $tier->underlevel16
 #===============================================================================================================
 # [[4900]] Leveling - Useful magic and normal items
 #===============================================================================================================
-# !! Waypoint c11.leveling.linked.all : "leveling - all linked items"
+# !! Waypoint c11.leveling.linked.all : "Leveling - Linked - 4link"
 #------------------------------------
 #   [4901] Purpose Picked Items
 #------------------------------------
@@ -9045,7 +9073,7 @@ Show # %D4 $type->leveling->normalmagic->4l $tier->general
 	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
-# !! Waypoint c11.leveling.rgb.all : "leveling - RGB recipes"
+# !! Waypoint c11.leveling.rgb.all : "Leveling - Linked - RGB Recipe"
 
 Show # %D3 $type->leveling->normalmagic->rgb $tier->rgbsmall1
 	Width 2
@@ -9087,7 +9115,7 @@ Show # %D2 $type->leveling->normalmagic->rgb $tier->rgbmedium
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 130 110 110 255
 
-# !! Waypoint c11.leveling.3linked.all : "leveling - 3 linked items"
+# !! Waypoint c11.leveling.3linked.all : "Leveling - Linked - 3links"
 
 Show # %D3 $type->leveling->normalmagic->3l $tier->earlythreelinks
 	LinkedSockets >= 3
@@ -9107,7 +9135,7 @@ Show # %D2 $type->leveling->normalmagic->3l $tier->general
 	SetBackgroundColor 0 0 0 255
 	PlayEffect Grey Temp
 
-# !! Waypoint c11.leveling.act12.all : "leveling - act1 and 2 specific items"
+# !! Waypoint c11.leveling.act12.all : "Leveling - Normal and Magic - Act1, Act2 special gear"
 
 Show # %D4 $type->leveling->normalmagic->act1 $tier->casterweapons
 	Sockets >= 3
@@ -9185,7 +9213,7 @@ Show # %D3 $type->leveling->normalmagic->act2 $tier->physical
 	SetBorderColor 100 100 100 150
 	SetBackgroundColor 0 0 0 255
 
-# !! Waypoint c11.leveling.actlater.all : "leveling - later acts specific items"
+# !! Waypoint c11.leveling.actlater.all : "Leveling - Normal and Magic - Later Acts"
 
 Show # %D2 $type->leveling->normalmagic->otheracts $tier->highphysquivers
 	Rarity Normal Magic
@@ -9228,7 +9256,7 @@ Show # %D2 $type->leveling->normalmagic->minion $tier->miniongear
 #------------------------------------
 #   [4902] Normals
 #------------------------------------
-# !! Waypoint c11.leveling.firstlevels.all : "leveling - first levels gear"
+# !! Waypoint c11.leveling.firstlevels.all : "Leveling - Normal and Magic - First Levels"
 
 Show # %H2 $type->leveling->firstlevels $tier->earlybodyarmours
 	Rarity Normal
@@ -9259,7 +9287,7 @@ Show # %H3 $type->leveling->firstlevels $tier->firstareas
 #------------------------------------
 #   [4903] Weapon Progression
 #------------------------------------
-# !! Waypoint c11.leveling.progression.all : "leveling - weapon progression"
+# !! Waypoint c11.leveling.progression.all : "Leveling - Normal and Magic - Item Progression"
 
 Show # %H2 $type->leveling->weaponprogression $tier->r01
 	Sockets >= 3
@@ -9414,7 +9442,7 @@ Show # %H2 $type->leveling->weaponprogression $tier->r15bas
 #------------------------------------
 #   [4904] Remaining Magics
 #------------------------------------
-# !! Waypoint c11.leveling.magicvendor.all : "leveling - magic vendor items"
+# !! Waypoint c11.leveling.magicvendor.all : "Leveling - Normal and Magic - Magic Vendor Items"
 
 Show # $type->decorators->leveling->magic $tier->medium1
 	Width 1
@@ -9494,7 +9522,7 @@ Show # %H3 $type->leveling->magic->remaining $tier->firstlevels
 	AreaLevel <= 9
 	SetFontSize 35
 
-# !! Waypoint c12.hide.all : "hide all other known items"
+# !! Waypoint c12.hide.all : "HIDELAYER - Hide all known untiered items"
 #------------------------------------
 #   [4905] Hide All known Section
 #------------------------------------
@@ -9509,7 +9537,7 @@ Hide # $type->hidelayer $tier->final
 #------------------------------------
 #   [4906] Show All unknown Section
 #------------------------------------
-# !! Waypoint c13.show.all : "show all unknown items"
+# !! Waypoint c13.show.all : "SAFETYLAYER - Show all unknown items"
 # THIS ENTRY IS CAUGHT IN 3 CASES:
 # 1) YOUR FILTER IS OUT OF DATE!
 # 2) YOU DID SOMETHING SILLY WHEN EDITING THE FILTER
