@@ -10,7 +10,7 @@ Func Clean(){ Corrupted False; Mirrored False; }
 # [[0200]] Global overriding rules
 #===============================================================================================================
 
-#!! Waypoint c0.alpha : "ALL Rules"
+#!! Waypoint c0.alpha : "All Rules - Highest priority - DANGER ZONE"
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
@@ -33,7 +33,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class "Maps", Rarity <= Rare
 	Show InfConquerors { !G2; !maps.T1; HasInfluence Crusader Hunter Redeemer Warlord; }
 }
 
-#!! Waypoint c1.infl.all : "all influenced rules"
+#!! Waypoint c1.infl.all : "All rules - except 6links and influenced maps"
 
 Section Influenced : Rarity Rare
 {
@@ -162,7 +162,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 # [[9999]] ELDRITCH ITEMS
 #===============================================================================================================
 
-#!! Waypoint c1.eldritch.all : "all eldritch items"
+#!! Waypoint c1.eldritch.all : "Eldritch Items - Exarch and Eater"
 
 Section Eldritch : Rarity <= Rare
 {
@@ -182,7 +182,7 @@ Section Eldritch : Rarity <= Rare
 #===============================================================================================================
 # [[0200]] Exotic Bases
 #===============================================================================================================
-#!! Waypoint c1.exotic.all : "all exotic bases"
+#!! Waypoint c1.exotic.all : "Exotic - Expedition, exotic Talismans, Sacrificial garbs"
 
 # These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
 # These are bases such as heist and ritual bases.
@@ -206,7 +206,7 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING - COMBINATIONS
 #===============================================================================================================
-#!! Waypoint c1.idmod.all : "identified mod filtering - all rules"
+#!! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
 Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
 {
@@ -226,16 +226,16 @@ Section IdModSection : IdMods, !highvalueidmod
 	{
 		Section Weapons : Class == classes_attack, DropLevel >= 55, Mod xattackphys_Core
 		{
-			Show Weapon_Phys     { Mod >= 3 xattackphys_Conf; }
-			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Clean(); }
+			Show Weapon_Phys     { Mod >= 3 xattackphys_Conf; Mod = 0 zbad_phys_attack; }
+			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Mod = 0 zbad_phys_attack; Clean(); }
 		}
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
 		Section FastEleWeapons : BaseType == quickWeapons, Mod xattackele_Core
 		{
-			Show Weapon_Ele 	{ Mod >= 4 xattackele_Norm; }
-			Show Weapon_ElePure { Mod >= 3 xattackele_Norm; Clean(); }
+			Show Weapon_Ele 	{ Mod >= 4 xattackele_Norm; Mod = 0 zbad_ele_attack; }
+			Show Weapon_ElePure { Mod >= 3 xattackele_Norm; Mod = 0 zbad_ele_attack; Clean(); }
 		}
 #------------------------------------
 #   [1234] Gembased
@@ -252,11 +252,11 @@ Section IdModSection : IdMods, !highvalueidmod
 		
 		Section CasterSpecialized : Class == classes_1hcast
 		{
-			Show Caster_FireWeaponT2  { Mod casterFireCore; Mod >= 4 xcaster_firedmg_norm; }
-			Show Caster_ColdWeaponT2  { Mod casterColdCore; Mod >= 4 xcaster_colddmg_norm; }
-			Show Caster_LightWeaponT2 { Mod casterLightCore; Mod >= 4 xcaster_lightdmg_norm; }
-			Show Caster_PhysWeaponT2  { Mod casterMiscPhys; Mod >= 4 xcaster_physdmg_norm; }
-			Show Caster_ChaosWeaponT2 { Mod casterMiscChaos; Mod >= 4 xcaster_chaosdmg_norm; }
+			Show Caster_FireWeaponT2  { Mod casterFireCore; Mod >= 4 xcaster_firedmg_norm; Mod = 0 z_bad_caster; }
+			Show Caster_ColdWeaponT2  { Mod casterColdCore; Mod >= 4 xcaster_colddmg_norm; Mod = 0 z_bad_caster; }
+			Show Caster_LightWeaponT2 { Mod casterLightCore; Mod >= 4 xcaster_lightdmg_norm; Mod = 0 z_bad_caster; }
+			Show Caster_PhysWeaponT2  { Mod casterMiscPhys; Mod >= 4 xcaster_physdmg_norm; Mod = 0 z_bad_caster; }
+			Show Caster_ChaosWeaponT2 { Mod casterMiscChaos; Mod >= 4 xcaster_chaosdmg_norm; Mod = 0 z_bad_caster; }
 		}
 #------------------------------------
 #   [1234] Spellslinger
@@ -270,34 +270,34 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 		Section Helmets : Class == "Helmets"
 		{
-			Show Helmet_Life_based { Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix2; }
-			Show Helmet_ES_based   { Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; }
+			Show Helmet_Life_based { Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix2; Mod = 0 z_bad_armor_life; }
+			Show Helmet_ES_based   { Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix2; Mod = 0 z_bad_armor_es; }
 		}
 #------------------------------------
 #   [1234] Boots
 #------------------------------------
 		Section Boots : Class == "Boots"
 		{
-			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; }
-			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; }
+			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; Mod = 0 zbad_boots_life; }
+			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; Mod = 0 zbad_boots_es; }
 		}
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
 		Section Gloves : Class == "Gloves"
 		{
-			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; }
-			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; }
+			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; Mod = 0 z_bad_armor_life; }
+			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; Mod = 0 zbad_boots_es; }
 		}
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
 		Section Shields : Class == "Shields"
 		{
-			Show Shield_ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; }
+			Show Shield_ESFocus   		{ Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; Mod = 0 z_bad_bigarmor_es; }
 			Show Shield_DefenseFocus    { Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
 			Show Shield_CasterFocus   	{ Mod xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
-			Show Shield_LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; }
+			Show Shield_LifeFocus 		{ Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; Mod = 0 z_bad_bigarmor_life; }
 		}
 #------------------------------------
 #   [1234] Amulets
@@ -306,13 +306,13 @@ Section IdModSection : IdMods, !highvalueidmod
 		{
 			Show Amu_exalter { Mod "Exalter's"; Clean(); }
 
-			Show Amu_1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; }
+			Show Amu_1CoreCaster{ Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; Mod = 0 z_bad_liferoll; }
 			Show Amu_2CoreCaster{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
 
-			Show Amu_1CoreDot	{ Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; }
+			Show Amu_1CoreDot	{ Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; Mod = 0 z_bad_liferoll; }
 			Show Amu_2CoreDot	{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
 
-			Show Amu_1CoreAttack{ Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; }
+			Show Amu_1CoreAttack{ Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; Mod = 0 z_bad_liferoll; }
 			Show Amu_2CoreAttack{ Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
 		}
 #------------------------------------
@@ -320,7 +320,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------		
 		Section Rings : Class == "Rings"
 		{
-			Show Ring_Caster { Mod xring_core; Mod >= 4 xring_cast_mix; }
+			Show Ring_Caster { Mod xring_core; Mod >= 4 xring_cast_mix; Mod = 0 z_bad_liferoll; }
 			Show Ring_Attack { Mod xring_core; Mod >= 4 xring_attack_mix; }
 		}
 #------------------------------------
@@ -328,25 +328,25 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------	
 		Section Quivers : Class == "Quivers"
 		{
-			Show Quiv_Hit { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_hit; }
-			Show Quiv_Dot { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_dot; }
+			Show Quiv_Hit { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_hit; Mod = 0 z_bad_liferoll; }
+			Show Quiv_Dot { Mod xquiver_core_mods; Mod >= 4 xquiver_mix_dot; Mod = 0 z_bad_liferoll; }
 		}
 #------------------------------------
 #   [1234] Body Armours
 #------------------------------------	
 		Section Body : Class == "Body Armours", DropLevel >= 55
 		{
-			Show Body_Life 		  { %D5; Mod xbody_core_life; Mod >= 5 xbody_aux_life; }
+			Show Body_Life 		  { %D5; Mod xbody_core_life; Mod >= 5 xbody_aux_life; Mod = 0 z_bad_bigarmor_life; }
 			Show Body_Defense 	  { %D5; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Clean(); }
 			Show Body_LifeDefense { %D5; Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
-			Show Body_ES 		  { %D5; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; }
+			Show Body_ES 		  { %D5; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; Mod = 0 z_bad_bigarmor_es; }
 		}
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
 		Section Belts : Class == "Belts"
 		{
-			Show Belt_General {  %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; }
+			Show Belt_General {  %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; Mod = 0 z_bad_liferoll; }
 		}
 #------------------------------------
 #   [1234] Jewels
@@ -369,7 +369,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING - SINGLE MODS
 #===============================================================================================================
-#!! Waypoint c1.idmod.singlemod.all : "identified mod filtering - single mod and recombinator items"
+#!! Waypoint c1.idmod.singlemod.all : "Identified Mods - Single Mods and low priority combinations"
 
 Section IdModSection : IdMods, Auto("MagicID"), !GSH
 {
@@ -437,7 +437,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #===============================================================================================================
 # [[9999]] IDENTIFIED MOD - CORRUPTED ITEMS
 #===============================================================================================================
-#!! Waypoint c1.idmod.corruptedmod : "identified mod filtering - corrupted with implicit"
+#!! Waypoint c1.idmod.corruptedmod : "Identified Mods - Items with corrupted implicits"
 
 Section IdModCorrupted : IdMods, Corrupted True, CorruptedMods 1, Auto("CorruptedID"), !exotic
 {
@@ -467,7 +467,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #   [1234] Veiled/Betrayal - low prio veiled items
 #------------------------------------
-#!! Waypoint c1.idmod.veil.all : "veiled items"
+#!! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)"
 
 		Show DuoVeil    { %D4; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
 		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
@@ -476,7 +476,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
-#!! Waypoint c1.idmod.league.all : "incursion, delve and other league based id-mod filtering"
+#!! Waypoint c1.idmod.league.all : "Identified Mods - Incursion mod filtering"
 
 		Show IncursionSpeedTraps { !GSH; %D5; !exotic.t2; Mod "Matatl's"; Class == "Boots"; }
 		Show IncursionCaster     { !GSH; %D5; !exotic.t2; Mod "Matatl's" "Tacati" "Topotante's"; Class == "Shields" "Rune Daggers" "Sceptres" "Staves" "Wands" "Sceptres"; }
@@ -508,7 +508,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 #===============================================================================================================
 # [[0200]] Exotic Item Classes
 #===============================================================================================================
-#!! Waypoint c2.exotic.artefacts.all : "voidstones, trinkets, fishing rods"
+#!! Waypoint c2.exotic.artefacts.all : "Exotic - Voidstones, Trinkets, Fishing items, Pieces"
 
 Section ArtefactItemClasses
 {	
@@ -550,7 +550,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Craftable Invitations
 #------------------------------------	
-#!! Waypoint c2.exotic.invitations.all : "maven invitations and quest items"
+#!! Waypoint c2.exotic.invitations.all : "Exotic - Invitations and Quest items"
 
 Section QuestItemException : Auto("QuestlikeException")
 {
@@ -579,7 +579,7 @@ Section SanctumRelics : Auto("artefact->sanctifiedrelics")
 #===============================================================================================================
 # [[0200]] Exotic Item Variations
 #===============================================================================================================
-#!! Waypoint c2.exotic.doublecorrupted.all : "doublecorrupted rares"
+#!! Waypoint c2.exotic.doublecorrupted.all : "SpecialGear - Double corrupted rare items"
 Section ExoticVariations : !exotic
 {	
 #------------------------------------
@@ -596,7 +596,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Specific Single Corruptions
 #------------------------------------
-#!! Waypoint c2.exotic.singlecorrupted.all : "singlecorrupted quivers with implicit"
+#!! Waypoint c2.exotic.singlecorrupted.all : "SpecialGear - Single corrupted rare items with implicits"
 		Section SingleCorrupted : Corrupted True, CorruptedMods >= 1
 		{
 			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; Class == "Quivers"; ItemLevel >= 80; }
@@ -605,7 +605,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Abyss Jeweled Rares
 #------------------------------------	
-#!! Waypoint c2.exotic.abysssocketed : "rares  with abyss sockets"
+#!! Waypoint c2.exotic.abysssocketed : "SpecialGear - Rares with Abyss Sockets"
 
 	Section NMRExoticVariations : Rarity <= Rare
 	{
@@ -617,7 +617,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Synthesised
 #------------------------------------
-#!! Waypoint c2.exotic.synthesised.all : "all synthesised items"
+#!! Waypoint c2.exotic.synthesised.all : "SpecialGear - All synthesised items"
 
 		Section Synthesised : SynthesisedItem True, Auto("exotic->synthesised")
 		{
@@ -628,7 +628,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Fractured
 #------------------------------------		
-#!! Waypoint c2.exotic.fractured.all : "all fractured items"
+#!! Waypoint c2.exotic.fractured.all : "SpecialGear - All fractured items"
 		Section Fractured : FracturedItem True, Auto("exotic->fractured"), Clean()
 		{
 			Show FractSelected { !GSH; %D6; !exotic.t2; BaseType == bases.crafting.fractured.t1 }
@@ -638,7 +638,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Enchanted
 #------------------------------------
-#!! Waypoint c2.exotic.enchanted.all : "all enchanted items"
+#!! Waypoint c2.exotic.enchanted.all : "SpecialGear - All enchanted items"
 		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
 		{
 			# Optional modules for enchanment based filtering
@@ -653,7 +653,7 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Crucible
 #------------------------------------
-#!! Waypoint c2.exotic.others : "others exotic items"
+#!! Waypoint c2.exotic.others : "SpecialGear - Others exotic items"
 		Section Crucible : HasCruciblePassiveTree True, Auto("exotic->crucible")
 		{
 			Show CrucibleAny   { !GS;  %D3; !exotic.t3; Empty(); }
@@ -664,7 +664,7 @@ Section ExoticVariations : !exotic
 #===============================================================================================================
 # [[0200]] Recipes and 5links
 #===============================================================================================================
-#!! Waypoint c3.gear.alllinks.all : "5 linked and 6 socketed items"
+#!! Waypoint c3.gear.alllinks.all : "SpecialGear - 5-links and 6-socketed items"
 
 #------------------------------------
 # [1234] Link Based
@@ -683,7 +683,7 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 #===============================================================================================================
 # [[0200]] High Level Crafting Bases
 #===============================================================================================================
-#!! Waypoint c3.gear.valuableilvl86 : "high value ilvl86 crafting bases"
+#!! Waypoint c3.gear.valuableilvl86 : "Crafting Bases - ilvl86 crafting bases"
 
 #------------------------------------
 # [1234] Expensive Atlas 86 Bases - matched by economy
@@ -697,7 +697,7 @@ Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity
 #------------------------------------
 # [1234] Perfection-Based-Filtering
 #------------------------------------
-#!! Waypoint c3.gear.perfectionbased.all : "perfection based"
+#!! Waypoint c3.gear.perfectionbased.all : "Crafting Bases - Items with perfect variable defense rolls (Sacred Orb roll)"
 
 Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestrolls
 {
@@ -710,11 +710,24 @@ Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestroll
 }
 
 #------------------------------------
+# [1234] RGB Endgame
+#------------------------------------
+#!! Waypoint c4.recipes.rgb.all : "Recipes - Endgame chromatic recipes (normal and magic RGBs)"
+
+Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("EndgameRGB"), !recipe
+{
+	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width 2; Height 2; }
+	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width 1; Height <=4; }
+	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 4; }
+	Show RGBMedium	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 3; }
+}
+
+#------------------------------------
 # [1234] ILVL 86
 #------------------------------------
 Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 {
-	#!! Waypoint c3.gear.crafting-decorators : "crafting - decorators"
+	#!! Waypoint c3.gear.crafting-decorators : "Crafting Bases - decorators"
 	Section CraftRareDecorators : Auto("Decorator->craftingrare"), Rarity Rare, !raredeco, !GEX
 	{
 		Cont RareDecoratorILVL75 { !raredeco.ilvl75; ItemLevel >= 75; }
@@ -730,7 +743,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 		Cont NormalDecorator      { !Low; Class classes_nonJwlryEquip; };
 	}
 
-	#!! Waypoint c3.gear.crafting86.all : "crafting - level 86 bases (rare and normal)"
+	#!! Waypoint c3.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
@@ -743,7 +756,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL 84
 #------------------------------------
 
-	#!! Waypoint c3.gear.crafting84.all : "crafting - level 84 bases (rare and normal)"
+	#!! Waypoint c3.gear.crafting84.all : "Crafting Bases - High level basetypes - ILVL84"
 
 	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
 	{
@@ -756,7 +769,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 # [1234] ILVL ANY
 #------------------------------------
 
-	#!! Waypoint c3.gear.crafting-others : "crafting other bases (rare and normal)"
+	#!! Waypoint c3.gear.crafting-others : "Crafting Bases - High level basetypes - others"
 	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
 	{
 		Show t1  { !G5;  %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
@@ -797,21 +810,9 @@ Section Lowcraft : Auto("normalcraft->lowstrict"), ItemLevel >= 68, ItemLevel <=
 }
 
 #------------------------------------
-# [1234] RGB Endgame
-#------------------------------------
-#!! Waypoint c4.recipes.rgb.all : "endgame chromatic recipes (normal and magic)"
-
-Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("EndgameRGB"), !recipe
-{
-	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width 2; Height 2; }
-	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width 1; Height <=4; }
-	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 4; }
-	Show RGBMedium	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 3; }
-}
-#------------------------------------
 # [1234] Chisel Recipes
 #------------------------------------
-#!! Waypoint c4.recipes.chisel.all : "chisel recipes"
+#!! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
 
 Section ChiselRecipe : BaseType == "Gavel" "Rock Breaker" "Stone Hammer", Auto("ChiselRecipe"), !recipe, !GEX
 {
@@ -825,7 +826,7 @@ Section ChiselRecipe : BaseType == "Gavel" "Rock Breaker" "Stone Hammer", Auto("
 #===============================================================================================================
 # [[0200]] Chancing Bases
 #===============================================================================================================
-#!! Waypoint c4.chancing : "chancing bases"
+#!! Waypoint c4.chancing : "Chancing bases"
 
 Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 {
@@ -844,14 +845,14 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Endgame Flasks
 #------------------------------------
-	#!! Waypoint c4.flasks.all : "endgame flasks - all"
+	#!! Waypoint c4.flasks.all : "Endgame Flasks - All non-unique"
 	Section OverQualityFlasks : Mirrored False, !GEX
 	{
 		Show OverQualUtil  { !G3; !exotic.t1; %D6; ItemLevel >= 82; Quality >= 26; Class "Utility Flasks"; }
 		Show OverQualLife  { !G3; !exotic.t1; %D6; ItemLevel >= 82; Quality >= 28; BaseType == bases.flask.lifemanaassorted; }
 	}
 
-	#!! Waypoint c4.flasks.eg : "flasks - high level utility and life flasks"
+	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
 	Section SuperEndgameFlasks : Mirrored False, !GEX
 	{
 		Show Utility85  { !G3; !utilflasks.LT1; %D5; ItemLevel >= 85; Class "Utility Flasks"; }
@@ -862,7 +863,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Quality High
 #------------------------------------
-	#!! Waypoint c4.flasks.others : "flasks - others"
+	#!! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
 	Section 20QualEndgameFlasks : Quality >= 20, !G5
 	{
 		Show Any20QualFlask { %D3; !recipe.ts1; BaseType "Flask"; }
@@ -895,7 +896,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #===============================================================================================================
 # [[0200]] Misc Rules
 #===============================================================================================================
-#!! Waypoint c4.misc.others : "overquality items and optional animated weapon module"
+#!! Waypoint c4.misc.others : "SpecialGear - Overquality items and optional animated weapon module"
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
@@ -910,7 +911,7 @@ Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 	ShowD magicranged  { Rarity Magic; Class classes_weapons_ranged;}
 }
 
-#!! Waypoint c5.hidelayer.normalmagic : "hidelayer - magic and normal endgame items"
+#!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
 
 #===============================================================================================================
 # [[0200]] Hide Layer 1 - Normal and Magic Endgame Gear
@@ -924,7 +925,7 @@ Section HideLayer1 : Auto("HideLayer")
 #===============================================================================================================
 # [[0200]] Rare Item Decorators
 #===============================================================================================================
-#!! Waypoint c6.rare.decorator.all : "decorators - rare items"
+#!! Waypoint c6.rare.decorator.all : "Rare Endgame Items - decorators"
 
 Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, Class classes_equip, !raredeco, !GEX
 {
@@ -947,7 +948,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Exotic Corrupted Items
 #===============================================================================================================
-#!! Waypoint c6.rare.breach.all : "breach rings"
+#!! Waypoint c6.rare.breach.all : "Rare Endgame Items - Breach rings"
 
 	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
 	{
@@ -955,7 +956,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show Any  { %HS1; !G5; !exotic.t3; Empty(); }
 	}
 
-#!! Waypoint c6.rare.talisman.all : "talismans"
+#!! Waypoint c6.rare.talisman.all : "Rare Endgame Items - Talismans"
 
 	Section Talismans : Class "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
 	{
@@ -973,7 +974,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Accessoires
 #===============================================================================================================
-#!! Waypoint c6.rare.generic.all : "rares - all generic rares"
+#!! Waypoint c6.rare.generic.all : "Rare Endgame Items - (Optional) Hiding identified rares"
 
 	Section OptionalRare : Auto("RareOptional")
 	{
@@ -983,7 +984,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Accessoires
 #===============================================================================================================
-#!! Waypoint c6.rare.trinkets.all : "rares - all rings, amulets"
+#!! Waypoint c6.rare.trinkets.all : "Rare Endgame Items - Amulets, Rings"
 
 	Section EndgameRareRingsAmulets : Class "Rings" "Amulets", Auto("rr->amuring")
 	{
@@ -992,7 +993,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show T3 { !GRJ3; %D2; BaseType == bases.rares.jwl.ringsamu.t3; }
 	}
 
-#!! Waypoint c6.rare.belts.all : "rares - all belt rules"
+#!! Waypoint c6.rare.belts.all : "Rare Endgame Items - Belts"
 	Section EndgameRareBelts : Class "Belts", Auto("rr->belts")
 	{
 		Show T1 { !GRJ1; %D4; BaseType == bases.rares.jwl.belts.t1; }
@@ -1003,7 +1004,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T1 - handpicked
 #===============================================================================================================
-#!! Waypoint c6.rare.t1.all : "rares - t1"
+#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1"
 
 	Section EndgameRareGear : Auto("rr")
 	{
@@ -1013,7 +1014,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
-#!! Waypoint c6.rare.t2.all : "rares - t2"
+#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2"
 		
 		Show T2weapons { !GR2; %D3; BaseType == bases.rares.eg.t2.weapons }
 		Show T2armours { !GR2; %D3; BaseType == bases.rares.eg.t2.armours }
@@ -1021,14 +1022,14 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T2 - handpicked
 #===============================================================================================================
-#!! Waypoint c6.rare.idhandling.all : "rares - identified item handling"
+#!! Waypoint c6.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
 
 		Show IdentifiedItemHandling { %D1; !GS; !exotic.t4; Identified True; Clean(); Class == classes_equip; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - subpar bases
 #===============================================================================================================
-#!! Waypoint c6.rare.t3.all : "rares - t3"
+#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - t3"
 
 		Show t3runedaggers { !GR3; %D2; BaseType == bases.rares.eg.t3runedaggers; Class == "Rune Daggers"; }
 		Show t3daggers 	{ !GR3; %D2; BaseType == bases.rares.eg.t3daggers; Class == "Daggers"; }
@@ -1055,7 +1056,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T4 - rest
 #===============================================================================================================
-#!! Waypoint c6.rare.t4.all : "rares - t4"
+#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4"
 
 		Show t4endgamerares { !GR4; %D1; Class classes_nonJwlryEquip; }
 	}
@@ -1072,7 +1073,7 @@ Section HideLayer2 : Auto("HideLayer")
 #===============================================================================================================
 # [[0200]] Jewels
 #===============================================================================================================
-#!! Waypoint c7.jewels.identified : "jewels - special, identified, corrupted"
+#!! Waypoint c7.jewels.identified : "Jewels - Identified with interesting mods"
 
 Section Jewels : !jewels
 {
@@ -1096,7 +1097,7 @@ Section Jewels : !jewels
 #------------------------------------
 # [1234] Leveling Exceptions
 #------------------------------------
-#!! Waypoint c7.jewels.leveling : "jewels - while leveling"
+#!! Waypoint c7.jewels.leveling : "Jewels - Leveling Overrides"
 	Section JewelsLeveling : Auto("jewels->leveling"), ItemLevel <= 67, Rarity <= Magic
 	{
 		Show Abyss 		{ !*magic; !SF45; %D4; BaseType == "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
@@ -1106,7 +1107,7 @@ Section Jewels : !jewels
 #------------------------------------
 # [1234] Abyss Jewels
 #------------------------------------
-#!! Waypoint c7.jewels.abyss.all : "jewels - abyss jewels"
+#!! Waypoint c7.jewels.abyss.all : "Jewels - Abyss Jewels"
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
 		Show VeryHighRare  { %H5;  !G4;  !*rare;  !High; Rarity Rare; ItemLevel >= 86; }
@@ -1122,7 +1123,7 @@ Section Jewels : !jewels
 #------------------------------------
 # [1234] Generic Jewels
 #------------------------------------
-#!! Waypoint c7.jewels.generic.all : "jewels - generic jewels"
+#!! Waypoint c7.jewels.generic.all : "Jewels - Generic Jewels"
 	Section GenericJewels : Class "Jewel", BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
 	{
 		Show AnyRare  { %HS3; !G5H; !*rare; !V4; Rarity Rare; }
@@ -1132,7 +1133,7 @@ Section Jewels : !jewels
 #------------------------------------
 # [1234] Cluster Jewels: Eco-Based-Large
 #------------------------------------
-#!! Waypoint c7.jewels.cluster.all : "cluster jewels - all"
+#!! Waypoint c7.jewels.cluster.all : "Jewels - Cluster - Economy-Based-Tiering"
 
 	Section ClusterJewelsEconomy : Auto("jewels->clustereco"), Rarity <= Rare, !*cluster
 	{
@@ -1233,7 +1234,7 @@ Section Jewels : !jewels
 		}
 	}
 
-#!! Waypoint c7.jewels.cluster.good : "cluster jewels - non-economy-matched"
+#!! Waypoint c7.jewels.cluster.good : "Jewels - Cluster - Others"
 #------------------------------------
 # [1234] Cluster Jewels: Random
 #------------------------------------
@@ -1258,7 +1259,7 @@ Section Jewels : !jewels
 #===============================================================================================================
 Section HeistFollowerGear : Rarity <= Rare
 {
-#!! Waypoint c7.heist.all : "heist gear - all"
+#!! Waypoint c7.heist.all : "Heist Gear"
 
 #------------------------------------
 # [3001] Heist Cloak
@@ -1305,7 +1306,7 @@ Section HeistFollowerGear : Rarity <= Rare
 #===============================================================================================================
 # [[3900]] Gem Tierlists
 #===============================================================================================================
-#!! Waypoint c8.gems.all : "gem rules - all"
+#!! Waypoint c8.gems.all : "Gem Rules - Override All"
 
 Section Gems : Class "Gems", !Gems
 {
@@ -1335,7 +1336,7 @@ Section Gems : Class "Gems", !Gems
 #------------------------------------
 # [3901] Exceptional Gems - Special gems
 #------------------------------------
-#!! Waypoint c8.gems.empowerclass : "gem rules - empower class"
+#!! Waypoint c8.gems.empowerclass : "Gem Rules - Empower Class"
 
 	Section GemsSpecial : Auto("gems-special")
 	{
@@ -1355,7 +1356,7 @@ Section Gems : Class "Gems", !Gems
 #------------------------------------
 # [3902] High Quality and Leveled Gems
 #------------------------------------
-#!! Waypoint c8.gems.qualityandlevel : "gem rules - quality and leveled gems"
+#!! Waypoint c8.gems.qualityandlevel : "Gem Rules - Quality and Leveled versions"
 
 	Section GemsGeneric : Auto("gems-generic")
 	{
@@ -1381,7 +1382,7 @@ Section Gems : Class "Gems", !Gems
 		Show QT4 { %D2; !G5; !*P4; Quality >= 1; }	
 		Show LT4 { %D0; !G6; !*P4; GemLevel >= 2; }
 
-#!! Waypoint c8.gems.low : "gem rules - generic, leveling and vaal gems"
+#!! Waypoint c8.gems.low : "Gem Rules - First Zones, Leveling, Vaal"
 
 		Show  FirstZone    { !GS; !*FirstLevel; AreaLevel 1; }
 		Show  LevelingVaal { %H4; !G4; !*VaalLvl; AreaLevel <= 67; BaseType "Vaal"; }
@@ -1396,7 +1397,7 @@ Section Gems : Class "Gems", !Gems
 #===============================================================================================================
 # [[3900]] REPLICA UNIQUES
 #===============================================================================================================
-#!! Waypoint c9.replicas.all : "replicas - all"
+#!! Waypoint c9.replicas.all : "Tierlists - Replicas"
 
 Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 {
@@ -1411,7 +1412,7 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 #===============================================================================================================
 # [[4400]] Special Maps
 #===============================================================================================================
-#!! Waypoint c9.maps.all : "maps - all"
+#!! Waypoint c9.maps.all : "Maps - All"
 
 Section Maps : Class "Maps", !Maps
 {
@@ -1423,7 +1424,7 @@ Section Maps : Class "Maps", !Maps
 		Show exUltimatum { !exomap.high; !G2; BaseType == "Engraved Ultimatum"; }
 		Show exHarbinger { !G1; !Maps.HighHarbingerMap; BaseType == uniques.maps.ex; MapTier 16; }
 
-#!! Waypoint c9.maps.unique.all : "maps - all unique maps"
+#!! Waypoint c9.maps.unique.all : "Maps - Unique Tierlists"
 
 		Show t1 { !G1; BaseType == uniques.maps.t1; }
 		Show t2 { !G2; BaseType == uniques.maps.t2; }
@@ -1435,7 +1436,7 @@ Section Maps : Class "Maps", !Maps
 #------------------------------------
 # [4404] Blighted maps
 #------------------------------------
-#!! Waypoint c9.maps.special.all : "maps - blighted, enchanted, delirium maps"
+#!! Waypoint c9.maps.special.all : "Maps - Blighted, Enchanted, Delirium maps"
 	Section BlightedMaps : Auto("maps->blighted")
 	{
 		Show uber { !G2; !*SpecialHigh; UberBlightedMap True; }
@@ -1475,7 +1476,7 @@ Section Maps : Class "Maps", !Maps
 # [4403] Generic Decorators
 #------------------------------------
 
-#!! Waypoint c9.maps.decorators.all : "maps - decorators"
+#!! Waypoint c9.maps.decorators.all : "Maps - decorators"
 
 	Section GenericMaps : Auto("maps")
 	{		
@@ -1488,7 +1489,7 @@ Section Maps : Class "Maps", !Maps
 # [4403] Map progression
 #------------------------------------
 
-#!! Waypoint c9.maps.generic.t16 : "maps - t14-t16"
+#!! Waypoint c9.maps.generic.t16 : "Maps - t14-t16 - high reds"
 
 		Cont deco_mapup_t16 { !GEX; MapTier >= 16; AreaLevel < 83; }
 		Show maps_a_t16 { !GM1; !*z1; MapTier >= 16; }
@@ -1497,7 +1498,7 @@ Section Maps : Class "Maps", !Maps
 		Cont deco_mapup_t14 { !GEX; MapTier >= 14; AreaLevel < 81; }
 		Show maps_a_t14 { !GM1; !*z1; MapTier = 14; }
 
-#!! Waypoint c9.maps.generic.t14 : "maps - t11-t13"
+#!! Waypoint c9.maps.generic.t14 : "Maps - t11-t13 - low reds"
 
 		Cont deco_mapup_t13 { %D4; !GEX; MapTier >= 13; AreaLevel < 80; }
 		Show maps_b_t13 { !GM2; %H5; !*z2; MapTier = 13; }
@@ -1506,7 +1507,7 @@ Section Maps : Class "Maps", !Maps
 		Cont deco_mapup_t11 { %D4; !GEX; MapTier >= 11; AreaLevel < 78; }
 		Show maps_b_t11 { !GM2; %H5; !*z2; MapTier = 11; }
 
-#!! Waypoint c9.maps.generic.t10 : "maps - yellow maps"
+#!! Waypoint c9.maps.generic.t10 : "Maps - t6-t10 - yellow maps"
 
 		Cont deco_mapup_t10 { %D3; !GEX; MapTier >= 10; AreaLevel < 77; }
 		Show maps_c_t10 { !GM3; %H4; !*z3; MapTier = 10; }
@@ -1519,7 +1520,7 @@ Section Maps : Class "Maps", !Maps
 		Cont deco_mapup_t6  { %D3; !GEX; MapTier >= 6; AreaLevel < 73; }
 		Show maps_c_t6  { !GM3; %H4; !*z3; MapTier = 6; }
 
-#!! Waypoint c9.maps.generic.t5 : "maps - white maps"
+#!! Waypoint c9.maps.generic.t5 : "maps - T1-T5 - white maps"
 
 		Cont deco_mapup_t5  { %D3; !GEX; MapTier >= 5; AreaLevel < 72; }
 		Show maps_d_t5  { !GM4; %H4; !*z4; MapTier = 5; }
@@ -1539,7 +1540,7 @@ Section Maps : Class "Maps", !Maps
 #===============================================================================================================
 # [[4500]] Pseudo-Map-Items
 #===============================================================================================================
-#!! Waypoint c9.maplike.all : "all special maplike items - contracts, logbooks, blueprints, memories"
+#!! Waypoint c9.maplike.all : "Maplike - contracts, logbooks, blueprints, memories"
 
 Section HeistUniqueMapLike : Rarity Unique, Class "Blueprint" "Contract", Auto("Uniques->Heist")
 {
@@ -1573,7 +1574,7 @@ Section Memories : Auto("ExoticMap->Memory")
 #===============================================================================================================
 # [[4500]] Fragments
 #===============================================================================================================
-#!! Waypoint c9.fragments.all : "fragments - all"
+#!! Waypoint c9.fragments.all : "Tierlist - Fragments"
 
 Section MapFragments : Class "Map Fragments"
 {
@@ -1621,7 +1622,7 @@ Section Breachstone : Class "Breachstone", Auto("breachstone")
 #===============================================================================================================
 # [[4900]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
-#!! Waypoint c9.currency.leveling.all : "currency - all, including stacked and leveling currencies"
+#!! Waypoint c9.currency.leveling.all : "Tierlist - Currency - Leveling Stacked Currency"
 
 Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class "Currency", AreaLevel <= 67, !Currency
 {
@@ -1631,6 +1632,7 @@ Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class "Cu
 	Show wisdom   { %D4; !G5; !*twisdHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.wisdom; }
 }
 
+#!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaLevel <= 67, !Currency
 {
 	Show binding  { %D5; !G3;  !*t4chaos; !Maximize; !LevelCurrency; BaseType == "Orb of Binding"; }
@@ -1644,7 +1646,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class "Currency", AreaL
 #===============================================================================================================
 # [[4800]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
-#!! Waypoint c9.currency.stacked.all : "currency - endgame stacked currencies"
+#!! Waypoint c9.currency.stacked.all : "Tierlist - Currency - Endgame Stacked"
 
 #------------------------------------
 # [4702] Supplies: High Stacking
@@ -1722,7 +1724,7 @@ Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class "Currency",
 	Show t7	{ !G5; %D3; !*t7chance; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
 }
 
-#!! Waypoint c9.currency.heistcoins : "currency - heist coins"
+#!! Waypoint c9.currency.heistcoins : "Tierlist - Currency - Heist Coins"
 
 #------------------------------------
 # [5104] Heist Coins
@@ -1738,7 +1740,7 @@ Section CurrencyCoinsHeist : Auto("currency->heist"), Class "Currency"
 #===============================================================================================================
 # [[4900]] Currency - Regular Currency Tiering
 #===============================================================================================================
-#!! Waypoint c9.currency.single : "currency - single endgame currencies"
+#!! Waypoint c9.currency.single : "Tierlist - Currency - General"
 
 Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 {
@@ -1762,7 +1764,7 @@ Section CurrencyTiering : Auto("Currency"), Class "Currency", !Currency
 #------------------------------------
 # [5103] Incursion - Vials
 #------------------------------------
-#!! Waypoint c9.currency.vials.all : "vials - all"
+#!! Waypoint c9.currency.vials.all : "Tierlist - Currency - Vials"
 
 Section CurrencyVials : Auto("vials"), Class "Currency", !Currency
 {
@@ -1775,7 +1777,7 @@ Section CurrencyVials : Auto("vials"), Class "Currency", !Currency
 #------------------------------------
 # [5104] Delirum Orbs
 #------------------------------------
-#!! Waypoint c9.currency.delirium.all : "delirium orbs - all"
+#!! Waypoint c9.currency.delirium.all : "Tierlist - Currency - Delirium Orbs"
 Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class "Currency", !Currency
 {
 	Show t1 { !G1; !*t1exalted; BaseType == currency.deliriumorb.t1; }
@@ -1787,7 +1789,7 @@ Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class "Currency", !Curren
 #------------------------------------
 # [5104] Delve - Resonators
 #------------------------------------
-#!! Waypoint c9.currency.resonators.all : "resonators - all"
+#!! Waypoint c9.currency.resonators.all : "Tierlist - Resonators"
 
 Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stackable Socketable Currency", !Currency
 {
@@ -1800,7 +1802,7 @@ Section CurrencyDelveResonator : Auto("currency->resonator"), Class "Delve Stack
 #------------------------------------
 # [5104] Delve - Fossils
 #------------------------------------
-#!! Waypoint c9.currency.fossils.all : "fossils - all"
+#!! Waypoint c9.currency.fossils.all : "Tierlist - Fossils"
 
 Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency", !Currency
 {
@@ -1814,7 +1816,7 @@ Section CurrencyDelveFossil : Auto("currency->fossil"), Class "Currency", !Curre
 #------------------------------------
 # [5104] Blight - Oils
 #------------------------------------
-#!! Waypoint c9.currency.oils.all : "oils - all"
+#!! Waypoint c9.currency.oils.all : "Tierlist - Oils"
 
 Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", !Currency
 {
@@ -1829,7 +1831,7 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class "Currency", !Currency
 #------------------------------------
 # [5104] Essences
 #------------------------------------
-#!! Waypoint c9.currency.essences.all : "essences - all"
+#!! Waypoint c9.currency.essences.all : "Tierlist - Essences"
 
 Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 {
@@ -1845,7 +1847,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 #------------------------------------
 # [5104] Incubators
 #------------------------------------
-#!! Waypoint c9.currency.incubators.all : "incubators - all"
+#!! Waypoint c9.currency.incubators.all : "Tierlist - Incubators"
 
 Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !Currency
 {
@@ -1862,7 +1864,7 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 #------------------------------------
 # [5104] Invocations
 #------------------------------------
-#!! Waypoint c9.currency.misc.all : "misc currencies - new leagues, exotic currency etc"
+#!! Waypoint c9.currency.misc.all : "Misc Currency-Like - New and Exotic Items"
 
 Section SanctumInvocations : Auto("currency->invocations"), Class "Currency", !Currency
 {
@@ -1897,7 +1899,7 @@ Section CurrencyExotic : Auto("currency->others"), Class "Currency", !Currency
 #------------------------------------
 # [5112] Breach and Legion Splinters - stacked
 #------------------------------------
-#!! Waypoint c9.splinters.all : "splinters - all - stacked and single"
+#!! Waypoint c9.splinters.all : "Tierlist - Splinters"
 
 Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class "Currency", !currency
 {
@@ -1939,7 +1941,7 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 #===============================================================================================================
 # [[4900]] Divination Cards
 #===============================================================================================================
-#!! Waypoint c9.divination.all : "cards - all"
+#!! Waypoint c9.divination.all : "Tierlist - Cards - All"
 
 Section DivinationCards : Auto("divination"), Class "Divination", !divi
 {
@@ -1948,7 +1950,7 @@ Section DivinationCards : Auto("divination"), Class "Divination", !divi
 	Show t3 	{ !G3;!*t3;	BaseType == divination.t3; }
 
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
-	#!! Waypoint c9.divination.t4 : "cards - t4, t4c and lower"
+	#!! Waypoint c9.divination.t4 : "Tierlist - Cards - T4, T4c and lower"
 	Show t4c 	{ %H5; !G4; !*t4;	BaseType == divination.t4c; }
 
 	Show exStack { %D4; !G5H; !*t4; StackSize >= 3; }
@@ -1974,7 +1976,7 @@ Section CurrencyRemaining : Class "Currency", Auto("Currency")
 # [[4900]] Questlike-Items1 (override uniques)
 #===============================================================================================================
 
-#!! Waypoint c9.metamorph.all : "metamorph - all"
+#!! Waypoint c9.metamorph.all : "Metamorph Organs"
 
 Section Metamorph : Class "Metamorph", Auto("Metamorph")
 {
@@ -1989,7 +1991,7 @@ Section HeistTarget : Class "Heist Target", Auto("HeistTarget")
 #===============================================================================================================
 # [[4900]] Uniques
 #===============================================================================================================
-#!! Waypoint c10.uniques.all : "uniques - all"
+#!! Waypoint c10.uniques.all : "Tierlist - Uniques - All"
 
 Section Unique : Rarity Unique, Auto("uniques"), !unique
 {
@@ -2010,7 +2012,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5702] Tier 1 and 2 uniques
 #------------------------------------
-#!! Waypoint c10.uniques.t1 : "uniques - t1 and t2"
+#!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - T1, T2"
 
 	Show t1 { !G1; !*t1; BaseType == uniques.generic.t1; }
 	Show t2 { !G2; !*t2; BaseType == uniques.generic.t2; }	
@@ -2038,7 +2040,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5701] Low tier exceptions
 #------------------------------------
-#!! Waypoint c10.uniques.t1 : "uniques - only low tier uniques"
+#!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	
 	Show exjewelscorrupted    { !GSH; !*t3; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; CorruptedMods = 0; Corrupted True; }
@@ -2065,7 +2067,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #===============================================================================================================
 # [[4900]] Misc Map Items
 #===============================================================================================================
-#!! Waypoint c10.relics.all : "relics - all"
+#!! Waypoint c10.relics.all : "Relic Keys, Itemized Leagues"
 
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
@@ -2093,7 +2095,7 @@ Section Questlike : Auto("Questlike")
 #===============================================================================================================
 # [[6000]] Hide outdated leveling flasks
 #===============================================================================================================
-#!! Waypoint c11.leveling.all : "leveling - all rules"
+#!! Waypoint c11.leveling.all : "Leveling - ALL rules"
 
 Section HideLayer3 : Auto("HideLayer"), Quality 0, Class "Life Flask" "Mana Flask"
 {
@@ -2112,7 +2114,7 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 #------------------------------------
 # [6002] Utility Flasks
 #------------------------------------
-#!! Waypoint c11.leveling.utilflasks : "leveling - utility flasks"
+#!! Waypoint c11.leveling.utilflasks : "Leveling - Utility flasks and Quality Flasks"
 
 Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 {
@@ -2131,7 +2133,7 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask"
 #------------------------------------
 # [6002] Hybrid flasks
 #------------------------------------
-#!! Waypoint c11.leveling.lifeflasks : "leveling - life, mana, hybrid flasks"
+#!! Waypoint c11.leveling.lifeflasks : "Leveling - Life, Mana, Hybrid flasks"
 
 Section LevelingHybridFlasks : Class "Hybrid Flasks", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
 {
@@ -2184,7 +2186,8 @@ Section LevelingManaFlasks : Class "Mana Flasks", Auto("Leveling->Flasks->Mana")
 #===============================================================================================================
 # [[6000]] Leveling - Rules
 #===============================================================================================================
-#!! Waypoint c11.leveling.gear.all : "leveling - all gear"
+#!! Waypoint c11.leveling.gear.all : "Leveling - Gear - All non-unique"
+
 
 #------------------------------------
 # [6002] Links and Sockets
@@ -2198,7 +2201,7 @@ Section LevelingLinksAndSockets : ItemLevel <= 67, Auto("Leveling->Rare->Sockets
 #------------------------------------
 # [6002] Rares - Decorators
 #------------------------------------
-#!! Waypoint c11.leveling.decorators.all : "leveling - decorators"
+#!! Waypoint c11.leveling.decorators.all : "Leveling - Rares - Decorators"
 
 Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), Rarity Rare, ItemLevel <= 67, !raredeco, !GEX
 {
@@ -2213,20 +2216,20 @@ Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), Rarity Rare,
 #------------------------------------
 Section LevelingRareGear : Rarity Rare
 {
-#!! Waypoint c11.leveling.rares.minions : "leveling rares - minion gear"
+#!! Waypoint c11.leveling.rares.minions : "Leveling - Rares - Minion Items"
 	Section Minion : Auto("Leveling->Rare->minion"), !GR2
 	{
 		Show General { %D4; !LVLMinion; !SF40; BaseType == "Bone Ring" "Calling Wand" "Convening Wand" "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
 	}
 
-#!! Waypoint c11.leveling.rares.trinkets : "leveling rares - belts, rings, amulets"
+#!! Waypoint c11.leveling.rares.trinkets : "Leveling - Rares - Belts, Rings, Amulets"
 	Section Universal : Auto("Leveling->Rare->universal") !raredeco.t1jewellery, !GRJ1
 	{
 		Show RusticSash { %D5; !SF45; BaseType == "Rustic Sash"; !LVLMelee; !FixMelee; }
 		Show Jewellery  { %D5; !SF45; Class == leveling.classes.jwlry; }
 	}
 
-#!! Waypoint c11.leveling.rares.armors : "leveling rares - armor pieces"
+#!! Waypoint c11.leveling.rares.armors : "Leveling - Rares - Armour Pieces"
 	Section Armour : Auto("Leveling->Rare->armours"), !GR1
 	{
 		Show BootsFocus { %D4; !raredeco.t1equip; !SF45; !noticehigh; Class == "Boots"; }
@@ -2239,7 +2242,7 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 # [6002] Rares - Caster
 #------------------------------------
-#!! Waypoint c11.leveling.rares.caster : "leveling rares - caster gear"
+#!! Waypoint c11.leveling.rares.caster : "Leveling - Rares - Caster"
 	Section Caster : Auto("Leveling->Rare->caster"), !LVLCaster, !GR2
 	{
 		Show EarlyLevels { %D4; !LVLCaster; !SF40; Class == leveling.classes.caster; ItemLevel <= 16; }
@@ -2249,7 +2252,7 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 # [6002] Rares - Archer
 #------------------------------------
-#!! Waypoint c11.leveling.rares.archer : "leveling rares - archer gear"
+#!! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Archer"
 	Section Archer : Auto("Leveling->Rare->archer"), Class == "Bows", !GR2
 	{
 		Show l1 { %D4; !LVLArcher; !SF40; ItemLevel <= 16 }
@@ -2267,7 +2270,7 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 # [6002] Rares - Melee
 #------------------------------------
-#!! Waypoint c11.leveling.rares.archer : "leveling rares - melee gear"
+#!! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Melee"
 	Section Melee : Auto("Leveling->Rare->melee"), Class == leveling.classes.melee, !GR2
 	{
 		Show l1 { %D4; !LVLMelee; !SF40; ItemLevel <= 16 }
@@ -2282,7 +2285,7 @@ Section LevelingRareGear : Rarity Rare
 		Show l10{ %D4; !LVLMelee; !SF40; ItemLevel <= 67; DropLevel >= 56; }
 	}
 
-#!! Waypoint c11.leveling.rares.low : "leveling - low tier gear"
+#!! Waypoint c11.leveling.rares.low : "Leveling - Gear - Low Tier"
 
 	Section Vendorable : Auto("Leveling->Rare->Remaining"), !raredeco.t4equip
 	{
@@ -2297,7 +2300,7 @@ Section LevelingRareGear : Rarity Rare
 #===============================================================================================================
 # [[6400]] Leveling - Useful magic and normal items
 #===============================================================================================================
-#!! Waypoint c11.leveling.linked.all : "leveling - all linked items"
+#!! Waypoint c11.leveling.linked.all : "Leveling - Linked - 4link"
 
 #------------------------------------
 # [6002] Purpose Picked Items
@@ -2309,7 +2312,7 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show General { %D4; !SF45; !FourLink; Empty(); }
 	}
 
-#!! Waypoint c11.leveling.rgb.all : "leveling - RGB recipes"
+#!! Waypoint c11.leveling.rgb.all : "Leveling - Linked - RGB Recipe"
 	Section Chromatic : Auto("Leveling->NormalMagic->RGB"), SocketGroup "RGB", !G5
 	{
 		Show RGBSmall1	{ %D3; !Recipe.t2; !SF40; Width 2; Height 2; }
@@ -2318,14 +2321,14 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show RGBMedium	{ %D2; !Recipe.t3; !SF40; Width 2; Height 3; }
 	}
 
-#!! Waypoint c11.leveling.3linked.all : "leveling - 3 linked items"
+#!! Waypoint c11.leveling.3linked.all : "Leveling - Linked - 3links"
 	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L"), !G6H, !GLVL1
 	{
 		Show EarlyThreeLinks 	{ %D3; !ThreeLink; !SF40; AreaLevel <= leveling.keylevels.threelinkEarly; }
 		Show General 			{ %D2; !ThreeLink; !SF35; AreaLevel <= leveling.keylevels.threelink; }
 	}
 
-#!! Waypoint c11.leveling.act12.all : "leveling - act1 and 2 specific items"
+#!! Waypoint c11.leveling.act12.all : "Leveling - Normal and Magic - Act1, Act2 special gear"
 
 	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1"), !G6H, !GLVL1
 	{
@@ -2344,7 +2347,7 @@ Section LevelingMiscGear : Rarity <= Magic
 		Show Physical { %D3; !NoticeNM2; !SF35; !LVLMelee; BaseType == "Rustic Sash"; }
 	}
 
-#!! Waypoint c11.leveling.actlater.all : "leveling - later acts specific items"
+#!! Waypoint c11.leveling.actlater.all : "Leveling - Normal and Magic - Later Acts"
 
 	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), !low, !G7, !GLVL2
 	{
@@ -2363,7 +2366,7 @@ Section LevelingMiscGear : Rarity <= Magic
 #------------------------------------
 # [6002] Normals
 #------------------------------------
-#!! Waypoint c11.leveling.firstlevels.all : "leveling - first levels gear"
+#!! Waypoint c11.leveling.firstlevels.all : "Leveling - Normal and Magic - First Levels"
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
@@ -2375,7 +2378,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 #------------------------------------
 # [6002] Weapon Progression
 #------------------------------------
-#!! Waypoint c11.leveling.progression.all : "leveling - weapon progression"
+#!! Waypoint c11.leveling.progression.all : "Leveling - Normal and Magic - Item Progression"
 
 Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; Sockets >= 3; }
 
@@ -2401,7 +2404,7 @@ Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee level
 #------------------------------------
 # [6002] Remaining Magics
 #------------------------------------
-#!! Waypoint c11.leveling.magicvendor.all : "leveling - magic vendor items"
+#!! Waypoint c11.leveling.magicvendor.all : "Leveling - Normal and Magic - Magic Vendor Items"
 
 Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel <= 67, Rarity = Magic, !GEX
 {
@@ -2425,7 +2428,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class classes_equip
 	Show FirstLevels { %H3; !ClearBorder; !SF35; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
 }
 
-#!! Waypoint c12.hide.all : "hide all other known items"
+#!! Waypoint c12.hide.all : "HIDELAYER - Hide all known untiered items"
 
 #------------------------------------
 # [6002] Hide All known Section
@@ -2439,7 +2442,7 @@ Section HideLayerFinal : Auto("HideLayer")
 #------------------------------------
 # [6002] Show All unknown Section
 #------------------------------------
-#!! Waypoint c13.show.all : "show all unknown items"
+#!! Waypoint c13.show.all : "SAFETYLAYER - Show all unknown items"
 
 # THIS ENTRY IS CAUGHT IN 3 CASES:
 # 1) YOUR FILTER IS OUT OF DATE!

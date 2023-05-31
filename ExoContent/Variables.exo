@@ -814,3 +814,39 @@ var xAj_attack_aux = aj_aux_mix + aj_damage_suffix_attack;
 var xAj_caster_aux = aj_aux_mix + aj_damage_suffix_caster + aj_damage_suffix_caster;
 var xAj_minion_aux = aj_aux_mix + aj_minion_suffix_util + aj_misc;
 var xAj_mixer_aux = xAj_attack_aux + xAj_caster_aux + xAj_minion_aux + aj_avoidance;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} BAD MODS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var bad_physModsp = "Heavy" "Serrated" "Wicked" "Vicious" "Bloodthirsty";
+var bad_physModsf = "Glinting" "Burnished" "Polished" "Honed" "Gleaming";
+
+var bad_life = "Hale" "Healthy" "Sanguine" "Stalwart" "Stout" "Robust" "Rotund";
+var bad_speed = "Runner's" "Sprinter's" "Stallion's" "Gazelle's";
+
+var bad_attackStats = "of Needling" "of Skill";
+
+var bad_ele = "Heated" "Smouldering" "Smoking" "Burning" "Frosted" "Chilled" "Icy" "Frigid" "Humming" "Buzzing" "Snapping" "Crackling";
+
+var bad_esf = "Shining" "Glimmering" "Glittering" "Glowing" "Radiating";
+var bad_esp = "Protective" "Strong-Willed" "Resolute" "Fearless";
+
+var zbad_boots_es = bad_speed[3] + bad_esf[3] + bad_esp[3] + bad_life[1];
+var zbad_boots_life = bad_speed[3] + bad_life[3];
+
+var zbad_phys_attack = bad_physModsp[4] + bad_physModsf[4] + bad_attackStats;
+var zbad_ele_attack = bad_ele + bad_attackStats + bad_physModsf[1] + bad_physModsp[1];
+
+var z_bad_bigarmor_life = bad_life[5];
+var z_bad_bigarmor_es = bad_esf[4] + bad_esp[4];
+
+var z_bad_armor_life = bad_life[3];
+var z_bad_armor_es = bad_life[1] + bad_esf[3] + bad_esp[3];
+
+var z_bad_liferoll = bad_life[3];
+
+var badFlatCasterDmgF = "Heated" "Smouldering" "Smoking" "Frosted" "Chilled" "Icy" "Humming" "Buzzing" "Snapping";
+var badFlatCasterDmgP = "Apprentice's" "Adept's" "Scholar's" "Searing" "Sizzling" "Blistering" "Bitter" "Biting" "Alpine" "Charged" "Hissing" "Bolting";
+
+var z_bad_caster = badFlatCasterDmgF + badFlatCasterDmgP + "of Talent";
