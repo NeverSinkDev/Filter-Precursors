@@ -631,9 +631,9 @@ Section ExoticVariations : !exotic
 #!! Waypoint c2.exotic.fractured.all : "SpecialGear - All fractured items"
 		Section Fractured : FracturedItem True, Auto("exotic->fractured"), Clean()
 		{
-			Show FractSelected { !GSH; %D6; !exotic.t2; BaseType == bases.crafting.fractured.t1 }
-			Show FractClasses  { !GS;  %D5; !exotic.t3; Class == classes_fract }
-			Show FractRandom   { !GS;  %D2; !exotic.t4; Empty(); }
+			Show FractT1 { !GSH; %D6; !exotic.t2; BaseType == bases.crafting.fractured.t1; }
+			Show FractT2 { !GS;  %D5; !exotic.t3; BaseType == bases.crafting.fractured.t2; }
+			Show FractSpecial  { !GS;  %D6; !exotic.t2; Class == classes_fract; }
 		}
 #------------------------------------
 #   [1234] Enchanted
@@ -874,7 +874,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Quality Low
 #------------------------------------
-	Section QualityEndgameFlasks
+	Section QualityEndgameFlasks : Rarity Normal
 	{
 		Show QualityHigh { %D1; !G6H; !recipe.t2; BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
 		Show QualityLow  { %D0; !G6; !recipe.t3; BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
@@ -945,7 +945,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 #!! Waypoint c6.rare.breach.all : "Rare Endgame Items - Breach rings"
 
-	Section BreachRings : Class "Rings", BaseType "Breach", Auto("rare->exotic->breachrings")
+	Section BreachRings : Class "Rings", BaseType == "Breach Ring", Auto("rare->exotic->breachrings")
 	{
 		Show High { %HS3; !G4; !exotic.t2; ItemLevel >= 82; }
 		Show Any  { %HS1; !G5; !exotic.t3; Empty(); }
@@ -1083,7 +1083,7 @@ Section Jewels : !jewels
 			Show 1modcorrupted { !Special; %D4; Mod jewels_corruptedModsMinimum; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 		}
 
-		Section IdedUncorruptedJewels : Corrupted False, Rarity <= Rare, Class "Jewel"
+		Section IdedUncorruptedJewels : Clean(), Rarity <= Rare, Class "Jewel"
 		{
 			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
@@ -1095,8 +1095,8 @@ Section Jewels : !jewels
 #!! Waypoint c7.jewels.leveling : "Jewels - Leveling Overrides"
 	Section JewelsLeveling : Auto("jewels->leveling"), ItemLevel <= 67, Rarity <= Magic
 	{
-		Show Abyss 		{ !*magic; !SF45; %D4; BaseType == "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
-		Show Generic 	{ !*magic; !SF45; %D4; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+		Show Abyss 		{ !*magic; !SF45; %D3; BaseType == "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
+		Show Generic 	{ !*magic; !SF45; %D3; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
 	}
 
 #------------------------------------
@@ -1106,13 +1106,13 @@ Section Jewels : !jewels
 	Section AbyssJewels : Class "Abyss Jewel", Auto("jewels->abyss")
 	{
 		Show VeryHighRare  { %H5;  !G4;  !*rare;  !High; Rarity Rare; ItemLevel >= 86; }
-		Show VeryHighMagic { %H5;  !G4;  !*magic; !High; Rarity <= Magic; ItemLevel >= 86; }
+		Show VeryHighMagic { %HS4;  !G4;  !*magic; !High; Rarity <= Magic; ItemLevel >= 86; }
 		
 		Show CorruptedAbyssJewel { %H5; !G4; !*rare; !High; Rarity Rare; Corrupted True; }
 		
 		Show HighRare      { %HS3;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
 		Show HighMagic     { %HS2; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
-		Show AnyRare       { %HS2; !G5H; !*rare;  Rarity Rare; }
+		Show AnyRare       { %HS3; !G5H; !*rare;  Rarity Rare; }
 		Show AnyMagic      { %H2;  !G6H; !*magic; Rarity <= Magic; }
 	}
 #------------------------------------
@@ -1122,7 +1122,7 @@ Section Jewels : !jewels
 	Section GenericJewels : Class "Jewel", BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
 	{
 		Show AnyRare  { %HS3; !G5H; !*rare; !V4; Rarity Rare; }
-		Show AnyMagic { %H3; !G6H; !*magic; Rarity <= Magic; }
+		Show AnyMagic { %H2; !G6H; !*magic; Rarity <= Magic; }
 	}
 
 #------------------------------------
@@ -1236,16 +1236,17 @@ Section Jewels : !jewels
 
 	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, !*cluster
 	{
+		Show Optimal1HighLarge	{ !G3; %D5; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum >= 12; }
 		Show OptimalHighLarge	{ !G3; %D5; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
-		Show HighLarge 			{ !G3; %D5; !V3; !High; BaseType == "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large 				{ !G4; %D5; !V4; BaseType == "Large Cluster Jewel"; }
+		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType == "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
+		Show Large 				{ !G4; %D3; !V4; BaseType == "Large Cluster Jewel"; }
 
 		Show OptimalHighMedium  { !G3; %D4; !V2; !High; BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
 		Show HighMedium 	    { !G3; %D4; !V3; !High; BaseType == "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium 		    { !G4; %D4; !V4; BaseType == "Medium Cluster Jewel"; }
+		Show Medium 		    { !G4; %D3; !V4; BaseType == "Medium Cluster Jewel"; }
 
 		Show HighSmall 			{ !G3; %D4; !V3; !High; BaseType == "Small Cluster Jewel"; ItemLevel >= 84; }
-		Show Small 				{ !G4; %D4; !V4; BaseType == "Small Cluster Jewel"; }
+		Show Small 				{ !G4; %D3; !V4; BaseType == "Small Cluster Jewel"; }
 	}
 }
 
@@ -2310,8 +2311,8 @@ Section LevelingMiscGear : Rarity <= Magic
 #!! Waypoint c11.leveling.rgb.all : "Leveling - Linked - RGB Recipe"
 	Section Chromatic : Auto("Leveling->NormalMagic->RGB"), SocketGroup "RGB", !G5
 	{
-		Show RGBSmall1	{ %D3; !Recipe.t2; !SF40; Width 2; Height 2; }
-		Show RGBSmall2	{ %D3; !Recipe.t2; !SF40; Width 1; Height <=4; }
+		Show RGBSmall1	{ %D3; !Recipe.t2; !SF45; Width 2; Height 2; }
+		Show RGBSmall2	{ %D3; !Recipe.t2; !SF45; Width 1; Height <=4; }
 		Show RGBLarge	{ %D2; !Recipe.t3; !SF40; Width 2; Height 4; }
 		Show RGBMedium	{ %D2; !Recipe.t3; !SF40; Width 2; Height 3; }
 	}
@@ -2366,7 +2367,7 @@ Section LevelingMiscGear : Rarity <= Magic
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
 	Show EarlyBodyArmours	{ %H2; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class == "Body Armours"; }
-	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields"; }
+	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields" "Wands" "Sceptres"; }
 	Show FirstAreas 		{ %H3; !G7; !NoticeNM3;  !SF35; AreaLevel <= 4; Rarity Normal; }
 }
 
@@ -2405,6 +2406,7 @@ Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel 
 {
 	Cont Medium1 { !NoticeLow;  Height >= 3; Width = 1; }
 	Cont Medium2 { !NoticeLow;  Height = 2; Width = 2; }
+	Cont NoticeEarly { !NoticeLow; AreaLevel <= leveling.keylevels.start; }
 	Cont Tiny 	 { !NoticeHigh; Height = 1; Width <= 2; }
 }
 
@@ -2420,7 +2422,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class classes_equip
 	Show Act2 		 { %H2; !ClearBorder; !SF35; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
 	Show Act1 		 { %H3; !ClearBorder; !SF35; AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
 	Show UntilMudFlats { %H3; !ClearBorder; !SF40; AreaLevel <= leveling.keylevels.firstZones; }
-	Show FirstLevels { %H3; !ClearBorder; !SF35; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
+	Show FirstLevels   { %H3; !ClearBorder; !SF40; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
 }
 
 #!! Waypoint c12.hide.all : "HIDELAYER - Hide all known untiered items"
