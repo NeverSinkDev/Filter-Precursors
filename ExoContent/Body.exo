@@ -633,7 +633,7 @@ Section ExoticVariations : !exotic
 		{
 			Show FractT1 { !GSH; %D6; !exotic.t2; BaseType == bases.crafting.fractured.t1; }
 			Show FractT2 { !GS;  %D5; !exotic.t3; BaseType == bases.crafting.fractured.t2; }
-			Show FractSpecial  { !GS;  %D6; !exotic.t2; Class == classes_fract; }
+			Show FractSpecial  { !GS;  %D6; !exotic.t2; Class == classes_fractured; }
 		}
 #------------------------------------
 #   [1234] Enchanted
@@ -859,7 +859,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 # [2701] Quality High
 #------------------------------------
 	#!! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
-	Section 20QualEndgameFlasks : Quality >= 20, !G5
+	Section 20QualEndgameFlasks : Quality >= 20, Rarity Normal, !G5
 	{
 		Show Any20QualFlask { %D3; !recipe.ts1; BaseType "Flask"; }
 	}
@@ -874,7 +874,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Quality Low
 #------------------------------------
-	Section QualityEndgameFlasks : Rarity Normal
+	Section QualityEndgameFlasks
 	{
 		Show QualityHigh { %D1; !G6H; !recipe.t2; BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
 		Show QualityLow  { %D0; !G6; !recipe.t3; BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
@@ -1304,7 +1304,7 @@ Section HeistFollowerGear : Rarity <= Rare
 #===============================================================================================================
 #!! Waypoint c8.gems.all : "Gem Rules - Override All"
 
-Section Gems : Class "Gems", !Gems
+Section Gems : Class "Gem", !Gems
 {
 #------------------------------------
 # [3901] Exceptional Gems - Awakened and AltQuality
@@ -1417,7 +1417,6 @@ Section Maps : Class "Maps", !Maps
 #------------------------------------
 	Section UniqueMaps : Rarity Unique, Auto("uniques->maps")
 	{
-		Show exUltimatum { !exomap.high; !G2; BaseType == "Engraved Ultimatum"; }
 		Show exHarbinger { !G1; !Maps.HighHarbingerMap; BaseType == uniques.maps.ex; MapTier 16; }
 
 #!! Waypoint c9.maps.unique.all : "Maps - Unique Tierlists"
@@ -1567,6 +1566,11 @@ Section Memories : Auto("ExoticMap->Memory")
 	Show Any { !exomap.high; !G2; Class "Memory"; }
 }
 
+Section Memories : Auto("ExoticMap->Sanctum"), Class "Sanctum Research"
+{
+	Show Any { !exomap.high; !G2; Empty(); }
+}
+
 #===============================================================================================================
 # [[4500]] Fragments
 #===============================================================================================================
@@ -1580,7 +1584,11 @@ Section MapFragments : Class "Map Fragments"
 	Section StackedFragments : Auto("Fragments->stacked")
 	{
 		Show t3 { !G3; %DS4; BaseType == fragments.generic.t4; StackSize >= 3; }
-		Show t3scarabs { !G3; BaseType == fragments.scarabs.t4; StackSize >= 2; }
+	}
+
+	Section StackedScarabs : Auto("Fragments->stackedScarabs")
+	{
+		Show t3 { !G3; BaseType == fragments.scarabs.t4; StackSize >= 3; }
 	}
 
 #------------------------------------
@@ -1869,6 +1877,34 @@ Section SanctumInvocations : Auto("currency->invocations"), Class "Currency", !C
 }
 
 #------------------------------------
+# [5104] Trial of the Ancestors
+#------------------------------------
+
+Section CurrencyTrialCurrencies : Auto("currency->trial->orblike"), Class "Currency"
+{
+	Show T1 { !Currency; !G1; !*t1exalted; BaseType == "Hinekora's Lock"; }
+	Show Coins { !newitemmidvalue; !G4; BaseType == currency.trial.coins.any; }
+}
+
+Section CurrencyTrialOmen : Auto("currency->trial->omen"), Class "Currency", !Currency
+{
+	Show t1 { !G1; !*t1exalted; BaseType == currency.trial.omen.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.trial.omen.t2; }
+	Show t3 { !G3; !*t3annul; BaseType == currency.trial.omen.t3; }
+	Show t4 { !G4; !*t4chaos; BaseType == currency.trial.omen.t4; }
+	Show restex { BaseType "Omen of"; }
+}
+
+Section CurrencyTrialTattoo : Auto("currency->trial->tattoo"), Class "Currency", !Currency
+{
+	Show t1 { !G1; !*t1exalted; BaseType == currency.trial.tattoo.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == currency.trial.tattoo.t2; }
+	Show t3 { !G3; !*t3annul; BaseType == currency.trial.tattoo.t3; }
+	Show t4 { !G4; !*t4chaos; BaseType == currency.trial.tattoo.t4; }
+	Show restex { BaseType "Tattoo of"; }
+}
+
+#------------------------------------
 # [5104] Others
 #------------------------------------
 
@@ -1924,15 +1960,14 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 	Show t5 { %H4; !G5; Empty(); !Splinters.t2 }
 }
 
-#------------------------------------
-# [5112] Other Splinters
-#------------------------------------
-
-Section CurrencySplintersOthers : Auto("currency->splinter->other"), !currency
-{
-	Show t2 { !G2; !Currency.t2divine; BaseType == "Crescent Splinter"; }
-	Show t4 { %D5; !G4; !Currency.t4chaos; BaseType == "Ritual Splinter"; }
-}
+##------------------------------------
+## [5112] Other Splinters
+##------------------------------------
+## Section CurrencySplintersOthers : Auto("currency->splinter->other"), !currency
+## {
+## 	Show t2 { !G2; !Currency.t2divine; BaseType == "Crescent Splinter"; }
+## 	Show t4 { %D5; !G4; !Currency.t4chaos; BaseType == "Ritual Splinter"; }
+## }
 
 #===============================================================================================================
 # [[4900]] Divination Cards
@@ -2001,8 +2036,8 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exTriadGrip { !G2; !*t2; BaseType == "Mesh Gloves"; Sockets >= "4WWWW"; }
 	Show exForgeSword { !G1; !*t1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
 	
-	Show exRationalJewel  { !G1; !*t1; Class "Jewel"; SynthesisedItem True; }
-	Show exSynth  { !G2; !*t2; Class "Rings"; SynthesisedItem True; }
+	Show exRationalJewel  { !G1; !*t1; Class == "Jewels"; SynthesisedItem True; }
+	Show exSynth  { !G2; !*t2; Class == "Rings"; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 
 #------------------------------------
@@ -2146,9 +2181,9 @@ Section LevelingHybridFlasks : Class "Hybrid Flasks", Auto("Leveling->Flasks->Hy
 #------------------------------------
 Section LevelingLifeFlasks : Class "Life Flasks", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
 {
-	Show t1  { FlaskHighlight(5, "Small");}
-	Show t2  { FlaskHighlight(8, "Medium");}
-	Show t3  { FlaskHighlight(13, "Large");}
+	Show t1  { FlaskHighlight(9, "Small");}
+	Show t2  { FlaskHighlight(13, "Medium");}
+	Show t3  { FlaskHighlight(17, "Large");}
 	Show t4  { FlaskHighlight(19, "Greater");}
 	Show t5  { FlaskHighlight(25, "Grand");}
 	Show t6  { FlaskHighlight(31, "Giant");}
@@ -2165,9 +2200,9 @@ Section LevelingLifeFlasks : Class "Life Flasks", Auto("Leveling->Flasks->Life")
 #------------------------------------
 Section LevelingManaFlasks : Class "Mana Flasks", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
 {
-	Show t1 {FlaskHighlight(5, "Small");}
-	Show t2 {FlaskHighlight(8, "Medium");}
-	Show t3 {FlaskHighlight(13, "Large");}
+	Show t1 {FlaskHighlight(9, "Small");}
+	Show t2 {FlaskHighlight(13, "Medium");}
+	Show t3 {FlaskHighlight(17, "Large");}
 	Show t4 {FlaskHighlight(19, "Greater");}
 	Show t5 {FlaskHighlight(25, "Grand");}
 	Show t6 {FlaskHighlight(31, "Giant");}
