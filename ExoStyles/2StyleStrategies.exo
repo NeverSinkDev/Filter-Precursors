@@ -32,6 +32,17 @@ Style UniversalHideLayer
 
 Style UniversalValueAccents
 {
+	Func newitemmidvalue ()
+	{
+		TX league.new.acc;
+		BD league.new.acc;
+		BG league.new.background;
+		MM 1 league.color league.icon;
+		PlayAlertSound sounds.currency;
+		Beam league.color;
+		SetFontSize font.t3;
+	}
+
 	Func restex ()
 	{ 
 		SetFontSize font.max; 
