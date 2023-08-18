@@ -103,7 +103,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 		## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
 		ShowD t2_exo { !G4; BaseType == bases.influenced.exotic2.t1; }
 		## Top Tier Common items of top item level
-		ShowD t2_86 { !G4; ItemLevel >= 84; BaseType == bases.rares.jwl.ringsamu.t1 + bases.rares.jwl.ringsamu.t2 + bases.rares.jwl.belts.t1 + bases.rares.jwl.belts.t2 + bases.rares.eg.t1.weapons + bases.rares.eg.t1.armours + bases.rares.eg.t2.weapons + bases.rares.eg.t2.armours; };
+		ShowD t2_86 { !G4; ItemLevel >= 86; BaseType == bases.rares.jwl.ringsamu.t1 + bases.rares.jwl.ringsamu.t2 + bases.rares.jwl.belts.t1 + bases.rares.jwl.belts.t2 + bases.rares.eg.t1.weapons + bases.rares.eg.t1.armours + bases.rares.eg.t2.weapons + bases.rares.eg.t2.armours; };
 	}
 
 #------------------------------------
@@ -153,7 +153,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
 	{
 		Show AnyTrinket  { %D4; !GI; Class == classes_jewellery; }
-		Show AnyTopLevel { %D3; !GI; !tiny; ItemLevel >= 86; }
+		Show AnyTopLevel { %D4; !GI; !tiny; ItemLevel >= 86; }
 		Show Any 		 { %D3; !GI; Rarity <= Rare; Empty(); }
 	}
 }
@@ -648,7 +648,7 @@ Section ExoticVariations : !exotic
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
 			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class == "Amulets" "Rings"; Clean(); }
-			Show GlovesBoots { !GS;  %D2; !exotic.t4; Class "Gloves" "Boots" }
+			Show GlovesBoots { !GS;  %D1; !exotic.t4; Class "Gloves" "Boots" }
 		}
 #------------------------------------
 #   [1234] Crucible
@@ -895,7 +895,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
-	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; Class == classes_1h; Sockets >= "3WWW"; }
+	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; AreaLevel < 79; Class == classes_1h; Sockets >= "3WWW"; }
 }
 
 Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
@@ -1566,7 +1566,7 @@ Section Memories : Auto("ExoticMap->Memory")
 	Show Any { !exomap.high; !G2; Class "Memory"; }
 }
 
-Section Memories : Auto("ExoticMap->Sanctum"), Class "Sanctum Research"
+Section Sanctum : Auto("ExoticMap->Sanctum"), Class "Sanctum Research"
 {
 	Show Any { !exomap.high; !G2; Empty(); }
 }
