@@ -785,7 +785,6 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 	}
 }
 
-
 #------------------------------------
 # [1234] Early Endgame Crafting projects
 #------------------------------------
@@ -861,7 +860,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	#!! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
 	Section 20QualEndgameFlasks : Quality >= 20, Rarity Normal, !G5
 	{
-		Show Any20QualFlask { %D3; !recipe.ts1; BaseType "Flask"; }
+		Show Any20QualFlask { %D3; !recipe.ts1; Class "Flask"; }
 	}
 #------------------------------------
 # [2701] Utility OR quality flasks
@@ -876,8 +875,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 	Section QualityEndgameFlasks
 	{
-		Show QualityHigh { %D1; !G6H; !recipe.t2; BaseType "Flask"; Quality >= 15; AreaLevel <= 77; }
-		Show QualityLow  { %D0; !G6; !recipe.t3; BaseType "Flask"; Quality >= 1; AreaLevel <= 77; }
+		Show QualityHigh { %D1; !G6H; !recipe.t2; Class "Flask"; Quality >= 15; AreaLevel <= 77; }
+		Show QualityLow  { %D0; !G6; !recipe.t3; Class "Flask"; Quality >= 1; AreaLevel <= 77; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
@@ -2037,7 +2036,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exForgeSword { !G1; !*t1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
 	
 	Show exRationalJewel  { !G1; !*t1; Class == "Jewels"; SynthesisedItem True; }
-	Show exSynth  { !G2; !*t2; Class == "Rings"; SynthesisedItem True; }
+	Show exSynth  { !G2; !*t2; BaseType == uniques.exceptions.synthRings; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 
 #------------------------------------
@@ -2157,7 +2156,7 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class "Flask", Rarity Normal
 {
 	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; }
-	Show high { !G6; %D1; !recipe.t2; Quality >= 15; }
+	Show high { !G6; %D1; !recipe.t2; Quality >= 14; }
 	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; }
 }
 
