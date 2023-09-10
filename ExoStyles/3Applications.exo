@@ -44,8 +44,8 @@ Style MainRules
 	Apply(meta.safe, *.restex => !UniversalValueAccents.restex);
 
 	## 6L
-	Apply(6L, 6Links.arm => SixLinkVariant.t2);
-	Apply(6L, 6Links.wep => SixLinkVariant.t2);
+	Apply(6L, 6Links.others => SixLinkVariant.t2);
+	Apply(6L, 6Links.hightier => SixLinkVariant.t1);
 
 	## influenced and eldritch
 	Apply(influenced, $Maps.T1 => InfluencedMapsStrategy)

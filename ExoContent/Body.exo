@@ -14,8 +14,8 @@ Func Clean(){ Corrupted False; Mirrored False; }
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
-	Show arm { !G2; Clean(); Class "Body Armours"; }
-	Show wep { !G2; Empty(); }
+	Show hightier { !G2; Clean(); BaseType == bases.sixlink.valuable.t1; ItemLevel >= 75; }
+	Show others { !G2; Empty(); }
 }
 
 #===============================================================================================================
@@ -208,7 +208,7 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 #===============================================================================================================
 #!! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
-Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
+Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), Clean(), IdMods, !exotic
 {
 #------------------------------------
 #   [1234] ID Mod exceptions - override id mod matching section
@@ -279,7 +279,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Boots : Class == "Boots"
 		{
 			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; Mod = 0 zbad_boots_life; }
-			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; Mod = 0 zbad_boots_es; }
+			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; Mod = 0 zbad_boots_es + zbad_boots_life; }
 		}
 #------------------------------------
 #   [1234] Gloves
@@ -287,7 +287,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Gloves : Class == "Gloves"
 		{
 			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; Mod = 0 z_bad_armor_life; }
-			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; Mod = 0 zbad_boots_es; }
+			Show Gloves_ES_based   { Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix2; Mod = 0 zbad_boots_es; }
 		}
 #------------------------------------
 #   [1234] Shields
@@ -469,10 +469,10 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #!! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)"
 
-		Show DuoVeil    { %D4; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
-		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
-		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
-		Show VeilRest   { %D3; !GS;  !exotic.t4; Mod "Veil"; }
+		Show DuoVeil    { %D4; !GSH; !exotic.t3; Clean(); Mod "Veiled"; Mod "of the Veil"; }
+		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 2; Height <= 2; } 
+		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 1; Height <= 4; }
+		Show VeilRest   { %D3; !GS;  !exotic.t4; Clean(); Mod "Veil"; }
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
@@ -634,6 +634,7 @@ Section ExoticVariations : !exotic
 			Show FractT1 { !GSH; %D6; !exotic.t2; BaseType == bases.crafting.fractured.t1; }
 			Show FractT2 { !GS;  %D5; !exotic.t3; BaseType == bases.crafting.fractured.t2; }
 			Show FractSpecial  { !GS;  %D6; !exotic.t2; Class == classes_fractured; }
+			Show FractOthers { !GS;  %D2; !exotic.t4; }
 		}
 #------------------------------------
 #   [1234] Enchanted
@@ -716,10 +717,10 @@ Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestroll
 
 Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("EndgameRGB"), !recipe
 {
-	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width 2; Height 2; }
-	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width 1; Height <=4; }
-	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 4; }
-	Show RGBMedium	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 3; }
+	Show RGBSmall1	{ !G6H; %D2; !*t2; !SF40; Width 2; Height 2; }
+	Show RGBSmall2	{ !G6H; %D2; !*t2; !SF40; Width 1; Height <=4; }
+	Show RGBLarge	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 4; }
+	Show RGBMedium	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 3; }
 }
 
 #------------------------------------
@@ -1053,6 +1054,13 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4"
 
 		Show t4endgamerares { !GR4; %D1; Class classes_nonJwlryEquip; }
+
+#!! Waypoint c6.rare.t4.chroms : "Rare Endgame Items - lowtierchromatics"
+
+		Show RGBSmall1	{ !G6H; %H2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 2; Height 2; }
+		Show RGBSmall2	{ !G6H; %H2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 1; Height <=4; }
+		Show RGBLarge	{ !G6;  %H0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 4; }
+		Show RGBMedium	{ !G6;  %H0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 3; }
 	}
 }
 
@@ -1855,7 +1863,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 
 Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !Currency
 {
-	Show leveledex { %H5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
+	Show leveledex { %D5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
 
 	Show t1 { !G1; !*t1exalted; BaseType == currency.incubators.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.incubators.t2; }
