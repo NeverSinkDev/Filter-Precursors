@@ -196,6 +196,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticExpeditionBases{ %D5; !GSH; BaseType == bases.exotic.expedition.any + "Iron Flask" }
 	Show ExoticTalismanBases  { !GSH; $artefactex; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
+	Show ExoticUniqueBases	  { !GSH; BaseType == bases.exotic.misc.unique - "Grasping Mail"; }
 }
 
 Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !exotic
@@ -1491,6 +1492,11 @@ Section Maps : Class "Maps", !Maps
 # [4403] Map progression
 #------------------------------------
 
+#!! Waypoint c9.maps.generic.specialcases : "Maps - generic - optional special cases"
+
+	HideD corruptedMapHider { !shrink; Corrupted True; Rarity <= Magic; }
+	HideD mirroredMapHider { !shrink; Mirrored True; Rarity <= Magic; }
+
 #!! Waypoint c9.maps.generic.t16 : "Maps - t14-t16 - high reds"
 
 		Cont deco_mapup_t16 { !GEX; MapTier >= 16; AreaLevel < 83; }
@@ -1556,9 +1562,9 @@ Section Logbooks : Auto("Expedition->Logbook"), BaseType == "Expedition Logbook"
 
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 {
-	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; }
-	Show Any { !G5; !exomap.low; %H5; Empty(); }
-	Hide exHide { !shrink; BaseType == Heist.Contract.Handpicked; }
+	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; Rarity <= Rare; }
+	Show Any { !G5; !exomap.low; %H5; Empty(); Rarity <= Rare }
+	Hide exHide { !shrink; }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
@@ -1865,8 +1871,8 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !C
 {
 	Show leveledex { %D5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
 
-	Show t1 { !G1; !*t1exalted; BaseType == currency.incubators.t1; }
-	Show t2 { !G2; !*t2divine; BaseType == currency.incubators.t2; }
+	Show t1 { !G1; !*t2divine; BaseType == currency.incubators.t1; }
+	Show t2 { !G2; !*t3annul; BaseType == currency.incubators.t2; }
 	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t3; }
 	Show t4 { !G4; %H3; !*t6chrom; BaseType == currency.incubators.t4; }
 	Hide exHide { !shrink; BaseType == currency.incubators.t1 + currency.incubators.t2 + currency.incubators.t3 + currency.incubators.t4; }
@@ -2058,7 +2064,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5703] Exceptions #2
 #------------------------------------
 
-	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
+	Show 2xcorrupteduniques { !G2; !*t2; !Corrupt; Corrupted True; CorruptedMods >= 2; }
 	Show 3xabyss 			{ !G1; !*t1; Sockets >= "AAA"; BaseType == "Carnal Armour" }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
 	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
@@ -2073,7 +2079,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
 
 # For those 6 sockets	
-	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
+	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
 
 #------------------------------------
 # [5701] Low tier exceptions
