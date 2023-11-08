@@ -399,20 +399,28 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		# +1 to all global elemental gems and DOT t1
 		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
 		# +1 to all arrows quivers
-		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
+		Show t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
 		# +1 to all global elemental gems + spell damage t1
-		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		Show t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 to all maximum resists shield
-		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
+		Show t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
 		# Uncorrupted Suppression Gear from Dexterity Equip
-		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == "Gloves" "Boots" "Helmets"; }
+		Show t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == "Gloves" "Boots" "Helmets"; }
 		# Uncorrupted Tyrranical weapons
-		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
+		Show t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
 		# DOT Sceptres and Wands
-		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
-		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
+		Show t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
+		Show t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
 		# Elemental Weapons
-		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == "Claws" "Wands" "Bows"; }
+		Show t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == "Claws" "Wands" "Bows"; }
+	}
+
+	Section Sentinel : Rarity <= Rare
+	{
+		# EVENT SECTION
+		# Useful stalker and pandemonium mods
+		Show t1sentinel { %D6; Mod >= 1 sentinel_rewards_t1; BaseType "Stalker" "Pandemonium"; }
+		Show t2sentinel { %D5; Mod >= 1 sentinel_rewards_t2; BaseType "Stalker" "Pandemonium"; }
 	}
 
 #------------------------------------
@@ -903,6 +911,46 @@ Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 	ShowD normalranged { Rarity Normal; Class classes_weapons_ranged;}
 	ShowD magicmelee   { Rarity Magic; Class classes_weapons_melee;}
 	ShowD magicranged  { Rarity Magic; Class classes_weapons_ranged;}
+}
+
+#===============================================================================================================
+# [[9999]] TEMP SENTINEL GEAR
+#===============================================================================================================
+
+Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
+{
+	Section Stalker : !stalker
+	{
+		Show stalkert1  { !GSH; %D6; BaseType == sentinels.stalker.t1; Rarity Rare; !brightrare; }
+		Show stalkert2  { !GSH; %D6; BaseType == sentinels.stalker.t2; Rarity Rare; }
+
+		Show stalkerr 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Rare; }
+		Show stalkerm 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Magic; }
+		
+		Show stalkerlvl { !GSH; %D4; BaseType == sentinels.stalker.any; ItemLevel <= 67; }
+	}
+
+	Section Pandemonium : !pandemonium
+	{
+		Show pandet1    { !GSH; %D6; BaseType == sentinels.pandemonium.t1; Rarity Rare; !brightrare; }
+		Show pandet2    { !GSH; %D6; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
+
+		Show pander 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Rare; }
+		Show pandem 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Magic; }
+		
+		Show pandelvl { !GSH; %D4; BaseType == sentinels.pandemonium.any; ItemLevel <= 67; }
+	}
+
+	Section Apex : !apex
+	{
+		Show apext1 { !GSH; %D6; BaseType == sentinels.apex.t1; Rarity Rare; !brightrare; }
+		Show apext2 { !GSH; %D5; BaseType == sentinels.apex.t2; Rarity Rare; }
+		
+		Show apexr  { !GSH; %D5; BaseType == sentinels.apex.any; Rarity Rare; }
+		Show apexm 	{ !GSH; %D5; BaseType == sentinels.apex.any; Rarity Magic; }
+		
+		Show apexlvl { !GSH; %D4; BaseType == sentinels.apex.any; ItemLevel <= 67; }
+	}
 }
 
 #!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
@@ -1855,13 +1903,13 @@ Section CurrencyEssence : Auto("currency->essence"), Class "Currency", !Currency
 
 Section CurrencyIncubators : Auto("currency->incubators"), Class "Incubator", !Currency
 {
-	Show leveledex { %H5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
+	Show leveledex { %D5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
 
-	Show t1 { !G1; !*t1exalted; BaseType == currency.incubators.t1; }
-	Show t2 { !G2; !*t2divine; BaseType == currency.incubators.t2; }
-	Show t3 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t3; }
-	Show t4 { !G4; %H3; !*t6chrom; BaseType == currency.incubators.t4; }
-	Hide exHide { !shrink; BaseType == currency.incubators.t1 + currency.incubators.t2 + currency.incubators.t3 + currency.incubators.t4; }
+	Show t2 { !G1; !*t2divine; BaseType == currency.incubators.t2; }
+	Show t3 { !G2; !*t3annul; BaseType == currency.incubators.t3; }
+	Show t4 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t4; }
+	Show t5 { !G5; %H2; !*t6chrom; BaseType == currency.incubators.t5; }
+	Hide exHide { !shrink; BaseType ==  currency.incubators.t2 + currency.incubators.t3 + currency.incubators.t4 + currency.incubators.t5; }
 	Show restex { Empty(); }
 }
 
@@ -1911,6 +1959,17 @@ Section CurrencyExotic : Auto("currency->others"), Class "Currency", !Currency
 {
 	Show harbinger { !G2; !*t2divine; BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
 	Show misc { !G3; !*t2divine; BaseType "Imprint" "Unshaping Orb"; }
+}
+
+#------------------------------------
+# [5104] Sentinel - EVENT
+#------------------------------------
+
+Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
+{
+	Show t1 { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
+	Show t2 { !G3; !*t3annul; BaseType == currency.sentinel.t2; }
+	Show t3 { !G4; !*t4chaos; BaseType == currency.sentinel.t3; }
 }
 
 #===============================================================================================================
@@ -2030,6 +2089,10 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5701] Exceptions #1
 #------------------------------------
 	Show exUberImpresence { !G1; !*t1; BaseType == "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
+
+	## Event material
+	Show exSentinel { !GSH; !*t3; !SpecialNoB; Class "Sentinel Drone"; }
+
 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exTriadGrip { !G2; !*t2; BaseType == "Mesh Gloves"; Sockets >= "4WWWW"; }
@@ -2467,7 +2530,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class classes_equip
 
 Section HideLayerFinal : Auto("HideLayer")
 {
-	Hide Final { Class "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves"; }
+	Hide Final { Class "Sentinel Drone" "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves"; }
 }
 
 #------------------------------------
