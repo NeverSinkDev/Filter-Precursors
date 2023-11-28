@@ -14,8 +14,8 @@ Func Clean(){ Corrupted False; Mirrored False; }
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
-	Show arm { !G2; Clean(); Class "Body Armours"; }
-	Show wep { !G2; Empty(); }
+	Show hightier { !G2; Clean(); BaseType == bases.sixlink.valuable.t1; ItemLevel >= 75; }
+	Show others { !G2; Empty(); }
 }
 
 #===============================================================================================================
@@ -196,6 +196,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticExpeditionBases{ %D5; !GSH; BaseType == bases.exotic.expedition.any + "Iron Flask" }
 	Show ExoticTalismanBases  { !GSH; $artefactex; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
+	Show ExoticUniqueBases	  { !GSH; BaseType == bases.exotic.misc.unique - "Grasping Mail"; }
 }
 
 Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !exotic
@@ -208,7 +209,7 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 #===============================================================================================================
 #!! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
-Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
+Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, Clean(), !exotic
 {
 #------------------------------------
 #   [1234] ID Mod exceptions - override id mod matching section
@@ -279,7 +280,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Boots : Class == "Boots"
 		{
 			Show Boots_Life_based { Mod xboots_life_core; Mod >= 4 xboots_life_mix2; Mod = 0 zbad_boots_life; }
-			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; Mod = 0 zbad_boots_es; }
+			Show Boots_ES_based   { Mod xboots_es_core; Mod >= 4 xboots_es_mix2; Mod = 0 zbad_boots_es + zbad_boots_life; }
 		}
 #------------------------------------
 #   [1234] Gloves
@@ -287,7 +288,7 @@ Section IdModSection : IdMods, !highvalueidmod
 		Section Gloves : Class == "Gloves"
 		{
 			Show Gloves_Life_based { Mod xgloves_life_core; Mod >= 4 xgloves_life_mix2; Mod = 0 z_bad_armor_life; }
-			Show Gloves_ES_based   { Mod xgloves_es_core; Mod >= 4 xgloves_es_mix2; Mod = 0 zbad_boots_es; }
+			Show Gloves_ES_based   { Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix2; Mod = 0 zbad_boots_es; }
 		}
 #------------------------------------
 #   [1234] Shields
@@ -399,28 +400,20 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		# +1 to all global elemental gems and DOT t1
 		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
 		# +1 to all arrows quivers
-		Show t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
+		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
 		# +1 to all global elemental gems + spell damage t1
-		Show t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
+		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == "Wands" "Sceptres" "Shields" "Rune Daggers"; }
 		# +2 to all maximum resists shield
-		Show t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
+		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
 		# Uncorrupted Suppression Gear from Dexterity Equip
-		Show t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == "Gloves" "Boots" "Helmets"; }
+		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == "Gloves" "Boots" "Helmets"; }
 		# Uncorrupted Tyrranical weapons
-		Show t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
+		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
 		# DOT Sceptres and Wands
-		Show t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
-		Show t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
+		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
+		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
 		# Elemental Weapons
-		Show t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == "Claws" "Wands" "Bows"; }
-	}
-
-	Section Sentinel : Rarity <= Rare
-	{
-		# EVENT SECTION
-		# Useful stalker and pandemonium mods
-		Show t1sentinel { %D6; Mod >= 1 sentinel_rewards_t1; BaseType "Stalker" "Pandemonium"; }
-		Show t2sentinel { %D5; Mod >= 1 sentinel_rewards_t2; BaseType "Stalker" "Pandemonium"; }
+		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == "Claws" "Wands" "Bows"; }
 	}
 
 #------------------------------------
@@ -477,10 +470,10 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #!! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)"
 
-		Show DuoVeil    { %D4; !GSH; !exotic.t3; Mod "Veiled"; Mod "of the Veil"; }
-		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 2; Height <= 2; } 
-		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Mod "Veil"; Width <= 1; Height <= 4; }
-		Show VeilRest   { %D3; !GS;  !exotic.t4; Mod "Veil"; }
+		Show DuoVeil    { %D4; !GSH; !exotic.t3; Clean(); Mod "Veiled"; Mod "of the Veil"; }
+		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 2; Height <= 2; } 
+		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 1; Height <= 4; }
+		Show VeilRest   { %D3; !GS;  !exotic.t4; Clean(); Mod "Veil"; }
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
@@ -642,19 +635,26 @@ Section ExoticVariations : !exotic
 			Show FractT1 { !GSH; %D6; !exotic.t2; BaseType == bases.crafting.fractured.t1; }
 			Show FractT2 { !GS;  %D5; !exotic.t3; BaseType == bases.crafting.fractured.t2; }
 			Show FractSpecial  { !GS;  %D6; !exotic.t2; Class == classes_fractured; }
+			Show FractOthers { !GS;  %D2; !exotic.t4; }
 		}
 #------------------------------------
 #   [1234] Enchanted
 #------------------------------------
 #!! Waypoint c2.exotic.enchanted.all : "SpecialGear - All enchanted items"
-		Section Enchanted : AnyEnchantment True, Auto("exotic->enchanted")
+		Section EnchantedHelmets : AnyEnchantment True, Auto("exotic->enchanted"), Class "Helmets", Clean()
+		{
+			Show t1 { !exotic.t1; !GSH; !artefact; HasEnchantment == enchantment.helmet.t1; }
+			Show t2 { !exotic.t2; !GSH; !artefact; HasEnchantment == enchantment.helmet.t2; }
+			Show others { !GSH; %D4; !exotic.t3; }
+		}
+
+		Section EnchantedMisc : AnyEnchantment True, Auto("exotic->enchanted")
 		{
 			# Optional modules for enchanment based filtering
 			ShowD EnchantedRingsGoldOil   { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_gold; Clean(); }
 			ShowD EnchantedRingsSilverOil { !GSH; !exotic.t1; Class "Rings"; HasEnchantment == oil_enchant_silver; Clean(); }
-
+			
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class classes_exoticEnch }
-			Show Helmets     { !GSH; %D5; !exotic.t2; Class "Helmets";}
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class == "Amulets" "Rings"; Clean(); }
 			Show GlovesBoots { !GS;  %D1; !exotic.t4; Class "Gloves" "Boots" }
 		}
@@ -724,10 +724,10 @@ Section EndgamePerfectionItems : Clean(), BaseDefencePercentile >= 99, !bestroll
 
 Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("EndgameRGB"), !recipe
 {
-	Show RGBSmall1	{ !G6H; %H2; !*t2; !SF40; Width 2; Height 2; }
-	Show RGBSmall2	{ !G6H; %H2; !*t2; !SF40; Width 1; Height <=4; }
-	Show RGBLarge	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 4; }
-	Show RGBMedium	{ !G6;  %H0; !*t3; !SF40; Width 2; Height 3; }
+	Show RGBSmall1	{ !G6H; %D2; !*t2; !SF40; Width 2; Height 2; }
+	Show RGBSmall2	{ !G6H; %D2; !*t2; !SF40; Width 1; Height <=4; }
+	Show RGBLarge	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 4; }
+	Show RGBMedium	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 3; }
 }
 
 #------------------------------------
@@ -913,46 +913,6 @@ Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 	ShowD magicranged  { Rarity Magic; Class classes_weapons_ranged;}
 }
 
-#===============================================================================================================
-# [[9999]] TEMP SENTINEL GEAR
-#===============================================================================================================
-
-Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
-{
-	Section Stalker : !stalker
-	{
-		Show stalkert1  { !GSH; %D6; BaseType == sentinels.stalker.t1; Rarity Rare; !brightrare; }
-		Show stalkert2  { !GSH; %D6; BaseType == sentinels.stalker.t2; Rarity Rare; }
-
-		Show stalkerr 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Rare; }
-		Show stalkerm 	{ !GSH; %D5; BaseType == sentinels.stalker.any; Rarity Magic; }
-		
-		Show stalkerlvl { !GSH; %D4; BaseType == sentinels.stalker.any; ItemLevel <= 67; }
-	}
-
-	Section Pandemonium : !pandemonium
-	{
-		Show pandet1    { !GSH; %D6; BaseType == sentinels.pandemonium.t1; Rarity Rare; !brightrare; }
-		Show pandet2    { !GSH; %D6; BaseType == sentinels.pandemonium.t2; Rarity Rare; }
-
-		Show pander 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Rare; }
-		Show pandem 	{ !GSH; %D5; BaseType == sentinels.pandemonium.any; Rarity Magic; }
-		
-		Show pandelvl { !GSH; %D4; BaseType == sentinels.pandemonium.any; ItemLevel <= 67; }
-	}
-
-	Section Apex : !apex
-	{
-		Show apext1 { !GSH; %D6; BaseType == sentinels.apex.t1; Rarity Rare; !brightrare; }
-		Show apext2 { !GSH; %D5; BaseType == sentinels.apex.t2; Rarity Rare; }
-		
-		Show apexr  { !GSH; %D5; BaseType == sentinels.apex.any; Rarity Rare; }
-		Show apexm 	{ !GSH; %D5; BaseType == sentinels.apex.any; Rarity Magic; }
-		
-		Show apexlvl { !GSH; %D4; BaseType == sentinels.apex.any; ItemLevel <= 67; }
-	}
-}
-
 #!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
 
 #===============================================================================================================
@@ -1101,6 +1061,12 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4"
 
 		Show t4endgamerares { !GR4; %D1; Class classes_nonJwlryEquip; }
+
+		#!! Waypoint c6.rare.t4.chroms : "Rare Endgame Items - lowtierchromatics"
+		Show RGBSmall1	{ !G6H; %H2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 2; Height 2; }
+		Show RGBSmall2	{ !G6H; %H2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 1; Height <=4; }
+		Show RGBLarge	{ !G6;  %H0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 4; }
+		Show RGBMedium	{ !G6;  %H0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 3; }
 	}
 }
 
@@ -1514,6 +1480,14 @@ Section Maps : Class "Maps", !Maps
 # [[0200]] Normal Map Progression
 #===============================================================================================================
 
+#!! Waypoint c9.maps.generic.specialcases : "Maps - generic - optional special cases"
+
+	Section MapHiders : Auto("maphiders")
+	{		
+		HideD corruptedMapHider { !shrink; Corrupted True; Rarity <= Magic; }
+		HideD mirroredMapHider { !shrink; Mirrored True; Rarity <= Magic; }
+	}
+
 #------------------------------------
 # [4403] Generic Decorators
 #------------------------------------
@@ -1596,9 +1570,9 @@ Section Logbooks : Auto("Expedition->Logbook"), BaseType == "Expedition Logbook"
 
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 {
-	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; }
-	Show Any { !G5; !exomap.low; %H5; Empty(); }
-	Hide exHide { !shrink; BaseType == Heist.Contract.Handpicked; }
+	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; Rarity <= Rare; }
+	Show Any { !G5; !exomap.low; %H5; Empty(); Rarity <= Rare }
+	Hide exHide { !shrink; }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
@@ -1609,6 +1583,7 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 
 Section Memories : Auto("ExoticMap->Memory")
 {
+	Show t1 { !exomap.high; !G2; Mod == memories.t1; Class "Memory"; }
 	Show HandPicked { !exomap.high; !G2; BaseType == "Niko's Memory" "Alva's Memory" "Kirac's Memory" "Einhar's Memory"; }
 	Show Any { !exomap.high; !G2; Class "Memory"; }
 }
@@ -1961,17 +1936,6 @@ Section CurrencyExotic : Auto("currency->others"), Class "Currency", !Currency
 	Show misc { !G3; !*t2divine; BaseType "Imprint" "Unshaping Orb"; }
 }
 
-#------------------------------------
-# [5104] Sentinel - EVENT
-#------------------------------------
-
-Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
-{
-	Show t1 { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
-	Show t2 { !G3; !*t3annul; BaseType == currency.sentinel.t2; }
-	Show t3 { !G4; !*t4chaos; BaseType == currency.sentinel.t3; }
-}
-
 #===============================================================================================================
 # [[4900]] Currency - Splinters
 #===============================================================================================================
@@ -2113,7 +2077,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5703] Exceptions #2
 #------------------------------------
 
-	Show 2xcorrupteduniques { !G2; !*t2; Corrupted True; CorruptedMods >= 2; }
+	Show 2xcorrupteduniques { !G2; !*t2; !Corrupt; Corrupted True; CorruptedMods >= 2; }
 	Show 3xabyss 			{ !G1; !*t1; Sockets >= "AAA"; BaseType == "Carnal Armour" }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
 	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
@@ -2128,7 +2092,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
 
 # For those 6 sockets	
-	Show 6S 	  { %D5; !GSH; !*t4; !special; Sockets >= 6 }
+	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
 
 #------------------------------------
 # [5701] Low tier exceptions
@@ -2348,16 +2312,14 @@ Section LevelingRareGear : Rarity Rare
 #!! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Archer"
 	Section Archer : Auto("Leveling->Rare->archer"), Class == "Bows", !GR2
 	{
-		Show l1 { %D4; !LVLArcher; !SF40; ItemLevel <= 16 }
-		Show l2 { %D4; !LVLArcher; !SF40; ItemLevel <= 20; DropLevel >= 8; }
-		Show l3 { %D4; !LVLArcher; !SF40; ItemLevel <= 26; DropLevel >= 14; }
-		Show l4 { %D4; !LVLArcher; !SF40; ItemLevel <= 32; DropLevel >= 20; }
-		Show l5 { %D4; !LVLArcher; !SF40; ItemLevel <= 38; DropLevel >= 26; }
-		Show l6 { %D4; !LVLArcher; !SF40; ItemLevel <= 44; DropLevel >= 32; }
-		Show l7 { %D4; !LVLArcher; !SF40; ItemLevel <= 50; DropLevel >= 38; }
-		Show l8 { %D4; !LVLArcher; !SF40; ItemLevel <= 56; DropLevel >= 44; }
-		Show l9 { %D4; !LVLArcher; !SF40; ItemLevel <= 58; DropLevel >= 50; }
-		Show l10{ %D4; !LVLArcher; !SF40; ItemLevel <= 67; DropLevel >= 56; }
+		Show l1 { %D4; !LVLArcher; !SF40; AreaLevel <= 25 }
+		Show l2 { %D4; !LVLArcher; !SF40; AreaLevel <= 30; DropLevel >= 10; }
+		Show l3 { %D4; !LVLArcher; !SF40; AreaLevel <= 35; DropLevel >= 15; }
+		Show l4 { %D4; !LVLArcher; !SF40; AreaLevel <= 45; DropLevel >= 20; }
+		Show l5 { %D4; !LVLArcher; !SF40; AreaLevel <= 55; DropLevel >= 25; }
+		Show l6 { %D4; !LVLArcher; !SF40; AreaLevel <= 60; DropLevel >= 30; }
+		Show l7 { %D4; !LVLArcher; !SF40; AreaLevel <= 65; DropLevel >= 35; }
+		Show l8 { %D4; !LVLArcher; !SF40; AreaLevel <= 70; DropLevel >= 40; }
 	}
 
 #------------------------------------
@@ -2366,16 +2328,14 @@ Section LevelingRareGear : Rarity Rare
 #!! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Melee"
 	Section Melee : Auto("Leveling->Rare->melee"), Class == leveling.classes.melee, !GR2
 	{
-		Show l1 { %D4; !LVLMelee; !SF40; ItemLevel <= 16 }
-		Show l2 { %D4; !LVLMelee; !SF40; ItemLevel <= 20; DropLevel >= 8; }
-		Show l3 { %D4; !LVLMelee; !SF40; ItemLevel <= 26; DropLevel >= 14; }
-		Show l4 { %D4; !LVLMelee; !SF40; ItemLevel <= 32; DropLevel >= 20; }
-		Show l5 { %D4; !LVLMelee; !SF40; ItemLevel <= 38; DropLevel >= 26; }
-		Show l6 { %D4; !LVLMelee; !SF40; ItemLevel <= 44; DropLevel >= 32; }
-		Show l7 { %D4; !LVLMelee; !SF40; ItemLevel <= 50; DropLevel >= 38; }
-		Show l8 { %D4; !LVLMelee; !SF40; ItemLevel <= 56; DropLevel >= 44; }
-		Show l9 { %D4; !LVLMelee; !SF40; ItemLevel <= 58; DropLevel >= 50; }
-		Show l10{ %D4; !LVLMelee; !SF40; ItemLevel <= 67; DropLevel >= 56; }
+		Show l1 { %D4; !LVLMelee; !SF40; AreaLevel <= 25 }
+		Show l2 { %D4; !LVLMelee; !SF40; AreaLevel <= 30; DropLevel >= 10; }
+		Show l3 { %D4; !LVLMelee; !SF40; AreaLevel <= 35; DropLevel >= 15; }
+		Show l4 { %D4; !LVLMelee; !SF40; AreaLevel <= 45; DropLevel >= 20; }
+		Show l5 { %D4; !LVLMelee; !SF40; AreaLevel <= 55; DropLevel >= 25; }
+		Show l6 { %D4; !LVLMelee; !SF40; AreaLevel <= 60; DropLevel >= 30; }
+		Show l7 { %D4; !LVLMelee; !SF40; AreaLevel <= 65; DropLevel >= 35; }
+		Show l8 { %D4; !LVLMelee; !SF40; AreaLevel <= 70; DropLevel >= 40; }
 	}
 
 #!! Waypoint c11.leveling.rares.low : "Leveling - Gear - Low Tier"

@@ -52,13 +52,12 @@ Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
 }
 
 #------------------------------------
-# [5104] Sentinel Currencies
+# [5104] Sentinel - EVENT - Currencies
 #------------------------------------
-#!! Override 671 : "Sentinel"
 
 Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
 {
-	Show Recombine 	   { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
-	Show CoreSpecial   { !G2; !*t3annul; BaseType == currency.sentinel.t2; }
-	Show CoreAny       { !G4; %H5; !*t4chaos; BaseType == currency.sentinel.t3; }
+	Show t1 { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
+	Show t2 { !G3; !*t3annul; BaseType == currency.sentinel.t2; }
+	Show t3 { !G4; !*t4chaos; BaseType == currency.sentinel.t3; }
 }
