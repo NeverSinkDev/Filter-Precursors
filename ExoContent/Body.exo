@@ -196,7 +196,7 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 	Show ExoticExpeditionBases{ %D5; !GSH; BaseType == bases.exotic.expedition.any + "Iron Flask" }
 	Show ExoticTalismanBases  { !GSH; $artefactex; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { !GSH; BaseType == "Grasping Mail"; }
-	Show ExoticUniqueBases	  { !GSH; BaseType == bases.exotic.misc.unique - "Grasping Mail"; }
+	Show ExoticUniqueBases	  { !GSH; BaseType == bases.exotic.misc.brickedUniques; }
 }
 
 Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !exotic
@@ -352,7 +352,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Jewels
 #------------------------------------	
-		Section Jewels : Class "Jewel"
+		Section Jewels : Class == class_jewels
 		{
 			Show IdJewel_Minion 	{ Mod >= 2 xJwl_minion_core; Mod >= 3 xJwl_minion_mix; BaseType == genericJewels; }
 			Show IdJewel_DOT 		{ Mod >= 1 xJwl_dot_core; Mod = 1 jwl_dot_unique; Mod >= 3 xJwl_dot_mix; BaseType == genericJewels; }
@@ -525,7 +525,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Trinkets
 #------------------------------------	
-	Section Trinkets : Class "Trinkets", Auto("artefact->trinkets")
+	Section Trinkets : Class == "Trinkets", Auto("artefact->trinkets")
 	{
 		Show AnyTrinket { !G3; Empty(); }
 	}
@@ -533,7 +533,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Secret Society Equipment
 #------------------------------------
-	Section Fishing : Class "Fishing Rod", Auto("artefact->redacted")
+	Section Fishing : Class == "Fishing Rods", Auto("artefact->redacted")
 	{
 		Show SCP3889 { !G1; Empty(); }
 	}
@@ -541,7 +541,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Pieces
 #------------------------------------
-	Section Pieces : Class "Piece", Auto("artefact->piece")
+	Section Pieces : Class == "Pieces", Auto("artefact->piece")
 	{
 		Show Ultimatum { !G3; BaseType == "Ultimatum Aspect"; }
 		Show Any { !G3; Rarity "Unique"; }
@@ -555,8 +555,8 @@ Section ArtefactItemClasses
 
 Section QuestItemException : Auto("QuestlikeException")
 {
-	Show QuestHeist { !QuestLike; BaseType "Contract:"; Class "Quest"; }
-	Show QuestItems { !QuestLike; Class "Pantheon Soul" "Quest"; }
+	Show QuestHeist { !QuestLike; BaseType "Contract:"; Class == "Quest Items"; }
+	Show QuestItems { !QuestLike; Class == "Pantheon Souls" "Quest Items"; }
 }
 
 Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
@@ -571,10 +571,10 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 #------------------------------------	
 Section SanctumRelics : Auto("artefact->sanctifiedrelics")
 {
-	Show UniqueRelics		{ !G2; !SpecialNoB; !unique.t3; Class "Relic"; Rarity Unique; }
-	Show AnySanctified 		{ !G2; !artefact; Class "Sanctified Relic"; }
-	Show SelectedRelics		{ !G3; !exotic.t2; Class "Relic"; BaseType == exotic.sanctum.relics; }
-	Show AnyRelic 			{ !G4; !exotic.t3; Class "Relic"; }
+	Show UniqueRelics		{ !G2; !SpecialNoB; !unique.t3; Class == "Sanctified Relics" "Relics"; Rarity Unique; }
+	Show AnySanctified 		{ !G2; !artefact; Class == "Sanctified Relics"; }
+	Show SelectedRelics		{ !G3; !exotic.t2; Class == "Relics"; BaseType == exotic.sanctum.relics; }
+	Show AnyRelic 			{ !G4; !exotic.t3; Class == "Relics"; }
 }
 
 #===============================================================================================================
@@ -656,7 +656,7 @@ Section ExoticVariations : !exotic
 			
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class == classes_exoticEnch }
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class == "Amulets" "Rings"; Clean(); }
-			Show GlovesBoots { !GS;  %D1; !exotic.t4; Class "Gloves" "Boots" }
+			Show GlovesBoots { !GS;  %D1; !exotic.t4; Class == "Gloves" "Boots" }
 		}
 #------------------------------------
 #   [1234] Crucible
@@ -1317,7 +1317,7 @@ Section HeistFollowerGear : Rarity <= Rare
 #===============================================================================================================
 #!! Waypoint c8.gems.all : "Gem Rules - Override All"
 
-Section Gems : Class "Gem", !Gems
+Section Gems : Class == class_gems, !Gems
 {
 #------------------------------------
 # [3901] Exceptional Gems - Awakened and AltQuality
@@ -1887,16 +1887,6 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class == "Incubators"
 }
 
 #------------------------------------
-# [5104] Invocations
-#------------------------------------
-#!! Waypoint c9.currency.misc.all : "Misc Currency-Like - New and Exotic Items"
-
-Section SanctumInvocations : Auto("currency->invocations"), Class == class_currency, !Currency
-{
-	Show t2 { !G2; !*t2divine; BaseType == currency.sanctuminvocations.t2; }
-}
-
-#------------------------------------
 # [5104] Trial of the Ancestors
 #------------------------------------
 
@@ -2102,7 +2092,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class == "Rings"; }
 	
-	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == uniques.classes.corrupted; }
+	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == classes_corrupted; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
@@ -2141,8 +2131,8 @@ Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 Section Questlike : Auto("Questlike")
 {
 	Show Invitations { !QuestLike; BaseType "Maven's"; }
-	Show LabyrinthConsumable { !QuestLike; Class "Labyrinth"; }
-	Show IncursionConsumable { !QuestLike; Class "Incursion Item"; }
+	Show LabyrinthConsumable { !QuestLike; Class == "Labyrinth Trinkets" "Labyrinth Items"; }
+	Show IncursionConsumable { !QuestLike; Class == "Incursion Items"; }
 }
 
 #===============================================================================================================
@@ -2279,14 +2269,14 @@ Section LevelingRareGear : Rarity Rare
 	Section Universal : Auto("Leveling->Rare->universal") !raredeco.t1jewellery, !GRJ1
 	{
 		Show RusticSash { %D5; !SF45; BaseType == "Rustic Sash"; !LVLMelee; !FixMelee; }
-		Show Jewellery  { %D5; !SF45; Class == leveling.classes.jwlry; }
+		Show Jewellery  { %D5; !SF45; Class == classes_jewellery; }
 	}
 
 #!! Waypoint c11.leveling.rares.armors : "Leveling - Rares - Armour Pieces"
 	Section Armour : Auto("Leveling->Rare->armours"), !GR1
 	{
 		Show BootsFocus { %D4; !raredeco.t1equip; !SF45; !noticehigh; Class == "Boots"; }
-		Show General 	{ %D4; !raredeco.t1equip; !SF40; !noticehigh; Class == leveling.classes.armour; }
+		Show General 	{ %D4; !raredeco.t1equip; !SF40; !noticehigh; Class == classes_armor_small; }
 		Show BodyArmours{ %D4; !raredeco.t2equip; !SF40; Class == "Body Armours"; }
 		Show Shields 	{ %D4; !raredeco.t2equip; !SF40; Class == "Shields"; }
 		Show Quivers 	{ %D4; !LVLArcher; !SF40; Class == "Quivers"; }
@@ -2298,8 +2288,8 @@ Section LevelingRareGear : Rarity Rare
 #!! Waypoint c11.leveling.rares.caster : "Leveling - Rares - Caster"
 	Section Caster : Auto("Leveling->Rare->caster"), !LVLCaster, !GR2
 	{
-		Show EarlyLevels { %D4; !LVLCaster; !SF40; Class == leveling.classes.caster; ItemLevel <= 16; }
-		Show General     { %D4; !LVLCaster; !SF40; Class == leveling.classes.caster; }
+		Show EarlyLevels { %D4; !LVLCaster; !SF40; Class == classes_cast; ItemLevel <= 16; }
+		Show General     { %D4; !LVLCaster; !SF40; Class == classes_cast; }
 	}
 
 #------------------------------------
@@ -2322,7 +2312,7 @@ Section LevelingRareGear : Rarity Rare
 # [6002] Rares - Melee
 #------------------------------------
 #!! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Melee"
-	Section Melee : Auto("Leveling->Rare->melee"), Class == leveling.classes.melee, !GR2
+	Section Melee : Auto("Leveling->Rare->melee"), Class == classes_weapons_melee, !GR2
 	{
 		Show l1 { %D4; !LVLMelee; !SF40; AreaLevel <= 25 }
 		Show l2 { %D4; !LVLMelee; !SF40; AreaLevel <= 30; DropLevel >= 10; }
@@ -2431,7 +2421,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 
 Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; Sockets >= 3; }
 
-Section WeaponProgression : Rarity Normal, Class == leveling.classes.melee leveling.classes.archer, Auto("Leveling->WeaponProgression"), !NoticeNM3, !GEX
+Section WeaponProgression : Rarity Normal, Class == classes_weapons_melee classes_archer, Auto("Leveling->WeaponProgression"), !NoticeNM3, !GEX
 {
 	Show r01 { %H2; ProgressionRow(Normal, 9,5); }
 	Show r02 { %H2; ProgressionRow(Normal, 15,11); }

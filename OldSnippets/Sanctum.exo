@@ -1,0 +1,17 @@
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TIERLIST}: INVOCATIONS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var currency.sanctuminvocations.t1 = BLANK;
+var currency.sanctuminvocations.t2 = "Lycia's Invocation of Acrobatics" "Lycia's Invocation of Ancestral Bond" "Lycia's Invocation of Arrow Dancing" "Lycia's Invocation of Avatar of Fire" "Lycia's Invocation of Blood Magic" "Lycia's Invocation of Call to Arms" "Lycia's Invocation of Conduit" "Lycia's Invocation of Crimson Dance" "Lycia's Invocation of Divine Shield" "Lycia's Invocation of Eldritch Battery" "Lycia's Invocation of Elemental Equilibrium" "Lycia's Invocation of Elemental Overload" "Lycia's Invocation of Eternal Youth" "Lycia's Invocation of Ghost Dance" "Lycia's Invocation of Ghost Reaver" "Lycia's Invocation of Glancing Blows" "Lycia's Invocation of Hex Master" "Lycia's Invocation of Imbalanced Guard" "Lycia's Invocation of Iron Grip" "Lycia's Invocation of Iron Reflexes" "Lycia's Invocation of Iron Will" "Lycia's Invocation of Lethe Shade" "Lycia's Invocation of Magebane" "Lycia's Invocation of Mind Over Matter" "Lycia's Invocation of Minion Instability" "Lycia's Invocation of Pain Attunement" "Lycia's Invocation of Perfect Agony" "Lycia's Invocation of Point Blank" "Lycia's Invocation of Precise Technique" "Lycia's Invocation of Resolute Technique" "Lycia's Invocation of Runebinder" "Lycia's Invocation of Solipsism" "Lycia's Invocation of Supreme Ego" "Lycia's Invocation of The Agnostic" "Lycia's Invocation of The Impaler" "Lycia's Invocation of Unwavering Stance" "Lycia's Invocation of Vaal Pact" "Lycia's Invocation of Versatile Combatant" "Lycia's Invocation of Wicked Ward" "Lycia's Invocation of Wind Dancer" "Lycia's Invocation of Zealot's Oath";
+var currency.sanctuminvocations.t3 = BLANK;
+
+#------------------------------------
+# [5104] Invocations
+#------------------------------------
+#!! Waypoint c9.currency.misc.all : "Misc Currency-Like - New and Exotic Items"
+
+Section SanctumInvocations : Auto("currency->invocations"), Class == class_currency, !Currency
+{
+	Show t2 { !G2; !*t2divine; BaseType == currency.sanctuminvocations.t2; }
+}
