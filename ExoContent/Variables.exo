@@ -4,6 +4,8 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields";
+var classes_armor_small = "Gloves" "Boots" "Helmets";
+var classes_armor_noshields = "Body Armours" "Gloves" "Boots" "Helmets";
 
 var classes_1hattack = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Wands";
 var classes_2hattack = "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows"; 
@@ -11,7 +13,9 @@ var classes_attack = classes_1hattack + classes_2hattack;
 
 var classes_2hcast = "Staves";
 var classes_1hcast = "Rune Daggers" "Sceptres" "Wands";
+var classes_1hcast_shields = classes_1hcast + "Shields";
 var classes_cast = classes_2hcast + classes_1hcast;
+var classes_cast_all = classes_2hcast + classes_1hcast + "Shields";
 
 var classes_weapons = classes_cast + classes_attack;
 var classes_1h = classes_1hattack + classes_1hcast + "Shields";
@@ -19,6 +23,7 @@ var classes_2h = classes_2hattack + classes_2hcast;
 
 var classes_weapons_melee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
 var classes_weapons_ranged = "Wands" "Bows";
+var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
 
 var classes_nonJwlryEquip = classes_armor + classes_weapons + "Quivers";
 var classes_jewellery = "Amulets" "Belts" "Rings";
@@ -26,7 +31,16 @@ var classes_trinkets = classes_jewellery + "Jewels";
 var classes_equip = classes_nonJwlryEquip + classes_jewellery;
 var classes_heist = "Heist Brooches" "Heist Tools" "Heist Gear" "Heist Cloaks";
 
-var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
+var classes_doubleCorruptTargetsRare = "Amulets" "Belts" "Rings" "Jewels" "Gloves" "Quivers"
+
+var classes_exoticEnch = classes_nonJwlryEquip - classes_armor_small;
+
+var classes_finalHider = "Sentinel Drone" "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves";
+
+var class_utilFlasks = "Utility Flasks";
+var class_flasks = "Mana Flasks" "Life Flasks" "Hybrid Flasks" "Utility Flasks";
+
+var class_currency = "Stackable Currency";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOBALLY INTERESTING MODS
@@ -87,8 +101,8 @@ var res_omni = "of the Span" "of the Rainbow" "of Variegation" "of the Kaleidosc
 var accuracy = "of Lioneye" "of the Ranger" "of the Marksman";
 
 
-## ARMORS
 var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
+## ARMORS
 var gloves_fdmg = "Honed" "Crackling" "Burning" "Frigid";
 var gloves_leech = "Thirsty" "Remora's";
 var gloves_accu = "of Lioneye" "of the Ranger" "of the Marksman";

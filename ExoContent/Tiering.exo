@@ -5,20 +5,30 @@
 ## Only direct assignments can be used here, no operators like + or - or functions
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {META} CLASSES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var classes_synth = "Amulets" "Belts" "Bows" "Jewels" "Maps" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Wands";
+var classes_fractured = "Abyss Jewels" "Heist Brooches" "Heist Cloaks" "Heist Gear" "Heist Tools" "Jewels" "Utility Flasks";
+
+var uniques.classes.corrupted = "Amulets" "Belts" "Boots" "Gloves" "Helmets" "Quivers" "Rings" "Shields";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {META} CLASSES - leveling
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var leveling.classes.jwlry = "Amulets" "Belts" "Rings";
+var leveling.classes.armour = "Boots" "Gloves" "Helmets";
+var leveling.classes.caster = "Rune Daggers" "Sceptres" "Staves" "Wands";
+var leveling.classes.archer = "Bows" "Quivers";
+var leveling.classes.melee = "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} CHANCING
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var bases.chancing.higher = "Heavy Belt" "Leather Belt";
 var bases.chancing.any = "Champion Kite Shield";
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## {META} CRAFTING / CLASSES
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-var classes_scourged = "Amulets" "Rings";
-var classes_synth = "Amulets" "Belts" "Bows" "Jewels" "Maps" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Wands";
-var classes_fractured = "Abyss Jewels" "Heist Brooches" "Heist Cloaks" "Heist Gear" "Heist Tools" "Jewels" "Utility Flasks";
-var classes_exoticEnch = "Body Armours" "Bows" "Claws" "Daggers" "One Hand" "Quivers" "Rune Dagger" "Sceptres" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} CRAFTING
@@ -447,8 +457,6 @@ var uniques.generic.t3 = "Assassin Bow" "Astral Plate" "Blue Pearl Amulet" "Blun
 var uniques.generic.hideable2 = "Bone Helmet" "Callous Mask" "Despot Axe" "Elegant Ringmail" "Elegant Sword" "Pinnacle Tower Shield" "Rustic Sash" "Zealot Gloves";
 var uniques.generic.hideable = "Abyssal Axe" "Ancient Greaves" "Ancient Spirit Shield" "Antique Greaves" "Antique Rapier" "Arcanist Gloves" "Arcanist Slippers" "Assassin's Garb" "Auric Mace" "Aventail Helmet" "Awl" "Barbute Helmet" "Baroque Round Shield" "Basket Rapier" "Bastard Sword" "Black Maw Talisman" "Blazing Arrow Quiver" "Bone Armour" "Bone Circlet" "Boot Blade" "Boot Knife" "Brass Maul" "Bronze Gauntlets" "Bronze Sceptre" "Bronzescale Boots" "Bronzescale Gauntlets" "Buckskin Tunic" "Carnal Sceptre" "Cedar Tower Shield" "Chain Gloves" "Chiming Spirit Shield" "Clasped Boots" "Clasped Mitts" "Cleaver" "Close Helmet" "Clutching Talisman" "Compound Spiked Shield" "Conjurer Gloves" "Conquest Chainmail" "Copper Plate" "Coral Amulet" "Corrugated Buckler" "Corsair Sword" "Crusader Chainmail" "Cutthroat's Garb" "Death Bow" "Decimation Bow" "Decorative Axe" "Deerskin Boots" "Deerskin Gloves" "Demon Dagger" "Destroyer Regalia" "Diamond Flask" "Diamond Ring" "Dragonscale Gauntlets" "Dread Maul" "Dream Mace" "Driftwood Wand" "Eelskin Boots" "Eelskin Gloves" "Elder Sword" "Elegant Round Shield" "Enameled Buckler" "Engraved Wand" "Estoc" "Etched Greatsword" "Eternal Burgonet" "Ezomyte Axe" "Ezomyte Blade" "Feathered Arrow Quiver" "Festival Mask" "Flaying Knife" "Fright Claw" "Full Dragonscale" "Gilded Sallet" "Gnarled Branch" "Goathide Gloves" "Goat's Horn" "Golden Mask" "Goliath Gauntlets" "Grand Mana Flask" "Great Helmet" "Great Mallet" "Greater Mana Flask" "Grinning Fetish" "Gut Ripper" "Hallowed Hybrid Flask" "Harbinger Bow" "Harmonic Spirit Shield" "Headsman Axe" "Heavy Arrow Quiver" "Highland Blade" "Holy Chainmail" "Infernal Axe" "Iron Gauntlets" "Iron Hat" "Iron Mask" "Iron Staff" "Ironscale Boots" "Ironscale Gauntlets" "Jade Hatchet" "Jagged Foil" "Jagged Maul" "Jasper Chopper" "Karui Chopper" "Lacewood Spirit Shield" "Lacquered Buckler" "Laminated Kite Shield" "Lathi" "Latticed Ringmail" "Leather Cap" "Lion Pelt" "Lion Sword" "Long Bow" "Lunaris Circlet" "Marble Amulet" "Meatgrinder" "Mesh Boots" "Mesh Gloves" "Midnight Blade" "Military Staff" "Mind Cage" "Mosaic Kite Shield" "Nailed Fist" "Nightmare Bascinet" "Nubuck Gloves" "Opal Sceptre" "Ornate Mace" "Ornate Ringmail" "Ornate Sword" "Painted Buckler" "Penetrating Arrow Quiver" "Pine Buckler" "Plague Mask" "Plank Kite Shield" "Plate Vest" "Platinum Kris" "Platinum Sceptre" "Poleaxe" "Polished Spiked Shield" "Primordial Staff" "Quartz Flask" "Quicksilver Flask" "Ranger Bow" "Rawhide Tower Shield" "Reaver Helmet" "Reaver Sword" "Recurve Bow" "Reinforced Tower Shield" "Ritual Sceptre" "Rock Breaker" "Rotfeather Talisman" "Rotted Round Shield" "Royal Axe" "Royal Sceptre" "Royal Skean" "Royal Staff" "Rusted Sword" "Sabre" "Samite Gloves" "Samnite Helmet" "Sanctified Life Flask" "Sanctified Mana Flask" "Satin Gloves" "Scholar Boots" "Secutor Helm" "Serpentscale Boots" "Serrated Arrow Quiver" "Shadow Axe" "Shagreen Gloves" "Sharkskin Boots" "Sharkskin Tunic" "Sharktooth Arrow Quiver" "Short Bow" "Silk Slippers" "Silken Vest" "Simple Robe" "Sinner Tricorne" "Skinning Knife" "Sledgehammer" "Slink Gloves" "Soldier Boots" "Soldier Helmet" "Spiked Club" "Spike-Point Arrow Quiver" "Spiraled Wand" "Steel Circlet" "Steelhead" "Stiletto" "Strapped Boots" "Strapped Mitts" "Studded Round Shield" "Sun Leather" "Supreme Spiked Shield" "Tarnished Spirit Shield" "Teak Round Shield" "Terror Claw" "Terror Maul" "Thresher Claw" "Throat Stabber" "Tiger Sword" "Timeworn Claw" "Tomahawk" "Trapper Boots" "Tribal Circlet" "Tricorne" "Twilight Blade" "Tyrant's Sekhem" "Ursine Pelt" "Vaal Buckler" "Vaal Hatchet" "Vanguard Belt" "Velvet Gloves" "Velvet Slippers" "Vile Arrow Quiver" "Vile Staff" "Vine Circlet" "War Buckler" "War Hammer" "War Sword" "Wereclaw Talisman" "Whalebone Rapier" "Wild Leather" "Woodsplitter" "Wool Gloves" "Wool Shoes" "Wrapped Mitts" "Wyrmscale Gauntlets" "Zealot Helmet";
 
-var uniques.classes.corrupted = "Amulets" "Belts" "Boots" "Gloves" "Helmets" "Quivers" "Rings" "Shields";
-
 var uniques.exceptions.abyssSocketUniques = "Great Crown" "Mind Cage" "Murder Boots" "Riveted Gloves" "Steelscale Gauntlets";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -492,14 +500,8 @@ var Influenced.Elder.t21 = "Ancient Greaves" "Arcanist Gloves" "Butcher Axe" "Ea
 var Influenced.Elder.t22 = "Agate Amulet" "Ambush Boots" "Ambush Mitts" "Amethyst Ring" "Ancient Gauntlets" "Archon Kite Shield" "Artillery Quiver" "Assassin's Garb" "Assassin's Mitts" "Astral Plate" "Baroque Round Shield" "Behemoth Mace" "Blazing Arrow Quiver" "Blue Pearl Amulet" "Bone Helmet" "Bone Ring" "Broadhead Arrow Quiver" "Callous Mask" "Carnal Armour" "Carnal Sceptre" "Champion Kite Shield" "Chiming Spirit Shield" "Coiled Wand" "Colossal Tower Shield" "Colosseum Plate" "Conjurer Gloves" "Coral Amulet" "Coral Ring" "Crimson Round Shield" "Crusader Boots" "Crusader Buckler" "Crusader Gloves" "Crystal Belt" "Deicide Mask" "Demon Dagger" "Despot Axe" "Destroyer Regalia" "Devout Chainmail" "Dragonbone Rapier" "Dragonscale Doublet" "Dragonscale Gauntlets" "Dragoon Sword" "Ebony Tower Shield" "Eclipse Staff" "Engraved Wand" "Eternal Burgonet" "Eternal Sword" "Exquisite Blade" "Exquisite Leather" "Eye Gouger" "Ezomyte Tower Shield" "Fencer Helm" "Fiend Dagger" "Fingerless Silk Gloves" "Fleshripper" "Fluted Bascinet" "Fossilised Spirit Shield" "Fugitive Boots" "Gemini Claw" "General's Brigandine" "Gladiator Plate" "Gladius" "Great White Claw" "Gripped Gloves" "Harbinger Bow" "Harlequin Mask" "Harmonic Spirit Shield" "Heavy Arrow Quiver" "Hydrascale Boots" "Imperial Bow" "Imperial Buckler" "Infernal Sword" "Iolite Ring" "Jade Amulet" "Judgement Staff" "Karui Chopper" "Lacewood Spirit Shield" "Lacquered Buckler" "Lacquered Garb" "Lathi" "Legion Boots" "Lion Pelt" "Lion Sword" "Maelström Staff" "Maraketh Bow" "Marble Amulet" "Meatgrinder" "Mirrored Spiked Shield" "Moon Staff" "Murder Boots" "Necromancer Circlet" "Necromancer Silks" "Nightmare Bascinet" "Nightmare Mace" "Onyx Amulet" "Opal Ring" "Pagan Wand" "Penetrating Arrow Quiver" "Praetor Crown" "Primal Arrow Quiver" "Primordial Staff" "Profane Wand" "Prophet Crown" "Reaver Axe" "Royal Burgonet" "Royal Sceptre" "Ruby Ring" "Runic Hatchet" "Sage Wand" "Sai" "Saintly Chainmail" "Samite Gloves" "Shagreen Tower Shield" "Sharkskin Boots" "Sharktooth Arrow Quiver" "Sinner Tricorne" "Slink Boots" "Soldier Gloves" "Sorcerer Boots" "Spidersilk Robe" "Spiked Gloves" "Spiraled Foil" "Stag Sceptre" "Stealth Gloves" "Steelwood Bow" "Stygian Vise" "Sundering Axe" "Supreme Spiked Shield" "Tenderizer" "Terror Maul" "Thorium Spirit Shield" "Throat Stabber" "Titan Gauntlets" "Turquoise Amulet" "Twin Claw" "Ursine Pelt" "Vaal Axe" "Vaal Buckler" "Vaal Gauntlets" "Vaal Hatchet" "Varnished Coat" "Vile Arrow Quiver" "Void Sceptre" "Widowsilk Robe" "Wyrmscale Gauntlets" "Zealot Gloves";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## {META} Leveling
+## {META} Leveling - Variables
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-var leveling.classes.jwlry = "Amulets" "Belts" "Rings";
-var leveling.classes.armour = "Boots" "Gloves" "Helmets";
-var leveling.classes.caster = "Rune Daggers" "Sceptres" "Staves" "Wands";
-var leveling.classes.archer = "Bows" "Quivers";
-var leveling.classes.melee = "Claws" "Daggers" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Warstaves";
 
 var leveling.keylevels.threelinkEarly = 16;
 var leveling.keylevels.threelink = 28;
