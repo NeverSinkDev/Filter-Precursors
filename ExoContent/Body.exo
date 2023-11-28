@@ -1571,7 +1571,6 @@ Section Logbooks : Auto("Expedition->Logbook"), BaseType == "Expedition Logbook"
 Section HeistContracts : Auto("Heist->Contract"), Class "Contract"
 {
 	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; Rarity <= Rare; }
-	Show Any { !G5; !exomap.low; %H5; Empty(); Rarity <= Rare }
 	Hide exHide { !shrink; }
 }
 
@@ -1584,7 +1583,6 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class "Blueprint"
 Section Memories : Auto("ExoticMap->Memory")
 {
 	Show t1 { !exomap.high; !G2; Mod == memories.t1; Class "Memory"; }
-	Show HandPicked { !exomap.high; !G2; BaseType == "Niko's Memory" "Alva's Memory" "Kirac's Memory" "Einhar's Memory"; }
 	Show Any { !exomap.high; !G2; Class "Memory"; }
 }
 
@@ -2054,9 +2052,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 	Show exUberImpresence { !G1; !*t1; BaseType == "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
 
-	## Event material
-	Show exSentinel { !GSH; !*t3; !SpecialNoB; Class "Sentinel Drone"; }
-
+	Show exKaom { !G2; !*t2; BaseType == "Glorious Plate"; Sockets < 1; }
 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
 	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; SocketGroup "WWWWWW"; }
 	Show exTriadGrip { !G2; !*t2; BaseType == "Mesh Gloves"; Sockets >= "4WWWW"; }
