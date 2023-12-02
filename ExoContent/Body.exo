@@ -3,7 +3,7 @@
 ##   {META} FUNCTIONS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Func IdMods(){ Identified True;  }
+Func IdMods(){ Identified True; }
 Func Clean(){ Corrupted False; Mirrored False; }
 
 #===============================================================================================================
@@ -543,8 +543,16 @@ Section ArtefactItemClasses
 #------------------------------------
 	Section Pieces : Class == "Pieces", Auto("artefact->piece")
 	{
-		Show Ultimatum { !G3; BaseType == "Ultimatum Aspect"; }
+		Show Vaal { !G3; BaseType == "Vaal Aspect"; }
 		Show Any { !G3; Rarity "Unique"; }
+	}	
+
+#------------------------------------
+#   [1234] Affliction
+#------------------------------------
+	Section AfflictionTypes : Class == "Tincture" "Charms" "Corpses", Auto("artefact->affliction")
+	{
+		Show Any { !G3; Empty(); }
 	}	
 }
 
@@ -641,12 +649,6 @@ Section ExoticVariations : !exotic
 #   [1234] Enchanted
 #------------------------------------
 #!! Waypoint c2.exotic.enchanted.all : "SpecialGear - All enchanted items"
-		Section EnchantedHelmets : AnyEnchantment True, Auto("exotic->enchanted"), Class == "Helmets", Clean()
-		{
-			Show t1 { !exotic.t1; !GSH; !artefact; HasEnchantment == enchantment.helmet.t1; }
-			Show t2 { !exotic.t2; !GSH; !artefact; HasEnchantment == enchantment.helmet.t2; }
-			Show others { !GSH; %D4; !exotic.t3; }
-		}
 
 		Section EnchantedMisc : AnyEnchantment True, Auto("exotic->enchanted")
 		{
@@ -656,7 +658,6 @@ Section ExoticVariations : !exotic
 			
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class == classes_exoticEnch }
 			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class == "Amulets" "Rings"; Clean(); }
-			Show GlovesBoots { !GS;  %D1; !exotic.t4; Class == "Gloves" "Boots" }
 		}
 #------------------------------------
 #   [1234] Crucible
@@ -1326,10 +1327,7 @@ Section Gems : Class == class_gems, !Gems
 	{
 		Show AwaT1 	{ !G1; !*T1; BaseType == gems.t1awa; }
 		Show AwaAny { !G2; !*P1; BaseType "Awakened"; }
-		
-		Show DivT1 	{ !G1; !*T1; GemQualityType Divergent; BaseType == gems.t1div; }
-		Show AnoT1 	{ !G1; !*T1; GemQualityType Anomalous; BaseType == gems.t1ano; }
-		Show PhaT1 	{ !G1; !*T1; GemQualityType Phantasmal; BaseType == gems.t1pha; }
+
 		Show AltAny { !G2; !*P1; AlternateQuality True; }
 		
 		Show 2020z 	{ !G3; !*P1; Quality >= 20; GemLevel >= 20; BaseType == gems.t2_2020z; Corrupted False; }
@@ -1381,14 +1379,14 @@ Section Gems : Class == class_gems, !Gems
 
 		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
 
-		Show QT2 { !G3; %D5; !*P2; Quality >= 20 }
+		Show QT2 { !G3; %D6; !*P2; Quality >= 20 }
 		Show LT2 { !G4; %DS4; !*P3; GemLevel >= 20 }
 
-		Show QT3 { !G4; %D3; !*P3; Quality >= 14 }
-		Show LT3 { !G5; %D2; !*P4; GemLevel >= 18 }
+		Show QT3 { !G4; %D5; !*P3; Quality >= 14 }
+		Show LT3 { !G5; %D3; !*P4; GemLevel >= 18 }
 
 		Show QT4Lvl { %D4; !G5; !*P3; Quality >= 1; AreaLevel <= 67 }	
-		Show QT4 { %D2; !G5; !*P4; Quality >= 1; }	
+		Show QT4 { %D4; !G5; !*P4; Quality >= 1; }	
 		Show LT4 { %D0; !G6; !*P4; GemLevel >= 2; }
 
 #!! Waypoint c8.gems.low : "Gem Rules - First Zones, Leveling, Vaal"
@@ -1582,7 +1580,7 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class == "Blueprints"
 
 Section Memories : Auto("ExoticMap->Memory"), Class == "Memories"
 {
-	Show t1 { !exomap.high; !G2; Mod == memories.t1; }
+	Show t1 { !exomap.high; !G2; Mod >=1 memories.t1; }
 	Show Any { !exomap.high; !G2; }
 }
 
@@ -2017,12 +2015,7 @@ Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 # [[4900]] Questlike-Items1 (override uniques)
 #===============================================================================================================
 
-#!! Waypoint c9.metamorph.all : "Metamorph Organs"
-
-Section Metamorph : Class == "Metamorph Samples", Auto("Metamorph")
-{
-	Show Any { !QuestLike; Empty(); }
-}
+#!! Waypoint c9.metamorph.all : "Heist Targets"
 
 Section HeistTarget : Class == "Heist Targets", Auto("HeistTarget")
 {
