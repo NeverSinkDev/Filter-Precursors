@@ -225,7 +225,7 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 	Section Rare : Rarity "Rare", Auto("RareID"), !GSH
 	{
-		Section Weapons : Class == classes_attack, DropLevel >= 55, Mod xattackphys_Core
+		Section Weapons : Class == classes_attack, DropLevel >= 50, Mod xattackphys_Core
 		{
 			Show Weapon_Phys     { Mod >= 3 xattackphys_Conf; Mod = 0 zbad_phys_attack; }
 			Show Weapon_PhysPure { Mod >= 2 xattackphys_Conf; Mod = 0 zbad_phys_attack; Clean(); }
