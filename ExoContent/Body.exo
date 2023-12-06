@@ -1328,7 +1328,7 @@ Section Gems : Class == class_gems, !Gems
 		Show AwaT1 	{ !G1; !*T1; BaseType == gems.t1awa; }
 		Show AwaAny { !G2; !*P1; BaseType "Awakened"; }
 
-		Show AltAny { !G2; !*P1; AlternateQuality True; }
+		Show AltAny { !G2; !*P1; TransfiguredGem True; }
 		
 		Show 2020z 	{ !G3; !*P1; Quality >= 20; GemLevel >= 20; BaseType == gems.t2_2020z; Corrupted False; }
 		Show 2120 	{ !G3; !*P1; Quality >= 20; GemLevel >= 21; BaseType == gems.t2_2120 }
@@ -1578,7 +1578,7 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class == "Blueprints"
 	Show Any { !exomap.high; !G4; Empty(); }
 }
 
-Section Memories : Auto("ExoticMap->Memory"), Class == "Memories"
+Section Memories : Auto("ExoticMap->Memory"), Class == "Memories", BaseType == memories.types
 {
 	Show t1 { !exomap.high; !G2; Mod >=1 memories.t1; }
 	Show Any { !exomap.high; !G2; }
@@ -1891,7 +1891,6 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class == "Incubators"
 Section CurrencyTrialCurrencies : Auto("currency->trial->orblike"), Class == class_currency
 {
 	Show T1 { !Currency; !G1; !*t1exalted; BaseType == "Hinekora's Lock"; }
-	Show Coins { !newitemmidvalue; !G4; BaseType == currency.trial.coins.any; }
 }
 
 Section CurrencyTrialOmen : Auto("currency->trial->omen"), Class == class_currency, !Currency
