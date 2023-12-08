@@ -4,6 +4,8 @@
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields";
+var classes_armor_small = "Gloves" "Boots" "Helmets";
+var classes_armor_noshields = "Body Armours" "Gloves" "Boots" "Helmets";
 
 var classes_1hattack = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Wands";
 var classes_2hattack = "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows"; 
@@ -11,7 +13,9 @@ var classes_attack = classes_1hattack + classes_2hattack;
 
 var classes_2hcast = "Staves";
 var classes_1hcast = "Rune Daggers" "Sceptres" "Wands";
+var classes_1hcast_shields = classes_1hcast + "Shields";
 var classes_cast = classes_2hcast + classes_1hcast;
+var classes_cast_all = classes_2hcast + classes_1hcast + "Shields";
 
 var classes_weapons = classes_cast + classes_attack;
 var classes_1h = classes_1hattack + classes_1hcast + "Shields";
@@ -19,14 +23,48 @@ var classes_2h = classes_2hattack + classes_2hcast;
 
 var classes_weapons_melee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
 var classes_weapons_ranged = "Wands" "Bows";
+var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
 
+var classes_archer = "Bows" "Quivers";
+
+var class_jewels = "Jewels" "Abyss Jewels";
 var classes_nonJwlryEquip = classes_armor + classes_weapons + "Quivers";
 var classes_jewellery = "Amulets" "Belts" "Rings";
-var classes_trinkets = classes_jewellery + "Jewels";
+var classes_trinkets = classes_jewellery + class_jewels;
 var classes_equip = classes_nonJwlryEquip + classes_jewellery;
 var classes_heist = "Heist Brooches" "Heist Tools" "Heist Gear" "Heist Cloaks";
 
-var bases_watchstones = "Glennach Cairns Watchstone" "Haewark Hamlet Watchstone" "Lex Ejoris Watchstone" "Lex Proxima Watchstone" "Lira Arthain Watchstone" "New Vastir Watchstone" "Tirn's End Watchstone" "Valdo's Rest Watchstone";
+var classes_exoticEnch = classes_nonJwlryEquip;
+
+var class_utilFlasks = "Utility Flasks";
+var class_flasks = "Mana Flasks" "Life Flasks" "Hybrid Flasks" "Utility Flasks";
+
+var class_currency = "Stackable Currency";
+var class_gems = "Support Gems" "Skill Gems";
+var classes_bladeBlast = "Daggers" "Rune Daggers";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {META} Tiering-Classes
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var classes_synth = "Amulets" "Belts" "Bows" "Jewels" "Maps" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Wands";
+var classes_fractured = "Abyss Jewels" "Heist Brooches" "Heist Cloaks" "Heist Gear" "Heist Tools" "Jewels" "Utility Flasks";
+var classes_corrupted = "Amulets" "Belts" "Boots" "Gloves" "Helmets" "Quivers" "Rings" "Shields";
+var classes_doubleCorruptTargetsRare = class_jewels + "Amulets" "Belts" "Rings" "Gloves" "Quivers"
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## BASETYPES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
+var abyssJewels = "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel";
+var allCommonJewels = genericJewels + abyssJewels;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {META} Non-Exact Classes
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var classes_finalHider = "Sentinel Drone" "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOBALLY INTERESTING MODS
@@ -87,8 +125,8 @@ var res_omni = "of the Span" "of the Rainbow" "of Variegation" "of the Kaleidosc
 var accuracy = "of Lioneye" "of the Ranger" "of the Marksman";
 
 
-## ARMORS
 var gloves_hybridlife = "Prior's" "Urchin's" "Fawn's";
+## ARMORS
 var gloves_fdmg = "Honed" "Crackling" "Burning" "Frigid";
 var gloves_leech = "Thirsty" "Remora's";
 var gloves_accu = "of Lioneye" "of the Ranger" "of the Marksman";
@@ -189,10 +227,6 @@ var shields_pares = "Interpermeated" + helmet_pares;
 var shields_feves = "Apparition's" "Eidolon's" + helmet_feves;
 var shields_peves = "Incorporeal" + helmet_peves;
 
-## hybrid life-defenses
-var helmet_life_hybrid1 = "Ram's" "Abbot's" "Nautilus's";
-var helmet_life_hybrid2 = "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's";
-
 ## combined life-defenses
 var combined_percentual_defenses1 = helmet_par[1] + helmet_pev[1] + helmet_parev[1] + helmet_pares[1] + helmet_peves[1];
 var combined_percentual_defenses2 = helmet_par[2] + helmet_pev[2] + helmet_parev[2] + helmet_pares[2] + helmet_peves[2];
@@ -200,12 +234,18 @@ var combined_percentual_defenses2 = helmet_par[2] + helmet_pev[2] + helmet_parev
 var combined_flat_defenses1 = helmet_far[1] + helmet_fev[1] + helmet_farev[1] + helmet_fares[1] + helmet_feves[1];
 var combined_flat_defenses2 = helmet_far[2] + helmet_fev[2] + helmet_farev[2] + helmet_fares[2] + helmet_feves[2];
 
-var combined_smitem_defenses1 = combined_percentual_defenses1 + combined_flat_defenses1 + helmet_life_hybrid1;
-var combined_smitem_defenses2 = combined_percentual_defenses2 + combined_flat_defenses2 + helmet_life_hybrid2;
+var combined_lifedefense_hybrid = "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's";
+
+var combined_smitem_defenses1 = combined_percentual_defenses1 + combined_flat_defenses1;
+var combined_smitem_defenses2 = combined_percentual_defenses2 + combined_flat_defenses2;
 
 ## combined defenses - small items
-var smallitem_es_defense1 = helmet_fes[2] + helmet_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[1];
-var smallitem_es_defense2 = helmet_fes[3] + helmet_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[2];
+
+var smallitem_es_defense_main1 = helmet_fes[2] + helmet_pes[2];
+var smallitem_es_defense_main2 = helmet_fes[3] + helmet_pes[2];
+
+var smallitem_es_defense1 = smallitem_es_defense_main1 + helmet_hybrid_es + helmet_hybrid_esstun[1];
+var smallitem_es_defense2 = smallitem_es_defense_main2 + helmet_hybrid_es + helmet_hybrid_esstun[2];
 
 ## combined defenses - shields
 var shields_combined_percentual_defenses1 = shields_par[1] + shields_pev[1] + shields_parev[1] + shields_pares[1] + shields_peves[1]; 
@@ -214,8 +254,8 @@ var shields_combined_percentual_defenses2 = shields_par[2] + shields_pev[2] + sh
 var shields_combined_flat_defenses1 = shields_far[1] + shields_fev[1] + shields_farev[1] + shields_fares[1] + shields_feves[1];
 var shields_combined_flat_defenses2 = shields_far[2] + shields_fev[2] + shields_farev[2] + shields_fares[2] + shields_feves[2];
 
-var shields_combined_defenses1 = shields_combined_percentual_defenses1 + shields_combined_flat_defenses1 + helmet_life_hybrid1;
-var shields_combined_defenses2 = shields_combined_percentual_defenses2 + shields_combined_flat_defenses2 + helmet_life_hybrid2;
+var shields_combined_defenses1 = shields_combined_percentual_defenses1 + shields_combined_flat_defenses1;
+var shields_combined_defenses2 = shields_combined_percentual_defenses2 + shields_combined_flat_defenses2;
 
 ## combined defenses - shields
 var shields_es_defense1 = shields_fes[2] + shields_pes[2] + helmet_hybrid_es + helmet_hybrid_esstun[1];
@@ -239,8 +279,8 @@ var helmet_aux2 = aux_stats_rfocus2 + minionGems[2] + suppress[3] + es_recharge[
 var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + minionGems[1];
 var xhelmet_life_core = helmet_life[3] + minionGems[1] + regen_rate[2];
 
-var xhelmet_life_mix1 = helmet_cheatMod + helmet_aux1 + combined_smitem_defenses1 + helmet_life[2];
-var xhelmet_life_mix2 = helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3];
+var xhelmet_life_mix1 = helmet_cheatMod + helmet_aux1 + combined_smitem_defenses1 + helmet_life[2] + combined_lifedefense_hybrid;
+var xhelmet_life_mix2 = helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3] + combined_lifedefense_hybrid;
 
 var xhelmet_es_mix1 = helmet_cheatMod + helmet_aux1 + smallitem_es_defense1 + helmet_life[1];
 var xhelmet_es_mix2 = helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + helmet_life[2];
@@ -261,11 +301,11 @@ var boots_aux2 = aux_stats_rfocus2 + suppress[4] + es_recharge[3] + regen_rate[3
 var xboots_life_core = boots_life[1] + boots_movespeed[2];
 var xboots_es_core = boots_movespeed[2];
 
-var xboots_life_mix1 = boots_aux1 + combined_smitem_defenses1 + boots_life[2] + boots_movespeed[2] + boots_cheat + aux_all;
-var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all;
+var xboots_life_mix1 = boots_aux1 + combined_smitem_defenses1 + boots_life[2] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
+var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
 
 var xboots_es_mix1 = boots_aux1 + smallitem_es_defense1 + boots_life[1] + boots_movespeed[2] + boots_cheat + aux_all;
-var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_life[2] + boots_movespeed[2] + boots_cheat + aux_all;
+var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_movespeed[2] + boots_cheat + aux_all;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOVES
@@ -287,11 +327,11 @@ var gloves_aux1 = aux_stats_rfocus1 + suppress[2] + es_recharge[2] + regen_rate[
 var gloves_aux2 = aux_stats_rfocus2 + suppress[4] + es_recharge[3] + regen_rate[3] + glovesMisc2;
 
 ## usable elements
-var xgloves_es_core = smallitem_es_defense1 + gloves_life[1] + gloves_cheat;
+var xgloves_es_core = smallitem_es_defense_main2 + gloves_cheat;
 var xgloves_life_core = gloves_life[2] + gloves_cheat;
 
-var xgloves_life_mix1 = gloves_aux1 + combined_smitem_defenses1 + gloves_life[2] + gloves_cheat;
-var xgloves_life_mix2 = gloves_aux2 + combined_smitem_defenses2 + gloves_life[3] + gloves_cheat;
+var xgloves_life_mix1 = gloves_aux1 + combined_smitem_defenses1 + gloves_life[2] + gloves_cheat + combined_lifedefense_hybrid;
+var xgloves_life_mix2 = gloves_aux2 + combined_smitem_defenses2 + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid;
 
 var xgloves_es_mix1 = gloves_aux1 + smallitem_es_defense1 + gloves_life[1] + gloves_cheat + aux_all;
 var xgloves_es_mix2 = gloves_aux2 + smallitem_es_defense2 + gloves_life[2] + gloves_cheat + aux_all;
@@ -487,19 +527,19 @@ var quiver_bowdmg = "Impaling" "Lacerating" "Incisive";
 ## suffix combat stats
 var quiver_crit_chance = "of Rending" "of Incision" "of Penetrating" "of Rupturing";
 var quiver_crit_multi = "of Destruction" "of Ferocity" "of Fury" "of Rage";
-var quiver_attackspeed = "of Mastery" "of Ease";
+var quiver_attackspeed = "of Grandmastery" "of Mastery" "of Ease";
 
-var quiver_accuracy = "of the Ranger" "of the Marksman";
+var quiver_accuracy = "of Lioneye" "of the Ranger" "of the Marksman";
 var quiver_dot = "of Dissolution" "of Melting" "of Liquefaction";
 var quiver_projspeed = "of the Gale" "of the Zephyr";
 
-var quiver_mix_aux = quiver_bowdmg + quiver_cheatMods + quiver_life + dex[3] + res_fire[3] + res_cold[3] + res_light[3] + res_chaos[3] + aux_all;
+var quiver_mix_aux = quiver_bowdmg + quiver_cheatMods + quiver_life + dex[2] + res_fire[2] + res_cold[2] + res_light[2] + res_chaos[2] + aux_all;
 
 ## dotquiver
-var quiver_hit_prefixdmg = quiver_fphys[2] + quiver_ffire[2] + quiver_fcold[2] + quiver_flight[2] + quiver_wed[2];
-var quiver_dot_prefixdmg = quiver_ffire[2] + quiver_fphys[2] + quiver_wed[2];
+var quiver_hit_prefixdmg = quiver_fphys[1] + quiver_ffire[1] + quiver_fcold[1] + quiver_flight[1] + quiver_wed[2];
+var quiver_dot_prefixdmg = quiver_ffire[1] + quiver_fphys[1] + quiver_wed[1];
 
-var xquiver_core_mods = quiver_bowdmg[1] + quiver_cheatMods + quiver_life[3] + quiver_crit_multi[2] + quiver_attackspeed[1] + quiver_dot[2] + quiver_crit_chance[1] + quiver_wed[1];
+var xquiver_core_mods = quiver_bowdmg[1] + quiver_cheatMods + quiver_life[2] + quiver_crit_multi[2] + quiver_attackspeed[1] + quiver_dot[2] + quiver_crit_chance[1] + quiver_wed[1];
 
 var xquiver_mix_dot = quiver_mix_aux + quiver_dot_prefixdmg + quiver_attackspeed + quiver_accuracy[2] + quiver_dot + quiver_projspeed[1] + quiver_crit_multi[1] + quiver_crit_chance[1];
 var xquiver_mix_hit = quiver_mix_aux + quiver_hit_prefixdmg + quiver_attackspeed + quiver_accuracy[2] + quiver_dot[1] + quiver_projspeed[1] + quiver_crit_multi[3] + quiver_crit_chance[3];
@@ -617,6 +657,8 @@ var acc_att_accu = "of the Ranger" "of the Marksman" "of the Sniper";
 var acc_cast_speed = "of Legerdemain" "of Expertise" "of Nimbleness";
 var acc_cast_spell = "Wizard's" "Thaumaturgist's";
 
+var acc_recoup = "of Fleshbinding" "of Suturing" "of Stitching";
+
 ## special
 var acc_unset_levels = "Quintessential" "Flawless";
 
@@ -631,7 +673,7 @@ var amu_cheat = acc_cheat + "of Puhuarte" "Guatelitzi's" + amu_skills;
 var amu_aux_stats = aux_all + amu_cheat + aux_stats2 + acc_allat[3] + acc_manaregen[2] + acc_par[1] + acc_pev[1] + acc_pes[1];
 
 ## important general stats on amulets enhanced with life/mana
-var amu_aux_stats_full = amu_aux_stats + acc_life[3] + acc_mana[1] + acc_fes[2];
+var amu_aux_stats_full = amu_aux_stats + acc_life[3] + acc_mana[1] + acc_fes[2] + "Perandus'";
 
 ## ...enchanced with damage stats
 var xamu_caster_mix = amu_aux_stats_full + acc_cast_speed[2] + acc_cast_spell[3] + acc_manaregen[2] + acc_mana[2] + acc_dmg_firep[2] + acc_dmg_coldp[2] + acc_dmg_lightp[2] + acc_dot_mult[2] + acc_crit_dmg[3] + acc_crit_chance[2];
@@ -646,16 +688,17 @@ var xamu_aux_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_c
 ## RINGS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 var rings_cheat = acc_cheat + acc_unset_levels[1] + "Guatelitzi's" + aux_all;
-var ring_aux_stats_full = rings_cheat + acc_life[4] + acc_fes[3] + aux_stats2 + acc_manaregen[2] + "of the Comet";
+var ring_aux_stats_full = rings_cheat + acc_life[3] + acc_fes[3] + aux_stats2 + acc_manaregen[2] + acc_recoup[2] + "Perandus'" + "of the Comet";
 
 var ring_ias = "of Skill";
 var ring_pdmg = "of Flames" "of Rime" "of Voltage";
 
-var xring_core = rings_cheat + acc_life[3] + acc_fes[2] + acc_att_accu[1] + acc_mana[1];
+var xring_core = rings_cheat + acc_life[3] + acc_fes[2];
 
-var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[3] + acc_dmg_physf[2] + acc_dmg_firef[2] + acc_dmg_coldf[2] + acc_dmg_lightf[2] + ring_ias + ring_pdmg;
-var xring_cast_mix = ring_aux_stats_full + acc_cast_speed[2] + ring_pdmg + acc_mana;
+var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[2] + acc_dmg_physf[1] + acc_dmg_firef[1] + acc_dmg_coldf[1] + acc_dmg_lightf[1] + ring_ias + ring_pdmg;
+var xring_cast_mix = ring_aux_stats_full + acc_cast_speed[3] + ring_pdmg + acc_mana;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RINGS
@@ -679,6 +722,17 @@ var belts_special_aux = belts_arm[3] + belts_flaskeffect + belts_flaskdur[2] + b
 
 var xbelt_mix = belts_cheat + belts_life + belts_es[2] + belts_aux + belts_special_aux + aux_all;
 var xbelt_core = belts_cheat + belts_life[2] + belts_es[1] + belts_wed[1] + belts_flaskeffect[1] + belts_flaskdur[1] + belts_mana[1] + str[1];
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} BLADE BLAST DAGGERS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var bladeBlastDamageCore = attphys_CheatMods + attele_CheatMods + wdmg_fire[2]  + wdmg_cold[2] + wdmg_light[2] + wdmg_pphys[2];
+var bladeBlastDamageAuxPref = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg_phys[1] + wcast_spell[3] + "Lithomancer's";
+var bladeBlastDamageAuxSuffix = ws_cast_speed[3] + ws_cast_crit[3] + ws_critmulti[3];
+
+var xbladeBlast_core = bladeBlastDamageCore;
+var xbladeBlast_aux= bladeBlastDamageAuxPref + xbladeBlast_core + bladeBlastDamageAuxSuffix;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RECOMBINATIONS
@@ -741,7 +795,6 @@ var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Bl
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Life or ES, we count these as one full mod
-var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
 var jwl_core = "Vivid" "Shimmering";
 
 ## Generally good stats, like double/tripple res/attributes, chaos res, general damage
@@ -793,8 +846,8 @@ var xJwl_minion_mix = xJwl_minion_core + jwl_aux + "of Training" "Enlightened" "
 ##   {META} ABYSS JEWEL-ID-MOD-FILTERING
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var aj_core = "Sanguine" "Stalwart" "Healthy" "Resplendent" "Incandescent" "of the Deadeye";
-var aj_aux = "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order";
+var aj_core = "Beclouded" "Sanguine" "Stalwart" "Healthy" "Resplendent" "Incandescent" "of the Deadeye";
+var aj_aux = "Fleet" "Seething" "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order";
 
 var aj_damage = "Acuminate" "Flaring" "Electrocuting" "Discharging" "Cremating" "Blasting" "Entombing" "Polar" "Vile";
 var aj_damage_suffix = "of Potency" "of the Inquisitor" "of Menace" "of Blinding" "of the Assassin" "of Taunting" "of Phasing" "of Ashes" "of Glaciation" "of Arcing" "of Collision" "of the Inferno";

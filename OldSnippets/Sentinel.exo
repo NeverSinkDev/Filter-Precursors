@@ -52,13 +52,40 @@ Section SentinelGear : Auto("sentinel->drones"), Class "Sentinel Drone"
 }
 
 #------------------------------------
-# [5104] Sentinel Currencies
+# [5104] Sentinel - EVENT - Currencies
 #------------------------------------
-#!! Override 671 : "Sentinel"
 
 Section CurrencySentinel : Auto("currency->sentinel"), Class "Currency", !Currency
 {
-	Show Recombine 	   { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
-	Show CoreSpecial   { !G2; !*t3annul; BaseType == currency.sentinel.t2; }
-	Show CoreAny       { !G4; %H5; !*t4chaos; BaseType == currency.sentinel.t3; }
+	Show t1 { !G2; !*t2divine; BaseType == currency.sentinel.t1; }
+	Show t2 { !G3; !*t3annul; BaseType == currency.sentinel.t2; }
+	Show t3 { !G4; !*t4chaos; BaseType == currency.sentinel.t3; }
 }
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TEMP} SENTINEL CURRENCY
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var currency.sentinel.t1 = "Armour Recombinator" "Jewellery Recombinator" "Weapon Recombinator";
+var currency.sentinel.t2 = "Amplifying Power Core" "Augmenting Power Core" "Transforming Power Core";
+var currency.sentinel.t3 = "Power Core";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TEMP} SENTINEL
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Stalker
+var sentinels.stalker.t1 = "Ancient Stalker Sentinel" "Cryptic Stalker Sentinel" "Obsidian Stalker Sentinel" "Primeval Stalker Sentinel";
+var sentinels.stalker.t2 = "Emberstone Stalker Sentinel";
+
+## Pandemonium
+var sentinels.pandemonium.t1 = "Ancient Pandemonium Sentinel" "Cryptic Pandemonium Sentinel" "Obsidian Pandemonium Sentinel" "Primeval Pandemonium Sentinel";
+var sentinels.pandemonium.t2 = "Emberstone Pandemonium Sentinel";
+
+## Apex
+var sentinels.apex.t1 = "Ancient Apex Sentinel" "Cosmic Apex Sentinel" "Cryptic Apex Sentinel" "Obsidian Apex Sentinel" "Primeval Apex Sentinel";
+var sentinels.apex.t2 = "Emberstone Apex Sentinel";
+
+var sentinels.stalker.any = "Ancient Stalker Sentinel" "Brimstone Stalker Sentinel" "Bronze Stalker Sentinel" "Cobalt Stalker Sentinel" "Cryptic Stalker Sentinel" "Emberstone Stalker Sentinel" "Obsidian Stalker Sentinel" "Primeval Stalker Sentinel" "Rusted Stalker Sentinel";
+var sentinels.pandemonium.any = "Ancient Pandemonium Sentinel" "Brimstone Pandemonium Sentinel" "Bronze Pandemonium Sentinel" "Cobalt Pandemonium Sentinel" "Cryptic Pandemonium Sentinel" "Emberstone Pandemonium Sentinel" "Obsidian Pandemonium Sentinel" "Primeval Pandemonium Sentinel";
+var sentinels.apex.any = "Ancient Apex Sentinel" "Brimstone Apex Sentinel" "Bronze Apex Sentinel" "Cobalt Apex Sentinel" "Cosmic Apex Sentinel" "Cryptic Apex Sentinel" "Emberstone Apex Sentinel" "Obsidian Apex Sentinel" "Primeval Apex Sentinel";

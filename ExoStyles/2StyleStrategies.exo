@@ -50,6 +50,14 @@ Style UniversalValueAccents
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
 
+	Func V1 ()
+	{
+		PlayAlertSound sounds.t1;
+		SetFontSize font.max;
+		PlayEffect Red; 
+		MinimapIcon 0 Red Star;
+	}
+
 	Func VF1 ()
 	{
 		PlayAlertSound sounds.t2;
@@ -973,7 +981,7 @@ Style GemStrategy : T1
 	Func P2 ()
 	{
 		BD gems.high; TX gems.high; BG gems.base;
-		SetFontSize font.t3;
+		SetFontSize font.t2;
 		Sound sounds.currency; 
 		Beam tier.t4.cray; 
 		MM 1 tier.t3.cmap icon;
@@ -983,13 +991,13 @@ Style GemStrategy : T1
 	Func P3 ()
 	{
 		BD gems.norm; TX gems.norm;
-		SetFontSize font.t4;
+		SetFontSize font.t3;
 		Sound sounds.currency;
 		Beam tier.t5.cray; 
 		MM 1 tier.t4.cmap icon;
 	}
 
-		# high qual gems
+	# high qual gems
 	Func P3S ()
 	{
 		BD questlike.tx.acc; TX gems.norm;
@@ -1003,7 +1011,9 @@ Style GemStrategy : T1
 	Func P4 ()
 	{
 		BD gems.low; TX gems.norm;
-		SetFontSize font.t5;
+		SetFontSize font.t4;
+		MM 1 tier.t5.cmap icon;
+		Beam tier.t5.cray Temp;
 	}
 
 	# trash gems
