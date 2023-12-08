@@ -14,7 +14,7 @@ Func Clean(){ Corrupted False; Mirrored False; }
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
-	Show hightier { !G2; Clean(); BaseType == bases.sixlink.valuable.t1; ItemLevel >= 75; }
+	Show hightier { !G2; !VF1; !TopTierColors; Clean(); BaseType == bases.sixlink.valuable.t1; ItemLevel >= 75; }
 	Show others { !G2; Empty(); }
 }
 
@@ -233,10 +233,17 @@ Section IdModSection : IdMods, !highvalueidmod
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-		Section FastEleWeapons : BaseType == quickWeapons, Mod xattackele_Core
+		Section FastEleWeapons : BaseType == bases.crafting.components.quickweapons.t1, Mod xattackele_Core
 		{
 			Show Weapon_Ele 	{ Mod >= 4 xattackele_Norm; Mod = 0 zbad_ele_attack; }
 			Show Weapon_ElePure { Mod >= 3 xattackele_Norm; Mod = 0 zbad_ele_attack; Clean(); }
+		}
+#------------------------------------
+#   [1234] Blade Blast Daggers
+#------------------------------------
+		Section FastEleWeapons : Class == classes_bladeBlast
+		{
+			Show BladeBlast_2core 	{ Mod >=2 xbladeBlast_core; Mod >= 4 xbladeBlast_aux; }
 		}
 #------------------------------------
 #   [1234] Gembased
@@ -362,7 +369,7 @@ Section IdModSection : IdMods, !highvalueidmod
 			Show IdAj_Attack  { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
 			Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
 			Show IdAj_Minion  { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
-			Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel" "Ghastly Eye Jewel"; }
+			Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == abyssJewels; }
 		}
 	}
 }
@@ -550,7 +557,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Affliction
 #------------------------------------
-	Section AfflictionTypes : Class == "Tincture" "Charms" "Corpses", Auto("artefact->affliction")
+	Section AfflictionTypes : Class == "Tinctures" "Charms" "Corpses", Auto("artefact->affliction")
 	{
 		Show Any { !G3; Empty(); }
 	}	
@@ -1094,10 +1101,10 @@ Section Jewels : !jewels
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
 		{
-			Show 1modcorrupted { !Special; %D4; Mod jewels_corruptedModsMinimum; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+			Show 1modcorrupted { !Special; %D4; Mod jewels_corruptedModsMinimum; BaseType == allCommonJewels; }
 		}
 
-		Section IdedUncorruptedJewels : Clean(), Rarity <= Rare, BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
+		Section IdedUncorruptedJewels : Clean(), Rarity <= Rare, BaseType == genericJewels;
 		{
 			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
@@ -1109,8 +1116,8 @@ Section Jewels : !jewels
 #!! Waypoint c7.jewels.leveling : "Jewels - Leveling Overrides"
 	Section JewelsLeveling : Auto("jewels->leveling"), ItemLevel <= 67, Rarity <= Magic
 	{
-		Show Abyss 		{ !*magic; !SF45; %D3; BaseType == "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel"; }
-		Show Generic 	{ !*magic; !SF45; %D3; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; }
+		Show Abyss 		{ !*magic; !SF45; %D3; BaseType == abyssJewels; }
+		Show Generic 	{ !*magic; !SF45; %D3; BaseType == genericJewels; }
 	}
 
 #------------------------------------
@@ -1133,7 +1140,7 @@ Section Jewels : !jewels
 # [1234] Generic Jewels
 #------------------------------------
 #!! Waypoint c7.jewels.generic.all : "Jewels - Generic Jewels"
-	Section GenericJewels : BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel", Auto("jewels->generic")
+	Section GenericJewels : BaseType == genericJewels, Auto("jewels->generic")
 	{
 		Show AnyRare  { %HS3; !G5H; !*rare; !V4; Rarity Rare; }
 		Show AnyMagic { %H2; !G6H; !*magic; Rarity <= Magic; }
@@ -1580,7 +1587,7 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class == "Blueprints"
 
 Section Memories : Auto("ExoticMap->Memory"), Class == "Memories", BaseType == memories.types
 {
-	Show t1 { !exomap.high; !G2; Mod >=1 memories.t1; }
+	Show t1 { !V1; !TopTierColors; !G1; Mod >=1 memories.t1; }
 	Show Any { !exomap.high; !G2; }
 }
 
@@ -2078,7 +2085,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
 	Show earlyleague { !G3; %H4; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	
-	Show exjewelscorrupted    { !GSH; !*t3; !special; BaseType == "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel"; CorruptedMods = 0; Corrupted True; }
+	Show exjewelscorrupted    { !GSH; !*t3; !special; BaseType == genericJewels; CorruptedMods = 0; Corrupted True; }
 	Show exjewels    		  { !GSH; !*t2; !SpecialNoB; BaseType == uniques.jewels; }
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }

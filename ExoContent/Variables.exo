@@ -41,6 +41,7 @@ var class_flasks = "Mana Flasks" "Life Flasks" "Hybrid Flasks" "Utility Flasks";
 
 var class_currency = "Stackable Currency";
 var class_gems = "Support Gems" "Skill Gems";
+var classes_bladeBlast = "Daggers" "Rune Daggers";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} Tiering-Classes
@@ -50,6 +51,14 @@ var classes_synth = "Amulets" "Belts" "Bows" "Jewels" "Maps" "Quivers" "Rings" "
 var classes_fractured = "Abyss Jewels" "Heist Brooches" "Heist Cloaks" "Heist Gear" "Heist Tools" "Jewels" "Utility Flasks";
 var classes_corrupted = "Amulets" "Belts" "Boots" "Gloves" "Helmets" "Quivers" "Rings" "Shields";
 var classes_doubleCorruptTargetsRare = class_jewels + "Amulets" "Belts" "Rings" "Gloves" "Quivers"
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## BASETYPES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
+var abyssJewels = "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel";
+var allCommonJewels = genericJewels + abyssJewels;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} Non-Exact Classes
@@ -715,6 +724,17 @@ var xbelt_mix = belts_cheat + belts_life + belts_es[2] + belts_aux + belts_speci
 var xbelt_core = belts_cheat + belts_life[2] + belts_es[1] + belts_wed[1] + belts_flaskeffect[1] + belts_flaskdur[1] + belts_mana[1] + str[1];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   {META} BLADE BLAST DAGGERS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var bladeBlastDamageCore = attphys_CheatMods + attele_CheatMods + wdmg_fire[2]  + wdmg_cold[2] + wdmg_light[2] + wdmg_pphys[2];
+var bladeBlastDamageAuxPref = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg_phys[1] + wcast_spell[3] + "Lithomancer's";
+var bladeBlastDamageAuxSuffix = ws_cast_speed[3] + ws_cast_crit[3] + ws_critmulti[3];
+
+var xbladeBlast_core = bladeBlastDamageCore;
+var xbladeBlast_aux= bladeBlastDamageAuxPref + xbladeBlast_core + bladeBlastDamageAuxSuffix;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RECOMBINATIONS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -775,7 +795,6 @@ var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Bl
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## Life or ES, we count these as one full mod
-var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
 var jwl_core = "Vivid" "Shimmering";
 
 ## Generally good stats, like double/tripple res/attributes, chaos res, general damage

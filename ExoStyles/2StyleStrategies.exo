@@ -50,6 +50,14 @@ Style UniversalValueAccents
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
 
+	Func V1 ()
+	{
+		PlayAlertSound sounds.t1;
+		SetFontSize font.max;
+		PlayEffect Red; 
+		MinimapIcon 0 Red Star;
+	}
+
 	Func VF1 ()
 	{
 		PlayAlertSound sounds.t2;
