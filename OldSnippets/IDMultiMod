@@ -1,0 +1,17 @@
+#------------------------------------
+#   [1234] Multiple Mods
+#------------------------------------	
+## This section is designed to look for multiple T1 mods in corrupted items for use in recombinators
+	Section MultipleMods : Rarity <= Rare
+	{
+		ShowD RecoGloves    { %D4; Class == "Gloves"; Mod >= 2 xr_shared_stats + xr_gloves_mix; }
+		ShowD RecoBoots     { %D4; Class == "Boots"; Mod >= 2 xr_shared_stats + xr_boots_mix; }
+		ShowD RecoHelmets   { %D4; Class == "Helmets"; Mod >= 2 xr_shared_stats + xr_helmet_mix; }
+		ShowD RecoWeapons   { %D4; Class == classes_weapons_ele; Mod >= 2 xr_eleweapons1; }
+		ShowD RecoRings	    { %D4; Class == "Rings"; Mod >= 2 xr_rings_mix + xr_shared_stats; }
+
+		ShowD RecoCasterFire	    { %D4; Class == classes_1hcast; Mod >= 2 xr_caster_fire; }
+		ShowD RecoCasterCold	    { %D4; Class == classes_1hcast; Mod >= 2 xr_caster_cold; }
+		ShowD RecoCasterLight 	 	{ %D4; Class == classes_1hcast; Mod >= 2 xr_caster_light; }
+		ShowD RecoCasterPhys 	 	{ %D4; Class == classes_1hcast; Mod >= 2 xr_caster_phys; }
+	}

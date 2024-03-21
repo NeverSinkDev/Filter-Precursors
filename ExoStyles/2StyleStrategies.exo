@@ -50,6 +50,34 @@ Style UniversalValueAccents
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
 
+	Func 6linklow ()
+	{
+		var icon = Diamond;
+
+		SetBackgroundColor sixLink.acc;
+		SetTextColor sBlack;
+		SetBorderColor sBlack;
+
+		PlayAlertSound sounds.t2;
+		SetFontSize font.max;
+		PlayEffect Red; 
+		MinimapIcon 1 Red icon;
+	}
+
+	Func 6linkhigh ()
+	{
+		var icon = Diamond;
+
+		SetBackgroundColor sixLink.acc;
+		SetTextColor sWhite;
+		SetBorderColor sWhite;
+
+		PlayAlertSound sounds.t2;
+		SetFontSize font.max;
+		PlayEffect Red; 
+		MinimapIcon 0 Red icon;
+	}
+
 	Func V1 ()
 	{
 		PlayAlertSound sounds.t1;
@@ -131,6 +159,11 @@ Style UniversalValueAccents
 	Func SpecialNoB ()
 	{
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+
+	Func SpecialNoBHigh ()
+	{
+		PlayEffect exoticgear.crayhigh; MinimapIcon * exoticgear.cmaphigh *;
 	}
 
 
@@ -757,6 +790,11 @@ Style EndgameRareDecorators
 		SetBorderColor accent.rare.tiny;
 	}
 
+	Func fourlinkedrare()
+	{
+		SetBorderColor accent.leveling.fourlink;
+	}
+
 	Func ilvl86()
 	{
 		SetTextColor accent.rare.ilvl86; SetBorderColor NONE;
@@ -1141,7 +1179,7 @@ Style LowerValueTiering
 	{
 		SetBorderColor sBlack;
 		SetBackgroundColor extra;
-		LVHL3();
+		LVHL2();
 	}
 }
 
@@ -1534,12 +1572,6 @@ Style t5uni : PatternBlack
 #------------------------------------
 # Finalizing Strategies
 #------------------------------------
-
-Style SixLinkVariant : T1, T2RedPiece
-{
-	var icon = Diamond;
-	var acc = 200 0 0 255;
-}
 
 Style InfluencedVariant : T1, T2YellowPiece
 {

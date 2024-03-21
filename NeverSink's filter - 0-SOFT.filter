@@ -1,7 +1,7 @@
 #===============================================================================================================
 # NeverSink's Indepth Loot Filter - for Path of Exile
 #===============================================================================================================
-# VERSION:  8.13.1
+# VERSION:  8.14.0
 # TYPE:     0-SOFT
 # STYLE:    DEFAULT
 # AUTHOR:   NeverSink
@@ -79,7 +79,6 @@
 # [[0600]] IDENTIFIED MOD FILTERING - SINGLE MODS
 #   [0601] Top Value
 #   [0602] Uncorrupted Mods
-#   [0603] Multiple Mods
 # [[0700]] IDENTIFIED MOD - CORRUPTED ITEMS
 # [[0800]] Exotic Mods Filtering
 #   [0801] Veiled/Betrayal - low prio veiled items
@@ -233,23 +232,23 @@ Show # $type->6l $tier->hightier
 	Rarity Normal Magic Rare
 	BaseType == "Apex Cleaver" "Assassin's Garb" "Astral Plate" "Banishing Blade" "Battery Staff" "Blood Raiment" "Carnal Armour" "Desert Brigandine" "Despot Axe" "Destiny Leather" "Dragonscale Doublet" "Eventuality Rod" "Exquisite Leather" "Full Dragonscale" "General's Brigandine" "Gladiator Plate" "Glorious Plate" "Grove Bow" "Harbinger Bow" "Impact Force Propagator" "Imperial Bow" "Ivory Bow" "Maraketh Bow" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Short Bow" "Solarine Bow" "Spine Bow" "Thicket Bow" "Triumphant Lamellar" "Vaal Regalia" "Varnished Coat" "Zodiac Leather"
 	SetFontSize 45
-	SetTextColor 200 0 0 255
-	SetBorderColor 240 100 0 255
-	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 1 300
-	PlayEffect Red
-	MinimapIcon 0 Red Star
-
-Show # $type->6l $tier->others
-	LinkedSockets 6
-	Rarity Normal Magic Rare
-	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
 	SetBackgroundColor 200 0 0 255
 	PlayAlertSound 1 300
 	PlayEffect Red
 	MinimapIcon 0 Red Diamond
+
+Show # $type->6l $tier->others
+	LinkedSockets 6
+	Rarity Normal Magic Rare
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 200 0 0 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 1 Red Diamond
 
 #===============================================================================================================
 # [[0200]] High tier influenced items
@@ -949,7 +948,7 @@ Show # %DS4 $type->exoticmods $tier->t2veil
 #   [0502] Physical
 #------------------------------------
 
-Show # $type->rareid $tier->weapon_phys
+Show # %D5 $type->rareid $tier->weapon_phys
 	Identified True
 	DropLevel >= 50
 	Rarity Rare
@@ -965,7 +964,7 @@ Show # $type->rareid $tier->weapon_phys
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->weapon_physpure
+Show # %D5 $type->rareid $tier->weapon_physpure
 	Mirrored False
 	Corrupted False
 	Identified True
@@ -987,7 +986,7 @@ Show # $type->rareid $tier->weapon_physpure
 #   [0503] Elemental
 #------------------------------------
 
-Show # $type->rareid $tier->weapon_ele
+Show # %D5 $type->rareid $tier->weapon_ele
 	Identified True
 	Rarity Rare
 	BaseType == "Ambusher" "Corsair Sword" "Dragonbone Rapier" "Eagle Claw" "Elegant Foil" "Eye Gouger" "Fancy Foil" "Gemini Claw" "Grove Bow" "Hellion's Paw" "Highborn Bow" "Imbued Wand" "Imperial Bow" "Imperial Claw" "Imperial Skean" "Jewelled Foil" "Maraketh Bow" "Noble Claw" "Opal Wand" "Poignard" "Reflex Bow" "Serrated Foil" "Spine Bow" "Spiraled Foil" "Steelwood Bow" "Stiletto" "Terror Claw" "Thicket Bow" "Throat Stabber" "Tornado Wand" "Twin Claw" "Wyrmbone Rapier"
@@ -1002,7 +1001,7 @@ Show # $type->rareid $tier->weapon_ele
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->weapon_elepure
+Show # %D5 $type->rareid $tier->weapon_elepure
 	Mirrored False
 	Corrupted False
 	Identified True
@@ -1023,7 +1022,7 @@ Show # $type->rareid $tier->weapon_elepure
 #   [0504] Blade Blast Daggers
 #------------------------------------
 
-Show # $type->rareid $tier->bladeblast_2core
+Show # %D4 $type->rareid $tier->bladeblast_2core
 	Identified True
 	Rarity Rare
 	Class == "Daggers" "Rune Daggers"
@@ -1041,7 +1040,7 @@ Show # $type->rareid $tier->bladeblast_2core
 #   [0505] Gembased
 #------------------------------------
 
-Show # $type->rareid $tier->gem_bow
+Show # %D5 $type->rareid $tier->gem_bow
 	Identified True
 	Rarity Rare
 	Class == "Bows"
@@ -1084,7 +1083,7 @@ Show # $type->rareid $tier->gem_staves
 #   [0506] Caster
 #------------------------------------
 
-Show # $type->rareid $tier->caster_fireweapont2
+Show # %D5 $type->rareid $tier->caster_fireweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -1099,7 +1098,7 @@ Show # $type->rareid $tier->caster_fireweapont2
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->caster_coldweapont2
+Show # %D5 $type->rareid $tier->caster_coldweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -1114,7 +1113,7 @@ Show # $type->rareid $tier->caster_coldweapont2
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->caster_lightweapont2
+Show # %D5 $type->rareid $tier->caster_lightweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -1129,7 +1128,7 @@ Show # $type->rareid $tier->caster_lightweapont2
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->caster_physweapont2
+Show # %D5 $type->rareid $tier->caster_physweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -1144,7 +1143,7 @@ Show # $type->rareid $tier->caster_physweapont2
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->caster_chaosweapont2
+Show # %D5 $type->rareid $tier->caster_chaosweapont2
 	Identified True
 	Rarity Rare
 	Class == "Rune Daggers" "Sceptres" "Wands"
@@ -1163,7 +1162,7 @@ Show # $type->rareid $tier->caster_chaosweapont2
 #   [0507] Spellslinger
 #------------------------------------
 
-Show # $type->rareid $tier->caster_slingert2
+Show # %D5 $type->rareid $tier->caster_slingert2
 	Identified True
 	Rarity Rare
 	Class == "Wands"
@@ -1181,12 +1180,12 @@ Show # $type->rareid $tier->caster_slingert2
 #   [0508] Helmets
 #------------------------------------
 
-Show # $type->rareid $tier->helmet_life_based
+Show # %D5 $type->rareid $tier->helmet_life_based
 	Identified True
 	Rarity Rare
 	Class == "Helmets"
 	HasExplicitMod "Fecund" "Athlete's" "Virile" "Overseer's" "of Everlasting" "of Youth"
-	HasExplicitMod >=4 "of Puhuarte" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Overseer's" "Taskmaster's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Fecund" "Athlete's" "Virile" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
+	HasExplicitMod >=4 "of Puhuarte" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Overseer's" "Taskmaster's" "of Nullification" "of Abjuration" "of Revoking" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Fecund" "Athlete's" "Virile" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1196,12 +1195,12 @@ Show # $type->rareid $tier->helmet_life_based
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->helmet_es_based
+Show # %D4 $type->rareid $tier->helmet_es_based
 	Identified True
 	Rarity Rare
 	Class == "Helmets"
 	HasExplicitMod >=2 "Unassailable" "Indomitable" "Blazing" "Seething" "Overseer's"
-	HasExplicitMod >=4 "of Puhuarte" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Overseer's" "Taskmaster's" "of Nullification" "of Abjuration" "of Revoking" "of Ardour" "of Buffering" "of Dispersal" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Fecund" "Athlete's"
+	HasExplicitMod >=4 "of Puhuarte" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "Overseer's" "Taskmaster's" "of Nullification" "of Abjuration" "of Revoking" "of Lioneye" "of the Ranger" "of the Marksman" "of Everlasting" "of Youth" "of Vivification" "of Recuperation" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Fecund" "Athlete's"
 	HasExplicitMod =0 "Hale" "Shining" "Glimmering" "Glittering" "Protective" "Strong-Willed" "Resolute"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1215,12 +1214,12 @@ Show # $type->rareid $tier->helmet_es_based
 #   [0509] Boots
 #------------------------------------
 
-Show # $type->rareid $tier->boots_life_based
+Show # %D5 $type->rareid $tier->boots_life_based
 	Identified True
 	Rarity Rare
 	Class == "Boots"
 	HasExplicitMod "Athlete's" "Hellion's" "Cheetah's"
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Athlete's" "Virile" "Rotund" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Everlasting" "of Youth" "of Vivification" "Athlete's" "Virile" "Rotund" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil" "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
 	HasExplicitMod =0 "Runner's" "Sprinter's" "Stallion's" "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1230,12 +1229,12 @@ Show # $type->rareid $tier->boots_life_based
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->boots_es_based
+Show # %D4 $type->rareid $tier->boots_es_based
 	Identified True
 	Rarity Rare
 	Class == "Boots"
 	HasExplicitMod "Hellion's" "Cheetah's"
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Everlasting" "of Youth" "of Vivification" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Hellion's" "Cheetah's" "Matatl's" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil"
 	HasExplicitMod =0 "Runner's" "Sprinter's" "Stallion's" "Shining" "Glimmering" "Glittering" "Protective" "Strong-Willed" "Resolute" "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1249,12 +1248,12 @@ Show # $type->rareid $tier->boots_es_based
 #   [0510] Gloves
 #------------------------------------
 
-Show # $type->rareid $tier->gloves_life_based
+Show # %D5 $type->rareid $tier->gloves_life_based
 	Identified True
 	Rarity Rare
 	Class == "Gloves"
 	HasExplicitMod "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1264,12 +1263,12 @@ Show # $type->rareid $tier->gloves_life_based
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->gloves_es_based
+Show # %D5 $type->rareid $tier->gloves_es_based
 	Identified True
 	Rarity Rare
 	Class == "Gloves"
 	HasExplicitMod >=2 "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
-	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod >=4 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Blazing" "Seething" "Pulsing" "Unassailable" "Indomitable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
 	HasExplicitMod =0 "Runner's" "Sprinter's" "Stallion's" "Shining" "Glimmering" "Glittering" "Protective" "Strong-Willed" "Resolute" "Hale"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1283,12 +1282,12 @@ Show # $type->rareid $tier->gloves_es_based
 #   [0511] Shields
 #------------------------------------ 		
 
-Show # $type->rareid $tier->shield_esfocus
+Show # %D5 $type->rareid $tier->shield_esfocus
 	Identified True
 	Rarity Rare
 	Class == "Shields"
-	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Vigorous" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of the Citadel" "of the Sentinel" "of the Bastion" "of Revitalization" "of Obstruction" "of Everlasting" "of Youth" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Incandescent" "Scintillating" "Blazing" "Unfaltering" "Unassailable" "Priest's" "Abbot's" "Seraphim's" "Djinn's" "Glyphic" "Incanter's" "Pyroclastic" "Magmatic" "Cryomancer's" "Crystalline" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity"
 	HasExplicitMod =0 "Shining" "Glimmering" "Glittering" "Glowing" "Protective" "Strong-Willed" "Resolute" "Fearless"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1298,13 +1297,13 @@ Show # $type->rareid $tier->shield_esfocus
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->shield_defensefocus
+Show # %D5 $type->rareid $tier->shield_defensefocus
 	Identified True
 	DropLevel >= 55
 	Rarity Rare
 	Class == "Shields"
-	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Vigorous" "Fecund" "Athlete's" "of the Citadel" "of the Sentinel" "of the Bastion" "of Obstruction" "of Interference" "of Everlasting" "of Youth"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "of the Ranger" "of Mastery" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Fecund"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of the Citadel" "of the Sentinel" "of the Bastion" "of Revitalization" "of Obstruction" "of Everlasting" "of Youth" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Fecund" "Athlete's" "of the Ranger" "of Mastery" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1313,12 +1312,12 @@ Show # $type->rareid $tier->shield_defensefocus
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->shield_casterfocus
+Show # %D5 $type->rareid $tier->shield_casterfocus
 	Identified True
 	Rarity Rare
 	Class == "Shields"
-	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Unmaking"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+	HasExplicitMod >=2 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "Glyphic" "Incanter's" "Pyroclastic" "Magmatic" "Cryomancer's" "Crystalline" "Ionising" "Smiting" "of Unmaking" "of Ruin" "Fecund"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of the Citadel" "of the Sentinel" "of the Bastion" "of Revitalization" "of Obstruction" "of Everlasting" "of Youth" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Fecund" "Athlete's" "Glyphic" "Incanter's" "Pyroclastic" "Magmatic" "Cryomancer's" "Crystalline" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1327,13 +1326,13 @@ Show # $type->rareid $tier->shield_casterfocus
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->shield_lifefocus
+Show # %D5 $type->rareid $tier->shield_lifefocus
 	Identified True
 	DropLevel >= 55
 	Rarity Rare
 	Class == "Shields"
-	HasExplicitMod "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "Vigorous" "Fecund"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of Life-giving" "of Recuperation" "of the Conservator" "of the Protector" "of the Keeper" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of Resolve" "of the Citadel" "of the Sentinel" "of the Buttress" "of the Bastion" "of the Barricade" "of Second Wind" "of Vigour" "of Ardour" "of Buffering" "of Revitalization" "of Rebounding" "of Obstruction" "of Interference" "of Deadening" "of Everlasting" "of Youth" "of Vivification" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Vigorous" "Fecund" "Athlete's" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Glyphic" "Incanter's" "Xoph's" "Pyroclastic" "Magmatic" "Tul's" "Cryomancer's" "Crystalline" "Esh's" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
+	HasExplicitMod "Vigorous"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Elevated " "Topotante's" "of the Essence" "Essences" "Veiled" "of the Veil" "of Nullification" "Vigorous" "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's" "Runic" "Xoph's" "Tul's" "Esh's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of Abjuration" "of Revoking" "of Snuffing" "of Will" "of Fortitude" "of the Citadel" "of the Sentinel" "of the Bastion" "of Revitalization" "of Obstruction" "of Everlasting" "of Youth" "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm" "of Unmaking" "Fecund" "Athlete's" "Glyphic" "Incanter's" "Pyroclastic" "Magmatic" "Cryomancer's" "Crystalline" "Ionising" "Smiting" "of Nirvana" "of Ruin" "of Calamity" "Unmoving" "Abating" "Lissome" "Adroit" "Adaptable" "Resilient" "Saintly" "Consecrated" "Apparition's" "Eidolon's" "Impenetrable" "Impregnable" "Illusion's" "Mirage's" "Victor's" "Sturdy" "Interpermeated" "Inspired" "Incorporeal" "Illusory" "Incandescent" "Scintillating" "Unfaltering" "Unassailable"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine" "Stalwart" "Stout"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1347,7 +1346,7 @@ Show # $type->rareid $tier->shield_lifefocus
 #   [0512] Amulets
 #------------------------------------
 
-Show # $type->rareid $tier->amu_exalter
+Show # %D5 $type->rareid $tier->amu_exalter
 	Mirrored False
 	Corrupted False
 	Identified True
@@ -1362,7 +1361,7 @@ Show # $type->rareid $tier->amu_exalter
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->amu_1corecaster
+Show # %D5 $type->rareid $tier->amu_1corecaster
 	Identified True
 	Rarity Rare
 	Class == "Amulets"
@@ -1377,7 +1376,7 @@ Show # $type->rareid $tier->amu_1corecaster
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->amu_2corecaster
+Show # %D5 $type->rareid $tier->amu_2corecaster
 	Identified True
 	Rarity Rare
 	Class == "Amulets"
@@ -1391,7 +1390,7 @@ Show # $type->rareid $tier->amu_2corecaster
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->amu_1coredot
+Show # %D5 $type->rareid $tier->amu_1coredot
 	Identified True
 	Rarity Rare
 	Class == "Amulets"
@@ -1406,7 +1405,7 @@ Show # $type->rareid $tier->amu_1coredot
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->amu_2coredot
+Show # %D5 $type->rareid $tier->amu_2coredot
 	Identified True
 	Rarity Rare
 	Class == "Amulets"
@@ -1420,7 +1419,7 @@ Show # $type->rareid $tier->amu_2coredot
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->amu_1coreattack
+Show # %D5 $type->rareid $tier->amu_1coreattack
 	Identified True
 	Rarity Rare
 	Class == "Amulets"
@@ -1435,7 +1434,7 @@ Show # $type->rareid $tier->amu_1coreattack
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->amu_2coreattack
+Show # %D5 $type->rareid $tier->amu_2coreattack
 	Identified True
 	Rarity Rare
 	Class == "Amulets"
@@ -1451,14 +1450,14 @@ Show # $type->rareid $tier->amu_2coreattack
 
 #------------------------------------
 #   [0513] Rings
-#------------------------------------ 	
+#------------------------------------
 
-Show # $type->rareid $tier->ring_caster
+Show # %D5 $type->rareid $tier->ring_caster
 	Identified True
 	Rarity Rare
 	Class == "Rings"
-	HasExplicitMod "of the Underground" "Subterranean" "Quintessential" "Guatelitzi's" "of the Essence" "Essences" "Veiled" "of the Veil" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Quintessential" "Guatelitzi's" "of the Essence" "Essences" "Veiled" "of the Veil" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "Incandescent" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nirvana" "of Euphoria" "of Fleshbinding" "of Suturing" "Perandus'" "of the Comet" "of Legerdemain" "of Expertise" "of Nimbleness" "of Flames" "of Rime" "of Voltage" "Ultramarine" "Zaffre" "Blue"
+	HasExplicitMod "Guatelitzi's" "of the Underground" "Subterranean" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
+	HasExplicitMod >=3 "Quintessential" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nirvana" "of Euphoria" "of Fleshbinding" "of Suturing" "Perandus'" "of the Comet" "of Legerdemain" "of Expertise" "of Nimbleness" "of Flames" "of Rime" "of Voltage" "Ultramarine"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1468,12 +1467,30 @@ Show # $type->rareid $tier->ring_caster
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->ring_attack
+Show # %D5 $type->rareid $tier->ring_attack
 	Identified True
 	Rarity Rare
 	Class == "Rings"
-	HasExplicitMod "of the Underground" "Subterranean" "Quintessential" "Guatelitzi's" "of the Essence" "Essences" "Veiled" "of the Veil" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Quintessential" "Guatelitzi's" "of the Essence" "Essences" "Veiled" "of the Veil" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent" "Incandescent" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nirvana" "of Euphoria" "of Fleshbinding" "of Suturing" "Perandus'" "of the Comet" "Devastating" "Overpowering" "Unleashed" "of the Ranger" "of the Marksman" "Flaring" "Cremating" "Entombing" "Electrocuting" "of Skill" "of Flames" "of Rime" "of Voltage"
+	HasExplicitMod "Guatelitzi's" "of the Underground" "Subterranean" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
+	HasExplicitMod >=3 "Quintessential" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nirvana" "of Euphoria" "of Fleshbinding" "of Suturing" "Perandus'" "of the Comet" "Devastating" "Overpowering" "Unleashed" "of the Ranger" "of the Marksman" "Flaring" "Cremating" "Entombing" "Electrocuting" "of Skill" "of Flames" "of Rime" "of Voltage"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 47 0 74 255
+	PlayAlertSound 3 300
+	PlayEffect Purple
+	MinimapIcon 1 Purple Diamond
+
+Show # %D5 $type->rareid $tier->ring_minion
+	Identified True
+	Rarity Rare
+	Class == "Rings"
+	BaseType == "Bone Ring"
+	HasExplicitMod "Guatelitzi's" "of the Underground" "Subterranean" "Athlete's" "Virile" "Rotund" "Dazzling" "Resplendent"
+	HasExplicitMod "Duchess's" "Countess's" "Marchioness's" "of Agitation" "of Incitation" "of Coercion" "of Harmony" "of Orchestration"
+	HasExplicitMod >=3 "Quintessential" "of the Essence" "Essences" "Veiled" "of the Veil" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of the Blur" "of the Wind" "of the Phantom" "of the Jaguar" "of the Polymath" "of the Genius" "of the Virtuoso" "of the Savant" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nirvana" "of Euphoria" "of Fleshbinding" "of Suturing" "Perandus'" "of the Comet" "Duchess's" "Countess's" "Marchioness's" "of Agitation" "of Incitation" "of Coercion" "of Harmony" "of Orchestration" "of Metamorphosis" "of the Taskmaster"
+	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1486,11 +1503,11 @@ Show # $type->rareid $tier->ring_attack
 #   [0514] Quivers
 #------------------------------------
 
-Show # $type->rareid $tier->quiv_hit
+Show # %D5 $type->rareid $tier->quiv_hit
 	Identified True
 	Rarity Rare
 	Class == "Quivers"
-	HasExplicitMod "Impaling" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "of Destruction" "of Ferocity" "of Grandmastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
+	HasExplicitMod >=2 "Impaling" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "of Destruction" "of Ferocity" "of Grandmastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
 	HasExplicitMod >=4 "Impaling" "Lacerating" "Incisive" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of Tzteosh" "of the Magma" "of Haast" "of the Ice" "of Ephij" "of the Lightning" "of Bameth" "of Exile" "of the Essence" "Essences" "Veiled" "of the Veil" "Flaring" "Cremating" "Entombing" "Electrocuting" "Devastating" "Overpowering" "of Grandmastery" "of Mastery" "of Ease" "of Lioneye" "of the Ranger" "of Dissolution" "of the Gale" "of Destruction" "of Ferocity" "of Fury" "of Rending" "of Incision" "of Penetrating"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
@@ -1501,11 +1518,11 @@ Show # $type->rareid $tier->quiv_hit
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # $type->rareid $tier->quiv_dot
+Show # %D5 $type->rareid $tier->quiv_dot
 	Identified True
 	Rarity Rare
 	Class == "Quivers"
-	HasExplicitMod "Impaling" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "of Destruction" "of Ferocity" "of Grandmastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
+	HasExplicitMod >=2 "Impaling" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "of Destruction" "of Ferocity" "of Grandmastery" "of Dissolution" "of Melting" "of Rending" "Devastating"
 	HasExplicitMod >=4 "Impaling" "Lacerating" "Incisive" "of the Underground" "Subterranean" "Elevated " "of Splintering" "Fecund" "Athlete's" "Virile" "of the Blur" "of the Wind" "of Tzteosh" "of the Magma" "of Haast" "of the Ice" "of Ephij" "of the Lightning" "of Bameth" "of Exile" "of the Essence" "Essences" "Veiled" "of the Veil" "Cremating" "Flaring" "Devastating" "of Grandmastery" "of Mastery" "of Ease" "of Lioneye" "of the Ranger" "of Dissolution" "of Melting" "of Liquefaction" "of the Gale" "of Destruction" "of Rending"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
@@ -1520,13 +1537,13 @@ Show # $type->rareid $tier->quiv_dot
 #   [0515] Body Armours
 #------------------------------------
 
-Show # %D5 $type->rareid $tier->body_life
+Show # %D4 $type->rareid $tier->body_life
 	Identified True
 	DropLevel >= 55
 	Rarity Rare
 	Class == "Body Armours"
 	HasExplicitMod "Prime" "Rapturous" "Vigorous" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
-	HasExplicitMod >=5 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Second Wind" "of Vigour" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	HasExplicitMod >=5 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine" "Stalwart" "Stout"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1536,7 +1553,7 @@ Show # %D5 $type->rareid $tier->body_life
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # %D5 $type->rareid $tier->body_defense
+Show # %D4 $type->rareid $tier->body_defense
 	Mirrored False
 	Corrupted False
 	Identified True
@@ -1544,7 +1561,7 @@ Show # %D5 $type->rareid $tier->body_defense
 	Rarity Rare
 	Class == "Body Armours"
 	HasExplicitMod >=2 "Prime" "Rapturous" "Vigorous" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
-	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Second Wind" "of Vigour" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1553,14 +1570,14 @@ Show # %D5 $type->rareid $tier->body_defense
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # %D5 $type->rareid $tier->body_lifedefense
+Show # %D4 $type->rareid $tier->body_lifedefense
 	Identified True
 	DropLevel >= 55
 	Rarity Rare
 	Class == "Body Armours"
 	HasExplicitMod >=2 "Prime" "Rapturous" "Vigorous" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
 	HasExplicitMod "Prime" "Rapturous" "Vigorous" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
-	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Second Wind" "of Vigour" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
+	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "Prime" "Rapturous" "Vigorous" "Crocodile's" "Nautilus's" "Ibex's" "Ram's" "Exarch's" "of Tacati" "Impervious" "Unmoving" "Fugitive" "Lissome" "Versatile" "Adaptable" "Phantasm's" "Apparition's" "Godly" "Saintly" "Interpermeated" "Inspired" "Interpolated" "Impenetrable" "Impregnable" "Girded" "Illusion's" "Mirage's" "Nightmare's" "Victor's" "Legend's" "Hero's" "Incorporeal" "Illusory" "Unreal"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -1569,13 +1586,13 @@ Show # %D5 $type->rareid $tier->body_lifedefense
 	PlayEffect Purple
 	MinimapIcon 1 Purple Diamond
 
-Show # %D5 $type->rareid $tier->body_es
+Show # %D4 $type->rareid $tier->body_es
 	Identified True
 	DropLevel >= 55
 	Rarity Rare
 	Class == "Body Armours"
 	HasExplicitMod >=2 "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's"
-	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "of Second Wind" "of Vigour" "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "Seraphim's" "Djinn's" "Bishop's" "Priest's" "Exarch's" "Abbot's" "of Tacati" "Prime" "Rapturous"
+	HasExplicitMod >=4 "of the Essence" "Essences" "Veiled" "of the Veil" "of the Underground" "Subterranean" "Elevated " "Guatelitzi's" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Convalescence" "of the Conservator" "of the Protector" "of Nullification" "of Abjuration" "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable" "Seraphim's" "Djinn's" "Bishop's" "Priest's" "Exarch's" "Abbot's" "of Tacati" "Prime" "Rapturous"
 	HasExplicitMod =0 "Shining" "Glimmering" "Glittering" "Glowing" "Protective" "Strong-Willed" "Resolute" "Fearless"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1593,8 +1610,8 @@ Show # %D5 $type->rareid $tier->belt_general
 	Identified True
 	Rarity Rare
 	Class == "Belts"
-	HasExplicitMod "of the Underground" "Subterranean" "Guatelitzi's" "Fecund" "Athlete's" "Dazzling" "Devastating" "Magnifying" "of Reveling" "Blue" "of the Godslayer"
-	HasExplicitMod >=4 "of the Underground" "Subterranean" "Guatelitzi's" "Fecund" "Athlete's" "Virile" "Dazzling" "Resplendent" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "of Recuperation" "Enveloped" "Encased" "Carapaced" "Magnifying" "Condensing" "of Reveling" "of Relishing" "Devastating" "Overpowering" "Unleashed" "Blue" "Mazarine" "of the Essence" "Essences" "Veiled" "of the Veil"
+	HasExplicitMod "of the Underground" "Subterranean" "Guatelitzi's" "Fecund" "Athlete's" "Dazzling"
+	HasExplicitMod >=4 "of the Underground" "Subterranean" "Guatelitzi's" "Fecund" "Athlete's" "Virile" "Dazzling" "of the Godslayer" "of the Gods" "of the Titan" "of the Leviathan" "of Tzteosh" "of the Magma" "of the Volcano" "of Haast" "of the Ice" "of the Polar Bear" "of Ephij" "of the Lightning" "of the Maelstrom" "of Bameth" "of Exile" "of Expulsion" "of Recuperation" "Enveloped" "Encased" "Carapaced" "Magnifying" "Condensing" "of Reveling" "of Relishing" "Devastating" "Overpowering" "Unleashed" "Blue" "Mazarine" "of the Essence" "Essences" "Veiled" "of the Veil"
 	HasExplicitMod =0 "Hale" "Healthy" "Sanguine"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
@@ -1962,127 +1979,6 @@ Show # %D5 $type->magicid $tier->t2amu
 #	PlayEffect Purple
 #	MinimapIcon 1 Purple Diamond
 
-#------------------------------------
-#   [0603] Multiple Mods
-#------------------------------------
-
-#Show # %D4 $type->magicid $tier->recogloves
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Gloves"
-#	HasExplicitMod >=2 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Nullification" "Athlete's" "of Grandmastery"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recoboots
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Boots"
-#	HasExplicitMod >=2 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Nullification" "Athlete's" "Hellion's"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recohelmets
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Helmets"
-#	HasExplicitMod >=2 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Nullification" "Fecund"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recoweapons
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Bows" "Claws" "Thrusting One Hand Swords" "Wands"
-#	HasExplicitMod >=2 "Carbonising" "Crystalising" "Vapourising"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recorings
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Rings"
-#	HasExplicitMod >=2 "Virile" "Overpowering" "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Nullification"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recocasterfire
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Rune Daggers" "Sceptres" "Wands"
-#	HasExplicitMod >=2 "Flame Shaper's" "Magister's" "Lich's" "Runic" "Xoph's" "of the Fanatical" "of Dissolution"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recocastercold
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Rune Daggers" "Sceptres" "Wands"
-#	HasExplicitMod >=2 "Frost Singer's" "Magister's" "Lich's" "Runic" "Tul's" "of Heartstopping" "of Dissolution"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recocasterlight
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Rune Daggers" "Sceptres" "Wands"
-#	HasExplicitMod >=2 "Thunderhand's" "Magister's" "Lich's" "Runic" "Esh's"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
-#Show # %D4 $type->magicid $tier->recocasterphys
-#	Identified True
-#	Rarity Normal Magic Rare
-#	Class == "Rune Daggers" "Sceptres" "Wands"
-#	HasExplicitMod >=2 "Lithomancer's" "Magister's" "Lich's" "Runic" "of Exsanguinating" "of Dissolution"
-#	SetFontSize 45
-#	SetTextColor 0 240 190 255
-#	SetBorderColor 0 240 190 255
-#	SetBackgroundColor 20 20 0 255
-#	PlayAlertSound 3 300
-#	PlayEffect Purple
-#	MinimapIcon 1 Purple Diamond
-
 #===============================================================================================================
 # [[0700]] IDENTIFIED MOD - CORRUPTED ITEMS
 #===============================================================================================================
@@ -2094,7 +1990,7 @@ Show # %D4 $type->corruptedid $tier->gloves_life_based
 	CorruptedMods 1
 	Class == "Gloves"
 	HasExplicitMod >=1 "Athlete's" "Virile" "of Puhuarte" "of the Underground" "Subterranean" "Elevated "
-	HasExplicitMod >=3 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Ardour" "of Buffering" "of Dispersal" "of Everlasting" "of Youth" "of Vivification" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Impregnable" "Girded" "Mirage's" "Nightmare's" "Sturdy" "Durable" "Inspired" "Interpolated" "Illusory" "Unreal" "Enveloped" "Encased" "Elusory" "Vaporous" "Legend's" "Hero's" "Beatified" "Hallowed" "Spirit's" "Cherub's" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
+	HasExplicitMod >=3 "of the Godslayer" "of the Gods" "of the Blur" "of the Wind" "of the Polymath" "of the Genius" "of Bameth" "of Exile" "of Expulsion" "of Eviction" "of Tzteosh" "of the Magma" "of the Volcano" "of the Furnace" "of Haast" "of the Ice" "of the Polar Bear" "of the Walrus" "of Ephij" "of the Lightning" "of the Maelstrom" "of the Tempest" "of the Span" "of the Rainbow" "of Variegation" "of Nullification" "of Abjuration" "of Revoking" "of Snuffing" "of Grandmastery" "of Mastery" "of Lioneye" "of the Ranger" "Zaffre" "Athlete's" "Virile" "Rotund" "of Puhuarte" "of the Underground" "Subterranean" "Elevated " "Abbot's" "Prior's" "Ram's" "Fawn's" "Nautilus's" "Urchin's"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 250 0 0 255
@@ -2143,6 +2039,21 @@ Show # %D4 $type->corruptedid $tier->quiv_dot
 #   [0801] Veiled/Betrayal - low prio veiled items
 #------------------------------------
 # !! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)"
+
+Show # %D4 $type->exoticmods $tier->fracturedveiled
+	FracturedItem True
+	Mirrored False
+	Corrupted False
+	Identified True
+	Rarity Rare
+	HasExplicitMod "Veil"
+	SetFontSize 45
+	SetTextColor 0 240 190 255
+	SetBorderColor 0 240 190 255
+	SetBackgroundColor 20 20 0 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 1 Blue Diamond
 
 Show # %D4 $type->exoticmods $tier->duoveil
 	Mirrored False
@@ -2702,12 +2613,12 @@ Show # %D5 $type->exotic->synthesised $tier->synthrandom
 #------------------------------------ 	
 # !! Waypoint c2.exotic.fractured.all : "SpecialGear - All fractured items"
 
-Show # %D6 $type->exotic->fractured $tier->fractt1
+Show # %D5 $type->exotic->fractured $tier->fractt1
 	FracturedItem True
 	Mirrored False
 	Corrupted False
 	Rarity Normal Magic Rare
-	BaseType == "Agate Amulet" "Amber Amulet" "Amethyst Ring" "Arcanist Slippers" "Archon Kite Shield" "Assassin's Mitts" "Blood Raiment" "Bone Bow" "Bone Helmet" "Bone Ring" "Broadhead Arrow Quiver" "Carnal Sceptre" "Champion Kite Shield" "Citrine Amulet" "Colossal Tower Shield" "Convening Wand" "Convoking Wand" "Copper Kris" "Coral Ring" "Crusader Boots" "Crusader Buckler" "Crusader Gloves" "Crystal Belt" "Crystal Wand" "Deicide Mask" "Demon's Horn" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Axe" "Ezomyte Spiked Shield" "Ezomyte Tower Shield" "Feathered Arrow Quiver" "Fluted Bascinet" "Fossilised Spirit Shield" "Fugitive Boots" "Gemini Claw" "General's Brigandine" "Glorious Plate" "Golden Kris" "Grove Bow" "Harmonic Spirit Shield" "Heathen Wand" "Heavy Belt" "Hubris Circlet" "Hydrascale Boots" "Hydrascale Gauntlets" "Imbued Wand" "Imperial Bow" "Imperial Buckler" "Imperial Claw" "Iolite Ring" "Ironwood Buckler" "Ivory Bow" "Jade Amulet" "Lacquered Buckler" "Lapis Amulet" "Leather Belt" "Lion Pelt" "Maraketh Bow" "Marble Amulet" "Mirrored Spiked Shield" "Murder Boots" "Murder Mitts" "Nightmare Bascinet" "Omen Wand" "Onyx Amulet" "Opal Ring" "Opal Sceptre" "Opal Wand" "Pagan Wand" "Pig-Faced Bascinet" "Piledriver" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Ruby Ring" "Sadist Garb" "Sambar Sceptre" "Sapphire Ring" "Serpentscale Boots" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Short Bow" "Siege Axe" "Silken Hood" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Spiny Round Shield" "Stealth Boots" "Stealth Gloves" "Steel Ring" "Stygian Vise" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Topaz Ring" "Tornado Wand" "Triumphant Lamellar" "Turquoise Amulet" "Two-Stone Ring" "Two-Toned Boots" "Unset Ring" "Vaal Buckler" "Vaal Gauntlets" "Vaal Greaves" "Vaal Regalia" "Vaal Sceptre" "Vaal Spirit Shield" "Vanguard Belt" "Vermillion Ring" "Void Sceptre" "Wyrmscale Boots" "Wyrmscale Gauntlets" "Zodiac Leather"
+	BaseType == "Agate Amulet" "Amethyst Ring" "Assassin's Mitts" "Bone Ring" "Broadhead Arrow Quiver" "Citrine Amulet" "Convoking Wand" "Crusader Boots" "Crystal Belt" "Deicide Mask" "Despot Axe" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Feathered Arrow Quiver" "Fossilised Spirit Shield" "Hubris Circlet" "Hydrascale Boots" "Hydrascale Gauntlets" "Imbued Wand" "Imperial Claw" "Lion Pelt" "Nightmare Bascinet" "Onyx Amulet" "Opal Sceptre" "Pig-Faced Bascinet" "Profane Wand" "Royal Burgonet" "Sadist Garb" "Sinner Tricorne" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Stealth Boots" "Stealth Gloves" "Stygian Vise" "Thicket Bow" "Titan Gauntlets" "Turquoise Amulet" "Two-Stone Ring" "Vaal Gauntlets" "Void Sceptre"
 	SetFontSize 45
 	SetTextColor 0 240 190 255
 	SetBorderColor 0 240 190 255
@@ -2721,7 +2632,19 @@ Show # %D4 $type->exotic->fractured $tier->fractt2
 	Mirrored False
 	Corrupted False
 	Rarity Normal Magic Rare
-	BaseType == "Abyssal Sceptre" "Alder Spiked Shield" "Ambush Boots" "Ambush Mitts" "Ambusher" "Ancient Gauntlets" "Ancient Greaves" "Ancient Spirit Shield" "Angelic Kite Shield" "Antique Gauntlets" "Antique Greaves" "Apothecary's Gloves" "Arcanist Gloves" "Artillery Quiver" "Assassin Bow" "Assassin's Boots" "Assassin's Garb" "Astral Plate" "Baroque Round Shield" "Battle Buckler" "Battle Lamellar" "Blazing Arrow Quiver" "Blood Sceptre" "Blue Pearl Amulet" "Blunt Arrow Quiver" "Branded Kite Shield" "Breach Ring" "Bronze Tower Shield" "Bronzescale Boots" "Bronzescale Gauntlets" "Calling Wand" "Callous Mask" "Cardinal Round Shield" "Carnal Armour" "Carnal Boots" "Carnal Mitts" "Carved Wand" "Ceremonial Kite Shield" "Cerulean Ring" "Chain Belt" "Chain Boots" "Chiming Spirit Shield" "Citadel Bow" "Clasped Boots" "Clasped Mitts" "Cloth Belt" "Coiled Wand" "Colossus Mallet" "Compound Spiked Shield" "Conjurer Boots" "Conjurer Gloves" "Coral Amulet" "Coronal Leather" "Coronal Maul" "Corrugated Buckler" "Corsair Sword" "Crested Tower Shield" "Crimson Raiment" "Crimson Round Shield" "Crusader Plate" "Crypt Armour" "Crystal Sceptre" "Cutthroat's Garb" "Deerskin Boots" "Deerskin Gloves" "Demon Dagger" "Desert Brigandine" "Destiny Leather" "Dragonscale Doublet" "Ebony Tower Shield" "Eclipse Staff" "Eelskin Boots" "Eelskin Gloves" "Elegant Ringmail" "Elegant Round Shield" "Enameled Buckler" "Engraved Wand" "Etched Kite Shield" "Eternal Sword" "Exquisite Blade" "Exquisite Leather" "Eye Gouger" "Ezomyte Burgonet" "Ezomyte Dagger" "Ezomyte Staff" "Fancy Foil" "Faun's Horn" "Fencer Helm" "Fiend Dagger" "Fingerless Silk Gloves" "Fleshripper" "Full Dragonscale" "Gilded Buckler" "Gladiator Plate" "Glorious Leather" "Goathide Gloves" "Gold Amulet" "Gold Ring" "Golden Buckler" "Golden Plate" "Goliath Gauntlets" "Goliath Greaves" "Great Crown" "Grinning Fetish" "Gripped Gloves" "Harbinger Bow" "Harlequin Mask" "Heavy Arrow Quiver" "Hellion's Paw" "Highborn Bow" "Horned Sceptre" "Hunter Hood" "Imp Dagger" "Imperial Skean" "Imperial Staff" "Infernal Axe" "Iron Ring" "Ironscale Boots" "Ironscale Gauntlets" "Ivory Spirit Shield" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Sceptre" "Lacewood Spirit Shield" "Lacquered Garb" "Lacquered Helmet" "Laminated Kite Shield" "Layered Kite Shield" "Lead Sceptre" "Legion Boots" "Legion Gloves" "Lion Sword" "Lunaris Circlet" "Maelström Staff" "Magistrate Crown" "Mahogany Tower Shield" "Maple Round Shield" "Meatgrinder" "Mesh Boots" "Mind Cage" "Moonstone Ring" "Mosaic Kite Shield" "Necromancer Circlet" "Nightmare Mace" "Noble Tricorne" "Nubuck Boots" "Nubuck Gloves" "Oak Buckler" "Occultist's Vestment" "Ochre Sceptre" "Ornate Spiked Shield" "Paua Amulet" "Paua Ring" "Penetrating Arrow Quiver" "Pinnacle Tower Shield" "Platinum Sceptre" "Polished Spiked Shield" "Prophet Crown" "Quartz Sceptre" "Quartz Wand" "Ranger Bow" "Rawhide Gloves" "Reflex Bow" "Regicide Mask" "Reinforced Greaves" "Ringmail Boots" "Ritual Sceptre" "Riveted Boots" "Royal Bow" "Royal Sceptre" "Royal Skean" "Runic Hatchet" "Rustic Sash" "Sage Wand" "Sai" "Saintly Chainmail" "Saint's Hauberk" "Samite Slippers" "Samnite Helmet" "Seaglass Amulet" "Secutor Helm" "Sekhem" "Sentinel Jacket" "Serpentscale Gauntlets" "Shackled Boots" "Shadow Sceptre" "Shagreen Tower Shield" "Sharkskin Gloves" "Sharkskin Tunic" "Sharktooth Arrow Quiver" "Siege Helmet" "Slaughter Knife" "Solaris Circlet" "Soldier Boots" "Soldier Gloves" "Sovereign Spiked Shield" "Spiked Gloves" "Spiked Round Shield" "Spike-Point Arrow Quiver" "Spiraled Foil" "Spiraled Wand" "Splendid Round Shield" "Stag Sceptre" "Steel Circlet" "Steel Kite Shield" "Steelscale Boots" "Steelscale Gauntlets" "Steelwood Bow" "Strapped Boots" "Strapped Mitts" "Studded Belt" "Sundering Axe" "Teak Round Shield" "Terror Claw" "Thorium Spirit Shield" "Throat Stabber" "Trapper Boots" "Trapper Mitts" "Two-Point Arrow Quiver" "Tyrant's Sekhem" "Ursine Pelt" "Vaal Axe" "Vaal Hatchet" "Vaal Mask" "Varnished Coat" "Vile Arrow Quiver" "Void Axe" "War Buckler" "Widowsilk Robe" "Wolf Pelt" "Zealot Boots" "Zealot Gloves"
+	BaseType == "Alder Spiked Shield" "Amber Amulet" "Ambush Boots" "Ambush Mitts" "Angelic Kite Shield" "Arcanist Gloves" "Arcanist Slippers" "Assassin's Boots" "Assassin's Garb" "Blood Raiment" "Blood Sceptre" "Bone Helmet" "Breach Ring" "Callous Mask" "Cardinal Round Shield" "Carnal Armour" "Carnal Boots" "Carnal Mitts" "Carnal Sceptre" "Conjurer Gloves" "Convening Wand" "Copper Kris" "Coral Ring" "Crusader Buckler" "Crusader Gloves" "Crystal Sceptre" "Demon's Horn" "Diamond Ring" "Eelskin Boots" "Eelskin Gloves" "Engraved Wand" "Ezomyte Axe" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Fencer Helm" "Fluted Bascinet" "Fugitive Boots" "Full Dragonscale" "Gemini Claw" "General's Brigandine" "Glorious Plate" "Golden Kris" "Goliath Gauntlets" "Goliath Greaves" "Grinning Fetish" "Gripped Gloves" "Grove Bow" "Harlequin Mask" "Harmonic Spirit Shield" "Heathen Wand" "Heavy Arrow Quiver" "Heavy Belt" "Highborn Bow" "Horned Sceptre" "Imperial Bow" "Imperial Skean" "Iolite Ring" "Ivory Bow" "Jade Amulet" "Lacquered Buckler" "Lacquered Helmet" "Lapis Amulet" "Lead Sceptre" "Leather Belt" "Legion Boots" "Legion Gloves" "Maraketh Bow" "Mind Cage" "Mirrored Spiked Shield" "Murder Boots" "Murder Mitts" "Necromancer Circlet" "Noble Tricorne" "Nubuck Gloves" "Ochre Sceptre" "Omen Wand" "Opal Ring" "Opal Wand" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Prophecy Wand" "Prophet Crown" "Regicide Mask" "Ritual Sceptre" "Royal Sceptre" "Ruby Ring" "Saintly Chainmail" "Samnite Helmet" "Sapphire Ring" "Sekhem" "Serpentscale Boots" "Serpentscale Gauntlets" "Shadow Sceptre" "Shagreen Boots" "Shagreen Gloves" "Sharkskin Boots" "Sharkskin Gloves" "Sharktooth Arrow Quiver" "Short Bow" "Siege Axe" "Siege Helmet" "Silken Hood" "Solaris Circlet" "Soldier Boots" "Soldier Gloves" "Sovereign Spiked Shield" "Steelscale Gauntlets" "Supreme Spiked Shield" "Thorium Spirit Shield" "Titan Greaves" "Titanium Spirit Shield" "Topaz Ring" "Tornado Wand" "Triumphant Lamellar" "Two-Point Arrow Quiver" "Two-Toned Boots" "Unset Ring" "Ursine Pelt" "Vaal Axe" "Vaal Greaves" "Vaal Mask" "Vaal Regalia" "Vaal Sceptre" "Vaal Spirit Shield" "Vanguard Belt" "Vermillion Ring" "Wyrmscale Boots" "Wyrmscale Gauntlets" "Zealot Boots" "Zodiac Leather"
+	SetFontSize 45
+	SetBorderColor 0 240 190 255
+	PlayAlertSound 3 300
+	PlayEffect Blue
+	MinimapIcon 2 Blue Diamond
+
+Show # %D2 $type->exotic->fractured $tier->fractt3
+	FracturedItem True
+	Mirrored False
+	Corrupted False
+	Rarity Normal Magic Rare
+	BaseType == "Abyssal Sceptre" "Ambusher" "Ancient Gauntlets" "Ancient Greaves" "Ancient Spirit Shield" "Antique Gauntlets" "Antique Greaves" "Apothecary's Gloves" "Archon Kite Shield" "Artillery Quiver" "Assassin Bow" "Astral Plate" "Aventail Helmet" "Baroque Round Shield" "Battle Buckler" "Battle Lamellar" "Blazing Arrow Quiver" "Blue Pearl Amulet" "Blunt Arrow Quiver" "Bone Bow" "Bone Circlet" "Branded Kite Shield" "Bronzescale Boots" "Bronzescale Gauntlets" "Butcher Knife" "Calling Wand" "Carved Wand" "Ceremonial Kite Shield" "Cerulean Ring" "Chain Belt" "Chain Boots" "Champion Kite Shield" "Chiming Spirit Shield" "Citadel Bow" "Clasped Boots" "Clasped Mitts" "Close Helmet" "Cloth Belt" "Coiled Wand" "Colossal Tower Shield" "Compound Spiked Shield" "Conjurer Boots" "Conquest Chainmail" "Coral Amulet" "Coronal Leather" "Corsair Sword" "Crimson Raiment" "Crimson Round Shield" "Crusader Plate" "Crypt Armour" "Crystal Wand" "Cutthroat's Garb" "Deerskin Boots" "Deerskin Gloves" "Demon Dagger" "Desert Brigandine" "Destiny Leather" "Dragonscale Doublet" "Ebony Tower Shield" "Eclipse Staff" "Eelskin Tunic" "Elegant Ringmail" "Elegant Round Shield" "Etched Kite Shield" "Eternal Sword" "Exquisite Blade" "Exquisite Leather" "Eye Gouger" "Ezomyte Blade" "Ezomyte Dagger" "Ezomyte Staff" "Ezomyte Tower Shield" "Faun's Horn" "Festival Mask" "Fiend Dagger" "Fingerless Silk Gloves" "Fire Arrow Quiver" "Fleshripper" "Frontier Leather" "Gilded Sallet" "Gladiator Helmet" "Gladiator Plate" "Glorious Leather" "Goathide Boots" "Goathide Gloves" "Gold Amulet" "Gold Ring" "Golden Buckler" "Golden Mask" "Golden Plate" "Great Crown" "Harbinger Bow" "Hunter Hood" "Imp Dagger" "Imperial Buckler" "Imperial Staff" "Iron Ring" "Ironscale Boots" "Ironscale Gauntlets" "Ironwood Buckler" "Ivory Spirit Shield" "Jewelled Foil" "Judgement Staff" "Karui Chopper" "Karui Sceptre" "Lacewood Spirit Shield" "Lacquered Garb" "Laminated Kite Shield" "Layered Kite Shield" "Leather Hood" "Lunaris Circlet" "Maelström Staff" "Magistrate Crown" "Maple Round Shield" "Marble Amulet" "Meatgrinder" "Mesh Boots" "Moonstone Ring" "Mosaic Kite Shield" "Nightmare Mace" "Noble Axe" "Noble Claw" "Nubuck Boots" "Occultist's Vestment" "Ornate Spiked Shield" "Pagan Wand" "Paua Amulet" "Paua Ring" "Penetrating Arrow Quiver" "Piledriver" "Pinnacle Tower Shield" "Plated Greaves" "Platinum Sceptre" "Polished Spiked Shield" "Quartz Wand" "Ranger Bow" "Raven Mask" "Reaver Helmet" "Reinforced Greaves" "Ringmail Boots" "Riveted Boots" "Riveted Gloves" "Royal Bow" "Royal Skean" "Runic Hatchet" "Rustic Sash" "Sage Wand" "Sai" "Saint's Hauberk" "Sambar Sceptre" "Samite Slippers" "Satin Slippers" "Scholar Boots" "Seaglass Amulet" "Secutor Helm" "Sentinel Jacket" "Shackled Boots" "Shagreen Tower Shield" "Sharkskin Tunic" "Slaughter Knife" "Sniper Bow" "Spiked Gloves" "Spiked Round Shield" "Spike-Point Arrow Quiver" "Spiny Round Shield" "Spiraled Foil" "Spiraled Wand" "Splendid Round Shield" "Steel Circlet" "Steel Gauntlets" "Steel Kite Shield" "Steel Ring" "Steelscale Boots" "Steelwood Bow" "Strapped Boots" "Strapped Mitts" "Studded Belt" "Sundering Axe" "Teak Round Shield" "Terror Claw" "Throat Stabber" "Trapper Boots" "Trapper Mitts" "Twin Claw" "Tyrant's Sekhem" "Vaal Buckler" "Vaal Hatchet" "Varnished Coat" "Vile Arrow Quiver" "Void Axe" "Widowsilk Robe" "Wolf Pelt" "Zealot Gloves" "Zealot Helmet"
 	SetFontSize 45
 	SetBorderColor 0 240 190 255
 	PlayAlertSound 3 300
@@ -3114,10 +3037,10 @@ Show # %D4 $type->normalcraft->i86 $tier->t2
 	Corrupted False
 	ItemLevel >= 86
 	Rarity Normal Magic Rare
-	BaseType == "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Astral Plate" "Blue Pearl Amulet" "Bone Ring" "Broadhead Arrow Quiver" "Cardinal Round Shield" "Cerulean Ring" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Tower Shield" "Fossilised Spirit Shield" "Full Dragonscale" "Gemini Claw" "Glorious Plate" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Imperial Claw" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pig-Faced Bascinet" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Sadist Garb" "Sambar Sceptre" "Short Bow" "Siege Axe" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Zodiac Leather"
+	BaseType == "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Astral Plate" "Blue Pearl Amulet" "Bone Ring" "Broadhead Arrow Quiver" "Cardinal Round Shield" "Cerulean Ring" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Tower Shield" "Fossilised Spirit Shield" "Full Dragonscale" "Gemini Claw" "Glorious Plate" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Imperial Claw" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pig-Faced Bascinet" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Reflex Bow" "Royal Burgonet" "Sadist Garb" "Sambar Sceptre" "Short Bow" "Siege Axe" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Zodiac Leather"
 	SetBorderColor 255 125 0 185
 
-Show # %D2 $type->normalcraft->i86 $tier->t3
+Show # %D1 $type->normalcraft->i86 $tier->t3
 	Mirrored False
 	Corrupted False
 	ItemLevel >= 86
@@ -3147,7 +3070,7 @@ Show # %D1 $type->normalcraft->i84 $tier->t2
 	Corrupted False
 	ItemLevel >= 84
 	Rarity Normal Magic Rare
-	BaseType == "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Astral Plate" "Blue Pearl Amulet" "Bone Ring" "Broadhead Arrow Quiver" "Cardinal Round Shield" "Cerulean Ring" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Tower Shield" "Fossilised Spirit Shield" "Full Dragonscale" "Gemini Claw" "Glorious Plate" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Imperial Claw" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pig-Faced Bascinet" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Sadist Garb" "Sambar Sceptre" "Short Bow" "Siege Axe" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Zodiac Leather"
+	BaseType == "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Astral Plate" "Blue Pearl Amulet" "Bone Ring" "Broadhead Arrow Quiver" "Cardinal Round Shield" "Cerulean Ring" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Tower Shield" "Fossilised Spirit Shield" "Full Dragonscale" "Gemini Claw" "Glorious Plate" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Imperial Claw" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pig-Faced Bascinet" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Reflex Bow" "Royal Burgonet" "Sadist Garb" "Sambar Sceptre" "Short Bow" "Siege Axe" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Zodiac Leather"
 	SetBorderColor 200 200 0 185
 
 #Show # $type->normalcraft->i84 $tier->t3
@@ -3176,14 +3099,14 @@ Show # %D2 $type->normalcraft->rest $tier->t1
 	PlayEffect Grey
 	MinimapIcon 2 Grey Diamond
 
-Show # %D0 $type->normalcraft->rest $tier->t2
-	Mirrored False
-	Corrupted False
-	ItemLevel <= 83
-	ItemLevel >= 68
-	Rarity Normal Magic Rare
-	BaseType == "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Astral Plate" "Blue Pearl Amulet" "Bone Ring" "Broadhead Arrow Quiver" "Cardinal Round Shield" "Cerulean Ring" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Tower Shield" "Fossilised Spirit Shield" "Full Dragonscale" "Gemini Claw" "Glorious Plate" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Imperial Claw" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pig-Faced Bascinet" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Royal Burgonet" "Sadist Garb" "Sambar Sceptre" "Short Bow" "Siege Axe" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Zodiac Leather"
-	SetBorderColor 100 100 100 150
+#Show # %D0 $type->normalcraft->rest $tier->t2
+#	Mirrored False
+#	Corrupted False
+#	ItemLevel <= 83
+#	ItemLevel >= 68
+#	Rarity Normal Magic Rare
+#	BaseType == "Amethyst Ring" "Archon Kite Shield" "Artillery Quiver" "Astral Plate" "Blue Pearl Amulet" "Bone Ring" "Broadhead Arrow Quiver" "Cardinal Round Shield" "Cerulean Ring" "Colossal Tower Shield" "Convoking Wand" "Copper Kris" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Despot Axe" "Diamond Ring" "Dragonscale Boots" "Dragonscale Gauntlets" "Eternal Burgonet" "Ezomyte Tower Shield" "Fossilised Spirit Shield" "Full Dragonscale" "Gemini Claw" "Glorious Plate" "Golden Kris" "Hubris Circlet" "Imbued Wand" "Imperial Claw" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Onyx Amulet" "Opal Sceptre" "Opal Wand" "Pig-Faced Bascinet" "Platinum Kris" "Praetor Crown" "Primal Arrow Quiver" "Prismatic Ring" "Profane Wand" "Prophecy Wand" "Reflex Bow" "Royal Burgonet" "Sadist Garb" "Sambar Sceptre" "Short Bow" "Siege Axe" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Spine Bow" "Supreme Spiked Shield" "Thicket Bow" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Two-Stone Ring" "Unset Ring" "Vaal Regalia" "Vanguard Belt" "Void Sceptre" "Zodiac Leather"
+#	SetBorderColor 100 100 100 150
 
 #Show # $type->normalcraft->rest $tier->t3
 #	Mirrored False
@@ -3234,14 +3157,14 @@ Show # $type->decorator->craftinggeneric $tier->normaldecoratorremover
 # Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
 # Having this list too long will lead to being too flooded with these drops.
 
-Show # %D0 $type->normalcraft->extra $tier->any
-	Mirrored False
-	Corrupted False
-	ItemLevel >= 68
-	ItemLevel <= 83
-	Rarity Normal
-	BaseType == "Amethyst Ring" "Convoking Wand" "Imbued Wand" "Imperial Claw" "Spine Bow" "Two-Stone Ring"
-	SetBorderColor 100 100 100 150
+#Show # %D0 $type->normalcraft->extra $tier->any
+#	Mirrored False
+#	Corrupted False
+#	ItemLevel >= 68
+#	ItemLevel <= 83
+#	Rarity Normal
+#	BaseType == "Amethyst Ring" "Convoking Wand" "Imbued Wand" "Imperial Claw" "Spine Bow" "Two-Stone Ring"
+#	SetBorderColor 100 100 100 150
 
 #Show # %D1 $type->normalcraft->lowstrict $tier->overquality
 #	Mirrored False
@@ -3274,56 +3197,56 @@ Show # %D1 $type->normalcraft->lowstrict $tier->earlyendgame4link
 #------------------------------------
 # !! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
 
-Show # %D1 $type->chiselrecipe $tier->chisel20
-	Quality >= 20
-	Rarity Normal Magic Rare
-	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 200 200 200 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D0 $type->chiselrecipe $tier->chisel20
+#	Quality >= 20
+#	Rarity Normal Magic Rare
+#	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
+#	SetFontSize 40
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 200 200 200 255
+#	SetBackgroundColor 130 110 110 255
 
-Show # %D0 $type->chiselrecipe $tier->chiselhighqualnormal
-	Mirrored False
-	Corrupted False
-	Quality >= 15
-	Rarity Normal
-	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
-	SetFontSize 35
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D0 $type->chiselrecipe $tier->chiselhighqualnormal
+#	Mirrored False
+#	Corrupted False
+#	Quality >= 15
+#	Rarity Normal
+#	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
+#	SetFontSize 35
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 0 0 0 255
+#	SetBackgroundColor 130 110 110 255
 
-Show # %D0 $type->chiselrecipe $tier->chiselhighqualmagic
-	Mirrored False
-	Corrupted False
-	Quality >= 18
-	Rarity Magic
-	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
-	SetFontSize 35
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D0 $type->chiselrecipe $tier->chiselhighqualmagic
+#	Mirrored False
+#	Corrupted False
+#	Quality >= 18
+#	Rarity Magic
+#	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
+#	SetFontSize 35
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 0 0 0 255
+#	SetBackgroundColor 130 110 110 255
 
-Show # %D0 $type->chiselrecipe $tier->chiselanyqualmagic
-	Mirrored False
-	Corrupted False
-	Rarity Magic
-	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
-	SetFontSize 35
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D0 $type->chiselrecipe $tier->chiselanyqualmagic
+#	Mirrored False
+#	Corrupted False
+#	Rarity Magic
+#	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
+#	SetFontSize 35
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 0 0 0 255
+#	SetBackgroundColor 130 110 110 255
 
-Show # %D0 $type->chiselrecipe $tier->chiselanyqualnormal
-	Mirrored False
-	Corrupted False
-	Rarity Normal
-	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
-	SetFontSize 35
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D0 $type->chiselrecipe $tier->chiselanyqualnormal
+#	Mirrored False
+#	Corrupted False
+#	Rarity Normal
+#	BaseType == "Gavel" "Rock Breaker" "Stone Hammer"
+#	SetFontSize 35
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 0 0 0 255
+#	SetBackgroundColor 130 110 110 255
 
 #===============================================================================================================
 # [[1300]] Chancing Bases
@@ -3423,6 +3346,7 @@ Show # %D4 $type->endgameflasks $tier->utility82
 	SetFontSize 40
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 25 100 75
+	PlayEffect Grey Temp
 
 Show # %D3 $type->endgameflasks $tier->lifemana82
 	Mirrored False
@@ -3441,7 +3365,7 @@ Show # %D3 $type->endgameflasks $tier->lifemana82
 #------------------------------------
 # !! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
 
-Show # %D3 $type->endgameflasks $tier->any20qualflask
+Show # %D2 $type->endgameflasks $tier->any20qualflask
 	Quality >= 20
 	Rarity Normal
 	Class == "Hybrid Flasks" "Life Flasks" "Mana Flasks" "Utility Flasks"
@@ -3464,40 +3388,42 @@ Show # %D4 $type->endgameflasks $tier->earlymappingflasks
 	SetFontSize 40
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 25 100 75
+	PlayEffect Grey Temp
 
-Show # %D2 $type->endgameflasks $tier->anyutility
+Show # %D3 $type->endgameflasks $tier->anyutility
 	Rarity Normal Magic
 	Class == "Utility Flasks"
 	AreaLevel >= 68
 	SetFontSize 40
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 25 100 75
+	PlayEffect Grey Temp
 
 #------------------------------------
 #   [1404] Quality Low
 #------------------------------------
 
-Show # %D1 $type->endgameflasks $tier->qualityhigh
-	Quality >= 15
-	Rarity Normal Magic
-	Class == "Hybrid Flasks" "Life Flasks" "Mana Flasks" "Utility Flasks"
-	AreaLevel >= 68
-	AreaLevel <= 77
-	SetFontSize 40
-	SetTextColor 0 0 0 255
-	SetBorderColor 200 200 200 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D1 $type->endgameflasks $tier->qualityhigh
+#	Quality >= 15
+#	Rarity Normal Magic
+#	Class == "Hybrid Flasks" "Life Flasks" "Mana Flasks" "Utility Flasks"
+#	AreaLevel >= 68
+#	AreaLevel <= 77
+#	SetFontSize 40
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 200 200 200 255
+#	SetBackgroundColor 130 110 110 255
 
-Show # %D0 $type->endgameflasks $tier->qualitylow
-	Quality >= 1
-	Rarity Normal Magic
-	Class == "Hybrid Flasks" "Life Flasks" "Mana Flasks" "Utility Flasks"
-	AreaLevel >= 68
-	AreaLevel <= 77
-	SetFontSize 35
-	SetTextColor 0 0 0 255
-	SetBorderColor 0 0 0 255
-	SetBackgroundColor 130 110 110 255
+#Show # %D0 $type->endgameflasks $tier->qualitylow
+#	Quality >= 1
+#	Rarity Normal Magic
+#	Class == "Hybrid Flasks" "Life Flasks" "Mana Flasks" "Utility Flasks"
+#	AreaLevel >= 68
+#	AreaLevel <= 77
+#	SetFontSize 35
+#	SetTextColor 0 0 0 255
+#	SetBorderColor 0 0 0 255
+#	SetBackgroundColor 130 110 110 255
 
 #------------------------------------
 #   [1405] Early mapping life/mana/utility flasks
@@ -3608,6 +3534,14 @@ Show # $type->decorators->rareeg $tier->tinyrares
 	Rarity Rare
 	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
 	SetBorderColor 50 200 50 255
+	Continue
+
+Show # $type->decorators->rareeg $tier->fourlinkedrares
+	LinkedSockets >= 4
+	ItemLevel >= 68
+	Rarity Rare
+	Class == "Amulets" "Belts" "Body Armours" "Boots" "Bows" "Claws" "Daggers" "Gloves" "Helmets" "One Hand Axes" "One Hand Maces" "One Hand Swords" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Staves" "Thrusting One Hand Swords" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wands" "Warstaves"
+	SetBorderColor 0 140 240 255
 	Continue
 
 Show # $type->decorators->rareeg $tier->ilvl68
@@ -3751,7 +3685,7 @@ Show # %H4 $type->rare->exotic->talisman $tier->t2stattalisman
 	PlayEffect Blue
 	MinimapIcon 1 Blue Diamond
 
-Show # %H3 $type->rare->exotic->talisman $tier->t3decenttypetalisman
+Show # %H2 $type->rare->exotic->talisman $tier->t3decenttypetalisman
 	AnyEnchantment True
 	ItemLevel >= 68
 	Rarity Rare
@@ -3764,7 +3698,7 @@ Show # %H3 $type->rare->exotic->talisman $tier->t3decenttypetalisman
 	PlayEffect Blue
 	MinimapIcon 2 Blue Diamond
 
-Show # %H1 $type->rare->exotic->talisman $tier->any
+Show # %H0 $type->rare->exotic->talisman $tier->any
 	AnyEnchantment True
 	ItemLevel >= 68
 	Rarity Rare
@@ -5653,7 +5587,7 @@ Show # $type->gems-generic $tier->decogemsvaalbgdrop
 	SetBackgroundColor 55 0 0 255
 	Continue
 
-Show # %D6 $type->gems-generic $tier->qt2
+Show # %D5 $type->gems-generic $tier->qt2
 	Quality >= 20
 	Class == "Skill Gems" "Support Gems"
 	SetFontSize 45
@@ -5664,7 +5598,7 @@ Show # %D6 $type->gems-generic $tier->qt2
 	PlayEffect White
 	MinimapIcon 1 Yellow Triangle
 
-Show # %DS4 $type->gems-generic $tier->lt2
+Show # %D5 $type->gems-generic $tier->lt2
 	GemLevel >= 20
 	Class == "Skill Gems" "Support Gems"
 	SetFontSize 45
@@ -5674,7 +5608,7 @@ Show # %DS4 $type->gems-generic $tier->lt2
 	PlayEffect Grey
 	MinimapIcon 1 White Triangle
 
-Show # %D5 $type->gems-generic $tier->qt3
+Show # %D4 $type->gems-generic $tier->qt3
 	Quality >= 14
 	Class == "Skill Gems" "Support Gems"
 	SetFontSize 45
@@ -5704,7 +5638,7 @@ Show # %D4 $type->gems-generic $tier->qt4lvl
 	PlayEffect Grey
 	MinimapIcon 1 White Triangle
 
-Show # %D4 $type->gems-generic $tier->qt4
+Show # %D3 $type->gems-generic $tier->qt4
 	Quality >= 1
 	Class == "Skill Gems" "Support Gems"
 	SetFontSize 45
@@ -5713,14 +5647,14 @@ Show # %D4 $type->gems-generic $tier->qt4
 	PlayEffect Grey Temp
 	MinimapIcon 1 Grey Triangle
 
-Show # %D0 $type->gems-generic $tier->lt4
-	GemLevel >= 2
-	Class == "Skill Gems" "Support Gems"
-	SetFontSize 45
-	SetTextColor 30 190 190 255
-	SetBorderColor 40 130 130 255
-	PlayEffect Grey Temp
-	MinimapIcon 1 Grey Triangle
+#Show # %D0 $type->gems-generic $tier->lt4
+#	GemLevel >= 2
+#	Class == "Skill Gems" "Support Gems"
+#	SetFontSize 45
+#	SetTextColor 30 190 190 255
+#	SetBorderColor 40 130 130 255
+#	PlayEffect Grey Temp
+#	MinimapIcon 1 Grey Triangle
 
 # !! Waypoint c8.gems.low : "Gem Rules - First Zones, Leveling, Vaal"
 
@@ -7082,7 +7016,7 @@ Hide # $type->currency->heist $tier->exhide
 
 Show # $type->currency $tier->t1exalted
 	Class == "Stackable Currency"
-	BaseType == "Albino Rhoa Feather" "Awakener's Orb" "Blessing of Chayula" "Blessing of Esh" "Blessing of Tul" "Blessing of Uul-Netol" "Blessing of Xoph" "Divine Orb" "Eternal Orb" "Fracturing Orb" "Fracturing Shard" "Hunter's Exalted Orb" "Mirror of Kalandra" "Mirror Shard" "Orb of Dominance" "Sacred Crystallised Lifeforce" "Tainted Divine Teardrop" "Tainted Orb of Fusing" "Valdo's Puzzle Box"
+	BaseType == "Albino Rhoa Feather" "Awakener's Orb" "Blessing of Chayula" "Blessing of Esh" "Blessing of Tul" "Blessing of Uul-Netol" "Blessing of Xoph" "Divine Orb" "Eternal Orb" "Fracturing Orb" "Fracturing Shard" "Hinekora's Lock" "Hunter's Exalted Orb" "Mirror of Kalandra" "Mirror Shard" "Orb of Dominance" "Sacred Crystallised Lifeforce" "Tainted Divine Teardrop" "Tainted Orb of Fusing" "Valdo's Puzzle Box"
 	SetFontSize 45
 	SetTextColor 255 0 0 255
 	SetBorderColor 255 0 0 255
@@ -7093,7 +7027,7 @@ Show # $type->currency $tier->t1exalted
 
 Show # $type->currency $tier->t2divine
 	Class == "Stackable Currency"
-	BaseType == "Crescent Splinter" "Crusader's Exalted Orb" "Eldritch Chaos Orb" "Eldritch Orb of Annulment" "Elevated Sextant" "Exalted Orb" "Orb of Conflict" "Redeemer's Exalted Orb" "Sacred Orb" "Tailoring Orb" "Tainted Catalyst" "Tempering Orb" "Warlord's Exalted Orb"
+	BaseType == "Crescent Splinter" "Crusader's Exalted Orb" "Eldritch Chaos Orb" "Eldritch Orb of Annulment" "Elevated Sextant" "Exalted Orb" "Orb of Conflict" "Redeemer's Exalted Orb" "Sacred Orb" "Tailoring Orb" "Tainted Catalyst" "Tempering Orb" "Veiled Orb" "Warlord's Exalted Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -7104,7 +7038,7 @@ Show # $type->currency $tier->t2divine
 
 Show # $type->currency $tier->t3annul
 	Class == "Stackable Currency"
-	BaseType == "Ancient Orb" "Burial Medallion" "Comprehensive Scouting Report" "Eldritch Exalted Orb" "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor" "Exotic Coinage" "Fertile Catalyst" "Influenced Scouting Report" "Oil Extractor" "Orb of Annulment" "Otherworldly Scouting Report" "Prismatic Catalyst" "Tainted Chaos Orb" "Tainted Chromatic Orb" "Tainted Exalted Orb" "Tainted Mythic Orb" "Veiled Chaos Orb"
+	BaseType == "Ancient Orb" "Burial Medallion" "Comprehensive Scouting Report" "Eldritch Exalted Orb" "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor" "Exotic Coinage" "Fertile Catalyst" "Influenced Scouting Report" "Oil Extractor" "Orb of Annulment" "Otherworldly Scouting Report" "Prismatic Catalyst" "Tainted Chaos Orb" "Tainted Chromatic Orb" "Tainted Exalted Orb" "Tainted Mythic Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -7604,17 +7538,6 @@ Show # $type->currency->incubators $tier->restex
 #------------------------------------
 #   [3808] Trial of the Ancestors
 #------------------------------------
-
-Show # $type->currency->trial->orblike $tier->t1
-	Class == "Stackable Currency"
-	BaseType == "Hinekora's Lock"
-	SetFontSize 45
-	SetTextColor 255 0 0 255
-	SetBorderColor 255 0 0 255
-	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
-	PlayEffect Red
-	MinimapIcon 0 Red Star
 
 Show # $type->currency->trial->omen $tier->t1
 	Class == "Stackable Currency"
@@ -8283,9 +8206,20 @@ Show # %D4 $type->uniques $tier->5link
 	PlayEffect Blue
 	MinimapIcon 1 Blue Star
 
-Show # $type->uniques $tier->multispecial
+Show # $type->uniques $tier->multispecialhigh
 	Rarity Unique
-	BaseType == "Amber Amulet" "Amethyst Flask" "Amethyst Ring" "Archon Kite Shield" "Blood Raiment" "Carved Wand" "Censer Relic" "Fiend Dagger" "Heavy Belt" "Hydrascale Gauntlets" "Imperial Bow" "Imperial Claw" "Imperial Skean" "Jade Amulet" "Karui Sceptre" "Lapis Amulet" "Leather Belt" "Magistrate Crown" "Moonstone Ring" "Murder Boots" "Murder Mitts" "Necromancer Silks" "Onyx Amulet" "Paua Amulet" "Sadist Garb" "Sage's Robe" "Savant's Robe" "Small Cluster Jewel" "Spidersilk Robe" "Spine Bow" "Titanium Spirit Shield" "Turquoise Amulet" "Vaal Claw" "Zodiac Leather"
+	BaseType == "Heavy Belt" "Leather Belt" "Small Cluster Jewel"
+	SetFontSize 45
+	SetTextColor 0 0 0 255
+	SetBorderColor 0 0 0 255
+	SetBackgroundColor 175 96 37 255
+	PlayAlertSound 2 300
+	PlayEffect Blue
+	MinimapIcon 1 Blue Star
+
+Show # %H5 $type->uniques $tier->multispecial
+	Rarity Unique
+	BaseType == "Amber Amulet" "Amethyst Flask" "Amethyst Ring" "Archon Kite Shield" "Blood Raiment" "Carved Wand" "Censer Relic" "Fiend Dagger" "Gold Ring" "Hydrascale Gauntlets" "Imperial Bow" "Imperial Claw" "Imperial Skean" "Jade Amulet" "Karui Sceptre" "Lapis Amulet" "Magistrate Crown" "Moonstone Ring" "Murder Boots" "Murder Mitts" "Necromancer Silks" "Onyx Amulet" "Paua Amulet" "Sadist Garb" "Sage's Robe" "Savant's Robe" "Spidersilk Robe" "Spine Bow" "Titanium Spirit Shield" "Turquoise Amulet" "Vaal Claw" "Zodiac Leather"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -8386,7 +8320,7 @@ Show # %D5 $type->uniques $tier->corrupteduniques
 #   [4306] Tier 3 uniques 
 #------------------------------------
 
-Show # $type->uniques $tier->t3boss
+Show # %H5 $type->uniques $tier->t3boss
 	Rarity Unique
 	BaseType == "Agate Amulet" "Ambush Mitts" "Ambusher" "Ancient Gauntlets" "Assassin's Boots" "Assassin's Mitts" "Bismuth Flask" "Blood Sceptre" "Broadhead Arrow Quiver" "Butcher Axe" "Cardinal Round Shield" "Carnal Armour" "Carnal Mitts" "Chain Belt" "Citadel Bow" "Cloth Belt" "Coffer Relic" "Coiled Staff" "Colossal Tower Shield" "Colosseum Plate" "Crimson Round Shield" "Crusader Gloves" "Crystal Belt" "Dragonscale Boots" "Ezomyte Burgonet" "Ezomyte Spiked Shield" "Ezomyte Staff" "Fingerless Silk Gloves" "Fugitive Boots" "Golden Plate" "Goliath Greaves" "Graceful Sword" "Great Crown" "Harlequin Mask" "Hubris Circlet" "Hydrascale Boots" "Infernal Sword" "Iron Flask" "Judgement Staff" "Lacquered Helmet" "Legion Sword" "Maple Round Shield" "Necromancer Circlet" "Nightmare Mace" "Opal Ring" "Opal Wand" "Praetor Crown" "Primal Arrow Quiver" "Primordial Staff" "Prophet Crown" "Quarterstaff" "Royal Burgonet" "Ruby Ring" "Runic Crown" "Runic Gages" "Runic Gauntlets" "Runic Helm" "Runic Sabatons" "Runic Sollerets" "Sacrificial Garb" "Sage Wand" "Saint's Hauberk" "Sapphire Ring" "Sentinel Jacket" "Serpentine Staff" "Silken Hood" "Silver Flask" "Slink Boots" "Soldier Gloves" "Sorcerer Boots" "Spiked Gloves" "Steel Kite Shield" "Steel Ring" "Steelscale Gauntlets" "Steelwood Bow" "Sulphur Flask" "Titan Greaves" "Tome Relic" "Topaz Flask" "Topaz Ring" "Tornado Wand" "Triumphant Lamellar" "Unset Ring" "Vaal Axe" "Vaal Gauntlets" "Vaal Greaves" "Vaal Regalia" "Vaal Sceptre" "Vaal Spirit Shield" "Varnished Coat" "Visored Sallet" "Void Sceptre" "Widowsilk Robe"
 	SetFontSize 45
@@ -8399,7 +8333,7 @@ Show # $type->uniques $tier->t3boss
 
 Show # %H4 $type->uniques $tier->t3
 	Rarity Unique
-	BaseType == "Assassin Bow" "Astral Plate" "Blue Pearl Amulet" "Blunt Arrow Quiver" "Branded Kite Shield" "Brass Spirit Shield" "Carnal Boots" "Citrine Amulet" "Crystal Sceptre" "Desert Brigandine" "Ezomyte Dagger" "Festival Mask" "Full Wyrmscale" "Gavel" "Gold Amulet" "Gold Ring" "Granite Flask" "Hellion's Paw" "Highborn Staff" "Imbued Wand" "Imperial Staff" "Iron Ring" "Jewelled Foil" "Jingling Spirit Shield" "Lacquered Garb" "Large Hybrid Flask" "Legion Boots" "Majestic Plate" "Nubuck Boots" "Occultist's Vestment" "Paua Ring" "Plated Greaves" "Prismatic Ring" "Raven Mask" "Reinforced Greaves" "Royal Bow" "Saintly Chainmail" "Scholar's Robe" "Serpentscale Gauntlets" "Solaris Circlet" "Stealth Boots" "Stibnite Flask" "Trapper Boots" "Two-Stone Ring" "Vaal Blade" "Vaal Mask" "Void Axe" "Wolf Pelt"
+	BaseType == "Assassin Bow" "Astral Plate" "Blue Pearl Amulet" "Blunt Arrow Quiver" "Branded Kite Shield" "Brass Spirit Shield" "Carnal Boots" "Citrine Amulet" "Crystal Sceptre" "Desert Brigandine" "Ezomyte Dagger" "Festival Mask" "Full Wyrmscale" "Gavel" "Gold Amulet" "Granite Flask" "Hellion's Paw" "Highborn Staff" "Imbued Wand" "Imperial Staff" "Iron Ring" "Jewelled Foil" "Jingling Spirit Shield" "Lacquered Garb" "Large Hybrid Flask" "Legion Boots" "Majestic Plate" "Nubuck Boots" "Occultist's Vestment" "Paua Ring" "Plated Greaves" "Prismatic Ring" "Raven Mask" "Reinforced Greaves" "Royal Bow" "Saintly Chainmail" "Scholar's Robe" "Serpentscale Gauntlets" "Solaris Circlet" "Stealth Boots" "Stibnite Flask" "Trapper Boots" "Two-Stone Ring" "Vaal Blade" "Vaal Mask" "Void Axe" "Wolf Pelt"
 	SetFontSize 45
 	SetTextColor 175 96 37 255
 	SetBorderColor 175 96 37 255
@@ -8599,6 +8533,7 @@ Show # %H3 $type->leveling->flasks->utility $tier->any
 	SetFontSize 40
 	SetBorderColor 0 0 0 255
 	SetBackgroundColor 25 100 75
+	PlayEffect Grey Temp
 
 Show # %D3 $type->leveling->flasks->quality $tier->max
 	Quality >= 20

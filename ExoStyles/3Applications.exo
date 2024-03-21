@@ -43,10 +43,6 @@ Style MainRules
 	Apply(meta.hide ,HideLayer* => !UniversalHideLayer.any);
 	Apply(meta.safe, *.restex => !UniversalValueAccents.restex);
 
-	## 6L
-	Apply(6L, 6Links.others => SixLinkVariant.t2);
-	Apply(6L, 6Links.hightier => SixLinkVariant.t1);
-
 	## influenced and eldritch
 	Apply(influenced, $Maps.T1 => InfluencedMapsStrategy)
 	Apply(influenced, Influenced.t1* => InfluencedVariant.t1);
