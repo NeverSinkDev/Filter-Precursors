@@ -150,9 +150,10 @@
 # [[3000]] REPLICA UNIQUES
 # [[3100]] Special Maps
 #   [3101] Unique Maps
-#   [3102] Blighted maps
-#   [3103] Delirium/Blight/Enchanted Maps!
-#   [3104] Beyond-Nemesis Maps, for those juicy sextants.
+#   [3102] T17 maps
+#   [3103] Blighted maps
+#   [3104] Delirium/Blight/Enchanted Maps!
+#   [3105] Beyond-Nemesis Maps, for those juicy sextants.
 # [[3200]] Normal Map Progression
 #   [3201] Generic Decorators
 #   [3202] Map progression
@@ -239,7 +240,7 @@ Show # $type->6l $tier->hightier
 	PlayEffect Red
 	MinimapIcon 0 Red Diamond
 
-Show # $type->6l $tier->others
+Show # %D5 $type->6l $tier->others
 	LinkedSockets 6
 	Rarity Normal Magic Rare
 	SetFontSize 45
@@ -2835,7 +2836,7 @@ Show # %DS3 $type->socketslinks $tier->6sockets
 #   [1201] Expensive Atlas 86 Bases - matched by economy
 #------------------------------------
 
-Show # %D6 $type->crafting->expensive $tier->any
+Show # %D5 $type->crafting->expensive $tier->any
 	Mirrored False
 	Corrupted False
 	ItemLevel >= 86
@@ -2854,14 +2855,14 @@ Show # %D6 $type->crafting->expensive $tier->any
 #------------------------------------
 # !! Waypoint c3.gear.perfectionbased.all : "Crafting Bases - Items with perfect variable defense rolls (Sacred Orb roll)"
 
-Show # %D5 $type->crafting->perfectarmours $tier->t1
+Show # %D4 $type->crafting->perfectarmours $tier->t1
 	Mirrored False
 	Corrupted False
 	ItemLevel >= 86
 	BaseDefencePercentile >= 99
 	Rarity Normal Magic Rare
 	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Apothecary's Gloves" "Bone Helmet" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Spiked Gloves" "Two-Toned Boots"
+	BaseType == "Cardinal Round Shield" "Champion Kite Shield" "Colossal Tower Shield" "Crusader Boots" "Crusader Gloves" "Dragonscale Boots" "Dragonscale Gauntlets" "Glorious Plate" "Hubris Circlet" "Lacquered Buckler" "Lion Pelt" "Murder Boots" "Murder Mitts" "Pig-Faced Bascinet" "Praetor Crown" "Royal Burgonet" "Sadist Garb" "Saintly Chainmail" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Supreme Spiked Shield" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Mask" "Vaal Regalia" "Zodiac Leather"
 	SetFontSize 45
 	SetTextColor 255 140 0 255
 	SetBorderColor 176 0 198 255
@@ -2869,35 +2870,20 @@ Show # %D5 $type->crafting->perfectarmours $tier->t1
 	PlayEffect Purple
 	MinimapIcon 0 Purple Moon
 
-Show # %D4 $type->crafting->perfectarmours $tier->t2
-	Mirrored False
-	Corrupted False
-	ItemLevel >= 86
-	BaseDefencePercentile >= 99
-	Rarity Normal Magic Rare
-	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Archon Kite Shield" "Assassin's Garb" "Astral Plate" "Cardinal Round Shield" "Colossal Tower Shield" "Eternal Burgonet" "Fossilised Spirit Shield" "Hubris Circlet" "Lacquered Buckler" "Lion Pelt" "Nightmare Bascinet" "Pig-Faced Bascinet" "Royal Burgonet" "Slink Boots" "Slink Gloves" "Sorcerer Boots" "Sorcerer Gloves" "Titan Gauntlets" "Titan Greaves" "Titanium Spirit Shield" "Triumphant Lamellar" "Vaal Regalia" "Zodiac Leather"
-	SetFontSize 45
-	SetTextColor 255 140 0 255
-	SetBorderColor 176 0 198 255
-	PlayAlertSound 3 300
-	PlayEffect Purple
-	MinimapIcon 0 Purple Moon
-
-Show # %D2 $type->crafting->perfectarmours $tier->t3
-	Mirrored False
-	Corrupted False
-	ItemLevel >= 86
-	BaseDefencePercentile >= 99
-	Rarity Normal Magic Rare
-	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
-	BaseType == "Carnal Armour" "Champion Kite Shield" "Crusader Boots" "Crusader Gloves" "Deicide Mask" "Dragonscale Boots" "Dragonscale Gauntlets" "Elegant Round Shield" "Glorious Plate" "Imperial Buckler" "Murder Boots" "Murder Mitts" "Occultist's Vestment" "Praetor Crown" "Sadist Garb" "Saintly Chainmail" "Saint's Hauberk" "Supreme Spiked Shield"
-	SetFontSize 45
-	SetTextColor 255 140 0 255
-	SetBorderColor 176 0 198 255
-	PlayAlertSound 3 300
-	PlayEffect Purple
-	MinimapIcon 0 Purple Moon
+#Show # %D0 $type->crafting->perfectarmours $tier->t2
+#	Mirrored False
+#	Corrupted False
+#	ItemLevel >= 86
+#	BaseDefencePercentile >= 99
+#	Rarity Normal Magic Rare
+#	Class == "Body Armours" "Boots" "Gloves" "Helmets" "Shields"
+#	BaseType == "Apothecary's Gloves" "Archon Kite Shield" "Astral Plate" "Bone Helmet" "Carnal Armour" "Deicide Mask" "Eternal Burgonet" "Fingerless Silk Gloves" "Fugitive Boots" "Gripped Gloves" "Nightmare Bascinet" "Saint's Hauberk" "Spiked Gloves" "Two-Toned Boots"
+#	SetFontSize 45
+#	SetTextColor 255 140 0 255
+#	SetBorderColor 176 0 198 255
+#	PlayAlertSound 3 300
+#	PlayEffect Purple
+#	MinimapIcon 0 Purple Moon
 
 #------------------------------------
 #   [1203] RGB Endgame
@@ -5840,7 +5826,23 @@ Show # $type->uniques->maps $tier->restex
 	MinimapIcon 0 Pink Circle
 
 #------------------------------------
-#   [3102] Blighted maps
+#   [3102] T17 maps
+#------------------------------------
+# !! Waypoint c9.maps.special.t17 : "Maps - T17 purple tier maps"
+
+Show # $type->maps->t17uber $tier->any
+	MapTier >= 17
+	Class == "Maps"
+	SetFontSize 45
+	SetTextColor 100 0 122 255
+	SetBorderColor 100 0 122 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 1 300
+	PlayEffect Red
+	MinimapIcon 0 Red Square
+
+#------------------------------------
+#   [3103] Blighted maps
 #------------------------------------
 # !! Waypoint c9.maps.special.all : "Maps - Blighted, Enchanted, Delirium maps"
 
@@ -5879,7 +5881,7 @@ Show # %H5 $type->maps->blighted $tier->any
 	MinimapIcon 1 Purple Square
 
 #------------------------------------
-#   [3103] Delirium/Blight/Enchanted Maps!
+#   [3104] Delirium/Blight/Enchanted Maps!
 #------------------------------------
 
 Show # %D6 $type->maps->enchanted $tier->t1
@@ -5929,7 +5931,7 @@ Show # %D5 $type->maps->implicitmod $tier->any
 	MinimapIcon 1 Purple Square
 
 #------------------------------------
-#   [3104] Beyond-Nemesis Maps, for those juicy sextants.
+#   [3105] Beyond-Nemesis Maps, for those juicy sextants.
 #------------------------------------
 
 #Show # $type->maps->identified $tier->nemesisbeyond
@@ -6408,7 +6410,7 @@ Show # %DS4 $type->fragments->stacked $tier->t3
 Show # $type->fragments->stackedscarabs $tier->t3
 	StackSize >= 3
 	Class == "Map Fragments"
-	BaseType == "Polished Bestiary Scarab" "Polished Breach Scarab" "Polished Cartography Scarab" "Polished Elder Scarab" "Polished Harbinger Scarab" "Polished Shaper Scarab" "Polished Torment Scarab" "Polished Ultimatum Scarab" "Rusted Abyss Scarab" "Rusted Ambush Scarab" "Rusted Bestiary Scarab" "Rusted Blight Scarab" "Rusted Breach Scarab" "Rusted Cartography Scarab" "Rusted Divination Scarab" "Rusted Elder Scarab" "Rusted Harbinger Scarab" "Rusted Reliquary Scarab" "Rusted Shaper Scarab" "Rusted Torment Scarab" "Rusted Ultimatum Scarab"
+	BaseType == "Abyss Scarab" "Ambush Scarab" "Anarchy Scarab" "Bestiary Scarab" "Betrayal Scarab" "Beyond Scarab" "Blight Scarab" "Breach Scarab" "Cartography Scarab" "Delirium Scarab" "Divination Scarab" "Domination Scarab" "Essence Scarab" "Expedition Scarab" "Harbinger Scarab" "Harvest Scarab" "Incursion Scarab" "Legion Scarab" "Reliquary Scarab" "Sulphite Scarab" "Torment Scarab" "Ultimatum Scarab"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -6423,7 +6425,7 @@ Show # $type->fragments->stackedscarabs $tier->t3
 
 Show # $type->fragments->scarabs $tier->t1
 	Class == "Map Fragments"
-	BaseType == "Winged Divination Scarab" "Winged Reliquary Scarab"
+	BaseType == "Bestiary Scarab of the Black Mórrigan"
 	SetFontSize 45
 	SetTextColor 159 15 213 255
 	SetBorderColor 159 15 213 255
@@ -6434,7 +6436,7 @@ Show # $type->fragments->scarabs $tier->t1
 
 Show # $type->fragments->scarabs $tier->t2
 	Class == "Map Fragments"
-	BaseType == "Gilded Divination Scarab" "Polished Legion Scarab" "Winged Abyss Scarab" "Winged Ambush Scarab" "Winged Bestiary Scarab" "Winged Blight Scarab" "Winged Breach Scarab" "Winged Cartography Scarab" "Winged Elder Scarab" "Winged Expedition Scarab" "Winged Harbinger Scarab" "Winged Legion Scarab" "Winged Shaper Scarab" "Winged Sulphite Scarab" "Winged Torment Scarab" "Winged Ultimatum Scarab"
+	BaseType == "Horned Scarab of Awakening" "Horned Scarab of Bloodlines" "Horned Scarab of Glittering" "Horned Scarab of Nemeses" "Horned Scarab of Pandemonium" "Horned Scarab of Preservation" "Horned Scarab of Tradition"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -6445,7 +6447,7 @@ Show # $type->fragments->scarabs $tier->t2
 
 Show # $type->fragments->scarabs $tier->t3
 	Class == "Map Fragments"
-	BaseType == "Gilded Abyss Scarab" "Gilded Ambush Scarab" "Gilded Bestiary Scarab" "Gilded Blight Scarab" "Gilded Breach Scarab" "Gilded Cartography Scarab" "Gilded Elder Scarab" "Gilded Expedition Scarab" "Gilded Harbinger Scarab" "Gilded Legion Scarab" "Gilded Reliquary Scarab" "Gilded Shaper Scarab" "Gilded Sulphite Scarab" "Gilded Torment Scarab" "Gilded Ultimatum Scarab" "Polished Abyss Scarab" "Polished Ambush Scarab" "Polished Blight Scarab" "Polished Divination Scarab" "Polished Expedition Scarab" "Polished Reliquary Scarab" "Polished Sulphite Scarab" "Rusted Expedition Scarab" "Rusted Legion Scarab" "Rusted Sulphite Scarab"
+	BaseType == "Abyss Scarab of Edifice" "Abyss Scarab of Emptiness" "Abyss Scarab of Multitudes" "Ambush Scarab of Containment" "Ambush Scarab of Discernment" "Ambush Scarab of Hidden Compartments" "Ambush Scarab of Potency" "Anarchy Scarab of Gigantification" "Anarchy Scarab of Partnership" "Bestiary Scarab of Duplicating" "Bestiary Scarab of the Herd" "Betrayal Scarab of Intelligence" "Betrayal Scarab of Perpetuation" "Betrayal Scarab of Reinforcements" "Beyond Scarab of Corruption" "Beyond Scarab of Haemophilia" "Beyond Scarab of Resurgence" "Beyond Scarab of the Invasion" "Blight Scarab of Blooming" "Blight Scarab of Bounty" "Blight Scarab of Oils" "Breach Scarab of Lordship" "Breach Scarab of Snares" "Breach Scarab of Splintering" "Breach Scarab of the Dreamer" "Cartography Scarab of Ascension" "Cartography Scarab of Corruption" "Cartography Scarab of Duplication" "Cartography Scarab of Singularity" "Delirium Scarab of Delusions" "Delirium Scarab of Mania" "Delirium Scarab of Neuroses" "Delirium Scarab of Paranoia" "Divination Scarab of Completion" "Divination Scarab of Curation" "Domination Scarab of Abnormality" "Domination Scarab of Teachings" "Domination Scarab of Terrors" "Essence Scarab of Ascent" "Essence Scarab of Calcification" "Essence Scarab of Stability" "Expedition Scarab of Archaeology" "Expedition Scarab of Runefinding" "Expedition Scarab of the Skald" "Expedition Scarab of Verisium Powder" "Harbinger Scarab of Discernment" "Harbinger Scarab of Regency" "Harbinger Scarab of Warhoards" "Harvest Scarab of Cornucopia" "Harvest Scarab of Doubling" "Incursion Scarab of Champions" "Incursion Scarab of Invasion" "Incursion Scarab of Timelines" "Influencing Scarab of Conversion" "Influencing Scarab of Hordes" "Influencing Scarab of the Elder" "Influencing Scarab of the Shaper" "Legion Scarab of Command" "Legion Scarab of Eternal Conflict" "Legion Scarab of Officers" "Legion Scarab of The Sekhema" "Mysterious Scarab" "Reliquary Scarab of Overlords" "Reliquary Scarab of Vision" "Ritual Scarab of Abundance" "Ritual Scarab of Recognition" "Ritual Scarab of Selectiveness" "Scarab of Adversaries" "Scarab of Hunted Traitors" "Scarab of Monstrous Lineage" "Scarab of Stability" "Sulphite Scarab of Fumes" "Sulphite Scarab of Greed" "Torment Scarab of Peculiarity" "Torment Scarab of Release" "Ultimatum Scarab of Bribing" "Ultimatum Scarab of Catalysing" "Ultimatum Scarab of Dueling" "Ultimatum Scarab of Inscription"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -6456,7 +6458,7 @@ Show # $type->fragments->scarabs $tier->t3
 
 Show # %HS4 $type->fragments->scarabs $tier->t4
 	Class == "Map Fragments"
-	BaseType == "Polished Bestiary Scarab" "Polished Breach Scarab" "Polished Cartography Scarab" "Polished Elder Scarab" "Polished Harbinger Scarab" "Polished Shaper Scarab" "Polished Torment Scarab" "Polished Ultimatum Scarab" "Rusted Abyss Scarab" "Rusted Ambush Scarab" "Rusted Bestiary Scarab" "Rusted Blight Scarab" "Rusted Breach Scarab" "Rusted Cartography Scarab" "Rusted Divination Scarab" "Rusted Elder Scarab" "Rusted Harbinger Scarab" "Rusted Reliquary Scarab" "Rusted Shaper Scarab" "Rusted Torment Scarab" "Rusted Ultimatum Scarab"
+	BaseType == "Abyss Scarab" "Ambush Scarab" "Anarchy Scarab" "Bestiary Scarab" "Betrayal Scarab" "Beyond Scarab" "Blight Scarab" "Breach Scarab" "Cartography Scarab" "Delirium Scarab" "Divination Scarab" "Domination Scarab" "Essence Scarab" "Expedition Scarab" "Harbinger Scarab" "Harvest Scarab" "Incursion Scarab" "Legion Scarab" "Reliquary Scarab" "Sulphite Scarab" "Torment Scarab" "Ultimatum Scarab"
 	SetFontSize 45
 	SetTextColor 159 15 213 255
 	SetBorderColor 159 15 213 255
@@ -6830,7 +6832,7 @@ Show # %D9 $type->currency->stackedsix $tier->t1
 Show # %D8 $type->currency->stackedsix $tier->t2
 	StackSize >= 6
 	Class == "Stackable Currency"
-	BaseType == "Ancient Orb" "Awakened Sextant" "Burial Medallion" "Chaos Orb" "Exotic Coinage" "Fertile Catalyst" "Grand Eldritch Ichor" "Prismatic Catalyst"
+	BaseType == "Ancient Orb" "Burial Medallion" "Chaos Orb" "Exotic Coinage" "Fertile Catalyst" "Grand Eldritch Ichor" "Prismatic Catalyst"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -6886,7 +6888,7 @@ Show # %DS4 $type->currency->stackedsix $tier->t5
 #	PlayEffect Grey
 #	MinimapIcon 2 Grey Circle
 
-Show # %D3 $type->currency->stackedsix $tier->t7
+Show # %DS2 $type->currency->stackedsix $tier->t7
 	StackSize >= 6
 	Class == "Stackable Currency"
 	BaseType == "Horizon Shard"
@@ -6926,7 +6928,7 @@ Show # %D8 $type->currency->stackedthree $tier->t2
 Show # %D7 $type->currency->stackedthree $tier->t3
 	StackSize >= 3
 	Class == "Stackable Currency"
-	BaseType == "Awakened Sextant" "Chaos Orb" "Fertile Catalyst" "Gemcutter's Prism" "Grand Eldritch Ember" "Grand Eldritch Ichor" "Greater Eldritch Ichor" "Harbinger's Orb" "Intrinsic Catalyst" "Orb of Unmaking" "Scrap Metal" "Stacked Deck" "Tempering Catalyst" "Turbulent Catalyst" "Unstable Catalyst"
+	BaseType == "Chaos Orb" "Fertile Catalyst" "Gemcutter's Prism" "Grand Eldritch Ember" "Grand Eldritch Ichor" "Greater Eldritch Ichor" "Harbinger's Orb" "Intrinsic Catalyst" "Orb of Unmaking" "Scrap Metal" "Stacked Deck" "Tempering Catalyst" "Turbulent Catalyst" "Unstable Catalyst"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -6970,7 +6972,7 @@ Show # %DS4 $type->currency->stackedthree $tier->t5
 #	PlayEffect Grey
 #	MinimapIcon 2 Grey Circle
 
-Show # %D3 $type->currency->stackedthree $tier->t7
+Show # %DS2 $type->currency->stackedthree $tier->t7
 	StackSize >= 3
 	Class == "Stackable Currency"
 	BaseType == "Horizon Shard" "Regal Shard"
@@ -7027,7 +7029,7 @@ Show # $type->currency $tier->t1exalted
 
 Show # $type->currency $tier->t2divine
 	Class == "Stackable Currency"
-	BaseType == "Crescent Splinter" "Crusader's Exalted Orb" "Eldritch Chaos Orb" "Eldritch Orb of Annulment" "Elevated Sextant" "Exalted Orb" "Orb of Conflict" "Redeemer's Exalted Orb" "Sacred Orb" "Tailoring Orb" "Tainted Catalyst" "Tempering Orb" "Veiled Orb" "Warlord's Exalted Orb"
+	BaseType == "Crescent Splinter" "Crusader's Exalted Orb" "Eldritch Chaos Orb" "Eldritch Orb of Annulment" "Exalted Orb" "Orb of Conflict" "Redeemer's Exalted Orb" "Sacred Orb" "Tailoring Orb" "Tainted Catalyst" "Tempering Orb" "Warlord's Exalted Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -7038,7 +7040,7 @@ Show # $type->currency $tier->t2divine
 
 Show # $type->currency $tier->t3annul
 	Class == "Stackable Currency"
-	BaseType == "Ancient Orb" "Burial Medallion" "Comprehensive Scouting Report" "Eldritch Exalted Orb" "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor" "Exotic Coinage" "Fertile Catalyst" "Influenced Scouting Report" "Oil Extractor" "Orb of Annulment" "Otherworldly Scouting Report" "Prismatic Catalyst" "Tainted Chaos Orb" "Tainted Chromatic Orb" "Tainted Exalted Orb" "Tainted Mythic Orb"
+	BaseType == "Ancient Orb" "Burial Medallion" "Comprehensive Scouting Report" "Eldritch Exalted Orb" "Exceptional Eldritch Ember" "Exceptional Eldritch Ichor" "Exotic Coinage" "Fertile Catalyst" "Influenced Scouting Report" "Oil Extractor" "Orb of Annulment" "Otherworldly Scouting Report" "Prismatic Catalyst" "Tainted Chaos Orb" "Tainted Chromatic Orb" "Tainted Exalted Orb" "Tainted Mythic Orb" "Veiled Orb"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -7049,7 +7051,7 @@ Show # $type->currency $tier->t3annul
 
 Show # $type->currency $tier->t4chaos
 	Class == "Stackable Currency"
-	BaseType == "Abrasive Catalyst" "Accelerating Catalyst" "Awakened Sextant" "Blighted Scouting Report" "Chaos Orb" "Charged Compass" "Delirious Scouting Report" "Exalted Shard" "Explorer's Scouting Report" "Gemcutter's Prism" "Grand Eldritch Ember" "Grand Eldritch Ichor" "Greater Eldritch Ember" "Greater Eldritch Ichor" "Harbinger's Orb" "Imbued Catalyst" "Intrinsic Catalyst" "Lesser Eldritch Ichor" "Noxious Catalyst" "Operative's Scouting Report" "Orb of Unmaking" "Primal Crystallised Lifeforce" "Regal Orb" "Ritual Splinter" "Ritual Vessel" "Scrap Metal" "Singular Scouting Report" "Stacked Deck" "Surveyor's Compass" "Tainted Armourer's Scrap" "Tainted Jeweller's Orb" "Tempering Catalyst" "Turbulent Catalyst" "Unstable Catalyst" "Vaal Scouting Report" "Vivid Crystallised Lifeforce" "Wild Crystallised Lifeforce"
+	BaseType == "Abrasive Catalyst" "Accelerating Catalyst" "Blighted Scouting Report" "Chaos Orb" "Charged Compass" "Delirious Scouting Report" "Exalted Shard" "Explorer's Scouting Report" "Gemcutter's Prism" "Grand Eldritch Ember" "Grand Eldritch Ichor" "Greater Eldritch Ember" "Greater Eldritch Ichor" "Harbinger's Orb" "Imbued Catalyst" "Intrinsic Catalyst" "Lesser Eldritch Ichor" "Noxious Catalyst" "Operative's Scouting Report" "Orb of Unmaking" "Primal Crystallised Lifeforce" "Regal Orb" "Ritual Splinter" "Ritual Vessel" "Scrap Metal" "Singular Scouting Report" "Stacked Deck" "Tainted Armourer's Scrap" "Tainted Jeweller's Orb" "Tempering Catalyst" "Turbulent Catalyst" "Unstable Catalyst" "Vaal Scouting Report" "Veiled Scarab" "Vivid Crystallised Lifeforce" "Wild Crystallised Lifeforce"
 	SetFontSize 45
 	SetTextColor 0 0 0 255
 	SetBorderColor 0 0 0 255
@@ -7080,7 +7082,7 @@ Show # %HS3 $type->currency $tier->t6chrom
 	PlayEffect Grey
 	MinimapIcon 2 Grey Circle
 
-Show # %H3 $type->currency $tier->t7chance
+Show # %HS2 $type->currency $tier->t7chance
 	Class == "Stackable Currency"
 	BaseType == "Engineer's Orb" "Harbinger's Shard" "Jeweller's Orb" "Orb of Alteration" "Orb of Binding" "Orb of Chance"
 	SetFontSize 45
@@ -7666,7 +7668,7 @@ Show # $type->currency->others $tier->harbinger
 
 Show # $type->currency->others $tier->misc
 	Class == "Stackable Currency"
-	BaseType "Imprint" "Unshaping Orb"
+	BaseType == "Empty Coffin" "Filled Coffin" "Imprint" "Unshaping Orb"
 	SetFontSize 45
 	SetTextColor 255 255 255 255
 	SetBorderColor 255 255 255 255
@@ -7893,7 +7895,7 @@ Show # $type->divination $tier->t3
 
 # !! Waypoint c9.divination.t4 : "Tierlist - Cards - T4, T4c and lower"
 
-Show # %H5 $type->divination $tier->t4c
+Show # %HS3 $type->divination $tier->t4c
 	Class == "Divination Cards"
 	BaseType == "A Sea of Blue" "Acclimatisation" "Ambitious Obsession" "Boon of Justice" "Bowyer's Dream" "Cameria's Cut" "Checkmate" "Coveted Possession" "Demigod's Wager" "Disdain" "Emperor of Purity" "Emperor's Luck" "Harmony of Souls" "Humility" "Immortal Resolve" "Imperial Legacy" "Last Hope" "Lucky Connections" "Lucky Deck" "Man With Bear" "More is Never Enough" "No Traces" "Sambodhi's Vow" "Society's Remorse" "The Cacophony" "The Card Sharp" "The Cartographer" "The Chains that Bind" "The Dapper Prodigy" "The Dark Mage" "The Ethereal" "The Finishing Touch" "The Fool" "The Gemcutter" "The Heroic Shot" "The Hoarder" "The Innocent" "The Inventor" "The Obscured" "The Porcupine" "The Price of Prescience" "The Price of Protection" "The Seeker" "The Side Quest" "The Survivalist" "The Tinkerer's Table" "The Warlord" "The Wrath" "Three Faces in the Dark" "Three Voices" "Vanity" "Vinia's Token"
 	SetFontSize 45
@@ -7915,7 +7917,7 @@ Show # %D4 $type->divination $tier->exstack
 	PlayEffect White
 	MinimapIcon 2 White Triangle
 
-Show # %HS2 $type->divination $tier->t5c
+Show # %HS1 $type->divination $tier->t5c
 	Class == "Divination Cards"
 	BaseType == "Buried Treasure" "Gemcutter's Promise" "Her Mask" "Loyalty" "Rain of Chaos" "Rebirth and Renewal" "The Catalyst" "The Deal" "The Flora's Gift" "The Gambler" "The Journey" "The Master Artisan" "The Puzzle" "The Scholar" "The Tireless Extractor"
 	SetFontSize 45
@@ -7924,7 +7926,7 @@ Show # %HS2 $type->divination $tier->t5c
 	SetBackgroundColor 20 20 0 255
 	PlayAlertSound 2 300
 
-Show # %HS3 $type->divination $tier->t4
+Show # %HS2 $type->divination $tier->t4
 	Class == "Divination Cards"
 	BaseType == "A Chilling Wind" "A Dusty Memory" "A Modest Request" "A Note in the Wind" "Akil's Prophecy" "Alone in the Darkness" "Assassin's Favour" "Astral Protection" "Atziri's Arsenal" "Azure Rage" "Baited Expectations" "Bijoux" "Blind Venture" "Boundless Realms" "Broken Truce" "Brush, Paint and Palette" "Chasing Risk" "Costly Curio" "Dark Temptation" "Death" "Deathly Designs" "Dialla's Subjugation" "Doedre's Madness" "Dying Anguish" "Dying Light" "Earth Drinker" "Eldritch Perfection" "Endless Night" "Etched in Blood" "Further Invention" "Gift of the Gemling Queen" "Glimmer of Hope" "Grave Knowledge" "Haunting Shadows" "Heterochromia" "Hope" "Hubris" "Hunter's Resolve" "Jack in the Box" "Left to Fate" "Lethean Temptation" "Lost Worlds" "Lysah's Respite" "Merciless Armament" "Mitts" "Parasitic Passengers" "Perfection" "Poisoned Faith" "Prejudice" "Pride Before the Fall" "Prometheus' Armoury" "Rebirth" "Reckless Ambition" "Sambodhi's Wisdom" "Scholar of the Seas" "Shard of Fate" "Soul Quenched" "Terrible Secret of Space" "The Admirer" "The Aesthete" "The Archmage's Right Hand" "The Arena Champion" "The Avenger" "The Awakened" "The Battle Born" "The Bear Woman" "The Beast" "The Blessing of Moosh" "The Body" "The Bones" "The Brawny Battle Mage" "The Breach" "The Brittle Emperor" "The Cache" "The Calling" "The Cataclysm" "The Catch" "The Coming Storm" "The Darkest Dream" "The Doppelganger" "The Dragon" "The Dreamland" "The Dungeon Master" "The Easy Stroll" "The Encroaching Darkness" "The Endurance" "The Explorer" "The Forgotten Treasure" "The Formless Sea" "The Forward Gaze" "The Fox" "The Gentleman" "The Gladiator" "The Hale Heart" "The Hive of Knowledge" "The Jeweller's Boon" "The King's Heart" "The Landing" "The Lion" "The Mad King" "The Magma Crab" "The Mercenary" "The Messenger" "The Mind's Eyes" "The Mountain" "The Offspring" "The One With All" "The Pact" "The Penitent" "The Prince of Darkness" "The Queen" "The Realm" "The Rite of Elements" "The Road to Power" "The Shepherd's Sandals" "The Skeleton" "The Standoff" "The Stormcaller" "The Summoner" "The Surveyor" "The Thaumaturgist" "The Tower" "The Traitor" "The Trial" "The Tumbleweed" "The Twilight Moon" "The Tyrant" "The Undisputed" "The Unexpected Prize" "The Vast" "The Whiteout" "The Wilted Rose" "The Wind" "The Wolf" "The Wolf's Legacy" "The Wolven King's Bite" "The Wolverine" "Time-Lost Relic" "Triskaidekaphobia" "Unchained" "Vile Power" "Void of the Elements" "Volatile Power"
 	SetFontSize 45
@@ -7935,7 +7937,7 @@ Show # %HS3 $type->divination $tier->t4
 	PlayEffect White
 	MinimapIcon 2 White Triangle
 
-Show # %H1 $type->divination $tier->t5
+Show # %H0 $type->divination $tier->t5
 	Class == "Divination Cards"
 	BaseType == "A Mother's Parting Gift" "Alivia's Grace" "Audacity" "Call to the First Ones" "Cartographer's Delight" "Cursed Words" "Destined to Crumble" "Echoes of Love" "Forbidden Power" "From Bone to Ashes" "Lantador's Lost Love" "Light and Truth" "Might is Right" "Prosperity" "Rain Tempter" "Rats" "Struck by Lightning" "The Adventuring Spirit" "The Army of Blood" "The Betrayal" "The Blazing Fire" "The Carrion Crow" "The Conduit" "The Cursed King" "The Deceiver" "The Deep Ones" "The Demoness" "The Drunken Aristocrat" "The Fathomless Depths" "The Feast" "The Fletcher" "The Forsaken" "The Fox in the Brambles" "The Golden Era" "The Harvester" "The Hermit" "The Incantation" "The Inoculated" "The Insatiable" "The Jester" "The Journalist" "The King's Blade" "The Lich" "The Lord in Black" "The Lord of Celebration" "The Lover" "The Lunaris Priestess" "The Master" "The Metalsmith's Gift" "The Oath" "The Opulent" "The Pack Leader" "The Poet" "The Rabid Rhoa" "The Return of the Rat" "The Ruthless Ceinture" "The Scarred Meadow" "The Scavenger" "The Sigil" "The Siren" "The Spoiled Prince" "The Sun" "The Surgeon" "The Sword King's Salute" "The Throne" "The Twins" "The Visionary" "The Warden" "The Watcher" "The Web" "The Witch" "The Wolf's Shadow" "Thirst for Knowledge" "Thunderous Skies" "Treasure Hunter" "Turn the Other Cheek"
 	SetFontSize 35
@@ -8110,6 +8112,18 @@ Show # $type->uniques $tier->ex6link
 	PlayEffect Red
 	MinimapIcon 0 Red Star
 
+Show # $type->uniques $tier->3xabyss
+	Sockets >= AAA
+	Rarity Unique
+	BaseType == "Carnal Armour"
+	SetFontSize 45
+	SetTextColor 175 96 37 255
+	SetBorderColor 175 96 37 255
+	SetBackgroundColor 255 255 255 255
+	PlayAlertSound 6 300
+	PlayEffect Red
+	MinimapIcon 0 Red Star
+
 #------------------------------------
 #   [4302] Tier 1 and 2 uniques
 #------------------------------------
@@ -8152,18 +8166,6 @@ Show # $type->uniques $tier->2xcorrupteduniques
 	PlayAlertSound 1 300
 	PlayEffect Blue
 	MinimapIcon 0 Blue Star
-
-Show # $type->uniques $tier->3xabyss
-	Sockets >= AAA
-	Rarity Unique
-	BaseType == "Carnal Armour"
-	SetFontSize 45
-	SetTextColor 175 96 37 255
-	SetBorderColor 175 96 37 255
-	SetBackgroundColor 255 255 255 255
-	PlayAlertSound 6 300
-	PlayEffect Red
-	MinimapIcon 0 Red Star
 
 Show # $type->uniques $tier->2xabyss
 	Sockets >= AA
@@ -8422,6 +8424,17 @@ Show # $type->miscmapitems $tier->restex
 	PlayAlertSound 3 300
 	PlayEffect Pink
 	MinimapIcon 0 Pink Circle
+
+Show # $type->necropolis $tier->t3
+	Class == "Embers of the Allflame"
+	BaseType == "Allflame Ember of Abyss" "Allflame Ember of Arohongui" "Allflame Ember of Artillery Gemlings" "Allflame Ember of Beidat" "Allflame Ember of Berserking Gemlings" "Allflame Ember of Brawling Gemlings" "Allflame Ember of Chayula" "Allflame Ember of Corpsemage Gemlings" "Allflame Ember of Esh" "Allflame Ember of Frogs" "Allflame Ember of Frostmage Gemlings" "Allflame Ember of Ghorr" "Allflame Ember of Hinekora" "Allflame Ember of Kitava" "Allflame Ember of K'tash" "Allflame Ember of Meatsacks" "Allflame Ember of Ngamahu" "Allflame Ember of Ramako" "Allflame Ember of Rats" "Allflame Ember of Rongokurai" "Allflame Ember of Scientists" "Allflame Ember of Sulphite" "Allflame Ember of Tasalio" "Allflame Ember of Tawhoa" "Allflame Ember of The Black Scythe" "Allflame Ember of The Broken Circle" "Allflame Ember of The Crusader" "Allflame Ember of The Elder" "Allflame Ember of The Eternal Legion" "Allflame Ember of The Hunter" "Allflame Ember of The Karui Legion" "Allflame Ember of The Knights of the Sun" "Allflame Ember of The Maraketh Legion" "Allflame Ember of The Order of the Chalice" "Allflame Ember of The Redeemer" "Allflame Ember of The Shaper" "Allflame Ember of The Templar Legion" "Allflame Ember of The Vaal Legion" "Allflame Ember of The Warlord" "Allflame Ember of Tukohama" "Allflame Ember of Tul" "Allflame Ember of Uul-Netol" "Allflame Ember of Valako" "Allflame Ember of Wildwood Beasts" "Allflame Ember of Wildwood Cultists" "Allflame Ember of Wildwood Treants" "Allflame Ember of Xoph"
+	SetFontSize 45
+	SetTextColor 67 240 255 255
+	SetBorderColor 67 240 255 255
+	SetBackgroundColor 37 57 58 255
+	PlayAlertSound 2 300
+	PlayEffect Cyan
+	MinimapIcon 1 Cyan Circle
 
 #===============================================================================================================
 # [[4500]] Questlike-Items2

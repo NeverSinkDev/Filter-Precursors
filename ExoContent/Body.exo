@@ -209,7 +209,7 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 #===============================================================================================================
 #!! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
-Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, Clean(), !exotic
+Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
 {
 #------------------------------------
 #   [1234] ID Mod exceptions - override id mod matching section
@@ -999,8 +999,21 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 	}
 
 #===============================================================================================================
+# [[0200]] Endgame - Conditional Hide Layers
+#===============================================================================================================
+
+#!! Waypoint c6.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
+
+Section ConditionalRareHider
+{
+	Hide Any { !shrink; Corrupted True; CorruptedMods 0; Identified False; }
+	Hide Any { !shrink; Mirrored True; Identified False; }
+}
+
+#===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T1 - handpicked
 #===============================================================================================================
+
 #!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1"
 
 	Section EndgameRareGear : Auto("rr")
@@ -1094,6 +1107,11 @@ Section Jewels : !jewels
 		Section IdedUncorruptedJewels : Clean(), Rarity <= Rare, BaseType == genericJewels;
 		{
 			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+		}
+
+		Section AdornedJewels : Rarity Magic, CorruptedMods >= 1, !*magic
+		{
+			Show Any { !Special; %D3; BaseType == genericJewels; }
 		}
 	}
 
@@ -1469,12 +1487,10 @@ Section Maps : Class == "Maps", !Maps
 		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
 	}
 
-#------------------------------------
-# [4406] Beyond-Nemesis Maps, for those juicy sextants.
-#------------------------------------
-	Section IdentifiedMaps : Identified True, Auto("maps->Identified")
+	Section MapsWithCorruptedMods : Auto("maps->corruptedimplicit"), CorruptedMods >= 1
 	{
-		ShowD NemesisBeyond { !G3; !*SpecialLow; HasExplicitMod "Otherworldly"; }
+		Show t1  { %D6; !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Rarity Rare; }
+		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
 	}
 
 #===============================================================================================================
@@ -1916,7 +1932,7 @@ Section CurrencyTrialTattoo : Auto("currency->trial->tattoo"), Class == class_cu
 Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Currency
 {
 	Show harbinger { !G2; !*t2divine; BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
-	Show misc { !G3; !*t2divine; BaseType "Imprint" "Unshaping Orb"; }
+	Show misc { !G3; !*t2divine; BaseType == currency.exotic.undroppable; }
 }
 
 #===============================================================================================================
@@ -1987,12 +2003,12 @@ Section DivinationCards : Auto("divination"), Class == "Divination Cards", !divi
 
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
 	#!! Waypoint c9.divination.t4 : "Tierlist - Cards - T4, T4c and lower"
-	Show t4c 	{ %HS3; !G4; !*t4;	BaseType == divination.t4c; }
+	Show t4c 	{ %H4; !G4; !*t4;	BaseType == divination.t4c; }
 
 	Show exStack { %D4; !G5H; !*t4; StackSize >= 3; }
 
-	Show t5c 	{ %HS1; !G5; !*t5;	BaseType == divination.t5c; }
-	Show t4 	{ %HS2; !G5H; !*t4;	BaseType == divination.t4; }
+	Show t5c 	{ %HS2; !G5; !*t5;	BaseType == divination.t5c; }
+	Show t4 	{ %HS3; !G5H; !*t4;	BaseType == divination.t4; }
 	Show t5 	{ %H0; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
 	Show restex { Empty(); }
 }
@@ -2042,6 +2058,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show exSynth  { !G2; !*t2; BaseType == uniques.exceptions.synthRings; SynthesisedItem True; }
 	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
 
+	Show 4xabyssHelmet  { !G1; !*t1; Sockets >= "AAAA"; BaseType == "Bone Circlet" }
 	Show 3xabyss  { !G1; !*t1; Sockets >= "AAA"; BaseType == "Carnal Armour" }
 
 #------------------------------------
@@ -2068,7 +2085,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show 5link 		  { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	
 	Show multispecialhigh { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecialhigh; }
-	Show multispecial { %H5; !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
+	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
 
 # For those 6 sockets	
 	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
@@ -2115,6 +2132,11 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 {
 	Show restex { !restex; Empty(); }
+}
+
+Section Necropolis : Auto("Necropolis"), Class == "Embers of the Allflame"
+{
+	Show t3 { !G3; !newitemmidvalue; BaseType == league.embers.t3; }
 }
 
 #===============================================================================================================
