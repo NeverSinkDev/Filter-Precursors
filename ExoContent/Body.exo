@@ -1021,8 +1021,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 Section ConditionalRareHider : Auto("HideLayer")
 {
-	Hide CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; }
-	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; }
+	Hide CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; Class == classes_equip; }
+	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_equip; }
 }
 
 #===============================================================================================================
@@ -1652,7 +1652,7 @@ Section MapFragments : Class == "Map Fragments"
 		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
 		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
-		Show t4 { !G4; %H5; BaseType == fragments.scarabs.t4; }
+		Show t4 { !G4; %HS4; BaseType == fragments.scarabs.t4; }
 		Show restex { BaseType "Scarab"; }
 	}
 
@@ -2154,6 +2154,7 @@ Section Necropolis : Auto("Necropolis"), Class == "Embers of the Allflame"
 {
 	Show t2 { !G2; !newleaguetier.t2; BaseType == league.embers.t2; }
 	Show t3 { !G3; !newleaguetier.t3; BaseType == league.embers.t3; }
+	Show t4 { !G4; !newleaguetier.t4; BaseType == league.embers.t4; }
 }
 
 #===============================================================================================================
