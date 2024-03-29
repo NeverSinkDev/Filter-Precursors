@@ -171,6 +171,13 @@ var quivermods3 = amu_accu[3] + quiver_leech + quiver_ias[3] + quiver_critc[4] +
 var sentinel_rewards_t1 = "of Archaeology" "of Skittering" "of Mystery" "of the Underground";
 var sentinel_rewards_t2 = "of Metamorphosis" "of Divination" "of Luxury" "of Prosperity" "of the Bounty" "of Smuggling";
 
+## Ring
+var ring_minion_dmg = "Duchess's" "Countess's" "Marchioness's" "Viscountess's";
+var ring_minion_ias = "of Agitation" "of Incitation" "of Coercion";
+var ring_minion_mspeed = "of Harmony" "of Orchestration" "of Integration";
+var ring_minion_resist = "of Metamorphosis" "of Evolution" "of Adaptation";
+var ring_minion_life = "of the Taskmaster" "of the Overseer" "of the Rector";
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} SHARED ARMOUR/JEWELERY ITEMS STATS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -272,18 +279,15 @@ var helmet_regen = "of Recuperation";
 
 ## combinations
 
-var helmet_aux1 = aux_stats_rfocus1 + minionGems[1] + suppress[2] + es_recharge[2] + accuracy[2] + regen_rate[2];
-var helmet_aux2 = aux_stats_rfocus2 + minionGems[2] + suppress[3] + es_recharge[3] + accuracy[3] + regen_rate[3] + helmet_regen;
+var helmet_aux1 = aux_stats_rfocus1 + minionGems[1] + suppress[2] + accuracy[2] + regen_rate[2];
+var helmet_aux2 = aux_stats_rfocus2 + minionGems[2] + suppress[3] + accuracy[3] + regen_rate[3] + helmet_regen;
 
 ## usable elements
 var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + minionGems[1];
 var xhelmet_life_core = helmet_life[3] + minionGems[1] + regen_rate[2];
 
-var xhelmet_life_mix1 = helmet_cheatMod + helmet_aux1 + combined_smitem_defenses1 + helmet_life[2] + combined_lifedefense_hybrid;
-var xhelmet_life_mix2 = helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3] + combined_lifedefense_hybrid;
-
-var xhelmet_es_mix1 = helmet_cheatMod + helmet_aux1 + smallitem_es_defense1 + helmet_life[1];
-var xhelmet_es_mix2 = helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + helmet_life[2];
+var xhelmet_life_mix = helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3] + combined_lifedefense_hybrid;
+var xhelmet_es_mix = helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + helmet_life[2];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} BOOTS
@@ -294,18 +298,14 @@ var boots_cheat = "Matatl's" + a_cheatMods;
 var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 var boots_life = "Athlete's" "Virile" "Rotund";
 
-var boots_aux1 = aux_stats_rfocus1 + suppress[2] + es_recharge[2] + regen_rate[2];
-var boots_aux2 = aux_stats_rfocus2 + suppress[4] + es_recharge[3] + regen_rate[3];
+var boots_aux = aux_stats_rfocus2 + suppress[4] + regen_rate[3];
 
 ## usable elements
 var xboots_life_core = boots_life[1] + boots_movespeed[2];
 var xboots_es_core = boots_movespeed[2];
 
-var xboots_life_mix1 = boots_aux1 + combined_smitem_defenses1 + boots_life[2] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
-var xboots_life_mix2 = boots_aux2 + combined_smitem_defenses2 + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
-
-var xboots_es_mix1 = boots_aux1 + smallitem_es_defense1 + boots_life[1] + boots_movespeed[2] + boots_cheat + aux_all;
-var xboots_es_mix2 = boots_aux2 + smallitem_es_defense2 + boots_movespeed[2] + boots_cheat + aux_all;
+var xboots_life_mix = boots_aux + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
+var xboots_es_mix = boots_aux + smallitem_es_defense2 + boots_movespeed[2] + boots_cheat + aux_all;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOVES
@@ -319,22 +319,17 @@ var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
 var gloves_accu = "of Lioneye" "of the Ranger";
 var gloves_mana = "Zaffre" "Blue";
 
-var glovesMisc1 = gloves_ias[1] + gloves_accu[1] + gloves_mana[1];
 var glovesMisc2 = gloves_ias[2] + gloves_accu[2] + gloves_mana[1];
 
 ## combinations for aux
-var gloves_aux1 = aux_stats_rfocus1 + suppress[2] + es_recharge[2] + regen_rate[2] + glovesMisc1; 
-var gloves_aux2 = aux_stats_rfocus2 + suppress[4] + es_recharge[3] + regen_rate[3] + glovesMisc2;
+var gloves_aux = aux_stats_rfocus2 + suppress[4] + glovesMisc2;
 
 ## usable elements
 var xgloves_es_core = smallitem_es_defense_main2 + gloves_cheat;
 var xgloves_life_core = gloves_life[2] + gloves_cheat;
 
-var xgloves_life_mix1 = gloves_aux1 + combined_smitem_defenses1 + gloves_life[2] + gloves_cheat + combined_lifedefense_hybrid;
-var xgloves_life_mix2 = gloves_aux2 + combined_smitem_defenses2 + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid;
-
-var xgloves_es_mix1 = gloves_aux1 + smallitem_es_defense1 + gloves_life[1] + gloves_cheat + aux_all;
-var xgloves_es_mix2 = gloves_aux2 + smallitem_es_defense2 + gloves_life[2] + gloves_cheat + aux_all;
+var xgloves_life_mix = gloves_aux + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid;
+var xgloves_es_mix = gloves_aux + smallitem_es_defense_main2 + smallitem_es_defense2 + gloves_cheat;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK
@@ -434,12 +429,8 @@ var w_extrachaos_cold = "Mortifying" "Festering";
 var w_extrachaos_fire = "Corrosive" "Dissolving";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-##   {META} SHIELDS
+## SHIELDS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-## dex: accuracy, attack speed
-## str: only defensive mods
-## int: caster stuff
 
 ## var ws_cast_crit = "of Unmaking" "of Ruin" "of Calamity" "of Disaster"; 
 ## var ws_manaregen = "of Nirvana" "of Euphoria";
@@ -451,33 +442,30 @@ var shield_cheatMods = a_cheatMods + "Topotante's";
 
 var shield_life = "Vigorous" "Fecund" "Athlete's" "Virile";
 
-var shield_maxres = "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm";
-
-var shield_specialDefenses1 = life_regen[2] + phys_reduction[2] + suppress[2] + ailment_avoid[2] + block[2] + spellblock[1] + es_fasterstart[1] + es_recharge[1] + lifeonblock[1] + critdmgreduction[2] + regen_rate[2] + shield_maxres;
-var shield_specialDefenses2 = life_regen[3] + phys_reduction[3] + suppress[4] + ailment_avoid[3] + block[3] + spellblock[2] + es_fasterstart[2] + es_recharge[2] + lifeonblock[2] + critdmgreduction[3] + regen_rate[3] + shield_maxres;
-
-var shield_casterAux1 = ws_cast_crit[2];
-var shield_casterAux2 = ws_cast_crit[3] + ws_manaregen[1];
-
 var shield_caster_gemLevels = "Lithomancer's" "Mad Lord's" "Thunderhand's" "Frost Singer's" "Flame Shaper's";
-var shield_caster_damage1 = wcast_spell[2] + wcast_fire[2] + wcast_cold[2] + wcast_light[2];
-var shield_caster_damage2 = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3];
+var shield_caster_damage = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcast_light[3];
+var shield_caster_damage_best = wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1];
 
 ## CORE VALUES: 
-var shield_global_core = a_cheatMods + shield_cheatMods + aux_all;
+var shield_global_core = a_cheatMods + shield_cheatMods + aux_all + suppress[1] + shield_life[1] + shield_caster_gemLevels + shield_caster_damage_best;
 
 var xshield_es_core =       shield_global_core + shields_fes[3] + shields_pes[2];
-var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[3] + block[2] + spellblock[1] + critdmgreduction[2] + regen_rate[2];
-var xshield_caster_core =   shield_global_core + shield_caster_gemLevels + shield_caster_damage2 + ws_cast_crit[1];
-var xshield_life_core =     shield_global_core + shield_life[2];
+var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[2];
+var xshield_caster_core =   shield_global_core + shield_caster_gemLevels + shield_caster_damage + ws_cast_crit[2] + shield_life[2];
+var xshield_life_core =     shield_life[1];
 
 ## MIXED VALUED:
 var shield_combined_highdefenses_esonly = shields_fes[2] + shields_pes[2];
-var shield_combined_highdefenses = shield_specialDefenses2 + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shields_fes[2] + shields_pes[2];
+var shield_combined_highdefenses = shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shields_fes[2] + shields_pes[2];
 var shield_combined_lifemods = shield_life[3];
-var shield_combined_castermods = shield_caster_gemLevels + shield_caster_damage2 + ws_manaregen[1] + ws_cast_crit[3];
+var shield_combined_castermods = shield_caster_gemLevels + shield_caster_damage + ws_manaregen[1] + ws_cast_crit[3];
 var shield_combined_attackermods = "of the Ranger" "of Mastery";
-var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses2 + ws_cast_crit[1] + shield_life[1];
+
+## UNIVERSAL MIX
+var shield_maxres = "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm";
+var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[4] + ailment_avoid[2] + block[2] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
+
+var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses + ws_cast_crit[1];
 
 var xshield_es_mix =        shield_spice + shields_es_defense2      + shield_combined_castermods;
 var xshield_defense_mix =   shield_spice + shield_combined_lifemods + shield_combined_attackermods + shields_combined_defenses2;
@@ -499,7 +487,7 @@ var body_defenses_perc = "Interpermeated" "Inspired" "Interpolated" "Impenetrabl
 var body_es = "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable";
 var body_es_hybrid = "Seraphim's" "Djinn's" "Bishop's" "Priest's" "Exarch's" "Abbot's";
 
-var body_aux = aux_stats_rfocus2 + life_regen[1] + phys_reduction[2] + suppress[2] + es_fasterstart[2];
+var body_aux = aux_stats_rfocus2 + life_regen[1] + phys_reduction[2] + suppress[2];
 
 var xbody_aux_life = aux_all + body_cheatMods + body_aux + body_life + body_hybridlife + "of Tacati" + body_defenses_flat + body_defenses_perc;
 var xbody_aux_es = aux_all + body_cheatMods + body_aux + body_es + body_es_hybrid + "of Tacati" + body_life[2];
@@ -509,7 +497,7 @@ var xbody_core_defense = body_life + body_defenses_flat + body_defenses_perc;
 var xbody_core_es = body_es + body_cheatMods;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## "QUIVERS"
+## QUIVERS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var quiver_cheatMods = a_cheatMods + "of Splintering";
@@ -689,16 +677,21 @@ var xamu_aux_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_c
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-var rings_cheat = acc_cheat + acc_unset_levels[1] + "Guatelitzi's" + aux_all;
-var ring_aux_stats_full = rings_cheat + acc_life[3] + acc_fes[3] + aux_stats2 + acc_manaregen[2] + acc_recoup[2] + "Perandus'" + "of the Comet";
+var ring_aux_stats_full = acc_unset_levels[1] + aux_all + aux_stats2 + acc_manaregen[2] + acc_recoup[2] + "Perandus'" + "of the Comet";
 
 var ring_ias = "of Skill";
 var ring_pdmg = "of Flames" "of Rime" "of Voltage";
 
-var xring_core = rings_cheat + acc_life[3] + acc_fes[2];
+var xring_core = "Guatelitzi's" + acc_cheat + acc_life[3] + acc_fes[2];
 
 var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[2] + acc_dmg_physf[1] + acc_dmg_firef[1] + acc_dmg_coldf[1] + acc_dmg_lightf[1] + ring_ias + ring_pdmg;
-var xring_cast_mix = ring_aux_stats_full + acc_cast_speed[3] + ring_pdmg + acc_mana;
+var xring_cast_mix = ring_aux_stats_full + acc_cast_speed[3] + ring_pdmg + acc_mana[1];
+
+var ring_minion_high = ring_minion_dmg[3] + ring_minion_ias[3] + ring_minion_mspeed[2];
+var ring_minion_low = ring_minion_resist[1] + ring_minion_life[1];
+
+var xring_minion_mix = ring_aux_stats_full + ring_minion_high + ring_minion_low;
+
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RINGS
@@ -720,8 +713,8 @@ var belts_flaskdur = "of Reveling" "of Relishing" "of Savouring";
 var belts_aux = str[4] + res_fire[3] + res_cold[3] + res_light[3] + res_chaos[3] + belts_liferegen;
 var belts_special_aux = belts_arm[3] + belts_flaskeffect + belts_flaskdur[2] + belts_wed[3] + belts_mana[2];
 
-var xbelt_mix = belts_cheat + belts_life + belts_es[2] + belts_aux + belts_special_aux + aux_all;
-var xbelt_core = belts_cheat + belts_life[2] + belts_es[1] + belts_wed[1] + belts_flaskeffect[1] + belts_flaskdur[1] + belts_mana[1] + str[1];
+var xbelt_mix = belts_cheat + belts_life + belts_es[1] + belts_aux + belts_special_aux + aux_all;
+var xbelt_core = belts_cheat + belts_life[2] + belts_es[1];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} BLADE BLAST DAGGERS

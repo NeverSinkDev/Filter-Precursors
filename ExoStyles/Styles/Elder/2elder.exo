@@ -146,6 +146,15 @@ Expand FragmentTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
     var extra = fragment.acc.t3glow;
 }
 
+## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
+Expand NewLeagueTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
+{
+	var sound = sounds.currency;
+	var icon = Cross;
+	var acc = fragment.tx;
+    var extra = fragment.acc.t3glow;
+}
+
 Expand ExoticFragments : T3BlackPiece
 {
     var extra = fragment.acc.t3glow;
@@ -419,12 +428,6 @@ Expand Coins.Small
     SetTextColor coins.acc;
     SetBorderColor coins.extra;
     PlayEffect Orange Temp;
-}
-
-Expand SixLinkVariant : T1, T2GlowPiece
-{
-	var icon = Diamond;
-	var acc = 200 0 0 255;
 }
 
 Expand HeistMapLikeHigh

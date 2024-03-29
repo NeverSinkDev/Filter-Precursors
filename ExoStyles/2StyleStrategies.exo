@@ -43,11 +43,50 @@ Style UniversalValueAccents
 		SetFontSize font.t3;
 	}
 
+	Func newitemhighvalue ()
+	{
+		TX league.new.acc;
+		BD league.new.acc;
+		BG league.new.background;
+		MM 0 league.color league.icon;
+		PlayAlertSound sounds.currency;
+		Beam league.color;
+		SetFontSize font.t2;
+	}
+
 	Func restex ()
 	{ 
 		SetFontSize font.max; 
 		SetTextColor tier.error; SetBorderColor tier.error; SetBackgroundColor tier.error.low; 
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
+	}
+
+	Func 6linklow ()
+	{
+		var icon = Diamond;
+
+		SetBackgroundColor sixLink.acc;
+		SetTextColor sBlack;
+		SetBorderColor sBlack;
+
+		PlayAlertSound sounds.t2;
+		SetFontSize font.max;
+		PlayEffect Red; 
+		MinimapIcon 1 Red icon;
+	}
+
+	Func 6linkhigh ()
+	{
+		var icon = Diamond;
+
+		SetBackgroundColor sixLink.acc;
+		SetTextColor sWhite;
+		SetBorderColor sWhite;
+
+		PlayAlertSound sounds.t2;
+		SetFontSize font.max;
+		PlayEffect Red; 
+		MinimapIcon 0 Red icon;
 	}
 
 	Func V1 ()
@@ -128,9 +167,19 @@ Style UniversalValueAccents
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
 	}
 
+	Func SpecialNoMM ()
+	{
+		SetBorderColor exoticgear.tx; PlayEffect exoticgear.cray;
+	}
+
 	Func SpecialNoB ()
 	{
 		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
+	}
+
+	Func SpecialNoBHigh ()
+	{
+		PlayEffect exoticgear.crayhigh; MinimapIcon * exoticgear.cmaphigh *;
 	}
 
 
@@ -757,6 +806,11 @@ Style EndgameRareDecorators
 		SetBorderColor accent.rare.tiny;
 	}
 
+	Func fourlinkedrare()
+	{
+		SetBorderColor accent.leveling.fourlink;
+	}
+
 	Func ilvl86()
 	{
 		SetTextColor accent.rare.ilvl86; SetBorderColor NONE;
@@ -1141,7 +1195,7 @@ Style LowerValueTiering
 	{
 		SetBorderColor sBlack;
 		SetBackgroundColor extra;
-		LVHL3();
+		LVHL2();
 	}
 }
 
@@ -1535,16 +1589,10 @@ Style t5uni : PatternBlack
 # Finalizing Strategies
 #------------------------------------
 
-Style SixLinkVariant : T1, T2RedPiece
-{
-	var icon = Diamond;
-	var acc = 200 0 0 255;
-}
-
 Style InfluencedVariant : T1, T2YellowPiece
 {
-	var icon = Cross;
-	var tier.t1.icon = Cross;
+	var icon = Diamond;
+	var tier.t1.icon = Diamond;
 	var sounds.t1 = sounds.t2;
 	var sounds.t2 = sounds.unique;
 
@@ -1561,7 +1609,7 @@ Style InfluencedVariant : T1, T2YellowPiece
 
 Style InfluencedRandom : PatternLowWhite
 {
-	var icon = Cross;
+	var icon = Diamond;
 	var sound = NONE;
 	var acc = influenced.gear.t3;
 	var cmap = NONE;
@@ -1616,6 +1664,13 @@ Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 	var tier.t4.cmap = Brown;
 	var tier.t4.cray = Brown;
 	var acc = unique.tx;
+}
+
+Style NewLeagueTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
+{
+	var sound = sounds.currency;
+	var icon = Cross;
+	var acc = league.new.tierlist;
 }
 
 Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5

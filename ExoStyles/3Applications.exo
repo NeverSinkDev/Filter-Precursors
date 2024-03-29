@@ -43,10 +43,6 @@ Style MainRules
 	Apply(meta.hide ,HideLayer* => !UniversalHideLayer.any);
 	Apply(meta.safe, *.restex => !UniversalValueAccents.restex);
 
-	## 6L
-	Apply(6L, 6Links.others => SixLinkVariant.t2);
-	Apply(6L, 6Links.hightier => SixLinkVariant.t1);
-
 	## influenced and eldritch
 	Apply(influenced, $Maps.T1 => InfluencedMapsStrategy)
 	Apply(influenced, Influenced.t1* => InfluencedVariant.t1);
@@ -119,6 +115,8 @@ Style MainRules
 	Apply(tier.uniquereplica, Replicas => ReplicaTierList);
 	Apply(tier.uniquereplica, Replicas.jewels => ReplicaTierList.multi);
 	Apply(tier.uniquemaps, UniqueMaps => UniqueMapStrat);
+	Apply(tier.newleague, NewLeagueTiers => NewLeagueTierStrat);
+	Apply(tier.newleague, $newleaguetier => NewLeagueTierStrat);
 
 	## Gems
 	Apply(gems, $Gems => GemStrategy);
