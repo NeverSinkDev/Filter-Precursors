@@ -115,6 +115,8 @@ Style MainRules
 	Apply(tier.uniquereplica, Replicas => ReplicaTierList);
 	Apply(tier.uniquereplica, Replicas.jewels => ReplicaTierList.multi);
 	Apply(tier.uniquemaps, UniqueMaps => UniqueMapStrat);
+	Apply(tier.newleague, NewLeagueTiers => NewLeagueTierStrat);
+	Apply(tier.newleague, $newleaguetier => NewLeagueTierStrat);
 
 	## Gems
 	Apply(gems, $Gems => GemStrategy);

@@ -483,10 +483,17 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
 
 #------------------------------------
+#   [1234] Necropolis
+#------------------------------------
+
+		Show NecropolisCraft { !GSH; !exotic.t2; Mod "Haunted" "of Haunting"; }
+
+#------------------------------------
 #   [1234] Bestiary
 #------------------------------------
 		Show BestiaryValuable { !GSH; !exotic.t2; Mod exotic_bestiary_t1 }
 		Show BestiaryOther    { !GSH; %D4; !exotic.t3; Mod exotic_bestiary_t2 }
+
 #------------------------------------
 #   [1234] Other
 #------------------------------------
@@ -748,7 +755,7 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
 	{
-		Show t1 { !G3;  %D6; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
+		Show t1 { !G3;  %D5; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
 		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
 		Show t3 { !GEX; %D1; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
 	}
@@ -841,18 +848,20 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 # [2701] Endgame Flasks
 #------------------------------------
 	#!! Waypoint c4.flasks.all : "Endgame Flasks - All non-unique"
-	Section OverQualityFlasks : Mirrored False, !GEX
+	
+	Section OverQualityFlasks : !GEX
 	{
-		Show OverQualUtil  { !G3; !exotic.t1; %D6; ItemLevel >= 82; Quality >= 26; Class == class_utilFlasks; }
-		Show OverQualLife  { !G3; !exotic.t1; %D6; ItemLevel >= 82; Quality >= 28; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualCorrupted  { !G4; !exotic.t3; !Corrupt %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; }
+		Show OverQualUtil  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; Class == class_utilFlasks; }
+		Show OverQualLife  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 28; BaseType == bases.flask.lifemanaassorted; }
 	}
 
 	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
-	Section SuperEndgameFlasks : Mirrored False, !GEX
+	Section SuperEndgameFlasks : Clean(), !GEX
 	{
-		Show Utility85  { !G3; !utilflasks.LT1; %D5; ItemLevel >= 85; Class == class_utilFlasks; }
-		Show Utility84  { !G4; !utilflasks.LT2; %D5; ItemLevel >= 84; Class == class_utilFlasks; }
-		Show Utility82  { !G4; !utilflasks.LT3; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
+		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; }
+		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 84; Class == class_utilFlasks; }
+		Show Utility82  { !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
 		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; }
 	}
 #------------------------------------
@@ -866,9 +875,9 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Utility OR quality flasks
 #------------------------------------
-	Section UtilityEndgameFlasks
+	Section UtilityEndgameFlasks : Clean()
 	{
-		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
+		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; !SF45; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
 		Show AnyUtility 	{ %D3; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; }
 	}
 #------------------------------------
@@ -882,9 +891,9 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
 #------------------------------------
-	Section EarlyMappingLifeManaFlasks : BaseType == bases.flask.lifemanaassorted
+	Section EarlyMappingLifeManaFlasks : BaseType == bases.flask.lifemanaassorted, Clean()
 	{
-		Show EarlyMappingLifeMana { %D2; !G7H; !Low; AreaLevel <= 69; }
+		Show EarlyMappingLifeMana { %D2; !G7H; !Low; AreaLevel <= 70; }
 	}
 }
 
@@ -938,6 +947,12 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 
 	Cont CorruptedRares { !*corrupt; Corrupted True; CorruptedMods 0; }
 	Cont CorruptedRaresImplicit { !*corruptimpl; Corrupted True; CorruptedMods >= 1; }
+}
+
+# Visualizes items dropped by necropolis crafting by using the arealevel
+Section CraftingItemHighlight : Rarity Rare, AreaLevel 1, ItemLevel >= 4, Identified True, Auto("rare->utility->droppeditems"), Class == classes_equip
+{
+	Show Any  { !GR1; !SF45; Empty(); }
 }
 
 Section EndgameRares : Rarity Rare, ItemLevel >= 68
@@ -1004,10 +1019,10 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 #!! Waypoint c6.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
 
-Section ConditionalRareHider
+Section ConditionalRareHider : Auto("HideLayer")
 {
-	Hide Any { !shrink; Corrupted True; CorruptedMods 0; Identified False; }
-	Hide Any { !shrink; Mirrored True; Identified False; }
+	Hide CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; }
+	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; }
 }
 
 #===============================================================================================================
@@ -1111,7 +1126,7 @@ Section Jewels : !jewels
 
 		Section AdornedJewels : Rarity Magic, CorruptedMods >= 1, !*magic
 		{
-			Show Any { !Special; %D3; BaseType == genericJewels; }
+			Show Any { !SpecialNoMM; %D3; BaseType == genericJewels; }
 		}
 	}
 
@@ -1605,6 +1620,7 @@ Section Memories : Auto("ExoticMap->Memory"), Class == "Memories", BaseType == m
 
 Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research"
 {
+	Show ILVL83 { ItemLevel >= 83; !exomap.high; !G2; Empty(); }
 	Show Any { !exomap.high; !G2; Empty(); }
 }
 
@@ -1636,7 +1652,7 @@ Section MapFragments : Class == "Map Fragments"
 		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
 		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
-		Show t4 { !G4; %HS4; BaseType == fragments.scarabs.t4; }
+		Show t4 { !G4; %H5; BaseType == fragments.scarabs.t4; }
 		Show restex { BaseType "Scarab"; }
 	}
 
@@ -2136,7 +2152,8 @@ Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 
 Section Necropolis : Auto("Necropolis"), Class == "Embers of the Allflame"
 {
-	Show t3 { !G3; !newitemmidvalue; BaseType == league.embers.t3; }
+	Show t2 { !G2; !newleaguetier.t2; BaseType == league.embers.t2; }
+	Show t3 { !G3; !newleaguetier.t3; BaseType == league.embers.t3; }
 }
 
 #===============================================================================================================
@@ -2341,7 +2358,7 @@ Section LevelingRareGear : Rarity Rare
 
 #!! Waypoint c11.leveling.rares.low : "Leveling - Gear - Low Tier"
 
-	Section Vendorable : Auto("Leveling->Rare->Remaining"), !raredeco.t4equip
+	Section Vendorable : Auto("Leveling->Rare->Remaining") Class == classes_equip, !raredeco.t4equip
 	{
 		Show ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
 		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; }

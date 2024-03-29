@@ -104,6 +104,15 @@ Expand t5divi
     SetBorderColor sBlack;
 }
 
+## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
+Expand NewLeagueTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
+{
+	var sound = sounds.currency;
+	var icon = Cross;
+	var acc = fragment.tx;
+    var extra = fragment.acc.t3glow;
+}
+
 Expand FragmentTierStrat : T1, T2RedPiece, T3YellowGlowPiece, T4WhitePieceNoBG, T5
 {
 	var sound = sounds.currency;

@@ -146,6 +146,15 @@ Expand FragmentTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
     var extra = fragment.acc.t3glow;
 }
 
+## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
+Expand NewLeagueTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
+{
+	var sound = sounds.currency;
+	var icon = Cross;
+	var acc = fragment.tx;
+    var extra = fragment.acc.t3glow;
+}
+
 Expand ExoticFragments : T3BlackPiece
 {
     var extra = fragment.acc.t3glow;
