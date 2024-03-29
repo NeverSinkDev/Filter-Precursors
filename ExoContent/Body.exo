@@ -994,6 +994,18 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 	}
 
 #===============================================================================================================
+# [[0200]] Endgame - Conditional Hide Layers
+#===============================================================================================================
+
+#!! Waypoint c6.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
+
+Section ConditionalRareHider : Auto("HideLayer")
+{
+	Hide CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
+	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
+}
+
+#===============================================================================================================
 # [[0200]] Endgame - Rare - Accessoires
 #===============================================================================================================
 #!! Waypoint c6.rare.trinkets.all : "Rare Endgame Items - Amulets, Rings"
@@ -1012,18 +1024,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show T2 { !GRJ2; %D3; BaseType == bases.rares.jwl.belts.t2; }
 		Show T3 { !GRJ3; %D2; BaseType == bases.rares.jwl.belts.t3; }
 	}
-
-#===============================================================================================================
-# [[0200]] Endgame - Conditional Hide Layers
-#===============================================================================================================
-
-#!! Waypoint c6.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
-
-Section ConditionalRareHider : Auto("HideLayer")
-{
-	Hide CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; Class == classes_equip; }
-	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_equip; }
-}
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T1 - handpicked
@@ -1126,7 +1126,7 @@ Section Jewels : !jewels
 
 		Section AdornedJewels : Rarity Magic, CorruptedMods >= 1, !*magic
 		{
-			Show Any { !SpecialNoMM; %D3; BaseType == genericJewels; }
+			Show Any { !SpecialNoMM; %D3; Corrupted True; BaseType == genericJewels; }
 		}
 	}
 
