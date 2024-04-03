@@ -2152,9 +2152,12 @@ Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 
 Section Necropolis : Auto("Necropolis"), Class == "Embers of the Allflame"
 {
+	Show Leveling { !G3; !newleaguetier.t3; ItemLevel < 68; }
+
 	Show t2 { !G2; !newleaguetier.t2; BaseType == league.embers.t2; }
 	Show t3 { !G3; !newleaguetier.t3; BaseType == league.embers.t3; }
 	Show t4 { !G4; !newleaguetier.t4; BaseType == league.embers.t4; }
+	Show restex { Empty(); }
 }
 
 #===============================================================================================================
