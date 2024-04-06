@@ -862,7 +862,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; }
 		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 84; Class == class_utilFlasks; }
 		Show Utility82  { !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
-		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; }
+		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
 	}
 #------------------------------------
 # [2701] Quality High
@@ -1112,14 +1112,14 @@ Section Jewels : !jewels
 # [1234] Special Cases
 #------------------------------------
 
-	Section IdentifiedJewels : Identified True, Auto("jewels->special"), !UniqueSound, !GS
+	Section SpecialJewels : Auto("jewels->special"), !UniqueSound, !GS
 	{
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
 		{
 			Show 1modcorrupted { !Special; %D4; Mod jewels_corruptedModsMinimum; BaseType == allCommonJewels; }
 		}
 
-		Section IdedUncorruptedJewels : Clean(), Rarity <= Rare, BaseType == genericJewels;
+		Section IdedUncorruptedJewels : Identified True, Rarity <= Rare, BaseType == genericJewels;
 		{
 			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
