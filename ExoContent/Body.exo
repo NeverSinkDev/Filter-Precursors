@@ -449,7 +449,7 @@ var exotic_bestiary_t1 = "of Farrul" "of Fenumus";
 var exotic_bestiary_t2 = "of Craiceann" "of Saqawal";
 
 var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
-var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
+var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "of Riker's Veil" "Tora's Veiled";
 
 Section IdModSectionSpecial : IdMods, !exotic
 {
@@ -1695,7 +1695,8 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 {
 	Show binding  { %D5; !G3;  !*t4chaos; !Maximize; !LevelCurrency; BaseType == "Orb of Binding"; }
 	Show essences { %D4; !G4;  !*t5alchemy; !Maximize; !LevelCurrency; BaseType currency.leveling.essences; }
-	Show trans 	  { %D4; !G5H; !Currency.t8trans; !Maximize; !LevelCurrency; BaseType == currency.leveling.trans; }
+	Show chance   { %D5; !G5H; !Currency.t6chrom; !Maximize; !LevelCurrency; BaseType == currency.leveling.chance; }
+	Show trans 	  { %D4; !G5H; !Currency.t8trans; !Maximize; BaseType == currency.leveling.trans; }
 	Show aug      { %D4; !G5;  !Currency.t9armour; !Maximize; BaseType == currency.leveling.aug; }
 	Show portal   { %D3; !G6H; !Currency.tportal; !Maximize; BaseType == currency.leveling.portal; }
 	Show wisdom   { %D3; !G6H; !Currency.twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
@@ -2153,6 +2154,8 @@ Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 Section Necropolis : Auto("Necropolis"), Class == "Embers of the Allflame"
 {
 	Show Leveling { !G3; !newleaguetier.t3; ItemLevel < 68; }
+	
+	## Show t1high { !G2; !newleaguetier.t2; BaseType == league.embers.t1high; ItemLevel >= 82; }
 
 	Show t2 { !G2; !newleaguetier.t2; BaseType == league.embers.t2; }
 	Show t3 { !G3; !newleaguetier.t3; BaseType == league.embers.t3; }
