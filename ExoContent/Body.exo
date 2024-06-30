@@ -388,13 +388,13 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 
 	Section TopValue : Rarity <= Rare, Clean()
 	{
-		# +1 to all global spell skill levels + convoking minion levels
+		## +1 to all global spell skill levels + convoking minion levels
 		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == classes_1hcast_shields; }
-		# +2 proj ranged weapons
+		## +2 proj ranged weapons
 		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class == classes_weapons_ranged; }
-		# plus one to all spell skills
+		## plus one to all spell skills
 		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class == "Amulets"; }
-		# plus 2 to minions helmet
+		## plus 2 to minions helmet
 		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class == "Helmets"; }
 	}
 
@@ -405,22 +405,22 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 ## In these cases we're looking for a singe high mod
 	Section HighHybridPure : Clean(), Rarity <= Rare
 	{
-		# +1 to all global elemental gems and DOT t1
+		## +1 to all global elemental gems and DOT t1
 		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
-		# +1 to all arrows quivers
+		## +1 to all arrows quivers
 		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
-		# +1 to all global elemental gems + spell damage t1
+		## +1 to all global elemental gems + spell damage t1
 		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == classes_1hcast_shields; }
-		# +2 to all maximum resists shield
+		## +2 to all maximum resists shield
 		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
-		# Uncorrupted Suppression Gear from Dexterity Equip
+		## Uncorrupted Suppression Gear from Dexterity Equip
 		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == classes_armor_small; }
-		# Uncorrupted Tyrranical weapons
+		## Uncorrupted Tyrranical weapons
 		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
-		# DOT Sceptres and Wands
+		## DOT Sceptres and Wands
 		ShowD t2dotwand 	{ %D4; Mod >= 1 xr_caster_dot_wand; Class == "Wands" "Rune Daggers"; }
 		ShowD t2sceptre 	{ %D4; Mod >= 1 xr_caster_dot_sceptre; Class == "Sceptres"; }
-		# Elemental Weapons
+		## Elemental Weapons
 		ShowD t2eleweapons 	{ %D4; Mod >= 1 xr_eleweapons1; Class == classes_weapons_ele; }
 	}	
 }
@@ -578,8 +578,7 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 #------------------------------------	
 Section SanctumRelics : Auto("artefact->sanctifiedrelics")
 {
-	Show UniqueRelics		{ !G2; !SpecialNoB; !unique.t3; Class == "Sanctified Relics" "Relics"; Rarity Unique; }
-	Show AnySanctified 		{ !G2; !artefact; Class == "Sanctified Relics"; }
+	## Show AnySanctified 		{ !G2; !artefact; Class == "Sanctified Relics"; }
 	Show SelectedRelics		{ !G3; !exotic.t2; Class == "Relics"; BaseType == exotic.sanctum.relics; }
 	Show AnyRelic 			{ !G4; !exotic.t3; Class == "Relics"; }
 }
@@ -652,7 +651,7 @@ Section ExoticVariations : !exotic
 
 		Section EnchantedMisc : AnyEnchantment True, Auto("exotic->enchanted")
 		{
-			# Optional modules for enchanment based filtering
+			## Optional modules for enchanment based filtering
 			ShowD EnchantedRingsGoldOil   { !GSH; !exotic.t1; Class == "Rings"; HasEnchantment == oil_enchant_gold; Clean(); }
 			ShowD EnchantedRingsSilverOil { !GSH; !exotic.t1; Class == "Rings"; HasEnchantment == oil_enchant_silver; Clean(); }
 			
@@ -949,7 +948,7 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 	Cont CorruptedRaresImplicit { !*corruptimpl; Corrupted True; CorruptedMods >= 1; }
 }
 
-# Visualizes items dropped by necropolis crafting by using the arealevel
+## Visualizes items dropped by necropolis crafting by using the arealevel
 Section CraftingItemHighlight : Rarity Rare, AreaLevel 1, ItemLevel >= 4, Identified True, Auto("rare->utility->droppeditems"), Class == classes_equip
 {
 	Show Any  { !GR1; !SF45; Empty(); }
@@ -1175,47 +1174,47 @@ Section Jewels : !jewels
 	{
 		Section T1clusterjewels : !G2, !VF1, !High, !TopTierColors
 		{
-			# Large N12 T1
+			## Large N12 T1
 			Show N12_I84_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T1; }
 			Show N12_I75_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I75_T1; }
 			Show N12_I68_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I68_T1; }
 
-			# Large N11 T1
+			## Large N11 T1
 			Show N11_I84_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 11; EnchantmentPassiveNode jewels.cluster.N11_I84_T1; }
 			Show N11_I75_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 11; EnchantmentPassiveNode jewels.cluster.N11_I75_T1; }
 			Show N11_I68_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 11; EnchantmentPassiveNode jewels.cluster.N11_I68_T1; }
 
-			# Large N10 T1
+			## Large N10 T1
 			Show N10_I84_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 10; EnchantmentPassiveNode jewels.cluster.N10_I84_T1; }
 			Show N10_I75_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 10; EnchantmentPassiveNode jewels.cluster.N10_I75_T1; }
 			Show N10_I68_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 10; EnchantmentPassiveNode jewels.cluster.N10_I68_T1; }
 
-			# Large N9 T1
+			## Large N9 T1
 			Show N9_I84_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 9; EnchantmentPassiveNode jewels.cluster.N9_I84_T1; }
 			Show N9_I75_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 9; EnchantmentPassiveNode jewels.cluster.N9_I75_T1; }
 			Show N9_I68_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 9; EnchantmentPassiveNode jewels.cluster.N9_I68_T1; }
 
-			# Large N8 T1
+			## Large N8 T1
 			Show N8_I84_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I84_T1; }
 			Show N8_I75_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I75_T1; }
 			Show N8_I68_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I68_T1; }
 
-			# Medium N6 T1
+			## Medium N6 T1
 			Show N6_I84_T1 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I84_T1; }
 			Show N6_I75_T1 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I75_T1; }
 			Show N6_I68_T1 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I68_T1; }
 
-			# Medium N4-5 T1
+			## Medium N4-5 T1
 			Show N4_I84_T1 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I84_T1; }
 			Show N4_I75_T1 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I75_T1; }
 			Show N4_I68_T1 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I68_T1; }
 
-			# Small N3 T1
+			## Small N3 T1
 			Show N3_I84_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I84_T1; }
 			Show N3_I75_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I75_T1; }
 			Show N3_I68_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I68_T1; }
 
-			# Small N2 T1
+			## Small N2 T1
 			Show N2_I84_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I84_T1; }
 			Show N2_I75_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I75_T1; }
 			Show N2_I68_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T1; }
@@ -1223,47 +1222,47 @@ Section Jewels : !jewels
 
 		Section T2clusterjewels : !G3, !V2, !High, !TierTwoColors
 		{
-			# Large N12 T2
+			## Large N12 T2
 			Show N12_I84_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I84_T2; }
 			Show N12_I75_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I75_T2; }
 			Show N12_I68_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 12; EnchantmentPassiveNode jewels.cluster.N12_I68_T2; }
 
-            # Large N11 T2
+            ## Large N11 T2
 			Show N11_I84_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 11; EnchantmentPassiveNode jewels.cluster.N11_I84_T2; }
 			Show N11_I75_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 11; EnchantmentPassiveNode jewels.cluster.N11_I75_T2; }
 			Show N11_I68_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 11; EnchantmentPassiveNode jewels.cluster.N11_I68_T2; }
 
-			# Large N10 T2
+			## Large N10 T2
 			Show N10_I84_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 10; EnchantmentPassiveNode jewels.cluster.N10_I84_T2; }
 			Show N10_I75_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 10; EnchantmentPassiveNode jewels.cluster.N10_I75_T2; }
 			Show N10_I68_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 10; EnchantmentPassiveNode jewels.cluster.N10_I68_T2; }
 
-			# Large N9 T2
+			## Large N9 T2
 			Show N9_I84_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 9; EnchantmentPassiveNode jewels.cluster.N9_I84_T2; }
 			Show N9_I75_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 9; EnchantmentPassiveNode jewels.cluster.N9_I75_T2; }
 			Show N9_I68_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 9; EnchantmentPassiveNode jewels.cluster.N9_I68_T2; }
 
-			# Large N8 T2
+			## Large N8 T2
 			Show N8_I84_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I84_T2; }
 			Show N8_I75_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I75_T2; }
 			Show N8_I68_T2 { BaseType == "Large Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 8; EnchantmentPassiveNode jewels.cluster.N8_I68_T2; }
 
-			# Medium N6 T2
+			## Medium N6 T2
 			Show N6_I84_T2 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I84_T2; }
 			Show N6_I75_T2 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I75_T2; }
 			Show N6_I68_T2 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 6; EnchantmentPassiveNode jewels.cluster.N6_I68_T2; }
 
-			# Medium N4-5 T2
+			## Medium N4-5 T2
 			Show N4_I84_T2 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I84_T2; }
 			Show N4_I75_T2 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I75_T2; }
 			Show N4_I68_T2 { BaseType == "Medium Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum <= 5; EnchantmentPassiveNode jewels.cluster.N4_I68_T2; }
 
-			# Small N3 T2
+			## Small N3 T2
 			Show N3_I84_T2 { BaseType == "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I84_T2; }
 			Show N3_I75_T2 { BaseType == "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I75_T2; }
 			Show N3_I68_T2 { BaseType == "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 3; EnchantmentPassiveNode jewels.cluster.N3_I68_T2; }
 
-			# Small N2 T2
+			## Small N2 T2
 			Show N2_I84_T2 { BaseType == "Small Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I84_T2; }
 			Show N2_I75_T2 { BaseType == "Small Cluster Jewel"; ItemLevel >= 75; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I75_T2; }
 			Show N2_I68_T2 { BaseType == "Small Cluster Jewel"; ItemLevel >= 68; EnchantmentPassiveNum = 2; EnchantmentPassiveNode jewels.cluster.N2_I68_T2; }
@@ -1374,10 +1373,12 @@ Section Gems : Class == class_gems, !Gems
 
 	Section GemsSpecial : Auto("gems-special")
 	{
-		## Empower-class gems that are currently super-expensive
-		Show SpecialWorldDrops { !G1; !*T1; BaseType == gems.t1_normal; }
 		## Empower class leveled gems
-		Show exSpecialE3 { !G1; !*T1; BaseType == gems.untiered.empowerclassgems; GemLevel >= 3; Corrupted False; }
+		Show exSpecialE4 { !G1; !*T1; BaseType == gems.untiered.empowerclassgems; GemLevel >= 4; }
+		Show exSpecialE3 { !G1; !*T1; BaseType == gems.untiered.empowerclassgems; GemLevel >= 2; Corrupted False; }
+		
+		## Empower-class gems that are currently super-expensive
+		Show SpecialWorldDrops { !G1; !*T1; BaseType == gems.t1_normal; Corrupted False; }
 
 		## All other 'special' gems
 		Show exSpecial { !G3; !*P1; BaseType == gems.untiered.specialGems; }
@@ -1500,6 +1501,11 @@ Section Maps : Class == "Maps", !Maps
 	{
 		Show t1  { %D6; !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
 		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
+	}
+
+	Section SpecialCorruptedMaps : Auto("maps->corruptedspecial")
+	{
+		Show mod8 { !G2; !*SpecialHigh; Corrupted True; Identified True; Mod >=8 "a" "e" "i" "o" "u" "y"; }
 	}
 
 	Section MapsWithCorruptedMods : Auto("maps->corruptedimplicit"), CorruptedMods >= 1
@@ -1712,7 +1718,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 
 Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class == class_currency, !currency
 {	
-	# Whetstones, augments and transmutes
+	## Whetstones, augments and transmutes
 	Show t1	{ %DS4; !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
 	Show t2	{ %DS3; !G5H; !*t7chance;  StackSize >= 5; BaseType == currency.stacked.supplies.higher; }
 	Show t3	{ %D2; !*t7chance; !G6H;  StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
@@ -1724,7 +1730,7 @@ Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class == cl
 
 Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class == class_currency, !currency
 {	
-	# armourers
+	## Armourers
 	Show t1	{ %DS4; !G4;  !*t6chrom;   StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
 	Show t2	{ %DS3; !G5H; !*t7chance;  StackSize >= 5; BaseType == currency.stacked.supplies.lower; }
 	Show t3	{ %D2; !G5;  !*t8trans;    StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
@@ -2013,6 +2019,8 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 
 Section DivinationCards : Auto("divination"), Class == "Divination Cards", !divi
 {
+	Show highStack { !G1; !*t1; StackSize >= 3; BaseType == divination.exStacked; }
+
 	Show t1 	{ !G1; !*t1;	BaseType == divination.t1; }
 	Show t2 	{ !G2; !*t2;	BaseType == divination.t2; }
 	Show t3 	{ !G3;!*t3;	BaseType == divination.t3; }
@@ -2095,15 +2103,12 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
-# These bases have multiple uniques. One of the uniques, is a high value one
-# While others are cheap. We give them a high quality display, while making a normal unique
-# Sound to prevent false excitement.
+
 	Show 5link 		  { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	
 	Show multispecialhigh { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecialhigh; }
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
 
-# For those 6 sockets	
 	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
 
 #------------------------------------
