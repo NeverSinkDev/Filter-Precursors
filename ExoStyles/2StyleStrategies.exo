@@ -712,6 +712,17 @@ Style T5
 	}
 }
 
+Style T6
+{
+	Func T6 () 
+	{
+		var acc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor acc;
+		PlayEffect tier.t5.cray Temp;
+	}
+}
+
 Style TMulti
 {
 	Func Multi()
@@ -1191,6 +1202,13 @@ Style LowerValueTiering
 		LVHL2();
 	}
 
+	Func LT2C()
+	{
+		SetBorderColor accent.corrupt.tx;
+		SetBackgroundColor extra;
+		LVHL2();
+	}
+
 	Func LT3()
 	{
 		SetBorderColor sBlack;
@@ -1233,6 +1251,39 @@ Style Sentinel
 		PlayAlertSound sounds.currency;
 		Beam league.color;
 		SetFontSize font.t4;
+	}
+}
+
+Style Gold
+{
+	Func Huge ()
+	{
+		PlayAlertSound sounds.currency;
+		Colors( gold.acc, gold.acc, gold.extra);
+		PlayEffect Orange;
+		SetFontSize font.t3;
+	}
+
+	Func Large ()
+	{
+		Colors( sWhite, sWhite, sBlack);
+		PlayEffect Orange Temp;
+		SetFontSize font.t4;
+	}
+
+	Func Medium ()
+	{
+		SetFontSize font.t5;
+		SetTextColor sWhite;
+		SetBorderColor sWhite;
+	}
+
+	Func Small ()
+	{
+		SetTextColor gold.acc;
+		SetBorderColor sBlack;
+		SetFontSize font.t6;
+		SetBackgroundColor accent.low.base;
 	}
 }
 
@@ -1673,7 +1724,7 @@ Style NewLeagueTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 	var acc = league.new.tierlist;
 }
 
-Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
+Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5, T6
 {
 	var sound = sounds.currency;
 	var icon = Hexagon;

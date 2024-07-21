@@ -19,6 +19,21 @@ Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 }
 
 #===============================================================================================================
+# [[0200]] Gold
+#===============================================================================================================
+
+Section Gold : Auto("Gold"), BaseType == "Gold"
+{
+	Show stack3 { !G64; !gold.huge; StackSize >= 3000; }
+	Show stack2 { !G5;  !gold.large; StackSize >= 500; }
+	Show stack1 { !G6H; !gold.medium; StackSize >= 150; }
+	
+	Show stacklvl1 { !G5; !gold.medium; StackSize >= 50; AreaLevel <= 68; }
+	
+	Show anyOther   { !G6H; !gold.small; Empty(); }
+}
+
+#===============================================================================================================
 # [[0200]] High tier influenced items
 #===============================================================================================================
 
@@ -549,7 +564,7 @@ Section ArtefactItemClasses
 #------------------------------------
 #   [1234] Affliction
 #------------------------------------
-	Section AfflictionTypes : Class == "Tinctures" "Charms" "Corpses", Auto("artefact->affliction")
+	Section AfflictionTypes : Class == "Charms" "Corpses", Auto("artefact->affliction")
 	{
 		Show Any { !G3; Empty(); }
 	}	
@@ -815,7 +830,7 @@ Section Lowcraft : Auto("normalcraft->lowstrict"), ItemLevel >= 68, ItemLevel <=
 #------------------------------------
 #!! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
 
-Section ChiselRecipe : BaseType == "Gavel" "Rock Breaker" "Stone Hammer", Auto("ChiselRecipe"), !recipe, !GEX
+Section ChiselRecipe : BaseType == "Gavel", Auto("ChiselRecipe"), !recipe, !GEX
 {
 	ShowD Chisel20 				{ %D0; !*t2; Quality >= 20; Rarity < Unique; }
 	ShowD ChiselHighQualNormal 	{ %D0; !*t3; Clean(); Quality >= 15; Rarity Normal; }
@@ -837,12 +852,18 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 
 
 #===============================================================================================================
-# [[0200]] Endgame Flasks
+# [[0200]] Endgame Flasks & Tinctures
 #===============================================================================================================
+
+Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
+{
+	Show OverQualUtil       { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
+	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF42; %D5; ItemLevel >= 82; }
+	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
+}
 
 Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68, !utilflasks
 {
-
 #------------------------------------
 # [2701] Endgame Flasks
 #------------------------------------
@@ -850,7 +871,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	
 	Section OverQualityFlasks : !GEX
 	{
-		Show OverQualCorrupted  { !G4; !exotic.t3; !Corrupt %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; }
+		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; }
 		Show OverQualUtil  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; Class == class_utilFlasks; }
 		Show OverQualLife  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 28; BaseType == bases.flask.lifemanaassorted; }
 	}
@@ -1032,8 +1053,8 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1weapons { !GR1; %D3; BaseType == bases.rares.eg.t1.weapons }
-		Show T1armours { !GR1; %D3; BaseType == bases.rares.eg.t1.armours }
+		Show T1weapons { !GR1; %D3; BaseType == bases.rares.eg.t1.weapons; }
+		Show T1armours { !GR1; %D3; BaseType == bases.rares.eg.t1.armours + bases.atlas.higher.armors; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T2 - handpicked
@@ -1048,7 +1069,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 #===============================================================================================================
 #!! Waypoint c6.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
 
-		Show IdentifiedItemHandling { %D1; !GS; !exotic.t4; Identified True; Clean(); Class == classes_equip; }
+		Show IdentifiedItemHandling { %D0; !GS; !exotic.t4; Identified True; Clean(); Class == classes_equip; }
 
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Gear - T3 - subpar bases
@@ -1491,6 +1512,11 @@ Section Maps : Class == "Maps", !Maps
 # [4405] Delirium/Blight/Enchanted Maps!
 #------------------------------------
 
+	Section VaalTemple : BaseType == "Vaal Temple Map", MapTier >= 16, Auto("maps->vaaltemple")
+	{
+		Show Any { !G2; !maps.T1; Empty(); }
+	}
+
 	Section EnchantedMaps : AnyEnchantment True, Auto("maps->enchanted")
 	{
 		Show t1  { %D6; !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
@@ -1642,7 +1668,7 @@ Section MapFragments : Class == "Map Fragments"
 #------------------------------------
 	Section StackedFragments : Auto("Fragments->stacked")
 	{
-		Show t3 { !G3; %DS4; BaseType == fragments.generic.t4; StackSize >= 3; }
+		Show t3 { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
 	}
 
 	Section StackedScarabs : Auto("Fragments->stackedScarabs")
@@ -1659,6 +1685,8 @@ Section MapFragments : Class == "Map Fragments"
 		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
 		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
 		Show t4 { !G4; %HS4; BaseType == fragments.scarabs.t4; }
+		Show t5 { !G5; %HS3; BaseType == fragments.scarabs.t5; }
+		Show t6 { !G5; %HS3; BaseType == fragments.scarabs.t6; }
 		Show restex { BaseType "Scarab"; }
 	}
 
@@ -1670,7 +1698,7 @@ Section MapFragments : Class == "Map Fragments"
 		Show t1 { !G1; BaseType == fragments.generic.t1; }
 		Show t2 { !G2; BaseType == fragments.generic.t2; }
 		Show t3 { !G3; BaseType == fragments.generic.t3; }
-		Show t4 { !G4; %HS4; BaseType == fragments.generic.t4; }
+		Show t4 { !G4; %HS3; BaseType == fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
 }
@@ -1690,8 +1718,8 @@ Section Breachstone : Class == "Breachstones", Auto("breachstone")
 
 Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class == class_currency, AreaLevel <= 67, !Currency
 {
-	Show trans 	  { %D4; !G5H; !*t7chance; !Maximize; !LevelCurrency; StackSize >= 3; BaseType == currency.leveling.trans; }
-	Show aug      { %D4; !G5H; !t8trans; !Maximize;   StackSize >= 3; BaseType == currency.leveling.aug; }
+	Show trans 	  { %D4; !G5H; !Currency.t7chance; !Maximize; !LevelCurrency; StackSize >= 3; BaseType == currency.leveling.trans; }
+	Show aug      { %D4; !G5H; !Currency.t8trans;  !Maximize; StackSize >= 3; BaseType == currency.leveling.aug; }
 	Show portal   { %D4; !G5; !*tportHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.portal; }
 	Show wisdom   { %D4; !G5; !*twisdHigh; !Maximize; StackSize >= 3; BaseType == currency.leveling.wisdom; }
 }
@@ -1886,9 +1914,10 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Cu
 {
 	Show t1 { !G1; !*t1exalted; BaseType == currency.oil.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.oil.t2; }
-	Show t3 { !G4; %HS5; !*t4chaos; BaseType == currency.oil.t3; }
-	Show t4 { !G5; %HS3; !*t6chrom; BaseType == currency.oil.t4; }
-	Hide exHide { !shrink; BaseType == currency.oil.t1 + currency.oil.t2 + currency.oil.t3 + currency.oil.t4; }
+	Show t3 { !G4; %HS5; !*t3annul; BaseType == currency.oil.t3; }
+	Show t4 { !G5; %HS4; !*t4chaos; BaseType == currency.oil.t4; }
+	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.oil.t4; }
+	Hide exHide { !shrink; BaseType == currency.oil.t1 + currency.oil.t2 + currency.oil.t3 + currency.oil.t4  + currency.oil.t4; }
 	Show restex { BaseType "Oil"; }
 }
 
@@ -1899,10 +1928,10 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Cu
 
 Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !Currency
 {
-	Show t1 { !G2; !*t2divine; BaseType currency.essence.t1; }
-	Show t2 { !G3; !*t3annul; BaseType currency.essence.t2; }
-	Show t3 { !G4;  %H5; !*t4chaos; BaseType currency.essence.t3; }
-	Show t4 { !G5;  %HS3; !*t7chance; BaseType currency.essence.t4; }
+	Show t1 { !G2; !*t3annul; BaseType currency.essence.t1; }
+	Show t2 { !G3; !*t4chaos; BaseType currency.essence.t2; }
+	Show t3 { !G4;  %HS4; !*t5alchemy; BaseType currency.essence.t3; }
+	Show t4 { !G5;  %HS2; !*t7chance; BaseType currency.essence.t4; }
 	Show t5 { !G5H; %H2; !*t8trans; BaseType currency.essence.t5; }
 	Show t6 { !G5;  %H1; !*t8trans; BaseType currency.essence.t6; }
 	Hide exHide { !shrink; BaseType "Essence of"; }
@@ -2019,7 +2048,7 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 
 Section DivinationCards : Auto("divination"), Class == "Divination Cards", !divi
 {
-	Show highStack { !G1; !*t1; StackSize >= 3; BaseType == divination.exStacked; }
+	Show exCustomStack { !G1; !*t1; StackSize >= 3; BaseType == divination.exCustomStack; }
 
 	Show t1 	{ !G1; !*t1;	BaseType == divination.t1; }
 	Show t2 	{ !G2; !*t2;	BaseType == divination.t2; }
@@ -2118,7 +2147,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show earlyleague { !G3; %H5; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	
 	Show exjewelscorrupted    { !GSH; !*t3; !special; BaseType == genericJewels; CorruptedMods = 0; Corrupted True; }
-	Show exjewels    		  { !GSH; !*t2; !SpecialNoB; BaseType == uniques.jewels; }
+	Show exjewels    		  { !GSH; !*t2; BaseType == uniques.jewels; }
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class == "Rings"; }
@@ -2155,16 +2184,6 @@ Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 	Show restex { !restex; Empty(); }
 }
 
-Section Necropolis : Auto("Necropolis"), Class == "Embers of the Allflame"
-{
-	Show Leveling { !G3; !newleaguetier.t3; ItemLevel < 68; }
-
-	Show t2 { !G2; !newleaguetier.t2; BaseType == league.embers.t2; }
-	Show t3 { !G3; !newleaguetier.t3; BaseType == league.embers.t3; }
-	Show t4 { !G4; !newleaguetier.t4; BaseType == league.embers.t4; }
-	Show restex { Empty(); }
-}
-
 #===============================================================================================================
 # [[4900]] Questlike-Items2
 #===============================================================================================================
@@ -2190,7 +2209,7 @@ Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == "Life Flasks" "Mana 
 }
 
 #===============================================================================================================
-# [[6000]] Leveling - Flasks
+# [[6000]] Leveling - Flasks & Tinctures
 #===============================================================================================================
 
 Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
@@ -2205,6 +2224,11 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 	Show Quicksilver 		{ !G3; !utilflasks.LT1; !LevelFlaskHigh; BaseType == "Quicksilver Flask"; }
 	Show AsortedUtility 	{ !G4; !utilflasks.LT2; !LevelFlask; BaseType == bases.flask.utilityassorted; }
 	Show Any 				{ !G5; %H3; !utilflasks.LT3; Class == class_utilFlasks; }
+}
+
+Section LevelingTinctures : Auto("Leveling->tincture"), Class == "Tinctures"
+{
+	Show Any 				{ !G4; !utilflasks.LT2; !LevelFlask; Empty(); }
 }
 
 Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasks, Rarity Normal
