@@ -701,6 +701,18 @@ Style T4WhitePieceNoBG
 	}
 }
 
+Style T4BlackPieceLow
+{
+	Func T4 () 
+	{ 
+		var lowacc = tier.t5.acc;
+		var base = sBlack;
+		SetFontSize font.t4;
+		SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor lowacc; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
+	}
+}
+
 Style T5
 {
 	Func T5 () 
@@ -720,6 +732,29 @@ Style T6
 		SetFontSize font.t5;
 		SetTextColor acc;
 		PlayEffect tier.t5.cray Temp;
+	}
+}
+
+Style T5low
+{
+	Func T5 () 
+	{
+		var lowacc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor lowacc
+		SetBorderColor lowacc;
+		PlayEffect tier.t5.cray Temp;
+		MinimapIcon 2 tier.t4.cmap icon; 
+	}
+}
+
+Style T6low
+{
+	Func T6 () 
+	{
+		var lowacc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor lowacc;
 	}
 }
 
@@ -1119,6 +1154,11 @@ Style GemStrategy : T1
 
 Style GeneralMapProgressionStrategy
 {
+	Func NoteAcc()
+	{
+		SetBorderColor maps.note.acc;
+	}
+
 	Func SpecialHigh()
 	{
 		SetFontSize font.t1;
@@ -1724,11 +1764,12 @@ Style NewLeagueTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 	var acc = league.new.tierlist;
 }
 
-Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5, T6
+Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4BlackPieceLow, T5low, T6low
 {
 	var sound = sounds.currency;
 	var icon = Hexagon;
-	var acc = fragment.tx;
+	var acc = fragment.tx.high;
+	var lowacc = fragment.tx;
 }
 
 Style FragmentExceptions : T1

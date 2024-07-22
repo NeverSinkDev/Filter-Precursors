@@ -143,6 +143,7 @@ var phys_reduction = "of the Conservator" "of the Protector" "of the Keeper";
 var suppress = "of Nullification" "of Abjuration" "of Revoking" "of Snuffing";
 var ailment_avoid = "of Will" "of Fortitude" "of Resolve";
 var block = "of the Citadel" "of the Sentinel" "of the Buttress" "of the Stalwart";
+var blockP = "Unyielding" "Enduring" "Unwavering" "Warded";;
 var spellblock = "of the Bastion" "of the Barricade";
 var es_fasterstart = "of Second Wind" "of Vigour" "of Galvanising";
 var es_recharge = "of Ardour" "of Buffering" "of Dispersal";
@@ -452,7 +453,7 @@ var shield_caster_damage = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcas
 var shield_caster_damage_best = wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1];
 
 ## CORE VALUES: 
-var shield_global_core = a_cheatMods + shield_cheatMods + aux_all + suppress[1] + shield_life[1] + shield_caster_gemLevels + shield_caster_damage_best;
+var shield_global_core = a_cheatMods + shield_cheatMods + aux_all + suppress[1] + shield_life[1] + blockP[1] + shield_caster_gemLevels + shield_caster_damage_best;
 
 var xshield_es_core =       shield_global_core + shields_fes[3] + shields_pes[2];
 var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[2];
@@ -468,7 +469,7 @@ var shield_combined_attackermods = "of the Ranger" "of Mastery";
 
 ## UNIVERSAL MIX
 var shield_maxres = "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm";
-var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[4] + ailment_avoid[2] + block[2] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
+var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[4] + ailment_avoid[2] + blockP[3] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
 
 var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses + ws_cast_crit[1];
 

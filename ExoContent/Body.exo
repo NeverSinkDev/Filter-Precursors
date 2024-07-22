@@ -224,6 +224,9 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 #===============================================================================================================
 #!! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
+var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
+var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
+
 Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
 {
 #------------------------------------
@@ -463,9 +466,6 @@ var exotic_warband = "Betrayer's" "Brinerot" "Deceiver's" "Mutewind" "Redblade" 
 var exotic_bestiary_t1 = "of Farrul" "of Fenumus";
 var exotic_bestiary_t2 = "of Craiceann" "of Saqawal";
 
-var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
-var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
-
 Section IdModSectionSpecial : IdMods, !exotic
 {
 	Section Rare : Rarity "Rare", Auto("ExoticMods")
@@ -475,7 +475,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #!! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)"
 
-		Show FracturedVeiled { %D4 !GSH; !exotic.t2; Clean(); Mod "Veil"; FracturedItem True; }
+		Show FracturedVeiled { %D4 !GSH; !exotic.t2; Clean(); Mod "Veil" + exotic_incursion; FracturedItem True; }
 		Show DuoVeil    { %D4; !GSH; !exotic.t3; Clean(); Mod "Veiled"; Mod "of the Veil"; }
 		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 2; Height <= 2; } 
 		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 1; Height <= 4; }
@@ -593,7 +593,6 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 #------------------------------------	
 Section SanctumRelics : Auto("artefact->sanctifiedrelics")
 {
-	## Show AnySanctified 		{ !G2; !artefact; Class == "Sanctified Relics"; }
 	Show SelectedRelics		{ !G3; !exotic.t2; Class == "Relics"; BaseType == exotic.sanctum.relics; }
 	Show AnyRelic 			{ !G4; !exotic.t3; Class == "Relics"; }
 }
@@ -1300,14 +1299,14 @@ Section Jewels : !jewels
 		Show Optimal1HighLarge	{ !G3; %D5; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum >= 12; }
 		Show OptimalHighLarge	{ !G3; %D5; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
 		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType == "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large 				{ !G4; %D3; !V4; BaseType == "Large Cluster Jewel"; }
+		Show Large 				{ !G4; %H3; !V4; BaseType == "Large Cluster Jewel"; }
 
 		Show OptimalHighMedium  { !G3; %D4; !V2; !High; BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
 		Show HighMedium 	    { !G3; %D4; !V3; !High; BaseType == "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium 		    { !G4; %D3; !V4; BaseType == "Medium Cluster Jewel"; }
+		Show Medium 		    { !G4; %H3; !V4; BaseType == "Medium Cluster Jewel"; }
 
 		Show HighSmall 			{ !G3; %D4; !V3; !High; BaseType == "Small Cluster Jewel"; ItemLevel >= 84; }
-		Show Small 				{ !G4; %D3; !V4; BaseType == "Small Cluster Jewel"; }
+		Show Small 				{ !G4; %H3; !V4; BaseType == "Small Cluster Jewel"; }
 	}
 }
 
@@ -1489,7 +1488,7 @@ Section Maps : Class == "Maps", !Maps
 	}
 
 #------------------------------------
-# [4405] T17 maps
+# [4405] T17
 #------------------------------------
 	#!! Waypoint c9.maps.special.t17 : "Maps - T17 purple tier maps"
 	Section T17Maps : Auto("maps->t17uber")
@@ -1509,12 +1508,17 @@ Section Maps : Class == "Maps", !Maps
 	}
 
 #------------------------------------
-# [4405] Delirium/Blight/Enchanted Maps!
+# [4405] Special Maps
 #------------------------------------
 
 	Section VaalTemple : BaseType == "Vaal Temple Map", MapTier >= 16, Auto("maps->vaaltemple")
 	{
 		Show Any { !G2; !maps.T1; Empty(); }
+	}
+
+	Section SpecialCorruptedMaps : Auto("maps->corruptedspecial")
+	{
+		Show mod8 { !G2; !*SpecialHigh; Corrupted True; Identified True; Mod >=8 "a" "e" "i" "o" "u" "y"; }
 	}
 
 	Section EnchantedMaps : AnyEnchantment True, Auto("maps->enchanted")
@@ -1523,21 +1527,16 @@ Section Maps : Class == "Maps", !Maps
 		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
 	}
 
-	Section ImplicitModMaps : HasImplicitMod True, Auto("maps->implicitmod")
-	{
-		Show t1  { %D6; !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
-		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
-	}
-
-	Section SpecialCorruptedMaps : Auto("maps->corruptedspecial")
-	{
-		Show mod8 { !G2; !*SpecialHigh; Corrupted True; Identified True; Mod >=8 "a" "e" "i" "o" "u" "y"; }
-	}
-
 	Section MapsWithCorruptedMods : Auto("maps->corruptedimplicit"), CorruptedMods >= 1
 	{
-		Show t1  { %D6; !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Rarity Rare; }
-		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
+		ShowD t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Rarity Rare; }
+		ShowD Any { !G4; !*SpecialLow; Empty(); }
+	}
+
+	Section ImplicitModMaps : HasImplicitMod True, Auto("maps->implicitmod")
+	{
+		ShowD t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
+		ShowD Any { !G4; !*SpecialLow; Empty(); }
 	}
 
 #===============================================================================================================
@@ -1565,52 +1564,56 @@ Section Maps : Class == "Maps", !Maps
 		Cont deco_zone3general { !GEX; !*deco_map_zone34; MapTier >= 6; MapTier <= 10; }
 		Cont deco_zone4general { !GEX; !*deco_map_zone34; MapTier >= 1; MapTier <= 5; }
 
+		Cont deco_mapup_t16 { !GEX; MapTier >= 16; AreaLevel < 83; }
+		Cont deco_mapup_t15 { !GEX; MapTier >= 15; AreaLevel < 82; }
+		Cont deco_mapup_t14 { !GEX; MapTier >= 14; AreaLevel < 81; }
+		Cont deco_mapup_t13 { %D4; !GEX; MapTier >= 13; AreaLevel < 80; }
+		Cont deco_mapup_t12 { %D4; !GEX; MapTier >= 12; AreaLevel < 79; }
+		Cont deco_mapup_t11 { %D4; !GEX; MapTier >= 11; AreaLevel < 78; }
+		Cont deco_mapup_t10 { %D3; !GEX; MapTier >= 10; AreaLevel < 77; }
+		Cont deco_mapup_t9  { %D3; !GEX; MapTier >= 9; AreaLevel < 76; }
+		Cont deco_mapup_t8  { %D3; !GEX; MapTier >= 8; AreaLevel < 75; }
+		Cont deco_mapup_t7  { %D3; !GEX; MapTier >= 7; AreaLevel < 74; }
+		Cont deco_mapup_t6  { %D3; !GEX; MapTier >= 6; AreaLevel < 73; }
+		Cont deco_mapup_t5  { %D3; !GEX; MapTier >= 5; AreaLevel < 72; }
+		Cont deco_mapup_t4  { %D3; !GEX; MapTier >= 4; AreaLevel < 71; }
+		Cont deco_mapup_t3  { %D3; !GEX; MapTier >= 3; AreaLevel < 70; }
+		Cont deco_mapup_t2  { %D3; !GEX; MapTier >= 2; AreaLevel < 69; }
+		Cont deco_mapup_t1  { %D3; !GEX; MapTier >= 1; AreaLevel < 68; }
+
+		Cont decor_implicit  	{ HasImplicitMod True; !GEX; !*NoteAcc; }
+		Cont deco_corruptedMod  { CorruptedMods >= 1; !GEX;  !*NoteAcc; }
+
 #------------------------------------
 # [4403] Map progression
 #------------------------------------
 
 #!! Waypoint c9.maps.generic.t16 : "Maps - t14-t16 - high reds"
 
-		Cont deco_mapup_t16 { !GEX; MapTier >= 16; AreaLevel < 83; }
 		Show maps_a_t16 { !GM1; !*z1; MapTier >= 16; }
-		Cont deco_mapup_t15 { !GEX; MapTier >= 15; AreaLevel < 82; }
 		Show maps_a_t15 { !GM1; !*z1; MapTier = 15; }
-		Cont deco_mapup_t14 { !GEX; MapTier >= 14; AreaLevel < 81; }
 		Show maps_a_t14 { !GM1; !*z1; MapTier = 14; }
 
 #!! Waypoint c9.maps.generic.t14 : "Maps - t11-t13 - low reds"
 
-		Cont deco_mapup_t13 { %D4; !GEX; MapTier >= 13; AreaLevel < 80; }
 		Show maps_b_t13 { !GM2; %H5; !*z2; MapTier = 13; }
-		Cont deco_mapup_t12 { %D4; !GEX; MapTier >= 12; AreaLevel < 79; }
 		Show maps_b_t12 { !GM2; %H5; !*z2; MapTier = 12; }
-		Cont deco_mapup_t11 { %D4; !GEX; MapTier >= 11; AreaLevel < 78; }
 		Show maps_b_t11 { !GM2; %H5; !*z2; MapTier = 11; }
 
 #!! Waypoint c9.maps.generic.t10 : "Maps - t6-t10 - yellow maps"
 
-		Cont deco_mapup_t10 { %D3; !GEX; MapTier >= 10; AreaLevel < 77; }
 		Show maps_c_t10 { !GM3; %H4; !*z3; MapTier = 10; }
-		Cont deco_mapup_t9  { %D3; !GEX; MapTier >= 9; AreaLevel < 76; }
 		Show maps_c_t9  { !GM3; %H4; !*z3; MapTier = 9; }
-		Cont deco_mapup_t8  { %D3; !GEX; MapTier >= 8; AreaLevel < 75; }
 		Show maps_c_t8  { !GM3; %H4; !*z3; MapTier = 8; }
-		Cont deco_mapup_t7  { %D3; !GEX; MapTier >= 7; AreaLevel < 74; }
 		Show maps_c_t7  { !GM3; %H4; !*z3; MapTier = 7; }
-		Cont deco_mapup_t6  { %D3; !GEX; MapTier >= 6; AreaLevel < 73; }
 		Show maps_c_t6  { !GM3; %H4; !*z3; MapTier = 6; }
 
 #!! Waypoint c9.maps.generic.t5 : "maps - T1-T5 - white maps"
 
-		Cont deco_mapup_t5  { %D3; !GEX; MapTier >= 5; AreaLevel < 72; }
 		Show maps_d_t5  { !GM4; %H4; !*z4; MapTier = 5; }
-		Cont deco_mapup_t4  { %D3; !GEX; MapTier >= 4; AreaLevel < 71; }
 		Show maps_d_t4  { !GM4; %H4; !*z4; MapTier = 4; }
-		Cont deco_mapup_t3  { %D3; !GEX; MapTier >= 3; AreaLevel < 70; }
 		Show maps_d_t3  { !GM4; %H4; !*z4; MapTier = 3; }
-		Cont deco_mapup_t2  { %D3; !GEX; MapTier >= 2; AreaLevel < 69; }
 		Show maps_d_t2  { !GM4; %H4; !*z4; MapTier = 2; }
-		Cont deco_mapup_t1  { %D3; !GEX; MapTier >= 1; AreaLevel < 68; }
 		Show maps_d_t1  { !GM4; %H4; !*z4; MapTier = 1; }
 
 		Show restex { Empty(); }
@@ -1738,11 +1741,11 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 #===============================================================================================================
 # [[4800]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
-#!! Waypoint c9.currency.stacked.all : "Tierlist - Currency - Endgame Stacked"
 
 #------------------------------------
 # [4702] Supplies: High Stacking
 #------------------------------------
+#!! Waypoint c9.currency.stacked.all : "Tierlist - Currency - Endgame Stacked"
 
 Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class == class_currency, !currency
 {	
@@ -1919,6 +1922,21 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Cu
 	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.oil.t4; }
 	Hide exHide { !shrink; BaseType == currency.oil.t1 + currency.oil.t2 + currency.oil.t3 + currency.oil.t4  + currency.oil.t4; }
 	Show restex { BaseType "Oil"; }
+}
+
+#------------------------------------
+# [5104] Runes
+#------------------------------------
+#!! Waypoint c9.runes.all : "Tierlist - Runes"
+
+Section SettlerRunes : Auto("runes"), Class == class_currency, !Currency
+{
+	Show t1 { !G1; !*t1exalted; BaseType == runes.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == runes.t2; }
+	Show t3 { !G4; !*t3annul; BaseType == runes.t3; }
+	Show t4 { !G5; !*t4chaos; BaseType == runes.t4; }
+	Show t5 { !G5; !*t6chrom; BaseType == runes.t5; }
+	Show restex { BaseType "Rune"; }
 }
 
 #------------------------------------
@@ -2209,15 +2227,11 @@ Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == "Life Flasks" "Mana 
 }
 
 #===============================================================================================================
-# [[6000]] Leveling - Flasks & Tinctures
+# [[6000]] Leveling - Utility Flasks and Tinctures
 #===============================================================================================================
+#!! Waypoint c11.leveling.utilflasks : "Leveling - Utility flasks and Quality Flasks"
 
 Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
-
-#------------------------------------
-# [6002] Utility Flasks
-#------------------------------------
-#!! Waypoint c11.leveling.utilflasks : "Leveling - Utility flasks and Quality Flasks"
 
 Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 {
@@ -2238,10 +2252,14 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == clas
 	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; }
 }
 
+#===============================================================================================================
+# [[6000]] Leveling - Life, Mana, Hybrid
+#===============================================================================================================
+
 #------------------------------------
-# [6002] Hybrid flasks
+# [6002] Hybrid Flasks
 #------------------------------------
-#!! Waypoint c11.leveling.lifeflasks : "Leveling - Life, Mana, Hybrid flasks"
+#!! Waypoint c11.leveling.lifeflasks : "Leveling - life and mana flasks"
 
 Section LevelingHybridFlasks : Class == "Hybrid Flasks", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
 {
@@ -2457,7 +2475,7 @@ Section LevelingMiscGear : Rarity <= Magic
 	{
 		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType == leveling.bases.quivers.best; }
 		Show FireResistGear  { %D2; !NoticeNM2; !SF35; BaseType == "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
-		Show GeneralCrafting { %D2; !NoticeNM2; !SF35; AreaLevel >= leveling.keylevels.act3; BaseType == leveling.bases.generalcrafting; }
+		Show GeneralCrafting { %D2; !NoticeNM2; !SF35; AreaLevel >= leveling.keylevels.act2; BaseType == leveling.bases.generalcrafting; }
 	}
 
 	Section MinionItems : Auto("Leveling->NormalMagic->minion"), !low, !G7, !GLVL2
