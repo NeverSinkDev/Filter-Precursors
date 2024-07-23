@@ -21,7 +21,11 @@ var classes_weapons = classes_cast + classes_attack;
 var classes_1h = classes_1hattack + classes_1hcast + "Shields";
 var classes_2h = classes_2hattack + classes_2hcast;
 
-var classes_weapons_melee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
+var classes_weapons_melee = classes_weapons_1hmelee + classes_weapons_2hmelee;
+
+var classes_weapons_1hmelee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes";
+var classes_weapons_2hmelee =  "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
+
 var classes_weapons_ranged = "Wands" "Bows";
 var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
 
