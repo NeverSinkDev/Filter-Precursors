@@ -118,7 +118,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 		## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
 		ShowD t2_exo { !G4; BaseType == bases.influenced.exotic2.t1; }
 		## Top Tier Common items of top item level
-		ShowD t2_86 { !G4; ItemLevel >= 86; BaseType == bases.rares.jwl.ringsamu.t1 + bases.rares.jwl.ringsamu.t2 + bases.rares.jwl.belts.t1 + bases.rares.jwl.belts.t2 + bases.rares.eg.t1.weapons + bases.rares.eg.t1.armours + bases.rares.eg.t2.weapons + bases.rares.eg.t2.armours; };
+		ShowD t2_86 { !G4; ItemLevel >= 86; BaseType == bases.rares.jwl.ringsamu.t1 + bases.rares.jwl.ringsamu.t2 + bases.rares.jwl.belts.t1 + bases.rares.jwl.belts.t2 + bases.rares.eg.t1; };
 	}
 
 #------------------------------------
@@ -719,37 +719,37 @@ Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity
 
 Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean(), !bestrolls
 {
-	Section QualityCrafting1 : BaseDefencePercentile >= 99; Quality >= 30;
+	Section QualityCrafting1 : BaseDefencePercentile >= 99, Quality >= 30
 	{
-		Show Body1	 	 { %D6; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
-		Show Boots1 	 { %D6; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
-		Show Shields1 	 { %D5; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
-		Show Gloves1 	 { %D5; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
-		Show Helmets1 	 { %D5; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
+		Show Body1	 	 { !G3; %D6; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
+		Show Boots1 	 { !G3; %D6; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
+		Show Shields1 	 { !G4; %D5; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
+		Show Gloves1 	 { !G4; %D5; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
+		Show Helmets1 	 { !G4; %D5; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
 	}
 
-	Section QualityCrafting2 : BaseDefencePercentile >= 80; Quality >= 28;
+	Section QualityCrafting2 : BaseDefencePercentile >= 80, Quality >= 28
 	{
-		Show Body2 		 { %D5; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
-		Show Boots2 	 { %D5; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
-		Show Shields2 	 { %D4; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
-		Show Gloves2 	 { %D4; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
-		Show Helmets2 	 { %D4; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
+		Show Body2 		 { !G4; %D5; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
+		Show Boots2 	 { !G4; %D5; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
+		Show Shields2 	 { !G5; %D4; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
+		Show Gloves2 	 { !G5; %D4; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
+		Show Helmets2 	 { !G5; %D4; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
 	}
 
-	Section QualityCrafting3 : BaseDefencePercentile >= 60; Quality >= 26;
+	Section QualityCrafting3 : BaseDefencePercentile >= 60, Quality >= 26
 	{
-		Show Body3		 { %D5; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
-		Show Boots3 	 { %D5; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
-		Show Shields3 	 { %D3; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
-		Show Gloves3 	 { %D3; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
-		Show Helmets3 	 { %D3; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
+		Show Body3		 { !GEX; %D5; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
+		Show Boots3 	 { !GEX; %D5; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
+		Show Shields3 	 { !GEX; %D3; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
+		Show Gloves3 	 { !GEX; %D3; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
+		Show Helmets3 	 { !GEX; %D3; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
 	}
 
 	Section QualityWeapons
 	{
-		Show Weapons1 	 { %D4; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 30; }
-		Show Weapons2 	 { %D2; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 30; }
+		Show Weapons1 	 { !GEX; %D4; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 30; }
+		Show Weapons2 	 { !GEX; %D2; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 30; }
 	}
 }
 
@@ -987,9 +987,9 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 	Cont ILVL84 { !*ilvl84; ItemLevel >= 84; }
 	Cont ILVL86 { !*ilvl86; ItemLevel >= 86; }
 
-	Cont { !*highgear; BaseType == bases.atlas.armors.t3; ItemLevel <= 77; }
-	Cont { !*highgear; BaseType == bases.atlas.armors.t2; ItemLevel <= 83; }
-	Cont { !*highgear; BaseType == bases.atlas.armors.t1; }
+	Cont AtlasGear1 { !*highgear; BaseType == bases.atlas.armors.t3; ItemLevel <= 77; }
+	Cont AtlasGear2 { !*highgear; BaseType == bases.atlas.armors.t2; ItemLevel <= 83; }
+	Cont AtlasGear3 { !*highgear; BaseType == bases.atlas.armors.t1; }
 	
 	Cont FourLinkedRares 	{ !*fourlinkedrare; LinkedSockets >= 4; }
 
@@ -1079,12 +1079,12 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c6.rare.drophiders : "Rare Endgame Items - Hide low items on high levels"
 
-	Section RareDropHiders : Auto("HideLayer")
+	Section HideLayerRareRuleIncremental : Auto("HideLayer")
 	{
-		Hide RareDropHideLayer1 { %RH3; AreaLevel >= 82; DropLevel < 75; Class == classes_armor_noshields; }
-		Hide RareDropHideLayer2 { %RH2; AreaLevel >= 82; DropLevel < 60; Class == classes_armor_noshields; }
-		Hide RareDropHideLayer3 { %RH2; AreaLevel >= 78; DropLevel < 50; Class == classes_armor_noshields; }
-		Hide RareDropHideLayer4 { %RH1; AreaLevel >= 73; DropLevel < 40; Class == classes_armor_noshields; }
+		Hide RRIHide1 { %RH3; AreaLevel >= 82; DropLevel < 75; Class == classes_armor_noshields; }
+		Hide RRIHide2 { %RH2; AreaLevel >= 82; DropLevel < 60; Class == classes_armor_noshields; }
+		Hide RRIHide3 { %RH2; AreaLevel >= 78; DropLevel < 50; Class == classes_armor_noshields; }
+		Hide RRIHide4 { %RH1; AreaLevel >= 73; DropLevel < 40; Class == classes_armor_noshields; }
 	}
 
 #===============================================================================================================
