@@ -1310,7 +1310,7 @@ Style Gold
 	Func Huge ()
 	{
 		PlayAlertSound sounds.currency;
-		Colors( gold.acc, gold.acc, gold.extra);
+		Colors( gold.huge, gold.huge, sBlack);
 		PlayEffect Orange;
 		SetFontSize font.t3;
 	}
@@ -1327,6 +1327,7 @@ Style Gold
 		SetFontSize font.t5;
 		SetTextColor sWhite;
 		SetBorderColor sWhite;
+		SetBackgroundColor sBlack;
 	}
 
 	Func Small ()

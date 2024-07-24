@@ -205,6 +205,7 @@ Section Eldritch : Rarity <= Rare
 Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
+
 	Show ExoticHeistBases 	  { !GSH; BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { !GSH; BaseType == bases.exotic.ritual.any }
 	Show ExoticLakeKala 	  { !GSH; BaseType == bases.exotic.lakeKala.any }
@@ -216,6 +217,9 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 
 Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !exotic
 {
+	Show Stygian86		   { !GSH; !exotic.t1; %D6; BaseType == "Stygian Vise"; ItemLevel >= 86; }
+	Show Stygian		   { !GSH; !exotic.t2; %D5; BaseType == "Stygian Vise"; }
+	
 	Show ExoticSacrificial { !GSH; !exotic.t2; %D6; BaseType == "Sacrificial Garb"; }
 }
 
@@ -717,39 +721,43 @@ Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity
 #------------------------------------
 #!! Waypoint c3.gear.perfectionbased.all : "Crafting Bases - Perfection & Quality filtering"
 
-Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean(), !bestrolls
+Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
-	Section QualityCrafting1 : BaseDefencePercentile >= 99, Quality >= 30
+	Show QualChancing { !G3; !exotic.t1; %D3; Quality >= 29; BaseType == "Riveted Boots" "Steel Kite Shield"; }
+
+	Section QualityCrafting1 : BaseDefencePercentile >= 96, Quality >= 30, !exotic.t1
 	{
 		Show Body1	 	 { !G3; %D6; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
 		Show Boots1 	 { !G3; %D6; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
-		Show Shields1 	 { !G4; %D5; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
-		Show Gloves1 	 { !G4; %D5; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
-		Show Helmets1 	 { !G4; %D5; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
+		Show Shields1 	 { !G4; %D6; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
+		Show Gloves1 	 { !G4; %D6; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
+		Show Helmets1 	 { !G4; %D6; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
 	}
 
-	Section QualityCrafting2 : BaseDefencePercentile >= 80, Quality >= 28
+	Section QualityCrafting2 : Quality >= 29, !exotic.t1
 	{
 		Show Body2 		 { !G4; %D5; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
 		Show Boots2 	 { !G4; %D5; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
-		Show Shields2 	 { !G5; %D4; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
-		Show Gloves2 	 { !G5; %D4; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
-		Show Helmets2 	 { !G5; %D4; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
+		Show Shields2 	 { !G5; %D5; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
+		Show Gloves2 	 { !G5; %D5; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
+		Show Helmets2 	 { !G5; %D5; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
 	}
 
-	Section QualityCrafting3 : BaseDefencePercentile >= 60, Quality >= 26
+	Section QualityCrafting3 : Quality >= 24, !exotic.t2
 	{
 		Show Body3		 { !GEX; %D5; BaseType == bases.crafting.body.t1; ItemLevel >= 86; }
 		Show Boots3 	 { !GEX; %D5; BaseType == bases.crafting.boots.t1; ItemLevel >= 86; }
-		Show Shields3 	 { !GEX; %D3; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
-		Show Gloves3 	 { !GEX; %D3; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
-		Show Helmets3 	 { !GEX; %D3; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
+		Show Shields3 	 { !GEX; %D4; BaseType == bases.crafting.shields.t1; ItemLevel >= 86; }
+		Show Gloves3 	 { !GEX; %D4; BaseType == bases.crafting.gloves.t1; ItemLevel >= 85; }
+		Show Helmets3 	 { !GEX; %D4; BaseType == bases.crafting.helmets.t1; ItemLevel >= 85; }
 	}
 
 	Section QualityWeapons
 	{
-		Show Weapons1 	 { !GEX; %D4; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 30; }
-		Show Weapons2 	 { !GEX; %D2; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 30; }
+		Show weapont1q1 	 { !GEX; !exotic.t1; %D5; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 29; }
+		Show weapont2q1 	 { !GEX; !exotic.t2; %D4; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 29; }
+		Show weapont1q2 	 { !GEX; !exotic.t2; %D4; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 24; }
+		Show weapont2q2 	 { !GEX; !exotic.t2; %D3; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	}
 }
 
@@ -868,8 +876,6 @@ Section ChiselRecipe : BaseType == "Gavel", Auto("ChiselRecipe"), !recipe, !GEX
 
 Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 {
-	Show QualChancing { %D3; Quality >= 30; BaseDefencePercentile >= 99; BaseType = "Riveted Boots" "Steel Kite Shield"; }
-
 	Show hh { %D1; BaseType == bases.chancing.higher; }
 	Show t2 { %D1; BaseType == bases.chancing.any; }
 }
@@ -881,7 +887,8 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 
 Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
 {
-	Show OverQualUtil       { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
+	Show OverQual1          { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
+	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
 	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF42; %D5; ItemLevel >= 82; }
 	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
 }
@@ -896,8 +903,10 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	Section OverQualityFlasks : !GEX
 	{
 		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; }
-		Show OverQualUtil  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; Class == class_utilFlasks; }
-		Show OverQualLife  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 28; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualUtil1  { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 84; Quality >= 26; Class == class_utilFlasks; }
+		Show OverQualUtil2  { !G4; !exotic.t2; %D4; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; }
+		Show OverQualLife1  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 30; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualLife2  { !G4; !exotic.t2; %D4; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
 	}
 
 	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
@@ -1095,7 +1104,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1 { !GR1; %D3; BaseType == bases.rares.eg.t1; }
+		Show T1 { !GR1; %D4; BaseType == bases.rares.eg.t1; }
 
 #!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2"
 		
@@ -2540,7 +2549,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 #------------------------------------
 #!! Waypoint c11.leveling.progression.all : "Leveling - Normal and Magic - Item Progression"
 
-Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; Quality >= 12; }
+Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; Sockets >= 3; }
 
 Section WeaponProgression : Rarity Normal, Class == classes_weapons_melee classes_archer, Auto("Leveling->WeaponProgression"), !NoticeNM3, !GEX
 {
