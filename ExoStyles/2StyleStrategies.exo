@@ -233,6 +233,7 @@ Style UniversalValueAccents
 		SetFontSize font.t3;
 		PlayAlertSound sounds.unique;
 		PlayEffect Purple;
+		SetBackgroundColor 
 		SetBorderColor accent.perfection;
 		MinimapIcon 0 Purple Moon;
 		SetTextColor accent.rare.ilvl86;
@@ -1309,6 +1310,7 @@ Style Gold
 {
 	Func Huge ()
 	{
+		MinimapIcon 1 Yellow Cross;
 		PlayAlertSound sounds.currency;
 		Colors( gold.huge, gold.huge, sBlack);
 		PlayEffect Orange;
@@ -1317,6 +1319,7 @@ Style Gold
 
 	Func Large ()
 	{
+		MinimapIcon 1 White Cross;
 		Colors( sWhite, sWhite, sBlack);
 		PlayEffect Orange Temp;
 		SetFontSize font.t4;
@@ -1324,6 +1327,7 @@ Style Gold
 
 	Func Medium ()
 	{
+		MinimapIcon 2 Grey Cross;
 		SetFontSize font.t5;
 		SetTextColor sWhite;
 		SetBorderColor sWhite;
@@ -1772,7 +1776,7 @@ Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 Style NewLeagueTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 {
 	var sound = sounds.currency;
-	var icon = Cross;
+	var icon = Moon;
 	var acc = league.new.tierlist;
 }
 
