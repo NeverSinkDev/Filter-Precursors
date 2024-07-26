@@ -1002,7 +1002,7 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 ## Visualizes items dropped by necropolis crafting by using the arealevel
 Section CraftingItemHighlight : Rarity Rare, AreaLevel 1, ItemLevel >= 4, Identified True, Auto("rare->utility->droppeditems"), Class == classes_equip
 {
-	Show Any  { !GR1; !SF45; Empty(); }
+	ShowD Any  { !GR1; !SF45; Empty(); }
 }
 
 Section EndgameRares : Rarity Rare, ItemLevel >= 68
