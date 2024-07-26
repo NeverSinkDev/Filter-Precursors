@@ -19,6 +19,20 @@ Expand GeneralMapProgressionStrategy.deco_mapup
     Disable;
 }
 
+Expand T5low.T5
+{
+    SetFontSize font.t4;
+    SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor lowvaluecurrency; 
+    PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon;
+}
+
+Expand T6low.T6
+{
+    SetFontSize font.t4;
+    SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor lowvaluecurrency; 
+    PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon;
+}
+
 ## SIMPLIFIED RARE HIGHLIGHT
 Expand RaresJewellery.T1
 {
@@ -177,8 +191,14 @@ Expand FragmentTierStrat
 
     Func T5()
     {
-        SetTextColor lowvaluecurrency;
+        SetTextColor sBlack;
         SetFontSize 40;
+    }
+
+    Func T6()
+    {
+        SetTextColor sBlack;
+        SetFontSize 35;
     }
 }
 
