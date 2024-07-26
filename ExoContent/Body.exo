@@ -662,7 +662,8 @@ Section ExoticVariations : !exotic
 		Section EnchantedMisc : AnyEnchantment True, Auto("exotic->enchanted")
 		{
 			Show Exotic      { !GSH; %D7; !exotic.t1; Class == classes_exoticEnch }
-			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class == "Amulets" "Rings"; Clean(); }
+			Show AnointedAmulets     { !GSH; %D6; !exotic.t2; Class == "Amulets"; Clean(); }
+			Show AnointedRings     { !GSH; %D3;   !exotic.t3; Class == "Rings"; Clean(); }
 		}
 #------------------------------------
 #   [1234] Crucible
