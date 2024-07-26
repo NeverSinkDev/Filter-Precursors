@@ -21,7 +21,11 @@ var classes_weapons = classes_cast + classes_attack;
 var classes_1h = classes_1hattack + classes_1hcast + "Shields";
 var classes_2h = classes_2hattack + classes_2hcast;
 
-var classes_weapons_melee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
+var classes_weapons_melee = classes_weapons_1hmelee + classes_weapons_2hmelee;
+
+var classes_weapons_1hmelee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes";
+var classes_weapons_2hmelee =  "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
+
 var classes_weapons_ranged = "Wands" "Bows";
 var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
 
@@ -57,6 +61,7 @@ var classes_doubleCorruptTargetsRare = class_jewels + "Amulets" "Belts" "Rings" 
 ## BASETYPES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
 var abyssJewels = "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel";
 var allCommonJewels = genericJewels + abyssJewels;
@@ -65,7 +70,10 @@ var allCommonJewels = genericJewels + abyssJewels;
 ## {META} Non-Exact Classes
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var classes_finalHider = "Sentinel Drone" "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves";
+var classes_finalHider = "Sentinel Drone" "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves" "Tinctures";
+
+var map_prefixes = "Brutal" "Sinister" "Judging" "Vicious" "Decrepifying" "Shaman's" "Energetic" "Sundering" "Harming" "Technical" "Cerebral" "Incinerating" "Chaotic" "Infernal" "Armoured" "Avalanching" "Prolonging" "Thwarting" "Halting" "Dissipating" "Sharpened" "Thundering" "Champion's" "Soldier's" "Gladiator's" "Flanking" "Puncturing" "Piercing" "Rupturing" "Enlightened" "Chilling" "Fencing" "Cleaving" "Beating" "Blunt" "Surging" "Flaming" "Carved" "Humming" "Warrior's" "Bandit's" "Charging" "Harmonic" "Parrying" "Deflecting" "Shielding" "Hungering" "Arctic";
+var map_suffixes = "of Stunning" "of Recovery" "of the Beast" "of Intelligence" "of Shelter" "of Neutralisation" "of Impaling" "of the Apocalypse" "of Poisoning" "of Freezing" "of Burning" "of Bleeding" "of Shocking" "of Entropy" "of Infusion" "of the Dragon" "of Weight" "of the Stormdweller" "of Strength" "of Spirit" "of Dexterity" "of Insulation" "of Runes" "of Cunning" "of Haemophilia" "of Order" "of Menace" "of the Flameruler" "of Zeal" "of Acrimony" "of Wounding" "of Archery" "of Combat" "of Soaring" "of Stemming" "of the Elements" "of Hexwarding" "of Demolishing" "of Fending" "of Raiding" "of Berserking" "of Zealousness" "of Exsanguinating" "of Grounding" "of Blasting" "of Rejuvenation" "of Potency" "of the Hearth" "of Venom" "of Athletics" "of Adaption" "of Combusting" "of Resistance" "of the Snowbreather";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOBALLY INTERESTING MODS
@@ -139,6 +147,7 @@ var phys_reduction = "of the Conservator" "of the Protector" "of the Keeper";
 var suppress = "of Nullification" "of Abjuration" "of Revoking" "of Snuffing";
 var ailment_avoid = "of Will" "of Fortitude" "of Resolve";
 var block = "of the Citadel" "of the Sentinel" "of the Buttress" "of the Stalwart";
+var blockP = "Unyielding" "Enduring" "Unwavering" "Warded";;
 var spellblock = "of the Bastion" "of the Barricade";
 var es_fasterstart = "of Second Wind" "of Vigour" "of Galvanising";
 var es_recharge = "of Ardour" "of Buffering" "of Dispersal";
@@ -448,7 +457,7 @@ var shield_caster_damage = wcast_spell[3] + wcast_fire[3] + wcast_cold[3] + wcas
 var shield_caster_damage_best = wcast_spell[1] + wcast_fire[1] + wcast_cold[1] + wcast_light[1];
 
 ## CORE VALUES: 
-var shield_global_core = a_cheatMods + shield_cheatMods + aux_all + suppress[1] + shield_life[1] + shield_caster_gemLevels + shield_caster_damage_best;
+var shield_global_core = a_cheatMods + shield_cheatMods + aux_all + suppress[1] + shield_life[1] + blockP[1] + shield_caster_gemLevels + shield_caster_damage_best;
 
 var xshield_es_core =       shield_global_core + shields_fes[3] + shields_pes[2];
 var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[2];
@@ -464,7 +473,7 @@ var shield_combined_attackermods = "of the Ranger" "of Mastery";
 
 ## UNIVERSAL MIX
 var shield_maxres = "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm";
-var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[4] + ailment_avoid[2] + block[2] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
+var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[4] + ailment_avoid[2] + blockP[3] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
 
 var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses + ws_cast_crit[1];
 
@@ -775,7 +784,7 @@ var oil_enchant_opal = "Fireball Tower Additional Projectile" "Flamethrower Towe
 
 ## Jewels
 var jewels_priority = "Vivid" "Shimmering" "of Potency";
-var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Resistance" "of Combat" "of Archery" "of Wounding" "of Enchanting";
+var jewels_general = "of Entropy" "of Blasting" "of Berserking" "of Zeal" "of Resistance" "of Combat" "of Archery" "of Wounding" "of Enchanting" "of the Phoenix" "of the Kraken" "of the Leviathan";
 var jewels_mult = "Piercing" "Rupturing" "Puncturing" "Infernal" "Arctic" "Surging" "of the Elements" "of Unmaking";
 var jewels_minion = "Master's" "of Resilience" "Leadership";
 
@@ -792,7 +801,7 @@ var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Bl
 var jwl_core = "Vivid" "Shimmering";
 
 ## Generally good stats, like double/tripple res/attributes, chaos res, general damage
-var jwl_aux = "of Order" "of Resistance" "of Insulation" "of the Hearth" "of Shelter" "of Spirit" "of Athletics" "of Cunning" "of Adaptation" "of Wounding" "Thwarting";
+var jwl_aux = "of the Phoenix" "of the Kraken" "of the Leviathan" "of Order" "of Resistance" "of Insulation" "of the Hearth" "of Shelter" "of Spirit" "of Athletics" "of Cunning" "of Adaptation" "of Wounding" "Thwarting";
 var jwl_dot_aux = "of Entropy" "Decrepifying";
 ## Generally good DOT stats
 var jwl_dot_core = "of Acrimony";

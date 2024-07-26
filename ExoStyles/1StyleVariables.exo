@@ -168,8 +168,13 @@ var maps.special.extra = 235 220 245 255;
 var maps.special.low.extra = 200 200 200 255;
 var maps.special.acc = 145 30 220 255; 
 
+var maps.note.acc = 255 180 0 255; 
+
 var coins.acc = 255 178 135 255;
 var coins.extra = 150 90 70 255;
+
+var gold.acc = 180 180 180 255;
+var gold.huge = 235 200 110 255;
 
 var heist.contracts.acc = 220 60 60 255;
 var heist.blueprints.acc = 255 85 85 255;
@@ -257,14 +262,18 @@ var accent.rare.ilvl75 = 245 190 0 255;
 
 var accent.maps.upgrade = 220 50 0 255;
 
+var accent.rare.highgear = 120 255 100 255;
+
 var accent.leveling.fourlink = 0 140 240 255;
 var accent.leveling.threelink = 0 120 120 255;
 var accent.leveling.caster = 50 50 150 255;
-var accent.leveling.melee = 150 50 50 255;
 var accent.leveling.archer = 0 150 0 255;
 var accent.leveling.minion = 150 50 150 255;
+var accent.leveling.melee1 = 180 180 0 255;
+var accent.leveling.melee2 = 150 50 50 255;
 
-var accent.leveling.bg.melee = 100 43 43 210;
+var accent.leveling.bg.melee1 = 150 90 0 210;
+var accent.leveling.bg.melee2 = 100 43 43 210;
 var accent.leveling.bg.caster = 43 43 100 210;
 var accent.leveling.bg.archer = 4 67 4 210;
 var accent.leveling.bg.minion = 111 67 117 210;
@@ -276,7 +285,11 @@ var idmodbackground = 47 0 74 255;
 #------------------------------------
 
 var fragment.sound = sounds.currency;
-var fragment.tx = 159 15 213 255;
+
+## var fragment.tx.old = 159 15 213 255;
+
+var fragment.tx.high = 180 0 255 255;
+var fragment.tx = 175 120 230 240;
 
 var unique.sound = sounds.unique;
 var unique.tx = 175 96 37 255;

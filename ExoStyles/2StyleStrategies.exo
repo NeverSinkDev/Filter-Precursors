@@ -233,6 +233,7 @@ Style UniversalValueAccents
 		SetFontSize font.t3;
 		PlayAlertSound sounds.unique;
 		PlayEffect Purple;
+		SetBackgroundColor 
 		SetBorderColor accent.perfection;
 		MinimapIcon 0 Purple Moon;
 		SetTextColor accent.rare.ilvl86;
@@ -313,10 +314,16 @@ Style UniversalValueAccents
 		SetBackgroundColor accent.leveling.bg.minion;
 	}
 
-	Func LVLMelee()
+	Func LVLMelee1()
 	{
-		SetBorderColor accent.leveling.melee;
-		SetBackgroundColor accent.leveling.bg.melee;
+		SetBorderColor accent.leveling.melee1;
+		SetBackgroundColor accent.leveling.bg.melee1;
+	}
+
+	Func LVLMelee2()
+	{
+		SetBorderColor accent.leveling.melee2;
+		SetBackgroundColor accent.leveling.bg.melee2;
 	}
 
 	Func LVLArcher()
@@ -701,6 +708,18 @@ Style T4WhitePieceNoBG
 	}
 }
 
+Style T4BlackPieceLow
+{
+	Func T4 () 
+	{ 
+		var lowacc = tier.t5.acc;
+		var base = sBlack;
+		SetFontSize font.t4;
+		SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor lowacc; 
+		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
+	}
+}
+
 Style T5
 {
 	Func T5 () 
@@ -709,6 +728,40 @@ Style T5
 		SetFontSize font.t5;
 		SetTextColor acc;
 		PlayEffect tier.t5.cray Temp;
+	}
+}
+
+Style T6
+{
+	Func T6 () 
+	{
+		var acc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor acc;
+		PlayEffect tier.t5.cray Temp;
+	}
+}
+
+Style T5low
+{
+	Func T5 () 
+	{
+		var lowacc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor lowacc
+		SetBorderColor lowacc;
+		PlayEffect tier.t5.cray Temp;
+		MinimapIcon 2 tier.t4.cmap icon; 
+	}
+}
+
+Style T6low
+{
+	Func T6 () 
+	{
+		var lowacc = tier.t5.acc;
+		SetFontSize font.t5;
+		SetTextColor lowacc;
 	}
 }
 
@@ -809,6 +862,11 @@ Style EndgameRareDecorators
 	Func fourlinkedrare()
 	{
 		SetBorderColor accent.leveling.fourlink;
+	}
+
+	Func highgear()
+	{
+		SetBorderColor accent.rare.highgear;
 	}
 
 	Func ilvl86()
@@ -1108,6 +1166,11 @@ Style GemStrategy : T1
 
 Style GeneralMapProgressionStrategy
 {
+	Func NoteAcc()
+	{
+		SetBorderColor maps.note.acc;
+	}
+
 	Func SpecialHigh()
 	{
 		SetFontSize font.t1;
@@ -1191,6 +1254,13 @@ Style LowerValueTiering
 		LVHL2();
 	}
 
+	Func LT2C()
+	{
+		SetBorderColor accent.corrupt.tx;
+		SetBackgroundColor extra;
+		LVHL2();
+	}
+
 	Func LT3()
 	{
 		SetBorderColor sBlack;
@@ -1233,6 +1303,43 @@ Style Sentinel
 		PlayAlertSound sounds.currency;
 		Beam league.color;
 		SetFontSize font.t4;
+	}
+}
+
+Style Gold
+{
+	Func Huge ()
+	{
+		MinimapIcon 1 Yellow Cross;
+		PlayAlertSound sounds.currency;
+		Colors( gold.huge, gold.huge, sBlack);
+		PlayEffect Orange;
+		SetFontSize font.t3;
+	}
+
+	Func Large ()
+	{
+		MinimapIcon 1 White Cross;
+		Colors( sWhite, sWhite, sBlack);
+		PlayEffect Orange Temp;
+		SetFontSize font.t4;
+	}
+
+	Func Medium ()
+	{
+		MinimapIcon 2 Grey Cross;
+		SetFontSize font.t5;
+		SetTextColor sWhite;
+		SetBorderColor sWhite;
+		SetBackgroundColor sBlack;
+	}
+
+	Func Small ()
+	{
+		SetTextColor gold.acc;
+		SetBorderColor sBlack;
+		SetFontSize font.t6;
+		SetBackgroundColor accent.low.base;
 	}
 }
 
@@ -1669,15 +1776,16 @@ Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
 Style NewLeagueTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
 {
 	var sound = sounds.currency;
-	var icon = Cross;
+	var icon = Moon;
 	var acc = league.new.tierlist;
 }
 
-Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
+Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4BlackPieceLow, T5low, T6low
 {
 	var sound = sounds.currency;
 	var icon = Hexagon;
-	var acc = fragment.tx;
+	var acc = fragment.tx.high;
+	var lowacc = fragment.tx;
 }
 
 Style FragmentExceptions : T1
