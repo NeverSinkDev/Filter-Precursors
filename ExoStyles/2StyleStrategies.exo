@@ -747,7 +747,7 @@ Style T5low
 	Func T5 () 
 	{
 		var lowacc = tier.t5.acc;
-		SetFontSize font.t5;
+		SetFontSize font.t4;
 		SetTextColor lowacc
 		SetBorderColor lowacc;
 		PlayEffect tier.t5.cray Temp;
@@ -760,7 +760,7 @@ Style T6low
 	Func T6 () 
 	{
 		var lowacc = tier.t5.acc;
-		SetFontSize font.t5;
+		SetFontSize font.t4;
 		SetTextColor lowacc;
 	}
 }
@@ -1336,6 +1336,7 @@ Style Gold
 
 	Func Small ()
 	{
+		MinimapIcon 2 Grey Cross;
 		SetTextColor gold.acc;
 		SetBorderColor sBlack;
 		SetFontSize font.t6;

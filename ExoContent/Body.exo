@@ -882,7 +882,7 @@ Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel 
 {
 	Show OverQual1          { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
 	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
-	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF42; %D5; ItemLevel >= 82; }
+	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 82; }
 	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
 }
 
@@ -931,8 +931,8 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 	Section QualityEndgameFlasks
 	{
-		ShowD QualityHigh { %D1; !G6H; !recipe.t2; Class == class_flasks; Quality >= 15; AreaLevel <= 77; }
-		ShowD QualityLow  { %D0; !G6; !recipe.t3; Class == class_flasks; Quality >= 1; AreaLevel <= 77; }
+		ShowD QualityHigh { %D1; !G6H; !recipe.t2; Class == class_flasklikes; Quality >= 15; AreaLevel <= 77; }
+		ShowD QualityLow  { %D0; !G6; !recipe.t3; Class == class_flasklikes; Quality >= 1; AreaLevel <= 77; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
@@ -1144,16 +1144,19 @@ Section Jewels : !jewels
 
 	Section SpecialJewels : Auto("jewels->special"), !UniqueSound, !GS
 	{
+		## Any rare corrupted, normal or abyss jewel (2x corruptions are handled above)
 		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
 		{
-			Show 1modcorrupted { !Special; %D4; Mod jewels_corruptedModsMinimum; BaseType == allCommonJewels; }
+			Show 1modcorrupted { !Special; %D4; BaseType == allCommonJewels; }
 		}
 
+		## Heist dropped 1-mod magic jewels with useful mods
 		Section IdedUncorruptedJewels : Identified True, Rarity <= Rare, BaseType == genericJewels;
 		{
 			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
 		}
 
+		## Adorned class magic corrupted modded jewels
 		Section AdornedJewels : Rarity Magic, CorruptedMods >= 1, !*magic
 		{
 			Show Any { !SpecialNoMM; %D3; Corrupted True; BaseType == genericJewels; }
@@ -1687,7 +1690,7 @@ Section MapFragments : Class == "Map Fragments"
 
 	Section StackedScarabs : Auto("Fragments->stackedScarabs")
 	{
-		Show t3 { !G3; BaseType == fragments.scarabs.t4; StackSize >= 3; }
+		Show t3 { !G3; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
 	}
 
 #------------------------------------
@@ -2267,16 +2270,16 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 	Show Any 				{ !G5; %H3; !utilflasks.LT3; Class == class_utilFlasks; }
 }
 
-Section LevelingTinctures : Auto("Leveling->tincture"), Class == "Tinctures"
-{
-	Show Any 				{ !G4; !utilflasks.LT2; !LevelFlask; Empty(); }
-}
-
-Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasks, Rarity Normal
+Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasklikes, Rarity Normal
 {
 	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; }
 	Show high { !G6; %D1; !recipe.t2; Quality >= 14; }
 	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; }
+}
+
+Section LevelingTinctures : Auto("Leveling->tincture"), Class == "Tinctures", ItemLevel <= 67
+{
+	Show Any 				{ !G4; !utilflasks.LT2; !LevelFlask; Empty(); }
 }
 
 #===============================================================================================================
