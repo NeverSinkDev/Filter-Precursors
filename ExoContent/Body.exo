@@ -587,7 +587,7 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 #------------------------------------
 #   [1234] Relics
 #------------------------------------	
-Section SanctumRelics : Auto("artefact->sanctifiedrelics")
+Section SanctumRelics : Auto("artefact->sanctifiedrelics"), Rarity <= Rare
 {
 	Show SelectedRelics		{ !G3; !exotic.t2; Class == "Relics"; BaseType == exotic.sanctum.relics; }
 	Show AnyRelic 			{ !G4; !exotic.t3; Class == "Relics"; }
@@ -881,8 +881,8 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
 {
 	Show OverQual1          { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
-	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
-	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 82; }
+	Show OverQual2          { !G3; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; }
+	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF45; %D4; ItemLevel >= 82; }
 	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
 }
 
