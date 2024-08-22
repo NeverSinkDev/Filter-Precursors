@@ -411,13 +411,13 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 	Section TopValue : Rarity <= Rare, Clean()
 	{
 		## +1 to all global spell skill levels + convoking minion levels
-		Show t1caster 	{ %D6; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == classes_1hcast_shields; }
+		Show t1caster 	{ %D5; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == classes_1hcast_shields; }
 		## +2 proj ranged weapons
-		Show t1proj 	{ %D6; Mod >= 1 "of Many"; Class == classes_weapons_ranged; }
+		Show t1proj 	{ %D5; Mod >= 1 "of Many"; Class == classes_weapons_ranged; }
 		## plus one to all spell skills
 		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class == "Amulets"; }
 		## plus 2 to minions helmet
-		Show t1minionHelm	{ %D6; Mod >= 1 minionGems[1]; Class == "Helmets"; }
+		Show t1minionHelm	{ %D5; Mod >= 1 minionGems[1]; Class == "Helmets"; }
 	}
 
 #------------------------------------
@@ -432,7 +432,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		## +1 to all arrows quivers
 		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
 		## +1 to all global elemental gems + spell damage t1
-		ShowD t2caster 		{ %D5; Mod >= 1 xr_caster1; Class == classes_1hcast_shields; }
+		ShowD t2caster 		{ %D4; Mod >= 1 xr_caster1; Class == classes_1hcast_shields; }
 		## +2 to all maximum resists shield
 		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
 		## Uncorrupted Suppression Gear from Dexterity Equip
@@ -743,6 +743,15 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 		Show Shields3 	 { !GEX; %D4; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
 		Show Gloves3 	 { !GEX; %D4; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
 		Show Helmets3 	 { !GEX; %D4; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
+	}
+
+	Section PerfectionCrafting : BaseDefencePercentile >= 100, !exotic.t2
+	{
+		Show BodyP1		 { !GEX; %D5; Class == "Body Armours"; BaseType == bases.crafting.body.t1; ItemLevel >= 84; }
+		Show BootsP1 	 { !GEX; %D4; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
+		Show ShieldsP1 	 { !GEX; %D4; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
+		Show GlovesP1 	 { !GEX; %D4; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
+		Show HelmetsP1 	 { !GEX; %D4; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
 	}
 
 	Section QualityWeapons
@@ -1179,10 +1188,10 @@ Section Jewels : !jewels
 #!! Waypoint c7.jewels.abyss.all : "Jewels - Abyss Jewels"
 	Section AbyssJewels : Class == "Abyss Jewels", Auto("jewels->abyss")
 	{
+		Show CorruptedAbyssJewel { %H5; !G4; !*rare; !High; Rarity Rare; Corrupted True; }
+
 		Show VeryHighRare  { %H5;  !G4;  !*rare;  !High; Rarity Rare; ItemLevel >= 86; }
 		Show VeryHighMagic { %HS4;  !G4;  !*magic; !High; Rarity <= Magic; ItemLevel >= 86; }
-		
-		Show CorruptedAbyssJewel { %H5; !G4; !*rare; !High; Rarity Rare; Corrupted True; }
 		
 		Show HighRare      { %HS3;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
 		Show HighMagic     { %HS2; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
@@ -1701,8 +1710,8 @@ Section MapFragments : Class == "Map Fragments"
 		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
 		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
-		Show t4 { !G4; %HS4; BaseType == fragments.scarabs.t4; }
-		Show t5 { !G5; %HS3; BaseType == fragments.scarabs.t5; }
+		Show t4 { !G4; %H5; BaseType == fragments.scarabs.t4; }
+		Show t5 { !G5; %HS4; BaseType == fragments.scarabs.t5; }
 		Show t6 { !G5; %HS3; BaseType == fragments.scarabs.t6; }
 		Show restex { BaseType "Scarab"; }
 	}
@@ -2011,7 +2020,8 @@ Section CurrencyTrialOmen : Auto("currency->trial->omen"), Class == class_curren
 	Show t1 { !G1; !*t1exalted; BaseType == currency.trial.omen.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == currency.trial.omen.t2; }
 	Show t3 { !G3; !*t3annul; BaseType == currency.trial.omen.t3; }
-	Show t4 { !G4; !*t4chaos; BaseType == currency.trial.omen.t4; }
+	Show t4 { !G4; !*t4chaos; %H5; BaseType == currency.trial.omen.t4; }
+	Show t5 { !G5; !*t6chrom; %HS3; BaseType == currency.trial.omen.t5; }
 	Show restex { BaseType "Omen of"; }
 }
 
@@ -2104,7 +2114,7 @@ Section DivinationCards : Auto("divination"), Class == "Divination Cards", !divi
 
 	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
 	#!! Waypoint c9.divination.t4 : "Tierlist - Cards - T4, T4c and lower"
-	Show t4c 	{ %H4; !G4; !*t4;	BaseType == divination.t4c; }
+	Show t4c 	{ %HS4; !G4; !*t4;	BaseType == divination.t4c; }
 
 	Show exStack { %D4; !G5H; !*t4; StackSize >= 3; }
 
@@ -2181,11 +2191,15 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5705] Multi-Unique bases.
 #------------------------------------
 
-	Show 5link 		  { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	
 	Show multispecialhigh { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecialhigh; }
-	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
 
+	ShowD exDust1 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust1 + uniques.ex.dust2; }
+	ShowD exDust2 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust3; }
+	ShowD exDust3 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust4; }
+
+	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
+	Show 5link    { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
 
 #------------------------------------
