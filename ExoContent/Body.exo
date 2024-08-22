@@ -745,13 +745,13 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 		Show Helmets3 	 { !GEX; %D4; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
 	}
 
-	Section PerfectionCrafting : BaseDefencePercentile >= 100, !exotic.t2
+	Section PerfectionCrafting : BaseDefencePercentile >= 99, !exotic.t2
 	{
-		Show BodyP1		 { !GEX; %D5; Class == "Body Armours"; BaseType == bases.crafting.body.t1; ItemLevel >= 84; }
-		Show BootsP1 	 { !GEX; %D4; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
-		Show ShieldsP1 	 { !GEX; %D4; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
-		Show GlovesP1 	 { !GEX; %D4; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
-		Show HelmetsP1 	 { !GEX; %D4; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
+		ShowD BodyP1	 { !GEX; %D5; Class == "Body Armours"; BaseType == bases.crafting.body.t1; ItemLevel >= 84; }
+		ShowD BootsP1 	 { !GEX; %D4; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
+		ShowD ShieldsP1  { !GEX; %D4; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
+		ShowD GlovesP1 	 { !GEX; %D4; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
+		ShowD HelmetsP1  { !GEX; %D4; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
 	}
 
 	Section QualityWeapons
