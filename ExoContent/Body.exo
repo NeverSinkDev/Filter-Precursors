@@ -739,10 +739,10 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 	Section QualityCrafting3 : Quality >= 24, !exotic.t2
 	{
 		Show Body3		 { !GEX; %D6; Class == "Body Armours"; BaseType == bases.crafting.body.t1; ItemLevel >= 84; }
-		Show Boots3 	 { !GEX; %D5; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
-		Show Shields3 	 { !GEX; %D4; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
-		Show Gloves3 	 { !GEX; %D4; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
-		Show Helmets3 	 { !GEX; %D4; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
+		Show Boots3 	 { !GEX; %D6; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
+		Show Shields3 	 { !GEX; %D6; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
+		Show Gloves3 	 { !GEX; %D6; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
+		Show Helmets3 	 { !GEX; %D6; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
 	}
 
 	Section PerfectionCrafting : BaseDefencePercentile >= 99, !exotic.t2
