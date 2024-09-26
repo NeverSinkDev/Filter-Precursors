@@ -731,7 +731,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 	{
 		Show Body2 		 { !G4; %D6; Class == "Body Armours"; BaseType == bases.crafting.body.t1; ItemLevel >= 84; }
 		Show Boots2 	 { !G4; %D6; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
-		Show Shields2 	 { !G5; %D5; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
+		Show Shields2 	 { !G5; %D6; Class == "Shields"; BaseType == bases.crafting.shields.t1; ItemLevel >= 84; }
 		Show Gloves2 	 { !G5; %D6; Class == "Gloves"; BaseType == bases.crafting.gloves.t1; ItemLevel >= 84; }
 		Show Helmets2 	 { !G5; %D6; Class == "Helmets"; BaseType == bases.crafting.helmets.t1; ItemLevel >= 84; }
 	}
@@ -759,7 +759,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 		Show weapont1q1 	 { !GEX; !exotic.t1; %D6; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 29; }
 		Show weapont2q1 	 { !GEX; !exotic.t2; %D6; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 29; }
 		Show weapont1q2 	 { !GEX; !exotic.t2; %D6; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 24; }
-		Show weapont2q2 	 { !GEX; !exotic.t2; %D4; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
+		Show weapont2q2 	 { !GEX; !exotic.t2; %D5; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	}
 }
 
@@ -890,8 +890,9 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
 {
 	Show OverQual1          { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
-	Show OverQual2          { !G3; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; }
-	Show Tinc82  			{ !G4; !utilflasks.LT2; !SF45; %D4; ItemLevel >= 82; }
+	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
+	Show Tinc85  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 85; }
+	Show Tinc82  			{ !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; }
 	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
 }
 
@@ -904,18 +905,18 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	
 	Section OverQualityFlasks : !GEX
 	{
-		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; }
+		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
 		Show OverQualUtil1  { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 84; Quality >= 26; Class == class_utilFlasks; }
-		Show OverQualUtil2  { !G4; !exotic.t2; %D4; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; }
+		Show OverQualUtil2  { !G4; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
 		Show OverQualLife1  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 30; BaseType == bases.flask.lifemanaassorted; }
-		Show OverQualLife2  { !G4; !exotic.t2; %D4; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualLife2  { !G4; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
 	}
 
 	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
 	Section SuperEndgameFlasks : Clean(), !GEX
 	{
-		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; }
-		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 84; Class == class_utilFlasks; }
+		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D4; ItemLevel >= 84; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
 		Show Utility82  { !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
 		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
 	}
@@ -1456,15 +1457,15 @@ Section Gems : Class == class_gems, !Gems
 		Show QT3 { !G4; %D4; !*P3; Quality >= 14 }
 		Show LT3 { !G5; %D3; !*P4; GemLevel >= 18 }
 
-		Show QT4Lvl { %D4; !G5; !*P3; Quality >= 1; AreaLevel <= 67 }	
+		Show QT4Lvl { %D4; !G5; !*P3; Quality >= 1; AreaLevel >= 2; AreaLevel <= 67 }	
 		Show QT4 { %D3; !G5; !*P4; Quality >= 1; }	
 		ShowD LT4 { %D0; !G6; !*P4; GemLevel >= 2; }
 
 #!! Waypoint c8.gems.low : "Gem Rules - First Zones, Leveling, Vaal"
 
-		Show  FirstZone    { !GS; !*FirstLevel; AreaLevel 1; }
-		Show  LevelingVaal { %H4; !G4; !*VaalLvl; AreaLevel <= 67; BaseType "Vaal"; }
-		Show  Leveling     { %H2; !G6; !*Leveling; AreaLevel <= 67; }
+		Show  FirstZone    { !GS; !*FirstLevel; AreaLevel 1; Quality = 0; GemLevel = 1; BaseType == gems.levelone; }
+		Show  LevelingVaal { %H4; !G4; !*VaalLvl; AreaLevel >= 2; AreaLevel <= 67; BaseType "Vaal"; }
+		Show  Leveling     { %H2; !G6; !*Leveling;  AreaLevel >= 2; AreaLevel <= 67; }
 
 		Show CorruptedVaalAny { %D3; !G6H; !*VaalGem; BaseType "Vaal"; }
 
@@ -2472,9 +2473,9 @@ Section LevelingRareGear : Rarity Rare
 	{
 		Show ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
 		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; }
-		Show UnderLevel42 { %D2; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 42; }
-		Show UnderLevel24 { %D2; !GR3; !SF40; AreaLevel >=16; ItemLevel <= 24; }
-		Show UnderLevel16 { %D3; !GR3; !SF40; AreaLevel >=1;  ItemLevel <= 16; }
+		Show UnderLevel42 { %D2; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 44; }
+		Show UnderLevel24 { %D2; !GR3; !SF40; AreaLevel >=16; ItemLevel <= 26; }
+		Show UnderLevel16 { %D3; !GR3; !SF40; AreaLevel >=1;  ItemLevel <= 18; }
 	}
 }
 
