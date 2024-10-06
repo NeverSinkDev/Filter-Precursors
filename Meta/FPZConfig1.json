@@ -1,7 +1,14 @@
 {
+    "GameType": "poe1",
+    
+    "FilterVersion": "8.11.0",
+    "LeagueType": "tmpstandard",
+    "CurrentLeagueName": "Settlers",
+
     "LeagueStartDate": "2024-07-25",
     "EarlyLeagueDays": 2,
     "LateLeagueDays": 21,
+    
     "FileRequestData": [
       {
         "TierableSection": "uniques.generic",
@@ -124,6 +131,19 @@
         "Url": "https://poe.ninja/api/data/itemoverview?type=Memory"
       }
     ],
+    "CurrencyModelTierlists": ["fragments","currency","currency.generic","currency.stackedthree","currency.stackedsix","fragments.generic","currency.stacked","breachstone"],
+    "FullRetiering": ["jewels.cluster","currency.stackedthree","currency.stackedsix"],
+    "ExtraTieringSections": ["uniques.replicas","Influenced.Crusader","Influenced.Warlord","Influenced.Redeemer","Influenced.Hunter","Influenced.Shaper","Influenced.Elder","expensivebases","breachstone"],
+    "AvoidTieringSections": ["basetypes"],
+    "ReusedNinjaDataExtraTieredSection": {
+        "currency.stackedThree": "currency.generic",
+	    "currency.stackedSix": "currency.generic"
+    },
+
+    "AlternativeKeyIdentifier": {
+      "prophecy": "Prophecy"
+    },
+
     "TierListCleaning": {
       "uniques.generic": ["jewel"],
       "divination": ["time-lost"],
@@ -158,31 +178,21 @@
     "BaseTypeClassMigration": {
 
     },
-    "CurrencyModelTierlists": ["fragments","currency","currency.generic","currency.stackedthree","currency.stackedsix","fragments.generic","currency.stacked","breachstone"],
-    "FullRetiering": ["jewels.cluster","currency.stackedthree","currency.stackedsix"],
-    "ExtraTieringSections": ["uniques.replicas","Influenced.Crusader","Influenced.Warlord","Influenced.Redeemer","Influenced.Hunter","Influenced.Shaper","Influenced.Elder","expensivebases","breachstone"],
-    "AvoidTieringSections": ["basetypes"],
-    "ReusedNinjaDataExtraTieredSection": {
-        "currency.stackedThree": "currency.generic",
-	    "currency.stackedSix": "currency.generic"
-    },
-
-    "AlternativeKeyIdentifier": {
-      "prophecy": "Prophecy"
-    },
 
     "GearClasses" : [ "Body Armours", "Amulets", "Belts", "Boots", "Bows", "Claws", "Daggers", "Gloves", "Helmets", "One Hand Axes", "One Hand Maces", "Thrusting One Hand Swords", "One Hand Swords", "Quivers", "Rings", "Rune Daggers", "Sceptres", "Shields", "Staves", "Two Hand Swords", "Two Hand Maces", "Two Hand Axes", "Wands", "Warstaves" ],
 
     "DropLevelIgnoredClasses": ["rings", "amulets", "belts", "jewels", "rune dagger", "wands", "sceptres", "quivers"],
-    "BestBaseCheckIgnore": ["rings", "amulets", "belts", "jewels"],
     
-    "MaximumChaosPrice": 200.0,
-    "EarlyLeaguePrimaryOrbMaxCap": 60.0,
     "EarlyLeagueMinimumOrbPrice": 30.0,
+    "EarlyLeaguePrimaryOrbMaxCap": 60.0,
+    "MaximumChaosPrice": 200.0,
+
     "EconomyCurrency_Thresholds_Static": [30.0, 10.0, 3.1, 0.7, 0.2, 0.12, 0.05],
     "EconomyCurrency_Thresholds_Dynamic": [25.0, 4.9, 0.0, 0.0, 0.0, 0.0, 0.0],
+
     "EconomyLower_Thresholds_Static": [40.0, 8.0, 3.1, 1.1, 0.7, 0.25, 0.05],
     "EconomyLower_Thresholds_Dynamic": [15.0, 3.1, 1.1, 0.3, 0.2, 0.05, 0.01],
+
     "EconomyHigher_Thresholds_Static": [40.0, 9.9, 3.1, 2.1, 0.7, 0.25, 0.05],
     "EconomyHigher_Thresholds_Dynamic": [15.0, 5.0, 2.0, 0.5, 0.2, 0.05, 0.01]
   }
