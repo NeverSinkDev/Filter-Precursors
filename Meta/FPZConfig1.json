@@ -1,198 +1,452 @@
 {
     "GameType": "poe1",
-    
+    "FilterName": "NeverSink's filter",
     "FilterVersion": "8.11.0",
     "LeagueType": "tmpstandard",
     "CurrentLeagueName": "Settlers",
-
     "LeagueStartDate": "2024-07-25",
     "EarlyLeagueDays": 2,
     "LateLeagueDays": 21,
-    
-    "FileRequestData": [
-      {
-        "TierableSection": "uniques.generic",
-        "Filename": "uniqueWeapons",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueWeapon"
-      },
-      {
-        "TierableSection": "uniques.generic",
-        "Filename": "uniqueRelic",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueRelic"
-      },
-      {
-        "TierableSection": "currency.generic",
-        "Filename": "currency",
-        "Url": "https://poe.ninja/api/data/currencyoverview?type=Currency"
-      },
-      {
-        "TierableSection": "currency.generic",
-        "Filename": "currencyExpedition",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Artifact"
-      },
-      {
-        "TierableSection": "fragments.generic",
-        "Filename": "fragments",
-        "Url": "https://poe.ninja/api/data/currencyoverview?type=Fragment"
-      },
-      {
-        "TierableSection": "gems",
-        "Filename": "gems",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=SkillGem"
-      },
-      {
-        "TierableSection": "divination",
-        "Filename": "divination",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=DivinationCard"
-      },
-      {
-        "TierableSection": "uniques.maps",
-        "Filename": "uniqueMaps",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueMap"
-      },
-      {
-        "TierableSection": "currency.fossil",
-        "Filename": "fossil",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Fossil"
-      },
-      {
-        "TierableSection": "uniques.generic",
-        "Filename": "uniqueFlasks",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueFlask"
-      },
-      {
-        "TierableSection": "uniques.generic",
-        "Filename": "uniqueArmours",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueArmour"
-      },
-      {
-        "TierableSection": "uniques.generic",
-        "Filename": "uniqueAccessory",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueAccessory"
-      },
-      {
-        "TierableSection": "basetypes",
-        "Filename": "basetypes",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=BaseType"
-      },
-      {
-        "TierableSection": "currency.incubators",
-        "Filename": "incubators",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Incubator"
-      },
-      {
-        "TierableSection": "fragments.scarabs",
-        "Filename": "scarabs",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Scarab"
-      },
-      {
-        "TierableSection": "currency.oil",
-        "Filename": "oil",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Oil"
-      },
-      {
-        "TierableSection": "currency.vials",
-        "Filename": "vials",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Vial"
-      },
-      {
-        "TierableSection": "currency.deliriumorb",
-        "Filename": "deliriumorbs",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=DeliriumOrb"
-      },
-      {
-        "TierableSection": "exotic.invitations",
-        "Filename": "invitations",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Invitation"
-      },
-      {
-        "TierableSection": "jewels.cluster",
-        "Filename": "jewels.cluster",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=ClusterJewel"
-      },
-      {
-        "TierableSection": "uniques.generic",
-        "Filename": "uniqueJewels",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueJewel"
-      },
-      {
-        "TierableSection": "currency.trial.omen",
-        "Filename": "omen",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Omen"
-      },
-      {
-        "TierableSection": "currency.trial.tattoo",
-        "Filename": "tattoo",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Tattoo"
-      },
-      {
-        "TierableSection": "memories",
-        "Filename": "memories",
-        "Url": "https://poe.ninja/api/data/itemoverview?type=Memory"
-      }
+    "CurrencyModelTierlists": [
+        "fragments",
+        "currency",
+        "currency.generic",
+        "currency.stackedthree",
+        "currency.stackedsix",
+        "fragments.generic",
+        "currency.stacked",
+        "breachstone"
     ],
-    "CurrencyModelTierlists": ["fragments","currency","currency.generic","currency.stackedthree","currency.stackedsix","fragments.generic","currency.stacked","breachstone"],
-    "FullRetiering": ["jewels.cluster","currency.stackedthree","currency.stackedsix"],
-    "ExtraTieringSections": ["uniques.replicas","Influenced.Crusader","Influenced.Warlord","Influenced.Redeemer","Influenced.Hunter","Influenced.Shaper","Influenced.Elder","expensivebases","breachstone"],
-    "AvoidTieringSections": ["basetypes"],
+    "FullRetiering": [
+        "jewels.cluster",
+        "currency.stackedthree",
+        "currency.stackedsix"
+    ],
+    "ExtraTieringSections": [
+        "uniques.replicas",
+        "Influenced.Crusader",
+        "Influenced.Warlord",
+        "Influenced.Redeemer",
+        "Influenced.Hunter",
+        "Influenced.Shaper",
+        "Influenced.Elder",
+        "expensivebases",
+        "breachstone"
+    ],
+    "AvoidTieringSections": [
+        "basetypes"
+    ],
     "ReusedNinjaDataExtraTieredSection": {
         "currency.stackedThree": "currency.generic",
-	    "currency.stackedSix": "currency.generic"
+        "currency.stackedSix": "currency.generic"
     },
-
     "AlternativeKeyIdentifier": {
-      "prophecy": "Prophecy"
+        "prophecy": "Prophecy"
     },
+    "GearClasses": [
+        "Body Armours",
+        "Amulets",
+        "Belts",
+        "Boots",
+        "Bows",
+        "Claws",
+        "Daggers",
+        "Gloves",
+        "Helmets",
+        "One Hand Axes",
+        "One Hand Maces",
+        "Thrusting One Hand Swords",
+        "One Hand Swords",
+        "Quivers",
+        "Rings",
+        "Rune Daggers",
+        "Sceptres",
+        "Shields",
+        "Staves",
+        "Two Hand Swords",
+        "Two Hand Maces",
+        "Two Hand Axes",
+        "Wands",
+        "Warstaves"
+    ],
+    "DropLevelIgnoredClasses": [
+        "rings",
+        "amulets",
+        "belts",
+        "jewels",
+        "rune dagger",
+        "wands",
+        "sceptres",
+        "quivers"
+    ],
+    "EarlyLeagueMinimumOrbPrice": 30,
+    "EarlyLeaguePrimaryOrbMaxCap": 60,
+    "MaximumChaosPrice": 200,
 
+    "AspectsToIgnore" : [ ],
+    "AcceptableUnusedExoTiers" : [
+        "bases.exotic.atlas.any", "bases.exotic.misc.any", "leveling.keylevels.act5"
+    ], 
+
+    "EconomyCurrency_Thresholds_Static": [
+        30,
+        10,
+        3.1,
+        0.7,
+        0.2,
+        0.12,
+        0.05
+    ],
+    "EconomyCurrency_Thresholds_Dynamic": [
+        25,
+        4.9,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "EconomyLower_Thresholds_Static": [
+        40,
+        8,
+        3.1,
+        1.1,
+        0.7,
+        0.25,
+        0.05
+    ],
+    "EconomyLower_Thresholds_Dynamic": [
+        15,
+        3.1,
+        1.1,
+        0.3,
+        0.2,
+        0.05,
+        0.01
+    ],
+    "EconomyHigher_Thresholds_Static": [
+        40,
+        9.9,
+        3.1,
+        2.1,
+        0.7,
+        0.25,
+        0.05
+    ],
+    "EconomyHigher_Thresholds_Dynamic": [
+        15,
+        5,
+        2,
+        0.5,
+        0.2,
+        0.05,
+        0.01
+    ],
     "TierListCleaning": {
-      "uniques.generic": ["jewel"],
-      "divination": ["time-lost"],
-      "fragments.generic": ["blood-filled"],
-      "uniques.maps": [],
-      "currency.incubators": [],
-      "fragments.scarabs": [],
-      "currency.deliriumorb": [],
-      "currency.fossil": [],
-      "currency.generic": [],
-      "currency.trial.tattoo": []
+        "uniques.generic": [
+            "jewel"
+        ],
+        "divination": [
+            "time-lost"
+        ],
+        "fragments.generic": [
+            "blood-filled"
+        ],
+        "uniques.maps": [],
+        "currency.incubators": [],
+        "fragments.scarabs": [],
+        "currency.deliriumorb": [],
+        "currency.fossil": [],
+        "currency.generic": [],
+        "currency.trial.tattoo": []
     },
-
     "UniqueBaseTypeMigration": {
-        "Uul-Netol's Kiss" : "Vaal Axe",
-        "The Infinite Pursuit" : "Titan Greaves",
-        "Xoph's Inception" : "Citadel Bow",
-        "The Formless Flame" : "Royal Burgonet",
-        "Tulborn" : "Opal Wand",
-        "Tulfall" : "Opal Wand",
-        "The Snowblind Grace" : "Zodiac Leather",
-        "Hand of Thought and Motion" : "Imperial Claw",
-        "Esh's Mirror" : "Vaal Spirit Shield",
-        "Piscator's Vigil" : "Imbued Wand",
-        "Apep's Rage" : "Omen Wand",
-        "Obliteration" : "Imbued Wand",
-        "Eclipse Solaris" : "Engraved Wand",
-        "Ashcaller" : "Carved Wand",
-        "Relic of the Pact" : "Sage Wand",
-        "Storm Prison" : "Spiraled Wand"
+        "Uul-Netol's Kiss": "Vaal Axe",
+        "The Infinite Pursuit": "Titan Greaves",
+        "Xoph's Inception": "Citadel Bow",
+        "The Formless Flame": "Royal Burgonet",
+        "Tulborn": "Opal Wand",
+        "Tulfall": "Opal Wand",
+        "The Snowblind Grace": "Zodiac Leather",
+        "Hand of Thought and Motion": "Imperial Claw",
+        "Esh's Mirror": "Vaal Spirit Shield",
+        "Piscator's Vigil": "Imbued Wand",
+        "Apep's Rage": "Omen Wand",
+        "Obliteration": "Imbued Wand",
+        "Eclipse Solaris": "Engraved Wand",
+        "Ashcaller": "Carved Wand",
+        "Relic of the Pact": "Sage Wand",
+        "Storm Prison": "Spiraled Wand"
     },
-    "BaseTypeClassMigration": {
-
+    "BaseTypeClassMigration": {},
+    "FileRequestData": [
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniqueWeapons",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueWeapon"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniqueRelic",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueRelic"
+        },
+        {
+            "TierableSection": "currency.generic",
+            "Filename": "currency",
+            "Url": "https://poe.ninja/api/data/currencyoverview?type=Currency"
+        },
+        {
+            "TierableSection": "currency.generic",
+            "Filename": "currencyExpedition",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Artifact"
+        },
+        {
+            "TierableSection": "fragments.generic",
+            "Filename": "fragments",
+            "Url": "https://poe.ninja/api/data/currencyoverview?type=Fragment"
+        },
+        {
+            "TierableSection": "gems",
+            "Filename": "gems",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=SkillGem"
+        },
+        {
+            "TierableSection": "divination",
+            "Filename": "divination",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=DivinationCard"
+        },
+        {
+            "TierableSection": "uniques.maps",
+            "Filename": "uniqueMaps",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueMap"
+        },
+        {
+            "TierableSection": "currency.fossil",
+            "Filename": "fossil",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Fossil"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniqueFlasks",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueFlask"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniqueArmours",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueArmour"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniqueAccessory",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueAccessory"
+        },
+        {
+            "TierableSection": "basetypes",
+            "Filename": "basetypes",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=BaseType"
+        },
+        {
+            "TierableSection": "currency.incubators",
+            "Filename": "incubators",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Incubator"
+        },
+        {
+            "TierableSection": "fragments.scarabs",
+            "Filename": "scarabs",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Scarab"
+        },
+        {
+            "TierableSection": "currency.oil",
+            "Filename": "oil",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Oil"
+        },
+        {
+            "TierableSection": "currency.vials",
+            "Filename": "vials",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Vial"
+        },
+        {
+            "TierableSection": "currency.deliriumorb",
+            "Filename": "deliriumorbs",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=DeliriumOrb"
+        },
+        {
+            "TierableSection": "exotic.invitations",
+            "Filename": "invitations",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Invitation"
+        },
+        {
+            "TierableSection": "jewels.cluster",
+            "Filename": "jewels.cluster",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=ClusterJewel"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniqueJewels",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=UniqueJewel"
+        },
+        {
+            "TierableSection": "currency.trial.omen",
+            "Filename": "omen",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Omen"
+        },
+        {
+            "TierableSection": "currency.trial.tattoo",
+            "Filename": "tattoo",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Tattoo"
+        },
+        {
+            "TierableSection": "memories",
+            "Filename": "memories",
+            "Url": "https://poe.ninja/api/data/itemoverview?type=Memory"
+        }
+    ],
+"SplinterEconomyRules" : [
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Alteration Shard",
+      "FullItem": "Orb of Alteration",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
     },
-
-    "GearClasses" : [ "Body Armours", "Amulets", "Belts", "Boots", "Bows", "Claws", "Daggers", "Gloves", "Helmets", "One Hand Axes", "One Hand Maces", "Thrusting One Hand Swords", "One Hand Swords", "Quivers", "Rings", "Rune Daggers", "Sceptres", "Shields", "Staves", "Two Hand Swords", "Two Hand Maces", "Two Hand Axes", "Wands", "Warstaves" ],
-
-    "DropLevelIgnoredClasses": ["rings", "amulets", "belts", "jewels", "rune dagger", "wands", "sceptres", "quivers"],
-    
-    "EarlyLeagueMinimumOrbPrice": 30.0,
-    "EarlyLeaguePrimaryOrbMaxCap": 60.0,
-    "MaximumChaosPrice": 200.0,
-
-    "EconomyCurrency_Thresholds_Static": [30.0, 10.0, 3.1, 0.7, 0.2, 0.12, 0.05],
-    "EconomyCurrency_Thresholds_Dynamic": [25.0, 4.9, 0.0, 0.0, 0.0, 0.0, 0.0],
-
-    "EconomyLower_Thresholds_Static": [40.0, 8.0, 3.1, 1.1, 0.7, 0.25, 0.05],
-    "EconomyLower_Thresholds_Dynamic": [15.0, 3.1, 1.1, 0.3, 0.2, 0.05, 0.01],
-
-    "EconomyHigher_Thresholds_Static": [40.0, 9.9, 3.1, 2.1, 0.7, 0.25, 0.05],
-    "EconomyHigher_Thresholds_Dynamic": [15.0, 5.0, 2.0, 0.5, 0.2, 0.05, 0.01]
-  }
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Horizon Shard",
+      "FullItem": "Orb of Horizons",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Fracturing Shard",
+      "FullItem": "Fracturing Orb",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Alchemy Shard",
+      "FullItem": "Orb of Alchemy",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Binding Shard",
+      "FullItem": "Orb of Binding",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Regal Shard",
+      "FullItem": "Regal Orb",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Harbinger's Shard",
+      "FullItem": "Harbinger's Orb",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Annulment Shard",
+      "FullItem": "Orb of Annulment",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Ancient Shard",
+      "FullItem": "Ancient Orb",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "currency",
+      "SplitItem": "Exalted Shard",
+      "FullItem": "Exalted Orb",
+      "SplinterCount": 20,
+      "EarlyLeagueBuff": 1
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Splinter of Xoph",
+      "FullItem": "Xoph's Breachstone",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Splinter of Esh",
+      "FullItem": "Esh's Breachstone",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Splinter of Tul",
+      "FullItem": "Tul's Breachstone",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Splinter of Uul-Netol",
+      "FullItem": "Uul-Netol's Breachstone",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Splinter of Chayula",
+      "FullItem": "Chayula's Breachstone",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Timeless Karui Splinter",
+      "FullItem": "Timeless Karui Emblem",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Timeless Eternal Empire Splinter",
+      "FullItem": "Timeless Eternal Emblem",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Timeless Vaal Splinter",
+      "FullItem": "Timeless Vaal Emblem",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Timeless Templar Splinter",
+      "FullItem": "Timeless Templar Emblem",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    },
+    {
+      "FilterSection": "fragments",
+      "SplitItem": "Timeless Maraketh Splinter",
+      "FullItem": "Timeless Maraketh Emblem",
+      "SplinterCount": 80,
+      "EarlyLeagueBuff": 1.5
+    }
+  ],
+  "FilterLadderIdsSoftcore" : [
+    "GlLZt1", "G4AtJ5", "GmjoTD", "5XMehq", "GmXoTD", "wvPeTJ", "Gg4zsE"
+  ],
+  "FilterLadderIdsHardcore" : [
+    "WXjRcE", "0JX8H0", "M479i0", "8kvycE", "om2WSo", "kmDDcN", "DEgxfQ"
+  ]
+}
