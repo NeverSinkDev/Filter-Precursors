@@ -1,5 +1,6 @@
 {
-    "GameType": "poe1",
+    "GameType": "PoE1",
+    "FilePrefix": "p1",
     "FilterName": "NeverSink's filter",
     "FilterVersion": "8.11.0",
     "LeagueType": "tmpstandard",
@@ -7,6 +8,13 @@
     "LeagueStartDate": "2024-07-25",
     "EarlyLeagueDays": 2,
     "LateLeagueDays": 21,
+    "DebugMode": "false",
+    "OverrideFolder" : "",
+    "OnPremDefaultWindowId" : 3,
+    "OnPremAutoSuggestOnStart" : true,
+    "EconomyOperations": [
+        "InfluencedSubtier", "ReplicaSubtier", "BreachSubtier"
+    ],
     "CurrencyModelTierlists": [
         "fragments",
         "currency",
@@ -445,10 +453,17 @@
       "EarlyLeagueBuff": 1.5
     }
   ],
+  "StyleWhiteList" : [
+    "Wow", "Velvet", "Vaal", "Tabula Rasa", "Purple", "Lunaris", "Gaia", "Necros", "Elder", "Crimson", "Azurite", "Alloy", "Abyss"
+  ],
   "FilterLadderIdsSoftcore" : [
     "GlLZt1", "G4AtJ5", "GmjoTD", "5XMehq", "GmXoTD", "wvPeTJ", "Gg4zsE"
   ],
   "FilterLadderIdsHardcore" : [
     "WXjRcE", "0JX8H0", "M479i0", "8kvycE", "om2WSo", "kmDDcN", "DEgxfQ"
-  ]
+  ],
+  "OnPremFilterGitRepository": "C:\\PROJECTS\\NeverSink-Filter",
+  "FolderEcoData": "C:\\FilterOutput\\PoE1",
+  "FolderFilterBladeDataFiles": "datafiles",
+  "FolderGame": "%userprofile%\\Documents\\My Games\\Path of Exile"
 }
