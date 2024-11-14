@@ -2285,11 +2285,11 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 	Show Any 				{ !G5; %H3; !utilflasks.LT3; Class == class_utilFlasks; }
 }
 
-Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasklikes, Rarity Normal
+Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasklikes
 {
-	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; }
-	Show high { !G6; %D1; !recipe.t2; Quality >= 14; }
-	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; }
+	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; Rarity Normal; }
+	Show high { !G6; %D1; !recipe.t2; Quality >= 14; Rarity <= Magic; }
+	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; Rarity <= Magic; }
 }
 
 Section LevelingTinctures : Auto("Leveling->tincture"), Class == "Tinctures", ItemLevel <= 67
