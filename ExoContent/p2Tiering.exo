@@ -52,10 +52,10 @@ var bases.exotic.atlas.any = "Feathered Sandals";
 
 var bases.exotic.misc.unique = "Grasping Mail";
 var bases.exotic.misc.brickedUniques = "Nameless Ring";
-var bases.exotic.misc.any = "Sacrificial Garb";
+var bases.exotic.misc.any = "Breach Ring";
 
 ## Relics
-var bases.exotic.relics = "Candlestick Relic" "Censer Relic" "Coffer Relic" "Papyrus Relic" "Processional Relic" "Tome Relic" "Urn Relic";
+var bases.exotic.relics = "Urn Relic" "Tapestry Relic" "Seal Relic" "Coffer Relic" "Incense Relic" "Amphora Relic";
 
 ## RELICS and MISC map keys
 var miscmap.keys = "Unnamed Reliquary Key";
@@ -99,26 +99,11 @@ var bases.rares.eg.t2 = "Feathered Sandals";
 var bases.rares.eg.t3 = "Feathered Sandals";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## MANUALLY MANAGED: ESSENCES
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-var currency.essence.t1 = "Greater Essence of the Body";
-var currency.essence.t2 = "Essence of the Body";
-var currency.essence.t3 = BLANK;
-var currency.essence.t4 = BLANK;
-var currency.essence.t5 = BLANK;
-var currency.essence.t6 = BLANK;
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## MANUALLY MANAGED: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.leveling.essences = "Muttering Essence of" "Wailing Essence of" "Weeping Essence of" "Whispering Essence of";
-
-var currency.leveling.chance = "Blacksmith's Whetstone" "Chromatic Orb" "Orb of Alteration" "Orb of Chance";
-var currency.leveling.trans = "Orb of Transmutation";
-var currency.leveling.aug = "Armourer's Scrap" "Orb of Augmentation";
-var currency.leveling.portal = "Portal Scroll";
+var currency.leveling.rare = "Exalted Orb" "Regal Orb";
+var currency.leveling.magic = "Orb of Transmutation" "Orb of Augmentation";
 var currency.leveling.wisdom = "Scroll of Wisdom";
 
 var currency.exotic.undroppable = "Imprint" "Unshaping Orb";
@@ -135,6 +120,8 @@ var gems.untiered.specialGems = "Enlighten";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var bases.flask.lifemanaassorted = "Divine Life Flask" "Divine Mana Flask" "Eternal Life Flask" "Eternal Mana Flask" "Hallowed Hybrid Flask";
+var bases.charms.optimal = BLANK;
+var bases.charms.all = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## MANUALLY MANAGED: LEVELING
@@ -172,74 +159,87 @@ var uniques.jewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
 ## {TIERLIST}: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## EX-DIVINE
+## DIVINE (TINK)
 var currency.generic.t1 = "Mirror Shard" "Divine Orb" "Mirror of Kalandra";
-var currency.generic.t2divine = BLANK;
-## ANNUL-CHAOS-ALCH
-var currency.generic.t3annul = "Annulment Orb";
-var currency.generic.t4chaos = "Chaos Orb";
-var currency.generic.t5alchemy = "Orb of Alchemy";
-## ALTERATION-CHROMATIC-TRANSMUTE
-var currency.generic.t6chrom = "Blacksmith's Whetstone";
-var currency.generic.t7chance = "Armourer's Scrap";
-var currency.generic.t8trans = "Alchemy Shard";
-## ARMOURER-PORTAL-WISDOM
-var currency.generic.t9armour = "Transmutation Shard";
+## 
+var currency.generic.t2 = "Perfect Jeweller's Orb";
+## ANNUL
+var currency.generic.t3 = "Annulment Orb";
+## CHAOS
+var currency.generic.t4 = "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb";
+## ALCH
+var currency.generic.t5 = "Orb of Alchemy" "Exalted Orb" "Vaal Orb";
+## CHANCE
+var currency.generic.t6 = "Regal Orb" "Artificer's Orb" "Lesser Jeweller's Orb" "Orb of Chance";
+## BLACKSMITH
+var currency.generic.t7 = "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation";
+## LOW TIER A
+var currency.generic.t8 = "Chance Shard" "Regal Shard";
+## SUPPLIES
 var currency.generic.twisdom = "Scroll of Wisdom";
 
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## {TIERLIST}: STACKED CURRENCY
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## SIX - STATIC
-var currency.stackedSixStatic.t1 = BLANK;
-var currency.stackedSixStatic.t2 = "Chaos Orb";
-var currency.stackedSixStatic.t3 = BLANK;
-var currency.stackedSixStatic.t4 = "Blacksmith's Whetstone";
-var currency.stackedSixStatic.t5 = "Armourer's Scrap" "Chaos Shard";
-var currency.stackedSixStatic.t6 = BLANK;
-var currency.stackedSixStatic.t7 = BLANK;
+var ignoredcurrencies = "Breachstone" "Broken Circle Artifact";
 
-## THREE - STATIC
-var currency.stackedThreeStatic.t1 = BLANK;
-var currency.stackedThreeStatic.t2 = BLANK;
-var currency.stackedThreeStatic.t3 = "Chaos Orb";
-var currency.stackedThreeStatic.t4 = BLANK;
-var currency.stackedThreeStatic.t5 = "Blacksmith's Whetstone" "Chaos Shard";
-var currency.stackedThreeStatic.t6 = "Armourer's Scrap";
-var currency.stackedThreeStatic.t7 = BLANK;
+var greaterEssences = "Greater Essence of Haste" "Greater Essence of Ice" "Greater Essence of the Body";
+var essense = "Essence of Haste" "Essence of Ice" "Essence of the Body";
+var omen = "Omen of Dextral Annulment" "Omen of Greater Exaltation";
 
-## THREE - ECONOMY
-var currency.stackedThree.t1 = BLANK;
-var currency.stackedThree.t2 = BLANK;
-var currency.stackedThree.t3 = BLANK;
-var currency.stackedThree.t4 = BLANK;
-var currency.stackedThree.t5 = BLANK;
-var currency.stackedThree.t6 = BLANK;
-var currency.stackedThree.t7 = BLANK;
-
-## SIX - ECONOMY
-var currency.stackedSix.t1 = BLANK;
-var currency.stackedSix.t2 = BLANK;
-var currency.stackedSix.t3 = BLANK;
-var currency.stackedSix.t4 = BLANK;
-var currency.stackedSix.t5 = BLANK;
-var currency.stackedSix.t6 = BLANK;
-var currency.stackedSix.t7 = BLANK;
-
-var currency.stacked.supplies.wisdom = "Scroll of Wisdom";
-var currency.stacked.supplies.lower  = "Orb of Augmentation";
-var currency.stacked.supplies.higher = "Orb of Transmutation";
+var soulCores = "Soul Core of Azcapa" "Soul Core of Quipolatl" "Soul Core of Thunder" "Soul Core of Ticaba" "Soul Core of Topotante";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## {TIERLIST}: OILS
+## {TIERLIST}: EMOTIONS (DELIRIUM DISTILLED)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.oil.t1 = BLANK;
-var currency.oil.t2 = BLANK;
-var currency.oil.t3 = BLANK;
-var currency.oil.t4 = BLANK;
-var currency.oil.t5 = BLANK;
+var currency.emotions.t1 = "Distilled Disgust";
+var currency.emotions.t2 = "Distilled Greed";
+var currency.emotions.t3 = "Distilled Guilt";
+var currency.emotions.t4 = "Distilled Ire";
+var currency.emotions.t5 = "Distilled Paranoia" "Distilled Suffering";
+
+var currency.catalysts.t1 = "Flesh Catalyst";
+var currency.catalysts.t2 = "Reaver Catalyst";
+var currency.catalysts.t3 = "Tul's Catalyst";
+var currency.catalysts.t4 = "Xoph's Catalyst";
+var currency.catalysts.t5 = BLANK;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## MANUALLY MANAGED: ESSENCES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var currency.essence.t1 = BLANK;
+var currency.essence.t2 = "Greater Essence of the Body";
+var currency.essence.t3 = "Essence of the Body";
+var currency.essence.t4 = BLANK;
+var currency.essence.t5 = BLANK;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TIERLIST}: OMEN (RITUAL CURRENCY)
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var currency.omen.t1 = BLANK;
+var currency.omen.t2 = BLANK;
+var currency.omen.t3 = "Omen of Dextral Annulment";
+var currency.omen.t4 = "Omen of Greater Exaltation"
+var currency.omen.t5 = BLANK;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TIERLIST}: FRAGMENTS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var fragments.generic.t1 = BLANK;
+var fragments.generic.t2 = "Breachstone" "Simulacrum";
+var fragments.generic.t3 = BLANK;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TIERLIST}: TABLETS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var fragments.tablets.t1 = BLANK;
+var fragments.tablets.t2 = BLANK;
+var fragments.tablets.t3 = BLANK;
+var fragments.tablets.t4 = "Breach Precursor Tablet";
+var fragments.tablets.t5 = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: SPLINTERS
