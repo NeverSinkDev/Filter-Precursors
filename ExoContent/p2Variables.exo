@@ -7,47 +7,38 @@ var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields";
 var classes_armor_small = "Gloves" "Boots" "Helmets";
 var classes_armor_noshields = "Body Armours" "Gloves" "Boots" "Helmets";
 
-var classes_1hattack = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Wands";
-var classes_2hattack = "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces" "Bows"; 
+var missing1_classes = "One Hand Swords" "One Hand Axes" "Daggers" "Claws" "Flails" "Spears";
+var missing2_classes = "Two Hand Swords" "Two Hand Axes";
+
+var classes_1hattack = "One Hand Maces";
+var classes_2hattack = "Warstaves" "Two Hand Maces" "Bows" "Crossbows"; 
 var classes_attack = classes_1hattack + classes_2hattack;
 
 var classes_2hcast = "Staves";
-var classes_1hcast = "Rune Daggers" "Sceptres" "Wands";
-var classes_1hcast_shields = classes_1hcast + "Shields";
+var classes_1hcast = "Sceptres" "Wands";
 var classes_cast = classes_2hcast + classes_1hcast;
-var classes_cast_all = classes_2hcast + classes_1hcast + "Shields";
 
 var classes_weapons = classes_cast + classes_attack;
-var classes_1h = classes_1hattack + classes_1hcast + "Shields";
+var classes_1h = classes_1hattack + classes_1hcast;
 var classes_2h = classes_2hattack + classes_2hcast;
 
-var classes_weapons_melee = classes_weapons_1hmelee + classes_weapons_2hmelee;
+var classes_offhand = "Shields" "Focus" "Quivers";
 
-var classes_weapons_1hmelee = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes";
-var classes_weapons_2hmelee =  "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
-
-var classes_weapons_ranged = "Wands" "Bows";
-var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
-
-var classes_archer = "Bows" "Quivers";
-
-var class_jewels = "Jewels" "Abyss Jewels";
-var classes_nonJwlryEquip = classes_armor + classes_weapons + "Quivers";
+var classes_nonJwlryEquip = classes_armor + classes_weapons + classes_offhand;
 var classes_jewellery = "Amulets" "Belts" "Rings";
+
 var classes_trinkets = classes_jewellery + class_jewels;
 var classes_equip = classes_nonJwlryEquip + classes_jewellery;
-var classes_heist = "Heist Brooches" "Heist Tools" "Heist Gear" "Heist Cloaks";
 
 var classes_exoticEnch = classes_nonJwlryEquip;
 
-var class_flasks = "Mana Flasks" "Life Flasks" "Hybrid Flasks" "Utility Flasks";
-var class_flasklikes = "Mana Flasks" "Life Flasks" "Hybrid Flasks" "Utility Flasks" "Tinctures";
-var class_lifemanaflasks = "Mana Flasks" "Life Flasks";
 var class_charms = "Charms";
+var class_flasks = "Mana Flasks" "Life Flasks";
+var class_flasklikes = class_charms + class_flasks;
 
 var class_currency = "Stackable Currency";
 var class_gems = "Support Gems" "Skill Gems";
-var classes_bladeBlast = "Daggers" "Rune Daggers";
+var class_fragments = "Fragments";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## CRITICAL LEVELS
@@ -63,7 +54,7 @@ var optimalLevel_flask = 82;
 ## NON-EXACT CLASSES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var classes_finalHider = "Sentinel Drone" "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewel" "One Hand" "Quivers" "Rings" "Rune Dagger" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves" "Tinctures";
+var classes_finalHider = classes_equip + class_flasklikes + class_jewels;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} Tiering-Classes
