@@ -51,8 +51,11 @@ var bases.exotic.atlas.any = "Feathered Sandals";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var bases.exotic.misc.unique = "Grasping Mail";
-var bases.exotic.misc.brickedUniques = "Nameless Ring";
-var bases.exotic.misc.any = "Breach Ring";
+
+
+var bases.exotic.misc.t1 = "Time-Lost Diamond" "Diamond";
+
+var bases.exotic.misc.t2 = "Breach Ring";
 
 ## Relics
 var bases.exotic.relics = "Urn Relic" "Tapestry Relic" "Seal Relic" "Coffer Relic" "Incense Relic" "Amphora Relic";
@@ -102,11 +105,11 @@ var bases.rares.eg.t3 = "Feathered Sandals";
 ## MANUALLY MANAGED: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.leveling.rare = "Exalted Orb" "Regal Orb";
+var currency.leveling.rare = "Regal Orb" "Artificer's Orb" "Lesser Jeweller's Orb";
 var currency.leveling.magic = "Orb of Transmutation" "Orb of Augmentation";
 var currency.leveling.wisdom = "Scroll of Wisdom";
 
-var currency.exotic.undroppable = "Imprint" "Unshaping Orb";
+var currency.exotic.undroppable = "Orb of Alteration";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## MANUALLY MANAGED: GEMS
@@ -160,47 +163,51 @@ var uniques.jewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ## DIVINE (TINK)
-var currency.generic.t1 = "Mirror Shard" "Divine Orb" "Mirror of Kalandra";
-## 
-var currency.generic.t2 = "Perfect Jeweller's Orb";
-## ANNUL
-var currency.generic.t3 = "Annulment Orb";
-## CHAOS
-var currency.generic.t4 = "Chaos Orb" "Gemcutter's Prism" "Greater Jeweller's Orb";
-## ALCH
-var currency.generic.t5 = "Orb of Alchemy" "Exalted Orb" "Vaal Orb";
-## CHANCE
-var currency.generic.t6 = "Regal Orb" "Artificer's Orb" "Lesser Jeweller's Orb" "Orb of Chance";
-## BLACKSMITH
-var currency.generic.t7 = "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation";
-## LOW TIER A
-var currency.generic.t8 = "Chance Shard" "Regal Shard";
+var currency.generic.t1 = "Divine Orb" "Mirror of Kalandra" "Perfect Jeweller's Orb" "Albino Rhoa Feather";
+## T2 CURRENCIES
+var currency.generic.t2 = "Greater Jeweller's Orb";
+## UBER-EX TIER
+var currency.generic.t3 = "Annulment Orb" "Chaos Orb" "Gemcutter's Prism" "Orb of Chance" "Exotic Coinage";
+## EX-TIER
+var currency.generic.t4 = "Exalted Orb";
+## SUB-EX TIER
+var currency.generic.t5 = "Glassblower's Bauble" "Orb of Alchemy" "Vaal Orb" "Regal Orb" "Artificer's Orb" "Lesser Jeweller's Orb";
+## ARTIFACTS
+var currency.generic.t6 = "Chance Shard" "Artificer's Orb" "Sun Artifact" "Broken Circle Artifact" "Black Scythe Artifact" "Order Artifact";
+## QUALITY CURRENCIES
+var currency.generic.t7 = "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone";
+## MAGICS AND SHARDS
+var currency.generic.t8 = "Regal Shard" "Alchemy Shard" "Orb of Augmentation" "Orb of Transmutation" "Artificer's Shard" "Transmutation Shard";
 ## SUPPLIES
 var currency.generic.twisdom = "Scroll of Wisdom";
 
-
-var ignoredcurrencies = "Breachstone" "Broken Circle Artifact";
+var ignoredcurrencies = BLANK;
 
 var greaterEssences = "Greater Essence of Haste" "Greater Essence of Ice" "Greater Essence of the Body";
 var essense = "Essence of Haste" "Essence of Ice" "Essence of the Body";
 var omen = "Omen of Dextral Annulment" "Omen of Greater Exaltation";
 
-var soulCores = "Soul Core of Azcapa" "Soul Core of Quipolatl" "Soul Core of Thunder" "Soul Core of Ticaba" "Soul Core of Topotante";
+var sockets.cores.t1 = BLANK;
+var sockets.cores.t2 = BLANK;
+var sockets.cores.t3 = BLANK;
+var sockets.cores.t4 = "Soul Core of Tacati" "Soul Core of Opiloti" "Soul Core of Jiquani" "Soul Core of Zalatl" "Soul Core of Citaqualotl" "Soul Core of Puhuarte" "Soul Core of Tzamoto" "Soul Core of Xopec" "Soul Core of Azcapa" "Soul Core of Topotante" "Soul Core of Quipolatl" "Soul Core of Ticaba" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi";
+var sockets.cores.t5 = BLANK;
+
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: EMOTIONS (DELIRIUM DISTILLED)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.emotions.t1 = "Distilled Disgust";
-var currency.emotions.t2 = "Distilled Greed";
-var currency.emotions.t3 = "Distilled Guilt";
-var currency.emotions.t4 = "Distilled Ire";
-var currency.emotions.t5 = "Distilled Paranoia" "Distilled Suffering";
+var currency.emotions.t1 = "Distilled Isolation" "Distilled Suffering";
+var currency.emotions.t2 = "Distilled Fear" "Distilled Despair";
+var currency.emotions.t3 = "Distilled Disgust" "Distilled Envy";
+var currency.emotions.t4 = "Distilled Greed" "Distilled Paranoia";
+var currency.emotions.t5 = "Distilled Ire" "Distilled Guilt";
 
-var currency.catalysts.t1 = "Flesh Catalyst";
-var currency.catalysts.t2 = "Reaver Catalyst";
-var currency.catalysts.t3 = "Tul's Catalyst";
-var currency.catalysts.t4 = "Xoph's Catalyst";
+var currency.catalysts.t1 = BLANK;
+var currency.catalysts.t2 = BLANK;
+var currency.catalysts.t3 = "Neural Catalyst";
+var currency.catalysts.t4 = "Flesh Catalyst" "Carapace Catalyst" "Uul-Netol's Catalyst" "Xoph's Catalyst" "Tul's Catalyst" "Esh's Catalyst" "Chayula's Catalyst" "Reaver Catalyst" "Sibilant Catalyst" "Skittering Catalyst" "Adaptive Catalyst";
 var currency.catalysts.t5 = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -208,8 +215,8 @@ var currency.catalysts.t5 = BLANK;
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var currency.essence.t1 = BLANK;
-var currency.essence.t2 = "Greater Essence of the Body";
-var currency.essence.t3 = "Essence of the Body";
+var currency.essence.t2 = "Greater Essence of the Body" "Greater Essence of the Mind" "Greater Essence of Enhancement" "Greater Essence of Torment" "Greater Essence of Flames" "Greater Essence of Ice" "Greater Essence of Electricity" "Greater Essence of Ruin" "Greater Essence of Battle" "Greater Essence of Sorcery" "Greater Essence of Haste" "Greater Essence of the Infinite";
+var currency.essence.t3 = "Essence of the Body" "Essence of the Mind" "Essence of Enhancement" "Essence of Torment" "Essence of Flames" "Essence of Ice" "Essence of Electricity" "Essence of Ruin" "Essence of Battle" "Essence of Sorcery" "Essence of Haste" "Essence of the Infinite";
 var currency.essence.t4 = BLANK;
 var currency.essence.t5 = BLANK;
 
@@ -217,18 +224,19 @@ var currency.essence.t5 = BLANK;
 ## {TIERLIST}: OMEN (RITUAL CURRENCY)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.omen.t1 = BLANK;
-var currency.omen.t2 = BLANK;
-var currency.omen.t3 = "Omen of Dextral Annulment";
-var currency.omen.t4 = "Omen of Greater Exaltation"
+var currency.omen.t1 = "Omen of Whittling";
+var currency.omen.t2 = "Omen of Corruption" "Omen of Amelioration";
+var currency.omen.t3 = "Omen of Sinistral Erasure" "Omen of Dextral Erasure" "Omen of Sinistral Alchemy" "Omen of Dextral Alchemy" "Omen of Sinistral Coronation" "Omen of Dextral Coronation" "Omen of Greater Exaltation" "Omen of Sinistral Exaltation" "Omen of Dextral Exaltation" "Omen of Greater Annulment" "Omen of Sinistral Annulment" "
+Omen of Dextral Annulment";
+var currency.omen.t4 = "Omen of Refreshment" "Omen of Resurgence";
 var currency.omen.t5 = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: FRAGMENTS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var fragments.generic.t1 = BLANK;
-var fragments.generic.t2 = "Breachstone" "Simulacrum";
+var fragments.generic.t1 = "Breachstone" "Simulacrum" "An Audience with the King";
+var fragments.generic.t2 = BLANK;
 var fragments.generic.t3 = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -238,7 +246,7 @@ var fragments.generic.t3 = BLANK;
 var fragments.tablets.t1 = BLANK;
 var fragments.tablets.t2 = BLANK;
 var fragments.tablets.t3 = BLANK;
-var fragments.tablets.t4 = "Breach Precursor Tablet";
+var fragments.tablets.t4 = "Precursor Tablet" "Ritual Precursor Tablet" "Delirium Precursor Tablet" "Breach Precursor Tablet" "Expedition Precursor Tablet";
 var fragments.tablets.t5 = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -247,10 +255,10 @@ var fragments.tablets.t5 = BLANK;
 
 var fragments.generic.splinters = "Simulacrum Splinter" "Breach Splinter";
 
-var stacksize.simulacrum.t1 = 150;
-var stacksize.simulacrum.t2 = 60;
-var stacksize.simulacrum.t3 = 20;
-var stacksize.simulacrum.t4 = 3;
+var stacksize.commonSplinters.t1 = 100;
+var stacksize.commonSplinters.t2 = 27;
+var stacksize.commonSplinters.t3 = 9;
+var stacksize.commonSplinters.t4 = 3;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: DIVINATION CARDS
@@ -271,11 +279,11 @@ var divination.t5 = "The Terrible";
 
 var uniques.generic.earlyleague = BLANK;
 
-var uniques.generic.multispecialhigh = "Pyrophyte Staff";
-var uniques.generic.multispecial = "Pyrophyte Staff";
+var uniques.generic.multispecialhigh = "Stellar Amulet" "Heavy Belt";
+var uniques.generic.multispecial = "Jade Amulet";
 
-var uniques.generic.t1 = "Pyrophyte Staff";
-var uniques.generic.t2 = "Pyrophyte Staff";
-var uniques.generic.t3boss = "Pyrophyte Staff";
-var uniques.generic.t3 = "Pyrophyte Staff";
-var uniques.generic.hideable = "Pyrophyte Staff";
+var uniques.generic.t1 = "Furtive Wraps";
+var uniques.generic.t2 = "Burnished Gauntlets";
+var uniques.generic.t3boss = "Grand Regalia";
+var uniques.generic.t3 = "Shortbow";
+var uniques.generic.hideable = "Felled Greatclub";

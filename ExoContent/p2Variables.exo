@@ -3,7 +3,7 @@
 ##   {META} CLASSES AND BASES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields";
+var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields" "Foci";
 var classes_armor_small = "Gloves" "Boots" "Helmets";
 var classes_armor_noshields = "Body Armours" "Gloves" "Boots" "Helmets";
 
@@ -22,7 +22,7 @@ var classes_weapons = classes_cast + classes_attack;
 var classes_1h = classes_1hattack + classes_1hcast;
 var classes_2h = classes_2hattack + classes_2hcast;
 
-var classes_offhand = "Shields" "Focus" "Quivers";
+var classes_offhand = "Shields" "Foci" "Quivers";
 
 var classes_nonJwlryEquip = classes_armor + classes_weapons + classes_offhand;
 var classes_jewellery = "Amulets" "Belts" "Rings";
@@ -44,8 +44,12 @@ var class_fragments = "Fragments";
 ## CRITICAL LEVELS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var eglevel = 65;
 var earlyEgLevelEnd = 70;
+
+var egTopMods = 82;
+var eglevel2 = 79;
+var eglevel1 = 72;
+var eglevel = 65;
 
 var optimalLevel_charm = 82;
 var optimalLevel_flask = 82;
@@ -69,6 +73,9 @@ var classes_doubleCorruptTargetsRare = class_jewels + "Amulets" "Belts" "Rings" 
 ## BASETYPES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
-var abyssJewels = "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel";
+var genericJewels = "Ruby" "Emerald" "Sapphire";
+var timeLostJewels = "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Sapphire";
+
 var allCommonJewels = genericJewels + abyssJewels;
+
+var questLikeDrops = "Bronze Key" "Silver Key" "Gold Key";
