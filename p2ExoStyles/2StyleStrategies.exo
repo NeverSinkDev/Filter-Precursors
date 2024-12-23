@@ -1,0 +1,153 @@
+#------------------------------------
+# Global Strategies
+#------------------------------------
+
+# This rule is applied to every single rule in the filter first.
+Style UniversalPreProc
+{
+	Func ApplyToAll ()
+	{
+		SetBorderColor 0 0 0;
+	}
+}
+
+# Global strategies can be applied to any section
+# Even if they miss the parent tag
+
+Style UniversalHideLayer
+{
+	Func Any ()
+	{
+		SetBorderColor 0 0 0 0;
+		SetBackgroundColor 0 0 0 0;
+		MinimapIcon NONE;
+		PlayEffect NONE;
+		PlayAlertSound NONE;
+		SetFontSize font.min;
+		DisableDropSound True;
+	}
+}
+
+# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
+
+Style UniversalValueAccents
+{
+	Func newitemmidvalue ()
+	{
+		PlayAlertSound 2 300;
+	}
+}
+
+#------------------------------------
+# Rare Decorators
+#------------------------------------
+
+Style EndgameRareDecorators
+{
+	Func large()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func medium()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func tiny()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func fourlinkedrare()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func highgear()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func ilvl86()
+	{
+		SetTextColor color.temp; SetBorderColor NONE;
+	}
+
+	Func ilvl84()
+	{
+		SetTextColor color.temp; SetBorderColor NONE;
+	}
+
+	Func ilvl75()
+	{
+		SetTextColor color.temp; SetBorderColor NONE;
+	}
+
+	Func ilvl68()
+	{
+		SetBorderColor NONE;
+	}
+
+	Func corrupt()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func corruptimpl()
+	{
+		SetBorderColor color.temp;
+	}
+}
+
+#------------------------------------
+# Mapping Rules
+#------------------------------------
+
+Style GeneralMapProgressionStrategy
+{
+	Func Z1()
+	{
+		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+		SetFontSize font.t2;
+	}
+
+	Func Z2()
+	{
+		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+		SetFontSize font.t2;
+	}
+
+	Func Z3()
+	{
+		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
+		SetFontSize sWhite;
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square; 
+		SetFontSize font.t3;
+	}
+
+	Func Z4()
+	{
+		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
+		SetFontSize sWhite;
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
+		SetFontSize font.t3;
+	}
+
+	Func deco_mapup()
+	{
+		SetBorderColor color.temp;
+	}
+
+	Func deco_map_zone12()
+	{
+		SetBorderColor 0 0 0 255;
+	}
+
+	Func deco_map_zone34()
+	{
+		SetBorderColor 200 200 200 255;
+	}
+}

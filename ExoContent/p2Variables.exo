@@ -11,7 +11,7 @@ var missing1_classes = "One Hand Swords" "One Hand Axes" "Daggers" "Claws" "Flai
 var missing2_classes = "Two Hand Swords" "Two Hand Axes";
 
 var classes_1hattack = "One Hand Maces";
-var classes_2hattack = "Warstaves" "Two Hand Maces" "Bows" "Crossbows"; 
+var classes_2hattack = "Quarterstaves" "Two Hand Maces" "Bows" "Crossbows"; 
 var classes_attack = classes_1hattack + classes_2hattack;
 
 var classes_2hcast = "Staves";
@@ -27,6 +27,8 @@ var classes_offhand = "Shields" "Foci" "Quivers";
 var classes_nonJwlryEquip = classes_armor + classes_weapons + classes_offhand;
 var classes_jewellery = "Amulets" "Belts" "Rings";
 
+var class_jewels = "Jewels"
+
 var classes_trinkets = classes_jewellery + class_jewels;
 var classes_equip = classes_nonJwlryEquip + classes_jewellery;
 
@@ -38,7 +40,7 @@ var class_flasklikes = class_charms + class_flasks;
 
 var class_currency = "Stackable Currency";
 var class_gems = "Support Gems" "Skill Gems";
-var class_fragments = "Fragments";
+var class_fragments = "Map Fragments";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## CRITICAL LEVELS
@@ -53,6 +55,15 @@ var eglevel = 65;
 
 var optimalLevel_charm = 82;
 var optimalLevel_flask = 82;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## stacksizes
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var stacksize.commonSplinters.t1 = 100;
+var stacksize.commonSplinters.t2 = 27;
+var stacksize.commonSplinters.t3 = 9;
+var stacksize.commonSplinters.t4 = 3;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## NON-EXACT CLASSES
