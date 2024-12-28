@@ -244,17 +244,17 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareRingsAmulets : Class == "Rings" "Amulets", Auto("rr->amuring")
 	{
-		Show T1 { BaseType == bases.rares.jwl.ringsamu.t1; }
-		Show T2 { BaseType == bases.rares.jwl.ringsamu.t2; }
-		Show T3 { BaseType == bases.rares.jwl.ringsamu.t3; }
+		Show T1 { BaseType == derived.rares.jwl.ringsamu.t1; }
+		Show T2 { BaseType == derived.rares.jwl.ringsamu.t2; }
+		Show T3 { BaseType == derived.rares.jwl.ringsamu.t3; }
 	}
 
 #!! Waypoint c6.rare.belts.all : "Rare Endgame Items - Belts"
 	Section EndgameRareBelts : Class == "Belts", Auto("rr->belts")
 	{
-		Show T1 { BaseType == bases.rares.jwl.belts.t1; }
-		Show T2 { BaseType == bases.rares.jwl.belts.t2; }
-		Show T3 { BaseType == bases.rares.jwl.belts.t3; }
+		Show T1 { BaseType == derived.rares.jwl.belts.t1; }
+		Show T2 { BaseType == derived.rares.jwl.belts.t2; }
+		Show T3 { BaseType == derived.rares.jwl.belts.t3; }
 	}
 
 #===============================================================================================================
@@ -279,15 +279,15 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1 { BaseType == bases.rares.eg.t1; }
+		Show T1 { BaseType == bases.crafting.general.t1; }
 
 #!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (gear)"
 		
-		Show T2 { BaseType == bases.rares.eg.t2; }
+		Show T2 { BaseType == bases.crafting.general.t2; }
 
 #!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (gear)"
 
-		Show T3 { BaseType == bases.rares.eg.t3; }
+		Show T3 { BaseType == bases.crafting.general.t3; }
 
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (gear)"
 
