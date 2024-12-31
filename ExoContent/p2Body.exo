@@ -108,8 +108,8 @@ Section EndgameCraftingBases : Clean()
 		Show t1idealLevel { ItemLevel >= egTopMods; BaseType == bases.crafting.general.t1; }
 
 		Show t1 		  { EG(); BaseType == bases.crafting.general.t1; }
-		Show t2 		  { EG(); BaseType == bases.crafting.general.t2; }
-		Show t3 		  { EG(); BaseType == bases.crafting.general.t3; }
+		Show t2 		  { EG(); BaseType == bases.crafting.general.t2; AreaLevel <= 74;  }
+		Show t3 		  { EG(); BaseType == bases.crafting.general.t3; AreaLevel <= 70; }
 	}
 
 	Section DecoratorRemover : Auto("Endgame->normalcraft->Decorator"), Class == classes_equip, EG()
@@ -279,19 +279,34 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1 { BaseType == bases.crafting.general.t1; }
+		Show T1_s { BaseType == bases.crafting.general.t1; TopMods(); }
+		Show T1_a { BaseType == bases.crafting.general.t1; ItemLevel >= 79; }
+		Show T1_r { BaseType == bases.crafting.general.t1; }
 
 #!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (gear)"
 		
-		Show T2 { BaseType == bases.crafting.general.t2; }
+		Show T2_s { BaseType == bases.crafting.general.t2; TopMods(); }
+		Show T2_a { BaseType == bases.crafting.general.t2; ItemLevel >= 79; }
+		Show T2_b { BaseType == bases.crafting.general.t2; ItemLevel >= 75; }
+		Show T2_r { BaseType == bases.crafting.general.t2; }
 
 #!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (gear)"
 
-		Show T3 { BaseType == bases.crafting.general.t3; }
+		Show T3_s { BaseType == bases.crafting.general.t3; TopMods(); }
+		Show T3_a { BaseType == bases.crafting.general.t3; ItemLevel >= 79; }
+		Show T3_b { BaseType == bases.crafting.general.t3; ItemLevel >= 70; }
+		Show T3_r { BaseType == bases.crafting.general.t3; }
 
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (gear)"
 
-		Show t4endgamerares { Class == classes_nonJwlryEquip; }
+		Show T4_a { BaseType == bases.crafting.general.t4; ItemLevel >= 70; }
+		Show T4_r { BaseType == bases.crafting.general.t4; }
+
+#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (gear)"
+
+		Show T5_a { Class == classes_nonJwlryEquip; ItemLevel >= 70; }
+		Show T5_r { Class == classes_nonJwlryEquip; }
+
 	}
 }
 
@@ -313,7 +328,7 @@ Section Salvagable : Rarity Rare, Auto("Leveling->Salvagable"), ItemLevel >= egl
 #===============================================================================================================
 Section HideLayer2 : Auto("HideLayer")
 {
-	Show RaresEndgame { ItemLevel >= eglevel; Rarity Rare; Class classes_equip; }
+	Show RaresEndgame { ItemLevel >= eglevel; Rarity Rare; Class == classes_equip; }
 }
 
 #===============================================================================================================
@@ -325,6 +340,7 @@ Section SocketsRunes : Auto("sockets->runes")
 {
 	Show t3 { BaseType == sockets.runes.t3; }
 	Show t4 { BaseType == sockets.runes.t4; }
+	Show t5 { BaseType == sockets.runes.t5; }
 }
 
 Section SocketsCores : Auto("sockets->cores")
@@ -638,11 +654,11 @@ Section FullFragments : Auto("fragments->generic"), Class == class_fragments
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
 	Show TrialKeySanctum { BaseType == "Djinn Barya"; }
-
 	Show TrialKeyUltimatumReward { BaseType == "Inscribed Ultimatum"; Corrupted True; }
 	Show TrialKeyUltimatum { BaseType == "Inscribed Ultimatum"; }
 
 	Show RelicKeys { !Currency.S; BaseType == miscmap.keys; }
+	Show RelicKeysSafe { !Currency.S; Class == "Vault Keys"; }
 }
 
 Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
@@ -783,7 +799,7 @@ Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Man
 Section LevelingCharms : Class == class_charms, Auto("Leveling->Charms"), LVL()
 {
 	Show Selected { BaseType == bases.charms.optimal;} 
-	Show Any 	  { BaseType == bases.charms.all;}
+	Show Any 	  { Class == "Charms";}
 }
 
 #===============================================================================================================
