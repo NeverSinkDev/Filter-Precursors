@@ -2,12 +2,114 @@
 # Global Strategies
 #------------------------------------
 
+# These are global accents that can be used without any context
+
+Style UniversalValueAccents
+{
+	Func tierS
+	{
+		SetTextColor cRed; SetBorderColor cRed; SetBackgroundColor cWhite; 
+		PlayAlertSound asS; PlayEffect Red; MinimapIcon 0 Red Star; 
+		SetFontSize 45;
+	}
+
+	Func QuestLike
+	{
+		SetTextColor cQuestGreen;
+		PlayEffect Green;
+		SetFontSize font.t2;
+		MinimapIcon 0 Green Pentagon;
+		PlayAlertSound asUnique;
+	}
+
+	Func Artifact
+	{
+		SetFontSize font.t2;
+		SetTextColor cArtifact; SetBorderColor cArtifact; SetBackgroundColor cArtifactGlow;
+		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
+	}
+
+#------------------------------------
+# CURRENCY
+#------------------------------------
+
+	## Greater jeweller
+	Func CurrTierA
+	{
+		SetFontSize font.t2;
+		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cCurrTierA;
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mCurrency;
+	}
+
+	## Above Exalted Tier
+	Func CurrTierB
+	{
+		SetFontSize font.t2;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierB;
+		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mCurrency;
+	}
+
+	## Exalted
+	Func CurrTierC
+	{
+		SetFontSize font.t3;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierC;
+		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 Yellow mCurrency;
+	}
+
+	## Below Exalted Tier
+	Func CurrTierD
+	{
+		SetFontSize font.t4;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierD;
+		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mCurrency;
+	}
+
+#------------------------------------
+# GOLD
+#------------------------------------
+
+	Func goldHuge
+	{
+		MinimapIcon 1 Yellow Cross;
+		SetTextColor cGold;
+		SetFontSize font.t4;
+		SetBackgroundColor cBlack;
+		PlayEffect Orange;
+	}
+
+	Func goldLarge
+	{
+		MinimapIcon 1 White Cross;
+		SetTextColor cGold;
+		SetFontSize font.t5;
+		SetBackgroundColor cAccentLowMid;
+		PlayEffect Orange Temp;
+	}
+
+	Func goldMedium
+	{
+		MinimapIcon 2 White Cross;
+		SetTextColor cGold;
+		SetFontSize font.t5;
+		SetBackgroundColor cAccentLowMid;
+	}
+
+	Func goldSmall
+	{
+		MinimapIcon 2 Grey Cross;
+		SetTextColor cGold;
+		SetFontSize font.t6;
+		SetBackgroundColor cAccentLow;
+	}
+}
+
 # This rule is applied to every single rule in the filter first.
 Style UniversalPreProc
 {
 	Func ApplyToAll ()
 	{
-		SetBorderColor 0 0 0;
+		Empty();
 	}
 }
 
@@ -28,16 +130,6 @@ Style UniversalHideLayer
 	}
 }
 
-# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
-
-Style UniversalValueAccents
-{
-	Func newitemmidvalue ()
-	{
-		PlayAlertSound 2 300;
-	}
-}
-
 #------------------------------------
 # Rare Decorators
 #------------------------------------
@@ -46,57 +138,57 @@ Style EndgameRareDecorators
 {
 	Func large()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 
 	Func medium()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 
 	Func tiny()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 
 	Func fourlinkedrare()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 
 	Func highgear()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 
 	Func ilvl86()
 	{
-		SetTextColor color.temp; SetBorderColor NONE;
+		Empty();
 	}
 
 	Func ilvl84()
 	{
-		SetTextColor color.temp; SetBorderColor NONE;
+		Empty();
 	}
 
 	Func ilvl75()
 	{
-		SetTextColor color.temp; SetBorderColor NONE;
+		Empty();
 	}
 
 	Func ilvl68()
 	{
-		SetBorderColor NONE;
+		Empty();
 	}
 
 	Func corrupt()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 
 	Func corruptimpl()
 	{
-		SetBorderColor color.temp;
+		Empty();
 	}
 }
 
@@ -108,31 +200,31 @@ Style GeneralMapProgressionStrategy
 {
 	Func Z1()
 	{
-		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
-		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
+		PlayAlertSound asHighMaps; PlayEffect Yellow; MinimapIcon 1 Red Square; 
 		SetFontSize font.t2;
 	}
 
 	Func Z2()
 	{
-		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
-		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
+		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
+		PlayAlertSound asHighMaps; PlayEffect Yellow; MinimapIcon 1 Red Square; 
 		SetFontSize font.t2;
 	}
 
 	Func Z3()
 	{
-		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
-		SetFontSize sWhite;
-		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square; 
+		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		SetFontSize cWhite;
+		PlayAlertSound asMaps; PlayEffect White; MinimapIcon 1 Yellow Square; 
 		SetFontSize font.t3;
 	}
 
 	Func Z4()
 	{
-		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
-		SetFontSize sWhite;
-		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
+		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		SetFontSize cWhite;
+		PlayAlertSound asMaps; PlayEffect White; MinimapIcon 2 White Square; 
 		SetFontSize font.t3;
 	}
 

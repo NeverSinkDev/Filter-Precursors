@@ -3,27 +3,57 @@
 #------------------------------------
 
 var color.temp = 255 0 255 255;
+var font.max = 45;
 var font.min = 18;
-var font.t2 = 40;
-var font.t3 = 40;
+var font.t2 = 45;
+var font.t3 = 45;
+var font.t4 = 40;
+var font.t5 = 35;
+var font.t6 = 32;
 
 #------------------------------------
-# Color Names
+# Highlight Colors
 #------------------------------------
 
-var sBlack = 0 0 0 255;
-var sWhite = 255 255 255 255;
-var sRed   = 255 0 0 255;
+var cBlack = 0 0 0 255;
+var cWhite = 255 255 255 255;
+var cRed   = 255 0 0 255;
+var cQuestGreen = 74 230 58 255;
+
+var cGold = 180 180 180 255;
+
+var cArtifact= 240 0 0 255;
+var cArtifactGlow = 70 0 20 255;
+
+var cCurrTierA = 240 90 35 255;
+var cCurrTierB = 240 90 35 255;
+var cCurrTierC = 249 150 25 255;
+var cCurrTierD = 213 159 0 255;
+
+#------------------------------------
+# Background Colors (unless background is the highlight)
+#------------------------------------
+
+var cAccentMid = 0 0 0 235;
+var cAccentLowMid = 0 0 0 200;
+var cAccentLow = 0 0 0 180;
 
 #------------------------------------
 # Standards - Sounds
 #------------------------------------
 
-var sounds.t1 = 6 300;
-var sounds.t2 = 1 300;
-var sounds.currency = 2 300;
-var sounds.unique = 3 300;
-var sounds.maps = 4 300;
-var sounds.maps.high = 5 300;
+var asS = 6 300;
+var asA = 1 300;
 
-var sound = sounds.currency;
+var asCurr = 2 300;
+var asUnique = 3 300;
+var asMaps = 4 300;
+var asHighMaps = 5 300;
+
+
+#------------------------------------
+# Minimap
+#------------------------------------
+
+var mCurrency = Circle;
+var mUniques = Star;

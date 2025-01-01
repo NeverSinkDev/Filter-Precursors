@@ -26,13 +26,13 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 
 Section Gold : Auto("Gold"), BaseType == "Gold"
 {
-	Show stack3 { !gold.t1;  StackSize >= 10000; }
-	Show stack2 { !gold.t2;  StackSize >= 3000; }
-	Show stack1 { !gold.t3;  StackSize >= 500; }
+	Show stack3 { !goldHuge;  StackSize >= 5000; }
+	Show stack2 { !goldLarge;  StackSize >= 3000; }
+	Show stack1 { !goldMedium;  StackSize >= 500; }
 	
-	Show stack1lvl { !gold.t3; StackSize >= 300; LVL(); }
+	Show stack1lvl { !goldMedium; StackSize >= 250; LVL(); }
 
-	Show any   { !gold.t4; Empty(); }
+	Show any   { !goldSmall; Empty(); }
 }
 
 #===============================================================================================================
@@ -50,14 +50,14 @@ Section ExoticBases : Auto("ExoticBases"), !exotic
 	Show CommonExoticBases { !exotic.t2; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
 }
 
-Section QuestItemException : Auto("QuestlikeException")
+Section QuestItemException : Auto("QuestlikeException"), !questlike
 {
 	# Sanctum keys
-	Show QuestLike { !questlike; BaseType == questLikeDrops; }
-	Show QuestItems { !questlike; Class == "Quest Items"; }
+	Show QuestLike  { BaseType == questLikeDrops; }
+	Show QuestItems { Class == "Quest Items"; }
 }
 
-Section Artifacts : Auto("Artifact"), Rarity <= Rare
+Section Artifacts : Auto("Artifact"), Rarity <= Rare, !Artifact
 {
 	Show FishingRod { Class == "Fishing Rods"; }
 	Show Pieces { Class == "Pieces"; }
@@ -96,7 +96,7 @@ Section EndgameCraftingBases : Clean()
 
 	Section CraftNormalDecorators : Auto("Endgame->normalcraft->Decorator"), Rarity <= Magic, EG()
 	{
-		Cont NormalDecoratorJwlry { Class == classes_jewellery; };
+		Cont NormalDecoratorJwlry { !tierS; Class == classes_jewellery; };
 		Cont NormalDecorator      { Class == classes_nonJwlryEquip; };
 	}
 
@@ -372,8 +372,8 @@ Section TrialRelics : Auto("relics->generic")
 Section UncutGems : Auto("gems->uncut")
 {
 	# Level20
-	Show Spirit20 { BaseType == "Uncut Spirit Gem"; ItemLevel >= 20; }
-	Show Skill20 { BaseType == "Uncut Skill Gem"; ItemLevel >= 20; }
+	Show Spirit20 { !TIERS; BaseType == "Uncut Spirit Gem"; ItemLevel >= 20; }
+	Show Skill20  { !TIERS; BaseType == "Uncut Skill Gem"; ItemLevel >= 20; }
 
 	# Level19
 	Show Spirit19 { BaseType == "Uncut Spirit Gem"; ItemLevel = 19; }
@@ -503,11 +503,11 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 
 Section CurrencyTiering : Auto("currency"), Class == class_currency, !Currency
 {
-	Show t1 { BaseType == currency.generic.t1; }
-	Show t2 { BaseType == currency.generic.t2; }
-	Show t3 { BaseType == currency.generic.t3; }
-	Show t4 { BaseType == currency.generic.t4; }
-	Show t5 { BaseType == currency.generic.t5; }
+	Show t1 { !TIERS; BaseType == currency.generic.t1; }
+	Show t2 { !CurrTierA; BaseType == currency.generic.t2; }
+	Show t3 { !CurrTierB; BaseType == currency.generic.t3; }
+	Show t4 { !CurrTierC; BaseType == currency.generic.t4; }
+	Show t5 { !CurrTierD; BaseType == currency.generic.t5; }
 	Show t6 { BaseType == currency.generic.t6; }
 	Show t7 { BaseType == currency.generic.t7; }
 	Show t8 { BaseType == currency.generic.t8; }
@@ -525,10 +525,10 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency, !Currency
 
 Section CurrencyEmotions : Auto("currency->emotions"), Class == class_currency, !Currency
 {
-	Show t1 { BaseType == currency.emotions.t1; }
-	Show t2 { BaseType == currency.emotions.t2; }
-	Show t3 { BaseType == currency.emotions.t3; }
-	Show t4 { BaseType == currency.emotions.t4; }
+	Show t1 { !TIERS; BaseType == currency.emotions.t1; }
+	Show t2 { !CurrTierA; BaseType == currency.emotions.t2; }
+	Show t3 { !CurrTierB; BaseType == currency.emotions.t3; }
+	Show t4 { !CurrTierC; BaseType == currency.emotions.t4; }
 	Show t5 { BaseType == currency.emotions.t5; }
 	Hide exHide { !shrink; BaseType == currency.emotions.t1 + currency.emotions.t2 + currency.emotions.t3 + currency.emotions.t4  + currency.emotions.t5; }
 	Show restex { BaseType "Distilled "; }
@@ -541,11 +541,11 @@ Section CurrencyEmotions : Auto("currency->emotions"), Class == class_currency, 
 
 Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency, !Currency
 {
-	Show t1 {  BaseType == currency.catalysts.t1; }
-	Show t2 {  BaseType == currency.catalysts.t2; }
-	Show t3 {  BaseType == currency.catalysts.t3; }
-	Show t4 {  BaseType == currency.catalysts.t4; }
-	Show t5 {  BaseType == currency.catalysts.t5; }
+	Show t1 { !TIERS; BaseType == currency.catalysts.t1; }
+	Show t2 { BaseType == currency.catalysts.t2; }
+	Show t3 { BaseType == currency.catalysts.t3; }
+	Show t4 { BaseType == currency.catalysts.t4; }
+	Show t5 { BaseType == currency.catalysts.t5; }
 	Hide exHide { !shrink; BaseType == currency.catalysts.t1 + currency.catalysts.t2 + currency.catalysts.t3 + currency.catalysts.t4  + currency.catalysts.t5; }
 	Show restex { BaseType "Catalyst"; }
 }
@@ -557,7 +557,7 @@ Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency
 
 Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !Currency
 {
-	Show t1 { BaseType == currency.essence.t1; }
+	Show t1 { !TIERS; BaseType == currency.essence.t1; }
 	Show t2 { BaseType == currency.essence.t2; }
 	Show t3 { BaseType == currency.essence.t3; }
 	Show t4 { BaseType == currency.essence.t4; }
@@ -572,7 +572,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !C
 
 Section CurrencyOmen : Auto("currency->omen"), Class == class_currency, !Currency
 {
-	Show t1 { BaseType == currency.omen.t1; }
+	Show t1 { !TIERS; BaseType == currency.omen.t1; }
 	Show t2 { BaseType == currency.omen.t2; }
 	Show t3 { BaseType == currency.omen.t3; }
 	Show t4 { BaseType == currency.omen.t4; }
@@ -608,7 +608,7 @@ Section Tablets : Auto("fragments->tablets->generic"), Class "Tablet"
 #===============================================================================================================
 #!! Waypoint c10.fragments.special : "Special Keys - Pinnacle, Logbook"
 
-Section SpecialMapLike : Auto("maplike->special"), 
+Section SpecialMapLike : Auto("maplike->special"), !artifact
 {
 	Show superkeys { Class == "Pinnacle Keys" }
 	Show logbooks  { Class "Logbook" }
@@ -683,7 +683,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
 
-	Show t1 { !*S; BaseType == uniques.generic.t1; }
+	Show t1 { !TIERS; BaseType == uniques.generic.t1; }
 	Show t2 { !*A; BaseType == uniques.generic.t2; }	
 #------------------------------------
 # [5703] Exceptions #2
