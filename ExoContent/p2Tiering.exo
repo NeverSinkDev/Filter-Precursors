@@ -9,10 +9,7 @@
 ## MANUALLY-MANAGED SMALL LISTS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var bases.chancing.higher = "Azure Amulet";
-var bases.chancing.any = "Ruby Ring";
-
-var bases.crafting.early = "Azure Amulet" "Ruby Ring";
+var bases.chancing.any = "Sapphire Ring" "Stellar Amulet" "Heavy Belt";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {MATRIX-MANAGED} BASETYPES
@@ -82,37 +79,29 @@ var bases.charms.optimal = "Amethyst Charm" "Antidote Charm" "Dousing Charm" "Go
 var bases.charms.all = "Amethyst Charm" "Antidote Charm" "Dousing Charm" "Golden Charm" "Grounding Charm" "Ruby Charm" "Sapphire Charm" "Silver Charm" "Staunching Charm" "Stone Charm" "Thawing Charm" "Topaz Charm";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## {TIERLIST}: UNIQUE EXCEPTIONS
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-var uniques.jewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
-
-##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## DIVINE (TINK)
+## DIVINE (TINK) ~55ex
 var currency.generic.t1 = "Albino Rhoa Feather" "Divine Orb" "Mirror of Kalandra" "Perfect Jeweller's Orb";
-## T2 CURRENCIES
+## T2 CURRENCIES ~10ex
 var currency.generic.t2 = "Greater Jeweller's Orb";
-## UBER-EX TIER
+## UBER-EX TIER ~3ex
 var currency.generic.t3 = "Chaos Orb" "Exotic Coinage" "Gemcutter's Prism" "Orb of Annulment" "Orb of Chance";
-## EX-TIER
+## EX-TIER ~1ex
 var currency.generic.t4 = "Exalted Orb";
 ## SUB-EX TIER
-var currency.generic.t5 = "Artificer's Orb" "Glassblower's Bauble" "Lesser Jeweller's Orb" "Orb of Alchemy" "Regal Orb" "Vaal Orb";
-## ARTIFACTS
-var currency.generic.t6 = "Artificer's Orb" "Black Scythe Artifact" "Broken Circle Artifact" "Chance Shard" "Order Artifact" "Sun Artifact";
-## QUALITY CURRENCIES
-var currency.generic.t7 = "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone";
-## MAGICS AND SHARDS
-var currency.generic.t8 = "Alchemy Shard" "Artificer's Shard" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Transmutation Shard";
+var currency.generic.t5 = "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Vaal Orb" "Armourer's Scrap" "Chance Shard";
+## SUB-EX TIER
+var currency.generic.t6 = "Order Artifact" "Sun Artifact" "Black Scythe Artifact" "Broken Circle Artifact" "Lesser Jeweller's Orb" "Arcanist's Etcher";
+## SUPPLIES
+var currency.generic.t7 = "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation";
+## LOW SHARDS
+var currency.generic.t8 = "Alchemy Shard" "Artificer's Shard" "Regal Shard" "Transmutation Shard";
 ## SUPPLIES
 var currency.generic.twisdom = "Scroll of Wisdom";
 
 var ignoredcurrencies = BLANK;
-
-var omen = "Omen of Dextral Annulment" "Omen of Greater Exaltation";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: SOCKETS
@@ -206,14 +195,14 @@ var divination.t5 = "The Terrible";
 
 var uniques.generic.earlyleague = BLANK;
 
-var uniques.generic.multispecialhigh = "Heavy Belt" "Stellar Amulet";
-var uniques.generic.multispecial = "Jade Amulet";
+var uniques.generic.multispecialhigh = "Amethyst Ring" "Heavy Belt" "Sapphire Ring" "Stellar Amulet";
+var uniques.generic.multispecial = "Amber Amulet" "Azure Amulet" "Crimson Amulet" "Emerald Ring" "Gold Ring" "Jade Amulet" "Lazuli Ring" "Moulded Mitts" "Pearl Ring" "Solar Amulet" "Spiked Club" "Tribal Mask";
 
-var uniques.generic.t1 = "Furtive Wraps";
-var uniques.generic.t2 = "Burnished Gauntlets";
-var uniques.generic.t3boss = "Grand Regalia";
-var uniques.generic.t3 = "Shortbow";
-var uniques.generic.hideable = "Felled Greatclub";
+var uniques.generic.t1 = "Armoured Cap" "Emerald" "Furtive Wraps" "Incense Relic" "Ornate Belt" "Ring" "Ruby" "Sapphire" "Smuggler Coat" "Stone Tower Shield" "Time-Lost Diamond" "Timeless Jewel" "Ultimate Life Flask" "Ultimate Mana Flask" "Utility Belt" "Vase Relic";
+var uniques.generic.t2 = "Altar Robe" "Burnished Gauntlets" "Conqueror Plate" "Crucible Tower Shield" "Diamond" "Feathered Tiara" "Fine Bracers" "Gold Amulet" "Grand Regalia" "Grand Visage" "Heavy Crown" "Wyrm Quarterstaff";
+var uniques.generic.t3boss = "Chain Tiara" "Explorer Armour" "Omen Crest Shield" "Shrine Sceptre" "Silk Robe";
+var uniques.generic.t3 = "Amphora Relic" "Bloodstone Amulet" "Brimmed Helm" "Champion Cuirass" "Chiming Staff" "Closed Helm" "Coffer Relic" "Crescent Quarterstaff" "Crude Bow" "Dualstring Bow" "Felt Cap" "Gold Circlet" "Grand Cuisses" "Grand Manchettes" "Iron Ring" "Knight Armour" "Lapis Amulet" "Lattice Sandals" "Linen Wraps" "Long Quarterstaff" "Lunar Amulet" "Pilgrim Vestments" "Rawhide Belt" "Ruby Ring" "Seal Relic" "Shortbow" "Sigil Crest Shield" "Solid Mask" "Spined Bracers" "Spired Greathelm" "Tapestry Relic" "Threaded Shoes" "Topaz Ring" "Torment Club" "Vaal Cuirass" "Velour Shoes" "Volatile Wand" "Wrapped Greathelm";
+var uniques.generic.hideable = "Aged Cuffs" "Anchorite Garb" "Ashen Staff" "Attuned Wand" "Beaded Circlet" "Blazon Crest Shield" "Bone Raiment" "Bone Wand" "Braced Sabatons" "Braced Tower Shield" "Broadhead Quiver" "Bronze Greaves" "Chain Mail" "Cloaked Mail" "Covert Hood" "Cowled Helm" "Crescent Targe" "Crumbling Maul" "Crystal Focus" "Cultist Crown" "Doubled Gauntlets" "Effigial Tower Shield" "Elite Greathelm" "Emblem Crest Shield" "Embossed Boots" "Engraved Focus" "Face Mask" "Feathered Robe" "Feathered Sandals" "Felled Greatclub" "Fine Belt" "Fire Quiver" "Firm Bracers" "Forge Maul" "Full Plate" "Fur Plate" "Garment" "Gauze Wraps" "Gelid Staff" "Gilded Vestments" "Goldcast Cuffs" "Gothic Quarterstaff" "Guarded Helm" "Hardwood Targe" "Hermit Garb" "Hewn Mask" "Hexer's Robe" "Hooded Mask" "Horned Crown" "Hunter Hood" "Hunting Shoes" "Intricate Gloves" "Iron Crown" "Iron Cuirass" "Iron Greaves" "Ironclad Vestments" "Jewelled Gloves" "Jingling Crest Shield" "Keth Raiment" "Lace Hood" "Laced Boots" "Layered Gauntlets" "Leaden Greathammer" "Leather Vest" "Linen Belt" "Lizardscale Boots" "Long Belt" "Mail Belt" "Mail Sabatons" "Mail Vestments" "Makeshift Crossbow" "Marabout Garb" "Maraketh Cuirass" "Martyr Crown" "Oak Greathammer" "Omen Sceptre" "Painted Tower Shield" "Pathfinder Coat" "Pelage Targe" "Plate Belt" "Plated Mace" "Pyrophyte Staff" "Quilted Vest" "Raider Plate" "Rampart Tower Shield" "Rattling Sceptre" "Recurve Bow" "Rhoahide Coat" "Ringmail Gauntlets" "Riveted Mitts" "Rogue Armour" "Rope Cuffs" "Rough Greaves" "Rusted Cuirass" "Rusted Greathelm" "Scale Mail" "Scout's Vest" "Sectioned Bracers" "Secured Leggings" "Serpentscale Coat" "Shabby Hood" "Shaman Mantle" "Shielded Helm" "Silk Slippers" "Slim Mace" "Smithing Hammer" "Soldier Greathelm" "Sombre Gloves" "Spiritbone Crown" "Splintered Tower Shield" "Stacked Sabatons" "Steel Plate" "Steelpoint Quarterstaff" "Steeltoe Boots" "Stitched Gloves" "Stone Greaves" "Straw Sandals" "Studded Greatclub" "Studded Vest" "Suede Bracers" "Tattered Robe" "Tempered Mitts" "Tense Crossbow" "Tonal Focus" "Torn Gloves" "Trimmed Greaves" "Twig Circlet" "Twig Focus" "Vagabond Armour" "Veiled Mask" "Visceral Quiver" "Visored Helm" "Voltaic Staff" "Votive Raiment" "Warrior Greathelm" "Waxed Jacket" "Wayfarer Jacket" "Wicker Tiara" "Wide Belt" "Wooden Club" "Woven Focus" "Wrapped Quarterstaff" "Wrapped Sandals";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {DERIVED-MATRIX-MANAGED} DERIVED LISTS

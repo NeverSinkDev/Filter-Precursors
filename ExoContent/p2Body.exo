@@ -1,4 +1,3 @@
-
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} FUNCTIONS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,7 +88,7 @@ Section OtherExotics : Auto("exotic->others"), Rarity <= Rare, !exotic
 ##}
 
 #------------------------------------
-# [1234] Generic Normal and Magic bases
+# [1234] Crafting and Chancing Bases
 #------------------------------------
 Section EndgameCraftingBases : Clean()
 {
@@ -112,28 +111,30 @@ Section EndgameCraftingBases : Clean()
 		Show t3 		  { EG(); BaseType == bases.crafting.general.t3; AreaLevel <= 70; }
 	}
 
+	#!! Waypoint c4.gear.chancing : "Chancing bases"
+	Section Chancing : Clean(), Rarity Normal, Auto("Chancing")
+	{
+		Show any { BaseType == bases.chancing.any; }
+	}
+
+	#!! Waypoint c4.gear.jewellery : "Jewellery - Endgame Magic&Normal"
+	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean()
+	{
+		Show SelectAmulets { Class == "Amulets"; BaseType == bases.crafting.components.topamulets.t1; }
+		Show Amulets { Class == "Amulets"; }
+
+		Show SelectRings   { Class == "Rings"; BaseType == bases.crafting.components.toprings.t1; }
+		Show Rings   { Class == "Rings"; }
+
+		Show SelectBelts   { Class == "Belts"; BaseType == bases.crafting.components.topbelts.t1; }
+		Show Belts   { Class == "Belts"; }
+	}
+
 	Section DecoratorRemover : Auto("Endgame->normalcraft->Decorator"), Class == classes_equip, EG()
 	{
 		Cont MagicDecoratorRemover { Rarity Magic; }
 		Cont NormalDecoratorRemover { Rarity Normal; }
 	}
-}
-
-#===============================================================================================================
-# [[0200]] Random Jewellery
-#===============================================================================================================
-#!! Waypoint c4.gear.jewellery : "Jewellery - Endgame Magic&Normal"
-
-Section Jewellery : Rarity <= Magic, Auto ("Endgame->Jewellery"), EG(), Clean()
-{
-	Show SelectAmulets { Class == "Amulets"; BaseType == bases.crafting.components.topamulets.t1; }
-	Show Amulets { Class == "Amulets"; }
-
-	Show SelectRings   { Class == "Rings"; BaseType == bases.crafting.components.toprings.t1; }
-	Show Rings   { Class == "Rings"; }
-
-	Show SelectBelts   { Class == "Belts"; BaseType == bases.crafting.components.topbelts.t1; }
-	Show Belts   { Class == "Belts"; }
 }
 
 #===============================================================================================================
@@ -148,16 +149,6 @@ Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG()
 	Show QualityArmorAny   { Class == classes_armor; Quality >= 1; }
 	Show SocketsLarge 	   { Class == classes_equip; Sockets > 0; Height >= 3; }
 	Show SocketsSmall 	   { Class == classes_equip; Sockets > 0; Height < 3 }
-}
-
-#===============================================================================================================
-# [[0200]] Crafting - Item Chancing
-#===============================================================================================================
-#!! Waypoint c4.gear.chancing : "Chancing bases"
-
-Section Chancing : Clean(), Rarity Normal, Auto("Chancing")
-{
-	Show any { BaseType == bases.chancing.any; }
 }
 
 #===============================================================================================================
@@ -266,9 +257,9 @@ Section ConditionalRareHider : Auto("HideLayer")
 	Section HideLayerRareRuleIncremental : Auto("HideLayer")
 	{
 		HideD RRIHide1 { AreaLevel >= 82; DropLevel < 75; Class == classes_nonJwlryEquip; }
-		HideD RRIHide2 { AreaLevel >= 82; DropLevel < 60; Class == classes_armor_noshields; }
-		HideD RRIHide3 { AreaLevel >= 78; DropLevel < 50; Class == classes_armor_noshields; }
-		HideD RRIHide4 { AreaLevel >= 73; DropLevel < 40; Class == classes_armor_noshields; }
+		HideD RRIHide2 { AreaLevel >= 82; DropLevel < 60; Class == classes_nonJwlryEquip; }
+		HideD RRIHide3 { AreaLevel >= 78; DropLevel < 50; Class == classes_nonJwlryEquip; }
+		HideD RRIHide4 { AreaLevel >= 73; DropLevel < 40; Class == classes_nonJwlryEquip; }
 	}
 
 #===============================================================================================================
@@ -306,7 +297,6 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 		Show T5_a { Class == classes_nonJwlryEquip; ItemLevel >= 70; }
 		Show T5_r { Class == classes_nonJwlryEquip; }
-
 	}
 }
 
@@ -684,6 +674,11 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 {
 
 #------------------------------------
+# [5702] Exceptions #1
+#------------------------------------
+	Show SekhemaRing { !*A; BaseType == "Ring"; Sockets > 0; }
+
+#------------------------------------
 # [5702] Tier 1 and 2 uniques
 #------------------------------------
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
@@ -767,14 +762,14 @@ Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == clas
 
 Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Life")
 {
-	Show t2  { FlaskHighlight(8,  "Medium");}
-	Show t3  { FlaskHighlight(15, "Greater");}
-	Show t5  { FlaskHighlight(22, "Grand");}
-	Show t6  { FlaskHighlight(29, "Giant");}
-	Show t7  { FlaskHighlight(39, "Colossal");}
-	Show t8  { FlaskHighlight(49, "Gargantuan");}
-	Show t9  { FlaskHighlight(59, "Transcendent");}
-	Show t10 { FlaskHighlight(65, "Ultimate");}
+	Show t1  { FlaskHighlight(8,  "Medium");}
+	Show t2  { FlaskHighlight(15, "Greater");}
+	Show t3  { FlaskHighlight(22, "Grand");}
+	Show t4  { FlaskHighlight(29, "Giant");}
+	Show t5  { FlaskHighlight(39, "Colossal");}
+	Show t6  { FlaskHighlight(49, "Gargantuan");}
+	Show t7  { FlaskHighlight(59, "Transcendent");}
+	Show t8  { FlaskHighlight(65, "Ultimate");}
 }
 
 #------------------------------------
@@ -782,14 +777,14 @@ Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Lif
 #------------------------------------
 Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Mana")
 {
-	Show t2  { FlaskHighlight(8,  "Medium");}
-	Show t3  { FlaskHighlight(15, "Greater");}
-	Show t5  { FlaskHighlight(22, "Grand");}
-	Show t6  { FlaskHighlight(29, "Giant");}
-	Show t7  { FlaskHighlight(39, "Colossal");}
-	Show t8  { FlaskHighlight(49, "Gargantuan");}
-	Show t9  { FlaskHighlight(59, "Transcendent");}
-	Show t10 { FlaskHighlight(65, "Ultimate");}
+	Show t1  { FlaskHighlight(8,  "Medium");}
+	Show t2  { FlaskHighlight(15, "Greater");}
+	Show t3  { FlaskHighlight(22, "Grand");}
+	Show t4  { FlaskHighlight(29, "Giant");}
+	Show t5  { FlaskHighlight(39, "Colossal");}
+	Show t6  { FlaskHighlight(49, "Gargantuan");}
+	Show t7  { FlaskHighlight(59, "Transcendent");}
+	Show t8  { FlaskHighlight(65, "Ultimate");}
 }
 
 #------------------------------------
@@ -950,7 +945,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 		HideD MediumMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height > 1; }
 	}
 
-	Show Rest 		 { !ClearBorder; AreaLevel >= leveling.keylevels.act3; AreaLevel <= eglevel; }
+	Show Rest 		 { !ClearBorder; AreaLevel >= leveling.keylevels.act2; AreaLevel <= eglevel; }
 	Show Act2 		 { !ClearBorder; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
 	Show Act1 		 { !ClearBorder; AreaLevel >=leveling.keylevels.start; AreaLevel <= leveling.keylevels.act1; }
 }
