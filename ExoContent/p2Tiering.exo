@@ -104,52 +104,61 @@ var currency.generic.twisdom = "Scroll of Wisdom";
 var ignoredcurrencies = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## {TIERLIST}: CORES
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var sockets.cores.t1 = "Soul Core of Azcapa";
+var sockets.cores.t2 = "Soul Core of Zalatl";
+var sockets.cores.t3 = "Soul Core of Topotante" "Soul Core of Tacati" "Soul Core of Opiloti" "Soul Core of Jiquani" "Soul Core of Citaqualotl" "Soul Core of Tzamoto" "Soul Core of Puhuarte" "Soul Core of Quipolatl" "Soul Core of Ticaba" "Soul Core of Xopec";
+var sockets.cores.t4 = "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Zantipi";
+var sockets.cores.t5 = BLANK;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: SOCKETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var sockets.cores.t1 = BLANK;
-var sockets.cores.t2 = BLANK;
-var sockets.cores.t3 = BLANK;
-var sockets.cores.t4 = "Soul Core of Atmohua" "Soul Core of Azcapa" "Soul Core of Cholotl" "Soul Core of Citaqualotl" "Soul Core of Jiquani" "Soul Core of Opiloti" "Soul Core of Puhuarte" "Soul Core of Quipolatl" "Soul Core of Tacati" "Soul Core of Ticaba" "Soul Core of Topotante" "Soul Core of Tzamoto" "Soul Core of Xopec" "Soul Core of Zalatl" "Soul Core of Zantipi";
-var sockets.cores.t5 = BLANK;
-
-var sockets.runes.t3 = "Desert Rune" "Glacial Rune" "Iron Rune" "Storm Rune";
-var sockets.runes.t4 = "Body Rune" "Inspiration Rune" "Mind Rune" "Rebirth Rune" "Stone Rune" "Vision Rune";
+var sockets.runes.t3 = BLANK;
+var sockets.runes.t4 = "Desert Rune" "Glacial Rune" "Iron Rune" "Storm Rune";
+var sockets.runes.t5 = "Body Rune" "Inspiration Rune" "Mind Rune" "Rebirth Rune" "Stone Rune" "Vision Rune";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: EMOTIONS (DELIRIUM DISTILLED)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.emotions.t1 = "Distilled Isolation" "Distilled Suffering";
-var currency.emotions.t2 = "Distilled Despair" "Distilled Fear";
+var currency.emotions.t1 = "Distilled Isolation" "Distilled Suffering" "Distilled Fear";
+var currency.emotions.t2 = "Distilled Despair";
 var currency.emotions.t3 = "Distilled Disgust" "Distilled Envy";
 var currency.emotions.t4 = "Distilled Greed" "Distilled Paranoia";
 var currency.emotions.t5 = "Distilled Guilt" "Distilled Ire";
 
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## MANUALLY MANAGED: CATALYSTS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 var currency.catalysts.t1 = BLANK;
 var currency.catalysts.t2 = BLANK;
-var currency.catalysts.t3 = "Neural Catalyst";
-var currency.catalysts.t4 = "Adaptive Catalyst" "Carapace Catalyst" "Chayula's Catalyst" "Esh's Catalyst" "Flesh Catalyst" "Reaver Catalyst" "Sibilant Catalyst" "Skittering Catalyst" "Tul's Catalyst" "Uul-Netol's Catalyst" "Xoph's Catalyst";
-var currency.catalysts.t5 = BLANK;
+var currency.catalysts.t3 = BLANK;
+var currency.catalysts.t4 =  "Neural Catalyst" "Adaptive Catalyst" "Tul's Catalyst" "Reaver Catalyst" "Esh's Catalyst" "Chayula's Catalyst";
+var currency.catalysts.t5 = "Carapace Catalyst" "Flesh Catalyst" "Sibilant Catalyst" "Skittering Catalyst" "Uul-Netol's Catalyst" "Xoph's Catalyst";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## MANUALLY MANAGED: ESSENCES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.essence.t1 = BLANK;
-var currency.essence.t2 = "Greater Essence of Battle" "Greater Essence of Electricity" "Greater Essence of Enhancement" "Greater Essence of Flames" "Greater Essence of Haste" "Greater Essence of Ice" "Greater Essence of Ruin" "Greater Essence of Sorcery" "Greater Essence of the Body" "Greater Essence of the Infinite" "Greater Essence of the Mind" "Greater Essence of Torment";
-var currency.essence.t3 = "Essence of Battle" "Essence of Electricity" "Essence of Enhancement" "Essence of Flames" "Essence of Haste" "Essence of Ice" "Essence of Ruin" "Essence of Sorcery" "Essence of the Body" "Essence of the Infinite" "Essence of the Mind" "Essence of Torment";
-var currency.essence.t4 = BLANK;
-var currency.essence.t5 = BLANK;
+var currency.essence.t1 = "Greater Essence of Torment" "Greater Essence of Sorcery" "Greater Essence of Haste";
+var currency.essence.t2 = "Greater Essence of Electricity" "Greater Essence of the Mind" "Greater Essence of Enhancement" "Greater Essence of the Infinite" "Greater Essence of Ruin";
+var currency.essence.t3 = "Essence of Electricity" "Greater Essence of the Body" "Greater Essence of Flames" "Greater Essence of Ice" "Greater Essence of Battle";
+var currency.essence.t4 = "Essence of Torment" "Essence of Haste";
+var currency.essence.t5 = "Essence of the Body" "Essence of the Mind" "Essence of Enhancement" "Essence of Ice" "Essence of the Infinite" "Essence of Flames" "Essence of Battle" "Essence of Ruin" "Essence of Sorcery";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: OMEN (RITUAL CURRENCY)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.omen.t1 = "Omen of Whittling";
-var currency.omen.t2 = "Omen of Amelioration" "Omen of Corruption";
-var currency.omen.t3 = "Omen of Dextral Alchemy" "Omen of Dextral Annulment" "Omen of Dextral Coronation" "Omen of Dextral Erasure" "Omen of Dextral Exaltation" "Omen of Greater Annulment" "Omen of Greater Exaltation" "Omen of Sinistral Alchemy" "Omen of Sinistral Annulment" "Omen of Sinistral Coronation" "Omen of Sinistral Erasure" "Omen of Sinistral Exaltation";
-var currency.omen.t4 = "Omen of Refreshment" "Omen of Resurgence";
+var currency.omen.t1 = "Omen of Whittling" "Omen of Corruption" "Omen of Sinistral Erasure" "Omen of Dextral Erasure" "Omen of Dextral Annulment" "Omen of Sinistral Annulment";
+var currency.omen.t2 = "Omen of Amelioration";
+var currency.omen.t3 = "Omen of Greater Annulment" "Omen of Sinistral Alchemy" "Omen of Sinistral Coronation" "Omen of Resurgence" "Omen of Sinistral Exaltation";
+var currency.omen.t4 = "Omen of Dextral Alchemy" "Omen of Dextral Coronation" "Omen of Refreshment" "Omen of Dextral Exaltation" "Omen of Greater Exaltation";
 var currency.omen.t5 = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

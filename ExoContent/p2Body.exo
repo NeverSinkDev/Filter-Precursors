@@ -104,11 +104,11 @@ Section EndgameCraftingBases : Clean()
 	Section NormalCrafting : Auto("Endgame->normalcraft->any"), Rarity <= Magic
 	{
 		# Best itemlevel bases (82)
-		Show t1idealLevel { ItemLevel >= egTopMods; BaseType == bases.crafting.general.t1; }
+		Show t1idealLevel { ItemLevel >= egTopMods; BaseType == bases.general.unbiased.t1; }
 
-		Show t1 		  { EG(); BaseType == bases.crafting.general.t1; }
-		Show t2 		  { EG(); BaseType == bases.crafting.general.t2; AreaLevel <= 74;  }
-		Show t3 		  { EG(); BaseType == bases.crafting.general.t3; AreaLevel <= 70; }
+		Show t1 		  { EG(); BaseType == bases.general.unbiased.t1; }
+		Show t2 		  { EG(); BaseType == bases.general.unbiased.t2; AreaLevel <= 74;  }
+		Show t3 		  { EG(); BaseType == bases.general.unbiased.t3; AreaLevel <= 70; }
 	}
 
 	#!! Waypoint c4.gear.chancing : "Chancing bases"
@@ -270,28 +270,28 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1_s { BaseType == bases.crafting.general.t1; TopMods(); }
-		Show T1_a { BaseType == bases.crafting.general.t1; ItemLevel >= 79; }
-		Show T1_r { BaseType == bases.crafting.general.t1; }
+		Show T1_s { BaseType == bases.general.unbiased.t1; TopMods(); }
+		Show T1_a { BaseType == bases.general.unbiased.t1; ItemLevel >= 79; }
+		Show T1_r { BaseType == bases.general.unbiased.t1; }
 
 #!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (gear)"
 		
-		Show T2_s { BaseType == bases.crafting.general.t2; TopMods(); }
-		Show T2_a { BaseType == bases.crafting.general.t2; ItemLevel >= 79; }
-		Show T2_b { BaseType == bases.crafting.general.t2; ItemLevel >= 75; }
-		Show T2_r { BaseType == bases.crafting.general.t2; }
+		Show T2_s { BaseType == bases.general.unbiased.t2; TopMods(); }
+		Show T2_a { BaseType == bases.general.unbiased.t2; ItemLevel >= 79; }
+		Show T2_b { BaseType == bases.general.unbiased.t2; ItemLevel >= 75; }
+		Show T2_r { BaseType == bases.general.unbiased.t2; }
 
 #!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (gear)"
 
-		Show T3_s { BaseType == bases.crafting.general.t3; TopMods(); }
-		Show T3_a { BaseType == bases.crafting.general.t3; ItemLevel >= 79; }
-		Show T3_b { BaseType == bases.crafting.general.t3; ItemLevel >= 70; }
-		Show T3_r { BaseType == bases.crafting.general.t3; }
+		Show T3_s { BaseType == bases.general.unbiased.t3; TopMods(); }
+		Show T3_a { BaseType == bases.general.unbiased.t3; ItemLevel >= 79; }
+		Show T3_b { BaseType == bases.general.unbiased.t3; ItemLevel >= 70; }
+		Show T3_r { BaseType == bases.general.unbiased.t3; }
 
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (gear)"
 
-		Show T4_a { BaseType == bases.crafting.general.t4; ItemLevel >= 70; }
-		Show T4_r { BaseType == bases.crafting.general.t4; }
+		Show T4_a { BaseType == bases.general.unbiased.t4; ItemLevel >= 70; }
+		Show T4_r { BaseType == bases.general.unbiased.t4; }
 
 #!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (gear)"
 
