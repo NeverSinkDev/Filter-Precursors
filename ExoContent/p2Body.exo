@@ -27,7 +27,7 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 Section Gold : Auto("Gold"), BaseType == "Gold"
 {
 	Show stack3 { !goldHuge;  StackSize >= 5000; }
-	Show stack2 { !goldLarge;  StackSize >= 3000; }
+	Show stack2 { !goldLarge;  StackSize >= 2500; }
 	Show stack1 { !goldMedium;  StackSize >= 500; }
 	
 	Show stack1lvl { !goldMedium; StackSize >= 250; LVL(); }
@@ -107,6 +107,10 @@ Section EndgameCraftingBases : Clean()
 		# Best itemlevel bases (82)
 		Show t1idealLevel { ItemLevel >= egTopMods; BaseType == bases.general.unbiased.t1; }
 
+		# Matrix pauses: Optional: highlight +5minion bases for sumonners (81)
+		ShowD MinionSceptresOptional { ItemLevel >= 81; Class == "Sceptres"; }
+
+		# Matrix proceeds here...
 		Show t1 		  { EG(); BaseType == bases.general.unbiased.t1; }
 		Show t2 		  { EG(); BaseType == bases.general.unbiased.t2; AreaLevel <= 74;  }
 		Show t3 		  { EG(); BaseType == bases.general.unbiased.t3; AreaLevel <= 70; }
@@ -495,9 +499,11 @@ Section Waystones : Class == "Waystones", !Maps
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL(), !Currency
 {
-	Show rare 	  { !CurrTierD; BaseType == currency.leveling.rare; }
-	Show magic    { !Supply3; BaseType == currency.leveling.magic; }
-	Show wisdom   { !Supply4; BaseType == currency.leveling.wisdom; }
+	## TODO !!
+	
+	ShowD rare 	  { !CurrTierD; BaseType == currency.leveling.rare; }
+	ShowD magic    { !Supply3; BaseType == currency.leveling.magic; }
+	ShowD wisdom   { !Supply4; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================

@@ -4,6 +4,31 @@
 
 # These are global accents that can be used without any context
 
+Func BrickBlack(accent)
+{
+	SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor accent;
+}
+
+Func BrickWhite(accent)
+{
+	SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor accent;
+}
+
+Func BorderedGlow(accent, glow)
+{
+	SetTextColor accent; SetBorderColor accent; SetBackgroundColor glow;
+}
+
+Func Bordered(accent)
+{
+	SetTextColor accent; SetBorderColor accent;
+}
+
+Func Text(accent)
+{
+	SetTextColor accent;
+}
+
 Style UniversalValueAccents
 {
 	Func tierS
@@ -62,7 +87,7 @@ Style UniversalValueAccents
 	Func CurrTierA
 	{
 		SetFontSize font.t1;
-		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cCurrTierA;
+		BrickWhite(cCurrTierA);
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mCurrency;
 	}
 
@@ -70,7 +95,7 @@ Style UniversalValueAccents
 	Func CurrTierB
 	{
 		SetFontSize font.t2;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierB;
+		BrickBlack(cCurrTierB);
 		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mCurrency;
 	}
 
@@ -78,7 +103,7 @@ Style UniversalValueAccents
 	Func CurrTierC
 	{
 		SetFontSize font.t2;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierC;
+		BrickBlack(cCurrTierC);
 		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 Yellow mCurrency;
 	}
 
@@ -86,7 +111,7 @@ Style UniversalValueAccents
 	Func CurrTierD
 	{
 		SetFontSize font.t3;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierD;
+		BrickBlack(cCurrTierD);
 		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mCurrency;
 	}
 
@@ -94,7 +119,7 @@ Style UniversalValueAccents
 	Func CurrTierE
 	{
 		SetFontSize font.t3;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierE;
+		Bordered(cCurrTierE);
 		PlayEffect White Temp; MinimapIcon 2 Grey mCurrency;
 	}
 
@@ -139,32 +164,36 @@ Style UniversalValueAccents
 	Func FragA
 	{
 		SetFontSize font.t1;
-		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cFragment;
+		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cFragTierA;
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mFragment;
 	}
 
 	Func FragB
 	{
-		SetTextColor cSupplies2;
-		SetFontSize font.t6;
+		SetFontSize font.t2;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierB;
+		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mFragment;
 	}
 
 	Func FragC
 	{
-		SetTextColor cSupplies2;
-		SetFontSize font.t6;
+		SetFontSize font.t2;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierC;
+		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 White mFragment;
 	}
 
 	Func FragD
 	{
-		SetTextColor cSupplies2;
-		SetFontSize font.t6;
+		SetFontSize font.t3;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierD;
+		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mFragment;
 	}
 
 	Func FragE
 	{
-		SetTextColor cSupplies2;
-		SetFontSize font.t6;
+		SetFontSize font.t3;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierE;
+		PlayEffect White Temp; MinimapIcon 2 Grey mFragment;
 	}
 
 #------------------------------------
@@ -191,7 +220,7 @@ Style UniversalValueAccents
 
 	Func goldMedium
 	{
-		MinimapIcon 2 White Cross;
+		MinimapIcon 2 Grey Cross;
 		SetTextColor cGold;
 		SetFontSize font.t5;
 		SetBackgroundColor cAccentLowMid;
@@ -202,7 +231,6 @@ Style UniversalValueAccents
 		MinimapIcon 2 Grey Cross;
 		SetTextColor cGold;
 		SetFontSize font.t6;
-		SetBackgroundColor cAccentLow;
 	}
 }
 
