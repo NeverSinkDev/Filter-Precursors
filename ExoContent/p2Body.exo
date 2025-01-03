@@ -367,7 +367,7 @@ Section Jewels : Class "Jewel", Auto("jewels->generic")
 #!! Waypoint c7.relics.generic.all : "Relics (Trial of the Sekhema)"
 
 # Relics currently are not hidable, due to an ingame limitation.
-Section TrialRelics : Auto("relics->generic"), !exotic2;
+Section TrialRelics : Auto("relics->generic"), !exotic2
 {
 	Show Any { Rarity <= Rare; BaseType == bases.exotic.relics; }
 }
@@ -499,11 +499,9 @@ Section Waystones : Class == "Waystones", !Maps
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL(), !Currency
 {
-	## TODO !!
-	
-	ShowD rare 	  { !CurrTierD; BaseType == currency.leveling.rare; }
-	ShowD magic    { !Supply3; BaseType == currency.leveling.magic; }
-	ShowD wisdom   { !Supply4; BaseType == currency.leveling.wisdom; }
+	Show rare 	  { !CurrTierD; BaseType == currency.leveling.rare; }
+	Show magic    { !Supply3; BaseType == currency.leveling.magic; }
+	Show wisdom   { !Supply4; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -600,23 +598,9 @@ Section CurrencyOmen : Auto("currency->omen"), Class == class_currency, !Currenc
 # [5104] Others
 #------------------------------------
 
-Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Currency
+Section CurrencyExotic : Auto("currency->others"), Class == class_currency
 {
-	Show misc { BaseType == currency.exotic.undroppable; }
-}
-
-#===============================================================================================================
-# [[4900]] Tablets
-#===============================================================================================================
-#!! Waypoint c10.tablets.all : "Tierlist - Tablets"
-
-Section Tablets : Auto("fragments->tablets->generic"), Class "Tablet"
-{
-	Show t1 { !FragA; BaseType == fragments.tablets.t1; }
-	Show t2 { !FragA; BaseType == fragments.tablets.t2; }
-	Show t3 { !FragA; BaseType == fragments.tablets.t3; }
-	Show t4 { !FragA; BaseType == fragments.tablets.t4; }
-	Show restex { Empty(); }
+	Show misc { !CurrTierA; BaseType == currency.exotic.undroppable; }
 }
 
 #===============================================================================================================
@@ -631,25 +615,27 @@ Section SpecialMapLike : Auto("maplike->special"), !artifact
 }
 
 #===============================================================================================================
-# [[4900]] Splinters and Fragments (Currencylike)
+# [[4900]] Splinters, Tablets, Fragments
 #===============================================================================================================
 #!! Waypoint c10.fragments.most : "Fragments and Splinters"
 
 Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_currency, BaseType == fragments.generic.splinters
 {
-	Show t1 { StackSize >= stacksize.commonSplinters.t1; }
-	Show t2 { StackSize >= stacksize.commonSplinters.t2; }
-	Show t3 { StackSize >= stacksize.commonSplinters.t3; }
-	Show t4 { StackSize >= stacksize.commonSplinters.t4; }
-	Show t5 { Empty(); }
+	Show t1 { !FragA; StackSize >= stacksize.commonSplinters.t1; }
+	Show t2 { !FragB; StackSize >= stacksize.commonSplinters.t2; }
+	Show t3 { !FragC; StackSize >= stacksize.commonSplinters.t3; }
+	Show t4 { !FragD; StackSize >= stacksize.commonSplinters.t4; }
+	Show t5 { !FragE; Empty(); }
 }
 
-Section FullFragments : Auto("fragments->generic"), Class == class_fragments
+Section FullFragments : Auto("fragments->generic"), Class class_fragments
 {
 	Show t1 { !TIERS; BaseType == fragments.generic.t1; }
-	Show t2 { BaseType == fragments.generic.t2; }
-	Show t3 { BaseType == fragments.generic.t3; }
-	Show t4 { BaseType == fragments.generic.t4; }
+	Show t2 { !FragA; BaseType == fragments.generic.t2; }
+	Show t3 { !FragB; BaseType == fragments.generic.t3; }
+	Show t4 { !FragC; BaseType == fragments.generic.t4; }
+	Show t5 { !FragD; BaseType == fragments.generic.t3; }
+	Show t6 { !FragE; BaseType == fragments.generic.t4; }
 	Show restex { Empty(); }
 }
 
@@ -660,12 +646,12 @@ Section FullFragments : Auto("fragments->generic"), Class == class_fragments
 
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
-	Show TrialKeySanctum 		 { BaseType == "Djinn Barya"; }
-	Show TrialKeyUltimatumReward { BaseType == "Inscribed Ultimatum"; Rarity >= Magic; }
-	Show TrialKeyUltimatum 		 { BaseType == "Inscribed Ultimatum"; }
+	Show TrialKeySanctum 		 { !FragD; BaseType == "Djinn Barya"; }
+	Show TrialKeyUltimatumReward { !FragA; BaseType == "Inscribed Ultimatum"; Rarity >= Magic; }
+	Show TrialKeyUltimatum 		 { !FragD; BaseType == "Inscribed Ultimatum"; }
 
-	Show RelicKeys { !Currency.S; BaseType == miscmap.keys; }
-	Show RelicKeysSafe { !Currency.S; Class == "Vault Keys"; }
+	Show RelicKeys 	   { !TIERS; BaseType == miscmap.keys; }
+	Show RelicKeysSafe { !TIERS; Class == "Vault Keys"; }
 }
 
 Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
@@ -693,7 +679,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5702] Exceptions #1
 #------------------------------------
-	Show SekhemaRing { !*A; BaseType == "Ring"; Sockets > 0; }
+	Show SekhemaRing { !UniqueA; BaseType == "Ring"; Sockets > 0; }
 
 #------------------------------------
 # [5702] Tier 1 and 2 uniques
@@ -701,35 +687,35 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
 
 	Show t1 { !TIERS; BaseType == uniques.generic.t1; }
-	Show t2 { !*A; BaseType == uniques.generic.t2; }	
+	Show t2 { !UniqueA; BaseType == uniques.generic.t2; }	
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
-	Show 2xcorrupteduniques { !*A; !Corrupt; Corrupted True; CorruptedMods >= 2; }
+	Show 2xcorrupteduniques { !UniqueA; Corrupted True; CorruptedMods >= 2; }
 
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
-	Show multispecialhigh { !*X; !SpecialNoB; BaseType == uniques.generic.multispecialhigh; }
-	Show multispecial { !*X; !SpecialNoB; BaseType == uniques.generic.multispecial; }
+	Show multispecialhigh { BaseType == uniques.generic.multispecialhigh; }
+	Show multispecial { BaseType == uniques.generic.multispecial; }
 
 #------------------------------------
 # [5701] Low tier exceptions
 #------------------------------------
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
-	Show earlyleague { !*C; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
-	Show corrupteduniques { !*C; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == classes_equip; }
+	Show earlyleague { !UniqueB; BaseType == uniques.generic.earlyleague; }
+	Show corrupteduniques { !UniqueB; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == classes_equip; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss { !*B; !SpecialNoB; BaseType == uniques.generic.t3boss; }
-	Show t3 	{ !*B; BaseType == uniques.generic.t3; }
+	Show t3boss { !UniqueB; !SpecialNoB; BaseType == uniques.generic.t3boss; }
+	Show t3 	{ !UniqueB; BaseType == uniques.generic.t3; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------
-	Show hideable  { !*D; BaseType == uniques.generic.hideable; }
-	Show restex { Empty(); }
+	Show hideable  { !UniqueC; BaseType == uniques.generic.hideable; }
+	Show restex    { Empty(); }
 }
 
 #===============================================================================================================

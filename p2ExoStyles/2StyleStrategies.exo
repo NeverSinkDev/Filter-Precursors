@@ -164,36 +164,61 @@ Style UniversalValueAccents
 	Func FragA
 	{
 		SetFontSize font.t1;
-		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cFragTierA;
+		BrickWhite(cFragTierA);
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mFragment;
 	}
 
 	Func FragB
 	{
 		SetFontSize font.t2;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierB;
+		BrickBlack(cFragTierB);
 		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mFragment;
 	}
 
 	Func FragC
 	{
 		SetFontSize font.t2;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierC;
+		BrickBlack(cFragTierC);
 		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 White mFragment;
 	}
 
 	Func FragD
 	{
 		SetFontSize font.t3;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierD;
+		Bordered(cFragTierD);
 		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mFragment;
 	}
 
 	Func FragE
 	{
 		SetFontSize font.t3;
-		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cFragTierE;
+		Text(cFragTierE);
 		PlayEffect White Temp; MinimapIcon 2 Grey mFragment;
+	}
+
+#------------------------------------
+# UNIQUE
+#------------------------------------	
+
+	Func UniqueA
+	{
+		SetFontSize font.t1;
+		BrickWhite(cUnique);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Yellow mUnique;
+	}
+
+	Func UniqueB
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cUnique, cUniqueGlow);
+		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 1 Brown mUnique;
+	}
+
+	Func UniqueC
+	{
+		SetFontSize font.t3;
+		Bordered(cUnique);
+		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 2 Brown mUnique;
 	}
 
 #------------------------------------
