@@ -119,7 +119,7 @@ Section EndgameCraftingBases : Clean()
 	#!! Waypoint c4.gear.chancing : "Chancing bases"
 	Section Chancing : Clean(), Rarity Normal, Auto("Chancing")
 	{
-		Show any { BaseType == bases.chancing.any; }
+		Show any { !MarkChance; BaseType == bases.chancing.any; }
 	}
 
 	#!! Waypoint c4.gear.jewellery : "Jewellery - Endgame Magic&Normal"
@@ -147,7 +147,7 @@ Section EndgameCraftingBases : Clean()
 #===============================================================================================================
 #!! Waypoint c4.gear.salvagable : "Salvagable bases (Endgame)"
 
-Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG()
+Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), !MarkSalvage2
 {
 	Show QualityMartialAny { Class == classes_attack; Quality >= 1; }
 	Show QualityCasterAny  { Class == classes_cast; Quality >= 1; }
@@ -310,7 +310,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 #===============================================================================================================
 #!! Waypoint c6.rare.rest : "Rare Endgame Items - Others, Salvagable bases"
 
-Section Salvagable : Rarity Rare, Auto("Leveling->Salvagable"), ItemLevel >= eglevel
+Section Salvagable : Rarity Rare, Auto("Leveling->Salvagable"), ItemLevel >= eglevel, !MarkSalvage2
 {
 	Show QualityMartialAny { Class == classes_attack; Quality >= 1; }
 	Show QualityCasterAny { Class == classes_cast; Quality >= 1; }
@@ -384,18 +384,18 @@ Section UncutGems : Auto("gems->uncut")
 	Show Skill20  { !TIERS; BaseType == "Uncut Skill Gem"; ItemLevel >= 20; }
 
 	# Level19
-	Show Spirit19 { BaseType == "Uncut Spirit Gem"; ItemLevel = 19; }
-	Show Skill19 { BaseType == "Uncut Skill Gem"; ItemLevel = 19; }
+	Show Spirit19 { !Gems1; BaseType == "Uncut Spirit Gem"; ItemLevel = 19; }
+	Show Skill19  { !Gems1; BaseType == "Uncut Skill Gem"; ItemLevel = 19; }
 
 	# All gems during campaign with sounds
-	Show SpiritCampaign { BaseType == "Uncut Spirit Gem"; LVL(); }
-	Show SkillCampaign { BaseType == "Uncut Skill Gem"; LVL(); }
-	Show SupportCampaign { BaseType == "Uncut Support Gem"; LVL(); }
+	Show SpiritCampaign  { !Gems1; BaseType == "Uncut Spirit Gem"; LVL(); }
+	Show SkillCampaign   { !Gems1; BaseType == "Uncut Skill Gem"; LVL(); }
+	Show SupportCampaign { !Gems1; BaseType == "Uncut Support Gem"; LVL(); }
 
 	# Lower highlight for lower level gems in campaign
-	Show OtherSpiritEg { BaseType == "Uncut Spirit Gem"; EG(); }
-	Show OtherSkillEg { BaseType == "Uncut Skill Gem"; EG(); }
-	Show OtherSupportEg { BaseType == "Uncut Support Gem"; EG(); }
+	Show OtherSpiritEg  { !Gems2; BaseType == "Uncut Spirit Gem"; EG(); }
+	Show OtherSkillEg   { !Gems2; BaseType == "Uncut Skill Gem"; EG(); }
+	Show OtherSupportEg { !Gems2; BaseType == "Uncut Support Gem"; EG(); }
 }
 
 #!! Waypoint c8.gems.others : "Gems - Specific"
@@ -723,7 +723,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #===============================================================================================================
 #!! Waypoint c20.leveling.salvagable.all: "Leveling - Salvagable bases"
 
-Section Salvagable : Rarity <= Magic, Auto("Leveling->Salvagable"), LVL()
+Section Salvagable : Rarity <= Magic, Auto("Leveling->Salvagable"), LVL(), !MarkSalvage2
 {
 	Show QualityMartial    { Class == classes_attack; Quality >= 1; }
 	Show QualityCaster 	   { Class == classes_cast; Quality >= 1; }

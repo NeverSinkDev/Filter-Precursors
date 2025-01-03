@@ -234,6 +234,44 @@ Style UniversalValueAccents
 	}
 
 #------------------------------------
+# Gems
+#------------------------------------
+
+	Func Gems1
+	{
+		Bordered(cGems);
+		SetFontSize font.t3;
+		PlayAlertSound asCurr;
+		MinimapIcon 1 Cyan Triangle;
+		PlayEffect Cyan;
+	}
+
+	Func Gems2
+	{
+		Text(cGems);
+		SetFontSize font.t5;
+		PlayEffect Cyan Temp;
+	}
+
+#------------------------------------
+# Highlights
+#------------------------------------
+
+	Func MarkSalvage2
+	{
+		SetBorderColor cMarkSalvagable2;
+		SetFontSize font.t4;
+	}
+
+	Func MarkChance
+	{
+		SetBorderColor cMarkChancable;
+		SetFontSize font.t3;
+		MinimapIcon 1 Green mExotic;
+		PlayEffect Green Temp;
+	}
+
+#------------------------------------
 # GOLD
 #------------------------------------
 
