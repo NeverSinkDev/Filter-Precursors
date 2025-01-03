@@ -254,6 +254,84 @@ Style UniversalValueAccents
 	}
 
 #------------------------------------
+# Waystones
+#------------------------------------
+
+	Func DecoMap1()
+	{
+		SetBorderColor 0 0 0 255;
+		PlayEffect Red Temp; 
+		MinimapIcon 1 Red mMaps; 
+		PlayAlertSound asHighMaps; 
+		SetFontSize font.t2;
+	}
+
+	Func DecoMap2()
+	{
+		SetBorderColor 0 0 0 255;
+		PlayEffect Orange Temp; 
+		MinimapIcon 1 Red mMaps; 
+		PlayAlertSound asMaps; 
+		SetFontSize font.t3;
+	}
+
+	Func DecoMap3()
+	{
+		SetBorderColor 200 200 200 255;
+		PlayEffect Yellow Temp; 
+		MinimapIcon 1 Yellow mMaps; 
+		PlayAlertSound asMaps; 
+		SetFontSize font.t3;
+	}
+
+	Func DecoMap4()
+	{
+		SetBorderColor 200 200 200 255;
+		PlayEffect White Temp; 
+		MinimapIcon 2 White mMaps; 
+		PlayAlertSound asMaps; 
+		SetFontSize font.t3;
+	}
+	
+	Func DecoMap3Overleveled()
+	{
+		SetBorderColor 200 200 200 255;
+		SetFontSize font.t5;
+	}
+
+	Func DecoMap4Overleveled()
+	{
+		SetBorderColor 200 200 200 255;
+		SetFontSize font.t5;
+	}
+
+	Func Map1()
+	{
+		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
+		PlayAlertSound asHighMaps; PlayEffect Yellow; MinimapIcon 1 Red mMaps; 
+		SetFontSize font.t2;
+	}
+
+	Func Map2()
+	{
+		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
+		PlayAlertSound asMaps; PlayEffect Yellow; MinimapIcon 1 Red mMaps; 
+		SetFontSize font.t2;
+	}
+
+	Func Map3()
+	{
+		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayAlertSound asMaps; PlayEffect White; MinimapIcon 1 Yellow mMaps; 
+		SetFontSize font.t3;
+	}
+
+	Func Map4()
+	{
+		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+	}
+
+#------------------------------------
 # Highlights
 #------------------------------------
 
@@ -269,6 +347,16 @@ Style UniversalValueAccents
 		SetFontSize font.t3;
 		MinimapIcon 1 Green mExotic;
 		PlayEffect Green Temp;
+	}
+
+	Func MarkMapUp()
+	{
+		SetBorderColor cMarkMapUpgrade;
+	}
+
+	Func MarkExotic()
+	{
+ 		SetBorderColor cExotic;
 	}
 
 #------------------------------------
@@ -394,57 +482,5 @@ Style EndgameRareDecorators
 	Func corruptimpl()
 	{
 		Empty();
-	}
-}
-
-#------------------------------------
-# Mapping Rules
-#------------------------------------
-
-Style GeneralMapProgressionStrategy
-{
-	Func Z1()
-	{
-		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
-		PlayAlertSound asHighMaps; PlayEffect Yellow; MinimapIcon 1 Red Square; 
-		SetFontSize font.t2;
-	}
-
-	Func Z2()
-	{
-		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor color.temp; 
-		PlayAlertSound asHighMaps; PlayEffect Yellow; MinimapIcon 1 Red Square; 
-		SetFontSize font.t2;
-	}
-
-	Func Z3()
-	{
-		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
-		SetFontSize cWhite;
-		PlayAlertSound asMaps; PlayEffect White; MinimapIcon 1 Yellow Square; 
-		SetFontSize font.t3;
-	}
-
-	Func Z4()
-	{
-		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
-		SetFontSize cWhite;
-		PlayAlertSound asMaps; PlayEffect White; MinimapIcon 2 White Square; 
-		SetFontSize font.t3;
-	}
-
-	Func deco_mapup()
-	{
-		SetBorderColor color.temp;
-	}
-
-	Func deco_map_zone12()
-	{
-		SetBorderColor 0 0 0 255;
-	}
-
-	Func deco_map_zone34()
-	{
-		SetBorderColor 200 200 200 255;
 	}
 }

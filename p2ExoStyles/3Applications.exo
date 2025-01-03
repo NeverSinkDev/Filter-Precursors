@@ -45,10 +45,6 @@ Style MainRules
 
 	## rare decorators
 	Apply(meta.decorator, $raredeco => EndgameRareDecorators)
-
-	## Maps
-	Apply(deco.maps, Maps.deco_mapup* => !GeneralMapProgressionStrategy.deco_mapup);
-	Apply(maps.general, $Maps => GeneralMapProgressionStrategy);
 }
 
 Style GlobalAccents

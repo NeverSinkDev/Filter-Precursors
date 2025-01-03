@@ -402,7 +402,7 @@ Section UncutGems : Auto("gems->uncut")
 
 Section Gems : Auto("gems"), Class == class_gems
 {
-	Show any { Empty(); }
+	Show any { !Gems2; Empty(); }
 }
 
 #===============================================================================================================
@@ -410,7 +410,7 @@ Section Gems : Auto("gems"), Class == class_gems
 #===============================================================================================================
 #!! Waypoint c9.waystones.all : "Waystones - Override All"
 
-Section Waystones : Class == "Waystones", !Maps
+Section Waystones : Class == "Waystones"
 {
 #===============================================================================================================
 # [[0200]] Normal Waystone Progression
@@ -432,30 +432,34 @@ Section Waystones : Class == "Waystones", !Maps
 
 	Section GenericWaystones : Auto("waystones")
 	{		
-		Cont deco_zone1general { !*deco_map_zone12; WaystoneTier >= 14; }
-		Cont deco_zone2general { !*deco_map_zone12; WaystoneTier >= 11; WaystoneTier <= 13; }
-		Cont deco_zone3general { !*deco_map_zone34; WaystoneTier >= 6; WaystoneTier <= 10; }
-		Cont deco_zone4general { !*deco_map_zone34; WaystoneTier >= 1; WaystoneTier <= 5; }
+		Cont decoMap1 { !DecoMap1; WaystoneTier >= 13; }
+		Cont decoMap2 { !DecoMap2; WaystoneTier >= 10; WaystoneTier <= 12; }
+		
+		Cont decoMap3Overleveled { !DecoMap3Overleveled; WaystoneTier >= 6; WaystoneTier <= 9; AreaLevel > 76 }
+		Cont decoMap4Overleveled { !DecoMap4Overleveled; WaystoneTier >= 1; WaystoneTier <= 5; AreaLevel > 73 }
+		
+		Cont decoMap3 { !DecoMap3; WaystoneTier >= 6; WaystoneTier <= 9; AreaLevel <= 76;  }
+		Cont decoMap4 { !DecoMap4; WaystoneTier >= 1; WaystoneTier <= 5; AreaLevel <= 73; }
 
-		Cont deco_wsup_t16 { WaystoneTier >= 16; AreaLevel < 80; }
-		Cont deco_wsup_t15 { WaystoneTier >= 15; AreaLevel < 79; }
-		Cont deco_wsup_t14 { WaystoneTier >= 14; AreaLevel < 78; }
-		Cont deco_wsup_t13 { WaystoneTier >= 13; AreaLevel < 76; }
-		Cont deco_wsup_t12 { WaystoneTier >= 12; AreaLevel < 75; }
-		Cont deco_wsup_t11 { WaystoneTier >= 11; AreaLevel < 74; }
-		Cont deco_wsup_t10 { WaystoneTier >= 10; AreaLevel < 73; }
-		Cont deco_wsup_t9  { WaystoneTier >= 9; AreaLevel < 72; }
-		Cont deco_wsup_t8  { WaystoneTier >= 8; AreaLevel < 72; }
-		Cont deco_wsup_t7  { WaystoneTier >= 7; AreaLevel < 71; }
-		Cont deco_wsup_t6  { WaystoneTier >= 6; AreaLevel < 70; }
-		Cont deco_wsup_t5  { WaystoneTier >= 5; AreaLevel < 69; }
-		Cont deco_wsup_t4  { WaystoneTier >= 4; AreaLevel < 68; }
-		Cont deco_wsup_t3  { WaystoneTier >= 3; AreaLevel < 67; }
-		Cont deco_wsup_t2  { WaystoneTier >= 2; AreaLevel < 66; }
-		Cont deco_wsup_t1  { WaystoneTier >= 1; AreaLevel < eglevel; }
+		Cont deco_wsup_t16 { !MarkMapUp; WaystoneTier >= 16; AreaLevel < 80; }
+		Cont deco_wsup_t15 { !MarkMapUp; WaystoneTier >= 15; AreaLevel < 79; }
+		Cont deco_wsup_t14 { !MarkMapUp; WaystoneTier >= 14; AreaLevel < 78; }
+		Cont deco_wsup_t13 { !MarkMapUp; WaystoneTier >= 13; AreaLevel < 76; }
+		Cont deco_wsup_t12 { !MarkMapUp; WaystoneTier >= 12; AreaLevel < 75; }
+		Cont deco_wsup_t11 { !MarkMapUp; WaystoneTier >= 11; AreaLevel < 74; }
+		Cont deco_wsup_t10 { !MarkMapUp; WaystoneTier >= 10; AreaLevel < 73; }
+		Cont deco_wsup_t9  { !MarkMapUp; WaystoneTier >= 9; AreaLevel < 72; }
+		Cont deco_wsup_t8  { !MarkMapUp; WaystoneTier >= 8; AreaLevel < 72; }
+		Cont deco_wsup_t7  { !MarkMapUp; WaystoneTier >= 7; AreaLevel < 71; }
+		Cont deco_wsup_t6  { !MarkMapUp; WaystoneTier >= 6; AreaLevel < 70; }
+		Cont deco_wsup_t5  { !MarkMapUp; WaystoneTier >= 5; AreaLevel < 69; }
+		Cont deco_wsup_t4  { !MarkMapUp; WaystoneTier >= 4; AreaLevel < 68; }
+		Cont deco_wsup_t3  { !MarkMapUp; WaystoneTier >= 3; AreaLevel < 67; }
+		Cont deco_wsup_t2  { !MarkMapUp; WaystoneTier >= 2; AreaLevel < 66; }
+		Cont deco_wsup_t1  { !MarkMapUp; WaystoneTier >= 1; AreaLevel < eglevel; }
 
-		Cont decor_implicit  	{ HasImplicitMod True; !*NoteAcc; }
-		Cont deco_corruptedMod  { CorruptedMods >= 1;  !*NoteAcc; }
+		Cont decor_implicit  	{ HasImplicitMod True; }
+		Cont deco_corruptedMod  { CorruptedMods >= 1; }
 
 #------------------------------------
 # [4403] Waystone progression
@@ -463,31 +467,31 @@ Section Waystones : Class == "Waystones", !Maps
 
 #!! Waypoint c9.waystone.generic.t16 : "Waystones - t14-t16"
 
-		Show waystone_a_t16 { !*z1; WaystoneTier >= 16; }
-		Show waystone_a_t15 { !*z1; WaystoneTier = 15; }
-		Show waystone_a_t14 { !*z1; WaystoneTier = 14; }
+		Show waystone_a_t16 { !Map1; WaystoneTier >= 16; }
+		Show waystone_a_t15 { !Map1; WaystoneTier = 15; }
+		Show waystone_a_t14 { !Map1; WaystoneTier = 14; }
+		Show waystone_b_t13 { !Map1; WaystoneTier = 13; }
 
 #!! Waypoint c9.waystone.generic.t14 : "Waystones - t11-t13"
-
-		Show waystone_b_t13 { !*z2; WaystoneTier = 13; }
-		Show waystone_b_t12 { !*z2; WaystoneTier = 12; }
-		Show waystone_b_t11 { !*z2; WaystoneTier = 11; }
+		
+		Show waystone_b_t12 { !Map2; WaystoneTier = 12; }
+		Show waystone_b_t11 { !Map2; WaystoneTier = 11; }
+		Show waystone_c_t10 { !Map2; WaystoneTier = 10; }
 
 #!! Waypoint c9.waystone.generic.t10 : "Waystones - t6-t10"
 
-		Show waystone_c_t10 { !*z3; WaystoneTier = 10; }
-		Show waystone_c_t9  { !*z3; WaystoneTier = 9; }
-		Show waystone_c_t8  { !*z3; WaystoneTier = 8; }
-		Show waystone_c_t7  { !*z3; WaystoneTier = 7; }
-		Show waystone_c_t6  { !*z3; WaystoneTier = 6; }
+		Show waystone_c_t9  { !Map3; WaystoneTier = 9; }
+		Show waystone_c_t8  { !Map3; WaystoneTier = 8; }
+		Show waystone_c_t7  { !Map3; WaystoneTier = 7; }
+		Show waystone_c_t6  { !Map3; WaystoneTier = 6; }
 
 #!! Waypoint c9.waystone.generic.t5 : "Waystones - T1-T5"
 
-		Show waystone_d_t5  { !*z4; WaystoneTier = 5; }
-		Show waystone_d_t4  { !*z4; WaystoneTier = 4; }
-		Show waystone_d_t3  { !*z4; WaystoneTier = 3; }
-		Show waystone_d_t2  { !*z4; WaystoneTier = 2; }
-		Show waystone_d_t1  { !*z4; WaystoneTier = 1; }
+		Show waystone_d_t5  { !Map4; WaystoneTier = 5; }
+		Show waystone_d_t4  { !Map4; WaystoneTier = 4; }
+		Show waystone_d_t3  { !Map4; WaystoneTier = 3; }
+		Show waystone_d_t2  { !Map4; WaystoneTier = 2; }
+		Show waystone_d_t1  { !Map4; WaystoneTier = 1; }
 
 		Show restex { Empty(); }
 	}
@@ -675,7 +679,6 @@ Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 
 Section Unique : Rarity Unique, Auto("uniques"), !unique
 {
-
 #------------------------------------
 # [5702] Exceptions #1
 #------------------------------------
