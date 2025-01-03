@@ -207,6 +207,13 @@ Style UniversalValueAccents
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Yellow mUnique;
 	}
 
+	Func UniqueX
+	{
+		SetFontSize font.t2;
+		BrickBlack(cUnique);
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue mUnique;
+	}
+
 	Func UniqueB
 	{
 		SetFontSize font.t2;
@@ -219,6 +226,11 @@ Style UniversalValueAccents
 		SetFontSize font.t3;
 		Bordered(cUnique);
 		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 2 Brown mUnique;
+	}
+
+	Func ExoticMapIcon
+	{
+		MinimapIcon 2 Blue mUnique;
 	}
 
 #------------------------------------

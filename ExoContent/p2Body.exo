@@ -696,20 +696,20 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
-	Show multispecialhigh { BaseType == uniques.generic.multispecialhigh; }
-	Show multispecial { BaseType == uniques.generic.multispecial; }
+	Show multispecialhigh { !UniqueX; BaseType == uniques.generic.multispecialhigh; }
+	Show multispecial 	  { !UniqueX; BaseType == uniques.generic.multispecial; }
 
 #------------------------------------
 # [5701] Low tier exceptions
 #------------------------------------
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
-	Show earlyleague { !UniqueB; BaseType == uniques.generic.earlyleague; }
+	Show earlyleague 	  { !UniqueB; BaseType == uniques.generic.earlyleague; }
 	Show corrupteduniques { !UniqueB; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == classes_equip; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss { !UniqueB; !SpecialNoB; BaseType == uniques.generic.t3boss; }
+	Show t3boss { !UniqueB; !ExoticMapIcon; BaseType == uniques.generic.t3boss; }
 	Show t3 	{ !UniqueB; BaseType == uniques.generic.t3; }
 #------------------------------------
 # [5709] Tier 4 uniques
