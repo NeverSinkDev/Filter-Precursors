@@ -5,11 +5,13 @@
 var color.temp = 255 0 255 255;
 var font.max = 45;
 var font.min = 18;
+var font.t1 = 45;
 var font.t2 = 45;
 var font.t3 = 45;
 var font.t4 = 40;
 var font.t5 = 35;
 var font.t6 = 32;
+var font.t7 = 32;
 
 #------------------------------------
 # Highlight Colors
@@ -17,18 +19,34 @@ var font.t6 = 32;
 
 var cBlack = 0 0 0 255;
 var cWhite = 255 255 255 255;
-var cRed   = 255 0 0 255;
-var cQuestGreen = 74 230 58 255;
 
+var cQuestGreen = 74 230 58 255;
+var cTierSAccent = 255 0 0 255;
 var cGold = 180 180 180 255;
 
 var cArtifact= 240 0 0 255;
 var cArtifactGlow = 70 0 20 255;
 
+var cExotic = 240 150 245 255;
+var cExoticLow = 0 240 190 180;
+var cExoticGlow = 0 75 30 255;
+
+var cFragment = 180 0 255 255;
+
+# 0 240 190 255 - old exotic
+# 191 143 255 - runes purple?
+# 240 150 220 255 nice pnk for baryas
+# Sideways cool orange 255 127 127 255
+# Basic currency: 170 158 130
+
+var cSupplies1 = 219 180 120 255;
+var cSupplies2 = 170 158 130 255;
+
 var cCurrTierA = 240 90 35 255;
 var cCurrTierB = 240 90 35 255;
 var cCurrTierC = 249 150 25 255;
-var cCurrTierD = 213 159 0 255;
+var cCurrTierD = 229 170 0 255;
+var cCurrTierE = 219 180 120 255;
 
 #------------------------------------
 # Background Colors (unless background is the highlight)
@@ -50,10 +68,11 @@ var asUnique = 3 300;
 var asMaps = 4 300;
 var asHighMaps = 5 300;
 
-
 #------------------------------------
 # Minimap
 #------------------------------------
 
 var mCurrency = Circle;
 var mUniques = Star;
+var mExotic = Diamond;
+var mFragment = Hexagon;

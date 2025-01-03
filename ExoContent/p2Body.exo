@@ -42,12 +42,13 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 
 # These bases don't usually drop during normal gameplay and are usually only acquired form certain sources
 
-Section ExoticBases : Auto("ExoticBases"), !exotic
+Section ExoticBases : Auto("ExoticBases")
 {
 	# Currently contains mostly undroppable bases
-	Show SuperExoticBases { !exotic.t1; BaseType == bases.exotic.misc.t1; Rarity <= Rare; }
+	Show SuperExoticBases { !exotic1; BaseType == bases.exotic.misc.t1; Rarity <= Rare; }
 	# Currently contains breach rings
-	Show CommonExoticBases { !exotic.t2; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
+	Show CommonExoticBasesHigh 	{ !exotic2; BaseType == bases.exotic.misc.t2; Rarity <= Magic; TopMods(); }
+	Show CommonExoticBases 		{ !exotic2; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
 }
 
 Section QuestItemException : Auto("QuestlikeException"), !questlike
@@ -68,10 +69,10 @@ Section Artifacts : Auto("Artifact"), Rarity <= Rare, !Artifact
 #===============================================================================================================
 #!! Waypoint c3.exotic.state.all : "Exotic State - Double Corrupted, Overquality"
 
-Section OtherExotics : Auto("exotic->others"), Rarity <= Rare, !exotic
+Section OtherExotics : Auto("exotic->others"), Rarity <= Rare
 {
-	Show DoubleCorruptedAny { !exotic.t2; !corruptstrong; Corrupted True; CorruptedMods >= 2; }
-	Show OverQualityAny { !exotic.t2; Quality >= 21; Corrupted False; }
+	Show DoubleCorruptedAny { !exotic1; Corrupted True; CorruptedMods >= 2; }
+	Show OverQualityAny { !exotic1; Quality >= 21; Corrupted False; }
 }
 
 #===============================================================================================================
@@ -96,7 +97,7 @@ Section EndgameCraftingBases : Clean()
 
 	Section CraftNormalDecorators : Auto("Endgame->normalcraft->Decorator"), Rarity <= Magic, EG()
 	{
-		Cont NormalDecoratorJwlry { !tierS; Class == classes_jewellery; };
+		Cont NormalDecoratorJwlry { Class == classes_jewellery; };
 		Cont NormalDecorator      { Class == classes_nonJwlryEquip; };
 	}
 
@@ -328,18 +329,20 @@ Section HideLayer2 : Auto("HideLayer")
 
 Section SocketsRunes : Auto("sockets->runes")
 {
-	Show t3 { BaseType == sockets.runes.t3; }
-	Show t4 { BaseType == sockets.runes.t4; }
-	Show t5 { BaseType == sockets.runes.t5; }
+	Show t1 { !supply1; BaseType == sockets.runes.t1; }
+	Show t2 { !supply2; BaseType == sockets.runes.t2; }
+	Show t3 { !supply3; BaseType == sockets.runes.t3; }
+	Show t4 { !Supply4; BaseType == sockets.runes.t4; }
 }
 
 Section SocketsCores : Auto("sockets->cores")
 { 
-	Show t1  { BaseType == sockets.cores.t1; }
-	Show t2  { BaseType == sockets.cores.t2; }
-	Show t3  { BaseType == sockets.cores.t3; }
-	Show t4  { BaseType == sockets.cores.t4; }
-	Show t5  { BaseType == sockets.cores.t5; }
+	Show t1  { !TIERS; BaseType == sockets.cores.t1; }
+	Show t2  { !CurrTierA; BaseType == sockets.cores.t2; }
+	Show t3  { !CurrTierB; BaseType == sockets.cores.t3; }
+	Show t4  { !CurrTierC; BaseType == sockets.cores.t4; }
+	Show t5  { !CurrTierD; BaseType == sockets.cores.t5; }
+	Show t6  { !CurrTierE; BaseType == sockets.cores.t6; }
 }
 
 #===============================================================================================================
@@ -349,7 +352,7 @@ Section SocketsCores : Auto("sockets->cores")
 
 Section Jewels : Class "Jewel", Auto("jewels->generic")
 {
-	Show AnyTimeless  { Rarity <= Rare; BaseType == timeLostJewels; }
+	Show AnyTimeless  { !exotic1; Rarity <= Rare; BaseType == timeLostJewels; }
 	Show AnyRare  	  { Rarity Rare; BaseType == genericJewels; }
 	Show AnyMagic 	  { Rarity <= Magic; BaseType == genericJewels; }
 }
@@ -359,7 +362,8 @@ Section Jewels : Class "Jewel", Auto("jewels->generic")
 #===============================================================================================================
 #!! Waypoint c7.relics.generic.all : "Relics (Trial of the Sekhema)"
 
-Section TrialRelics : Auto("relics->generic")
+# Relics currently are not hidable, due to an ingame limitation.
+Section TrialRelics : Auto("relics->generic"), !exotic2;
 {
 	Show Any { Rarity <= Rare; BaseType == bases.exotic.relics; }
 }
@@ -491,9 +495,9 @@ Section Waystones : Class == "Waystones", !Maps
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL(), !Currency
 {
-	Show rare 	  { BaseType == currency.leveling.rare; }
-	Show magic    { BaseType == currency.leveling.magic; }
-	Show wisdom   { BaseType == currency.leveling.wisdom; }
+	Show rare 	  { !CurrTierD; BaseType == currency.leveling.rare; }
+	Show magic    { !Supply3; BaseType == currency.leveling.magic; }
+	Show wisdom   { !Supply4; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -508,10 +512,12 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency, !Currency
 	Show t3 { !CurrTierB; BaseType == currency.generic.t3; }
 	Show t4 { !CurrTierC; BaseType == currency.generic.t4; }
 	Show t5 { !CurrTierD; BaseType == currency.generic.t5; }
-	Show t6 { BaseType == currency.generic.t6; }
-	Show t7 { BaseType == currency.generic.t7; }
-	Show t8 { BaseType == currency.generic.t8; }
-	Show twisdom { BaseType == currency.generic.twisdom; }
+	Show t6 { !CurrTierE; BaseType == currency.generic.t6; }
+
+	Show Supply1 	 { !Supply1; BaseType == currency.generic.supply1; }
+	Show Supply2 	 { !Supply4; BaseType == currency.generic.supply2; }
+	Show Supply3 	 { !Supply5; BaseType == currency.generic.supply3; }
+	Show Supply4 	 { !Supply5; BaseType == currency.generic.supply4; }
 }
 
 #===============================================================================================================
@@ -525,12 +531,13 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency, !Currency
 
 Section CurrencyEmotions : Auto("currency->emotions"), Class == class_currency, !Currency
 {
-	Show t1 { !TIERS; BaseType == currency.emotions.t1; }
+	Show t1 { !TIERS;     BaseType == currency.emotions.t1; }
 	Show t2 { !CurrTierA; BaseType == currency.emotions.t2; }
 	Show t3 { !CurrTierB; BaseType == currency.emotions.t3; }
 	Show t4 { !CurrTierC; BaseType == currency.emotions.t4; }
-	Show t5 { BaseType == currency.emotions.t5; }
-	Hide exHide { !shrink; BaseType == currency.emotions.t1 + currency.emotions.t2 + currency.emotions.t3 + currency.emotions.t4  + currency.emotions.t5; }
+	Show t5 { !CurrTierD; BaseType == currency.emotions.t5; }
+	Show t6 { !CurrTierE; BaseType == currency.emotions.t6; }
+	Hide exHide { !shrink; BaseType == currency.emotions.t1 + currency.emotions.t2 + currency.emotions.t3 + currency.emotions.t4  + currency.emotions.t5 + currency.emotions.t6; }
 	Show restex { BaseType "Distilled "; }
 }
 
@@ -541,12 +548,13 @@ Section CurrencyEmotions : Auto("currency->emotions"), Class == class_currency, 
 
 Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency, !Currency
 {
-	Show t1 { !TIERS; BaseType == currency.catalysts.t1; }
-	Show t2 { BaseType == currency.catalysts.t2; }
-	Show t3 { BaseType == currency.catalysts.t3; }
-	Show t4 { BaseType == currency.catalysts.t4; }
-	Show t5 { BaseType == currency.catalysts.t5; }
-	Hide exHide { !shrink; BaseType == currency.catalysts.t1 + currency.catalysts.t2 + currency.catalysts.t3 + currency.catalysts.t4  + currency.catalysts.t5; }
+	Show t1 { !TIERS;     BaseType == currency.catalysts.t1; }
+	Show t2 { !CurrTierA; BaseType == currency.catalysts.t2; }
+	Show t3 { !CurrTierB; BaseType == currency.catalysts.t3; }
+	Show t4 { !CurrTierC; BaseType == currency.catalysts.t4; }
+	Show t5 { !CurrTierD; BaseType == currency.catalysts.t5; }
+	Show t6 { !CurrTierE; BaseType == currency.catalysts.t6; }
+	Hide exHide { !shrink; BaseType == currency.catalysts.t1 + currency.catalysts.t2 + currency.catalysts.t3 + currency.catalysts.t4  + currency.catalysts.t5 + currency.catalysts.t6; }
 	Show restex { BaseType "Catalyst"; }
 }
 
@@ -557,11 +565,12 @@ Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency
 
 Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !Currency
 {
-	Show t1 { !TIERS; BaseType == currency.essence.t1; }
-	Show t2 { BaseType == currency.essence.t2; }
-	Show t3 { BaseType == currency.essence.t3; }
-	Show t4 { BaseType == currency.essence.t4; }
-	Show t5 { BaseType == currency.essence.t5; }
+	Show t1 { !TIERS;     BaseType == currency.essence.t1; }
+	Show t2 { !CurrTierA; BaseType == currency.essence.t2; }
+	Show t3 { !CurrTierB; BaseType == currency.essence.t3; }
+	Show t4 { !CurrTierC; BaseType == currency.essence.t4; }
+	Show t5 { !CurrTierD; BaseType == currency.essence.t5; }
+	Show t6 { !CurrTierE; BaseType == currency.essence.t6; }
 	Show restex { BaseType "Essence"; }
 }
 
@@ -572,11 +581,12 @@ Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !C
 
 Section CurrencyOmen : Auto("currency->omen"), Class == class_currency, !Currency
 {
-	Show t1 { !TIERS; BaseType == currency.omen.t1; }
-	Show t2 { BaseType == currency.omen.t2; }
-	Show t3 { BaseType == currency.omen.t3; }
-	Show t4 { BaseType == currency.omen.t4; }
-	Show t5 { BaseType == currency.omen.t5; }
+	Show t1 { !TIERS;     BaseType == currency.omen.t1; }
+	Show t2 { !CurrTierA; BaseType == currency.omen.t2; }
+	Show t3 { !CurrTierB; BaseType == currency.omen.t3; }
+	Show t4 { !CurrTierC; BaseType == currency.omen.t4; }
+	Show t5 { !CurrTierD; BaseType == currency.omen.t5; }
+	Show t6 { !CurrTierE; BaseType == currency.omen.t6; }
 	Show restex { BaseType "Omen "; }
 }
 
@@ -596,10 +606,10 @@ Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Cur
 
 Section Tablets : Auto("fragments->tablets->generic"), Class "Tablet"
 {
-	Show t1 { BaseType == fragments.tablets.t1; }
-	Show t2 { BaseType == fragments.tablets.t2; }
-	Show t3 { BaseType == fragments.tablets.t3; }
-	Show t4 { BaseType == fragments.tablets.t4; }
+	Show t1 { !FragA; BaseType == fragments.tablets.t1; }
+	Show t2 { !FragA; BaseType == fragments.tablets.t2; }
+	Show t3 { !FragA; BaseType == fragments.tablets.t3; }
+	Show t4 { !FragA; BaseType == fragments.tablets.t4; }
 	Show restex { Empty(); }
 }
 
@@ -630,9 +640,10 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_
 
 Section FullFragments : Auto("fragments->generic"), Class == class_fragments
 {
-	Show t1 { BaseType == fragments.generic.t1; }
+	Show t1 { !TIERS; BaseType == fragments.generic.t1; }
 	Show t2 { BaseType == fragments.generic.t2; }
 	Show t3 { BaseType == fragments.generic.t3; }
+	Show t4 { BaseType == fragments.generic.t4; }
 	Show restex { Empty(); }
 }
 
@@ -643,9 +654,9 @@ Section FullFragments : Auto("fragments->generic"), Class == class_fragments
 
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
-	Show TrialKeySanctum { BaseType == "Djinn Barya"; }
-	Show TrialKeyUltimatumReward { BaseType == "Inscribed Ultimatum"; Corrupted True; }
-	Show TrialKeyUltimatum { BaseType == "Inscribed Ultimatum"; }
+	Show TrialKeySanctum 		 { BaseType == "Djinn Barya"; }
+	Show TrialKeyUltimatumReward { BaseType == "Inscribed Ultimatum"; Rarity >= Magic; }
+	Show TrialKeyUltimatum 		 { BaseType == "Inscribed Ultimatum"; }
 
 	Show RelicKeys { !Currency.S; BaseType == miscmap.keys; }
 	Show RelicKeysSafe { !Currency.S; Class == "Vault Keys"; }

@@ -8,7 +8,7 @@ Style UniversalValueAccents
 {
 	Func tierS
 	{
-		SetTextColor cRed; SetBorderColor cRed; SetBackgroundColor cWhite; 
+		SetTextColor cTierSAccent; SetBorderColor cTierSAccent; SetBackgroundColor cWhite; 
 		PlayAlertSound asS; PlayEffect Red; MinimapIcon 0 Red Star; 
 		SetFontSize 45;
 	}
@@ -30,13 +30,38 @@ Style UniversalValueAccents
 	}
 
 #------------------------------------
+# EXOTICS
+#------------------------------------
+
+	Func Exotic1 ()
+	{
+		SetFontSize font.t2;
+		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
+	}
+
+	Func Exotic2 ()
+	{
+		SetFontSize font.t3;
+		SetTextColor cExotic;
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue Diamond;
+	}
+
+	Func Exotic3 ()
+	{
+		SetFontSize font.t4;
+		SetTextColor cExotic;
+		PlayAlertSound asUnique; PlayEffect Blue Temp; MinimapIcon 2 Blue Diamond;
+	}
+
+#------------------------------------
 # CURRENCY
 #------------------------------------
 
 	## Greater jeweller
 	Func CurrTierA
 	{
-		SetFontSize font.t2;
+		SetFontSize font.t1;
 		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cCurrTierA;
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mCurrency;
 	}
@@ -52,17 +77,94 @@ Style UniversalValueAccents
 	## Exalted
 	Func CurrTierC
 	{
-		SetFontSize font.t3;
+		SetFontSize font.t2;
 		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierC;
 		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 Yellow mCurrency;
 	}
 
-	## Below Exalted Tier
+	## Below Exalted Tier ("Alchemy")
 	Func CurrTierD
 	{
-		SetFontSize font.t4;
+		SetFontSize font.t3;
 		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierD;
 		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mCurrency;
+	}
+
+	## BelowBelow Exalted Tier ("Chrom")
+	Func CurrTierE
+	{
+		SetFontSize font.t3;
+		SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor cCurrTierE;
+		PlayEffect White Temp; MinimapIcon 2 Grey mCurrency;
+	}
+
+#------------------------------------
+# SUPPLIES
+#------------------------------------
+
+	Func Supply1
+	{
+		SetTextColor cSupplies1;  SetBorderColor cSupplies1;
+		SetFontSize font.t3;
+	}
+
+	Func Supply2
+	{
+		SetTextColor cSupplies1; SetBorderColor cSupplies2;
+		SetFontSize font.t3;
+	}
+
+	Func Supply3
+	{
+		SetTextColor cSupplies1;
+		SetFontSize font.t4;
+	}
+
+	Func Supply4
+	{
+		SetTextColor cSupplies2;
+		SetFontSize font.t4;
+	}
+
+	Func Supply5
+	{
+		SetTextColor cSupplies2;
+		SetFontSize font.t6;
+	}
+
+#------------------------------------
+# FRAGMENT
+#------------------------------------
+
+	Func FragA
+	{
+		SetFontSize font.t1;
+		SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor cFragment;
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mFragment;
+	}
+
+	Func FragB
+	{
+		SetTextColor cSupplies2;
+		SetFontSize font.t6;
+	}
+
+	Func FragC
+	{
+		SetTextColor cSupplies2;
+		SetFontSize font.t6;
+	}
+
+	Func FragD
+	{
+		SetTextColor cSupplies2;
+		SetFontSize font.t6;
+	}
+
+	Func FragE
+	{
+		SetTextColor cSupplies2;
+		SetFontSize font.t6;
 	}
 
 #------------------------------------
