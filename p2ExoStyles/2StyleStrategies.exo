@@ -55,6 +55,38 @@ Style UniversalValueAccents
 	}
 
 #------------------------------------
+# Utility
+#------------------------------------
+
+	Func RareDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+		SetTextColor 255 255 119;
+	}
+
+	Func MagicDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+	}
+
+	Func NormalDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+	}
+
+	Func Shrink()
+	{
+		SetFontSize 18;
+		SetBackgroundColor 0 0 0 0;
+	}
+
+#------------------------------------
 # EXOTICS
 #------------------------------------
 
@@ -129,14 +161,14 @@ Style UniversalValueAccents
 
 	Func Supply1
 	{
-		SetTextColor cSupplies1;  SetBorderColor cSupplies1;
+		SetTextColor cSupplies1;  SetBorderColor cSupplies2;
 		SetFontSize font.t3;
 	}
 
 	Func Supply2
 	{
-		SetTextColor cSupplies1; SetBorderColor cSupplies2;
-		SetFontSize font.t3;
+		SetTextColor cSupplies1;
+		SetFontSize font.t4;
 	}
 
 	Func Supply3
@@ -148,13 +180,15 @@ Style UniversalValueAccents
 	Func Supply4
 	{
 		SetTextColor cSupplies2;
-		SetFontSize font.t4;
+		SetBorderColor cSupplies2;
+		SetFontSize font.t5;
 	}
 
 	Func Supply5
 	{
 		SetTextColor cSupplies2;
-		SetFontSize font.t6;
+		SetFontSize font.t5;
+		SetBackgroundColor cAccentLow;
 	}
 
 #------------------------------------
@@ -172,28 +206,28 @@ Style UniversalValueAccents
 	{
 		SetFontSize font.t2;
 		BrickBlack(cFragTierB);
-		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mFragment;
+		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Yellow mFragment;
 	}
 
 	Func FragC
 	{
 		SetFontSize font.t2;
 		BrickBlack(cFragTierC);
-		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 White mFragment;
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 White mFragment;
 	}
 
 	Func FragD
 	{
 		SetFontSize font.t3;
 		Bordered(cFragTierD);
-		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mFragment;
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 2 White mFragment;
 	}
 
 	Func FragE
 	{
-		SetFontSize font.t3;
+		SetFontSize font.t4;
 		Text(cFragTierE);
-		PlayEffect White Temp; MinimapIcon 2 Grey mFragment;
+		PlayEffect Purple Temp; MinimapIcon 2 Grey mFragment;
 	}
 
 #------------------------------------
@@ -240,7 +274,7 @@ Style UniversalValueAccents
 	Func Gems1
 	{
 		Bordered(cGems);
-		SetFontSize font.t3;
+		SetFontSize font.t2;
 		PlayAlertSound asCurr;
 		MinimapIcon 1 Cyan Triangle;
 		PlayEffect Cyan;
@@ -248,7 +282,7 @@ Style UniversalValueAccents
 
 	Func Gems2
 	{
-		Text(cGems);
+		Bordered(cGems);
 		SetFontSize font.t5;
 		PlayEffect Cyan Temp;
 	}
@@ -296,7 +330,7 @@ Style UniversalValueAccents
 	Func DecoMap3Overleveled()
 	{
 		SetBorderColor 200 200 200 255;
-		SetFontSize font.t5;
+		SetFontSize font.t4;
 	}
 
 	Func DecoMap4Overleveled()
@@ -308,22 +342,18 @@ Style UniversalValueAccents
 	Func Map1()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
-		PlayAlertSound asHighMaps; PlayEffect Yellow; MinimapIcon 1 Red mMaps; 
 		SetFontSize font.t2;
 	}
 
 	Func Map2()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
-		PlayAlertSound asMaps; PlayEffect Yellow; MinimapIcon 1 Red mMaps; 
 		SetFontSize font.t2;
 	}
 
 	Func Map3()
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
-		PlayAlertSound asMaps; PlayEffect White; MinimapIcon 1 Yellow mMaps; 
-		SetFontSize font.t3;
 	}
 
 	Func Map4()
@@ -332,13 +362,91 @@ Style UniversalValueAccents
 	}
 
 #------------------------------------
-# Highlights
+# Rare Trinkets
 #------------------------------------
+
+	Func rGearTrinket1
+	{
+		SetFontSize font.t2;
+		SetBackgroundColor cRareTrinkets;
+		PlayEffect Yellow;
+		MinimapIcon 1 White mTrinkets;
+	}
+
+	Func rGearTrinket2
+	{
+		SetFontSize font.t3;
+		SetBackgroundColor cBlack;
+		PlayEffect Yellow Temp;
+		MinimapIcon 1 White mTrinkets;
+	}
+
+	Func rGearTrinket3
+	{
+		SetFontSize font.t4;
+		SetBackgroundColor cBlack;
+	}
+
+#------------------------------------
+# Rare Gear
+#------------------------------------
+
+	Func rRares1
+	{
+		SetFontSize font.t3;
+		SetBackgroundColor cBlack;
+	}
+
+	Func rRares2
+	{
+		SetFontSize font.t5;
+		# SetBackgroundColor cAccentLowGreyPitch;
+	}
+
+#------------------------------------
+# Normal Bases (Crafting)
+#------------------------------------
+
+	Func normalBase82
+	{
+		SetBorderColor cNormal82;
+	}
+
+	Func regularBase
+	{
+		SetBorderColor cBlack;
+	}
+
+	Func trinketBase
+	{
+		SetBorderColor cBlack;
+		SetBackgroundColor cBlack;
+		SetFontSize font.t3;
+	}
+
+#------------------------------------
+# Highlights (Mark)
+#------------------------------------
+
+	Func MarkBlack
+	{
+		SetBorderColor cBlack;
+	}
+
+	Func Mark82
+	{
+		SetTextColor cRare82;
+	}
+
+	Func MarkTrinket
+	{
+		SetBorderColor cRareBorder;
+	}
 
 	Func MarkSalvage2
 	{
 		SetBorderColor cMarkSalvagable2;
-		SetFontSize font.t4;
+		SetFontSize font.t5;
 	}
 
 	Func MarkChance
@@ -347,6 +455,7 @@ Style UniversalValueAccents
 		SetFontSize font.t3;
 		MinimapIcon 1 Green mExotic;
 		PlayEffect Green Temp;
+		PlayAlertSound asUnique;
 	}
 
 	Func MarkMapUp()
@@ -366,34 +475,33 @@ Style UniversalValueAccents
 	Func goldHuge
 	{
 		MinimapIcon 1 Yellow Cross;
-		SetTextColor cGold;
-		SetFontSize font.t4;
+		SetTextColor cWhite;
+		SetBorderColor cWhite;
 		SetBackgroundColor cBlack;
 		PlayEffect Orange;
+		SetTextColor font.t3;
 	}
 
 	Func goldLarge
 	{
 		MinimapIcon 1 White Cross;
-		SetTextColor cGold;
-		SetFontSize font.t5;
-		SetBackgroundColor cAccentLowMid;
+		SetTextColor cWhite;
+		SetBorderColor cWhite;
 		PlayEffect Orange Temp;
 	}
 
 	Func goldMedium
 	{
-		MinimapIcon 2 Grey Cross;
-		SetTextColor cGold;
-		SetFontSize font.t5;
-		SetBackgroundColor cAccentLowMid;
+		SetTextColor cWhite;
+		SetBorderColor cWhite;
+		PlayEffect Orange Temp;
 	}
 
 	Func goldSmall
 	{
-		MinimapIcon 2 Grey Cross;
 		SetTextColor cGold;
-		SetFontSize font.t6;
+		SetBorderColor cBlack;
+		SetBackgroundColor cAccentVeryLow;
 	}
 }
 
@@ -420,67 +528,5 @@ Style UniversalHideLayer
 		PlayAlertSound NONE;
 		SetFontSize font.min;
 		DisableDropSound True;
-	}
-}
-
-#------------------------------------
-# Rare Decorators
-#------------------------------------
-
-Style EndgameRareDecorators
-{
-	Func large()
-	{
-		Empty();
-	}
-
-	Func medium()
-	{
-		Empty();
-	}
-
-	Func tiny()
-	{
-		Empty();
-	}
-
-	Func fourlinkedrare()
-	{
-		Empty();
-	}
-
-	Func highgear()
-	{
-		Empty();
-	}
-
-	Func ilvl86()
-	{
-		Empty();
-	}
-
-	Func ilvl84()
-	{
-		Empty();
-	}
-
-	Func ilvl75()
-	{
-		Empty();
-	}
-
-	Func ilvl68()
-	{
-		Empty();
-	}
-
-	Func corrupt()
-	{
-		Empty();
-	}
-
-	Func corruptimpl()
-	{
-		Empty();
 	}
 }

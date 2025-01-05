@@ -8,7 +8,7 @@ Func Typical(){ Quality = 0; Sockets <= 0; }
 Func LVL() { AreaLevel < eglevel; }
 Func EG() { AreaLevel >= eglevel }
 Func TopMods() { ItemLevel >= egTopMods; }
-Func FromTo(minItemLevel, maxArea) { ItemLevel >= minItemLevel; AreaLevel < maxArea; }
+Func FromTo(minItemLevel, maxArea) { ItemLevel >= minItemLevel; AreaLevel <= maxArea; }
 
 Func AR()  { BaseArmour > 0; BaseEvasion = 0; BaseEnergyShield = 0;}
 Func EV()  { BaseArmour = 0; BaseEvasion > 0; BaseEnergyShield = 0;}
@@ -97,8 +97,9 @@ Section EndgameCraftingBases : Clean()
 
 	Section CraftNormalDecorators : Auto("Endgame->normalcraft->Decorator"), Rarity <= Magic, EG()
 	{
-		Cont NormalDecoratorJwlry { Class == classes_jewellery; };
-		Cont NormalDecorator      { Class == classes_nonJwlryEquip; };
+		Cont NormalDecorator      { !regularBase; Class == classes_nonJwlryEquip; };
+		Cont Normal82			  { !normalBase82; ItemLevel >= 82; Class == classes_equip; }
+		Cont NormalDecoratorJwlry { !trinketBase; Class == classes_jewellery; };
 	}
 
 	#!! Waypoint c4.gear.crafting.all : "Crafting Bases - Handpicked Magic and Normal Bases"
@@ -137,8 +138,8 @@ Section EndgameCraftingBases : Clean()
 
 	Section DecoratorRemover : Auto("Endgame->normalcraft->Decorator"), Class == classes_equip, EG()
 	{
-		Cont MagicDecoratorRemover { Rarity Magic; }
-		Cont NormalDecoratorRemover { Rarity Normal; }
+		Cont MagicDecoratorRemover { !MagicDecoratorRemover; Rarity Magic; }
+		Cont NormalDecoratorRemover { !NormalDecoratorRemover; Rarity Normal; }
 	}
 }
 
@@ -187,7 +188,7 @@ Section EndgameCharms : Auto("Endgame->Charms"), Rarity <= Rare, EG(), Clean(), 
 
 Section HideLayer1 : Auto("HideLayer")
 {
-	Show NormalMagicEndgame { %H0; EG(); Rarity < Rare; Class == classes_equip; }
+	Hide NormalMagicEndgame { !Shrink; %H0; EG(); Rarity < Rare; Class == classes_equip; }
 }
 
 #===============================================================================================================
@@ -195,42 +196,37 @@ Section HideLayer1 : Auto("HideLayer")
 #===============================================================================================================
 #!! Waypoint c6.rare.decorator.all : "Rare Endgame Items - Decorators"
 
-Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG(), Class == classes_equip, !raredeco
+Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG(), Class == classes_equip
 {
-	Cont LargeRares 	{ !*large;  Height >= 3; Width >= 2; }
-	Cont MediumRares1 	{ !*medium; Height >= 3; Width = 1; }
-	Cont MediumRares2 	{ !*medium; Height = 2; Width = 2; }
-	Cont TinyRares 		{ !*tiny;   Height = 1; Width <= 2; }
+	Cont BasicRareDecorator { !MarkBlack; }
 
-	Cont ILVL82 { !*ilvl82; ItemLevel >= 82; }
+	Cont LargeRares 	{ Height >= 3; Width >= 2; }
+	Cont MediumRares1 	{ Height >= 3; Width = 1; }
+	Cont MediumRares2 	{ Height = 2; Width = 2; }
+	Cont TinyRares 		{ !MarkTrinket; Height = 1; Width <= 2; }
 
-	Cont CorruptedRares { !*corruptbad; Corrupted True; CorruptedMods 0; }
-	Cont CorruptedRaresImplicit { !*corrupt; Corrupted True; CorruptedMods >= 1; }
+	Cont ILVL82 	  { !Mark82; ItemLevel >= 82; }
+
+	# Optional: caster weapons get their most important mods on 81
+	Cont ILVL81Caster { %D0; !Mark82; ItemLevel >= 81; Class == classes_cast; }
+
+	Cont CorruptedRares { Corrupted True; CorruptedMods 0; }
+	Cont CorruptedRaresImplicit { Corrupted True; CorruptedMods >= 1; }
 }
 
 Section EndgameRares : Rarity Rare, ItemLevel >= eglevel
 {
 
 #===============================================================================================================
-# [[0200]] Optional Hide Modules
-#===============================================================================================================
-#!! Waypoint c6.rare.generic.all : "Rare Endgame Items - (Optional) Hiding identified rares"
-
-Section OptionalRare : Auto("RareOptional")
-{
-	HideD IdHider { !Shrink; Identified True; Class == classes_equip; }
-}
-
-#===============================================================================================================
 # [[0200]] Endgame - Conditional Hide Layers
 #===============================================================================================================
-
-#!! Waypoint c6.rare.corrupthider : "Rare Endgame Items - (Optional) Hiding Corrupted and Mirrored Items"
+#!! Waypoint c6.rare.optionalhide : "Rare Endgame Items - (Optional) Hiding Corrupted and Mirrored Items"
 
 Section ConditionalRareHider : Auto("HideLayer")
 {
+	HideD IdHider 		 { !Shrink; Identified True; Class == classes_equip; }
 	HideD CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
-	HideD MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
+	HideD MirroredRares  { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
 }
 
 #===============================================================================================================
@@ -240,17 +236,17 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareRingsAmulets : Class == "Rings" "Amulets", Auto("rr->amuring")
 	{
-		Show T1 { BaseType == derived.rares.jwl.ringsamu.t1; }
-		Show T2 { BaseType == derived.rares.jwl.ringsamu.t2; }
-		Show T3 { BaseType == derived.rares.jwl.ringsamu.t3; }
+		Show T1 { !rGearTrinket1; BaseType == derived.rares.jwl.ringsamu.t1; }
+		Show T2 { !rGearTrinket1; BaseType == derived.rares.jwl.ringsamu.t2; }
+		Show T3 { !rGearTrinket2; BaseType == derived.rares.jwl.ringsamu.t3; }
 	}
 
 #!! Waypoint c6.rare.belts.all : "Rare Endgame Items - Belts"
 	Section EndgameRareBelts : Class == "Belts", Auto("rr->belts")
 	{
-		Show T1 { BaseType == derived.rares.jwl.belts.t1; }
-		Show T2 { BaseType == derived.rares.jwl.belts.t2; }
-		Show T3 { BaseType == derived.rares.jwl.belts.t3; }
+		Show T1 { !rGearTrinket1; BaseType == derived.rares.jwl.belts.t1; }
+		Show T2 { !rGearTrinket2; BaseType == derived.rares.jwl.belts.t2; }
+		Show T3 { !rGearTrinket3; BaseType == derived.rares.jwl.belts.t3; }
 	}
 
 #===============================================================================================================
@@ -271,37 +267,37 @@ Section ConditionalRareHider : Auto("HideLayer")
 # [[0200]] Endgame - Rare - Gear
 #===============================================================================================================
 
-#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (gear)"
+#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (75ish+ gear)
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1_s { BaseType == bases.general.unbiased.t1; TopMods(); }
-		Show T1_a { BaseType == bases.general.unbiased.t1; ItemLevel >= 79; }
-		Show T1_r { BaseType == bases.general.unbiased.t1; }
+		Show T1_s { %D5; !rRares1; BaseType == bases.general.unbiased.t1; TopMods(); }
+		Show T1_r { %D4; !rRares1; BaseType == bases.general.unbiased.t1; ItemLevel < 82;  }
 
-#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (gear)"
+#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (70ish+ gear)
 		
-		Show T2_s { BaseType == bases.general.unbiased.t2; TopMods(); }
-		Show T2_a { BaseType == bases.general.unbiased.t2; ItemLevel >= 79; }
-		Show T2_b { BaseType == bases.general.unbiased.t2; ItemLevel >= 75; }
-		Show T2_r { BaseType == bases.general.unbiased.t2; }
+		Show T2_s { %D4; !rRares1; BaseType == bases.general.unbiased.t2; TopMods(); }
+		Show T2_b { %D3; !rRares2; BaseType == bases.general.unbiased.t2; ItemLevel >= 75; }
+		Show T2_r { %D4; !rRares1; BaseType == bases.general.unbiased.t2; ItemLevel < 75;  }
 
-#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (gear)"
+#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (65ish+ gear)
 
-		Show T3_s { BaseType == bases.general.unbiased.t3; TopMods(); }
-		Show T3_a { BaseType == bases.general.unbiased.t3; ItemLevel >= 79; }
-		Show T3_b { BaseType == bases.general.unbiased.t3; ItemLevel >= 70; }
-		Show T3_r { BaseType == bases.general.unbiased.t3; }
+		Show T3_s { %D3; !rRares2; BaseType == bases.general.unbiased.t3; TopMods(); }
+		Show T3_a { %D2; !rRares2; BaseType == bases.general.unbiased.t3; ItemLevel >= 75; }
+		Show T3_b { %D3; !rRares2; BaseType == bases.general.unbiased.t3; ItemLevel >= 70; }
+		Show T3_r { %D4; !rRares1; BaseType == bases.general.unbiased.t3; ItemLevel < 70;  }
 
-#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (gear)"
+#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (55ish+ gear)
 
-		Show T4_a { BaseType == bases.general.unbiased.t4; ItemLevel >= 70; }
-		Show T4_r { BaseType == bases.general.unbiased.t4; }
+		Show T4_a { %D1; !rRares2; BaseType == bases.general.unbiased.t4;  ItemLevel >= 75; }
+		Show T4_b { %D2; !rRares2; BaseType == bases.general.unbiased.t4;  ItemLevel >= 70; }
+		Show T4_r { %D4; !rRares2; BaseType == bases.general.unbiased.t4; ItemLevel < 70; }
 
-#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (gear)"
+#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (lower)
 
-		Show T5_a { Class == classes_nonJwlryEquip; ItemLevel >= 70; }
-		Show T5_r { Class == classes_nonJwlryEquip; }
+		Show T5_a { %D1; !rRares2; Class == classes_nonJwlryEquip; ItemLevel >= 75; }
+		Show T5_b { %D2; !rRares2; Class == classes_nonJwlryEquip; ItemLevel >= 70; }
+		Show T5_r { %D3; !rRares2; Class == classes_nonJwlryEquip; ItemLevel < 70;  }
 	}
 }
 
@@ -312,10 +308,10 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 Section Salvagable : Rarity Rare, Auto("Leveling->Salvagable"), ItemLevel >= eglevel, !MarkSalvage2
 {
-	Show QualityMartialAny { Class == classes_attack; Quality >= 1; }
-	Show QualityCasterAny { Class == classes_cast; Quality >= 1; }
-	Show QualityArmorAny { Class == classes_armor; Quality >= 1; }
-	Show Sockets { Class == classes_equip; Sockets > 0; }
+	Show QualityMartialAny { !MarkSalvage2; Class == classes_attack; Quality >= 1; }
+	Show QualityCasterAny { !MarkSalvage2; Class == classes_cast; Quality >= 1; }
+	Show QualityArmorAny { !MarkSalvage2; Class == classes_armor; Quality >= 1; }
+	Show Sockets { !MarkSalvage2; Class == classes_equip; Sockets > 0; }
 }
 
 #===============================================================================================================
@@ -432,13 +428,13 @@ Section Waystones : Class == "Waystones"
 
 	Section GenericWaystones : Auto("waystones")
 	{		
-		Cont decoMap1 { !DecoMap1; WaystoneTier >= 13; }
-		Cont decoMap2 { !DecoMap2; WaystoneTier >= 10; WaystoneTier <= 12; }
+		Cont decoMap1 { !DecoMap1; WaystoneTier >= 15; }
+		Cont decoMap2 { !DecoMap2; WaystoneTier >= 12; WaystoneTier <= 14; }
 		
 		Cont decoMap3Overleveled { !DecoMap3Overleveled; WaystoneTier >= 6; WaystoneTier <= 9; AreaLevel > 76 }
 		Cont decoMap4Overleveled { !DecoMap4Overleveled; WaystoneTier >= 1; WaystoneTier <= 5; AreaLevel > 73 }
 		
-		Cont decoMap3 { !DecoMap3; WaystoneTier >= 6; WaystoneTier <= 9; AreaLevel <= 76;  }
+		Cont decoMap3 { !DecoMap3; WaystoneTier >= 6; WaystoneTier <= 11; AreaLevel <= 76;  }
 		Cont decoMap4 { !DecoMap4; WaystoneTier >= 1; WaystoneTier <= 5; AreaLevel <= 73; }
 
 		Cont deco_wsup_t16 { !MarkMapUp; WaystoneTier >= 16; AreaLevel < 80; }
@@ -465,28 +461,28 @@ Section Waystones : Class == "Waystones"
 # [4403] Waystone progression
 #------------------------------------
 
-#!! Waypoint c9.waystone.generic.t16 : "Waystones - t14-t16"
+#!! Waypoint c9.waystone.generic.t16 : "Waystones - t15-t16"
 
 		Show waystone_a_t16 { !Map1; WaystoneTier >= 16; }
 		Show waystone_a_t15 { !Map1; WaystoneTier = 15; }
-		Show waystone_a_t14 { !Map1; WaystoneTier = 14; }
-		Show waystone_b_t13 { !Map1; WaystoneTier = 13; }
 
-#!! Waypoint c9.waystone.generic.t14 : "Waystones - t11-t13"
+#!! Waypoint c9.waystone.generic.t14 : "Waystones - t12-t14"
 		
+		Show waystone_b_t14 { !Map2; WaystoneTier = 14; }
+		Show waystone_b_t13 { !Map2; WaystoneTier = 13; }
 		Show waystone_b_t12 { !Map2; WaystoneTier = 12; }
-		Show waystone_b_t11 { !Map2; WaystoneTier = 11; }
-		Show waystone_c_t10 { !Map2; WaystoneTier = 10; }
 
-#!! Waypoint c9.waystone.generic.t10 : "Waystones - t6-t10"
+#!! Waypoint c9.waystone.generic.t11 : "Waystones - t7-t11"
 
+		Show waystone_b_t11 { !Map3; WaystoneTier = 11; }
+		Show waystone_b_t10 { !Map3; WaystoneTier = 10; }
 		Show waystone_c_t9  { !Map3; WaystoneTier = 9; }
 		Show waystone_c_t8  { !Map3; WaystoneTier = 8; }
 		Show waystone_c_t7  { !Map3; WaystoneTier = 7; }
+		
+#!! Waypoint c9.waystone.generic.t6 : "Waystones - T1-T6"
+
 		Show waystone_c_t6  { !Map3; WaystoneTier = 6; }
-
-#!! Waypoint c9.waystone.generic.t5 : "Waystones - T1-T5"
-
 		Show waystone_d_t5  { !Map4; WaystoneTier = 5; }
 		Show waystone_d_t4  { !Map4; WaystoneTier = 4; }
 		Show waystone_d_t3  { !Map4; WaystoneTier = 3; }
@@ -524,8 +520,7 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency, !Currency
 
 	Show Supply1 	 { !Supply1; BaseType == currency.generic.supply1; }
 	Show Supply2 	 { !Supply4; BaseType == currency.generic.supply2; }
-	Show Supply3 	 { !Supply5; BaseType == currency.generic.supply3; }
-	Show Supply4 	 { !Supply5; BaseType == currency.generic.supply4; }
+	Hide Supply3 	 { !Supply5; BaseType == currency.generic.supply3; }
 }
 
 #===============================================================================================================
@@ -629,7 +624,7 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_
 	Show t2 { !FragB; StackSize >= stacksize.commonSplinters.t2; }
 	Show t3 { !FragC; StackSize >= stacksize.commonSplinters.t3; }
 	Show t4 { !FragD; StackSize >= stacksize.commonSplinters.t4; }
-	Show t5 { !FragE; Empty(); }
+	Show t5 { !FragD; Empty(); }
 }
 
 Section FullFragments : Auto("fragments->generic"), Class class_fragments
@@ -880,12 +875,12 @@ Section LevelingRareGear : Rarity Rare, LVL()
 #------------------------------------
 #!! Waypoint c21.leveling.magicvendor.all : "Leveling - Normal and Magic - Magic Vendor Items"
 
-Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), LVL(), Rarity = Magic
+Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), Rarity = Magic
 {
-	Cont Medium1 	 { Height >= 3; Width = 1; }
-	Cont Medium2 	 { Height = 2; Width = 2; }
+	Cont Medium1 	 { LVL(); Height >= 3; Width = 1; }
+	Cont Medium2 	 { LVL(); Height = 2; Width = 2; }
 	Cont NoticeEarly { AreaLevel <= leveling.keylevels.start; }
-	Cont Tiny 	 	 { Height = 1; Width <= 2; }
+	Cont Tiny 	 	 { LVL(); Height = 1; Width <= 2; }
 }
 
 #------------------------------------

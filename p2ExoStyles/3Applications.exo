@@ -42,9 +42,6 @@ Style MainRules
 	# General
 	Apply(meta.hide ,HideLayer* => !UniversalHideLayer.any);
 	Apply(meta.safe, *.restex => !UniversalValueAccents.restex);
-
-	## rare decorators
-	Apply(meta.decorator, $raredeco => EndgameRareDecorators)
 }
 
 Style GlobalAccents

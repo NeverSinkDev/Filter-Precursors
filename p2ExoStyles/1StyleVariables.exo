@@ -6,12 +6,12 @@ var color.temp = 255 0 255 255;
 var font.max = 45;
 var font.min = 18;
 var font.t1 = 45;
-var font.t2 = 45;
-var font.t3 = 45;
-var font.t4 = 40;
+var font.t2 = 42;
+var font.t3 = 40;
+var font.t4 = 38;
 var font.t5 = 35;
 var font.t6 = 32;
-var font.t7 = 32;
+var font.t7 = 30;
 
 #------------------------------------
 # Highlight Colors
@@ -22,7 +22,7 @@ var cWhite = 255 255 255 255;
 
 var cQuestGreen = 74 230 58 255;
 var cTierSAccent = 255 0 0 255;
-var cGold = 180 180 180 255;
+var cGold = 180 180 180;
 
 var cArtifact= 240 0 0 255;
 var cArtifactGlow = 70 0 20 255;
@@ -46,12 +46,6 @@ var cMap1 = 235 235 235 255;
 var cMap2 = 200 200 200 255;
 var cMarkMapUpgrade = 220 50 0 255;
 
-# 0 240 190 255 - old exotic
-# 191 143 255 - runes purple?
-# 240 150 220 255 nice pnk for baryas
-# Sideways cool orange 255 127 127 255
-# Basic currency: 170 158 130
-
 var cSupplies1 = 209 180 120 255;
 var cSupplies2 = 170 158 130 255;
 
@@ -59,21 +53,26 @@ var cSupplies2 = 170 158 130 255;
 var cUnique = 220 96 37 255;
 var cUniqueGlow = 53 13 13 255;
 
-## 250 180 100
-
 var cCurrTierA = 255 83 83 255;
 var cCurrTierB = 252 85 73 255;
 var cCurrTierC = 255 139 87 255;
 var cCurrTierD = 250 180 100 255;
 var cCurrTierE = 250 180 100 255;
 
+# 0 240 190 255 - old exotic
+# 191 143 255 - runes purple?
+# 240 150 220 255 nice pnk for baryas
+# Sideways cool orange 255 127 127 255
+# Basic currency: 170 158 130
+
+
 ## oldcCurrTierE 209 180 120 255
 
-## var cCurrTierA = 240 90 35 255;
-## var cCurrTierB = 240 90 35 255;
-## var cCurrTierC = 240 180 50 255;
-## var cCurrTierD = 215 180 80 255;
-## var cCurrTierE = 209 180 120 255;
+# var cCurrTierA = 240 100 240 255;
+# var cCurrTierB = 240 50 150 255;
+# var cCurrTierC = 240 0 200 255;
+# var cCurrTierD = 180 0 200 255;
+# var cCurrTierE = 120 0 200 255;
 
 ##var cCurrOld = 255 207 132;
 
@@ -87,9 +86,18 @@ var cCurrTierE = 250 180 100 255;
 # Background Colors (unless background is the highlight)
 #------------------------------------
 
-var cAccentMid = 0 0 0 235;
-var cAccentLowMid = 0 0 0 200;
-var cAccentLow = 0 0 0 180;
+var cAccentTop = 0 50 0 255;
+var cAccentHigh = 0 0 0 255;
+
+var cAccentLow = 0 0 0 240;
+var cAccentVeryLow = 0 0 0 180;
+var cAccentLowGreyPitch = 50 50 50 200;
+
+var cRareTrinkets = 75 75 0;
+var cRareBorder = 220 220 0;
+
+var cRare82 = 245 175 0;
+var cNormal82 = 122 87 0;
 
 #------------------------------------
 # Standards - Sounds
@@ -110,6 +118,8 @@ var asHighMaps = 5 300;
 var mCurrency = Circle;
 var mUniques = Star;
 var mExotic = Diamond;
+var mTrinkets = Diamond;
+
 var mFragment = Hexagon;
 var mUnique = Star;
 var mGems = Triangle;
