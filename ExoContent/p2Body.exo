@@ -187,14 +187,10 @@ Section EndgameCharms : Auto("Endgame->Charms"), Rarity <= Rare, EG(), Clean(), 
 #===============================================================================================================
 #!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - All other endgame equipment normal&magic items"
 
-Section ShowRemaining : Auto("LowStrictnessShowLayer")
+Section HideLayer1 : EG(), Rarity < Rare, Class == classes_equip
 {
-	Show Any { !useless; %D0; EG(); Rarity < Rare; Class == classes_equip; }
-}
-
-Section HideLayer1 : Auto("HideLayer")
-{
-	Hide NormalMagicEndgame { EG(); Rarity < Rare; Class == classes_equip; }
+	Show NormalMagicEndgameAny { !useless; %D0; Auto("LowStrictnessShowLayer"); }
+	Hide NormalMagicEndgame { %D0; Auto("HideLayer"); }
 }
 
 #===============================================================================================================
@@ -326,9 +322,10 @@ Section Salvagable : Rarity Rare, Auto("Leveling->Salvagable"), ItemLevel >= egl
 #===============================================================================================================
 # [[0200]] Hide Layer 2 - Rare Gear
 #===============================================================================================================
-Section HideLayer2 : Auto("HideLayer")
+Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 {
-	Hide RaresEndgame { ItemLevel >= eglevel; Rarity Rare; Class == classes_equip; }
+	Show RaresEndgameAny { !useless; %D0; Auto("LowStrictnessShowLayer"); }
+	Hide RaresEndgame {  Auto("HideLayer");  }
 }
 
 #===============================================================================================================
@@ -965,9 +962,10 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 # [6002] Hide All known Section
 #------------------------------------
 
-Section HideLayerFinal : Auto("HideLayer")
+Section HideLayerFinal : Class classes_finalHider
 {
-	Hide Final { Class classes_finalHider; }
+	Show anyFinal { !useless; %D0; Auto("LowStrictnessShowLayer"); }
+	Hide Final {  Auto("HideLayer");  }
 }
 
 #------------------------------------
