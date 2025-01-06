@@ -54,6 +54,12 @@ Style UniversalValueAccents
 		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
 	}
 
+	Func Useless
+	{
+		SetFontSize font.t8;
+		SetBackgroundColor cAccentMinimal;
+	}
+
 #------------------------------------
 # Utility
 #------------------------------------
@@ -161,34 +167,31 @@ Style UniversalValueAccents
 
 	Func Supply1
 	{
-		SetTextColor cSupplies1;  SetBorderColor cSupplies2;
+		SetTextColor cSupplies1;  SetBorderColor cSupplies1;
+		SetBackgroundColor cSuppliesGlow;
 		SetFontSize font.t3;
+		PlayEffect Yellow Temp;
+		MinimapIcon 1 White Kite;
 	}
 
 	Func Supply2
 	{
 		SetTextColor cSupplies1;
+		SetBorderColor cSupplies2;
 		SetFontSize font.t4;
 	}
 
 	Func Supply3
-	{
-		SetTextColor cSupplies1;
-		SetFontSize font.t4;
-	}
-
-	Func Supply4
 	{
 		SetTextColor cSupplies2;
 		SetBorderColor cSupplies2;
 		SetFontSize font.t5;
 	}
 
-	Func Supply5
+	Func Supply4
 	{
 		SetTextColor cSupplies2;
 		SetFontSize font.t5;
-		SetBackgroundColor cAccentLow;
 	}
 
 #------------------------------------
@@ -220,6 +223,7 @@ Style UniversalValueAccents
 	{
 		SetFontSize font.t3;
 		Bordered(cFragTierD);
+		SetBackgroundColor 50 0 75
 		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 2 White mFragment;
 	}
 
