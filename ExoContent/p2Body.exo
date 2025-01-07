@@ -47,8 +47,8 @@ Section ExoticBases : Auto("ExoticBases")
 	# Currently contains mostly undroppable bases
 	Show SuperExoticBases { !exotic1; BaseType == bases.exotic.misc.t1; Rarity <= Rare; }
 	# Currently contains breach rings
-	Show CommonExoticBasesHigh 	{ %D6; !exotic2; BaseType == bases.exotic.misc.t2; Rarity <= Magic; TopMods(); }
-	Show CommonExoticBases 		{ %D4; !exotic2; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
+	Show CommonExoticBasesHigh 	{ %D6; !ValueTrinketMagic; BaseType == bases.exotic.misc.t2; Rarity <= Magic; TopMods(); }
+	Show CommonExoticBases 		{ %D4; !ValueTrinketMagicLow; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
 }
 
 Section QuestItemException : Auto("QuestlikeException"), !questlike
@@ -360,15 +360,21 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 #===============================================================================================================
 #!! Waypoint c7.miscgear.socketables : "Socketables - Runes and Soul Cores"
 
-Section SocketsRunes : Auto("sockets->runes")
+Section SocketsRunes : Auto("sockets->runes"), Class == "Socketable"
 {
+	# Highlight lower runes while leveling as well
+	Show LevelingRunes { %H4; !Supply2; LVL(); BaseType == sockets.runes.t3 + sockets.runes.t4; }
+
 	Show t1 { %H5; !CurrTierC; BaseType == sockets.runes.t1; }
-	Show t2 { %H4; !CurrTierD; BaseType == sockets.runes.t2; }
-	Show t3 { %H3; !CurrTierD; BaseType == sockets.runes.t3; }
-	Show t4 { %H2; !CurrTierE; BaseType == sockets.runes.t4; }
+	Show t2 { %H4; !Supply1; BaseType == sockets.runes.t2; }
+	Show t3 { %H3; !Supply2; BaseType == sockets.runes.t3; }
+	Show t4 { %H2; !Supply3; BaseType == sockets.runes.t4; }
+
+	Hide exHide { !shrink; BaseType == sockets.runes.t1 + sockets.runes.t2 + sockets.runes.t3 + sockets.runes.t4; }
+	Show restex { !Unknown; BaseType "Rune"; }
 }
 
-Section SocketsCores : Auto("sockets->cores")
+Section SocketsCores : Auto("sockets->cores"), Class == "Socketable"
 { 
 	Show s { !TIERS; BaseType == sockets.cores.s; }
 	Show a { !CurrTierA; BaseType == sockets.cores.a; }
@@ -376,6 +382,9 @@ Section SocketsCores : Auto("sockets->cores")
 	Show c { %H6; !CurrTierC; BaseType == sockets.cores.c; }
 	Show d { %H5; !CurrTierD; BaseType == sockets.cores.d; }
 	Show e { %H3; !CurrTierE; BaseType == sockets.cores.e; }
+
+	Hide exHide { !shrink; BaseType == sockets.cores.s + sockets.cores.a + sockets.cores.b + sockets.cores.c + sockets.cores.d + sockets.cores.e; }
+	Show restex { !Unknown; BaseType "Soul Core"; }
 }
 
 #===============================================================================================================
@@ -387,11 +396,11 @@ Section Jewels : Class "Jewel", Auto("jewels->generic")
 {
 	Show AnyTimeless  { !exotic1; Rarity <= Rare; BaseType == timeLostJewels; }
 	
-	Show AnyCorruptedMod 	  { !exotic2; Corrupted True; Rarity <= Rare; AnyEnchantment True; }
+	Show AnyCorruptedMod 	  { !exotic1; Corrupted True; Rarity <= Rare; AnyEnchantment True; }
 	Show Any5Modded			  { !exotic1; Corrupted True; Rarity <= Rare; HasExplicitMod >=5 "a" "o" "e" "u" "i" "y"; }
 
-	Show AnyRare  	  { Rarity Rare; BaseType == genericJewels; }
-	Show AnyMagic 	  { %H5; Rarity <= Magic; BaseType == genericJewels; }
+	Show AnyRare  	  { !ValueTrinketRare; Rarity Rare; BaseType == genericJewels; }
+	Show AnyMagic 	  { !ValueTrinketMagic; %H5; Rarity <= Magic; BaseType == genericJewels; }
 }
 
 #===============================================================================================================
@@ -544,9 +553,9 @@ Section Waystones : Class == "Waystones"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL(), !Currency
 {
 	Show rare 	  	   { %H5; !CurrTierD; BaseType == currency.leveling.rare; }
-	Show magic    	   { %H4; !Supply3; BaseType == currency.leveling.magic; }
-	Show wisdom   	   { %H3; !Supply4; BaseType == currency.leveling.wisdom; }
-	Show wisdomStart   { %H3; !Supply3; AreaLevel < 10; BaseType == currency.leveling.wisdom; }
+	Show magic    	   { %H4; !Supply2; BaseType == currency.leveling.magic; }
+	Show wisdom   	   { %H3; !SupplyPoor; BaseType == currency.leveling.wisdom; }
+	Show wisdomStart   { %H3; !Supply2; AreaLevel < 10; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -563,9 +572,12 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency, !Currency
 	Show d { %H5; !CurrTierD; BaseType == currency.generic.d; }
 	Show e { %H3; !CurrTierE; BaseType == currency.generic.e; }
 
-	Show Supply1 	 { !Supply1; BaseType == currency.generic.supply1; }
-	Show Supply2 	 { %H3; !Supply3; BaseType == currency.generic.supply2; }
-	Hide Supply3 	 { %H1; !Supply4; BaseType == currency.generic.supply3; }
+	# Artifacts and special drops
+	Show ArtifactLike { !SupplyArtifact; BaseType == currency.generic.supply1; }
+
+	Show SupplyMagic 	 { %H3; !Supply2; BaseType == currency.generic.supply2; }
+	Hide SuppliesLow 	 { %H1; !SupplyPoor; BaseType == currency.generic.supply3; }
+	
 	Hide exHide 	 { !shrink; BaseType == currency.generic.s + currency.generic.a + currency.generic.b + currency.generic.c + currency.generic.d + currency.generic.e + currency.generic.supply1 + currency.generic.supply2 + currency.generic.supply3; }
 }
 
@@ -603,6 +615,7 @@ Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency
 	Show c { %H6; !CurrTierC; BaseType == currency.catalysts.c; }
 	Show d { %H5; !CurrTierD; BaseType == currency.catalysts.d; }
 	Show e { %H4; !CurrTierE; BaseType == currency.catalysts.e; }
+
 	Hide exHide { !shrink; BaseType == currency.catalysts.s + currency.catalysts.a + currency.catalysts.b + currency.catalysts.c + currency.catalysts.d + currency.catalysts.e; }
 	Show restex { !Unknown; BaseType "Catalyst"; }
 }
@@ -620,6 +633,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !C
 	Show c { !CurrTierC; BaseType == currency.essence.c; }
 	Show d { %H6; !CurrTierD; BaseType == currency.essence.d; }
 	Show e { %H5; !CurrTierE; BaseType == currency.essence.e; }
+
 	Hide exHide { !shrink; BaseType == currency.essence.s + currency.essence.a + currency.essence.b + currency.essence.c + currency.essence.d + currency.essence.e; }
 	Show restex { !Unknown; BaseType "Essence"; }
 }
@@ -637,6 +651,7 @@ Section CurrencyOmen : Auto("currency->omen"), Class == class_currency, !Currenc
 	Show c { !CurrTierC; BaseType == currency.omen.c; }
 	Show d { !CurrTierD; BaseType == currency.omen.d; }
 	Show e { %H5; !CurrTierE; BaseType == currency.omen.e; }
+	
 	Hide exHide { !shrink; BaseType == currency.omen.s + currency.omen.a + currency.omen.b + currency.omen.c + currency.omen.d + currency.omen.e; }
 	Show restex { !Unknown; BaseType "Omen "; }
 }

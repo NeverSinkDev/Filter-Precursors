@@ -172,32 +172,41 @@ Style UniversalValueAccents
 # SUPPLIES
 #------------------------------------
 
-	Func Supply1
-	{
-		SetTextColor cSupplies1;  SetBorderColor cSupplies1;
-		SetBackgroundColor cSuppliesGlow;
+	# Artifact like
+	Func SupplyArtifact
+	{ 
+		BorderedGlow(cSupplies1, cSuppliesGlow);
 		SetFontSize font.t3;
 		PlayEffect Yellow Temp;
-		MinimapIcon 1 White Kite;
+		MinimapIcon 1 White mSplinter;
+		PlayAlertSound asCurr;
 	}
 
+	Func Supply1
+	{
+		BorderedGlow(cSupplies1, cSuppliesGlow);
+		SetFontSize font.t3;
+		PlayEffect Yellow Temp;
+	}
+
+	# Transmutes, Augments, Runes
 	Func Supply2
 	{
-		SetTextColor cSupplies1;
-		SetBorderColor cSupplies2;
+		Bordered(cSupplies2);
 		SetFontSize font.t4;
 	}
 
+	# Wisdom scrolls and transmute splinters
 	Func Supply3
 	{
-		SetTextColor cSupplies2;
-		SetBorderColor cSupplies2;
-		SetFontSize font.t5;
+		Bordered(cSupplies3);
+		SetFontSize font.t4;
 	}
 
-	Func Supply4
+	# Wisdom scrolls and transmute splinters
+	Func SupplyPoor
 	{
-		SetTextColor cSupplies2;
+		SetTextColor cSupplies3;
 		SetFontSize font.t5;
 	}
 
@@ -413,13 +422,39 @@ Style UniversalValueAccents
 	}
 
 #------------------------------------
-# Rare Trinkets
+# Value Trinkets
 #------------------------------------
+
+	Func ValueTrinketRare
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cRareTrinkets, cRareTrinketGlow);
+		PlayEffect Yellow;
+		MinimapIcon 1 Yellow mTrinkets;
+		PlayAlertSound asCurr;
+	}
+
+	Func ValueTrinketMagic
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cMagicTrinkets, cMagicTrinketGlow);
+		PlayEffect Blue;
+		MinimapIcon 1 Blue mTrinkets;
+		PlayAlertSound asCurr;
+	}
+
+	Func ValueTrinketMagicLow
+	{
+		SetFontSize font.t4;
+		Bordered(cMagicTrinkets);
+		PlayEffect Blue Temp;
+		MinimapIcon 2 Blue mTrinkets;
+	}
 
 	Func rGearTrinket1
 	{
 		SetFontSize font.t2;
-		SetBackgroundColor cRareTrinkets;
+		SetBackgroundColor cRareTrinketGlow;
 		PlayEffect Yellow;
 		MinimapIcon 1 White mTrinkets;
 	}
@@ -428,7 +463,7 @@ Style UniversalValueAccents
 	{
 		SetFontSize font.t3;
 		SetBackgroundColor cBlack;
-		PlayEffect Yellow Temp;
+		PlayEffect Yellow;
 		MinimapIcon 1 White mTrinkets;
 	}
 
@@ -491,7 +526,7 @@ Style UniversalValueAccents
 
 	Func MarkTrinket
 	{
-		SetBorderColor cRareBorder;
+		SetBorderColor cRareTrinkets;
 	}
 
 	Func MarkSalvage2
