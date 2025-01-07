@@ -34,7 +34,7 @@ Style UniversalValueAccents
 	Func tierS
 	{
 		SetTextColor cTierSAccent; SetBorderColor cTierSAccent; SetBackgroundColor cWhite; 
-		PlayAlertSound asS; PlayEffect Red; MinimapIcon 0 Red Star; 
+		PlayAlertSound asS 300; PlayEffect Red; MinimapIcon 0 Red Star; 
 		SetFontSize 45;
 	}
 
@@ -90,6 +90,13 @@ Style UniversalValueAccents
 	{
 		SetFontSize 18;
 		SetBackgroundColor 0 0 0 0;
+	}
+
+	Func Unknown()
+	{
+		SetFontSize font.max;
+		SetTextColor 0 255 255 255; SetBorderColor 0 255 255 255; SetBackgroundColor 255 0 255 255;
+		PlayAlertSound asUnique; PlayEffect Pink; MinimapIcon 0 Pink Pentagon;
 	}
 
 #------------------------------------
@@ -232,6 +239,46 @@ Style UniversalValueAccents
 		SetFontSize font.t4;
 		Text(cFragTierE);
 		PlayEffect Purple Temp; MinimapIcon 2 Grey mFragment;
+	}
+
+#------------------------------------
+# Splinter
+#------------------------------------
+
+	Func Splinter1
+	{
+		SetFontSize font.t1;
+		BrickWhite(cFragTierA);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mSplinter;
+	}
+
+	Func Splinter2
+	{
+		SetFontSize font.t1;
+		BrickBlack(cFragTierB);
+		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 0 Red mSplinter;
+	}
+
+	Func Splinter3
+	{
+		SetFontSize font.t2;
+		BrickBlack(cFragTierC);
+		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Orange mSplinter;
+	}
+
+	Func Splinter4
+	{
+		SetFontSize font.t3;
+		Bordered(cFragTierD);
+		SetBackgroundColor cSplinterBackground;
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 Yellow mSplinter;
+	}
+
+	Func Splinter5
+	{
+		SetFontSize font.t4;
+		Bordered(cFragTierD);
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 White mSplinter;
 	}
 
 #------------------------------------
