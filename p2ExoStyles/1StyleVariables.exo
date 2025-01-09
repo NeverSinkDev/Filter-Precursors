@@ -20,6 +20,7 @@ var font.t8 = 26;
 
 var cBlack = 0 0 0 255;
 var cWhite = 255 255 255 255;
+var cGrey = 100 100 100;
 
 var cQuestGreen = 74 230 58 255;
 var cTierSAccent = 255 0 0 255;
@@ -40,25 +41,35 @@ var cFragTierE = 180 75 225 255;
 
 var cSplinterBackground = 50 0 75;
 
+var cMarkSalvagable1 = 180 180 180;
 var cMarkSalvagable2 = 127 127 127;
 var cMarkChancable = 0 180 95;
 
+var cMarkCorrupt = 120 0 0 240;
+var cMarkCorruptHigh = 250 0 0 255;
+
 var cGems = 20 240 240;
+var cGemsGlow = 6 0 60;
 
 var cMap1 = 235 235 235 255;
 var cMap2 = 200 200 200 255;
 var cMarkMapUpgrade = 220 50 0 255;
 
-var cUnique = 220 96 37 255;
+# var cUnique = 220 96 37 255;
+# var cUniquePoE1 = 175 96 37 255;
+
+var cUnique = 188 96 37 255;
 var cUniqueGlow = 53 13 13 255;
 
-var cCurrTierA = 255 105 90 255;
-var cCurrTierB = 255 105 90 255;
-var cCurrTierC = 255 139 87 255;
-var cCurrTierD = 250 180 100 255;
-var cCurrTierE = 255 207 132;
+var unique.extra = 53 13 13 255;
 
-var cSupplies1 = 255 207 132;
+var cCurrTierA = 245 105 90 255;
+var cCurrTierB = 245 105 90 255;
+var cCurrTierC = 245 139 87 255;
+var cCurrTierD = 240 180 100 255;
+var cCurrTierE = 240 207 132;
+
+var cSupplies1 = 240 207 132;
 var cSupplies2 = 220 175 132;
 var cSupplies3 = 170 158 130; #170 158 130;
 
@@ -91,14 +102,20 @@ var cSuppliesGlow = 76 51 12;
 # Background Colors (unless background is the highlight)
 #------------------------------------
 
+var cAccentFlaskCharmGlow = 10 60 40;
+
 var cAccentTop = 0 50 0 255;
 var cAccentHigh = 0 0 0 255;
 
 var cAccentLow = 0 0 0 240;
+var cAccentUnremarkable = 0 0 0 230;
 var cAccentVeryLow = 0 0 0 180;
 var cAccentMinimal = 0 0 0 140;
 
 var cAccentLowGreyPitch = 50 50 50 200;
+
+var cAccentRare2 = 35 35 35 240;
+var cAccentRare3 = 80 80 80 190;
 
 var cRareTrinkets    = 220 220 0;
 var cRareTrinketGlow = 75 75 0;

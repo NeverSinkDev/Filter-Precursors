@@ -29,12 +29,17 @@ Func Text(accent)
 	SetTextColor accent;
 }
 
+Func RemoveEffects()
+{
+    PlayAlertSound NONE; MM NONE; PlayEffect NONE;
+}
+
 Style UniversalValueAccents
 {
 	Func tierS
 	{
 		SetTextColor cTierSAccent; SetBorderColor cTierSAccent; SetBackgroundColor cWhite; 
-		PlayAlertSound asS 300; PlayEffect Red; MinimapIcon 0 Red Star; 
+		PlayAlertSound asS; PlayEffect Red; MinimapIcon 0 Red Star; 
 		SetFontSize 45;
 	}
 
@@ -60,6 +65,20 @@ Style UniversalValueAccents
 		SetBackgroundColor cAccentMinimal;
 	}
 
+	Func FlaskCharm1
+	{
+		SetBackgroundColor cAccentFlaskCharmGlow;
+		SetBorderColor cGrey;
+		SetFontSize font.t3;
+	}
+
+	Func FlaskCharm2
+	{
+		SetBackgroundColor cAccentFlaskCharmGlow;
+		SetBorderColor cGrey;
+		SetFontSize font.t4;
+	}
+
 #------------------------------------
 # Utility
 #------------------------------------
@@ -75,21 +94,26 @@ Style UniversalValueAccents
 	Func MagicDecoratorRemover ()
 	{
 		SetFontSize 32;
+		SetTextColor 136 136 255;
 		SetBorderColor 0 0 0 255;
 		SetBackgroundColor 0 0 0 240;
+		RemoveEffects();
 	}
 
 	Func NormalDecoratorRemover ()
 	{
 		SetFontSize 32;
+		SetTextColor 200 200 200;
 		SetBorderColor 0 0 0 255;
 		SetBackgroundColor 0 0 0 240;
+		RemoveEffects();
 	}
 
 	Func Shrink()
 	{
 		SetFontSize 18;
 		SetBackgroundColor 0 0 0 0;
+		RemoveEffects();
 	}
 
 	Func Unknown()
@@ -333,7 +357,7 @@ Style UniversalValueAccents
 
 	Func Gems1
 	{
-		Bordered(cGems);
+		BorderedGlow(cGems, cGemsGlow);
 		SetFontSize font.t2;
 		PlayAlertSound asCurr;
 		MinimapIcon 1 Cyan Triangle;
@@ -341,6 +365,15 @@ Style UniversalValueAccents
 	}
 
 	Func Gems2
+	{
+		Bordered(cGems);
+		SetFontSize font.t2;
+		PlayAlertSound asCurr;
+		MinimapIcon 1 Cyan Triangle;
+		PlayEffect Cyan;
+	}
+
+	Func Gems3
 	{
 		Bordered(cGems);
 		SetFontSize font.t5;
@@ -386,17 +419,12 @@ Style UniversalValueAccents
 		PlayAlertSound asMaps; 
 		SetFontSize font.t3;
 	}
-	
-	Func DecoMap3Overleveled()
+
+	Func DecoMapOverleveled()
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t4;
-	}
-
-	Func DecoMap4Overleveled()
-	{
-		SetBorderColor 200 200 200 255;
-		SetFontSize font.t5;
+		RemoveEffects();
 	}
 
 	Func Map1()
@@ -485,34 +513,84 @@ Style UniversalValueAccents
 
 	Func rRares2
 	{
+		SetFontSize font.t4;
+		SetBackgroundColor cAccentRare2;
+	}
+
+	Func rRares3
+	{
 		SetFontSize font.t5;
-		# SetBackgroundColor cAccentLowGreyPitch;
+		SetBackgroundColor cAccentRare3;
 	}
 
 #------------------------------------
 # Normal Bases (Crafting)
 #------------------------------------
 
-	Func normalBase82
+	Func markTopLevelBaseStrong
+	{
+		SetBorderColor cRare82;
+	}
+
+	Func markTopLevelBase
 	{
 		SetBorderColor cNormal82;
 	}
 
 	Func regularBase
 	{
+		SetBackgroundColor cAccentUnremarkable;
 		SetBorderColor cBlack;
 	}
 
 	Func trinketBase
 	{
-		SetBorderColor cBlack;
-		SetBackgroundColor cBlack;
+		SetBackgroundColor cMagicTrinketGlow;
+	}
+
+	Func s1
+	{
+		SetFontSize font.t1;
+	}
+
+	Func s2
+	{
+		SetFontSize font.t2;
+	}
+
+	Func s3
+	{
 		SetFontSize font.t3;
+	}
+
+	Func s4
+	{
+		SetFontSize font.t4;
+	}
+
+	Func s5
+	{
+		SetFontSize font.t5;
+	}
+
+	Func s6
+	{
+		SetFontSize font.t6;
 	}
 
 #------------------------------------
 # Highlights (Mark)
 #------------------------------------
+
+	Func corrupt
+	{
+		SetBorderColor cMarkCorrupt;
+	}
+
+	Func corruptHigh
+	{
+		SetBorderColor cMarkCorruptHigh;
+	}
 
 	Func MarkBlack
 	{
@@ -527,6 +605,12 @@ Style UniversalValueAccents
 	Func MarkTrinket
 	{
 		SetBorderColor cRareTrinkets;
+	}
+
+	Func MarkSalvage1
+	{
+		SetBorderColor cMarkSalvagable1;
+		SetFontSize font.t4;
 	}
 
 	Func MarkSalvage2
@@ -565,7 +649,7 @@ Style UniversalValueAccents
 		SetBorderColor cWhite;
 		SetBackgroundColor cBlack;
 		PlayEffect Orange;
-		SetTextColor font.t3;
+		SetFontSize font.t3;
 	}
 
 	Func goldLarge
