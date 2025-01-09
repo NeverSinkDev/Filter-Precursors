@@ -144,13 +144,13 @@ Section EndgameCraftingBases : Clean()
 	{
 		Cont RegularGearDecorator      { !regularBase; Class == classes_equip; }
 		
-		Cont Normal80			  { ItemLevel >= 80; Class == classes_equip; }
+		Cont Normal80			  { !vanilla; ItemLevel >= 80; Class == classes_equip; }
 		Cont Normal82			  { !markTopLevelBase; ItemLevel >= 82; Class == classes_equip; }
 		
 		Cont QualityDecorator1 	  { !MarkSalvage1; Class == classes_equip; Quality >= 10; }
 		Cont QualityDecorator2 	  { !MarkSalvage2; Class == classes_equip; Quality >= 1; }
 
-		Cont NormalDecoratorJwlry { Class == "Rings" "Amulets"; }
+		Cont NormalDecoratorJwlry { !vanilla; Class == "Rings" "Amulets"; }
 	}
 
 	#------------------------------------
@@ -161,25 +161,25 @@ Section EndgameCraftingBases : Clean()
 	Section NormalCrafting : Auto("Endgame->normalcraft->any"), Rarity <= Magic
 	{
 		# Best itemlevel bases (82)
-		Show  t1idealLevel  { %D4; TopMods(); BaseType == bases.general.unbiased.t1; }
-		Show  t2idealLevel  { %D2; TopMods(); BaseType == bases.general.unbiased.t2; }
-		ShowD t3idealLevel  { TopMods(); BaseType == bases.general.unbiased.t3; }
+		Show  t1idealLevel  { !vanilla; %D4; TopMods(); BaseType == derived.general.unbiased.equip.t1; }
+		Show  t2idealLevel  { !vanilla; %D2; TopMods(); BaseType == derived.general.unbiased.equip.t2; }
+		ShowD t3idealLevel  { !vanilla; TopMods(); BaseType == derived.general.unbiased.equip.t3; }
 
 	#------------------------------------
 	# [1234] Normal, Magic Crafting: Optional Rules
 	#------------------------------------
 
 		# Matrix pauses: Optional: highlight +5minion bases for sumonners (81)
-		ShowD MinionSceptresOptional { ItemLevel >= 81; Class == "Sceptres"; }
+		ShowD MinionSceptresOptional { !markTopLevelBase; ItemLevel >= 81; Class == "Sceptres"; }
 
 	#------------------------------------
 	# [1234] Normal, Magic Crafting: Endgame Progression
 	#------------------------------------
 
 		# Matrix proceeds here. Best available bases
-		Show t1 		  { EG(); %D4; BaseType == bases.general.unbiased.t1; }
-		Show t2onLevel    { EG(); %D3; BaseType == bases.general.unbiased.t2; AreaLevel <= 75;  }
-		Show t3onLevel 	  { EG(); %D2; BaseType == bases.general.unbiased.t3; AreaLevel <= 70; }
+		Show t1 		  { !vanilla; EG(); %D4; BaseType == derived.general.unbiased.equip.t1; }
+		Show t2onLevel    { !vanilla; EG(); %D3; BaseType == derived.general.unbiased.equip.t2; AreaLevel <= 75;  }
+		Show t3onLevel 	  { !vanilla; EG(); %D2; BaseType == derived.general.unbiased.equip.t3; AreaLevel <= 70; }
 	}
 
 	#------------------------------------
@@ -263,12 +263,12 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG(), Class ==
 {
 	Cont BasicRareDecorator { !MarkBlack; }
 
-	Cont LargeRares 	{ Height >= 3; Width >= 2; }
-	Cont MediumRares1 	{ Height >= 3; Width = 1; }
-	Cont MediumRares2 	{ Height = 2; Width = 2; }
+	Cont LargeRares 	{ !vanilla; Height >= 3; Width >= 2; }
+	Cont MediumRares1 	{ !vanilla; Height >= 3; Width = 1; }
+	Cont MediumRares2 	{ !vanilla; Height = 2; Width = 2; }
 	Cont TinyRares 		{ !MarkTrinket; Height = 1; Width <= 2; }
 
-	Cont ILVL80 	  { ItemLevel >= 80; }
+	Cont ILVL80 	  { !vanilla; ItemLevel >= 80; }
 	Cont ILVL82 	  { !Mark82; ItemLevel >= 82; }
 
 	# Optional: caster weapons get their most important mods on 81
@@ -351,27 +351,27 @@ Section ConditionalRareHider : Auto("HideLayer")
 	Section EndgameRareGear : Auto("rr")
 	{
 		# T1 rares
-		Show T1_top 	{ %D5; !rRares1; BaseType == bases.general.unbiased.t1; TopMods(); }
-		Show T1_other  	{ %D4; !rRares1; BaseType == bases.general.unbiased.t1; ItemLevel <= 81;  }
+		Show T1_top 	{ %D5; !rRares1; BaseType == derived.general.unbiased.equip.t1; TopMods(); }
+		Show T1_other  	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t1; ItemLevel <= 81;  }
 
 #!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (70ish+ gear)
 		
-		Show T2_top 	{ %D4; !rRares1; BaseType == bases.general.unbiased.t2; TopMods(); }
-		Show T2_a1  	{ %D3; !rRares2; BaseType == bases.general.unbiased.t2; ItemLevel >= 75; ItemLevel <= 81; }
-		Show T2_other  	{ %D4; !rRares1; BaseType == bases.general.unbiased.t2; ItemLevel <= 74;  }
+		Show T2_top 	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t2; TopMods(); }
+		Show T2_a1  	{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t2; ItemLevel >= 75; ItemLevel <= 81; }
+		Show T2_other  	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t2; ItemLevel <= 74;  }
 
 #!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (65ish+ gear)
 
-		Show T3_top 	{ %D3; !rRares2; BaseType == bases.general.unbiased.t3; TopMods(); }
-		Show T3_a1 		{ %D2; !rRares3; BaseType == bases.general.unbiased.t3; ItemLevel >= 75; ItemLevel <= 81; }
-		Show T3_a2 		{ %D3; !rRares2; BaseType == bases.general.unbiased.t3; ItemLevel >= 70; ItemLevel <= 74; }
-		Show T3_other 	{ %D4; !rRares1; BaseType == bases.general.unbiased.t3; ItemLevel <= 69;  }
+		Show T3_top 	{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t3; TopMods(); }
+		Show T3_a1 		{ %D2; !rRares3; BaseType == derived.general.unbiased.equip.t3; ItemLevel >= 75; ItemLevel <= 81; }
+		Show T3_a2 		{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t3; ItemLevel >= 70; ItemLevel <= 74; }
+		Show T3_other 	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t3; ItemLevel <= 69;  }
 
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (55ish+ gear)
 
-		Show T4_a1 		{ %D1; !rRares3; BaseType == bases.general.unbiased.t4;  ItemLevel >= 75; }
-		Show T4_a2 		{ %D2; !rRares2; BaseType == bases.general.unbiased.t4;  ItemLevel >= 70; ItemLevel <= 74; }
-		Show T4_other 	{ %D3; !rRares2; BaseType == bases.general.unbiased.t4;  ItemLevel <= 69; }
+		Show T4_a1 		{ %D1; !rRares3; BaseType == derived.general.unbiased.equip.t4;  ItemLevel >= 75; }
+		Show T4_a2 		{ %D2; !rRares2; BaseType == derived.general.unbiased.equip.t4;  ItemLevel >= 70; ItemLevel <= 74; }
+		Show T4_other 	{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t4;  ItemLevel <= 69; }
 
 #!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (lower)
 
