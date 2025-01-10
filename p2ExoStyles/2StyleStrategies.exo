@@ -34,7 +34,7 @@ Func RemoveEffects()
     PlayAlertSound NONE; MM NONE; PlayEffect NONE;
 }
 
-Style UniversalValueAccents
+Style Common
 {
 	Func tierS
 	{
@@ -82,6 +82,11 @@ Style UniversalValueAccents
 #------------------------------------
 # Utility
 #------------------------------------
+
+	Func Vanilla()
+	{
+		Empty();
+	}	
 
 	Func RareDecoratorRemover ()
 	{
@@ -143,9 +148,9 @@ Style UniversalValueAccents
 
 	Func Exotic3 ()
 	{
-		SetFontSize font.t4;
+		SetFontSize font.t3;
 		SetTextColor cExotic;
-		PlayAlertSound asUnique; PlayEffect Blue Temp; MinimapIcon 2 Blue Diamond;
+		PlayAlertSound asUnique; PlayEffect Blue Temp;
 	}
 
 #------------------------------------
@@ -342,7 +347,7 @@ Style UniversalValueAccents
 	Func UniqueC
 	{
 		SetFontSize font.t3;
-		Bordered(cUnique);
+		Text(cUnique);
 		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 2 Brown mUnique;
 	}
 
@@ -389,7 +394,6 @@ Style UniversalValueAccents
 		SetBorderColor 0 0 0 255;
 		PlayEffect Red Temp; 
 		MinimapIcon 1 Red mMaps; 
-		PlayAlertSound asHighMaps; 
 		SetFontSize font.t2;
 	}
 
@@ -398,7 +402,6 @@ Style UniversalValueAccents
 		SetBorderColor 0 0 0 255;
 		PlayEffect Orange Temp; 
 		MinimapIcon 1 Red mMaps; 
-		PlayAlertSound asMaps; 
 		SetFontSize font.t3;
 	}
 
@@ -407,7 +410,6 @@ Style UniversalValueAccents
 		SetBorderColor 200 200 200 255;
 		PlayEffect Yellow Temp; 
 		MinimapIcon 1 Yellow mMaps; 
-		PlayAlertSound asMaps; 
 		SetFontSize font.t3;
 	}
 
@@ -416,7 +418,6 @@ Style UniversalValueAccents
 		SetBorderColor 200 200 200 255;
 		PlayEffect White Temp; 
 		MinimapIcon 2 White mMaps; 
-		PlayAlertSound asMaps; 
 		SetFontSize font.t3;
 	}
 
@@ -431,22 +432,28 @@ Style UniversalValueAccents
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
 		SetFontSize font.t2;
+		PlayAlertSound asHighMaps; 
 	}
 
 	Func Map2()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
 		SetFontSize font.t2;
+		PlayAlertSound asHighMaps; 
+
 	}
 
 	Func Map3()
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayAlertSound asMaps; 
+
 	}
 
 	Func Map4()
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayAlertSound asMaps; 
 	}
 
 #------------------------------------
@@ -617,6 +624,18 @@ Style UniversalValueAccents
 	{
 		SetBorderColor cMarkSalvagable2;
 		SetFontSize font.t5;
+	}
+
+	Func MarkSalvage1lvl
+	{
+		SetBorderColor cMarkSalvagable1;
+		SetFontSize font.t3;
+	}
+
+	Func MarkSalvage2lvl
+	{
+		SetBorderColor cMarkSalvagable2;
+		SetFontSize font.t3;
 	}
 
 	Func MarkChance

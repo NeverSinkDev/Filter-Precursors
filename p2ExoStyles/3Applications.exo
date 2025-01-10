@@ -41,10 +41,10 @@ Style MainRules
 {
 	# General
 	Apply(meta.hide ,HideLayer* => !UniversalHideLayer.any);
-	Apply(meta.safe, *.restex => !UniversalValueAccents.restex);
+	Apply(meta.safe, *.restex => !Common.restex);
 }
 
 Style GlobalAccents
 {
-	Apply(accents, ALL => UniversalValueAccents);
+	Apply(accents, ALL => Common);
 }
