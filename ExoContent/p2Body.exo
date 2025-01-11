@@ -161,9 +161,9 @@ Section EndgameCraftingBases : Clean()
 	Section NormalCrafting : Auto("Endgame->normalcraft->any"), Rarity <= Magic
 	{
 		# Best itemlevel bases (82)
-		Show  t1idealLevel  { !vanilla; %D4; TopMods(); BaseType == derived.general.unbiased.equip.t1; }
-		Show  t2idealLevel  { !vanilla; %D2; TopMods(); BaseType == derived.general.unbiased.equip.t2; }
-		ShowD t3idealLevel  { !vanilla; TopMods(); BaseType == derived.general.unbiased.equip.t3; }
+		Show  t1idealLevel  { !vanilla; %D4; TopMods(); BaseType == derived.general.unbiased.equip.t1; Class == classes_nonJwlryEquip; }
+		Show  t2idealLevel  { !vanilla; %D2; TopMods(); BaseType == derived.general.unbiased.equip.t2; Class == classes_nonJwlryEquip; }
+		ShowD t3idealLevel  { !vanilla; TopMods(); BaseType == derived.general.unbiased.equip.t3;  Class == classes_nonJwlryEquip; }
 
 	#------------------------------------
 	# [1234] Normal, Magic Crafting: Optional Rules
@@ -177,9 +177,9 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 
 		# Matrix proceeds here. Best available bases
-		Show t1 		  { !vanilla; EG(); %D4; BaseType == derived.general.unbiased.equip.t1; }
-		Show t2onLevel    { !vanilla; EG(); %D3; BaseType == derived.general.unbiased.equip.t2; AreaLevel <= 75;  }
-		Show t3onLevel 	  { !vanilla; EG(); %D2; BaseType == derived.general.unbiased.equip.t3; AreaLevel <= 70; }
+		Show t1 		  { !vanilla; EG(); %D4; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t1; }
+		Show t2onLevel    { !vanilla; EG(); %D3; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t2; AreaLevel <= 75;  }
+		Show t3onLevel 	  { !vanilla; EG(); %D2; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t3; AreaLevel <= 70; }
 	}
 
 	#------------------------------------
@@ -187,7 +187,7 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 
 	#!! Waypoint c4.gear.jewellery : "Jewellery - Endgame Magic&Normal"
-	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean()
+	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean(), Class == "Rings" "Amulets"
 	{
 		Show RingAmuT1idealLevel { %D6; !s2; !trinketBase; TopMods(); BaseType == derived.rares.jwl.ringsamu.t1; }
 		Show RingAmuT2idealLevel { %D5; !s2; !trinketBase; TopMods(); BaseType == derived.rares.jwl.ringsamu.t2; }
@@ -196,11 +196,14 @@ Section EndgameCraftingBases : Clean()
 		Show RingAmuT1 { %D5; !s3; !trinketBase;  BaseType == derived.rares.jwl.ringsamu.t1; }
 		Show RingAmuT2 { %D4; !s3; !trinketBase;  BaseType == derived.rares.jwl.ringsamu.t2; }
 		Show RingAmuT3 { %D3; !s4; BaseType == derived.rares.jwl.ringsamu.t3; }
+	}
 
 	#------------------------------------
 	# [1234] Normal, Magic Crafting: Belts
 	#------------------------------------
 
+	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean(), Class == "Belts"
+	{
 		Show BeltsT1idealLevel { %D5; !s3; !trinketBase;  TopMods(); BaseType == derived.rares.jwl.belts.t1; }
 		Show BeltsT2idealLevel { %D5; !s3; TopMods(); BaseType == derived.rares.jwl.belts.t2; }
 		Show BeltsT3idealLevel { %D4; !s4; TopMods(); BaseType == derived.rares.jwl.belts.t3; }
@@ -286,7 +289,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= eglevel
 #===============================================================================================================
 #!! Waypoint c6.rare.optionalhide : "Rare Endgame Items - (Optional) Hiding Corrupted and Mirrored Items"
 
-Section ConditionalRareHider : Auto("HideLayer")
+Section ConditionalRareHider : Auto("ConditionalHide")
 {
 	HideD IdHider 		 { !Shrink; Identified True; Class == classes_equip; }
 	HideD CorruptedRares { !shrink; Corrupted True; AnyEnchantment False; Identified False; Class == classes_nonJwlryEquip; }
@@ -333,7 +336,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c6.rare.drophiders : "Rare Endgame Items - Hide low items on high levels"
 
-	Section HideLayerRareRuleIncremental : Auto("HideLayer")
+	Section HideLayerRareRuleIncremental : Auto("ConditionalHide")
 	{
 		# Optional: Incremental hide layers
 		HideD RRIHide1 { AreaLevel >= 82; DropLevel < 75; Class == classes_nonJwlryEquip; }
@@ -348,7 +351,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (75ish+ gear)
 
-	Section EndgameRareGear : Auto("rr")
+	Section EndgameRareGear : Auto("rr"), Class == classes_nonJwlryEquip
 	{
 		# T1 rares
 		Show T1_top 	{ %D5; !rRares1; BaseType == derived.general.unbiased.equip.t1; TopMods(); }
@@ -614,7 +617,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 {
 	Show rare 	  	   { %H5; !CurrTierD; !s2; BaseType == currency.leveling.rare; }
 	Show magic    	   { %H4; !Supply2; !s2; BaseType == currency.leveling.magic; }
-	Show wisdomStart   { %H3; !Supply3; !s3; AreaLevel < 10; BaseType == currency.leveling.wisdom; }
+	Show wisdomStart   { %H3; !Supply3; !s3; AreaLevel < 17; BaseType == currency.leveling.wisdom; }
 	Show wisdom   	   { %H3; !SupplyPoor; BaseType == currency.leveling.wisdom; }
 }
 
@@ -716,15 +719,6 @@ Section CurrencyOmen : Auto("currency->omen"), Class == "Omen", !Currency
 	Show restex { !Unknown; BaseType "Omen "; }
 }
 
-#------------------------------------
-# [5104] Others
-#------------------------------------
-
-Section CurrencyExotic : Auto("currency->others"), Class == class_currency
-{
-	Show misc { !CurrTierA; BaseType == currency.exotic.undroppable; }
-}
-
 #===============================================================================================================
 # [[4900]] Misc Map Like
 #===============================================================================================================
@@ -780,7 +774,6 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 	Show TrialKeyUltimatumHigh 		 { %H4; !FragC; BaseType == "Inscribed Ultimatum"; ItemLevel >= 75; ItemLevel <= 79 }
 	Show TrialKeyUltimatumLow 		 { %H3; !FragD; BaseType == "Inscribed Ultimatum"; ItemLevel <= 74; }
 
-	Show RelicKeys 	   { !TIERS; BaseType == miscmap.keys; }
 	Show RelicKeysSafe { !TIERS; Class == "Vault Keys"; }
 }
 

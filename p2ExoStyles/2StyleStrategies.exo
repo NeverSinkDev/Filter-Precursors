@@ -392,32 +392,24 @@ Style Common
 	Func DecoMap1()
 	{
 		SetBorderColor 0 0 0 255;
-		PlayEffect Red Temp; 
-		MinimapIcon 1 Red mMaps; 
 		SetFontSize font.t2;
 	}
 
 	Func DecoMap2()
 	{
 		SetBorderColor 0 0 0 255;
-		PlayEffect Orange Temp; 
-		MinimapIcon 1 Red mMaps; 
 		SetFontSize font.t3;
 	}
 
 	Func DecoMap3()
 	{
 		SetBorderColor 200 200 200 255;
-		PlayEffect Yellow Temp; 
-		MinimapIcon 1 Yellow mMaps; 
 		SetFontSize font.t3;
 	}
 
 	Func DecoMap4()
 	{
 		SetBorderColor 200 200 200 255;
-		PlayEffect White Temp; 
-		MinimapIcon 2 White mMaps; 
 		SetFontSize font.t3;
 	}
 
@@ -431,28 +423,33 @@ Style Common
 	Func Map1()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
-		SetFontSize font.t2;
+		PlayEffect Red Temp; 
+		MinimapIcon 1 Yellow mMaps; 
 		PlayAlertSound asHighMaps; 
 	}
 
 	Func Map2()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
-		SetFontSize font.t2;
-		PlayAlertSound asHighMaps; 
+		PlayEffect Orange Temp; 
+		MinimapIcon 1 White mMaps; 
+		PlayAlertSound asMaps; 
 
 	}
 
 	Func Map3()
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayEffect Yellow Temp; 
+		MinimapIcon 1 White mMaps; 
 		PlayAlertSound asMaps; 
-
 	}
 
 	Func Map4()
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayEffect White Temp; 
+		MinimapIcon 2 White mMaps; 
 		PlayAlertSound asMaps; 
 	}
 
