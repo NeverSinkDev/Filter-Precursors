@@ -423,16 +423,16 @@ Style Common
 	Func Map1()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
-		PlayEffect Red Temp; 
-		MinimapIcon 1 Yellow mMaps; 
+		PlayEffect Yellow; 
+		MinimapIcon 1 Red mMaps; 
 		PlayAlertSound asHighMaps; 
 	}
 
 	Func Map2()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
-		PlayEffect Orange Temp; 
-		MinimapIcon 1 White mMaps; 
+		PlayEffect Yellow Temp; 
+		MinimapIcon 1 Yellow mMaps; 
 		PlayAlertSound asMaps; 
 
 	}
@@ -440,7 +440,7 @@ Style Common
 	Func Map3()
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
-		PlayEffect Yellow Temp; 
+		PlayEffect White Temp; 
 		MinimapIcon 1 White mMaps; 
 		PlayAlertSound asMaps; 
 	}
