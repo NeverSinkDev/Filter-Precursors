@@ -208,6 +208,7 @@ Section EndgameCraftingBases : Clean()
 
 		# Matrix pauses: Optional: highlight +5minion bases for sumonners (81)
 		ShowD MinionSceptresOptional { !markTopLevelBase; ItemLevel >= 81; Class == "Sceptres"; }
+		Show CraftingWands { !markTopLevelBase; %D4; ItemLevel >= 81; Class == "Sceptres"; BaseType == "Siphoning Wand" "Attuned Wand" }
 
 	#------------------------------------
 	# [1234] Normal, Magic Crafting: Endgame Progression
@@ -442,8 +443,8 @@ Section SocketsRunes : Auto("sockets->runes"), Class == "Socketable"
 	# Highlight lower runes while leveling as well
 	Show LevelingRunes { %H4; !Supply2; LVL(); BaseType == sockets.runes.t3 + sockets.runes.t4; }
 
-	Show t1 { %H5; !CurrTierC; BaseType == sockets.runes.t1; }
-	Show t2 { %H4; !Supply1; BaseType == sockets.runes.t2; }
+	Show t1 { %H6; !CurrTierC; BaseType == sockets.runes.t1; }
+	Show t2 { %H5; !Supply1; BaseType == sockets.runes.t2; }
 	Show t3 { %H3; !Supply2; BaseType == sockets.runes.t3; }
 	Show t4 { %H2; !Supply3; BaseType == sockets.runes.t4; }
 
@@ -515,6 +516,9 @@ Section UncutGems : Auto("gems->uncut")
 	Show OtherSpiritEg  { %H3; !Gems3; BaseType == "Uncut Spirit Gem"; EG(); }
 	Show OtherSkillEg   { %H3; !Gems3; BaseType == "Uncut Skill Gem"; EG(); }
 	Show OtherSupportEg { %H3; !Gems3; BaseType == "Uncut Support Gem"; EG(); }
+
+	# Hider for filterblade
+	Hide exHide { !shrink; BaseType == "Uncut Spirit Gem" "Uncut Support Gem" "Uncut Skill Gem";}
 }
 
 #!! Waypoint c8.gems.others : "Gems - Specific"
