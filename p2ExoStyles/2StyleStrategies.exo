@@ -1,0 +1,718 @@
+#------------------------------------
+# Global Strategies
+#------------------------------------
+
+# These are global accents that can be used without any context
+
+Func BrickBlack(accent)
+{
+	SetTextColor cBlack; SetBorderColor cBlack; SetBackgroundColor accent;
+}
+
+Func BrickWhite(accent)
+{
+	SetTextColor cWhite; SetBorderColor cWhite; SetBackgroundColor accent;
+}
+
+Func BorderedGlow(accent, glow)
+{
+	SetTextColor accent; SetBorderColor accent; SetBackgroundColor glow;
+}
+
+Func Bordered(accent)
+{
+	SetTextColor accent; SetBorderColor accent;
+}
+
+Func Text(accent)
+{
+	SetTextColor accent;
+}
+
+Func RemoveEffects()
+{
+    PlayAlertSound NONE; MM NONE; PlayEffect NONE;
+}
+
+Style Common
+{
+	Func tierS
+	{
+		SetTextColor cTierSAccent; SetBorderColor cTierSAccent; SetBackgroundColor cWhite; 
+		PlayAlertSound asS; PlayEffect Red; MinimapIcon 0 Red Star; 
+		SetFontSize 45;
+	}
+
+	Func QuestLike
+	{
+		SetTextColor cQuestGreen;
+		PlayEffect Green;
+		SetFontSize font.t2;
+		MinimapIcon 0 Green Pentagon;
+		PlayAlertSound asUnique;
+	}
+
+	Func Artifact
+	{
+		SetFontSize font.t2;
+		SetTextColor cArtifact; SetBorderColor cArtifact; SetBackgroundColor cArtifactGlow;
+		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
+	}
+
+	Func Useless
+	{
+		SetFontSize font.t8;
+		SetBackgroundColor cAccentMinimal;
+	}
+
+	Func FlaskCharm1
+	{
+		SetBackgroundColor cAccentFlaskCharmGlow;
+		SetBorderColor cGrey;
+		SetFontSize font.t3;
+	}
+
+	Func FlaskCharm2
+	{
+		SetBackgroundColor cAccentFlaskCharmGlow;
+		SetBorderColor cGrey;
+		SetFontSize font.t4;
+	}
+
+#------------------------------------
+# Utility
+#------------------------------------
+
+	Func Vanilla()
+	{
+		Empty();
+	}	
+
+	Func RareDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+		SetTextColor 255 255 119;
+	}
+
+	Func MagicDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetTextColor 136 136 255;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+		RemoveEffects();
+	}
+
+	Func NormalDecoratorRemover ()
+	{
+		SetFontSize 32;
+		SetTextColor 200 200 200;
+		SetBorderColor 0 0 0 255;
+		SetBackgroundColor 0 0 0 240;
+		RemoveEffects();
+	}
+
+	Func Shrink()
+	{
+		SetFontSize 18;
+		SetBackgroundColor 0 0 0 0;
+		RemoveEffects();
+	}
+
+	Func Unknown()
+	{
+		SetFontSize font.max;
+		SetTextColor 0 255 255 255; SetBorderColor 0 255 255 255; SetBackgroundColor 255 0 255 255;
+		PlayAlertSound asUnique; PlayEffect Pink; MinimapIcon 0 Pink Pentagon;
+	}
+
+#------------------------------------
+# EXOTICS
+#------------------------------------
+
+	Func Exotic1 ()
+	{
+		SetFontSize font.t2;
+		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
+	}
+
+	Func Exotic2 ()
+	{
+		SetFontSize font.t3;
+		SetTextColor cExotic;
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue Diamond;
+	}
+
+	Func Exotic3 ()
+	{
+		SetFontSize font.t3;
+		SetTextColor cExotic;
+		PlayAlertSound asUnique; PlayEffect Blue Temp;
+	}
+
+#------------------------------------
+# CURRENCY
+#------------------------------------
+
+	## Greater jeweller
+	Func CurrTierA
+	{
+		SetFontSize font.t1;
+		BrickWhite(cCurrTierA);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mCurrency;
+	}
+
+	## Above Exalted Tier
+	Func CurrTierB
+	{
+		SetFontSize font.t2;
+		BrickBlack(cCurrTierB);
+		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mCurrency;
+	}
+
+	## Exalted
+	Func CurrTierC
+	{
+		SetFontSize font.t2;
+		BrickBlack(cCurrTierC);
+		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 1 Yellow mCurrency;
+	}
+
+	## Below Exalted Tier ("Alchemy")
+	Func CurrTierD
+	{
+		SetFontSize font.t3;
+		BrickBlack(cCurrTierD);
+		PlayAlertSound asCurr; PlayEffect White; MinimapIcon 2 White mCurrency;
+	}
+
+	## BelowBelow Exalted Tier ("Chrom")
+	Func CurrTierE
+	{
+		SetFontSize font.t3;
+		Bordered(cCurrTierE);
+		PlayEffect White Temp; MinimapIcon 2 Grey mCurrency;
+	}
+
+#------------------------------------
+# SUPPLIES
+#------------------------------------
+
+	# Artifact like
+	Func SupplyArtifact
+	{ 
+		BorderedGlow(cSupplies1, cSuppliesGlow);
+		SetFontSize font.t3;
+		PlayEffect Yellow Temp;
+		MinimapIcon 1 White mSplinter;
+		PlayAlertSound asCurr;
+	}
+
+	Func Supply1
+	{
+		BorderedGlow(cSupplies1, cSuppliesGlow);
+		SetFontSize font.t3;
+		PlayEffect Yellow Temp;
+	}
+
+	# Transmutes, Augments, Runes
+	Func Supply2
+	{
+		Bordered(cSupplies2);
+		SetFontSize font.t4;
+	}
+
+	# Wisdom scrolls and transmute splinters
+	Func Supply3
+	{
+		Bordered(cSupplies3);
+		SetFontSize font.t4;
+	}
+
+	# Wisdom scrolls and transmute splinters
+	Func SupplyPoor
+	{
+		SetTextColor cSupplies3;
+		SetFontSize font.t5;
+	}
+
+#------------------------------------
+# FRAGMENT
+#------------------------------------
+
+	Func FragA
+	{
+		SetFontSize font.t1;
+		BrickWhite(cFragTierA);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mFragment;
+	}
+
+	Func FragB
+	{
+		SetFontSize font.t2;
+		BrickBlack(cFragTierB);
+		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Yellow mFragment;
+	}
+
+	Func FragC
+	{
+		SetFontSize font.t2;
+		BrickBlack(cFragTierC);
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 White mFragment;
+	}
+
+	Func FragD
+	{
+		SetFontSize font.t3;
+		Bordered(cFragTierD);
+		SetBackgroundColor 50 0 75
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 2 White mFragment;
+	}
+
+	Func FragE
+	{
+		SetFontSize font.t4;
+		Text(cFragTierE);
+		PlayEffect Purple Temp; MinimapIcon 2 Grey mFragment;
+	}
+
+#------------------------------------
+# Splinter
+#------------------------------------
+
+	Func Splinter1
+	{
+		SetFontSize font.t1;
+		BrickWhite(cFragTierA);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mSplinter;
+	}
+
+	Func Splinter2
+	{
+		SetFontSize font.t1;
+		BrickBlack(cFragTierB);
+		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 0 Red mSplinter;
+	}
+
+	Func Splinter3
+	{
+		SetFontSize font.t2;
+		BrickBlack(cFragTierC);
+		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Orange mSplinter;
+	}
+
+	Func Splinter4
+	{
+		SetFontSize font.t3;
+		Bordered(cFragTierD);
+		SetBackgroundColor cSplinterBackground;
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 Yellow mSplinter;
+	}
+
+	Func Splinter5
+	{
+		SetFontSize font.t4;
+		Bordered(cFragTierD);
+		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 White mSplinter;
+	}
+
+#------------------------------------
+# UNIQUE
+#------------------------------------	
+
+	Func UniqueA
+	{
+		SetFontSize font.t1;
+		BrickWhite(cUnique);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Yellow mUnique;
+	}
+
+	Func UniqueX
+	{
+		SetFontSize font.t2;
+		BrickBlack(cUnique);
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue mUnique;
+	}
+
+	Func UniqueB
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cUnique, cUniqueGlow);
+		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 1 Brown mUnique;
+	}
+
+	Func UniqueC
+	{
+		SetFontSize font.t3;
+		Text(cUnique);
+		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 2 Brown mUnique;
+	}
+
+	Func ExoticMapIcon
+	{
+		MinimapIcon 2 Blue mUnique;
+	}
+
+#------------------------------------
+# Gems
+#------------------------------------
+
+	Func Gems1
+	{
+		BorderedGlow(cGems, cGemsGlow);
+		SetFontSize font.t2;
+		PlayAlertSound asCurr;
+		MinimapIcon 1 Cyan Triangle;
+		PlayEffect Cyan;
+	}
+
+	Func Gems2
+	{
+		Bordered(cGems);
+		SetFontSize font.t2;
+		PlayAlertSound asCurr;
+		MinimapIcon 1 Cyan Triangle;
+		PlayEffect Cyan;
+	}
+
+	Func Gems3
+	{
+		Bordered(cGems);
+		SetFontSize font.t5;
+		PlayEffect Cyan Temp;
+	}
+
+#------------------------------------
+# Waystones
+#------------------------------------
+
+	Func DecoMap1()
+	{
+		SetBorderColor 0 0 0 255;
+		SetFontSize font.t2;
+	}
+
+	Func DecoMap2()
+	{
+		SetBorderColor 0 0 0 255;
+		SetFontSize font.t3;
+	}
+
+	Func DecoMap3()
+	{
+		SetBorderColor 200 200 200 255;
+		SetFontSize font.t3;
+	}
+
+	Func DecoMap4()
+	{
+		SetBorderColor 200 200 200 255;
+		SetFontSize font.t3;
+	}
+
+	Func DecoMapOverleveled()
+	{
+		SetBorderColor 200 200 200 255;
+		SetFontSize font.t4;
+		RemoveEffects();
+	}
+
+	Func Map1()
+	{
+		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
+		PlayEffect Yellow; 
+		MinimapIcon 1 Red mMaps; 
+		PlayAlertSound asHighMaps; 
+	}
+
+	Func Map2()
+	{
+		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
+		PlayEffect Yellow Temp; 
+		MinimapIcon 1 Yellow mMaps; 
+		PlayAlertSound asMaps; 
+
+	}
+
+	Func Map3()
+	{
+		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayEffect White Temp; 
+		MinimapIcon 1 White mMaps; 
+		PlayAlertSound asMaps; 
+	}
+
+	Func Map4()
+	{
+		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
+		PlayEffect White Temp; 
+		MinimapIcon 2 White mMaps; 
+		PlayAlertSound asMaps; 
+	}
+
+#------------------------------------
+# Value Trinkets
+#------------------------------------
+
+	Func ValueTrinketRare
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cRareTrinkets, cRareTrinketGlow);
+		PlayEffect Yellow;
+		MinimapIcon 1 Yellow mTrinkets;
+		PlayAlertSound asCurr;
+	}
+
+	Func ValueTrinketMagic
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cMagicTrinkets, cMagicTrinketGlow);
+		PlayEffect Blue;
+		MinimapIcon 1 Blue mTrinkets;
+		PlayAlertSound asCurr;
+	}
+
+	Func ValueTrinketMagicLow
+	{
+		SetFontSize font.t4;
+		Bordered(cMagicTrinkets);
+		PlayEffect Blue Temp;
+		MinimapIcon 2 Blue mTrinkets;
+	}
+
+	Func rGearTrinket1
+	{
+		SetFontSize font.t2;
+		SetBackgroundColor cRareTrinketGlow;
+		PlayEffect Yellow;
+		MinimapIcon 1 White mTrinkets;
+	}
+
+	Func rGearTrinket2
+	{
+		SetFontSize font.t3;
+		SetBackgroundColor cBlack;
+		PlayEffect Yellow;
+		MinimapIcon 1 White mTrinkets;
+	}
+
+	Func rGearTrinket3
+	{
+		SetFontSize font.t4;
+		SetBackgroundColor cBlack;
+	}
+
+#------------------------------------
+# Rare Gear
+#------------------------------------
+
+	Func rRares1
+	{
+		SetFontSize font.t3;
+		SetBackgroundColor cBlack;
+	}
+
+	Func rRares2
+	{
+		SetFontSize font.t4;
+		SetBackgroundColor cAccentRare2;
+	}
+
+	Func rRares3
+	{
+		SetFontSize font.t5;
+		SetBackgroundColor cAccentRare3;
+	}
+
+#------------------------------------
+# Normal Bases (Crafting)
+#------------------------------------
+
+	Func markTopLevelBaseStrong
+	{
+		SetBorderColor cRare82;
+	}
+
+	Func markTopLevelBase
+	{
+		SetBorderColor cNormal82;
+	}
+
+	Func regularBase
+	{
+		SetBackgroundColor cAccentUnremarkable;
+		SetBorderColor cBlack;
+	}
+
+	Func trinketBase
+	{
+		SetBackgroundColor cMagicTrinketGlow;
+	}
+
+	Func s1
+	{
+		SetFontSize font.t1;
+	}
+
+	Func s2
+	{
+		SetFontSize font.t2;
+	}
+
+	Func s3
+	{
+		SetFontSize font.t3;
+	}
+
+	Func s4
+	{
+		SetFontSize font.t4;
+	}
+
+	Func s5
+	{
+		SetFontSize font.t5;
+	}
+
+	Func s6
+	{
+		SetFontSize font.t6;
+	}
+
+#------------------------------------
+# Highlights (Mark)
+#------------------------------------
+
+	Func corrupt
+	{
+		SetBorderColor cMarkCorrupt;
+	}
+
+	Func corruptHigh
+	{
+		SetBorderColor cMarkCorruptHigh;
+	}
+
+	Func MarkBlack
+	{
+		SetBorderColor cBlack;
+	}
+
+	Func Mark82
+	{
+		SetTextColor cRare82;
+	}
+
+	Func MarkTrinket
+	{
+		SetBorderColor cRareTrinkets;
+	}
+
+	Func MarkSalvage1
+	{
+		SetBorderColor cMarkSalvagable1;
+		SetFontSize font.t4;
+	}
+
+	Func MarkSalvage2
+	{
+		SetBorderColor cMarkSalvagable2;
+		SetFontSize font.t5;
+	}
+
+	Func MarkSalvage1lvl
+	{
+		SetBorderColor cMarkSalvagable1;
+		SetFontSize font.t3;
+	}
+
+	Func MarkSalvage2lvl
+	{
+		SetBorderColor cMarkSalvagable2;
+		SetFontSize font.t3;
+	}
+
+	Func MarkChance
+	{
+		SetBorderColor cMarkChancable;
+		SetFontSize font.t3;
+		MinimapIcon 1 Green mExotic;
+		PlayEffect Green Temp;
+		PlayAlertSound asUnique;
+	}
+
+	Func MarkMapUp()
+	{
+		SetBorderColor cMarkMapUpgrade;
+	}
+
+	Func MarkExotic()
+	{
+ 		SetBorderColor cExotic;
+	}
+
+#------------------------------------
+# GOLD
+#------------------------------------
+
+	Func goldHuge
+	{
+		MinimapIcon 1 Yellow Cross;
+		SetTextColor cWhite;
+		SetBorderColor cWhite;
+		SetBackgroundColor cBlack;
+		PlayEffect Orange;
+		SetFontSize font.t3;
+	}
+
+	Func goldLarge
+	{
+		MinimapIcon 1 White Cross;
+		SetTextColor cWhite;
+		SetBorderColor cWhite;
+		PlayEffect Orange Temp;
+	}
+
+	Func goldMedium
+	{
+		SetTextColor cWhite;
+		SetBorderColor cWhite;
+		PlayEffect Orange Temp;
+	}
+
+	Func goldSmall
+	{
+		SetTextColor cGold;
+		SetBorderColor cBlack;
+		SetBackgroundColor cAccentVeryLow;
+	}
+}
+
+# This rule is applied to every single rule in the filter first.
+Style UniversalPreProc
+{
+	Func ApplyToAll ()
+	{
+		Empty();
+	}
+}
+
+# Global strategies can be applied to any section
+# Even if they miss the parent tag
+
+Style UniversalHideLayer
+{
+	Func Any ()
+	{
+		SetBorderColor 0 0 0 0;
+		SetBackgroundColor 0 0 0 0;
+		MinimapIcon NONE;
+		PlayEffect NONE;
+		PlayAlertSound NONE;
+		SetFontSize font.min;
+		DisableDropSound True;
+	}
+}
