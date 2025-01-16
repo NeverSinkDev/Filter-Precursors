@@ -409,18 +409,18 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 Section SalvagableRares : Rarity Rare, Auto("Rare->Salvagable"), ItemLevel >= eglevel
 {
 	# Double Quality Currencies
-	Show Quality2MartialAny { %D3; !MarkSalvage2; Class == classes_attack; Quality >= 10; }
-	Show Quality2CasterAny  { %D3; !MarkSalvage1; Class == classes_cast; Quality >= 10; }
-	Show Quality2ArmorAny   { %D4; !MarkSalvage1; Class == classes_armor; Quality >= 10; }
+	Show Quality2MartialAny { !MarkSalvage2; %D3; Class == classes_attack; Quality >= 10; }
+	Show Quality2CasterAny  { !MarkSalvage1; %D3; Class == classes_cast; Quality >= 10; }
+	Show Quality2ArmorAny   { !MarkSalvage1; %D5; Class == classes_armor; Quality >= 10; }
 
 	# Single Quality Currencies
-	Show QualityMartialAny { %D2; !MarkSalvage2; Class == classes_attack; Quality >= 1; }
-	Show QualityCasterAny  { %D2; !MarkSalvage2; Class == classes_cast; Quality >= 1; }
-	Show QualityArmorAny   { %D3; !MarkSalvage2; Class == classes_armor; Quality >= 1; }
+	Show QualityMartialAny { !MarkSalvage2; %D2; Class == classes_attack; Quality >= 1; }
+	Show QualityCasterAny  { !MarkSalvage2; %D2; Class == classes_cast; Quality >= 1; }
+	Show QualityArmorAny   { !MarkSalvage2; %D4; Class == classes_armor; Quality >= 1; }
 
 	# Artificer Scraps
-	Show SocketsLarge 	   { %D1; !MarkSalvage2; Class == classes_equip; Sockets > 0; Height >= 3; }
-	Show SocketsSmall 	   { %D2; !MarkSalvage2; Class == classes_equip; Sockets > 0; Height < 3 }
+	Show SocketsLarge 	   { !MarkSalvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; }
+	Show SocketsSmall 	   { !MarkSalvage2; %D2; Class == classes_equip; Sockets > 0; Height < 3 }
 }
 
 #===============================================================================================================
@@ -893,13 +893,6 @@ Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == class_flasks
 # [[6000]] Leveling - Life Mana Flasks
 #===============================================================================================================
 #!! Waypoint c20.leveling.flasks.qual : "Leveling - Quality Flasks"
-
-Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasklikes, Rarity <= Magic
-{
-	Show max  { %D5; !FlaskCharm1; !MarkSalvage1; Quality >= 20; }
-	Show high { %D4; !FlaskCharm2; !MarkSalvage1; Quality >= 14; }
-	Show any  { %D3; !FlaskCharm2; Quality >= 1; }
-}
 
 #------------------------------------
 # [6002] Life flasks
