@@ -105,10 +105,7 @@ Section EndgameFlasks : Auto("Endgame->Flasks"), Rarity <= Magic, EG(), Clean(),
 {
 	Show TopLevelQualityFlasks { %D5; !markTopLevelBaseStrong; !FlaskCharm1; ItemLevel >= 83; Quality > 10; }
 	Show TopLevelFlasks { %D4; !markTopLevelBaseStrong; !FlaskCharm1; ItemLevel >= 83; }
-
-	Show AnyHighQualFlask 	  { %D4; !cMarkSalvagable1; !FlaskCharm1; Quality >= 15; }
-	Show AnyQualFlask 		  { %D2; !cMarkSalvagable2; !FlaskCharm2; Quality >= 1; }
-	Show EarlyMappingLifeMana { %D1; !FlaskCharm2; FromTo(eglevel, 67); }
+	Show EarlyMappingLifeMana { %D1; !FlaskCharm2; FromTo(eglevel, 67); Quality = 0; }
 }
 
 #===============================================================================================================
@@ -139,12 +136,14 @@ Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG()
 	# Double Quality Currencies
 	Show Quality2MartialAny { !MarkSalvage2; %D3; Class == classes_attack; Quality >= 10; }
 	Show Quality2CasterAny  { !MarkSalvage1; %D3; Class == classes_cast; Quality >= 10; }
-	Show Quality2ArmorAny   { !MarkSalvage1; %D4; Class == classes_armor; Quality >= 10; }
+	Show Quality2ArmorAny   { !MarkSalvage1; %D5; Class == classes_armor; Quality >= 10; }
+	Show Quality2Flask	    { !MarkSalvage1; %D4; Class == class_flasks; Quality >= 10; }
 
 	# Single Quality Currencies
 	Show QualityMartialAny { !MarkSalvage2; %D2; Class == classes_attack; Quality >= 1; }
 	Show QualityCasterAny  { !MarkSalvage2; %D2; Class == classes_cast; Quality >= 1; }
-	Show QualityArmorAny   { !MarkSalvage2; %D3; Class == classes_armor; Quality >= 1; }
+	Show QualityArmorAny   { !MarkSalvage2; %D4; Class == classes_armor; Quality >= 1; }
+	Show QualityFlask	   { !MarkSalvage2; %D4; Class == class_flasks; Quality >= 1; }
 
 	# Artificer Scraps
 	Show SocketsLarge 	   { !MarkSalvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; }
@@ -863,11 +862,13 @@ Section SalvagableLeveling : Rarity <= Magic, Auto("Leveling->Salvagable"), LVL(
 	Show Quality2MartialAny { %D4; !MarkSalvage1lvl; !s3; Class == classes_attack; Quality >= 10; }
 	Show Quality2CasterAny  { %D4; !MarkSalvage1lvl; !s3; Class == classes_cast; Quality >= 10; }
 	Show Quality2ArmorAny   { %D5; !MarkSalvage1lvl; !s3; Class == classes_armor; Quality >= 10; }
+	Show Quality2Flask	    { %D5; !MarkSalvage1lvl; !s3; Class == class_flasks; Quality >= 10; }
 
 	# Single Quality Currencies
 	Show QualityMartialAny { %D4; !MarkSalvage1lvl; !s3; Class == classes_attack; Quality >= 1; }
 	Show QualityCasterAny  { %D4; !MarkSalvage1lvl; !s3; Class == classes_cast; Quality >= 1; }
 	Show QualityArmorAny   { %D4; !MarkSalvage1lvl; !s3; Class == classes_armor; Quality >= 1; }
+	Show QualityFlask	   { %D4; !MarkSalvage1lvl; !s3; Class == class_flasks; Quality >= 1; }
 
 	# Artificer Scraps
 	Show SocketsLarge 	   { %D3; !MarkSalvage2lvl; !s3; Class == classes_equip; Sockets > 0; Height >= 3; }
