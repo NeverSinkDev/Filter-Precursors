@@ -136,6 +136,18 @@ Expand Common.DecoMap2
     SetBorderColor cWhite;
 }
 
+Expand Common.MapSpecialHigh
+{
+    SetBackgroundColor 120 50 120;
+    Bordered(cWhite);
+}
+
+Expand Common.MapSpecial
+{
+    SetBackgroundColor NONE;
+    Bordered(cWhite);
+}
+
 Expand Common.Map1
 {
     SetBackgroundColor 50 50 50;
@@ -154,6 +166,11 @@ Expand Common.Map3
 }
 
 Expand Common.Map4
+{
+    SetBackgroundColor NONE;
+}
+
+Expand Common.MapVendor()
 {
     SetBackgroundColor NONE;
 }
