@@ -175,7 +175,10 @@ Section EndgameCraftingBases : Clean()
 	# [1234] Additional High Value Rules
 	#------------------------------------
 
-	Show CraftingWands { !markTopLevelBase; %D5; ItemLevel >= 81; BaseType == "Siphoning Wand" "Attuned Wand" }
+	Section ExtraCraftingRules : Auto("Endgame->normalcraft->extra"), Rarity <= Magic
+	{
+		Show Wands { !markTopLevelBase; %D5; ItemLevel >= 81; BaseType == "Siphoning Wand" "Attuned Wand" }
+	}
 
 	#------------------------------------
 	# [1234] Normal, Magic Crafting: Level 82+
@@ -515,11 +518,11 @@ Section UncutGems : Auto("gems->uncut")
 	Show Skill19  { %H5; !Gems1; BaseType == "Uncut Skill Gem"; ItemLevel = 19; }
 
 	# Gem Progression
-	{ %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 18; AreaLevel <= 78; }
-	{ %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 17; AreaLevel <= 76; }
-	{ %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 16; AreaLevel <= 73; }
-	{ %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 15; AreaLevel <= 69; }
-	{ %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 14; AreaLevel <= 65; }
+	Show GemProgression18 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 18; AreaLevel <= 78; }
+	Show GemProgression17 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 17; AreaLevel <= 76; }
+	Show GemProgression16 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 16; AreaLevel <= 73; }
+	Show GemProgression15 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 15; AreaLevel <= 69; }
+	Show GemProgression14 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 14; AreaLevel <= 65; }
 
 	# All gems during campaign with sounds
 	Show SpiritCampaign  { %H5; !Gems2; BaseType == "Uncut Spirit Gem"; LVL(); }
@@ -605,8 +608,9 @@ Section Waystones : Class == "Waystones"
 # [4403] Special Maps
 #------------------------------------
 
-		Show enchantedhigh  { !MapSpecialHigh; AnyEnchantment True; WaystoneTier >= 14; }
-		Show enchanted  	{ %H4; !MapSpecial; AnyEnchantment True; }
+		Show enchanted1     { !MapSpecialHigh; AnyEnchantment True; WaystoneTier >= 14; }
+		Show enchanted2  	{ %H5; !MapSpecial; AnyEnchantment True; WaystoneTier >= 11; WaystoneTier <= 13; }
+		Show enchanted34  	{ %H4; !MapSpecial; AnyEnchantment True; WaystoneTier >= 1;  WaystoneTier <= 10; }
 
 		Show corrupted8high { !MapSpecialHigh; Corrupted True; WaystoneTier >= 14; HasExplicitMod >=8 "a" "o" "e" "u" "i" "y"; }
 		Show corrupted8 { %H4; !MapSpecial; Corrupted True; HasExplicitMod >=7 "a" "o" "e" "u" "i" "y"; }
@@ -645,7 +649,7 @@ Section Waystones : Class == "Waystones"
 
 		Show waystone_rares_other { %D4; !Map4; Rarity Rare; }
 
-		Hide exHide { Rarity <= Rare; WaystoneTier <= 15; }
+		Hide exHide { !shrink; Rarity <= Rare; WaystoneTier <= 15; }
 		Show restex { !Unknown; Empty(); }
 	}
 }
@@ -814,7 +818,7 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 	Show TrialKeySanctumHigh 		 { %H4; !FragC; BaseType == "Djinn Barya"; ItemLevel >= 60; ItemLevel <= 79 }
 	Show TrialKeySanctumLow 		 { %HS2; !FragD; !mute; BaseType == "Djinn Barya"; ItemLevel <= 59; }
 
-	Show TrialSpecial { %HS5; !FragC; BaseType == "Test of Cunning Barya" "Test of Strength Barya" "Test of Time Barya" "Test of Will Barya"; }
+	Show TrialSpecial 			     { %HS5; !FragC; BaseType == "Test of Cunning Barya" "Test of Strength Barya" "Test of Time Barya" "Test of Will Barya"; }
 
 	Show TrialKeyUltimatumTop 		 { %HS4; !FragC; BaseType == "Inscribed Ultimatum"; ItemLevel >= 80; }
 	Show TrialKeyUltimatumHigh 		 { %H4; !FragC; BaseType == "Inscribed Ultimatum"; ItemLevel >= 75; ItemLevel <= 79 }
