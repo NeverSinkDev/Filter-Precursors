@@ -13,6 +13,7 @@
     "PostProcBlacknessMode" : "yellow",
     "OnPremDefaultWindowId" : 3,
     "OnPremAutoSuggestOnStart" : true,
+    "DisableEcoTiering" : "true",
     "EconomyOperations": [
         
     ],
@@ -64,9 +65,9 @@
         "amulets",
         "belts"
     ],
-    "EarlyLeagueMinimumOrbPrice": 30,
+    "EarlyLeagueMinimumOrbPrice": 40,
     "EarlyLeaguePrimaryOrbMaxCap": 60,
-    "MaximumChaosPrice": 200,
+    "MaximumChaosPrice": 275,
 
     "AspectsToIgnore" : [ ],
     "AcceptableUnusedExoTiers" : [
@@ -74,17 +75,17 @@
     ], 
 
     "EconomyCurrency_Thresholds_Static": [
-        30,
+        35,
         10,
-        3.1,
+        4.1,
         0.7,
         0.2,
         0.12,
         0.05
     ],
     "EconomyCurrency_Thresholds_Dynamic": [
-        25,
-        4.9,
+        50,
+        6.9,
         0,
         0,
         0,
@@ -92,8 +93,8 @@
         0
     ],
     "EconomyLower_Thresholds_Static": [
-        40,
-        8,
+        39,
+        7,
         3.1,
         1.1,
         0.7,
@@ -101,16 +102,16 @@
         0.05
     ],
     "EconomyLower_Thresholds_Dynamic": [
-        15,
-        3.1,
-        1.1,
-        0.3,
+        46,
+        6.9,
+        2,
+        0.5,
         0.2,
         0.05,
         0.01
     ],
     "EconomyHigher_Thresholds_Static": [
-        40,
+        42,
         9.9,
         3.1,
         2.1,
@@ -119,8 +120,8 @@
         0.05
     ],
     "EconomyHigher_Thresholds_Dynamic": [
-        15,
-        5,
+        43,
+        6.9,
         2,
         0.5,
         0.2,
@@ -134,8 +135,96 @@
     "BaseTypeClassMigration": {},
     "BaseTypeStorageOverride" : "",
     "BaseTypeStorageSuffix" : "/other/BasetypeStorage.csv",
+    "IsUsingIndexedCountValues" : false,
     "FileRequestData": [
+        {
+            "TierableSection": "currency.generic",
+            "Filename": "currency",
+            "Url": "https://poe2scout.com/api/items/currency",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "sockets.cores",
+            "Filename": "sockets.cores",
+            "Url": "https://poe2scout.com/api/items/ultimatum",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "currency.catalysts",
+            "Filename": "currency.catalysts",
+            "Url": "https://poe2scout.com/api/items/breachcatalyst",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "currency.emotions",
+            "Filename": "currency.emotions",
+            "Url": "https://poe2scout.com/api/items/deliriuminstill",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "currency.essence",
+            "Filename": "currency.essence",
+            "Url": "https://poe2scout.com/api/items/essences",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "currency.omen",
+            "Filename": "currency.omen",
+            "Url": "https://poe2scout.com/api/items/ritual",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "sockets.runes",
+            "Filename": "sockets.runes",
+            "Url": "https://poe2scout.com/api/items/runes",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "fragments.generic",
+            "Filename": "fragments.generic",
+            "Url": "https://poe2scout.com/api/items/map",
+            "Type": "scout"
+        },
 
+
+
+
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.armour",
+            "Url": "https://poe2scout.com/api/items/armour",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.accessory",
+            "Url": "https://poe2scout.com/api/items/accessory",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.flask",
+            "Url": "https://poe2scout.com/api/items/flask",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.sanctum",
+            "Url": "https://poe2scout.com/api/items/sanctum",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.weapon",
+            "Url": "https://poe2scout.com/api/items/weapon",
+            "Type": "scout"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.jewel",
+            "Url": "https://poe2scout.com/api/items/jewel",
+            "Type": "scout"
+        }
     ],
     "SplinterEconomyRules" : [],
   "StyleWhiteList" : [
@@ -146,6 +235,6 @@
   "OnPremFilterGitRepository": "C:\\PROJECTS\\NeverSink-Filter-for-PoE2",
   "FolderEcoData": "C:\\FilterOutput\\PoE2",
   "FolderFilterBladeDataFiles": "datafilesPoe2",
-  "BaseTypeStoragePrefix": "https://beta.filterblade.xyz/datafilesPoe2/",
+  "BaseTypeStoragePrefix": "https://filterblade.xyz/datafilesPoe2/",
   "FolderGame": "%userprofile%\\Documents\\My Games\\Path of Exile 2"
 }
