@@ -615,7 +615,7 @@ Section EventIdols : Auto("event->idols"), !newleaguetier
 	Show ConquerorMagic { %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Conqueror Idol"; } 
 
 	# These should not exist
-	Show NormalIdols { !exotic.t2; !GSH; Rarity Normal; Class == "Idol"; }
+	Show NormalIdols { !exotic.t2; !GSH; Rarity Normal; Class == "Idols"; }
 }
 
 #------------------------------------
@@ -2218,7 +2218,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5703] Exceptions #2
 #------------------------------------
 
-	Show exUniqueIdols		{ !GSH; !*t3; !SpecialNoB; Class == "Idol"; }
+	Show exUniqueIdols		{ !GSH; !*t3; !SpecialNoB; Class == "Idols"; }
 	Show 2xcorrupteduniques { !G2; !*t2; !Corrupt; Corrupted True; CorruptedMods >= 2; }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
 	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
