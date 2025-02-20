@@ -587,6 +587,40 @@ Section Invitations : Auto("exotic->invitation"), !artefact, Rarity <= Rare
 #------------------------------------
 #   [1234] Relics
 #------------------------------------	
+
+Section EventIdols : Auto("event->idols"), !newleaguetier
+{
+	# 1x3 Idols
+	Show MinorRare  	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Minor Idol"; } 
+	Show MinorMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Minor Idol"; } 
+
+	# 1x2 Idols
+	Show KamasanRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Kamasan Idol"; } 
+	Show KamasanMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Kamasan Idol"; } 
+
+	# 1x3 Idols
+	Show TotemicRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Totemic Idol"; } 
+	Show TotemicMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Totemic Idol"; } 
+
+	# 2x1 Idols
+	Show NobleRare 		{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Noble Idol"; } 
+	Show NobleMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Noble Idol"; } 
+
+	# 3x1 Idols
+	Show BurialRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Burial Idol"; } 
+	Show BurialMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Burial Idol"; } 
+
+	# 2x2 Idols
+	Show ConquerorRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Conqueror Idol"; } 
+	Show ConquerorMagic { %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Conqueror Idol"; } 
+
+	# These should not exist
+	Show NormalIdols { !exotic.t2; !GSH; Rarity Normal; Class == "Idols"; }
+}
+
+#------------------------------------
+#   [1234] Relics
+#------------------------------------	
 Section SanctumRelics : Auto("artefact->sanctifiedrelics"), Rarity <= Rare
 {
 	Show SelectedRelics		{ !G3; !exotic.t2; Class == "Relics"; BaseType == exotic.sanctum.relics; }
@@ -718,7 +752,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
 	Show QualChancing { !G3; !exotic.t1; %D3; Quality >= 29; BaseType == "Riveted Boots" "Steel Kite Shield"; }
 
-	Section QualityCrafting1 : BaseDefencePercentile >= 96, Quality >= 30, !exotic.t1
+	Section QualityCrafting1 : Quality >= 30, !exotic.t1
 	{
 		Show Body1	 	 { !G3; %D6; Class == "Body Armours"; BaseType == bases.crafting.body.t1; ItemLevel >= 84; }
 		Show Boots1 	 { !G3; %D6; Class == "Boots"; BaseType == bases.crafting.boots.t1; ItemLevel >= 84; }
@@ -759,7 +793,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 		Show weapont1q1 	 { !GEX; !exotic.t1; %D6; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 29; }
 		Show weapont2q1 	 { !GEX; !exotic.t2; %D6; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 29; }
 		Show weapont1q2 	 { !GEX; !exotic.t2; %D6; BaseType == bases.crafting.weapons.t1; ItemLevel >= 83; Quality >= 24; }
-		Show weapont2q2 	 { !GEX; !exotic.t2; %D5; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
+		Show weapont2q2 	 { !GEX; !exotic.t2; %D6; BaseType == bases.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	}
 }
 
@@ -2184,6 +2218,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 # [5703] Exceptions #2
 #------------------------------------
 
+	Show exUniqueIdols		{ !GSH; !*t3; !SpecialNoB; Class == "Idols"; }
 	Show 2xcorrupteduniques { !G2; !*t2; !Corrupt; Corrupted True; CorruptedMods >= 2; }
 	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
 	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
