@@ -59,6 +59,13 @@ Style Common
 		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
 	}
 
+	Func ArtifactLow
+	{
+		SetFontSize font.t3;
+		SetTextColor cArtifact; SetBorderColor cArtifact; SetBackgroundColor cBlack;
+		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 1 Orange Pentagon;
+	}
+
 	Func Useless
 	{
 		SetFontSize font.t8;
@@ -309,14 +316,14 @@ Style Common
 		SetFontSize font.t3;
 		Bordered(cFragTierD);
 		SetBackgroundColor cSplinterBackground;
-		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 Yellow mSplinter;
+		PlayAlertSound asCurrLow; PlayEffect Purple Temp; MinimapIcon 1 Yellow mSplinter;
 	}
 
 	Func Splinter5
 	{
 		SetFontSize font.t4;
 		Bordered(cFragTierD);
-		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 White mSplinter;
+		PlayAlertSound asCurrLow; PlayEffect Purple Temp; MinimapIcon 1 White mSplinter;
 	}
 
 #------------------------------------
@@ -420,6 +427,22 @@ Style Common
 		RemoveEffects();
 	}
 
+	Func MapSpecialHigh()
+	{
+		SetTextColor cMap1highAccent; SetBorderColor cMap1highAccent; SetBackgroundColor cMap1high; 
+		PlayEffect Red; 
+		MinimapIcon 0 Purple mMaps; 
+		PlayAlertSound asHighMaps;
+	}
+	
+	Func MapSpecial()
+	{
+		SetTextColor cMap1highAccent; SetBorderColor cMap1highAccent; SetBackgroundColor cMap2; 
+		PlayEffect Yellow; 
+		MinimapIcon 2 Purple mMaps; 
+		PlayAlertSound asMaps;
+	}
+
 	Func Map1()
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
@@ -451,6 +474,14 @@ Style Common
 		PlayEffect White Temp; 
 		MinimapIcon 2 White mMaps; 
 		PlayAlertSound asMaps; 
+	}
+
+	Func MapVendor()
+	{
+		PlayEffect Yellow Temp; 
+		MinimapIcon 2 White mMaps;
+		SetBorderColor cRareTrinkets; SetBackgroundColor cBlack; SetTextColor cRareTrinkets;
+		SetFontSize font.t4;
 	}
 
 #------------------------------------
@@ -552,6 +583,11 @@ Style Common
 		SetBackgroundColor cMagicTrinketGlow;
 	}
 
+	Func mute
+	{
+		PlayAlertSound NONE;
+	}
+
 	Func s1
 	{
 		SetFontSize font.t1;
@@ -633,6 +669,17 @@ Style Common
 	{
 		SetBorderColor cMarkSalvagable2;
 		SetFontSize font.t3;
+	}
+
+	Func MarkChanceA
+	{
+		SetBorderColor cMarkChancableHigh;
+		SetTextColor cMarkChancableHigh;
+		SetBackgroundColor cMarkChancableGlow;
+		SetFontSize font.t1;
+		MinimapIcon 0 Red mExotic;
+		PlayEffect Red;
+		PlayAlertSound asA;
 	}
 
 	Func MarkChance
