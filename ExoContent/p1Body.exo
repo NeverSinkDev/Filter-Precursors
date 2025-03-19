@@ -611,7 +611,7 @@ Section EventIdols : Auto("event->idols"), !newleaguetier
 	Show BurialMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Burial Idol"; } 
 
 	# 2x2 Idols
-	Show ConquerorRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Conqueror Idol"; } 
+	Show ConquerorRare 	{ %H6; !G3; !newleaguetier.t2; Rarity Rare; BaseType == "Conqueror Idol"; } 
 	Show ConquerorMagic { %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Conqueror Idol"; } 
 
 	# These should not exist
@@ -2322,7 +2322,7 @@ Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 
 Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasklikes
 {
-	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; Rarity Normal; }
+	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; Rarity <= Normal; }
 	Show high { !G6; %D1; !recipe.t2; Quality >= 14; Rarity <= Magic; }
 	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; Rarity <= Magic; }
 }
@@ -2507,7 +2507,7 @@ Section LevelingRareGear : Rarity Rare
 	Section Vendorable : Auto("Leveling->Rare->Remaining") Class == classes_equip, !raredeco.t4equip
 	{
 		Show ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
-		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; }
+		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; ItemLevel <= 68; }
 		Show UnderLevel42 { %D2; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 44; }
 		Show UnderLevel24 { %D2; !GR3; !SF40; AreaLevel >=16; ItemLevel <= 26; }
 		Show UnderLevel16 { %D3; !GR3; !SF40; AreaLevel >=1;  ItemLevel <= 18; }
