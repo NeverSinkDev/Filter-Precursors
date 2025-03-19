@@ -747,7 +747,7 @@ Section CurrencyOmen : Auto("currency->omen"), Class == "Omen", !Currency
 Section SpecialMapLike : Auto("maplike->special"), !artifact
 {
 	Show superkeys { Class == "Pinnacle Keys" }
-	Show logbooks  { Class "Logbook" }
+	Show logbooks  { Class == "Expedition Logbooks" }
 }
 
 #===============================================================================================================
@@ -1111,7 +1111,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 # [6002] Hide All known Section
 #------------------------------------
 
-Section HideLayerFinal : Class classes_finalHider
+Section HideLayerFinal : Class == classes_finalHider
 {
 	Show anyFinal { %D0; Auto("LowStrictnessShowLayer"); }
 	Hide Final {  Auto("HideLayer");  }
