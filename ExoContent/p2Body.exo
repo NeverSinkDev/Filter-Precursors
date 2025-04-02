@@ -45,6 +45,8 @@ Section ExoticBases : Auto("ExoticBases")
 {
 	# Currently contains mostly undroppable bases
 	Show SuperExoticBases { !exotic1; BaseType == bases.exotic.misc.t1; Rarity <= Rare; }
+	Show KalandraBases { !exotic1; BaseType == bases.exotic.kalandra.any; Rarity <= Rare; }
+
 	# Currently contains breach rings
 	Show CommonExoticBasesHigh 	{ %D6; !ValueTrinketMagic; BaseType == bases.exotic.misc.t2; Rarity <= Magic; TopMods(); }
 	Show CommonExoticBases 		{ %D4; !ValueTrinketMagicLow; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
@@ -448,7 +450,7 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 #===============================================================================================================
 #!! Waypoint c7.miscgear.socketables : "Socketables - Runes and Soul Cores"
 
-Section SocketsRunes : Auto("sockets->runes"), Class == "Socketable"
+Section SocketsRunes : Auto("sockets->general"), Class == "Socketable"
 {
 	# Highlight lower runes while leveling as well
 	Show LevelingRunes { %H4; !Supply2; LVL(); BaseType == sockets.runes.t3 + sockets.runes.t4; }
@@ -462,17 +464,19 @@ Section SocketsRunes : Auto("sockets->runes"), Class == "Socketable"
 	Show restex { !Unknown; BaseType "Rune"; }
 }
 
-Section SocketsCores : Auto("sockets->cores"), Class == "Socketable"
+Section Socketables : Auto("sockets->general"), Class == "Socketable"
 { 
-	Show s { !TIERS; BaseType == sockets.cores.s; }
-	Show a { !CurrTierA; BaseType == sockets.cores.a; }
-	Show b { !CurrTierB; BaseType == sockets.cores.b; }
-	Show c { %H6; !CurrTierC; BaseType == sockets.cores.c; }
-	Show d { %H5; !CurrTierD; BaseType == sockets.cores.d; }
-	Show e { %H3; !CurrTierE; BaseType == sockets.cores.e; }
+	Show s { !TIERS; BaseType == sockets.cores.s + sockets.runes.s; }
+	Show a { !CurrTierA; BaseType == sockets.cores.a + sockets.runes.a; }
+	Show b { !CurrTierB; BaseType == sockets.cores.b + sockets.runes.b; }
+	Show c { %H6; !CurrTierC; BaseType == sockets.cores.c + sockets.runes.c; }
+	Show d { %H5; !CurrTierD; BaseType == sockets.cores.d + sockets.runes.d; }
+	Show e { %H4; !CurrTierE; BaseType == sockets.cores.e + sockets.runes.e; }
 
-	Hide exHide { !shrink; BaseType == sockets.cores.b + sockets.cores.c + sockets.cores.d + sockets.cores.e; }
-	Show restex { !Unknown; BaseType "Soul Core"; }
+	Show SupplyLow 	 { %H3; !Supply2; BaseType == sockets.supplies.low; }
+
+	Hide exHide { !shrink; BaseType == sockets.cores.b + sockets.cores.c + sockets.cores.d + sockets.cores.e + sockets.runes.b + sockets.runes.c + sockets.runes.d + sockets.runes.e + sockets.supplies.low; }
+	Show restex { !Unknown; BaseType "Soul Core" "Rune"; }
 }
 
 #===============================================================================================================
@@ -778,6 +782,7 @@ Section CurrencyOmen : Auto("currency->omen"), Class == "Omen", !Currency
 
 Section SpecialMapLike : Auto("maplike->special")
 {
+	Show vaultKeys { !TIERS; BaseType == miscmap.vaultKeys; }
 	Show superkeys { !artifact; Class == "Pinnacle Keys" }
 
 	Show logbooksHigh  { !artifact; Class == "Expedition Logbooks"; ItemLevel >= 77; }
