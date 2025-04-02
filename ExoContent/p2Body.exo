@@ -480,9 +480,9 @@ Section SocketsCores : Auto("sockets->cores"), Class == "Socketable"
 #===============================================================================================================
 #!! Waypoint c7.jewels.generic.all : "Jewels"
 
-Section Jewels : Class "Jewel", Auto("jewels->generic")
+Section Jewels : Class == "Jewels", Auto("jewels->generic")
 {
-	Show AnyTimeless  { !exotic1; Rarity <= Rare; BaseType == timeLostJewels; }
+	Show AnyTimeLost  { !exotic1; Rarity <= Rare; BaseType == timeLostJewels; }
 	
 	Show AnyCorruptedMod 	  { !exotic1; Corrupted True; Rarity <= Rare; AnyEnchantment True; }
 	Show Any5Modded			  { !exotic1; Corrupted True; Rarity <= Rare; HasExplicitMod >=5 "a" "o" "e" "u" "i" "y"; }
@@ -517,12 +517,19 @@ Section UncutGems : Auto("gems->uncut")
 	Show Spirit19 { %H5; !Gems1; BaseType == "Uncut Spirit Gem"; ItemLevel = 19; }
 	Show Skill19  { %H5; !Gems1; BaseType == "Uncut Skill Gem"; ItemLevel = 19; }
 
-	# Gem Progression
-	Show GemProgression18 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 18; AreaLevel <= 78; }
-	Show GemProgression17 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 17; AreaLevel <= 76; }
-	Show GemProgression16 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 16; AreaLevel <= 73; }
-	Show GemProgression15 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 15; AreaLevel <= 69; }
-	Show GemProgression14 { %H3; !Gems2; BaseType == "Uncut Spirit Gem" "Uncut Skill Gem"; ItemLevel = 14; AreaLevel <= 65; }
+	# Spirit Gem Progression
+	Show SpiritGemProgression18 { %H4; !Gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 18; AreaLevel <= 78; }
+	Show SpiritGemProgression17 { %H4; !Gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 17; AreaLevel <= 76; }
+	Show SpiritGemProgression16 { %H4; !Gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 16; AreaLevel <= 73; }
+	Show SpiritGemProgression15 { %H4; !Gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 15; AreaLevel <= 69; }
+	Show SpiritGemProgression14 { %H4; !Gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 14; AreaLevel <= 65; }
+
+	# Skill Gem Progression
+	Show SkillGemProgression18 { %H3; !Gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 18; AreaLevel <= 78; }
+	Show SkillGemProgression17 { %H3; !Gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 17; AreaLevel <= 76; }
+	Show SkillGemProgression16 { %H3; !Gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 16; AreaLevel <= 73; }
+	Show SkillGemProgression15 { %H3; !Gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 15; AreaLevel <= 69; }
+	Show SkillGemProgression14 { %H3; !Gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 14; AreaLevel <= 65; }
 
 	# All gems during campaign with sounds
 	Show SpiritCampaign  { %H5; !Gems2; BaseType == "Uncut Spirit Gem"; LVL(); }
@@ -773,8 +780,8 @@ Section SpecialMapLike : Auto("maplike->special")
 {
 	Show superkeys { !artifact; Class == "Pinnacle Keys" }
 
-	Show logbooksHigh  { !artifact; Class "Logbook"; ItemLevel >= 77; }
-	Show logbooksLow   { !artifactLow; %HS5; Class "Expedition Logbooks"; }
+	Show logbooksHigh  { !artifact; Class == "Expedition Logbooks"; ItemLevel >= 77; }
+	Show logbooksLow   { !artifactLow; %HS5; Class == "Expedition Logbooks"; }
 }
 
 #===============================================================================================================
@@ -923,7 +930,6 @@ Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == class_flasks
 #===============================================================================================================
 # [[6000]] Leveling - Life Mana Flasks
 #===============================================================================================================
-#!! Waypoint c20.leveling.flasks.qual : "Leveling - Quality Flasks"
 
 #------------------------------------
 # [6002] Life flasks
@@ -960,6 +966,7 @@ Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Man
 #------------------------------------
 # [6002] Charms
 #------------------------------------
+#!! Waypoint c21.leveling.gear.all : "Leveling - Gear - All"
 
 Section LevelingCharms : Auto("Leveling->Charms"), LVL(), Rarity <= Magic
 {
@@ -970,7 +977,6 @@ Section LevelingCharms : Auto("Leveling->Charms"), LVL(), Rarity <= Magic
 #===============================================================================================================
 # [[6000]] Leveling - Rules
 #===============================================================================================================
-#!! Waypoint c21.leveling.gear.all : "Leveling - Gear - All"
 
 #------------------------------------
 # [6002] Rares - Decorators
