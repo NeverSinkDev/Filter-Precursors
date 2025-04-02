@@ -450,22 +450,10 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 #===============================================================================================================
 #!! Waypoint c7.miscgear.socketables : "Socketables - Runes and Soul Cores"
 
-Section SocketsRunes : Auto("sockets->general"), Class == "Socketable"
-{
-	# Highlight lower runes while leveling as well
-	Show LevelingRunes { %H4; !Supply2; LVL(); BaseType == sockets.runes.t3 + sockets.runes.t4; }
-
-	Show t1 { %H6; !CurrTierC; BaseType == sockets.runes.t1; }
-	Show t2 { %H5; !Supply1; BaseType == sockets.runes.t2; }
-	Show t3 { %H3; !Supply2; BaseType == sockets.runes.t3; }
-	Show t4 { %H2; !Supply3; BaseType == sockets.runes.t4; }
-
-	Hide exHide { !shrink; BaseType == sockets.runes.t1 + sockets.runes.t2 + sockets.runes.t3 + sockets.runes.t4; }
-	Show restex { !Unknown; BaseType "Rune"; }
-}
-
 Section Socketables : Auto("sockets->general"), Class == "Socketable"
 { 
+	Show LevelingSocketables { %H4; !Supply2; LVL(); BaseType == sockets.supplies.low + sockets.cores.e + sockets.runes.e; }
+
 	Show s { !TIERS; BaseType == sockets.cores.s + sockets.runes.s; }
 	Show a { !CurrTierA; BaseType == sockets.cores.a + sockets.runes.a; }
 	Show b { !CurrTierB; BaseType == sockets.cores.b + sockets.runes.b; }
@@ -1022,17 +1010,22 @@ Section LevelingRareGear : Rarity Rare, LVL()
 
 	Section WeaponTypes : Auto("Leveling->Rare->weapons"), !rRares1
 	{
-		Show Wands { %D4; Class == "Wands"; }
-		Show Sceptres { %D4; Class == "Sceptres"; }
-		Show Staves { %D4; Class == "Staves"; }
+		Show Wands				{ %D4; Class == "Wands"; }
+		Show Foci				{ %D4; Class == "Foci"; }
+		Show Sceptres			{ %D4; Class == "Sceptres"; }
+		Show Staves				{ %D4; Class == "Staves"; }
 
-		Show BowsQuivers { %D4; Class == "Bows" "Quivers"; }
-		Show Crossbows { %D4; Class == "Crossbows"; }
+		Show Bows				{ %D4; Class == "Bows"; }
+		Show Quivers			{ %D4; Class == "Quivers"; }
+		Show Crossbows			{ %D4; Class == "Crossbows"; }
 
-		Show OneHandMaces { %D4; Class == "One Hand Maces"; }
-		Show TwoHandMaces { %D4; Class == "Two Hand Maces"; }
+		Show Spears				{ %D4; Class == "Spears"; }
+		Show Bucklers			{ %D4; Class == "Bucklers"; }
 
-		Show Quarterstaves { %D4; Class == "Quarterstaves"; }
+		Show OneHandMaces		{ %D4; Class == "One Hand Maces"; }
+		Show TwoHandMaces		{ %D4; Class == "Two Hand Maces"; }
+
+		Show Quarterstaves		{ %D4; Class == "Quarterstaves"; }
 	}
 
 #------------------------------------
@@ -1117,11 +1110,16 @@ Section NormalMagic
 	Section WeaponTypes : Auto("Leveling->NormalMagic->weapons"), Rarity <= Magic
 	{
 		Show Wands 			{ !vanilla; %D3; Class == "Wands"; }
+		Show Foci 			{ !vanilla; %D3; Class == "Foci"; }
 		Show Sceptres 		{ !vanilla; %D3; Class == "Sceptres"; }
 		Show Staves 		{ !vanilla; %D3; Class == "Staves"; }
 
-		Show BowsQuivers 	{ !vanilla; %D3; Class == "Bows" "Quivers"; }
+		Show Bows 			{ !vanilla; %D3; Class == "Bows"; }
+		Show Quivers 		{ !vanilla; %D3; Class == "Quivers"; }
 		Show Crossbows 		{ !vanilla; %D3; Class == "Crossbows"; }
+
+		Show Spears 		{ !vanilla; %D3; Class == "Spears"; }
+		Show Bucklers 		{ !vanilla; %D3; Class == "Bucklers"; }
 
 		Show OneHandMaces 	{ !vanilla; %D3; Class == "One Hand Maces"; }
 		Show TwoHandMaces 	{ !vanilla; %D3; Class == "Two Hand Maces"; }
