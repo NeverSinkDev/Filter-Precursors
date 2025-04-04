@@ -452,7 +452,7 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 
 Section Socketables : Auto("sockets->general"), Class == "Socketable"
 { 
-	Show LevelingSocketables { %H4; !Supply2; LVL(); BaseType == sockets.supplies.low + sockets.cores.e + sockets.runes.e; }
+	Show LevelingSocketables { %H4; !Supply2lvl; LVL(); BaseType == sockets.supplies.low + sockets.cores.e + sockets.runes.e; }
 
 	Show s { !TIERS; BaseType == sockets.cores.s + sockets.runes.s; }
 	Show a { !CurrTierA; BaseType == sockets.cores.a + sockets.runes.a; }
@@ -660,7 +660,7 @@ Section Waystones : Class == "Waystones"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL(), !Currency
 {
 	Show rare 	  	   { %H5; !CurrTierD; !s2; BaseType == currency.leveling.rare; }
-	Show magic    	   { %H4; !Supply2; !s2; BaseType == currency.leveling.magic; }
+	Show magic    	   { %H4; !Supply2lvl; !s2; BaseType == currency.leveling.magic; }
 	Show wisdomStart   { %H3; !Supply3; !s3; AreaLevel < 17; BaseType == currency.leveling.wisdom; }
 	Show wisdom   	   { %H3; !SupplyPoor; BaseType == currency.leveling.wisdom; }
 }
