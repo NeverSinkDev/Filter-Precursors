@@ -3,14 +3,14 @@
 ##   {META} CLASSES AND BASES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields" "Foci";
+var classes_armor = "Body Armours" "Gloves" "Boots" "Helmets" "Shields" "Foci" "Bucklers";
 var classes_armor_small = "Gloves" "Boots" "Helmets";
 var classes_armor_noshields = "Body Armours" "Gloves" "Boots" "Helmets";
 
-var missing1_classes = "One Hand Swords" "One Hand Axes" "Daggers" "Claws" "Flails" "Spears";
+var missing1_classes = "One Hand Swords" "One Hand Axes" "Daggers" "Claws" "Flails";
 var missing2_classes = "Two Hand Swords" "Two Hand Axes";
 
-var classes_1hattack = "One Hand Maces";
+var classes_1hattack = "One Hand Maces" "Spears";
 var classes_2hattack = "Quarterstaves" "Two Hand Maces" "Bows" "Crossbows"; 
 var classes_attack = classes_1hattack + classes_2hattack;
 
@@ -22,7 +22,7 @@ var classes_weapons = classes_cast + classes_attack;
 var classes_1h = classes_1hattack + classes_1hcast;
 var classes_2h = classes_2hattack + classes_2hcast;
 
-var classes_offhand = "Shields" "Foci" "Quivers";
+var classes_offhand = "Shields" "Foci" "Quivers" "Bucklers";
 
 var classes_nonJwlryEquip = classes_armor + classes_weapons + classes_offhand;
 var classes_jewellery = "Amulets" "Belts" "Rings";
