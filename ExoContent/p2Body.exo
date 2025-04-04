@@ -452,7 +452,8 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 
 Section Socketables : Auto("sockets->general"), Class == "Socketable"
 { 
-	Show LevelingSocketables { %H4; !Supply2lvl; LVL(); BaseType == sockets.supplies.low + sockets.cores.e + sockets.runes.e; }
+	Show socketLeveling1 { %D4; !CurrTierD; LVL(); BaseType == sockets.leveling.t1; }
+	Show socketLeveling2 { %D4; !Supply2lvl; LVL(); BaseType == sockets.leveling.t2; }
 
 	Show s { !TIERS; BaseType == sockets.cores.s + sockets.runes.s; }
 	Show a { !CurrTierA; BaseType == sockets.cores.a + sockets.runes.a; }
@@ -659,10 +660,10 @@ Section Waystones : Class == "Waystones"
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL(), !Currency
 {
-	Show rare 	  	   { %H5; !CurrTierD; !s2; BaseType == currency.leveling.rare; }
-	Show magic    	   { %H4; !Supply2lvl; !s2; BaseType == currency.leveling.magic; }
-	Show wisdomStart   { %H3; !Supply3; !s3; AreaLevel < 17; BaseType == currency.leveling.wisdom; }
-	Show wisdom   	   { %H3; !SupplyPoor; BaseType == currency.leveling.wisdom; }
+	Show rare 	  	   { %D5; !CurrTierD; !s2; BaseType == currency.leveling.rare; }
+	Show magic    	   { %D4; !Supply2lvl; !s2; BaseType == currency.leveling.magic; }
+	Show wisdomStart   { %D3; !Supply3; !s3; AreaLevel < 17; BaseType == currency.leveling.wisdom; }
+	Show wisdom   	   { %D3; !SupplyPoor; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -778,6 +779,51 @@ Section SpecialMapLike : Auto("maplike->special")
 }
 
 #===============================================================================================================
+# [[4900]] Uniques
+#===============================================================================================================
+#!! Waypoint c11.uniques.all : "Tierlist - Uniques - All"
+
+Section Unique : Rarity Unique, Auto("uniques"), !unique
+{
+#------------------------------------
+# [5702] Exceptions #1
+#------------------------------------
+	Show SekhemaRing { !UniqueA; BaseType == "Ring"; Sockets > 0; }
+
+#------------------------------------
+# [5702] Tier 1 and 2 uniques
+#------------------------------------
+#!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
+
+	Show t1 { !TIERS; BaseType == uniques.generic.t1; }
+	Show t2 { !UniqueA; BaseType == uniques.generic.t2; }	
+
+#------------------------------------
+# [5705] Multi-Unique bases.
+#------------------------------------
+	Show multispecialhigh { !UniqueX; BaseType == uniques.generic.multispecialhigh; }
+	Show multispecial 	  { !UniqueX; BaseType == uniques.generic.multispecial; }
+
+#------------------------------------
+# [5701] Low tier exceptions
+#------------------------------------
+#!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
+	Show earlyleague 	  { !UniqueB; BaseType == uniques.generic.earlyleague; }
+	Show corrupteduniques { !UniqueB; !CorruptHigh; Corrupted True; AnyEnchantment True; Class == classes_equip; }
+
+#------------------------------------
+# [5708] Tier 3 uniques 
+#------------------------------------	
+	Show t3boss { %H5; !UniqueB; !ExoticMapIcon; BaseType == uniques.generic.t3boss; }
+	Show t3 	{ %H5; !UniqueB; BaseType == uniques.generic.t3; }
+#------------------------------------
+# [5709] Tier 4 uniques
+#------------------------------------
+	Show hideable  { %H4; !UniqueC; BaseType == uniques.generic.hideable; }
+	Show restex    { !Unknown; Empty(); }
+}
+
+#===============================================================================================================
 # [[4900]] Splinters, Tablets, Fragments
 #===============================================================================================================
 #!! Waypoint c10.fragments.most : "Fragments and Splinters"
@@ -834,51 +880,6 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 {
 	Show restex { !Unknown; Empty(); }
-}
-
-#===============================================================================================================
-# [[4900]] Uniques
-#===============================================================================================================
-#!! Waypoint c11.uniques.all : "Tierlist - Uniques - All"
-
-Section Unique : Rarity Unique, Auto("uniques"), !unique
-{
-#------------------------------------
-# [5702] Exceptions #1
-#------------------------------------
-	Show SekhemaRing { !UniqueA; BaseType == "Ring"; Sockets > 0; }
-
-#------------------------------------
-# [5702] Tier 1 and 2 uniques
-#------------------------------------
-#!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
-
-	Show t1 { !TIERS; BaseType == uniques.generic.t1; }
-	Show t2 { !UniqueA; BaseType == uniques.generic.t2; }	
-
-#------------------------------------
-# [5705] Multi-Unique bases.
-#------------------------------------
-	Show multispecialhigh { !UniqueX; BaseType == uniques.generic.multispecialhigh; }
-	Show multispecial 	  { !UniqueX; BaseType == uniques.generic.multispecial; }
-
-#------------------------------------
-# [5701] Low tier exceptions
-#------------------------------------
-#!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
-	Show earlyleague 	  { !UniqueB; BaseType == uniques.generic.earlyleague; }
-	Show corrupteduniques { !UniqueB; !CorruptHigh; Corrupted True; AnyEnchantment True; Class == classes_equip; }
-
-#------------------------------------
-# [5708] Tier 3 uniques 
-#------------------------------------	
-	Show t3boss { %H5; !UniqueB; !ExoticMapIcon; BaseType == uniques.generic.t3boss; }
-	Show t3 	{ %H5; !UniqueB; BaseType == uniques.generic.t3; }
-#------------------------------------
-# [5709] Tier 4 uniques
-#------------------------------------
-	Show hideable  { %H4; !UniqueC; BaseType == uniques.generic.hideable; }
-	Show restex    { !Unknown; Empty(); }
 }
 
 #===============================================================================================================
