@@ -771,7 +771,7 @@ Section CurrencyOmen : Auto("currency->omen"), Class == "Omen", !Currency
 
 Section SpecialMapLike : Auto("maplike->special")
 {
-	Show vaultKeys { !TIERS; BaseType == miscmap.vaultKeys; }
+	Show vaultKeys { !TIERS; BaseType miscmap.vaultKeys; }
 	Show superkeys { !artifact; Class == "Pinnacle Keys" }
 
 	Show logbooksHigh  { !artifact; Class == "Expedition Logbooks"; ItemLevel >= 77; }
