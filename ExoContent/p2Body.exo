@@ -128,18 +128,38 @@ Section EndgameCharms : Auto("Endgame->Charms"), Rarity <= Magic, EG(), Clean(),
 }
 
 #===============================================================================================================
-# [[0200]] Salvagables
-#===============================================================================================================
-#!! Waypoint c4.gear.salvagable : "Salvagable bases (Endgame)"
-
-#===============================================================================================================
-# [[0200]] Normal and Magic Crafting bases
+# [[0200]] Normal and Magic Items: Endgame
 #===============================================================================================================
 
 Section EndgameCraftingBases : Clean()
 {
 	#------------------------------------
-	# [1234] Hide Crafting Bases
+	# [1234] Salvagables
+	#------------------------------------
+	#!! Waypoint c4.gear.salvagable : "Salvagable bases (Endgame)"
+
+	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG()
+	{
+		# Double Quality Currencies
+		Show Quality2MartialAny { !MarkSalvage2; %D3; Class == classes_attack; Quality >= 10; }
+		Show Quality2CasterAny  { !MarkSalvage1; %D3; Class == classes_cast; Quality >= 10; }
+		Show Quality2ArmorAny   { !MarkSalvage1; %D5; Class == classes_armor; Quality >= 10; }
+		Show Quality2Flask	    { !MarkSalvage1; %D4; Class == class_flasks; Quality >= 10; }
+
+		# Single Quality Currencies
+		Show QualityMartialAny { !MarkSalvage2; %D2; Class == classes_attack; Quality >= 1; }
+		Show QualityCasterAny  { !MarkSalvage2; %D2; Class == classes_cast; Quality >= 1; }
+		Show QualityArmorAny   { !MarkSalvage2; %D4; Class == classes_armor; Quality >= 1; }
+		Show QualityFlask	   { !MarkSalvage2; %D4; Class == class_flasks; Quality >= 1; }
+
+		# Artificer Scraps
+		Show SocketsLarge1 	   { !MarkSalvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
+		Show SocketsLarge2 	   { !MarkSalvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
+		Show SocketsSmall 	   { !MarkSalvage2; %D2; Class == classes_equip; Sockets > 0; }
+	}
+
+	#------------------------------------
+	# [1234] Custom Hiders
 	#------------------------------------
 
 	Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG()
@@ -248,26 +268,6 @@ Section EndgameCraftingBases : Clean()
 	{
 		Cont MagicDecoratorRemover { !MagicDecoratorRemover; Rarity Magic; }
 		Cont NormalDecoratorRemover { !NormalDecoratorRemover; Rarity Normal; }
-	}
-
-	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG()
-	{
-		# Double Quality Currencies
-		Show Quality2MartialAny { !MarkSalvage2; %D3; Class == classes_attack; Quality >= 10; }
-		Show Quality2CasterAny  { !MarkSalvage1; %D3; Class == classes_cast; Quality >= 10; }
-		Show Quality2ArmorAny   { !MarkSalvage1; %D5; Class == classes_armor; Quality >= 10; }
-		Show Quality2Flask	    { !MarkSalvage1; %D4; Class == class_flasks; Quality >= 10; }
-
-		# Single Quality Currencies
-		Show QualityMartialAny { !MarkSalvage2; %D2; Class == classes_attack; Quality >= 1; }
-		Show QualityCasterAny  { !MarkSalvage2; %D2; Class == classes_cast; Quality >= 1; }
-		Show QualityArmorAny   { !MarkSalvage2; %D4; Class == classes_armor; Quality >= 1; }
-		Show QualityFlask	   { !MarkSalvage2; %D4; Class == class_flasks; Quality >= 1; }
-
-		# Artificer Scraps
-		Show SocketsLarge1 	   { !MarkSalvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
-		Show SocketsLarge2 	   { !MarkSalvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
-		Show SocketsSmall 	   { !MarkSalvage2; %D2; Class == classes_equip; Sockets > 0; }
 	}
 }
 
@@ -794,7 +794,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
 
 	Show t1 { !TIERS; BaseType == uniques.generic.t1; }
-	Show t2 { !UniqueA; BaseType == uniques.generic.t2; }	
+	Show t2 { !UniqueA; BaseType == uniques.generic.t2 + uniques.generic.t2extra; }	
 
 #------------------------------------
 # [5705] Multi-Unique bases.
