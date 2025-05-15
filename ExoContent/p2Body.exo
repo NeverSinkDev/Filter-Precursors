@@ -65,8 +65,23 @@ Section Artifacts : Auto("Artifact"), Rarity <= Rare, !Artifact
 #===============================================================================================================
 # [[0200]] Exotic Item States
 #===============================================================================================================
-#!! Waypoint c3.exotic.state.all : "Exotic State - Double Corrupted, Overquality"
+#!! Waypoint c3.exotic.state.hightier : "Exotic State - Exceptionally High Modtier"
 
+Section HighModtier : Auto("exotic->others")
+{
+	Show tier5rare { !exotic1; !s1; Rarity Rare; UnidentifiedItemTier >= 5; }
+	Show tier4rare { !rRares1; !s2; !LowExoticMM; Rarity Rare; UnidentifiedItemTier = 4; }
+	Show tier23rareTrinkets { %D4; !LowExoticMM; !rGearTrinket1; !s2; Rarity Rare; UnidentifiedItemTier >= 2; Class == classes_jewellery; }
+	Show tier3rare { %D4; !rRares1; !s3; Rarity Rare; UnidentifiedItemTier = 3; }
+	Show tier2rare { %D3; !rRares1; Rarity Rare; UnidentifiedItemTier = 2; }
+
+	Show tier5magic { !exotic2; !s2; Rarity Magic; UnidentifiedItemTier >= 5; }
+	Show tier4magic { !trinketBase; !s2; !LowExoticMM; Rarity Magic; UnidentifiedItemTier = 4; }
+	Show tier3magic { %D4; !trinketBase; !s3; Rarity Magic; UnidentifiedItemTier = 3; }
+	Show tier2magic { %D3; !trinketBase; Rarity Magic; UnidentifiedItemTier = 2; }
+}
+
+#!! Waypoint c3.exotic.state.all : "Exotic State - Double Corrupted, Overquality"
 Section OtherExotics : Auto("exotic->others"), Rarity <= Rare
 {
 	Show OverQualityAny { !exotic1; Quality >= 21; Corrupted False; }
@@ -164,13 +179,13 @@ Section EndgameCraftingBases : Clean()
 
 	Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG()
 	{
-		HideD HideWeaponsByType { !shrink; Class == classes_weapons + "Quivers"; }
-		HideD ArHider { !shrink; AR(); Class == classes_armor; }
-		HideD EvHider { !shrink; EV(); Class == classes_armor; }
-		HideD EsHider { !shrink; ES(); Class == classes_armor; }
-		HideD ArEvHider { !shrink; AREV(); Class == classes_armor; }
-		HideD ArEsHider { !shrink; ARES(); Class == classes_armor; }
-		HideD EvEsHider { !shrink; EVES(); Class == classes_armor; }
+		HideD HideWeaponsByType { !shrink; Class == classes_weapons + "Quivers"; UnidentifiedItemTier <= 2; }
+		HideD ArHider { !shrink; AR(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD EvHider { !shrink; EV(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD EsHider { !shrink; ES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD ArEvHider { !shrink; AREV(); Class == classes_armor;  UnidentifiedItemTier <= 2; }
+		HideD ArEsHider { !shrink; ARES(); Class == classes_armor;  UnidentifiedItemTier <= 2; }
+		HideD EvEsHider { !shrink; EVES(); Class == classes_armor;  UnidentifiedItemTier <= 2; }
 	}
 
 	#------------------------------------
@@ -359,17 +374,17 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 # [[0200]] Endgame - Rare - Gear - Droplevel Hiding
 #===============================================================================================================
 
-#!! Waypoint c6.rare.drophiders : "Rare Endgame Items - Hide low items on high levels"
+#!! Waypoint c6.rare.drophiders : "Rare Endgame Items - Hide armor and weapon types easily"
 
 	Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare")
 	{
-		HideD HideWeaponsByType { !shrink; Class == classes_weapons + "Quivers"; }
-		HideD ArHider { !shrink; AR(); Class == classes_armor; }
-		HideD EvHider { !shrink; EV(); Class == classes_armor; }
-		HideD EsHider { !shrink; ES(); Class == classes_armor; }
-		HideD ArEvHider { !shrink; AREV(); Class == classes_armor; }
-		HideD ArEsHider { !shrink; ARES(); Class == classes_armor; }
-		HideD EvEsHider { !shrink; EVES(); Class == classes_armor; }
+		HideD HideWeaponsByType { !shrink; Class == classes_weapons + "Quivers"; UnidentifiedItemTier <= 2; }
+		HideD ArHider { !shrink; AR(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD EvHider { !shrink; EV(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD EsHider { !shrink; ES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD ArEvHider { !shrink; AREV(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD ArEsHider { !shrink; ARES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD EvEsHider { !shrink; EVES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
 	}
 
 #===============================================================================================================
@@ -769,7 +784,7 @@ Section CurrencyOmen : Auto("currency->omen"), Class == "Omen", !Currency
 
 Section SpecialMapLike : Auto("maplike->special")
 {
-	Show vaultKeys { !TIERS; BaseType miscmap.vaultKeys; }
+	Show vaultKeys { !artifact; BaseType miscmap.vaultKeys; }
 	Show superkeys { !artifact; Class == "Pinnacle Keys" }
 
 	Show logbooksHigh  { !artifact; Class == "Expedition Logbooks"; ItemLevel >= 77; }
