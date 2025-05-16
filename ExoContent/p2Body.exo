@@ -69,16 +69,16 @@ Section Artifacts : Auto("Artifact"), Rarity <= Rare, !Artifact
 
 Section HighModtier : Auto("exotic->others")
 {
-	Show tier5rare { !exotic1; !s1; Rarity Rare; UnidentifiedItemTier >= 5; }
-	Show tier4rare { !rRares1; !s2; !LowExoticMM; Rarity Rare; UnidentifiedItemTier = 4; }
+	Show tier5rare { !exotic1; !s1; Rarity Rare; UnidentifiedItemTier >= 5; Class == classes_equip; }
+	Show tier4rare { !rRares1; !s2; !LowExoticMM; Rarity Rare; UnidentifiedItemTier = 4; Class == classes_equip; }
 	Show tier23rareTrinkets { %D4; !LowExoticMM; !rGearTrinket1; !s2; Rarity Rare; UnidentifiedItemTier >= 2; Class == classes_jewellery; }
-	Show tier3rare { %D4; !rRares1; !s3; Rarity Rare; UnidentifiedItemTier = 3; }
-	Show tier2rare { %D3; !rRares1; Rarity Rare; UnidentifiedItemTier = 2; }
+	Show tier3rare { %D4; !rRares1; !s3; Rarity Rare; UnidentifiedItemTier = 3; Class == classes_equip; }
+	Show tier2rare { %D3; !rRares1; Rarity Rare; UnidentifiedItemTier = 2; Class == classes_equip; }
 
-	Show tier5magic { !exotic2; !s2; Rarity Magic; UnidentifiedItemTier >= 5; }
-	Show tier4magic { !trinketBase; !s2; !LowExoticMM; Rarity Magic; UnidentifiedItemTier = 4; }
-	Show tier3magic { %D4; !trinketBase; !s3; Rarity Magic; UnidentifiedItemTier = 3; }
-	Show tier2magic { %D3; !trinketBase; Rarity Magic; UnidentifiedItemTier = 2; }
+	Show tier5magic { !exotic2; !s2; Rarity Magic; UnidentifiedItemTier >= 5; Class == classes_equip; }
+	Show tier4magic { !trinketBase; !s2; !LowExoticMM; Rarity Magic; UnidentifiedItemTier = 4; Class == classes_equip; }
+	Show tier3magic { %D4; !trinketBase; !s3; Rarity Magic; UnidentifiedItemTier = 3; Class == classes_equip; }
+	Show tier2magic { %D3; !trinketBase; Rarity Magic; UnidentifiedItemTier = 2; Class == classes_equip; }
 }
 
 #!! Waypoint c3.exotic.state.all : "Exotic State - Double Corrupted, Overquality"
