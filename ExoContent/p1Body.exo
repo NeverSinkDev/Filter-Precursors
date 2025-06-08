@@ -699,7 +699,7 @@ Section ExoticVariations : !exotic
 
 Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 {
-	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel <= 67; }
+	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel >= 2; AreaLevel <= 67; }
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 68; }
 	Show WhiteSocketWeapons2H { %DS4; !exotic.t3; !G2; Class == classes_2h; Sockets >= "6WWWWWW"; }
@@ -747,218 +747,12 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 #------------------------------------
 #!! Waypoint c4.recipes.rgb.all : "Recipes - Endgame chromatic recipes (normal and magic RGBs)"
 
-Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, Auto("EndgameRGB"), !recipe
+Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, AreaLevel <= 83, Auto("EndgameRGB"), !recipe
 {
 	Show RGBSmall1	{ !G6H; %D2; !*t2; !SF40; Width 2; Height 2; }
 	Show RGBSmall2	{ !G6H; %D2; !*t2; !SF40; Width 1; Height <=4; }
 	Show RGBLarge	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 4; }
 	Show RGBMedium	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 3; }
-}
-
-#------------------------------------
-# [1234] ILVL 86
-#------------------------------------
-Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
-{
-	#!! Waypoint c3.gear.crafting-decorators : "Crafting Bases - decorators"
-	Section CraftRareDecorators : Auto("Decorator->craftingrare"), Rarity Rare, !raredeco, !GEX
-	{
-		Cont RareDecoratorILVL75 { !raredeco.ilvl75; ItemLevel >= 75; }
-		Cont RareDecoratorILVL84 { !raredeco.ilvl84; ItemLevel >= 84; }
-		Cont RareDecoratorILVL86 { !raredeco.ilvl86; ItemLevel >= 86; }
-		Cont RareDecoratorGear   { !raredeco.t1equip; ItemLevel >= 68; Class == classes_nonJwlryEquip; }
-		Cont RareDecoratorJwlry  { !raredeco.t1jewellery; ItemLevel >= 68; Class == classes_jewellery; }
-	}
-
-	Section CraftNormalDecorators : Auto("Decorator->craftingrare"), Rarity <= Magic, ItemLevel >= 68, !GEX
-	{
-		Cont NormalDecoratorJwlry { !Low; Class == classes_jewellery; };
-		Cont NormalDecorator      { !Low; Class == classes_nonJwlryEquip; };
-	}
-
-	#!! Waypoint c3.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
-
-	Section ILVL86 : Auto("normalcraft->i86"), ItemLevel >= 86, Rarity <= Rare
-	{
-		Show t1 { !G3;  %D5; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
-		Show t2 { !GEX; %D4; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
-		Show t3 { !GEX; %D1; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
-	}
-
-#------------------------------------
-# [1234] ILVL 84
-#------------------------------------
-
-	#!! Waypoint c3.gear.crafting84.all : "Crafting Bases - High level basetypes - ILVL84"
-
-	Section ILVL84 : Auto("normalcraft->i84"), ItemLevel >= 84, Rarity <= Rare
-	{
-		Show t1   { !G4;  %D1; !craftspecial.I84; BaseType == bases.crafting.general.t1; }
-		ShowD t2  { !GEX; %D0; !craftgeneral.I84; BaseType == bases.crafting.general.t2; }
-		ShowD t3  { !GEX; %D0; !craftgeneral.I84; BaseType == bases.crafting.general.t3; }
-	}
-
-#------------------------------------
-# [1234] ILVL ANY
-#------------------------------------
-
-	#!! Waypoint c3.gear.crafting-others : "Crafting Bases - High level basetypes - others"
-	Section ILVLANY : Auto("normalcraft->rest"), ItemLevel <= 83, ItemLevel >= 68, Rarity <= Rare
-	{
-		Show t1   { !G5;   %D1;  !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
-		ShowD t2  { !GEX;  %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t2; }
-		ShowD t3  { !GEX;  %D0; !craftgeneral.ANY; BaseType == bases.crafting.general.t3; }
-	}
-
-	Section DecoratorRemover : Auto("Decorator->craftinggeneric"), Class == classes_equip, ItemLevel >= 68, !GEX
-	{
-		Cont RareDecoratorRemover { Rarity Rare; }
-		Cont MagicDecoratorRemover { Rarity Magic; }
-		Cont NormalDecoratorRemover { Rarity Normal; }
-	}
-}
-
-#------------------------------------
-# [1234] Early Endgame Crafting projects
-#------------------------------------
-
-# Minimal list of bases for harvest specific crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
-# Having this list too long will lead to being too flooded with these drops.
-
-Section AdditionalCrafting : Auto("normalcraft->extra"), Rarity < Magic, ItemLevel >= 68, ItemLevel <= 83, Clean()
-{
-	ShowD any { !GEX; %D0; BaseType == bases.crafting.early; }
-}
-
-Section Lowcraft : Auto("normalcraft->lowstrict"), ItemLevel >= 68, ItemLevel <= 83, Clean()
-{
-	ShowD Overquality       { %D1; !GEX; !exotic.t4; Quality >= 29; ItemLevel >= 75; DropLevel >= 50; Rarity <= Rare; Class == classes_equip; }
-	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; AreaLevel <= 72; AreaLevel >= 68; Rarity <= Rare; Class == classes_armor_noshields; }
-}
-
-#------------------------------------
-# [1234] Chisel Recipes
-#------------------------------------
-#!! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
-
-Section ChiselRecipe : BaseType == "Gavel", Auto("ChiselRecipe"), !recipe, !GEX
-{
-	ShowD Chisel20 				{ %D0; !*t2; Quality >= 20; Rarity < Unique; }
-	ShowD ChiselHighQualNormal 	{ %D0; !*t3; Clean(); Quality >= 15; Rarity Normal; }
-	ShowD ChiselHighQualMagic  	{ %D0; !*t3; Clean(); Quality >= 18; Rarity Magic; }
-	ShowD ChiselAnyQualMagic  	{ %D0; !*t3; Clean(); Rarity Magic; }
-	ShowD ChiselAnyQualNormal 	{ %D0; !*t3; Clean(); Rarity Normal; }
-}
-
-#===============================================================================================================
-# [[0200]] Chancing Bases
-#===============================================================================================================
-#!! Waypoint c4.chancing : "Chancing bases"
-
-Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
-{
-	Show hh { %D1; BaseType == bases.chancing.higher; }
-	Show t2 { %D1; BaseType == bases.chancing.any; }
-}
-
-
-#===============================================================================================================
-# [[0200]] Endgame Flasks & Tinctures
-#===============================================================================================================
-
-Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
-{
-	Show OverQual1          { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
-	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
-	Show Tinc85  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 85; }
-	Show Tinc82  			{ !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; }
-	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
-}
-
-Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68, !utilflasks
-{
-#------------------------------------
-# [2701] Endgame Flasks
-#------------------------------------
-	#!! Waypoint c4.flasks.all : "Endgame Flasks - All non-unique"
-	
-	Section OverQualityFlasks : !GEX
-	{
-		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show OverQualUtil1  { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 84; Quality >= 26; Class == class_utilFlasks; }
-		Show OverQualUtil2  { !G4; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show OverQualLife1  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 30; BaseType == bases.flask.lifemanaassorted; }
-		Show OverQualLife2  { !G4; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
-	}
-
-	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
-	Section SuperEndgameFlasks : Clean(), !GEX
-	{
-		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D4; ItemLevel >= 84; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show Utility82  { !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
-		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
-	}
-#------------------------------------
-# [2701] Quality High
-#------------------------------------
-	#!! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
-	Section 20QualEndgameFlasks : Quality >= 20, Rarity Normal, !G5
-	{
-		Show Any20QualFlask { %D2; !recipe.ts1; Class == class_flasks; }
-	}
-#------------------------------------
-# [2701] Utility OR quality flasks
-#------------------------------------
-	Section UtilityEndgameFlasks : Clean()
-	{
-		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; !SF45; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
-		Show AnyUtility 	{ %D3; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; }
-	}
-#------------------------------------
-# [2701] Quality Low
-#------------------------------------
-	Section QualityEndgameFlasks
-	{
-		ShowD QualityHigh { %D1; !G6H; !recipe.t2; Class == class_flasklikes; Quality >= 10; AreaLevel <= 77; }
-		ShowD QualityLow  { %D0; !G6; !recipe.t3; Class == class_flasklikes; Quality >= 1; AreaLevel <= 77; }
-	}
-#------------------------------------
-# [2705] Early mapping life/mana/utility flasks
-#------------------------------------
-	Section EarlyMappingLifeManaFlasks : BaseType == bases.flask.lifemanaassorted, Clean()
-	{
-		Show EarlyMappingLifeMana { %D2; !G7H; !Low; AreaLevel <= 70; }
-	}
-}
-
-#===============================================================================================================
-# [[0200]] Misc Rules
-#===============================================================================================================
-#!! Waypoint c4.misc.others : "SpecialGear - Overquality items and optional animated weapon module"
-
-Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
-{
-	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; AreaLevel < 79; Class == classes_1h; Sockets >= "3WWW"; }
-}
-
-Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
-{
-	ShowD normalmelee  { Rarity Normal; Class == classes_weapons_melee;}
-	ShowD normalranged { Rarity Normal; Class == classes_weapons_ranged;}
-	ShowD magicmelee   { Rarity Magic; Class == classes_weapons_melee;}
-	ShowD magicranged  { Rarity Magic; Class == classes_weapons_ranged;}
-}
-
-#!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
-
-#===============================================================================================================
-# [[0200]] Hide Layer 1 - Normal and Magic Endgame Gear
-#===============================================================================================================
-
-Section HideLayer1 : Auto("HideLayer")
-{
-	Hide NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class == classes_equip + class_utilFlasks; }
 }
 
 #===============================================================================================================
@@ -978,15 +772,11 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 
 	Cont FourLinkedRares 	{ !*fourlinkedrare; LinkedSockets >= 4; }
 
-	Cont TopILVL84 { !*ilvl86; ItemLevel >= 84; Class == topClass84; }
-	Cont TopILVL85 { !*ilvl86; ItemLevel >= 85; Class == topClass85; }
-	Cont TopILVL86 { !*ilvl86; ItemLevel >= 86; Class == topClass86; }
-
-	Cont AtlasGear1 { !*highgear; BaseType == bases.atlas.armors.t3; ItemLevel <= 77; }
-	Cont AtlasGear2 { !*highgear; BaseType == bases.atlas.armors.t2; ItemLevel <= 83; }
-	Cont AtlasGear3 { !*highgear; BaseType == bases.atlas.armors.t1; }
+	Cont TopILVL83 { !*ilvl86; ItemLevel >= 83; Class == cTop83; }
+	Cont TopILVL84 { !*ilvl86; ItemLevel >= 84; Class == cTop84; }
+	Cont TopILVL85 { !*ilvl86; ItemLevel >= 85; Class == cTop85; }
+	Cont TopILVL86 { !*ilvl86; ItemLevel >= 86; Class == cTop86; }
 	
-
 	Cont CorruptedRares { !*corrupt; Corrupted True; CorruptedMods 0; }
 	Cont CorruptedRaresImplicit { !*corruptimpl; Corrupted True; CorruptedMods >= 1; }
 }
@@ -1093,7 +883,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2"
 		
-		Show T2 { !GR2; %D3; BaseType == derived.rares.gear.t2; }
+		Show T2 { !GR2; %D4; BaseType == derived.rares.gear.t2; }
 
 #!! Waypoint c6.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
 
@@ -1101,25 +891,199 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c6.rare.t3.all : "Rare Endgame Items - t3"
 
-		Show T3 { !GR3; %D2; BaseType == derived.rares.gear.t3; }
+		Show T3 { !GR3; %D3; BaseType == derived.rares.gear.t3; }
 
 #!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4"
 
-		Show t4endgamerares { !GR4; %D1; Class == classes_nonJwlryEquip; }
-
-		#!! Waypoint c6.rare.t4.chroms : "Rare Endgame Items - lowtierchromatics"
-		Show RGBSmall1	{ !G6H; %D2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 2; Height 2; }
-		Show RGBSmall2	{ !G6H; %D2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 1; Height <=4; }
-		Show RGBLarge	{ !G6;  %D0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 4; }
-		Show RGBMedium	{ !G6;  %D0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 3; }
+		Show T4 { !GR3; %D2; BaseType == derived.rares.gear.t4; }
 	}
 }
 
 #===============================================================================================================
-# [[0200]] Hide Layer 2 - Rare Gear
+# [[0200]] Endgame - Crafting
 #===============================================================================================================
-Section HideLayer2 : Auto("HideLayer")
+
+#------------------------------------
+# [1234] Early Endgame Crafting projects
+#------------------------------------
+
+# Minimal list of bases crafting. This list is really not conclusive, but you can adjust it yourself on filterblade or here.
+# Having this list too long will lead to being too flooded with these drops.
+
+Section EarlyEndgameCrafting : Auto("normalcraft->extra"), Rarity <= Magic, AreaLevel <= 75, AreaLevel >= 68, Clean()
 {
+	ShowD any { !GEX; %D0; BaseType == bases.crafting.early; }
+	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; Rarity <= Rare; Class == classes_armor_noshields; }
+}
+
+#------------------------------------
+# [1234] ILVL 86
+#------------------------------------
+Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
+{
+	#!! Waypoint c3.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
+
+	Section CraftingBases : Auto("crafting->generalgear"), Rarity <= Rare
+	{
+		# Level 86 crafting bases
+		Show t1-86 { !G3;  %D5; !craftspecial.I86; BaseType == derived.crafting.levelgroup86.t1; }
+		Show t2-86 { !GEX; %D4; !craftgeneral.I86; BaseType == derived.crafting.levelgroup86.t2; }
+		Show t3-86 { !GEX; %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup86.t3; }
+
+		# Level 85 crafting bases
+		Show t1-85 { !G3;  %D4; !craftspecial.I86; BaseType == derived.crafting.levelgroup85.t1; }
+		Show t2-85 { !GEX; %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup85.t2; }
+		Show t3-85 { !GEX; %D2; !craftgeneral.I86; BaseType == derived.crafting.levelgroup85.t3; }
+
+		# Level 84 crafting bases
+		Show t1-84 { !G3;  %D3; !craftspecial.I86; BaseType == derived.crafting.levelgroup84.t1; }
+		Show t2-84 { !GEX; %D2; !craftgeneral.I86; BaseType == derived.crafting.levelgroup84.t2; }
+		Show t3-84 { !GEX; %D1; !craftgeneral.I86; BaseType == derived.crafting.levelgroup84.t3; }
+
+		# Level 83 crafting bases
+		Show t1-83 { !G3;  %D3; !craftspecial.I86; BaseType == derived.crafting.levelgroup83.t1; }
+		Show t2-83 { !GEX; %D2; !craftgeneral.I86; BaseType == derived.crafting.levelgroup83.t2; }
+		Show t3-83 { !GEX; %D1; !craftgeneral.I86; BaseType == derived.crafting.levelgroup83.t3; }
+
+		# Other Crafting Bases
+		Show t1-rest { !G3; %D3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
+		ShowD t2-rest { !GEX; %D0; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
+		ShowD t3-rest { !GEX; %D0; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
+	}
+}
+
+#------------------------------------
+# [1234] Chisel Recipes
+#------------------------------------
+#!! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
+
+Section ChiselRecipe : BaseType == "Gavel", Auto("ChiselRecipe"), !recipe, !GEX
+{
+	ShowD Chisel20 				{ %D0; !*t2; Quality >= 20; Rarity < Unique; }
+	ShowD ChiselHighQualNormal 	{ %D0; !*t3; Clean(); Quality >= 15; Rarity Normal; }
+	ShowD ChiselHighQualMagic  	{ %D0; !*t3; Clean(); Quality >= 18; Rarity Magic; }
+	ShowD ChiselAnyQualMagic  	{ %D0; !*t3; Clean(); Rarity Magic; }
+	ShowD ChiselAnyQualNormal 	{ %D0; !*t3; Clean(); Rarity Normal; }
+}
+
+#===============================================================================================================
+# [[0200]] Chancing Bases
+#===============================================================================================================
+#!! Waypoint c4.chancing : "Chancing bases"
+
+Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
+{
+	Show hh { %D1; BaseType == bases.chancing.higher; }
+	Show t2 { %D1; BaseType == bases.chancing.any; }
+}
+
+#===============================================================================================================
+# [[0200]] Endgame Flasks & Tinctures
+#===============================================================================================================
+
+Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
+{
+	Show OverQual1          { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 26; }
+	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
+	Show Tinc85  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 85; }
+	Show Tinc82  			{ !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; }
+	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
+}
+
+Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68, !utilflasks
+{
+#------------------------------------
+# [2701] Endgame Flasks
+#------------------------------------
+	#!! Waypoint c4.flasks.all : "Endgame Flasks - All non-unique"
+	
+	Section OverQualityFlasks : !GEX
+	{
+		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show OverQualUtil1  { !G2; !exotic.t1; %D6; Clean(); ItemLevel >= 84; Quality >= 26; Class == class_utilFlasks; }
+		Show OverQualUtil2  { !G4; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show OverQualLife1  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 30; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualLife2  { !G4; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
+	}
+
+	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
+	Section SuperEndgameFlasks : Clean(), !GEX
+	{
+		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D4; ItemLevel >= 84; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show Utility82  { !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
+		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
+	}
+#------------------------------------
+# [2701] Quality High
+#------------------------------------
+	#!! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
+	Section 20QualEndgameFlasks : Quality >= 20, Rarity Normal, !G5
+	{
+		Show Any20QualFlask { %D2; !recipe.ts1; Class == class_flasks; }
+	}
+#------------------------------------
+# [2701] Utility OR quality flasks
+#------------------------------------
+	Section UtilityEndgameFlasks : Clean()
+	{
+		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; !SF45; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
+		Show AnyUtility 	{ %D3; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; }
+	}
+#------------------------------------
+# [2701] Quality Low
+#------------------------------------
+	Section QualityEndgameFlasks
+	{
+		ShowD QualityHigh { %D1; !G6H; !recipe.t2; Class == class_flasklikes; Quality >= 10; AreaLevel <= 77; }
+		ShowD QualityLow  { %D0; !G6; !recipe.t3; Class == class_flasklikes; Quality >= 1; AreaLevel <= 77; }
+	}
+#------------------------------------
+# [2705] Early mapping life/mana/utility flasks
+#------------------------------------
+	Section EarlyMappingLifeManaFlasks : BaseType == bases.flask.lifemanaassorted, Clean()
+	{
+		Show EarlyMappingLifeMana { %D2; !G7H; !Low; AreaLevel <= 70; }
+	}
+}
+
+#===============================================================================================================
+# [[0200]] Misc Rules
+#===============================================================================================================
+#!! Waypoint c4.misc.others : "SpecialGear - Overquality items and optional animated weapon module"
+
+Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
+{
+	Show WhiteSocketWeapons1H { %D3; !exotic.t4; !G4; AreaLevel < 79; Class == classes_1h; Sockets >= "3WWW"; }
+}
+
+Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
+{
+	ShowD normalmelee  { Rarity Normal; Class == classes_weapons_melee;}
+	ShowD normalranged { Rarity Normal; Class == classes_weapons_ranged;}
+	ShowD magicmelee   { Rarity Magic; Class == classes_weapons_melee;}
+	ShowD magicranged  { Rarity Magic; Class == classes_weapons_ranged;}
+}
+
+#!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
+
+Section EndgameRaresRemaining : Rarity Rare, ItemLevel >= 68
+{
+	Show t5endgamerares { !GR4; %D1; Class == classes_nonJwlryEquip; }
+
+	#!! Waypoint c6.rare.t4.chroms : "Rare Endgame Items - lowtierchromatics"
+	Show RGBSmall1	{ !G6H; %D2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 2; Height 2; }
+	Show RGBSmall2	{ !G6H; %D2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 1; Height <=4; }
+	Show RGBLarge	{ !G6;  %D0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 4; }
+	Show RGBMedium	{ !G6;  %D0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 3; }
+}
+
+#===============================================================================================================
+# [[0200]] Hide Layer 1 - Rare & Magic Gear
+#===============================================================================================================
+Section HideLayer : Auto("HideLayer")
+{
+	Hide NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class == classes_equip + class_utilFlasks; }
 	Hide RaresEndgame { ItemLevel >= 68; Rarity Rare; Class == classes_equip; }
 }
 
@@ -1682,11 +1646,6 @@ Section MapFragments : Class == "Map Fragments" "Breachstones"
 		Show t3 { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
 	}
 
-	Section StackedScarabs : Auto("Fragments->stackedScarabs")
-	{
-		Show t3 { !G3; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
-	}
-
 #------------------------------------
 # [4701] Scarabs
 #------------------------------------
@@ -1694,6 +1653,9 @@ Section MapFragments : Class == "Map Fragments" "Breachstones"
 	{
 		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
+		
+		Show LowerScarabsStackedEx { !G3; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
+		
 		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
 		Show t4 { !G4; %H5; BaseType == fragments.scarabs.t4; }
 		Show t5 { !G5; %HS4; BaseType == fragments.scarabs.t5; }
