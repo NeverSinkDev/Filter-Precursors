@@ -509,7 +509,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class == "Gloves" "Helmets"; }
 		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class == classes_attack; }
 		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class == "Body Armours"; }
-		Show IncursionMinion   { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class == classes_cast + classes_1hattack; }
+		Show IncursionMinion     { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class == classes_cast + classes_1hattack; }
 		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
 		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
 
@@ -541,41 +541,13 @@ Section IdModSectionSpecial : IdMods, !exotic
 #===============================================================================================================
 #!! Waypoint c2.exotic.artefacts.all : "Exotic - Voidstones, Trinkets, Fishing items, Pieces"
 
-Section ArtefactItemClasses
+Section ArtefactItemClasses : Auto("artefact->misc")
 {	
-
-#------------------------------------
-#   [1234] Voidstones
-#------------------------------------	
-	Section Voidstones : Auto("artefact->trinkets")
-	{
-		Show Any { !G3; BaseType == exotic.voidstones.t1; }
-	}
-
-#------------------------------------
-#   [1234] Trinkets
-#------------------------------------	
-	Section Trinkets : Class == "Trinkets", Auto("artefact->trinkets")
-	{
-		Show AnyTrinket { !G3; Empty(); }
-	}
-
-#------------------------------------
-#   [1234] Secret Society Equipment
-#------------------------------------
-	Section Fishing : Class == "Fishing Rods", Auto("artefact->redacted")
-	{
-		Show SCP3889 { !G1; Empty(); }
-	}
-
-#------------------------------------
-#   [1234] Pieces
-#------------------------------------
-	Section Pieces : Class == "Pieces", Auto("artefact->piece")
-	{
-		Show Vaal { !G3; BaseType == "Vaal Aspect"; }
-		Show Any { !G3; Rarity "Unique"; }
-	}	
+	Show Voidstones { !G3; BaseType == exotic.voidstones.t1; }
+	Show AnyTrinket { !G3; Empty(); Class == "Trinkets"; }
+	Show FishingRods { !G1; Empty(); Class == "Fishing Rods"; }
+	Show VaalPieces { !G3; BaseType == "Vaal Aspect"; Class == "Pieces"; }
+	Show Pieces { !G3; Rarity "Unique"; Class == "Pieces"; }
 }
 
 #------------------------------------
@@ -614,22 +586,12 @@ Section ExoticVariations : !exotic
 #------------------------------------
 #   [1234] Double Corruptions
 #------------------------------------	
-	Section RExoticVariations : Rarity Rare, Auto("exotic->corruptions")
+	Section RExoticVariations : Corrupted True, Auto("exotic->corruptions")
 	{
-		Section DoubleCorrupted : Corrupted True, CorruptedMods >= 2
-		{
-			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; !corruptstrong; Class == classes_doubleCorruptTargetsRare; }
-			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; !corruptstrong; Empty(); }
-		}
-
-#------------------------------------
-#   [1234] Specific Single Corruptions
-#------------------------------------
+			Show DoubleCorruptedJwlry { !GSH; %D6; !exotic.t2; !corruptstrong; Rarity Rare; CorruptedMods >= 2; Class == classes_doubleCorruptTargetsRare; }
+			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; !corruptstrong; Rarity Rare; CorruptedMods >= 2; Empty(); }
 #!! Waypoint c2.exotic.singlecorrupted.all : "SpecialGear - Single corrupted rare items with implicits"
-		Section SingleCorrupted : Corrupted True, CorruptedMods >= 1
-		{
-			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; Class == "Quivers"; ItemLevel >= 80; }
-		}
+			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Class == "Quivers"; ItemLevel >= 80; }
 	}
 #------------------------------------
 #   [1234] Abyss Jeweled Rares
@@ -742,23 +704,10 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 	ShowD PerfectionCrafting	 { !GEX; !exotic.t2; %D5; BaseDefencePercentile >= 99; Class == classes_armor; BaseType == craftingArmors; ItemLevel >= 84; }
 }
 
-#------------------------------------
-# [1234] RGB Endgame
-#------------------------------------
-#!! Waypoint c4.recipes.rgb.all : "Recipes - Endgame chromatic recipes (normal and magic RGBs)"
-
-Section RGBendgame : SocketGroup "RGB", Rarity < Rare, AreaLevel >= 68, AreaLevel <= 83, Auto("EndgameRGB"), !recipe
-{
-	Show RGBSmall1	{ !G6H; %D2; !*t2; !SF40; Width 2; Height 2; }
-	Show RGBSmall2	{ !G6H; %D2; !*t2; !SF40; Width 1; Height <=4; }
-	Show RGBLarge	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 4; }
-	Show RGBMedium	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 3; }
-}
-
 #===============================================================================================================
 # [[0200]] Rare Item Decorators
 #===============================================================================================================
-#!! Waypoint c6.rare.decorator.all : "Rare Endgame Items - decorators"
+#!! Waypoint c4.rare.decorator.all : "Rare Endgame Items - decorators"
 
 Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, Class == classes_equip, !raredeco, !GEX
 {
@@ -792,7 +741,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Exotic Corrupted Items
 #===============================================================================================================
-#!! Waypoint c6.rare.breach.all : "Rare Endgame Items - Breach rings"
+#!! Waypoint c4.rare.breach.all : "Rare Endgame Items - Breach rings"
 
 	Section BreachRings : Class == "Rings", BaseType == "Breach Ring", Auto("rare->exotic->breachrings")
 	{
@@ -800,7 +749,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show Any  { %HS1; !G5; !exotic.t3; Empty(); }
 	}
 
-#!! Waypoint c6.rare.talisman.all : "Rare Endgame Items - Talismans"
+#!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans"
 
 	Section Talismans : Class == "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
 	{
@@ -818,7 +767,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Accessoires
 #===============================================================================================================
-#!! Waypoint c6.rare.generic.all : "Rare Endgame Items - (Optional) Hiding identified rares"
+#!! Waypoint c4.rare.generic.all : "Rare Endgame Items - (Optional) Hiding identified rares"
 
 	Section OptionalRare : Auto("RareOptional")
 	{
@@ -829,7 +778,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 # [[0200]] Endgame - Conditional Hide Layers
 #===============================================================================================================
 
-#!! Waypoint c6.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
+#!! Waypoint c4.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
 
 Section ConditionalRareHider : Auto("HideLayer")
 {
@@ -840,7 +789,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 #===============================================================================================================
 # [[0200]] Endgame - Rare - Accessoires
 #===============================================================================================================
-#!! Waypoint c6.rare.trinkets.all : "Rare Endgame Items - Amulets, Rings"
+#!! Waypoint c4.rare.trinkets.all : "Rare Endgame Items - Amulets, Rings"
 
 	Section EndgameRareRingsAmulets : Class == "Rings" "Amulets", Auto("rr->amuring")
 	{
@@ -849,7 +798,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 		Show T3 { !GRJ3; %D2; BaseType == derived.rares.amurings.t3; }
 	}
 
-#!! Waypoint c6.rare.belts.all : "Rare Endgame Items - Belts"
+#!! Waypoint c4.rare.belts.all : "Rare Endgame Items - Belts"
 	Section EndgameRareBelts : Class == "Belts", Auto("rr->belts")
 	{
 		Show T1 { !GRJ1; %D4; BaseType == derived.rares.belts.t1; }
@@ -861,7 +810,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 # [[0200]] Endgame - Rare - Gear - Droplevel Hiding
 #===============================================================================================================
 
-#!! Waypoint c6.rare.drophiders : "Rare Endgame Items - Hide low items on high levels"
+#!! Waypoint c4.rare.drophiders : "Rare Endgame Items - Hide low items on high levels"
 
 	Section HideLayerRareRuleIncremental : Auto("HideLayer")
 	{
@@ -875,25 +824,25 @@ Section ConditionalRareHider : Auto("HideLayer")
 # [[0200]] Endgame - Rare - Gear
 #===============================================================================================================
 
-#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1"
+#!! Waypoint c4.rare.t1.all : "Rare Endgame Items - T1"
 
 	Section EndgameRareGear : Auto("rr")
 	{
 		Show T1 { !GR1; %D4; BaseType == derived.rares.gear.t1; }
 
-#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2"
+#!! Waypoint c4.rare.t2.all : "Rare Endgame Items - T2"
 		
 		Show T2 { !GR2; %D4; BaseType == derived.rares.gear.t2; }
 
-#!! Waypoint c6.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
+#!! Waypoint c4.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
 
 		Show IdentifiedItemHandling { %D0; !GS; !exotic.t4; Identified True; Clean(); Class == classes_equip; }
 
-#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - t3"
+#!! Waypoint c4.rare.t3.all : "Rare Endgame Items - t3"
 
 		Show T3 { !GR3; %D3; BaseType == derived.rares.gear.t3; }
 
-#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4"
+#!! Waypoint c4.rare.t4.all : "Rare Endgame Items - T4"
 
 		Show T4 { !GR3; %D2; BaseType == derived.rares.gear.t4; }
 	}
@@ -917,45 +866,45 @@ Section EarlyEndgameCrafting : Auto("normalcraft->extra"), Rarity <= Magic, Area
 }
 
 #------------------------------------
-# [1234] ILVL 86
+# [1234] Crafting Matrix
 #------------------------------------
 Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 {
-	#!! Waypoint c3.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
+	#!! Waypoint c5.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
 
 	Section CraftingBases : Auto("crafting->generalgear"), Rarity <= Rare
 	{
 		# Level 86 crafting bases
-		Show t1-86 { !G3;  %D5; !craftspecial.I86; BaseType == derived.crafting.levelgroup86.t1; }
-		Show t2-86 { !GEX; %D4; !craftgeneral.I86; BaseType == derived.crafting.levelgroup86.t2; }
-		Show t3-86 { !GEX; %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup86.t3; }
+		Show t1-86 { !G3;  %D5; !craftgeneral.I86; BaseType == derived.crafting.levelgroup86.t1; }
+		Show t2-86 { !GEX; %D4; !craftgeneral.I84; BaseType == derived.crafting.levelgroup86.t2; }
+		Show t3-86 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup86.t3; }
 
 		# Level 85 crafting bases
-		Show t1-85 { !G3;  %D4; !craftspecial.I86; BaseType == derived.crafting.levelgroup85.t1; }
-		Show t2-85 { !GEX; %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup85.t2; }
-		Show t3-85 { !GEX; %D2; !craftgeneral.I86; BaseType == derived.crafting.levelgroup85.t3; }
+		Show t1-85 { !G3;  %D4; !craftgeneral.I86; BaseType == derived.crafting.levelgroup85.t1; }
+		Show t2-85 { !GEX; %D3; !craftgeneral.I84; BaseType == derived.crafting.levelgroup85.t2; }
+		Show t3-85 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup85.t3; }
 
 		# Level 84 crafting bases
-		Show t1-84 { !G3;  %D3; !craftspecial.I86; BaseType == derived.crafting.levelgroup84.t1; }
-		Show t2-84 { !GEX; %D2; !craftgeneral.I86; BaseType == derived.crafting.levelgroup84.t2; }
-		Show t3-84 { !GEX; %D1; !craftgeneral.I86; BaseType == derived.crafting.levelgroup84.t3; }
+		Show t1-84 { !G3;  %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup84.t1; }
+		Show t2-84 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup84.t2; }
+		Show t3-84 { !GEX; %D1; !craftgeneral.I84; BaseType == derived.crafting.levelgroup84.t3; }
 
 		# Level 83 crafting bases
-		Show t1-83 { !G3;  %D3; !craftspecial.I86; BaseType == derived.crafting.levelgroup83.t1; }
-		Show t2-83 { !GEX; %D2; !craftgeneral.I86; BaseType == derived.crafting.levelgroup83.t2; }
-		Show t3-83 { !GEX; %D1; !craftgeneral.I86; BaseType == derived.crafting.levelgroup83.t3; }
+		Show t1-83 { !G3;  %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup83.t1; }
+		Show t2-83 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup83.t2; }
+		Show t3-83 { !GEX; %D1; !craftgeneral.I84; BaseType == derived.crafting.levelgroup83.t3; }
 
 		# Other Crafting Bases
-		Show t1-rest { !G3; %D3; !craftspecial.I86; BaseType == bases.crafting.general.t1; }
-		ShowD t2-rest { !GEX; %D0; !craftgeneral.I86; BaseType == bases.crafting.general.t2; }
-		ShowD t3-rest { !GEX; %D0; !craftgeneral.I86; BaseType == bases.crafting.general.t3; }
+		Show t1-rest { !G3; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
+		ShowD t2-rest { !GEX; %D0; !craftspecial.ANY; BaseType == bases.crafting.general.t2; }
+		ShowD t3-rest { !GEX; %D0; !craftspecial.ANY; BaseType == bases.crafting.general.t3; }
 	}
 }
 
 #------------------------------------
 # [1234] Chisel Recipes
 #------------------------------------
-#!! Waypoint c4.recipes.chisel.all : "Recipes - Chisel recipe"
+#!! Waypoint c5.recipes.chisel.all : "Recipes - Chisel recipe"
 
 Section ChiselRecipe : BaseType == "Gavel", Auto("ChiselRecipe"), !recipe, !GEX
 {
@@ -969,7 +918,7 @@ Section ChiselRecipe : BaseType == "Gavel", Auto("ChiselRecipe"), !recipe, !GEX
 #===============================================================================================================
 # [[0200]] Chancing Bases
 #===============================================================================================================
-#!! Waypoint c4.chancing : "Chancing bases"
+#!! Waypoint c5.chancing : "Chancing bases"
 
 Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 {
@@ -995,7 +944,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Endgame Flasks
 #------------------------------------
-	#!! Waypoint c4.flasks.all : "Endgame Flasks - All non-unique"
+	#!! Waypoint c6.flasks.all : "Endgame Flasks - All non-unique"
 	
 	Section OverQualityFlasks : !GEX
 	{
@@ -1006,7 +955,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 		Show OverQualLife2  { !G4; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
 	}
 
-	#!! Waypoint c4.flasks.eg : "Endgame Flasks - High level utility and life flasks"
+	#!! Waypoint c6.flasks.eg : "Endgame Flasks - High level utility and life flasks"
 	Section SuperEndgameFlasks : Clean(), !GEX
 	{
 		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
@@ -1017,7 +966,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 # [2701] Quality High
 #------------------------------------
-	#!! Waypoint c4.flasks.others : "Endgame Flasks - Other flasks"
+	#!! Waypoint c6.flasks.others : "Endgame Flasks - Other flasks"
 	Section 20QualEndgameFlasks : Quality >= 20, Rarity Normal, !G5
 	{
 		Show Any20QualFlask { %D2; !recipe.ts1; Class == class_flasks; }
@@ -1050,7 +999,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #===============================================================================================================
 # [[0200]] Misc Rules
 #===============================================================================================================
-#!! Waypoint c4.misc.others : "SpecialGear - Overquality items and optional animated weapon module"
+#!! Waypoint c6.misc.others : "SpecialGear - Overquality items and optional animated weapon module"
 
 Section MiscEndgameRules : Auto("MiscEndgameRules"), Clean(), Rarity <= Rare, !GEX
 {
@@ -1065,22 +1014,35 @@ Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 	ShowD magicranged  { Rarity Magic; Class == classes_weapons_ranged;}
 }
 
-#!! Waypoint c5.hidelayer.normalmagic : "HIDELAYER - all endgame and magic and normal items"
+
+#------------------------------------
+# [1234] RGB Endgame
+#------------------------------------
+#!! Waypoint c6.recipes.rgb.all : "Recipes - Endgame chromatic recipes (normal and magic RGBs)"
+
+Section RGBendgame : SocketGroup "RGB", Rarity <= Rare, AreaLevel >= 68, AreaLevel <= 83, Auto("EndgameRGB"), !recipe
+{
+	Show RGBSmall1	{ !G6H; %D2; !*t2; !SF40; Width 2; Height 2; }
+	Show RGBSmall2	{ !G6H; %D2; !*t2; !SF40; Width 1; Height <=4; }
+	Show RGBLarge	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 4; }
+	Show RGBMedium	{ !G6;  %D0; !*t3; !SF40; Width 2; Height 3; }
+}
+
+#------------------------------------
+# [1234] Remaining Rares
+#------------------------------------
+#!! Waypoint c6.rares.remaining : "Rares - lowest tier"
 
 Section EndgameRaresRemaining : Rarity Rare, ItemLevel >= 68
 {
 	Show t5endgamerares { !GR4; %D1; Class == classes_nonJwlryEquip; }
-
-	#!! Waypoint c6.rare.t4.chroms : "Rare Endgame Items - lowtierchromatics"
-	Show RGBSmall1	{ !G6H; %D2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 2; Height 2; }
-	Show RGBSmall2	{ !G6H; %D2; !recipe.t2; !SF40; SocketGroup "RGB"; Width 1; Height <=4; }
-	Show RGBLarge	{ !G6;  %D0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 4; }
-	Show RGBMedium	{ !G6;  %D0; !recipe.t3; !SF40; SocketGroup "RGB"; Width 2; Height 3; }
 }
 
 #===============================================================================================================
 # [[0200]] Hide Layer 1 - Rare & Magic Gear
 #===============================================================================================================
+#!! Waypoint c6.hidelayer.endgame : "HIDELAYER - all endgame and magic and normal items"
+
 Section HideLayer : Auto("HideLayer")
 {
 	Hide NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class == classes_equip + class_utilFlasks; }
