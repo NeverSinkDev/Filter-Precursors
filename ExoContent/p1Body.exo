@@ -41,7 +41,7 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 #   [1234] Influenced Maps
 #------------------------------------
 
-Section InfluencedMaps : Auto("gear->stranded"), Class == "Maps", Rarity <= Rare
+Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps", Rarity <= Rare
 {	
 	Show ZanaMap { !G2; !maps.T1; ZanaMemory True; }
 	Show InfShaper { !G2; !maps.T1; HasInfluence Shaper; }
@@ -49,16 +49,33 @@ Section InfluencedMaps : Auto("gear->stranded"), Class == "Maps", Rarity <= Rare
 	Show InfConquerors { !G2; !maps.T1; HasInfluence Crusader Hunter Redeemer Warlord; }
 }
 
+
 #------------------------------------
 #   [1234] Common Tier - T1
 #------------------------------------
-
-Section MemoryStrandTemp : Auto("stranded->temp"), Class == "Maps", Rarity <= Rare
-{
-	Show Any { !GSH; !exotic.t2; Rarity <= Rare; MemoryStrands >= 1; }
-}
-
 #!! Waypoint c1.infl.all : "All rules - except 6links and influenced maps"
+
+Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare
+{
+	var combinedt1gear = source.rares.eg.t1 + source.crafting.general.t1;
+	var combinedt2gear = source.rares.eg.t2 + source.crafting.general.t2 - combinedt1gear;
+	var combinedt3gear = source.rares.eg.t3 + source.crafting.general.t3 - combinedt2gear;
+
+	Show strandedFractured { !G2; !exotic.t1; MemoryStrands >= 1; FracturedItem True; }
+	Show strandedVeiled { !G2; !exotic.t1; MemoryStrands >= 1; Identified True; Mod "Veil"; }
+
+	Show t1high { !G2; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt1gear; }
+	Show t1 	{ !G2; !exotic.t1; MemoryStrands >= 1;  BaseType == combinedt1gear; }
+
+	Show t2high { !G2; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt2gear; }
+	Show t2 	{ !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
+
+	Show t3high { !G2; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt3gear; }
+	Show t3 	{ !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt3gear; }
+
+	Show AnyHigh { !GSH; !exotic.t3; MemoryStrands >= 60; }
+	Show Any 	 { %D5; !GSH; !exotic.t3; MemoryStrands >= 1; }
+}
 
 Section Influenced : Rarity Rare
 {
@@ -128,7 +145,7 @@ Section Elder : HasInfluence Elder, Auto("rare->elder")
 		## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
 		ShowD t2_exo { !G4; BaseType == bases.influenced.exotic2.t1; }
 		## Top Tier Common items of top item level
-		ShowD t2_86 { !G4; ItemLevel >= 86; BaseType == source.rares.eg.t1 + bases.crafting.general.t1 + bases.crafting.general.t2; };
+		ShowD t2_86 { !G4; ItemLevel >= 86; BaseType == source.rares.eg.t1 + source.crafting.general.t1 + source.crafting.general.t2; };
 	}
 
 #------------------------------------
@@ -530,6 +547,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve; Rarity <= Rare; };
+		Show Mercenary { !GSH; %D6; !exotic.t2; Mod mercMod; Rarity <= Rare; };
 		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
 		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
 		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
@@ -832,7 +850,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c4.rare.t2.all : "Rare Endgame Items - T2"
 		
-		Show T2 { !GR2; %D4; BaseType == derived.rares.gear.t2; }
+		Show T2 { !GR1; %D4; BaseType == derived.rares.gear.t2; }
 
 #!! Waypoint c4.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling"
 
@@ -840,7 +858,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c4.rare.t3.all : "Rare Endgame Items - t3"
 
-		Show T3 { !GR3; %D3; BaseType == derived.rares.gear.t3; }
+		Show T3 { !GR2; %D3; BaseType == derived.rares.gear.t3; }
 
 #!! Waypoint c4.rare.t4.all : "Rare Endgame Items - T4"
 
@@ -861,7 +879,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 Section EarlyEndgameCrafting : Auto("normalcraft->extra"), Rarity <= Magic, AreaLevel <= 75, AreaLevel >= 68, Clean()
 {
-	ShowD any { !GEX; %D0; BaseType == bases.crafting.early; }
+	# ShowD any { !GEX; %D0; BaseType == bases.crafting.early; }
 	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; Rarity <= Rare; Class == classes_armor_noshields; }
 }
 
@@ -875,29 +893,29 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 	Section CraftingBases : Auto("crafting->generalgear"), Rarity <= Rare
 	{
 		# Level 86 crafting bases
-		Show t1-86 { !G3;  %D5; !craftgeneral.I86; BaseType == derived.crafting.levelgroup86.t1; }
-		Show t2-86 { !GEX; %D4; !craftgeneral.I84; BaseType == derived.crafting.levelgroup86.t2; }
-		Show t3-86 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup86.t3; }
+		Show t1_86 { !G3;  %D5; !craftgeneral.I86; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t1; }
+		Show t2_86 { !GEX; %D4; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t2; }
+		Show t3_86 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t3; }
 
 		# Level 85 crafting bases
-		Show t1-85 { !G3;  %D4; !craftgeneral.I86; BaseType == derived.crafting.levelgroup85.t1; }
-		Show t2-85 { !GEX; %D3; !craftgeneral.I84; BaseType == derived.crafting.levelgroup85.t2; }
-		Show t3-85 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup85.t3; }
+		Show t1_85 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t1; }
+		Show t2_85 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t2; }
+		Show t3_85 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t3; }
 
 		# Level 84 crafting bases
-		Show t1-84 { !G3;  %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup84.t1; }
-		Show t2-84 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup84.t2; }
-		Show t3-84 { !GEX; %D1; !craftgeneral.I84; BaseType == derived.crafting.levelgroup84.t3; }
+		Show t1_84 { !G3;  %D3; !craftgeneral.I86; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t1; }
+		Show t2_84 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t2; }
+		Show t3_84 { !GEX; %D1; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t3; }
 
 		# Level 83 crafting bases
-		Show t1-83 { !G3;  %D3; !craftgeneral.I86; BaseType == derived.crafting.levelgroup83.t1; }
-		Show t2-83 { !GEX; %D2; !craftgeneral.I84; BaseType == derived.crafting.levelgroup83.t2; }
-		Show t3-83 { !GEX; %D1; !craftgeneral.I84; BaseType == derived.crafting.levelgroup83.t3; }
+		Show t1_83 { !G3;  %D3; !craftgeneral.I86; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t1; }
+		Show t2_83 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t2; }
+		Show t3_83 { !GEX; %D1; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t3; }
 
 		# Other Crafting Bases
-		Show t1-rest { !G3; %D3; !craftspecial.ANY; BaseType == bases.crafting.general.t1; }
-		ShowD t2-rest { !GEX; %D0; !craftspecial.ANY; BaseType == bases.crafting.general.t2; }
-		ShowD t3-rest { !GEX; %D0; !craftspecial.ANY; BaseType == bases.crafting.general.t3; }
+		Show t1_rest { !G3; %D3; !craftspecial.ANY;   ItemLevel >= 68; BaseType == source.crafting.general.t1; }
+		ShowD t2_rest { !GEX; %D0; !craftspecial.ANY; ItemLevel >= 68; BaseType == source.crafting.general.t2; }
+		ShowD t3_rest { !GEX; %D0; !craftspecial.ANY; ItemLevel >= 68; BaseType == source.crafting.general.t3; }
 	}
 }
 
@@ -1033,9 +1051,9 @@ Section RGBendgame : SocketGroup "RGB", Rarity <= Rare, AreaLevel >= 68, AreaLev
 #------------------------------------
 #!! Waypoint c6.rares.remaining : "Rares - lowest tier"
 
-Section EndgameRaresRemaining : Rarity Rare, ItemLevel >= 68
+Section EndgameRareGear : Auto("rr"), Rarity Rare, ItemLevel >= 68
 {
-	Show t5endgamerares { !GR4; %D1; Class == classes_nonJwlryEquip; }
+	Show t5 { !GR4; %D1; Class == classes_nonJwlryEquip; }
 }
 
 #===============================================================================================================
@@ -1581,12 +1599,6 @@ Section HeistBlueprint : Auto("Heist->Blueprint"), Class == "Blueprints"
 	Show Any { !exomap.high; !G4; Empty(); }
 }
 
-Section Memories : Auto("ExoticMap->Memory"), Class == "Memories", BaseType == memories.types
-{
-	Show t1 { !V1; !TopTierColors; !G1; Mod >=1 memories.t1; }
-	Show Any { !exomap.high; !G2; }
-}
-
 Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research"
 {
 	Show ILVL83 { ItemLevel >= 83; !exomap.high; !G2; Empty(); }
@@ -1616,7 +1628,7 @@ Section MapFragments : Class == "Map Fragments" "Breachstones"
 		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
 		Show t2 { !G2; BaseType == fragments.scarabs.t2; }
 		
-		Show LowerScarabsStackedEx { !G3; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
+		Show t3stackedEx { !G3; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
 		
 		Show t3 { !G3; BaseType == fragments.scarabs.t3; }
 		Show t4 { !G4; %H5; BaseType == fragments.scarabs.t4; }
@@ -1855,7 +1867,7 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Cu
 #------------------------------------
 #!! Waypoint c9.runes.all : "Tierlist - Runes"
 
-Section SettlerRunes : Auto("runes"), Class == class_currency, !Currency
+Section SettlerRunes : Auto("runesGrafts"), Class == class_currency, !Currency
 {
 	Show t1 { !G1; !*t1exalted; BaseType == runes.t1; }
 	Show t2 { !G2; !*t2divine; BaseType == runes.t2; }

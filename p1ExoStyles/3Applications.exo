@@ -97,9 +97,10 @@ Style MainRules
 
 	## rare gear general
 	Apply(rares.gear, EndgameRareGear.t1* => RaresArmoursWeapons.t1);
-	Apply(rares.gear, EndgameRareGear.t2* => RaresArmoursWeapons.t2);
-	Apply(rares.gear, EndgameRareGear.t3* => RaresArmoursWeapons.t3);
-	Apply(rares.gear, EndgameRareGear.t4* => RaresArmoursWeapons.t4);
+	Apply(rares.gear, EndgameRareGear.t2* => RaresArmoursWeapons.t1);
+	Apply(rares.gear, EndgameRareGear.t3* => RaresArmoursWeapons.t2);
+	Apply(rares.gear, EndgameRareGear.t4* => RaresArmoursWeapons.t3);
+	Apply(rares.gear, EndgameRareGear.t5* => RaresArmoursWeapons.t4);
 
 	## rare decorator cleans
 	Apply(meta.removers, $raredeco => EndgameRareDecorators)
@@ -128,6 +129,7 @@ Style MainRules
 	## Fragments
 	Apply(tier.fragments, Labyrinth => ExoticFragments);
 	Apply(tier.fragments, MapFragments => FragmentTierStrat);
+	Apply(tier.fragments, MapFragments.t3stackedEx => FragmentTierStrat.T3);
 	Apply(tier.fragments, MapFragments.T1p => FragmentExceptions.Any);
 	Apply(tier.fragments, $fragments => FragmentTierStrat);
 	Apply(tier.fragments, Breachstone => FragmentTierStrat);
