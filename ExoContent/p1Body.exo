@@ -260,169 +260,165 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
 var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
 
-Section IDModExceptions : Rarity "Rare", Auto("ExoticMods"), IdMods, !exotic
-{
-#------------------------------------
-#   [1234] ID Mod exceptions - override id mod matching section
-#------------------------------------
-	Show t1veil     { %DS5; !GSH; !exotic.t1; Mod t1veiled; }
-	Show t2veil     { %DS4; !GSH; !exotic.t2; Mod t2veiled; }
-}
-
-Section IdModSection : IdMods, !highvalueidmod
+Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalueidmod 
 {
 #------------------------------------
 #   [1234] Physical
 #------------------------------------
-	Section Rare : Rarity "Rare", Auto("RareID"), !GSH
+	Section Weapons : Class == classes_attack, DropLevel >= 50, Mod xattackphys_Core
 	{
-		Section Weapons : Class == classes_attack, DropLevel >= 50, Mod xattackphys_Core
-		{
-			Show Weapon_Phys     { %D5; Mod >= 3 xattackphys_Conf; Mod = 0 zbad_phys_attack; }
-			Show Weapon_PhysPure { %D5; Mod >= 2 xattackphys_Conf; Mod = 0 zbad_phys_attack; Clean(); }
-		}
+		Show Weapon_Phys     { %D5; Mod >= 3 xattackphys_Conf; Mod = 0 zbad_phys_attack; }
+		Show Weapon_PhysPure { %D5; Mod >= 2 xattackphys_Conf; Mod = 0 zbad_phys_attack; Clean(); }
+	}
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-		Section FastEleWeapons : BaseType == bases.crafting.components.quickweapons.t1, Mod xattackele_Core
-		{
-			Show Weapon_Ele 	{ %D5; Mod >= 4 xattackele_Norm; Mod = 0 zbad_ele_attack; }
-			Show Weapon_ElePure { %D5; Mod >= 3 xattackele_Norm; Mod = 0 zbad_ele_attack; Clean(); }
-		}
+	Section FastEleWeapons : BaseType == bases.crafting.components.quickweapons.t1, Mod xattackele_Core
+	{
+		Show Weapon_Ele 	{ %D5; Mod >= 4 xattackele_Norm; Mod = 0 zbad_ele_attack; }
+		Show Weapon_ElePure { %D5; Mod >= 3 xattackele_Norm; Mod = 0 zbad_ele_attack; Clean(); }
+	}
 #------------------------------------
 #   [1234] Blade Blast Daggers
 #------------------------------------
-		Section FastEleWeapons : Class == classes_bladeBlast
-		{
-			Show BladeBlast_2core 	{ %D4; Mod >=2 xbladeBlast_core; Mod >= 4 xbladeBlast_aux; }
-		}
+	Section FastEleWeapons : Class == classes_bladeBlast
+	{
+		Show BladeBlast_2core 	{ %D4; Mod >=2 xbladeBlast_core; Mod >= 4 xbladeBlast_aux; }
+	}
 #------------------------------------
 #   [1234] Gembased
 #------------------------------------
-		Section GemLevels
-		{
-			Show Gem_Bow 	{ %D5; Class == "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
-			Show Gem_Caster { Class == classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
-			Show Gem_Staves { Class == classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
-		}
+	Section GemLevels
+	{
+		Show Gem_Bow 	{ %D5; Class == "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
+		Show Gem_Caster { Class == classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
+		Show Gem_Staves { Class == classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
+	}
 #------------------------------------
 #   [1234] Caster
 #------------------------------------
-		
-		Section CasterSpecialized : Class == classes_1hcast
-		{
-			Show Caster_FireWeaponT2  { %D5; Mod casterFireCore; Mod >= 4 xcaster_firedmg_norm; Mod = 0 z_bad_caster; }
-			Show Caster_ColdWeaponT2  { %D5; Mod casterColdCore; Mod >= 4 xcaster_colddmg_norm; Mod = 0 z_bad_caster; }
-			Show Caster_LightWeaponT2 { %D5; Mod casterLightCore; Mod >= 4 xcaster_lightdmg_norm; Mod = 0 z_bad_caster; }
-			Show Caster_PhysWeaponT2  { %D5; Mod casterMiscPhys; Mod >= 4 xcaster_physdmg_norm; Mod = 0 z_bad_caster; }
-			Show Caster_ChaosWeaponT2 { %D5; Mod casterMiscChaos; Mod >= 4 xcaster_chaosdmg_norm; Mod = 0 z_bad_caster; }
-		}
+	Section CasterSpecialized : Class == classes_1hcast
+	{
+		Show Caster_FireWeaponT2  { %D5; Mod casterFireCore; Mod >= 4 xcaster_firedmg_norm; Mod = 0 z_bad_caster; }
+		Show Caster_ColdWeaponT2  { %D5; Mod casterColdCore; Mod >= 4 xcaster_colddmg_norm; Mod = 0 z_bad_caster; }
+		Show Caster_LightWeaponT2 { %D5; Mod casterLightCore; Mod >= 4 xcaster_lightdmg_norm; Mod = 0 z_bad_caster; }
+		Show Caster_PhysWeaponT2  { %D5; Mod casterMiscPhys; Mod >= 4 xcaster_physdmg_norm; Mod = 0 z_bad_caster; }
+		Show Caster_ChaosWeaponT2 { %D5; Mod casterMiscChaos; Mod >= 4 xcaster_chaosdmg_norm; Mod = 0 z_bad_caster; }
+	}
 #------------------------------------
 #   [1234] Spellslinger
 #------------------------------------
-		Section Spellslinger : Class == "Wands", Mod slingerBase1
-		{
-			Show Caster_SlingerT2 { %D5; Mod >= 3 xslinger_default_conf; }
-		}
+	Section Spellslinger : Class == "Wands", Mod slingerBase1
+	{
+		Show Caster_SlingerT2 { %D5; Mod >= 3 xslinger_default_conf; }
+	}
 #------------------------------------
 #   [1234] Helmets
 #------------------------------------
-		Section Helmets : Class == "Helmets"
-		{
-			Show Helmet_Life_based { %D5; Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix; Mod = 0 z_bad_armor_life; }
-			Show Helmet_ES_based   { %D4; Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix; Mod = 0 z_bad_armor_es; }
-		}
+	Section Helmets : Class == "Helmets"
+	{
+		Show Helmet_Life_based { %D5; Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix; Mod = 0 z_bad_armor_life; }
+		Show Helmet_ES_based   { %D4; Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix; Mod = 0 z_bad_armor_es; }
+	}
 #------------------------------------
 #   [1234] Boots
 #------------------------------------
-		Section Boots : Class == "Boots"
-		{
-			Show Boots_Life_based { %D5; Mod xboots_life_core; Mod >= 4 xboots_life_mix; Mod = 0 zbad_boots_life; }
-			Show Boots_ES_based   { %D4; Mod xboots_es_core; Mod >= 4 xboots_es_mix; Mod = 0 zbad_boots_es + zbad_boots_life; }
-		}
+	Section Boots : Class == "Boots"
+	{
+		Show Boots_Life_based { %D5; Mod xboots_life_core; Mod >= 4 xboots_life_mix; Mod = 0 zbad_boots_life; }
+		Show Boots_ES_based   { %D4; Mod xboots_es_core; Mod >= 4 xboots_es_mix; Mod = 0 zbad_boots_es + zbad_boots_life; }
+	}
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
-		Section Gloves : Class == "Gloves"
-		{
-			Show Gloves_Life_based { %D5; Mod xgloves_life_core; Mod >= 4 xgloves_life_mix; Mod = 0 z_bad_armor_life; }
-			Show Gloves_ES_based   { %D5; Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix; Mod = 0 zbad_boots_es; }
-		}
+	Section Gloves : Class == "Gloves"
+	{
+		Show Gloves_Life_based { %D5; Mod xgloves_life_core; Mod >= 4 xgloves_life_mix; Mod = 0 z_bad_armor_life; }
+		Show Gloves_ES_based   { %D5; Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix; Mod = 0 zbad_boots_es; }
+	}
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
-		Section Shields : Class == "Shields"
-		{
-			Show Shield_ESFocus   		{ %D5; Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; Mod = 0 z_bad_bigarmor_es; }
-			Show Shield_DefenseFocus    { %D5; Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
-			Show Shield_CasterFocus   	{ %D5; Mod >= 2 xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
-			Show Shield_LifeFocus 		{ %D5; Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; Mod = 0 z_bad_bigarmor_life; }
-		}
+	Section Shields : Class == "Shields"
+	{
+		Show Shield_ESFocus   		{ %D5; Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; Mod = 0 z_bad_bigarmor_es; }
+		Show Shield_DefenseFocus    { %D5; Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
+		Show Shield_CasterFocus   	{ %D5; Mod >= 2 xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
+		Show Shield_LifeFocus 		{ %D5; Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; Mod = 0 z_bad_bigarmor_life; }
+	}
 #------------------------------------
 #   [1234] Amulets
 #------------------------------------
-		Section Amulets : Class == "Amulets"
-		{
-			Show Amu_exalter { %D5; Mod "Exalter's"; Clean(); }
+	Section Amulets : Class == "Amulets"
+	{
+		Show Amu_exalter { %D5; Mod "Exalter's"; Clean(); }
 
-			Show Amu_1CoreCaster{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; Mod = 0 z_bad_liferoll; }
-			Show Amu_2CoreCaster{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
+		Show Amu_1CoreCaster{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; Mod = 0 z_bad_liferoll; }
+		Show Amu_2CoreCaster{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
 
-			Show Amu_1CoreDot	{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; Mod = 0 z_bad_liferoll; }
-			Show Amu_2CoreDot	{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
+		Show Amu_1CoreDot	{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; Mod = 0 z_bad_liferoll; }
+		Show Amu_2CoreDot	{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
 
-			Show Amu_1CoreAttack{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; Mod = 0 z_bad_liferoll; }
-			Show Amu_2CoreAttack{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
-		}
+		Show Amu_1CoreAttack{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; Mod = 0 z_bad_liferoll; }
+		Show Amu_2CoreAttack{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
+	}
 #------------------------------------
 #   [1234] Rings
 #------------------------------------
-		Section Rings : Class == "Rings"
-		{
-			Show Ring_Caster { %D5; Mod xring_core; Mod >= 3 xring_cast_mix; Mod = 0 z_bad_liferoll; }
-			Show Ring_Attack { %D5; Mod xring_core; Mod >= 3 xring_attack_mix; Mod = 0 z_bad_liferoll; }
-			Show Ring_Minion { %D5; BaseType == "Bone Ring"; Mod xring_core; Mod ring_minion_high; Mod >= 3 xring_minion_mix; Mod = 0 z_bad_liferoll; }
-		}
+	Section Rings : Class == "Rings"
+	{
+		Show Ring_Caster { %D5; Mod xring_core; Mod >= 3 xring_cast_mix; Mod = 0 z_bad_liferoll; }
+		Show Ring_Attack { %D5; Mod xring_core; Mod >= 3 xring_attack_mix; Mod = 0 z_bad_liferoll; }
+		Show Ring_Minion { %D5; BaseType == "Bone Ring"; Mod xring_core; Mod ring_minion_high; Mod >= 3 xring_minion_mix; Mod = 0 z_bad_liferoll; }
+	}
 #------------------------------------
 #   [1234] Quivers
 #------------------------------------	
-		Section Quivers : Class == "Quivers"
-		{
-			Show Quiv_Hit { %D5; Mod >= 2 xquiver_core_mods; Mod >= 4 xquiver_mix_hit; Mod = 0 z_bad_liferoll; }
-			Show Quiv_Dot { %D5; Mod >= 2 xquiver_core_mods; Mod >= 4 xquiver_mix_dot; Mod = 0 z_bad_liferoll; }
-		}
+	Section Quivers : Class == "Quivers"
+	{
+		Show Quiv_Hit { %D5; Mod >= 2 xquiver_core_mods; Mod >= 4 xquiver_mix_hit; Mod = 0 z_bad_liferoll; }
+		Show Quiv_Dot { %D5; Mod >= 2 xquiver_core_mods; Mod >= 4 xquiver_mix_dot; Mod = 0 z_bad_liferoll; }
+	}
 #------------------------------------
 #   [1234] Body Armours
 #------------------------------------	
-		Section Body : Class == "Body Armours", DropLevel >= 55
-		{
-			Show Body_Life 		  { %D4; Mod xbody_core_life; Mod >= 5 xbody_aux_life; Mod = 0 z_bad_bigarmor_life; }
-			Show Body_Defense 	  { %D4; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Clean(); }
-			Show Body_LifeDefense { %D4; Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
-			Show Body_ES 		  { %D4; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; Mod = 0 z_bad_bigarmor_es; }
-		}
+	Section Body : Class == "Body Armours", DropLevel >= 55
+	{
+		Show Body_Life 		  { %D4; Mod xbody_core_life; Mod >= 5 xbody_aux_life; Mod = 0 z_bad_bigarmor_life; }
+		Show Body_Defense 	  { %D4; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Clean(); }
+		Show Body_LifeDefense { %D4; Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
+		Show Body_ES 		  { %D4; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; Mod = 0 z_bad_bigarmor_es; }
+	}
 #------------------------------------
 #   [1234] Belts
 #------------------------------------	
-		Section Belts : Class == "Belts"
-		{
-			Show Belt_General {  %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; Mod = 0 z_bad_liferoll; }
-		}
+	Section Belts : Class == "Belts"
+	{
+		Show Belt_General {  %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; Mod = 0 z_bad_liferoll; }
+	}
 #------------------------------------
 #   [1234] Jewels
 #------------------------------------	
-		Section Jewels : Class == class_jewels
-		{
-			Show IdJewel_Minion 	{ Mod >= 2 xJwl_minion_core; Mod >= 3 xJwl_minion_mix; BaseType == genericJewels; }
-			Show IdJewel_DOT 		{ Mod >= 1 xJwl_dot_core; Mod = 1 jwl_dot_unique; Mod >= 3 xJwl_dot_mix; BaseType == genericJewels; }
-			Show IdJewel_CritAttack { Mod >= 1 xJwl_crit_core_attack;  Mod >= 2 xJwl_crit_subCore_attack; Mod >= 3 xJwl_crit_mix_attack; BaseType == genericJewels; }
-			Show IdJewel_CritSpell 	{ Mod >= 1 xJwl_crit_core_spell; Mod >= 2 xJwl_crit_subCore_spell; Mod >= 3 xJwl_crit_mix_spell; BaseType == genericJewels; }
+	Section Jewels : Class == class_jewels
+	{
+		Show IdJewel_Minion 	{ Mod >= 2 xJwl_minion_core; Mod >= 3 xJwl_minion_mix; BaseType == genericJewels; }
+		Show IdJewel_DOT 		{ Mod >= 1 xJwl_dot_core; Mod = 1 jwl_dot_unique; Mod >= 3 xJwl_dot_mix; BaseType == genericJewels; }
+		Show IdJewel_CritAttack { Mod >= 1 xJwl_crit_core_attack;  Mod >= 2 xJwl_crit_subCore_attack; Mod >= 3 xJwl_crit_mix_attack; BaseType == genericJewels; }
+		Show IdJewel_CritSpell 	{ Mod >= 1 xJwl_crit_core_spell; Mod >= 2 xJwl_crit_subCore_spell; Mod >= 3 xJwl_crit_mix_spell; BaseType == genericJewels; }
 
-			Show IdAj_Attack  { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
-			Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
-			Show IdAj_Minion  { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
-			Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == abyssJewels; }
-		}
+		Show IdAj_Attack  { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
+		Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
+		Show IdAj_Minion  { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
+		Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == abyssJewels; }
+	}
+
+#------------------------------------
+#   [1234] ID Mod exceptions - override id mod matching section
+#------------------------------------
+	Section IDModExceptions : Rarity "Rare", IdMods, !exotic
+	{
+		Show t1veil     { %DS5; !GSH; !exotic.t2; Mod t1veiled; }
+		Show t2veil     { %DS4; !GSH; !exotic.t3; Mod t2veiled; }
 	}
 }
 
@@ -510,9 +506,6 @@ Section IdModSectionSpecial : IdMods, !exotic
 
 		Show FracturedVeiled { %D4 !GSH; !exotic.t2; Clean(); Mod "Veil" + exotic_incursion; FracturedItem True; }
 		Show DuoVeil    { %D4; !GSH; !exotic.t3; Clean(); Mod "Veiled"; Mod "of the Veil"; }
-		Show SmallVeil1 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 2; Height <= 2; } 
-		Show SmallVeil2 { %D4; !GS;  !exotic.t3; Clean(); Mod "Veil"; Width <= 1; Height <= 4; }
-		Show VeilRest   { %D3; !GS;  !exotic.t4; Clean(); Mod "Veil"; }
 
 #------------------------------------
 #   [1234] Incursion/Temple Mods
@@ -723,10 +716,13 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 }
 
 #===============================================================================================================
-# [[0200]] Rare Item Decorators
+# [[0200]] Endgame - Rare - Gear
 #===============================================================================================================
 #!! Waypoint c4.rare.decorator.all : "Rare Endgame Items - decorators"
 
+#------------------------------------
+# [[0200]] Endgame - Rare - Decorators
+#------------------------------------
 Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, Class == classes_equip, !raredeco, !GEX
 {
 	Cont LargeRares 	{ !*large; Height >= 3; Width >= 2; }
@@ -756,9 +752,23 @@ Section CraftingItemHighlight : Rarity Rare, AreaLevel 1, ItemLevel >= 4, Identi
 
 Section EndgameRares : Rarity Rare, ItemLevel >= 68
 {
-#===============================================================================================================
-# [[0200]] Endgame - Rare - Exotic Corrupted Items
-#===============================================================================================================
+#------------------------------------
+# [[0200]] Endgame - Rare - Exotic Veiled
+#------------------------------------
+#!! Waypoint c4.rare.breach.all : "Rare Endgame Items - Veiled"
+
+	Section VeiledRares : Rarity Rare, ItemLevel >= 68, Auto("rare->exotic->veiled"), Identified True, Mod "Veil"
+	{
+		Show t1 	{ %D6; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
+		Show t2		{ %D5; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
+		Show t3 	{ %D4; !G5;  !exotic.t3; BaseType == source.rares.eg.t3; }
+		Show t4 	{ %D3; !GSH; !exotic.t4; BaseType == source.rares.eg.t4; }
+		Show Any 	{ %D2; !GSH; !exotic.t4; Empty(); }
+	}
+
+#------------------------------------
+# [[0200]] Endgame - Rare - Exotic Corrupted
+#------------------------------------
 #!! Waypoint c4.rare.breach.all : "Rare Endgame Items - Breach rings"
 
 	Section BreachRings : Class == "Rings", BaseType == "Breach Ring", Auto("rare->exotic->breachrings")
@@ -782,19 +792,15 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 		Show Any { %H0; !G5; BaseType "Talisman"; }
 	}
 
-#===============================================================================================================
-# [[0200]] Endgame - Rare - Accessoires
-#===============================================================================================================
+#------------------------------------
+# [[0200]] Endgame - Rare - Conditional Hide Rules
+#------------------------------------
 #!! Waypoint c4.rare.generic.all : "Rare Endgame Items - (Optional) Hiding identified rares"
 
 	Section OptionalRare : Auto("RareOptional")
 	{
 		HideD IdHider { !GEX; !Shrink; Identified True; Class == classes_equip; }
 	}
-
-#===============================================================================================================
-# [[0200]] Endgame - Conditional Hide Layers
-#===============================================================================================================
 
 #!! Waypoint c4.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
 
@@ -804,9 +810,9 @@ Section ConditionalRareHider : Auto("HideLayer")
 	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
 }
 
-#===============================================================================================================
-# [[0200]] Endgame - Rare - Accessoires
-#===============================================================================================================
+#------------------------------------
+# [[0200]] Endgame - Rare - Amulets, Rings, Boots
+#------------------------------------
 #!! Waypoint c4.rare.trinkets.all : "Rare Endgame Items - Amulets, Rings"
 
 	Section EndgameRareRingsAmulets : Class == "Rings" "Amulets", Auto("rr->amuring")
@@ -824,9 +830,9 @@ Section ConditionalRareHider : Auto("HideLayer")
 		Show T3 { !GRJ3; %D2; BaseType == derived.rares.belts.t3; }
 	}
 
-#===============================================================================================================
+#------------------------------------
 # [[0200]] Endgame - Rare - Gear - Droplevel Hiding
-#===============================================================================================================
+#------------------------------------
 
 #!! Waypoint c4.rare.drophiders : "Rare Endgame Items - Hide low items on high levels"
 
@@ -838,9 +844,9 @@ Section ConditionalRareHider : Auto("HideLayer")
 		Hide RRIHide4 { %RH1; AreaLevel >= 73; DropLevel < 40; Class == classes_armor_noshields; }
 	}
 
-#===============================================================================================================
-# [[0200]] Endgame - Rare - Gear
-#===============================================================================================================
+#------------------------------------
+# [1234] Endgame - Rare - Gear
+#------------------------------------
 
 #!! Waypoint c4.rare.t1.all : "Rare Endgame Items - T1"
 
