@@ -45,8 +45,8 @@ Style MainRules
 
 	## influenced and eldritch
 	Apply(influenced, $Maps.T1 => InfluencedMapsStrategy)
-	Apply(influenced, Influenced.t1* => InfluencedVariant.t1);
-	Apply(influenced, Influenced.t2* => InfluencedVariant.t2);
+	Apply(influenced, Influenced.t1* => InfluencedVariant.t2);
+	Apply(influenced, Influenced.t2* => !InfluencedRandom.Any);
 	Apply(influenced, Influenced.Any* => !InfluencedRandom.Any);
 
 	Apply(influenced, Eldritch.t2* => InfluencedVariant.t2);

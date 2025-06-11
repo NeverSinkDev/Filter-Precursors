@@ -5,6 +5,7 @@
 
 Func IdMods(){ Identified True; }
 Func Clean(){ Corrupted False; Mirrored False; }
+Func AnyInfluence() { HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord; }
 
 #===============================================================================================================
 # [[0200]] Global overriding rules
@@ -34,7 +35,7 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 }
 
 #===============================================================================================================
-# [[0200]] High tier influenced items
+# [[0200]] Influenced Items
 #===============================================================================================================
 
 #------------------------------------
@@ -51,7 +52,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps", Rarity <= Ra
 
 
 #------------------------------------
-#   [1234] Common Tier - T1
+#   [1234] Memory Stranded Equipment
 #------------------------------------
 #!! Waypoint c1.infl.all : "All rules - except 6links and influenced maps"
 
@@ -77,127 +78,35 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare
 	Show Any 	 { %D5; !GSH; !exotic.t3; MemoryStrands >= 1; }
 }
 
-Section Influenced : Rarity Rare
+#------------------------------------
+#   [1234] Influenced Gear
+#------------------------------------
+
+Section Influenced : Auto("influenced->all"), Rarity Rare
 {
+	var influencedItems2 = derived.rares.amurings.t1 + derived.rares.amurings.t2 + derived.rares.belts.t1 + derived.rares.belts.t2 + derived.crafting.shields.t1 + derived.crafting.shields.t2 + derived.crafting.quivers.t1 + derived.crafting.quivers.t2 + derived.crafting.quivers.t3 + "Stygian Vise";
+	var influencedItems1 = bases.exotic.atlas.any + source.crafting.general.t1 - influencedItems2;
+	var influencedItems3 = source.rares.eg.t2 + source.crafting.general.t2 - influencedItems2 - influencedItems1;
 
-#------------------------------------
-#   [1234] Common Tier - T1
-#------------------------------------
+	# Selected exclusive bases
+	Show t1exotic { !G2; %D6; BaseType == influencedItems1; AnyInfluence(); }
+	# Selected top tier bases
+	Show t2top { !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
 
-Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-{
-	## Common influenced High Exclusivity Items like Ritual items and heist items. Shouldn't drop by default, but always highlighted.
-	Show t1_exo { !G2; BaseType == bases.influenced.exotic1.t1; }
-}
+	## Class-based filtering
+	Show t2classesShaper 			 { %D4; Class == cInf1Shaper; HasInfluence Shaper; ItemLevel >= 80; }
+	Show t2classesElder 			 { %D4; Class == cInf1Elder; HasInfluence Elder; ItemLevel >= 80; }
+	Show t2classesCrusader 		 	 { %D4; Class == cInf1Crusader; HasInfluence Crusader; ItemLevel >= 80; }
+	Show t2classesHunter 			 { %D4; Class == cInf1Hunter; HasInfluence Hunter; ItemLevel >= 80; }
+	Show t2classesWarlord 		 	 { %D4; Class == cInf1Warlord; HasInfluence Warlord; ItemLevel >= 80; }
+	Show t2classesRedeemer 		 	 { %D4; Class == cInf1Redeemer; HasInfluence Redeemer; ItemLevel >= 80; }
+	Show t2classesInfluencedShared 	 { %D4; Class == classesInfluenced85; AnyInfluence(); ItemLevel >= 85; }
 
-#------------------------------------
-#   [1234] Specialised Tier - T1
-#------------------------------------
-
-Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
-{
-	Show t11 { !G2; ItemLevel >= 82; BaseType == Influenced.Crusader.t11; }
-	Show t12 { !G2; ItemLevel >= 85; BaseType == Influenced.Crusader.t12; }
-	Show t13 { !G2; ItemLevel >= 86; BaseType == Influenced.Crusader.t13; }
-}
-
-Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
-{
-	Show t11 { !G2; ItemLevel >= 82; BaseType == Influenced.Warlord.t11; }
-	Show t12 { !G2; ItemLevel >= 85; BaseType == Influenced.Warlord.t12; }
-	Show t13 { !G2; ItemLevel >= 86; BaseType == Influenced.Warlord.t13; }
-}
-
-Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
-{
-	Show t11 { !G2; ItemLevel >= 82; BaseType == Influenced.Redeemer.t11; }
-	Show t12 { !G2; ItemLevel >= 85; BaseType == Influenced.Redeemer.t12; }
-	Show t13 { !G2; ItemLevel >= 86; BaseType == Influenced.Redeemer.t13; }
-}
-
-Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
-{
-	Show t11 { !G2; ItemLevel >= 82; BaseType == Influenced.Hunter.t11; }
-	Show t12 { !G2; ItemLevel >= 85; BaseType == Influenced.Hunter.t12; }
-	Show t13 { !G2; ItemLevel >= 86; BaseType == Influenced.Hunter.t13; }
-}
-
-Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
-{
-	Show t11 { !G2; ItemLevel >= 82; BaseType == Influenced.Shaper.t11; }
-	Show t12 { !G2; ItemLevel >= 85; BaseType == Influenced.Shaper.t12; }
-	Show t13 { !G2; ItemLevel >= 86; BaseType == Influenced.Shaper.t13; }
-}
-
-Section Elder : HasInfluence Elder, Auto("rare->elder")
-{
-	Show t11 { !G2; ItemLevel >= 82; BaseType == Influenced.Elder.t11; }
-	Show t12 { !G2; ItemLevel >= 85; BaseType == Influenced.Elder.t12; }
-	Show t13 { !G2; ItemLevel >= 86; BaseType == Influenced.Elder.t13; }
-}
-
-#------------------------------------
-#   [1234] Common Tier - T2
-#------------------------------------
-
-	Section InfluencedCommon : Auto("influenced->common"), HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
-	{
-		## Common influenced Medium Exclusivity Items like Atlas bases. Rare drops and nearly always interesting
-		ShowD t2_exo { !G4; BaseType == bases.influenced.exotic2.t1; }
-		## Top Tier Common items of top item level
-		ShowD t2_86 { !G4; ItemLevel >= 86; BaseType == source.rares.eg.t1 + source.crafting.general.t1 + source.crafting.general.t2; };
-	}
-
-#------------------------------------
-#   [1234] Specialised Tier - T2
-#------------------------------------
-
-	Section Crusader : HasInfluence Crusader, Auto("rare->crusader")
-	{
-		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType == Influenced.Crusader.t21; }
-		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType == Influenced.Crusader.t22; }
-	}
-
-	Section Warlord : HasInfluence Warlord, Auto("rare->warlord")
-	{
-		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType == Influenced.Warlord.t21; }
-		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType == Influenced.Warlord.t22; }
-	}
-
-	Section Redeemer : HasInfluence Redeemer, Auto("rare->redeemer")
-	{
-		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType == Influenced.Redeemer.t21; }
-		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType == Influenced.Redeemer.t22; }
-	}
-
-	Section Hunter : HasInfluence Hunter, Auto("rare->hunter")
-	{
-		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType == Influenced.Hunter.t21; }
-		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType == Influenced.Hunter.t22; }
-	}
-
-	Section Shaper : HasInfluence Shaper, Auto("rare->shaper")
-	{
-		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType == Influenced.Shaper.t21; }
-		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType == Influenced.Shaper.t22; }
-	}
-
-	Section Elder : HasInfluence Elder, Auto("rare->elder")
-	{
-		Show t21 { !G3; %D5; ItemLevel >= 80; BaseType == Influenced.Elder.t21; }
-		Show t22 { !G3; %D5; ItemLevel >= 85; BaseType == Influenced.Elder.t22; }
-	}
-
-#------------------------------------
-#   [1234] Remaining
-#------------------------------------
-
-	Section Random : HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord, Auto("rare->any")
-	{
-		Show AnyTrinket  { %D4; !GI; Class == classes_jewellery; }
-		Show AnyTopLevel { %D4; !GI; !tiny; ItemLevel >= 86; }
-		Show Any 		 { %D3; !GI; Rarity <= Rare; Empty(); }
-	}
+	# Second grade bases
+	Show t2high    { !G2; %D4; BaseType == influencedItems3; ItemLevel >= 84; AnyInfluence(); }
+	# Low strictness 86 rule
+	Show any86 { !G2; %D4; ItemLevel >= 86; AnyInfluence(); }
+	Show any   { !G2; %D3; AnyInfluence(); }
 }
 
 #===============================================================================================================
@@ -308,9 +217,9 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Spellslinger
 #------------------------------------
-	Section Spellslinger : Class == "Wands", Mod slingerBase1
+	Section Spellslinger : Class == "Wands"
 	{
-		Show Caster_SlingerT2 { %D5; Mod >= 3 xslinger_default_conf; }
+		Show Caster_SlingerT2 { %D5; Mod slingerBase1; Mod >= 4 xslinger_default_conf; }
 	}
 #------------------------------------
 #   [1234] Helmets
@@ -351,16 +260,16 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section Amulets : Class == "Amulets"
 	{
-		Show Amu_exalter { %D5; Mod "Exalter's"; Clean(); }
+		Show Amu_exalter { %D5; Mod "Exalter's"; }
 
-		Show Amu_1CoreCaster{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_caster_mix; Mod = 0 z_bad_liferoll; }
-		Show Amu_2CoreCaster{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_caster_mix; }
+		Show Amu_1CoreCaster{ %D5; Mod xamu_singlecore; Mod >= 4 xamu_caster_mix; Mod = 0 z_bad_liferoll; }
+		Show Amu_2CoreCaster{ %D5; Mod >= 2 xamu_multicore; Mod >= 4 xamu_caster_mix; }
 
-		Show Amu_1CoreDot	{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_dot_mix; Mod = 0 z_bad_liferoll; }
-		Show Amu_2CoreDot	{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_dot_mix; }
+		Show Amu_1CoreDot	{ %D5; Mod xamu_singlecore; Mod >= 4 xamu_dot_mix; Mod = 0 z_bad_liferoll; }
+		Show Amu_2CoreDot	{ %D5; Mod >= 2 xamu_multicore; Mod >= 4 xamu_dot_mix; }
 
-		Show Amu_1CoreAttack{ %D5; Mod xamu_aux_singlecore; Mod >= 4 xamu_attack_mix; Mod = 0 z_bad_liferoll; }
-		Show Amu_2CoreAttack{ %D5; Mod >= 2 xamu_aux_multicore; Mod >= 4 xamu_attack_mix; }
+		Show Amu_1CoreAttack{ %D5; Mod xamu_singlecore; Mod >= 4 xamu_attack_mix; Mod = 0 z_bad_liferoll; }
+		Show Amu_2CoreAttack{ %D5; Mod >= 2 xamu_multicore; Mod >= 4 xamu_attack_mix; }
 	}
 #------------------------------------
 #   [1234] Rings
@@ -369,7 +278,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 	{
 		Show Ring_Caster { %D5; Mod xring_core; Mod >= 3 xring_cast_mix; Mod = 0 z_bad_liferoll; }
 		Show Ring_Attack { %D5; Mod xring_core; Mod >= 3 xring_attack_mix; Mod = 0 z_bad_liferoll; }
-		Show Ring_Minion { %D5; BaseType == "Bone Ring"; Mod xring_core; Mod ring_minion_high; Mod >= 3 xring_minion_mix; Mod = 0 z_bad_liferoll; }
+		Show Ring_Minion { %D5; BaseType == "Bone Ring"; Mod >= 2 ring_minion_high; Mod >= 4 xring_minion_mix; Mod = 0 z_bad_liferoll; }
 	}
 #------------------------------------
 #   [1234] Quivers
@@ -781,9 +690,9 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section Talismans : Class == "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
 	{
-		Show T1AttackTalisman { %H5; !GSH; BaseType == bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_attack_mix }
-		Show T1CasterTalisman { %H5; !GSH; BaseType == bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_caster_mix; }
-		Show T1DotTalisman    { %H5; !GSH; BaseType == bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_aux_multicore;  Mod >=4 xamu_dot_mix; }
+		Show T1AttackTalisman { %H5; !GSH; BaseType == bases.talismans.attack.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_multicore;  Mod >=4 xamu_attack_mix }
+		Show T1CasterTalisman { %H5; !GSH; BaseType == bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_multicore;  Mod >=4 xamu_caster_mix; }
+		Show T1DotTalisman    { %H5; !GSH; BaseType == bases.talismans.caster.any + bases.talismans.universal.any + bases.talismans.damagetypes.any; Mod xamu_multicore;  Mod >=4 xamu_dot_mix; }
 
 		Show T2StatTalisman   { %H4; !GS; BaseType == bases.talismans.stats.any; Mod acc_allat[3]; Mod str[3] + dex[3] + int[3]; }
 
@@ -1095,7 +1004,7 @@ Section Jewels : !jewels
 		## Heist dropped 1-mod magic jewels with useful mods
 		Section IdedUncorruptedJewels : Identified True, Rarity <= Rare, BaseType == genericJewels;
 		{
-			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent"; }
+			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent" "Expediting"; }
 		}
 
 		## Adorned class magic corrupted modded jewels
@@ -1914,23 +1823,6 @@ Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !C
 }
 
 #------------------------------------
-# [5104] Incubators
-#------------------------------------
-#!! Waypoint c9.currency.incubators.all : "Tierlist - Incubators"
-
-Section CurrencyIncubators : Auto("currency->incubators"), Class == "Incubators", !Currency
-{
-	Show leveledex { %D5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
-
-	Show t2 { !G1; !*t2divine; BaseType == currency.incubators.t2; }
-	Show t3 { !G2; !*t3annul; BaseType == currency.incubators.t3; }
-	Show t4 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t4; }
-	Show t5 { !G5; %H2; !*t6chrom; BaseType == currency.incubators.t5; }
-	Hide exHide { !shrink; BaseType ==  currency.incubators.t2 + currency.incubators.t3 + currency.incubators.t4 + currency.incubators.t5; }
-	Show restex { Empty(); }
-}
-
-#------------------------------------
 # [5104] Trial of the Ancestors
 #------------------------------------
 
@@ -1961,6 +1853,24 @@ Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Cur
 {
 	Show harbinger { !G2; !*t2divine; BaseType == "Deregulation Scroll" "Electroshock Scroll" "Fragmentation Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Time-light Scroll"; }
 	Show misc { !G3; !*t2divine; BaseType == currency.exotic.undroppable; }
+	Show campaignOnlyCurrency { !G3; !*t4chaos; BaseType == currency.exotic.undroppable; }
+}
+
+#------------------------------------
+# [5104] Incubators
+#------------------------------------
+#!! Waypoint c9.currency.incubators.all : "Tierlist - Incubators"
+
+Section CurrencyIncubators : Auto("currency->incubators"), Class == "Incubators", !Currency
+{
+	Show leveledex { %D5; !G3; !*t4chaos; ItemLevel >= 81; BaseType == currency.incubators.leveledex; }
+
+	Show t2 { !G1; !*t2divine; BaseType == currency.incubators.t2; }
+	Show t3 { !G2; !*t3annul; BaseType == currency.incubators.t3; }
+	Show t4 { !G4; %H5; !*t4chaos; BaseType == currency.incubators.t4; }
+	Show t5 { !G5; %H2; !*t6chrom; BaseType == currency.incubators.t5; }
+	Hide exHide { !shrink; BaseType ==  currency.incubators.t2 + currency.incubators.t3 + currency.incubators.t4 + currency.incubators.t5; }
+	Show restex { Empty(); }
 }
 
 #===============================================================================================================
