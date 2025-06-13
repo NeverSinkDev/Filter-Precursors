@@ -29,8 +29,6 @@ var classes_weapons_2hmelee =  "Warstaves" "Two Hand Swords" "Two Hand Axes" "Tw
 var classes_weapons_ranged = "Wands" "Bows";
 var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
 
-var classes_archer = "Bows" "Quivers";
-
 var class_jewels = "Jewels" "Abyss Jewels";
 var classes_nonJwlryEquip = classes_armor + classes_weapons + "Quivers";
 var classes_jewellery = "Amulets" "Belts" "Rings";
@@ -49,19 +47,34 @@ var class_currency = "Stackable Currency";
 var class_gems = "Support Gems" "Skill Gems";
 var classes_bladeBlast = "Daggers" "Rune Daggers";
 
+var cTop86 = "Body Armours" "Boots" "Shields" "Bows" "Belts" "Quivers";
+var cTop85 = "Amulets" "Gloves" "Helmets";
+var cTop84 = "Rings" "Wands" "Staves" "Rune Daggers" "Sceptres";
+var cTop83 = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "One Hand Maces" "One Hand Axes" "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
+
+var classesInfluenced85 = "Body Armours" "Helmets" "Rings" "Amulets" "Wands" "Sceptres" "Quivers";
+
+var cInf1Shaper = "Rings" "Amulets" "Bows" "Gloves";
+var cInf1Elder = "Rings" "Amulets" "Belts";
+var cInf1Crusader = "Rings" "Amulets" "Belts";
+var cInf1Hunter = "Rings" "Amulets" "Gloves" "Belts" "Boots" "Shields" "Quivers";
+var cInf1Warlord = "Rings" "Amulets" "Gloves" "Boots";
+var cInf1Redeemer = "Rings" "Amulets" "Boots" "Shields";
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {META} Tiering-Classes
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+var wclasses_synth = "Amulets" "Belts" "Bows" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Wands"
+var classes_synth = wclasses_synth + "Jewels" "Maps";
 
-var classes_synth = "Amulets" "Belts" "Bows" "Jewels" "Maps" "Quivers" "Rings" "Rune Daggers" "Sceptres" "Shields" "Wands";
-var classes_fractured = "Abyss Jewels" "Heist Brooches" "Heist Cloaks" "Heist Gear" "Heist Tools" "Jewels" "Utility Flasks";
+var classes_fracturedExotic = class_jewels + "Heist Brooches" "Heist Cloaks" "Heist Gear" "Heist Tools" "Utility Flasks";
 var classes_corrupted = "Amulets" "Belts" "Boots" "Gloves" "Helmets" "Quivers" "Rings" "Shields";
-var classes_doubleCorruptTargetsRare = class_jewels + "Amulets" "Belts" "Rings" "Gloves" "Quivers"
+var classes_doubleCorruptTargetsRare = class_jewels + "Amulets" "Belts" "Rings" "Gloves" "Quivers";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## BASETYPES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 var genericJewels = "Cobalt Jewel" "Crimson Jewel" "Viridian Jewel";
 var abyssJewels = "Ghastly Eye Jewel" "Hypnotic Eye Jewel" "Murderous Eye Jewel" "Searching Eye Jewel";
@@ -71,7 +84,7 @@ var allCommonJewels = genericJewels + abyssJewels;
 ## {META} Non-Exact Classes
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var classes_finalHider = "Amulets" "Belts" "Body Armour" "Boots" "Bows" "Claws" "Daggers" "Flask" "Gloves" "Heist Brooch" "Heist Cloak" "Heist Gear" "Heist Tool" "Helmets" "Jewels" "One Hand" "Quivers" "Rings" "Rune Daggers" "Sceptre" "Shields" "Staves" "Two Hand Axes" "Two Hand Maces" "Two Hand Swords" "Wand" "Warstaves" "Tinctures" "Idols";
+var classes_finalHider = class_flasklikes + classes_equip + classes_heist + class_jewels + "Idols";
 
 var map_prefixes = "Brutal" "Sinister" "Judging" "Vicious" "Decrepifying" "Shaman's" "Energetic" "Sundering" "Harming" "Technical" "Cerebral" "Incinerating" "Chaotic" "Infernal" "Armoured" "Avalanching" "Prolonging" "Thwarting" "Halting" "Dissipating" "Sharpened" "Thundering" "Champion's" "Soldier's" "Gladiator's" "Flanking" "Puncturing" "Piercing" "Rupturing" "Enlightened" "Chilling" "Fencing" "Cleaving" "Beating" "Blunt" "Surging" "Flaming" "Carved" "Humming" "Warrior's" "Bandit's" "Charging" "Harmonic" "Parrying" "Deflecting" "Shielding" "Hungering" "Arctic";
 var map_suffixes = "of Stunning" "of Recovery" "of the Beast" "of Intelligence" "of Shelter" "of Neutralisation" "of Impaling" "of the Apocalypse" "of Poisoning" "of Freezing" "of Burning" "of Bleeding" "of Shocking" "of Entropy" "of Infusion" "of the Dragon" "of Weight" "of the Stormdweller" "of Strength" "of Spirit" "of Dexterity" "of Insulation" "of Runes" "of Cunning" "of Haemophilia" "of Order" "of Menace" "of the Flameruler" "of Zeal" "of Acrimony" "of Wounding" "of Archery" "of Combat" "of Soaring" "of Stemming" "of the Elements" "of Hexwarding" "of Demolishing" "of Fending" "of Raiding" "of Berserking" "of Zealousness" "of Exsanguinating" "of Grounding" "of Blasting" "of Rejuvenation" "of Potency" "of the Hearth" "of Venom" "of Athletics" "of Adaption" "of Combusting" "of Resistance" "of the Snowbreather";
@@ -80,11 +93,13 @@ var map_suffixes = "of Stunning" "of Recovery" "of the Beast" "of Intelligence" 
 ##   {META} GLOBALLY INTERESTING MODS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+var mercMod = "Infamous" "of Infamy";
+
 ## Veiled modifiers
 var veilP = "Veiled";
 var veilPS = "Veiled" "of the Veil";
 
-var aux_all = "of the Essence" "Essences" + veilPS;
+var aux_all = "of the Essence" "Essences" "of Tacati" "of Puhuarte" + veilPS;
 
 ## CHEATMODS
 var w_cheatmods = "of the Underground" "Subterranean" "of Many";
@@ -283,7 +298,7 @@ var shields_es_defense2 = shields_fes[3] + shields_pes[2] + helmet_hybrid_es + h
 ##   {META} HELMETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var helmet_cheatMod = "of Puhuarte" + aux_all + a_cheatMods;
+var helmet_cheatMod = "of Janus' Veil" "of Puhuarte" + aux_all + a_cheatMods;
 
 var helmet_life = "Fecund" "Athlete's" "Virile";
 var helmet_regen = "of Recuperation";
@@ -295,10 +310,10 @@ var helmet_aux2 = aux_stats_rfocus2 + minionGems[2] + suppress[3] + accuracy[3] 
 
 ## usable elements
 var xhelmet_es_core = helmet_pes[2] + helmet_fes[2] + minionGems[1];
-var xhelmet_life_core = helmet_life[3] + minionGems[1] + regen_rate[2];
+var xhelmet_life_core = helmet_life[3] + minionGems[1] + regen_rate[2] + suppress[2] + "of Bameth";
 
-var xhelmet_life_mix = helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3] + combined_lifedefense_hybrid;
-var xhelmet_es_mix = helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + helmet_life[2];
+var xhelmet_life_mix = xhelmet_life_core + helmet_cheatMod + helmet_aux2 + combined_smitem_defenses2 + helmet_life[3] + combined_lifedefense_hybrid;
+var xhelmet_es_mix = xhelmet_es_core + helmet_cheatMod + helmet_aux2 + smallitem_es_defense2 + helmet_life[2];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} BOOTS
@@ -309,14 +324,14 @@ var boots_cheat = "Matatl's" + a_cheatMods;
 var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 var boots_life = "Athlete's" "Virile" "Rotund";
 
-var boots_aux = aux_stats_rfocus2 + suppress[4] + regen_rate[3];
+var boots_aux = "Rin's Veiled" + aux_stats_rfocus2 + suppress[3] + regen_rate[3];
 
 ## usable elements
-var xboots_life_core = boots_life[1] + boots_movespeed[2];
-var xboots_es_core = boots_movespeed[2];
+var xboots_life_core = boots_life[1] + boots_movespeed[2] + suppress[1] + boots_cheat + VeilP;
+var xboots_es_core = boots_movespeed[2] + boots_cheat;
 
-var xboots_life_mix = boots_aux + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
-var xboots_es_mix = boots_aux + smallitem_es_defense2 + boots_movespeed[2] + boots_cheat + aux_all;
+var xboots_life_mix = xboots_life_core + boots_aux + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
+var xboots_es_mix = xboots_es_core + boots_aux + smallitem_es_defense2 + boots_movespeed[2] + boots_cheat + aux_all;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} GLOVES
@@ -325,7 +340,7 @@ var xboots_es_mix = boots_aux + smallitem_es_defense2 + boots_movespeed[2] + boo
 var gloves_life = "Athlete's" "Virile" "Rotund";
 
 ## gloves specific special mods
-var gloves_cheat = "of Puhuarte" + a_cheatMods;
+var gloves_cheat = "of Puhuarte" "Vorici's Veiled" + a_cheatMods;
 var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
 var gloves_accu = "of Lioneye" "of the Ranger";
 var gloves_mana = "Zaffre" "Blue";
@@ -333,14 +348,14 @@ var gloves_mana = "Zaffre" "Blue";
 var glovesMisc2 = gloves_ias[2] + gloves_accu[2] + gloves_mana[1];
 
 ## combinations for aux
-var gloves_aux = aux_stats_rfocus2 + suppress[4] + glovesMisc2;
+var gloves_aux = aux_stats_rfocus2 + suppress[3] + glovesMisc2;
 
 ## usable elements
+var xgloves_life_core = gloves_life[2] + gloves_cheat + suppress[2] + gloves_ias[1] + "of Bameth";
 var xgloves_es_core = smallitem_es_defense_main2 + gloves_cheat;
-var xgloves_life_core = gloves_life[2] + gloves_cheat;
 
-var xgloves_life_mix = gloves_aux + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid;
-var xgloves_es_mix = gloves_aux + smallitem_es_defense_main2 + smallitem_es_defense2 + gloves_cheat;
+var xgloves_life_mix = xgloves_life_core + gloves_aux + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid + aux_all;
+var xgloves_es_mix = xgloves_es_core + gloves_aux + smallitem_es_defense_main2 + smallitem_es_defense2 + gloves_cheat + aux_all;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK
@@ -371,8 +386,10 @@ var wdmg_chaos = "Malicious";
 var attphys_CheatMods = w_cheatmods + w_temple_Phys;
 var attele_CheatMods = w_cheatmods + w_temple_Caster;
 
-var attphys1 = wdmg_pphys[2] + wdmg_phys[1] + wdmg_hphys[2] + ws_attack_speed[1] + ws_attack_crit[1] + ws_dot[1];
-var attphys2 = wdmg_pphys[3] + wdmg_phys[2] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[2] + ws_dot[2];
+var allWeaponsExtraAux = "Vagan's Veiled" "Tora's Veiled" "Haku's Veiled" "It That Fled's Veiled";
+
+var attphys1 = wdmg_pphys[2] + wdmg_phys[1] + wdmg_hphys[2] + ws_attack_speed[1] + ws_attack_crit[1] + ws_dot[1] + ws_critmulti[1];
+var attphys2 = wdmg_pphys[3] + wdmg_phys[2] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[2] + ws_dot[2] + ws_critmulti[1];
 
 var attele_base1 = wdmg_fire[2] + wdmg_cold[2] + wdmg_light[2] + w_temple_Caster;
 var attele_base2 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + w_temple_Caster;
@@ -383,13 +400,13 @@ var attele_aux2 = ws_attack_speed[3] + ws_attack_crit[3] + ws_critmulti[3] + ws_
 ## usable elements
 var xattackphys_Core = wdmg_pphys[3] + attphys_CheatMods;
 
-var xattackphys_Conf = attphys1 + attphys_CheatMods;
-var xattackphys_Norm = attphys2 + attphys_CheatMods;
+var xattackphys_Conf = attphys1 + attphys_CheatMods + allWeaponsExtraAux;
+var xattackphys_Norm = attphys2 + attphys_CheatMods + allWeaponsExtraAux;
 
 var xattackele_Core = attele_base2 + attele_CheatMods;
 
-var xattackele_Conf = attele_base1 + attele_aux1 + attele_CheatMods;
-var xattackele_Norm = attele_base2 + attele_aux2 + attele_CheatMods;
+var xattackele_Conf = attele_base1 + attele_aux1 + attele_CheatMods + allWeaponsExtraAux;
+var xattackele_Norm = xattackele_Core + attele_base2 + attele_aux2 + attele_CheatMods + allWeaponsExtraAux;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} CASTER MODS
@@ -461,9 +478,9 @@ var shield_caster_damage_best = wcast_spell[1] + wcast_fire[1] + wcast_cold[1] +
 var shield_global_core = a_cheatMods + shield_cheatMods + aux_all + suppress[1] + shield_life[1] + blockP[1] + shield_caster_gemLevels + shield_caster_damage_best;
 
 var xshield_es_core =       shield_global_core + shields_fes[3] + shields_pes[2];
-var xshield_defense_core =  shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[2];
+var xshield_defense_core =  suppress[1] + shield_global_core + shields_combined_flat_defenses2 + shields_combined_percentual_defenses2 + shield_life[2] + "of Bameth";
 var xshield_caster_core =   shield_global_core + shield_caster_gemLevels + shield_caster_damage + ws_cast_crit[2] + shield_life[2];
-var xshield_life_core =     shield_life[1];
+var xshield_life_core =     suppress[1] + shield_life[1];
 
 ## MIXED VALUED:
 var shield_combined_highdefenses_esonly = shields_fes[2] + shields_pes[2];
@@ -474,14 +491,14 @@ var shield_combined_attackermods = "of the Ranger" "of Mastery";
 
 ## UNIVERSAL MIX
 var shield_maxres = "of the Deathless" "of Harmony" "of the Lightning Rod" "of the Mammoth" "of the Solar Storm";
-var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[4] + ailment_avoid[2] + blockP[3] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
+var shield_specialDefenses = life_regen[1] + phys_reduction[1] + suppress[3] + ailment_avoid[2] + blockP[3] + spellblock[1] + lifeonblock[1] + critdmgreduction[1] + regen_rate[2] + shield_maxres;
 
 var shield_spice = shield_global_core + aux_stats_rfocus2 + shield_specialDefenses + ws_cast_crit[1];
 
-var xshield_es_mix =        shield_spice + shields_es_defense2      + shield_combined_castermods;
-var xshield_defense_mix =   shield_spice + shield_combined_lifemods + shield_combined_attackermods + shields_combined_defenses2;
-var xshield_caster_mix =    shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses_esonly;
-var xshield_life_mix =      shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses;
+var xshield_es_mix =        shield_spice + shields_es_defense2      + shield_combined_castermods + xshield_es_core;
+var xshield_defense_mix =   shield_spice + shield_combined_lifemods + shield_combined_attackermods + shields_combined_defenses2 + xshield_defense_core;
+var xshield_caster_mix =    shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses_esonly + xshield_caster_core;
+var xshield_life_mix =      shield_spice + shield_combined_lifemods + shield_combined_castermods   + shield_combined_highdefenses + xshield_life_core;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## BODY ARMOURS
@@ -498,14 +515,14 @@ var body_defenses_perc = "Interpermeated" "Inspired" "Interpolated" "Impenetrabl
 var body_es = "Resplendent" "Incandescent" "Unfaltering" "Unassailable" "Indomitable";
 var body_es_hybrid = "Seraphim's" "Djinn's" "Bishop's" "Priest's" "Exarch's" "Abbot's";
 
-var body_aux = aux_stats_rfocus2 + life_regen[1] + phys_reduction[2] + suppress[2];
-
-var xbody_aux_life = aux_all + body_cheatMods + body_aux + body_life + body_hybridlife + "of Tacati" + body_defenses_flat + body_defenses_perc;
-var xbody_aux_es = aux_all + body_cheatMods + body_aux + body_es + body_es_hybrid + "of Tacati" + body_life[2];
-
-var xbody_core_life = body_life + body_cheatMods;
-var xbody_core_defense = body_life + body_defenses_flat + body_defenses_perc;
+var xbody_core_life = suppress[1] + body_life + body_cheatMods;
+var xbody_core_defense = suppress[1] + body_life + body_defenses_flat + body_defenses_perc;
 var xbody_core_es = body_es + body_cheatMods;
+
+var body_aux = aux_stats_rfocus2 + life_regen[1] + phys_reduction[2] + suppress[2] + "of Hillock's Veil";
+
+var xbody_aux_life = xbody_core_life + aux_all + body_cheatMods + body_aux + body_life + body_hybridlife + "of Tacati" + body_defenses_flat + body_defenses_perc;
+var xbody_aux_es = xbody_core_es + aux_all + body_cheatMods + body_aux + body_es + body_es_hybrid + "of Tacati" + body_life[2];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## QUIVERS
@@ -577,9 +594,8 @@ var casterPhys2 = wdot_phys[3] + "Lithomancer's";
 var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
 var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
 
-
 ## CASTER - CORE
-var casterCoreGeneral = casterCheatAll + wcast_spell[3];
+var casterCoreGeneral = casterCheatAll + wcast_spell[3] + "of the Veil";
 
 ## CASTER - CORE - SPECIALIZED KIT
 var casterFireCore  = casterCoreGeneral + wcast_fire[3]  + "Flame Shaper's" + wsdmg_fire[3] + wsdmg_cold[1] + wsdmg_light[1];
@@ -588,18 +604,20 @@ var casterLightCore = casterCoreGeneral + wcast_light[3] + "Thunderhand's"  + ws
 var casterMiscPhys =  casterCoreGeneral + "Lithomancer's" + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
 var casterMiscChaos = casterCoreGeneral + "Mad Lord's" + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
 
-## CASTER - MODULES
-var xcaster_firedmg_conf =  casterFireCore + casterDmg1 + casterFire1 + casterDotBase1 + aux_all;
-var xcaster_colddmg_conf =  casterColdCore + casterDmg1 + casterCold1 + casterDotBase1 + aux_all;
-var xcaster_lightdmg_conf = casterLightCore + casterDmg1 + casterLight1 + aux_all;
-var xcaster_physdmg_conf =  casterMiscPhys + casterDmg1 + casterPhys1 + casterDotBase1 + aux_all;
-var xcaster_chaosdmg_conf = casterMiscChaos + casterDmg1 + casterChaos1 + casterDotBase1 + aux_all;
+var casterSpecialAux = "It That Fled's Veiled";
 
-var xcaster_firedmg_norm =  casterFireCore + casterDmg3 + casterFire2 + casterDotBase2 + aux_all;
-var xcaster_colddmg_norm =  casterColdCore + casterDmg3 + casterCold2 + casterDotBase2 + aux_all;
-var xcaster_lightdmg_norm = casterLightCore + casterDmg3 + casterLight2 + aux_all;
-var xcaster_physdmg_norm =  casterMiscPhys + casterDmg3 + casterPhys2 + casterDotBase2 + aux_all;
-var xcaster_chaosdmg_norm = casterMiscChaos + casterDmg3 + casterChaos2 + casterDotBase2 + aux_all;
+## CASTER - MODULES
+var xcaster_firedmg_conf =  casterFireCore + casterDmg1 + casterFire1 + casterDotBase1 + aux_all + casterSpecialAux;
+var xcaster_colddmg_conf =  casterColdCore + casterDmg1 + casterCold1 + casterDotBase1 + aux_all + casterSpecialAux;
+var xcaster_lightdmg_conf = casterLightCore + casterDmg1 + casterLight1 + aux_all + casterSpecialAux;
+var xcaster_physdmg_conf =  casterMiscPhys + casterDmg1 + casterPhys1 + casterDotBase1 + aux_all + casterSpecialAux;
+var xcaster_chaosdmg_conf = casterMiscChaos + casterDmg1 + casterChaos1 + casterDotBase1 + aux_all + casterSpecialAux;
+
+var xcaster_firedmg_norm =  casterFireCore + casterDmg3 + casterFire2 + casterDotBase2 + aux_all + casterSpecialAux;
+var xcaster_colddmg_norm =  casterColdCore + casterDmg3 + casterCold2 + casterDotBase2 + aux_all + casterSpecialAux;
+var xcaster_lightdmg_norm = casterLightCore + casterDmg3 + casterLight2 + aux_all + casterSpecialAux;
+var xcaster_physdmg_norm =  casterMiscPhys + casterDmg3 + casterPhys2 + casterDotBase2 + aux_all + casterSpecialAux;
+var xcaster_chaosdmg_norm = casterMiscChaos + casterDmg3 + casterChaos2 + casterDotBase2 + aux_all + casterSpecialAux;
 
 ## SPELLSLINGER - GENERAL
 var slingerBase1 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + casterCheatAll + w_temple_Phys + wcast_spell[2];
@@ -616,6 +634,27 @@ var xslinger_core = slingerBase2 + wgems_alllevels_global;
 
 var xslinger_default_conf = slingerBase1  + aux_all + slingerAux1 + wgems_alllevels + wgems_alllevels_global;
 var xslinger_default_norm = xslinger_core + aux_all + slingerAux2 + slingerExtras + wgems_alllevels + wgems_alllevels_global;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   MINION WANDS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var minionCheat = "Citaqualotl's";
+
+var mwHybrid = "King's" "Prince's" "Duke's" "Count's";
+var mwSDmg = "Empress's" "Queen's" "Princess's" "Duchess's";
+var mwGem = "Martinet's" + wgems_alllevels_global;
+var mwSecondarygems = "Flame Shaper's" "Lithomancer's";
+var mwAllGems = mwGem + mwSecondarygems;
+
+var mwSpeed = "of Infuriation" "of Provocation" "of Instigation" "of Agitation" "of Incitation";;
+var mwAccuracy = "of the Monarch" "of the Ruler" "of the Magnate";
+var mwCrit = "of Destiny" "of Determinism" "of Serendipity" "of Providence";
+
+var minionCore = minionCheat + mwSDmg[2] + mwGem + mwSpeed[2] + mwCrit[1] + mwAccuracy[1];
+
+var mwMisc = mwAllGems + "of Citaqualotl" + veilPS + wcast_spell[1] + ws_cast_speed[2] + "Haku's Veiled";
+var mwAux = mwMisc + minionCore + mwHybrid[3] + mwSDmg[4] + mwSpeed[3] + mwAccuracy[2] + mwCrit[3];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## ACCESSOIRE  STATS 
@@ -666,7 +705,7 @@ var acc_unset_levels = "Quintessential" "Flawless";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var amu_skills = "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's";
-var amu_cheat = acc_cheat + "of Puhuarte" "Guatelitzi's" + amu_skills;
+var amu_cheat = acc_cheat + "Xopec's" "of Guatelitzi" "Guatelitzi's" "of Puhuarte" "Vorici's Veiled" "Elreon's Veiled" + amu_skills;
 
 ## important general stats on amulets
 var amu_aux_stats = aux_all + amu_cheat + aux_stats2 + acc_allat[3] + acc_manaregen[2] + acc_par[1] + acc_pev[1] + acc_pes[1];
@@ -679,36 +718,35 @@ var xamu_caster_mix = amu_aux_stats_full + acc_cast_speed[2] + acc_cast_spell[3]
 var xamu_dot_mix    = amu_aux_stats_full + acc_crit_dmg[1] + acc_cast_speed[1] + acc_cast_spell[2] + acc_att_wed[2] + acc_att_accu[2] + acc_dmg_firep[1] + acc_dmg_coldp[1] + acc_dot_mult[3];
 var xamu_attack_mix = amu_aux_stats_full + acc_crit_dmg[4] + acc_crit_chance[2] + acc_dmg_firef[1] + acc_dmg_coldf[1] + acc_dmg_lightf[1] + acc_att_accu[2] + acc_att_wed[3] + acc_dmg_physf[2];
 
-var xamu_aux_singlecore = acc_life[3] + acc_fes[1] + amu_cheat + acc_crit_dmg[1] + acc_dot_mult[1] + acc_allat[1] + acc_pes[1];
-var xamu_aux_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_crit_dmg[2] + acc_dot_mult[2] + acc_allat[2] + acc_pes[2];
+var xamu_singlecore = acc_life[3] + acc_fes[1] + amu_cheat + acc_crit_dmg[1] + acc_dot_mult[1] + acc_allat[1] + acc_pes[1];
+var xamu_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_crit_dmg[2] + acc_dot_mult[2] + acc_allat[2] + acc_pes[2] + "of Bameth";
 
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RINGS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 var ring_aux_stats_full = acc_unset_levels[1] + aux_all + aux_stats2 + acc_manaregen[2] + acc_recoup[2] + "Perandus'" + "of the Comet";
 
 var ring_ias = "of Skill";
 var ring_pdmg = "of Flames" "of Rime" "of Voltage";
+var ring_joker = "of Bameth" "of Puhuarte" "Xopec's" "of Aisling's Veil" "of Guatelitzi" "Guatelitzi's" "of Cameria's Veil" "Elreon's Veiled" "Leo's Veiled" "Riker";
 
-var xring_core = "Guatelitzi's" + acc_cheat + acc_life[3] + acc_fes[2];
+var xring_core = ring_joker + acc_cheat + acc_life[3] + acc_fes[2];
 
-var xring_attack_mix = ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[2] + acc_dmg_physf[1] + acc_dmg_firef[1] + acc_dmg_coldf[1] + acc_dmg_lightf[1] + ring_ias + ring_pdmg;
-var xring_cast_mix = ring_aux_stats_full + acc_cast_speed[3] + ring_pdmg + acc_mana[1];
+var xring_attack_mix = xring_core + ring_aux_stats_full + acc_att_wed[3] + acc_att_accu[2] + acc_dmg_physf[1] + acc_dmg_firef[1] + acc_dmg_coldf[1] + acc_dmg_lightf[1] + ring_ias + ring_pdmg;
+var xring_cast_mix = xring_core + ring_aux_stats_full + acc_cast_speed[3] + ring_pdmg + acc_mana[1];
 
 var ring_minion_high = ring_minion_dmg[3] + ring_minion_ias[3] + ring_minion_mspeed[2];
 var ring_minion_low = ring_minion_resist[1] + ring_minion_life[1];
 
-var xring_minion_mix = ring_aux_stats_full + ring_minion_high + ring_minion_low;
-
+var xring_minion_mix = xring_core + ring_aux_stats_full + ring_minion_high + ring_minion_low;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-## RINGS
+## BELTS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var belts_cheat = acc_cheat + "Guatelitzi's";
+var belts_cheat = acc_cheat + "Guatelitzi's" "Leo's Veiled" "of Guatelitzi";
 
 ## prefixes
 var belts_life = "Fecund" "Athlete's" "Virile";
@@ -736,7 +774,7 @@ var bladeBlastDamageAuxPref = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg
 var bladeBlastDamageAuxSuffix = ws_cast_speed[3] + ws_cast_crit[3] + ws_critmulti[3];
 
 var xbladeBlast_core = bladeBlastDamageCore;
-var xbladeBlast_aux= bladeBlastDamageAuxPref + xbladeBlast_core + bladeBlastDamageAuxSuffix;
+var xbladeBlast_aux = xbladeBlast_core + bladeBlastDamageAuxPref + bladeBlastDamageAuxSuffix + veilPS;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RECOMBINATIONS
@@ -802,10 +840,10 @@ var jewels_corruptedModsMinimum = "of Combat" "of Archery" "of Mysticism" "of Bl
 var jwl_core = "Vivid" "Shimmering";
 
 ## Generally good stats, like double/tripple res/attributes, chaos res, general damage
-var jwl_aux = "of the Phoenix" "of the Kraken" "of the Leviathan" "of Order" "of Resistance" "of Insulation" "of the Hearth" "of Shelter" "of Spirit" "of Athletics" "of Cunning" "of Adaptation" "of Wounding" "Thwarting";
+var jwl_aux = "Expediting" "Prolonging" "Cerebral" "of the Phoenix" "of the Kraken" "of the Leviathan" "of Order" "of Resistance" "of Insulation" "of the Hearth" "of Shelter" "of Spirit" "of Athletics" "of Cunning" "of Adaptation" "of Wounding" "Thwarting";
 var jwl_dot_aux = "of Entropy" "Decrepifying";
 ## Generally good DOT stats
-var jwl_dot_core = "of Acrimony";
+var jwl_dot_core = "of Acrimony" "Decrepifying";
 ## Specific dot stats. One build wants at most one of these.
 var jwl_dot_unique =  "of Exsanguinating" "of Zealousness" "of Atrophy" "of Gelidity";
 
@@ -838,7 +876,7 @@ var xJwl_crit_subCore_spell = xJwl_crit_core_spell + jwl_crit_aux + jwl_aux;
 var xJwl_crit_mix_spell = xJwl_crit_subCore_spell + jwl_crit_spell_extra;
 
 ## As many as possible, but at least 2?
-var jwl_minion = "Leadership" "Master's" "of Resilience";
+var jwl_minion = "Leadership" "Master's" "of Resilience" "Decrepifying";
 
 ## Attack speed?
 var jewels_speed = "of Berserking" "of Zeal";
@@ -850,19 +888,20 @@ var xJwl_minion_mix = xJwl_minion_core + jwl_aux + "of Training" "Enlightened" "
 ##   {META} ABYSS JEWEL-ID-MOD-FILTERING
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var aj_core = "Beclouded" "Sanguine" "Stalwart" "Healthy" "Resplendent" "Incandescent" "of the Deadeye";
-var aj_aux = "Fleet" "Seething" "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order";
+var aj_core = "of the Lightning Rod" "Beclouded" "Sanguine" "Stalwart" "Healthy" "Resplendent" "Incandescent" "of the Deadeye";
+var aj_aux = "of the Lightning Rod" "of the Dragon" "of Dexterity" "of Intelligence" "of Strength" "Fleet" "Seething" "Healthy" "Sapphire" "Carapaced" "Encased" "Beclouded" "Vaporous" "Expediting" "of Athletics" "of Spirit" "of Cunning" "of Adaption" "of Shelter" "of Grounding" "of the Hearth" "of Resistance" "of Order";
 
 var aj_damage = "Acuminate" "Flaring" "Electrocuting" "Discharging" "Cremating" "Blasting" "Entombing" "Polar" "Vile";
 var aj_damage_suffix = "of Potency" "of the Inquisitor" "of Menace" "of Blinding" "of the Assassin" "of Taunting" "of Phasing" "of Ashes" "of Glaciation" "of Arcing" "of Collision" "of the Inferno";
 var aj_damage_suffix_caster = "of Abuse" "of Enchanting" "of Hindering";
 var aj_damage_suffix_attack = "of Opportunity" "of Berserking" "of the Ranger" "of the Deadeye" "Lancing" "of Unholy Might";
-var aj_minion_suffix_util = "of Stifling" "of Distraction" "of Delaying" "of Training" "of Vampirism" "of Command" "of Acclimatisation" "of Authority";
+var aj_minion_suffix_util = "of Venom" "of Stifling" "of Distraction" "of Delaying" "of Training" "of Vampirism" "of Command" "of Acclimatisation" "of Authority";
 
-var aj_avoidance = "of Fireproofing" "of Heating" "of the Lightning Rod" "of Poise" "of the Tourniquet";
+var aj_avoidance = "of Insulating" "of Fireproofing" "of Heating" "of the Lightning Rod" "of Poise" "of the Tourniquet";
 
 ## curse effectiveness, ailments, etc.
 var aj_misc = "of Shocking" "of Chilling" "Resonating" "Motivating" "Foul-tongued";
+var aj_wildMix = "of Maneuvering" "of the Sanctum" "of Clouding" "of Languishing" "of Mangling" "of the Raider" "of Immunity";
 
 var aj_aux_mix = aj_core + aj_damage + aj_aux + aj_damage_suffix;
 

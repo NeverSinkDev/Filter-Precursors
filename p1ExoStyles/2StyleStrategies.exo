@@ -352,6 +352,12 @@ Style UniversalValueAccents
 		SetBackgroundColor unique.early.extra;
 	}
 
+	Func MercUniques()
+	{
+		SetBackgroundColor unique.early.extra;
+		SetBorderColor unique.merc.extra;
+	}
+
 	Func DustUniques()
 	{
 		SetBackgroundColor unique.early.extra;
@@ -990,14 +996,14 @@ Style CraftSpecialStrategy
 {
 	Func I86 () 
 	{ 
-		SetFontSize font.t1;  MinimapIcon 0 Blue Diamond;
+		SetFontSize font.t2;  MinimapIcon 2 Blue Diamond;
 		PlayEffect Blue;
 		SetBorderColor accent.level.i86.high;
 	}
 
 	Func I84 () 
 	{ 
-		SetFontSize font.t3;  MinimapIcon 2 White Diamond;
+		SetFontSize font.t4;  MinimapIcon 2 White Diamond;
 		PlayEffect White;
 		SetBorderColor accent.level.i84.high;
 	}
@@ -1008,8 +1014,6 @@ Style CraftSpecialStrategy
 		PlayEffect Grey;
 		SetBorderColor accent.notice.high;
 	}
-
-	PlayAlertSound sounds.unique;
 }
 
 Style CraftGeneralStrategy
@@ -1708,7 +1712,7 @@ Style InfluencedVariant : T1, T2YellowPiece
 {
 	var icon = Diamond;
 	var tier.t1.icon = Diamond;
-	var sounds.t1 = sounds.t2;
+	var sounds.t1 = sounds.unique;
 	var sounds.t2 = sounds.unique;
 
 	Func T1()
