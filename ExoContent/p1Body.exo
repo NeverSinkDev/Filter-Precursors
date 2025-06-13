@@ -121,13 +121,13 @@ Section Eldritch : Rarity <= Rare
 
 	Section Exarch : Auto("rare->exarch")
 	{
-		ShowD AnyHigh { !G3; %D3; HasSearingExarchImplicit >= 1; BaseType == eldritchBases; }
+		Show AnyHigh { !G3;  %D3; HasSearingExarchImplicit >= 1; BaseType == eldritchBases; }
 		ShowD Any 	  { !GI; %D0; HasSearingExarchImplicit >= 1; }
 	}
 
 	Section Eater : Auto("rare->eater")
 	{
-		ShowD AnyHigh { !G3; %D3; HasEaterOfWorldsImplicit >= 1; BaseType == eldritchBases; }
+		Show AnyHigh { !G3;  %D3; HasEaterOfWorldsImplicit >= 1; BaseType == eldritchBases; }
 		ShowD Any 	  { !GI; %D0; HasEaterOfWorldsImplicit >= 1; }
 	}
 }
@@ -800,7 +800,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 Section EarlyEndgameCrafting : Auto("normalcraft->extra"), Rarity <= Magic, AreaLevel <= 75, AreaLevel >= 68, Clean()
 {
-	ShowD EarlyCraftOptional { !GEX; %D0; BaseType == bases.crafting.early; }
+	ShowD EarlyCraftOptional { !GEX; !craftgeneral.ANY; %D0; BaseType == bases.crafting.early; }
 	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; Rarity <= Rare; Class == classes_armor_noshields; }
 }
 
@@ -816,7 +816,7 @@ Section EndgameCraftingBases : Clean(), !craftgeneral
 		# Level 86 crafting bases
 		Show t1_86 { !G3;  %D5; !craftgeneral.I86; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t1; }
 		Show t2_86 { !GEX; %D4; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t2; }
-		Show t3_86 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t3; }
+		Show t3_86 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t3; }
 
 		# Level 85 crafting bases
 		Show t1_85 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t1; }
@@ -824,12 +824,12 @@ Section EndgameCraftingBases : Clean(), !craftgeneral
 		Show t3_85 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t3; }
 
 		# Level 84 crafting bases
-		Show t1_84 { !G3;  %D3; !craftgeneral.I86; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t1; }
+		Show t1_84 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t1; }
 		Show t2_84 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t2; }
 		Show t3_84 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t3; }
 
 		# Level 83 crafting bases
-		Show t1_83 { !G3;  %D3; !craftgeneral.I86; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t1; }
+		Show t1_83 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t1; }
 		Show t2_83 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t2; }
 		Show t3_83 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t3; }
 
