@@ -1,0 +1,212 @@
+## CURRENCY ADJUSTMENTS
+Expand t3annul
+{
+    SetBackgroundColor cTierB; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t4chaos
+{
+    SetBackgroundColor cTierC; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t5alchemy
+{
+    SetBackgroundColor cTierD; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t6chrom
+{
+    SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+    SetFontSize font.t5;
+}
+
+Expand t7chance
+{
+    SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+    SetFontSize font.t5;
+}
+
+Expand t8trans
+{
+    SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+    SetFontSize font.t5;
+}
+
+Expand t9armour
+{
+    SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+    SetFontSize font.t5;
+}
+
+Expand t2divine
+{
+    SetBackgroundColor cTierA; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t3annul
+{
+    SetBackgroundColor cTierB; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t4chaos
+{
+    SetBackgroundColor cTierC; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t5alchemy
+{
+    SetBackgroundColor cTierD; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t6chrom
+{
+    SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+    SetFontSize font.t5;
+}
+
+Expand t7chance
+{
+    SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+    SetFontSize font.t5;
+}
+
+Expand t2divi
+{
+    SetBackgroundColor cTierA; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t3divi
+{
+    SetBackgroundColor cTierB; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand t4divi
+{
+    SetBackgroundColor cTierC; SetTextColor sWhite; SetBorderColor sWhite;
+}
+
+Expand UniversalValueAccents.Maximize
+{
+    SetFontSize font.t5;
+}
+
+Expand tportal.Any
+{
+		SetFontSize font.t5;
+		SetBorderColor currency.acc.tportal;
+		SetBackgroundColor sBlack;
+}
+
+Expand twisdom.Any
+{
+		SetFontSize font.t5;
+		SetBorderColor currency.acc.twisdom;
+		SetBackgroundColor sBlack;
+		RemoveEffects();
+}
+
+## FRAGMENT TIERING
+Expand FragmentTierStrat 
+{
+    Func T1()
+    {
+        SetTextColor 255 0 0 255;
+        SetBorderColor 255 0 0 255;
+    }
+
+    Func T2()
+    {
+        SetBackgroundColor cTierA; SetTextColor sWhite; SetBorderColor sWhite;
+    }
+
+    Func T3()
+    {
+        SetBackgroundColor cTierB; SetTextColor sWhite; SetBorderColor sWhite;
+    }
+
+    Func T4()
+    {
+        SetBackgroundColor cTierC; SetTextColor sWhite; SetBorderColor sWhite;
+    }
+
+    Func T5()
+    {
+        SetBackgroundColor cTierD; SetTextColor sWhite; SetBorderColor sWhite;
+        SetFontSize font.t5;
+    }
+
+    Func T6()
+    {
+        SetBackgroundColor cTierE; SetTextColor sWhite; SetBorderColor sWhite;
+        SetFontSize font.t5;
+    }
+}
+
+## RARES
+
+Expand RaresJewellery.T1
+{
+		SetFontSize font.t3;
+        SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
+}
+
+Expand RaresJewellery.T2
+{
+		SetFontSize font.t4;
+        SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
+}
+
+Expand RaresJewellery.T3
+{
+		SetFontSize font.t4;
+        SetBorderColor jewel.rare.tx; SetBackgroundColor sBlack;
+}
+
+Expand RaresArmoursWeapons.T1
+{	
+    SetFontSize font.t4;
+    SetBackgroundColor rares.generic.t1;
+    SetBorderColor NONE;
+}
+
+Expand RaresArmoursWeapons.T2
+{	
+    SetBackgroundColor rares.generic.t1;
+    SetFontSize font.t4;
+    SetBorderColor NONE;
+}
+
+Expand RaresArmoursWeapons.T3
+{	
+    SetBackgroundColor rares.generic.t2;
+    SetFontSize font.t5;
+    SetBorderColor NONE;
+}
+
+Expand RaresArmoursWeapons.T4
+{	
+    SetBackgroundColor rares.generic.t2;
+    SetFontSize font.t6;
+    SetBorderColor NONE;
+}
+
+## RARES
+
+Expand InfluencedVariant.T1
+{
+    Colors(exoticgear.tx, exoticgear.tx, exoticgear.extra);
+}
+
+Expand InfluencedVariant.T2
+{
+    SetBorderColor exoticgear.tx;
+    SetBackgroundColor exoticgear.extra;
+    SetTextColor exoticgear.tx;
+}
+
+Expand InfluencedRandom
+{
+    SetBorderColor exoticgear.tx;
+    SetBackgroundColor sBlack;
+    SetTextColor exoticgear.tx;
+}

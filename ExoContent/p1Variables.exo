@@ -594,7 +594,6 @@ var casterPhys2 = wdot_phys[3] + "Lithomancer's";
 var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
 var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
 
-
 ## CASTER - CORE
 var casterCoreGeneral = casterCheatAll + wcast_spell[3] + "of the Veil";
 
@@ -635,6 +634,27 @@ var xslinger_core = slingerBase2 + wgems_alllevels_global;
 
 var xslinger_default_conf = slingerBase1  + aux_all + slingerAux1 + wgems_alllevels + wgems_alllevels_global;
 var xslinger_default_norm = xslinger_core + aux_all + slingerAux2 + slingerExtras + wgems_alllevels + wgems_alllevels_global;
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##   MINION WANDS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var minionCheat = "Citaqualotl's";
+
+var mwHybrid = "King's" "Prince's" "Duke's" "Count's";
+var mwSDmg = "Empress's" "Queen's" "Princess's" "Duchess's";
+var mwGem = "Martinet's" + wgems_alllevels_global;
+var mwSecondarygems = "Flame Shaper's" "Lithomancer's";
+var mwAllGems = mwGem + mwSecondarygems;
+
+var mwSpeed = "of Infuriation" "of Provocation" "of Instigation" "of Agitation" "of Incitation";;
+var mwAccuracy = "of the Monarch" "of the Ruler" "of the Magnate";
+var mwCrit = "of Destiny" "of Determinism" "of Serendipity" "of Providence";
+
+var minionCore = minionCheat + mwSDmg[2] + mwGem + mwSpeed[2] + mwCrit[1] + mwAccuracy[1];
+
+var mwMisc = mwAllGems + "of Citaqualotl" + veilPS + wcast_spell[1] + ws_cast_speed[2] + "Haku's Veiled";
+var mwAux = mwMisc + minionCore + mwHybrid[3] + mwSDmg[4] + mwSpeed[3] + mwAccuracy[2] + mwCrit[3];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## ACCESSOIRE  STATS 

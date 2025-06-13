@@ -65,14 +65,14 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare
 	Show strandedFractured { !G2; !exotic.t1; MemoryStrands >= 1; FracturedItem True; }
 	Show strandedVeiled { !G2; !exotic.t1; MemoryStrands >= 1; Identified True; Mod "Veil"; }
 
-	Show t1high { !G2; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt1gear; }
-	Show t1 	{ !G2; !exotic.t1; MemoryStrands >= 1;  BaseType == combinedt1gear; }
+	Show t1high { !G3; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt1gear; }
+	Show t1 	{ !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt1gear; }
 
-	Show t2high { !G2; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt2gear; }
-	Show t2 	{ !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
+	Show t2high { !G3; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt2gear; }
+	Show t2 	{ !GSH; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
 
-	Show t3high { !G2; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt3gear; }
-	Show t3 	{ !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt3gear; }
+	Show t3high { !GSH; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt3gear; }
+	Show t3 	{ !GSH; !exotic.t3; MemoryStrands >= 1;  BaseType == combinedt3gear; }
 
 	Show AnyHigh { !GSH; !exotic.t3; MemoryStrands >= 60; }
 	Show Any 	 { %D5; !GSH; !exotic.t3; MemoryStrands >= 1; }
@@ -89,24 +89,24 @@ Section Influenced : Auto("influenced->all"), Rarity Rare
 	var influencedItems3 = source.rares.eg.t2 + source.crafting.general.t2 - influencedItems2 - influencedItems1;
 
 	# Selected exclusive bases
-	Show t1exotic { !G2; %D6; BaseType == influencedItems1; AnyInfluence(); }
+	Show t1exotic { !SF45; !G2; %D6; BaseType == influencedItems1; AnyInfluence(); }
 	# Selected top tier bases
-	Show t2top { !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
+	Show t1top { !SF45; !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
 
 	## Class-based filtering
-	Show t2classesShaper 			 { %D4; Class == cInf1Shaper; HasInfluence Shaper; ItemLevel >= 80; }
-	Show t2classesElder 			 { %D4; Class == cInf1Elder; HasInfluence Elder; ItemLevel >= 80; }
-	Show t2classesCrusader 		 	 { %D4; Class == cInf1Crusader; HasInfluence Crusader; ItemLevel >= 80; }
-	Show t2classesHunter 			 { %D4; Class == cInf1Hunter; HasInfluence Hunter; ItemLevel >= 80; }
-	Show t2classesWarlord 		 	 { %D4; Class == cInf1Warlord; HasInfluence Warlord; ItemLevel >= 80; }
-	Show t2classesRedeemer 		 	 { %D4; Class == cInf1Redeemer; HasInfluence Redeemer; ItemLevel >= 80; }
-	Show t2classesInfluencedShared 	 { %D4; Class == classesInfluenced85; AnyInfluence(); ItemLevel >= 85; }
+	Show t2classesShaper 			 { !SF40; !G3; %D4; Class == cInf1Shaper; HasInfluence Shaper; ItemLevel >= 80; }
+	Show t2classesElder 			 { !SF40; !G3; %D4; Class == cInf1Elder; HasInfluence Elder; ItemLevel >= 80; }
+	Show t2classesCrusader 		 	 { !SF40; !G3; %D4; Class == cInf1Crusader; HasInfluence Crusader; ItemLevel >= 80; }
+	Show t2classesHunter 			 { !SF40; !G3; %D4; Class == cInf1Hunter; HasInfluence Hunter; ItemLevel >= 80; }
+	Show t2classesWarlord 		 	 { !SF40; !G3; %D4; Class == cInf1Warlord; HasInfluence Warlord; ItemLevel >= 80; }
+	Show t2classesRedeemer 		 	 { !SF40; !G3; %D4; Class == cInf1Redeemer; HasInfluence Redeemer; ItemLevel >= 80; }
+	Show t2classesInfluencedShared 	 { !SF40; !G3; %D4; Class == classesInfluenced85; AnyInfluence(); ItemLevel >= 85; }
 
 	# Second grade bases
-	Show t2high    { !G2; %D4; BaseType == influencedItems3; ItemLevel >= 84; AnyInfluence(); }
+	Show t2high    { !SF40; !G3; %D4; BaseType == influencedItems3; ItemLevel >= 84; AnyInfluence(); }
 	# Low strictness 86 rule
-	Show any86 { !G2; %D4; ItemLevel >= 86; AnyInfluence(); }
-	Show any   { !G2; %D3; AnyInfluence(); }
+	Show any86 { !SF40; !G3; %D4; ItemLevel >= 86; AnyInfluence(); }
+	Show any   { !SF40; !G3; %D3; AnyInfluence(); }
 }
 
 #===============================================================================================================
@@ -190,7 +190,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Blade Blast Daggers
 #------------------------------------
-	Section FastEleWeapons : Class == classes_bladeBlast
+	Section FastEleWeapons : Class == classes_bladeBlast, Clean()
 	{
 		Show BladeBlast_2core 	{ %D4; Mod >=2 xbladeBlast_core; Mod >= 4 xbladeBlast_aux; }
 	}
@@ -199,9 +199,9 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section GemLevels
 	{
-		Show Gem_Bow 	{ %D5; Class == "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1] }
+		Show Gem_Bow 	{ %D5; Class == "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1]; Clean(); }
 		Show Gem_Caster { Class == classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global }
-		Show Gem_Staves { Class == classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff }
+		Show Gem_Staves { Class == classes_2hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_staff; Clean(); }
 	}
 #------------------------------------
 #   [1234] Caster
@@ -214,6 +214,12 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 		Show Caster_PhysWeaponT2  { %D5; Mod casterMiscPhys; Mod >= 4 xcaster_physdmg_norm; Mod = 0 z_bad_caster; }
 		Show Caster_ChaosWeaponT2 { %D5; Mod casterMiscChaos; Mod >= 4 xcaster_chaosdmg_norm; Mod = 0 z_bad_caster; }
 	}
+
+	Section CasterMinion : BaseType == "Convoking Wand" "Convening Wand" "Calling Wand"
+	{
+		Show MinionWand { %D5; Mod minionCore; Mod >= 4 mwAux; }
+	}
+
 #------------------------------------
 #   [1234] Spellslinger
 #------------------------------------
@@ -226,8 +232,8 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section Helmets : Class == "Helmets"
 	{
-		Show Helmet_Life_based { %D5; Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix; Mod = 0 z_bad_armor_life; }
-		Show Helmet_ES_based   { %D4; Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix; Mod = 0 z_bad_armor_es; }
+		Show Helmet_Life_based { %D5; Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix; Mod = 0 z_bad_armor_life; Clean(); }
+		Show Helmet_ES_based   { %D4; Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix; Mod = 0 z_bad_armor_es; Clean(); }
 	}
 #------------------------------------
 #   [1234] Boots
@@ -235,7 +241,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 	Section Boots : Class == "Boots"
 	{
 		Show Boots_Life_based { %D5; Mod xboots_life_core; Mod >= 4 xboots_life_mix; Mod = 0 zbad_boots_life; }
-		Show Boots_ES_based   { %D4; Mod xboots_es_core; Mod >= 4 xboots_es_mix; Mod = 0 zbad_boots_es + zbad_boots_life; }
+		Show Boots_ES_based   { %D4; Mod xboots_es_core; Mod >= 4 xboots_es_mix; Mod = 0 zbad_boots_es + zbad_boots_life; Clean(); }
 	}
 #------------------------------------
 #   [1234] Gloves
@@ -243,7 +249,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 	Section Gloves : Class == "Gloves"
 	{
 		Show Gloves_Life_based { %D5; Mod xgloves_life_core; Mod >= 4 xgloves_life_mix; Mod = 0 z_bad_armor_life; }
-		Show Gloves_ES_based   { %D5; Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix; Mod = 0 zbad_boots_es; }
+		Show Gloves_ES_based   { %D5; Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix; Mod = 0 zbad_boots_es; Clean(); }
 	}
 #------------------------------------
 #   [1234] Shields
@@ -252,7 +258,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 	{
 		Show Shield_ESFocus   		{ %D5; Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; Mod = 0 z_bad_bigarmor_es; }
 		Show Shield_DefenseFocus    { %D5; Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
-		Show Shield_CasterFocus   	{ %D5; Mod >= 2 xshield_caster_core; 	Mod >= 4 xshield_caster_mix; }
+		Show Shield_CasterFocus   	{ %D5; Mod >= 2 xshield_caster_core; Mod >= 4 xshield_caster_mix; }
 		Show Shield_LifeFocus 		{ %D5; Mod xshield_life_core; 	Mod >= 4 xshield_life_mix; DropLevel >= 55; Mod = 0 z_bad_bigarmor_life; }
 	}
 #------------------------------------
@@ -291,10 +297,10 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Body Armours
 #------------------------------------	
-	Section Body : Class == "Body Armours", DropLevel >= 55
+	Section Body : Class == "Body Armours", DropLevel >= 55, Clean()
 	{
 		Show Body_Life 		  { %D4; Mod xbody_core_life; Mod >= 5 xbody_aux_life; Mod = 0 z_bad_bigarmor_life; }
-		Show Body_Defense 	  { %D4; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; Clean(); }
+		Show Body_Defense 	  { %D4; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; }
 		Show Body_LifeDefense { %D4; Mod >= 2 xbody_core_defense; Mod xbody_core_life; Mod >= 4 xbody_aux_life; }
 		Show Body_ES 		  { %D4; Mod >= 2 xbody_core_es; Mod >= 4 xbody_aux_es; Mod = 0 z_bad_bigarmor_es; }
 	}
@@ -664,11 +670,11 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #------------------------------------
 # [[0200]] Endgame - Rare - Exotic Veiled
 #------------------------------------
-#!! Waypoint c4.rare.breach.all : "Rare Endgame Items - Veiled"
+#!! Waypoint c4.rare.veiled.generic : "Rare Endgame Items - Veiled"
 
 	Section VeiledRares : Rarity Rare, ItemLevel >= 68, Auto("rare->exotic->veiled"), Identified True, Mod "Veil"
 	{
-		Show t1 	{ %D6; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
+		Show t1 	{ %D5; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
 		Show t2		{ %D5; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
 		Show t3 	{ %D4; !G5;  !exotic.t3; BaseType == source.rares.eg.t3; }
 		Show t4 	{ %D3; !GSH; !exotic.t4; BaseType == source.rares.eg.t4; }
@@ -794,14 +800,14 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 Section EarlyEndgameCrafting : Auto("normalcraft->extra"), Rarity <= Magic, AreaLevel <= 75, AreaLevel >= 68, Clean()
 {
-	# ShowD any { !GEX; %D0; BaseType == bases.crafting.early; }
+	ShowD EarlyCraftOptional { !GEX; %D0; BaseType == bases.crafting.early; }
 	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; Rarity <= Rare; Class == classes_armor_noshields; }
 }
 
 #------------------------------------
 # [1234] Crafting Matrix
 #------------------------------------
-Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
+Section EndgameCraftingBases : Clean(), !craftgeneral
 {
 	#!! Waypoint c5.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86"
 
@@ -819,18 +825,18 @@ Section EndgameCraftingBases : Clean(), !craftspecial, !craftgeneral
 
 		# Level 84 crafting bases
 		Show t1_84 { !G3;  %D3; !craftgeneral.I86; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t1; }
-		Show t2_84 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t2; }
-		Show t3_84 { !GEX; %D1; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t3; }
+		Show t2_84 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t2; }
+		Show t3_84 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t3; }
 
 		# Level 83 crafting bases
 		Show t1_83 { !G3;  %D3; !craftgeneral.I86; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t1; }
-		Show t2_83 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t2; }
-		Show t3_83 { !GEX; %D1; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t3; }
+		Show t2_83 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t2; }
+		Show t3_83 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t3; }
 
 		# Other Crafting Bases
-		Show t1_rest { !G3; %D3; !craftspecial.ANY;   ItemLevel >= 68; BaseType == source.crafting.general.t1; }
-		ShowD t2_rest { !GEX; %D0; !craftspecial.ANY; ItemLevel >= 68; BaseType == source.crafting.general.t2; }
-		ShowD t3_rest { !GEX; %D0; !craftspecial.ANY; ItemLevel >= 68; BaseType == source.crafting.general.t3; }
+		Show t1_rest { !G3; %D3; !craftgeneral.ANY;   ItemLevel >= 68; BaseType == source.crafting.general.t1; }
+		ShowD t2_rest { !GEX; %D0; !craftgeneral.ANY; ItemLevel >= 68; BaseType == source.crafting.general.t2; }
+		ShowD t3_rest { !GEX; %D0; !craftgeneral.ANY; ItemLevel >= 68; BaseType == source.crafting.general.t3; }
 	}
 }
 
@@ -1527,13 +1533,6 @@ Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research"
 
 Section MapFragments : Class == "Map Fragments" "Breachstones"
 {
-#------------------------------------
-# [4701] Exceptions
-#------------------------------------
-	Section StackedFragments : Auto("Fragments->stacked")
-	{
-		Show t3 { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
-	}
 
 #------------------------------------
 # [4701] Scarabs
@@ -1550,6 +1549,14 @@ Section MapFragments : Class == "Map Fragments" "Breachstones"
 		Show t5 { !G5; %HS4; BaseType == fragments.scarabs.t5; }
 		Show t6 { !G5; %HS3; BaseType == fragments.scarabs.t6; }
 		Show restex { BaseType "Scarab"; }
+	}
+
+#------------------------------------
+# [4701] Exceptions
+#------------------------------------
+	Section StackedFragments : Auto("Fragments->stacked")
+	{
+		Show t3 { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
 	}
 
 #------------------------------------
@@ -1884,16 +1891,20 @@ Section CurrencyIncubators : Auto("currency->incubators"), Class == "Incubators"
 
 Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class == class_currency, !currency
 {
-	Show t1	{ %D6; !G2; !*t3annul; StackSize >= 10; BaseType == fragments.generic.t1splinters; }
-	Show t2	{ %DS5; !G3; !*t4chaos;  StackSize >= 5; BaseType == fragments.generic.t1splinters; }
-	Show t3	{ %DS4; !G3; !*t4chaos;  StackSize >= 2; BaseType == fragments.generic.t1splinters; }
+	Show t1	{ %D6;  !G1; !*t1exalted; StackSize >= 80; BaseType == fragments.generic.t1splinters; }
+	Show t2	{ %D6;  !G2; !*t2divine; StackSize >= 25; BaseType == fragments.generic.t1splinters; }
+	Show t3	{ %D6;  !G3; !*t3annul; StackSize >= 10; BaseType == fragments.generic.t1splinters; }
+	Show t4	{ %D6;  !G3; !*t4chaos;  StackSize >= 5; BaseType == fragments.generic.t1splinters; }
+	Show t5	{ %DS5; !G3; !*t5alchemy;  StackSize >= 2; BaseType == fragments.generic.t1splinters; }
 }
 
 Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class == class_currency, !currency
 {
-	Show t1	{ %D5;   !G3; !*t4chaos; StackSize >= 10; BaseType == fragments.generic.t2splinters; }
-	Show t2	{ %DS4;  !G4; !*t5alchemy; StackSize >= 5; BaseType == fragments.generic.t2splinters; }
-	Show t3	{ %DS3;  !G4; !*t5alchemy; StackSize >= 2; BaseType == fragments.generic.t2splinters; }
+	Show t1	{ %D5;   !G1; !*t2divine; StackSize >= 66; BaseType == fragments.generic.t2splinters; }
+	Show t2	{ %D5;   !G2; !*t3annul; StackSize >= 25; BaseType == fragments.generic.t2splinters; }
+	Show t3	{ %D5;   !G3; !*t4chaos; StackSize >= 10; BaseType == fragments.generic.t2splinters; }
+	Show t4	{ %DS5;  !G4; !*t5alchemy; StackSize >= 5; BaseType == fragments.generic.t2splinters; }
+	Show t5	{ %DS4;  !G4; !*t5alchemy; StackSize >= 2; BaseType == fragments.generic.t2splinters; }
 }
 
 #------------------------------------
