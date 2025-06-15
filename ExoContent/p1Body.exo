@@ -166,8 +166,8 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 #===============================================================================================================
 #!! Waypoint c1.idmod.all : "Identified Mods - Best Veiled mods and combinations of expensive ID mods"
 
-var t1veiled = "Catarina's Veiled" "Elreon's Veiled" "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled";
-var t2veiled = "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
+var t1veiled = "Elreon's Veiled";
+var t2veiled = "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled" "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
 
 Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalueidmod 
 {
@@ -332,8 +332,8 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section IDModExceptions : Rarity "Rare", IdMods, !exotic
 	{
-		Show t1veil     { %DS5; !GSH; !exotic.t2; Mod t1veiled; }
-		Show t2veil     { %DS4; !GSH; !exotic.t3; Mod t2veiled; }
+		Show t1veil     { %D4; !GSH; !exotic.t2; Mod t1veiled; }
+		Show t2veil     { %D2; !GSH; !exotic.t2; Mod t2veiled; }
 	}
 }
 

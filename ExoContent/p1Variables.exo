@@ -98,8 +98,9 @@ var mercMod = "Infamous" "of Infamy";
 ## Veiled modifiers
 var veilP = "Veiled";
 var veilPS = "Veiled" "of the Veil";
+var anyVeil = "Veil";
 
-var aux_all = "of the Essence" "Essences" "of Tacati" "of Puhuarte" + veilPS;
+var aux_all = "of the Essence" "Essences" "of Tacati" "of Puhuarte" + anyVeil;
 
 ## CHEATMODS
 var w_cheatmods = "of the Underground" "Subterranean" "of Many";
@@ -298,7 +299,7 @@ var shields_es_defense2 = shields_fes[3] + shields_pes[2] + helmet_hybrid_es + h
 ##   {META} HELMETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var helmet_cheatMod = "of Janus' Veil" "of Puhuarte" + aux_all + a_cheatMods;
+var helmet_cheatMod = "of Puhuarte" + aux_all + a_cheatMods;
 
 var helmet_life = "Fecund" "Athlete's" "Virile";
 var helmet_regen = "of Recuperation";
@@ -324,10 +325,12 @@ var boots_cheat = "Matatl's" + a_cheatMods;
 var boots_movespeed = "Hellion's" "Cheetah's" "Gazelle's" "Stallion's";
 var boots_life = "Athlete's" "Virile" "Rotund";
 
-var boots_aux = "Rin's Veiled" + aux_stats_rfocus2 + suppress[3] + regen_rate[3];
+## "Rin's Veiled"
+
+var boots_aux = aux_stats_rfocus2 + suppress[3] + regen_rate[3];
 
 ## usable elements
-var xboots_life_core = boots_life[1] + boots_movespeed[2] + suppress[1] + boots_cheat + VeilP;
+var xboots_life_core = boots_life[1] + boots_movespeed[2] + suppress[1] + boots_cheat;
 var xboots_es_core = boots_movespeed[2] + boots_cheat;
 
 var xboots_life_mix = xboots_life_core + boots_aux + boots_life[3] + boots_movespeed[2] + boots_cheat + aux_all + combined_lifedefense_hybrid;
@@ -340,7 +343,8 @@ var xboots_es_mix = xboots_es_core + boots_aux + smallitem_es_defense2 + boots_m
 var gloves_life = "Athlete's" "Virile" "Rotund";
 
 ## gloves specific special mods
-var gloves_cheat = "of Puhuarte" "Vorici's Veiled" + a_cheatMods;
+## "Vorici's Veiled"
+var gloves_cheat = "of Puhuarte" + a_cheatMods;
 var gloves_ias = "of Grandmastery" "of Mastery" "of Ease";
 var gloves_accu = "of Lioneye" "of the Ranger";
 var gloves_mana = "Zaffre" "Blue";
@@ -386,7 +390,7 @@ var wdmg_chaos = "Malicious";
 var attphys_CheatMods = w_cheatmods + w_temple_Phys;
 var attele_CheatMods = w_cheatmods + w_temple_Caster;
 
-var allWeaponsExtraAux = "Vagan's Veiled" "Tora's Veiled" "Haku's Veiled" "It That Fled's Veiled";
+## var allWeaponsExtraAux = "Vagan's Veiled" "Tora's Veiled" "Haku's Veiled" "It That Fled's Veiled";
 
 var attphys1 = wdmg_pphys[2] + wdmg_phys[1] + wdmg_hphys[2] + ws_attack_speed[1] + ws_attack_crit[1] + ws_dot[1] + ws_critmulti[1];
 var attphys2 = wdmg_pphys[3] + wdmg_phys[2] + wdmg_hphys[3] + ws_attack_speed[2] + ws_attack_crit[2] + ws_dot[2] + ws_critmulti[1];
@@ -400,13 +404,13 @@ var attele_aux2 = ws_attack_speed[3] + ws_attack_crit[3] + ws_critmulti[3] + ws_
 ## usable elements
 var xattackphys_Core = wdmg_pphys[3] + attphys_CheatMods;
 
-var xattackphys_Conf = attphys1 + attphys_CheatMods + allWeaponsExtraAux;
-var xattackphys_Norm = attphys2 + attphys_CheatMods + allWeaponsExtraAux;
+var xattackphys_Conf = attphys1 + attphys_CheatMods + anyVeil;
+var xattackphys_Norm = attphys2 + attphys_CheatMods + anyVeil;
 
 var xattackele_Core = attele_base2 + attele_CheatMods;
 
-var xattackele_Conf = attele_base1 + attele_aux1 + attele_CheatMods + allWeaponsExtraAux;
-var xattackele_Norm = xattackele_Core + attele_base2 + attele_aux2 + attele_CheatMods + allWeaponsExtraAux;
+var xattackele_Conf = attele_base1 + attele_aux1 + attele_CheatMods + anyVeil;
+var xattackele_Norm = xattackele_Core + attele_base2 + attele_aux2 + attele_CheatMods + anyVeil;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} CASTER MODS
@@ -519,7 +523,7 @@ var xbody_core_life = suppress[1] + body_life + body_cheatMods;
 var xbody_core_defense = suppress[1] + body_life + body_defenses_flat + body_defenses_perc;
 var xbody_core_es = body_es + body_cheatMods;
 
-var body_aux = aux_stats_rfocus2 + life_regen[1] + phys_reduction[2] + suppress[2] + "of Hillock's Veil";
+var body_aux = aux_stats_rfocus2 + life_regen[1] + phys_reduction[2] + suppress[2];
 
 var xbody_aux_life = xbody_core_life + aux_all + body_cheatMods + body_aux + body_life + body_hybridlife + "of Tacati" + body_defenses_flat + body_defenses_perc;
 var xbody_aux_es = xbody_core_es + aux_all + body_cheatMods + body_aux + body_es + body_es_hybrid + "of Tacati" + body_life[2];
@@ -595,7 +599,7 @@ var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
 var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
 
 ## CASTER - CORE
-var casterCoreGeneral = casterCheatAll + wcast_spell[3] + "of the Veil";
+var casterCoreGeneral = casterCheatAll + wcast_spell[3];
 
 ## CASTER - CORE - SPECIALIZED KIT
 var casterFireCore  = casterCoreGeneral + wcast_fire[3]  + "Flame Shaper's" + wsdmg_fire[3] + wsdmg_cold[1] + wsdmg_light[1];
@@ -604,20 +608,20 @@ var casterLightCore = casterCoreGeneral + wcast_light[3] + "Thunderhand's"  + ws
 var casterMiscPhys =  casterCoreGeneral + "Lithomancer's" + wsdmg_fire[2] + wsdmg_cold[2] + wsdmg_light[2];
 var casterMiscChaos = casterCoreGeneral + "Mad Lord's" + wsdmg_fire[1] + wsdmg_cold[1] + wsdmg_light[1];
 
-var casterSpecialAux = "It That Fled's Veiled";
+## var casterSpecialAux = "It That Fled's Veiled";
 
 ## CASTER - MODULES
-var xcaster_firedmg_conf =  casterFireCore + casterDmg1 + casterFire1 + casterDotBase1 + aux_all + casterSpecialAux;
-var xcaster_colddmg_conf =  casterColdCore + casterDmg1 + casterCold1 + casterDotBase1 + aux_all + casterSpecialAux;
-var xcaster_lightdmg_conf = casterLightCore + casterDmg1 + casterLight1 + aux_all + casterSpecialAux;
-var xcaster_physdmg_conf =  casterMiscPhys + casterDmg1 + casterPhys1 + casterDotBase1 + aux_all + casterSpecialAux;
-var xcaster_chaosdmg_conf = casterMiscChaos + casterDmg1 + casterChaos1 + casterDotBase1 + aux_all + casterSpecialAux;
+var xcaster_firedmg_conf =  casterFireCore + casterDmg1 + casterFire1 + casterDotBase1 + aux_all;
+var xcaster_colddmg_conf =  casterColdCore + casterDmg1 + casterCold1 + casterDotBase1 + aux_all;
+var xcaster_lightdmg_conf = casterLightCore + casterDmg1 + casterLight1 + aux_all;
+var xcaster_physdmg_conf =  casterMiscPhys + casterDmg1 + casterPhys1 + casterDotBase1 + aux_all;
+var xcaster_chaosdmg_conf = casterMiscChaos + casterDmg1 + casterChaos1 + casterDotBase1 + aux_all;
 
-var xcaster_firedmg_norm =  casterFireCore + casterDmg3 + casterFire2 + casterDotBase2 + aux_all + casterSpecialAux;
-var xcaster_colddmg_norm =  casterColdCore + casterDmg3 + casterCold2 + casterDotBase2 + aux_all + casterSpecialAux;
-var xcaster_lightdmg_norm = casterLightCore + casterDmg3 + casterLight2 + aux_all + casterSpecialAux;
-var xcaster_physdmg_norm =  casterMiscPhys + casterDmg3 + casterPhys2 + casterDotBase2 + aux_all + casterSpecialAux;
-var xcaster_chaosdmg_norm = casterMiscChaos + casterDmg3 + casterChaos2 + casterDotBase2 + aux_all + casterSpecialAux;
+var xcaster_firedmg_norm =  casterFireCore + casterDmg3 + casterFire2 + casterDotBase2 + aux_all;
+var xcaster_colddmg_norm =  casterColdCore + casterDmg3 + casterCold2 + casterDotBase2 + aux_all;
+var xcaster_lightdmg_norm = casterLightCore + casterDmg3 + casterLight2 + aux_all;
+var xcaster_physdmg_norm =  casterMiscPhys + casterDmg3 + casterPhys2 + casterDotBase2 + aux_all;
+var xcaster_chaosdmg_norm = casterMiscChaos + casterDmg3 + casterChaos2 + casterDotBase2 + aux_all;
 
 ## SPELLSLINGER - GENERAL
 var slingerBase1 = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + casterCheatAll + w_temple_Phys + wcast_spell[2];
@@ -653,7 +657,7 @@ var mwCrit = "of Destiny" "of Determinism" "of Serendipity" "of Providence";
 
 var minionCore = minionCheat + mwSDmg[2] + mwGem + mwSpeed[2] + mwCrit[1] + mwAccuracy[1];
 
-var mwMisc = mwAllGems + "of Citaqualotl" + veilPS + wcast_spell[1] + ws_cast_speed[2] + "Haku's Veiled";
+var mwMisc = mwAllGems + "of Citaqualotl" + anyVeil + wcast_spell[1] + ws_cast_speed[2];
 var mwAux = mwMisc + minionCore + mwHybrid[3] + mwSDmg[4] + mwSpeed[3] + mwAccuracy[2] + mwCrit[3];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -705,7 +709,9 @@ var acc_unset_levels = "Quintessential" "Flawless";
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 var amu_skills = "Exalter's" "Vulcanist's" "Rimedweller's" "Stormbrewer's" "Behemoth's" "Provocateur's";
-var amu_cheat = acc_cheat + "Xopec's" "of Guatelitzi" "Guatelitzi's" "of Puhuarte" "Vorici's Veiled" "Elreon's Veiled" + amu_skills;
+var amu_cheat = acc_cheat + "Xopec's" "of Guatelitzi" "Guatelitzi's" "of Puhuarte" + amu_skills;
+
+## "Vorici's Veiled" "Elreon's Veiled"
 
 ## important general stats on amulets
 var amu_aux_stats = aux_all + amu_cheat + aux_stats2 + acc_allat[3] + acc_manaregen[2] + acc_par[1] + acc_pev[1] + acc_pes[1];
@@ -726,11 +732,13 @@ var xamu_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_crit_
 ## RINGS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+## "of Aisling's Veil" "of Cameria's Veil" "Elreon's Veiled" "Leo's Veiled" "Riker"
+
 var ring_aux_stats_full = acc_unset_levels[1] + aux_all + aux_stats2 + acc_manaregen[2] + acc_recoup[2] + "Perandus'" + "of the Comet";
 
 var ring_ias = "of Skill";
 var ring_pdmg = "of Flames" "of Rime" "of Voltage";
-var ring_joker = "of Bameth" "of Puhuarte" "Xopec's" "of Aisling's Veil" "of Guatelitzi" "Guatelitzi's" "of Cameria's Veil" "Elreon's Veiled" "Leo's Veiled" "Riker";
+var ring_joker = "of Bameth" "of Puhuarte" "Xopec's" "of Guatelitzi" "Guatelitzi's";
 
 var xring_core = ring_joker + acc_cheat + acc_life[3] + acc_fes[2];
 
@@ -746,7 +754,10 @@ var xring_minion_mix = xring_core + ring_aux_stats_full + ring_minion_high + rin
 ## BELTS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var belts_cheat = acc_cheat + "Guatelitzi's" "Leo's Veiled" "of Guatelitzi";
+
+## "Leo's Veiled"
+
+var belts_cheat = acc_cheat + "Guatelitzi's" "of Guatelitzi";
 
 ## prefixes
 var belts_life = "Fecund" "Athlete's" "Virile";
@@ -774,7 +785,7 @@ var bladeBlastDamageAuxPref = wdmg_fire[3] + wdmg_cold[3] + wdmg_light[3] + wdmg
 var bladeBlastDamageAuxSuffix = ws_cast_speed[3] + ws_cast_crit[3] + ws_critmulti[3];
 
 var xbladeBlast_core = bladeBlastDamageCore;
-var xbladeBlast_aux = xbladeBlast_core + bladeBlastDamageAuxPref + bladeBlastDamageAuxSuffix + veilPS;
+var xbladeBlast_aux = xbladeBlast_core + bladeBlastDamageAuxPref + bladeBlastDamageAuxSuffix + anyVeil;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RECOMBINATIONS
