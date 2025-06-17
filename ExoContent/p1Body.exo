@@ -332,8 +332,8 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section IDModExceptions : Rarity "Rare", IdMods, !exotic
 	{
-		Show t1veil     { %D4; !GSH; !exotic.t2; Mod t1veiled; }
-		Show t2veil     { %D2; !GSH; !exotic.t2; Mod t2veiled; }
+		Show t1veil     { %D3; !GSH; !exotic.t2; Mod t1veiled; }
+		Show t2veil     { %D0; !GSH; !exotic.t3; Mod t2veiled; }
 	}
 }
 
@@ -455,7 +455,10 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve; Rarity <= Rare; };
-		Show Mercenary { !GSH; %D6; !exotic.t2; Mod mercMod; Rarity <= Rare; };
+
+		Show MercenaryWeapons { !GSH; %D6; !exotic.t2; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
+		Show MercenaryOthers { !GSH; %D6; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
+
 		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
 		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
 		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
@@ -674,9 +677,9 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section VeiledRares : Rarity Rare, ItemLevel >= 68, Auto("rare->exotic->veiled"), Identified True, Mod "Veil"
 	{
-		Show t1 	{ %D5; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
-		Show t2		{ %D5; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
-		Show t3 	{ %D4; !G5;  !exotic.t3; BaseType == source.rares.eg.t3; }
+		Show t1 	{ %D4; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
+		Show t2		{ %D4; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
+		Show t3 	{ %D3; !G5;  !exotic.t3; BaseType == source.rares.eg.t3; }
 		Show t4 	{ %D3; !GSH; !exotic.t4; BaseType == source.rares.eg.t4; }
 		Show Any 	{ %D2; !GSH; !exotic.t4; Empty(); }
 	}
