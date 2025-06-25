@@ -31,7 +31,7 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 	
 	Show stacklvl1 { !G5; !gold.medium; StackSize >= 50; AreaLevel <= 68; }
 	
-	Show anyOther   { !G6H; !gold.small; Empty(); }
+	Show anyOther   { %H4; !G6H; !gold.small; Empty(); }
 }
 
 #===============================================================================================================
@@ -42,12 +42,18 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 #   [1234] Influenced Maps
 #------------------------------------
 
-Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps", Rarity <= Rare
+#!! Waypoint c1.infl.allplusmaps : "All rules - except gold and six-links"
+
+Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps"
 {	
-	Show ZanaMap { !G2; !maps.T1; ZanaMemory True; }
-	Show InfShaper { !G2; !maps.T1; HasInfluence Shaper; }
-	Show InfElder { !G2; !maps.T1; HasInfluence Elder; }
-	Show InfConquerors { !G2; !maps.T1; HasInfluence Crusader Hunter Redeemer Warlord; }
+	HideD ZanaCorruptHider { !GEX; !Shrink; ZanaMemory True; Rarity <= Magic; Corrupted True; }
+
+	Show ZanaMap { !G2; !maps.T1; ZanaMemory True; Rarity <= Rare; MapTier >= 14; }
+	Show ZanaMapLow { !G3; !maps.SpecialLow; ZanaMemory True; Rarity <= Rare; }
+
+	Show InfShaper { !G2; !maps.T1; HasInfluence Shaper; Rarity <= Rare; }
+	Show InfElder { !G2; !maps.T1; HasInfluence Elder; Rarity <= Rare; }
+	Show InfConquerors { !G2; !maps.T1; HasInfluence Crusader Hunter Redeemer Warlord; Rarity <= Rare; }
 }
 
 
@@ -323,7 +329,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 
 		Show IdAj_Attack  { Mod >= 1 xAj_core; Mod >= 3 xAj_attack_aux; BaseType == "Murderous Eye Jewel" "Searching Eye Jewel"; }
 		Show IdAj_Caster  { Mod >= 1 xAj_core; Mod >= 3 xAj_caster_aux; BaseType == "Hypnotic Eye Jewel"; }
-		Show IdAj_Minion  { Mod >= 1 xAj_core; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
+		Show IdAj_Minion  { Mod >= 1 xAj_core_minion; Mod >= 3 xAj_minion_aux; BaseType == "Ghastly Eye Jewel"; }
 		Show IdAj_Mixer   { Mod >= 4 xAj_mixer_aux; BaseType == abyssJewels; }
 	}
 
@@ -456,8 +462,8 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show DelveFractured    { !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
 		Show Delve    { !GSH; %D6; !exotic.t2; Mod exotic_delve; Rarity <= Rare; };
 
-		Show MercenaryWeapons { !GSH; %D6; !exotic.t2; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
-		Show MercenaryOthers { !GSH; %D6; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
+		Show MercenaryWeapons { !GSH; %D6; !exotic.t1; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
+		Show MercenaryOthers { !GSH; %D6; !exotic.t1; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
 
 		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
 		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
@@ -593,7 +599,7 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel >= 2; AreaLevel <= 67; }
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 68; }
-	Show WhiteSocketWeapons2H { %DS4; !exotic.t3; !G2; Class == classes_2h; Sockets >= "6WWWWWW"; }
+	Show WhiteSocketWeapons2H { %DS6; !exotic.t1; !G2; Class == classes_2h; Sockets >= "6WWWWWW"; }
 	Show 6Sockets4H		{ %D3;  !G5H;  !*t1; Sockets >= 6; Height = 4; }
 	Show 6Sockets		{ %DS3; !G5H; !*t1; Sockets >= 6; Height = 3; }
 }
@@ -756,8 +762,8 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section HideLayerRareRuleIncremental : Auto("HideLayer")
 	{
-		Hide RRIHide1 { %RH3; AreaLevel >= 82; DropLevel < 75; Class == classes_nonJwlryEquip; }
-		Hide RRIHide2 { %RH2; AreaLevel >= 82; DropLevel < 60; Class == classes_armor_noshields; }
+		Hide RRIHide1 { %RH3; AreaLevel >= 82; DropLevel < 75; Class == classes_armor_noshields; }
+		Hide RRIHide2 { %RH2; AreaLevel >= 80; DropLevel < 60; Class == classes_armor_noshields; }
 		Hide RRIHide3 { %RH2; AreaLevel >= 78; DropLevel < 50; Class == classes_armor_noshields; }
 		Hide RRIHide4 { %RH1; AreaLevel >= 73; DropLevel < 40; Class == classes_armor_noshields; }
 	}
@@ -913,14 +919,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	{
 		Show Any20QualFlask { %D2; !recipe.ts1; Class == class_flasks; }
 	}
-#------------------------------------
-# [2701] Utility OR quality flasks
-#------------------------------------
-	Section UtilityEndgameFlasks : Clean()
-	{
-		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; !SF45; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
-		Show AnyUtility 	{ %D3; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; }
-	}
+
 #------------------------------------
 # [2701] Quality Low
 #------------------------------------
@@ -928,6 +927,14 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	{
 		ShowD QualityHigh { %D1; !G6H; !recipe.t2; Class == class_flasklikes; Quality >= 10; AreaLevel <= 77; }
 		ShowD QualityLow  { %D0; !G6; !recipe.t3; Class == class_flasklikes; Quality >= 1; AreaLevel <= 77; }
+	}
+#------------------------------------
+# [2701] Utility flasks
+#------------------------------------
+	Section UtilityEndgameFlasks : Clean()
+	{
+		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; !SF45; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
+		Show AnyUtility 	{ %D3; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
@@ -1794,12 +1801,12 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Cu
 
 Section SettlerRunes : Auto("runesGrafts"), Class == class_currency, !Currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == runes.t1; }
-	Show t2 { !G2; !*t2divine; BaseType == runes.t2; }
-	Show t3 { !G4; !*t3annul; BaseType == runes.t3; }
-	Show t4 { !G5; !*t4chaos; BaseType == runes.t4; }
-	Show t5 { !G5; !*t6chrom; BaseType == runes.t5; }
-	Show restex { BaseType "Rune"; }
+	Show t1 { !G1; !*t1exalted; BaseType == runegrafts.t1; }
+	Show t2 { !G2; !*t2divine; BaseType == runegrafts.t2; }
+	Show t3 { !G4; !*t3annul; BaseType == runegrafts.t3; }
+	Show t4 { !G5; !*t4chaos; BaseType == runegrafts.t4; }
+	Show t5 { !G5; !*t6chrom; BaseType == runegrafts.t5; }
+	Show restex { BaseType "Runegraft"; }
 }
 
 #------------------------------------

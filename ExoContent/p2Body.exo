@@ -465,19 +465,24 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 
 Section Socketables : Auto("sockets->general"), Class == "Socketable"
 { 
-	Show socketLeveling1 { %D4; !CurrTierD; LVL(); BaseType == sockets.leveling.t1; }
-	Show socketLeveling2 { %D4; !Supply2lvl; LVL(); BaseType == sockets.leveling.t2; }
+	var allPreferredRunes = socketables.generic.exCommonPref1 + socketables.generic.exCommonPref2 + socketables.generic.exCommonPref3;
+	var allCommonRunes = socketables.generic.exCommon1 + socketables.generic.exCommon2 + socketables.generic.exCommon3;
+	var allNicheRunes = allCommonRunes - allPreferredRunes;
+	var endgameNicheRunes = socketables.generic.exCommon1 - socketables.generic.exCommonPref1;
 
-	Show s { !TIERS; BaseType == sockets.cores.s + sockets.runes.s; }
-	Show a { !CurrTierA; BaseType == sockets.cores.a + sockets.runes.a; }
-	Show b { !CurrTierB; BaseType == sockets.cores.b + sockets.runes.b; }
-	Show c { %H6; !CurrTierC; BaseType == sockets.cores.c + sockets.runes.c; }
-	Show d { %H5; !CurrTierD; BaseType == sockets.cores.d + sockets.runes.d; }
-	Show e { %H4; !CurrTierE; BaseType == sockets.cores.e + sockets.runes.e; }
+	Show socketLeveling1 { %D4; !CurrTierD; LVL(); BaseType == socketables.generic.exCommonPref1 + socketables.generic.exCommonPref2 + socketables.generic.exCommonPref3; }
+	Show socketLeveling2 { %D4; !Supply2lvl; LVL(); BaseType == allNicheRunes; }
 
-	Show SupplyLow 	 { %H3; !Supply2; BaseType == sockets.supplies.low; }
+	Show s { !TIERS; BaseType == socketables.generic.s; }
+	Show a { !CurrTierA; BaseType == socketables.generic.a; }
+	Show b { !CurrTierB; BaseType == socketables.generic.b; }
+	Show c { %H6; !CurrTierC; BaseType == socketables.generic.c; }
+	Show d { %H5; !CurrTierD; BaseType == socketables.generic.d + socketables.generic.exCommon1; }
+	Show e { %H4; !CurrTierE; BaseType == socketables.generic.e + endgameNicheRunes; }
 
-	Hide exHide { !shrink; BaseType == sockets.cores.b + sockets.cores.c + sockets.cores.d + sockets.cores.e + sockets.runes.b + sockets.runes.c + sockets.runes.d + sockets.runes.e + sockets.supplies.low; }
+	Show SupplyLow 	 { %H3; !Supply2; BaseType == socketables.generic.exCommon2 + socketables.generic.exCommon3; }
+
+	Hide exHide { !shrink; BaseType == socketables.generic.b + socketables.generic.c + socketables.generic.d + socketables.generic.e + allCommonRunes; }
 	Show restex { !Unknown; BaseType "Soul Core" "Rune" "Talisman"; }
 }
 
@@ -621,9 +626,9 @@ Section Waystones : Class == "Waystones"
 # [4403] Special Maps
 #------------------------------------
 
-		Show enchanted1     { !MapSpecialHigh; AnyEnchantment True; WaystoneTier >= 14; }
-		Show enchanted2  	{ %H5; !MapSpecial; AnyEnchantment True; WaystoneTier >= 11; WaystoneTier <= 13; }
-		Show enchanted34  	{ %H4; !MapSpecial; AnyEnchantment True; WaystoneTier >= 1;  WaystoneTier <= 10; }
+		Show enchanted1     { %D6; !MapSpecialHigh; AnyEnchantment True; WaystoneTier >= 14; }
+		Show enchanted2  	{ %D5; !MapSpecial; AnyEnchantment True; WaystoneTier >= 11; WaystoneTier <= 13; }
+		Show enchanted34  	{ %D4; !MapSpecial; AnyEnchantment True; WaystoneTier >= 1;  WaystoneTier <= 10; }
 
 		Show corrupted8high { !MapSpecialHigh; Corrupted True; WaystoneTier >= 14; HasExplicitMod >=8 "a" "o" "e" "u" "i" "y"; }
 		Show corrupted8 { %H4; !MapSpecial; Corrupted True; HasExplicitMod >=7 "a" "o" "e" "u" "i" "y"; }
@@ -843,10 +848,10 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 
 Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_currency, BaseType == fragments.generic.splinters
 {
-	Show t1 { !Splinter1; StackSize >= stacksize.commonSplinters.t1; }
-	Show t2 { !Splinter2; StackSize >= stacksize.commonSplinters.t2; }
-	Show t3 { !Splinter3; StackSize >= stacksize.commonSplinters.t3; }
-	Show t4 { !Splinter4; StackSize >= stacksize.commonSplinters.t4; }
+	Show t1 { %D6; !Splinter1; StackSize >= stacksize.commonSplinters.t1; }
+	Show t2 { %D6; !Splinter2; StackSize >= stacksize.commonSplinters.t2; }
+	Show t3 { %D6; !Splinter3; StackSize >= stacksize.commonSplinters.t3; }
+	Show t4 { %D6; !Splinter4; StackSize >= stacksize.commonSplinters.t4; }
 	Show t5 { %HS5; !Splinter5; Empty(); }
 }
 
@@ -1111,7 +1116,7 @@ Section NormalMagic
 		HideD magic6 { %RH2; DropLevel < 44; AreaLevel >= 60; }
 	}
 
-	Section ArmourTypes : Auto("Leveling->NormalMagic->armours"), Class == classes_armor, Rarity <= Magic
+	Section ArmourTypes : Auto("Leveling->NormalMagic->armours"), Class == classes_armor_generic, Rarity <= Magic
 	{
 		Show AR				{ !vanilla; %D3; AR(); }
 		Show EV				{ !vanilla; %D3; EV(); }
