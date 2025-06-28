@@ -625,14 +625,14 @@ Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity
 
 Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
-	Show QualChancing { !G3; !exotic.t1; %D3; Quality >= 29; BaseType == "Riveted Boots" "Steel Kite Shield"; }
+	Show QualChancing { !G3; !exotic.t1; %D6; Quality >= 28; BaseType == "Riveted Boots" "Steel Kite Shield"; }
 
 	var craftingArmors = derived.crafting.armors.t1 + derived.crafting.shields.t1 + derived.crafting.shields.t2;
-	Show armors1q1	{ !G4; !exotic.t1; %D6; Quality >= 29; Class == classes_armor; BaseType == craftingArmors; }
+	Show armors1q1	{ !G4; !exotic.t1; %D6; Quality >= 28; Class == classes_armor; BaseType == craftingArmors; }
 	Show armors1q2	{ !GEX; !exotic.t2; %D6; Quality >= 24; Class == classes_armor; BaseType == craftingArmors; }
 
-	Show weapont1q1 	 { !GEX; !exotic.t1; %D6; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 29; }
-	Show weapont2q1 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 29; }
+	Show weapont1q1 	 { !GEX; !exotic.t1; %D6; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 28; }
+	Show weapont2q1 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 28; }
 	Show weapont1q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	Show weapont2q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 24; }
 	
