@@ -625,7 +625,7 @@ Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity
 
 Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
-	Show QualChancing { !G3; !exotic.t1; %D6; Quality >= 28; BaseType == "Riveted Boots" "Steel Kite Shield"; }
+	Show QualChancing { !G3; !exotic.t1; %D6; Quality >= 27; BaseType == "Riveted Boots" "Steel Kite Shield"; }
 
 	var craftingArmors = derived.crafting.armors.t1 + derived.crafting.shields.t1 + derived.crafting.shields.t2;
 	Show armors1q1	{ !G4; !exotic.t1; %D6; Quality >= 28; Class == classes_armor; BaseType == craftingArmors; }
