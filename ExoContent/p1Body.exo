@@ -2033,7 +2033,7 @@ Section EventIdols : Auto("event->idols"), !newleaguetier
 #===============================================================================================================
 # [[4900]] Uniques
 #===============================================================================================================
-#!! Waypoint c10.uniques.all : "Tierlist - Uniques - All"
+#!! Waypoint c10.uniques.all : "Tierlist - Uniques - All Tiering + Exceptions"
 
 Section Unique : Rarity Unique, Auto("uniques"), !unique
 {
@@ -2059,7 +2059,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5702] Tier 1 and 2 uniques
 #------------------------------------
-#!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - T1, T2"
+#!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - All tiering"
 
 	Show t1 { !G1; !*t1; BaseType == uniques.generic.t1; }
 	Show t2 { !G2; !*t2; BaseType == uniques.generic.t2; }	
@@ -2089,7 +2089,8 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #------------------------------------
 # [5701] Low tier exceptions
 #------------------------------------
-#!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
+#!! Waypoint c10.uniques.low : "Tierlist - Uniques - C Tier, Boss-Tier and lower"
+
 	Show earlyleague { !G3; %H5; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
 	Show mercUniques { !G3; %H5; !*t4; !MercUniques; BaseType == uniques.generic.mercUniques; }
 	
