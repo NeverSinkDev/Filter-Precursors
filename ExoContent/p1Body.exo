@@ -62,7 +62,7 @@ Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps"
 #------------------------------------
 #!! Waypoint c1.infl.all : "All rules - except 6links and influenced maps"
 
-Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare
+Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare, Clean()
 {
 	var combinedt1gear = source.rares.eg.t1 + source.crafting.general.t1;
 	var combinedt2gear = source.rares.eg.t2 + source.crafting.general.t2 - combinedt1gear;
@@ -75,13 +75,13 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare
 	Show t1 	{ !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt1gear; }
 
 	Show t2high { !G3; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt2gear; }
-	Show t2 	{ !GSH; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
+	Show t2 	{ %D5; !GSH; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
 
-	Show t3high { !GSH; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt3gear; }
-	Show t3 	{ !GSH; !exotic.t3; MemoryStrands >= 1;  BaseType == combinedt3gear; }
+	Show t3high { %D5; !GSH; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt3gear; }
+	Show t3 	{ %D4; !GSH; !exotic.t3; MemoryStrands >= 1;  BaseType == combinedt3gear; }
 
-	Show AnyHigh { !GSH; !exotic.t3; MemoryStrands >= 60; }
-	Show Any 	 { %D5; !GSH; !exotic.t3; MemoryStrands >= 1; }
+	Show AnyHigh { %D4; !GSH; !exotic.t3; MemoryStrands >= 60; }
+	Show Any 	 { %D4; !GSH; !exotic.t3; MemoryStrands >= 1; }
 }
 
 #------------------------------------
@@ -288,8 +288,8 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section Rings : Class == "Rings"
 	{
-		Show Ring_Caster { %D5; Mod xring_core; Mod >= 3 xring_cast_mix; Mod = 0 z_bad_liferoll; }
-		Show Ring_Attack { %D5; Mod xring_core; Mod >= 3 xring_attack_mix; Mod = 0 z_bad_liferoll; }
+		Show Ring_Caster { %D5; Mod xring_core; Mod >= 4 xring_cast_mix; Mod = 0 z_bad_liferoll; }
+		Show Ring_Attack { %D5; Mod xring_core; Mod >= 4 xring_attack_mix; Mod = 0 z_bad_liferoll; }
 		Show Ring_Minion { %D5; BaseType == "Bone Ring"; Mod >= 2 ring_minion_high; Mod >= 4 xring_minion_mix; Mod = 0 z_bad_liferoll; }
 	}
 #------------------------------------
@@ -2092,13 +2092,13 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 #!! Waypoint c10.uniques.low : "Tierlist - Uniques - C Tier, Boss-Tier and lower"
 
 	Show earlyleague { !G3; %H5; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
+	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class == "Rings"; }
 	Show mercUniques { !G3; %H5; !*t4; !MercUniques; BaseType == uniques.generic.mercUniques; }
 	
 	Show exjewelscorrupted    { !GSH; !*t3; !special; BaseType == genericJewels; CorruptedMods = 0; Corrupted True; }
 	Show exjewels    		  { !GSH; !*t2; BaseType == uniques.jewels; }
 	
 	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
-	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class == "Rings"; }
 	
 	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == classes_corrupted; }
 
