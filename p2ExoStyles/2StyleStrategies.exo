@@ -139,6 +139,13 @@ Style Common
 # EXOTICS
 #------------------------------------
 
+	Func Exotic1h ()
+	{
+		SetFontSize font.t1;
+		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
+	}
+
 	Func Exotic1 ()
 	{
 		SetFontSize font.t2;

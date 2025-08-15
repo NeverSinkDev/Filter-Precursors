@@ -69,7 +69,7 @@ Section Artifacts : Auto("Artifact"), Rarity <= Rare, !Artifact
 
 Section HighModtier : Auto("exotic->others")
 {
-	Show tier5rare { !exotic1; !s1; Rarity Rare; UnidentifiedItemTier >= 5; Class == classes_equip; }
+	Show tier5rare { !exotic1h; Rarity Rare; UnidentifiedItemTier >= 5; Class == classes_equip; }
 	Show tier4rare { !rRares1; !s2; !LowExoticMM; Rarity Rare; UnidentifiedItemTier = 4; Class == classes_equip; }
 	Show tier23rareTrinkets { %D4; !LowExoticMM; !rGearTrinket1; !s2; Rarity Rare; UnidentifiedItemTier >= 2; Class == classes_jewellery; }
 	Show tier3rare { %D4; !rRares1; !s3; Rarity Rare; UnidentifiedItemTier = 3; Class == classes_equip; }
@@ -391,7 +391,7 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 # [[0200]] Endgame - Rare - Gear
 #===============================================================================================================
 
-#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (75ish+ gear)
+#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (75ish+ gear)"
 
 	Section EndgameRareGear : Auto("rr"), Class == classes_nonJwlryEquip
 	{
@@ -399,26 +399,26 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 		Show T1_top 	{ %D5; !rRares1; BaseType == derived.general.unbiased.equip.t1; TopMods(); }
 		Show T1_other  	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t1; ItemLevel <= 81;  }
 
-#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (70ish+ gear)
+#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (70ish+ gear)"
 		
 		Show T2_top 	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t2; TopMods(); }
 		Show T2_a1  	{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t2; ItemLevel >= 75; ItemLevel <= 81; }
 		Show T2_other  	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t2; ItemLevel <= 74;  }
 
-#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (65ish+ gear)
+#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (65ish+ gear)"
 
 		Show T3_top 	{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t3; TopMods(); }
 		Show T3_a1 		{ %D2; !rRares3; BaseType == derived.general.unbiased.equip.t3; ItemLevel >= 75; ItemLevel <= 81; }
 		Show T3_a2 		{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t3; ItemLevel >= 70; ItemLevel <= 74; }
 		Show T3_other 	{ %D4; !rRares1; BaseType == derived.general.unbiased.equip.t3; ItemLevel <= 69;  }
 
-#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (55ish+ gear)
+#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (55ish+ gear)"
 
 		Show T4_a1 		{ %D1; !rRares3; BaseType == derived.general.unbiased.equip.t4;  ItemLevel >= 75; }
 		Show T4_a2 		{ %D2; !rRares2; BaseType == derived.general.unbiased.equip.t4;  ItemLevel >= 70; ItemLevel <= 74; }
 		Show T4_other 	{ %D3; !rRares2; BaseType == derived.general.unbiased.equip.t4;  ItemLevel <= 69; }
 
-#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (lower)
+#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (lower)"
 
 		Show T5_a1 		{ %D1; !rRares3; ItemLevel >= 75; }
 		Show T5_a2 		{ %D2; !rRares3; ItemLevel >= 70; ItemLevel <= 74; }
