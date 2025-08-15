@@ -90,12 +90,12 @@ Style Common
 # Utility
 #------------------------------------
 
-	Func Vanilla()
+	Func Vanilla
 	{
 		Empty();
 	}	
 
-	Func RareDecoratorRemover ()
+	Func RareDecoratorRemover
 	{
 		SetFontSize 32;
 		SetBorderColor 0 0 0 255;
@@ -103,7 +103,7 @@ Style Common
 		SetTextColor 255 255 119;
 	}
 
-	Func MagicDecoratorRemover ()
+	Func MagicDecoratorRemover
 	{
 		SetFontSize 32;
 		SetTextColor 136 136 255;
@@ -112,7 +112,7 @@ Style Common
 		RemoveEffects();
 	}
 
-	Func NormalDecoratorRemover ()
+	Func NormalDecoratorRemover
 	{
 		SetFontSize 32;
 		SetTextColor 200 200 200;
@@ -121,14 +121,14 @@ Style Common
 		RemoveEffects();
 	}
 
-	Func Shrink()
+	Func Shrink
 	{
 		SetFontSize 18;
 		SetBackgroundColor 0 0 0 0;
 		RemoveEffects();
 	}
 
-	Func Unknown()
+	Func Unknown
 	{
 		SetFontSize font.max;
 		SetTextColor 0 255 255 255; SetBorderColor 0 255 255 255; SetBackgroundColor 255 0 255 255;
@@ -139,28 +139,28 @@ Style Common
 # EXOTICS
 #------------------------------------
 
-	Func Exotic1h ()
+	Func Exotic1h
 	{
 		SetFontSize font.t1;
 		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
 	}
 
-	Func Exotic1 ()
+	Func Exotic1
 	{
 		SetFontSize font.t2;
 		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
 	}
 
-	Func Exotic2 ()
+	Func Exotic2
 	{
 		SetFontSize font.t3;
 		SetTextColor cExotic;
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue Diamond;
 	}
 
-	Func Exotic3 ()
+	Func Exotic3
 	{
 		SetFontSize font.t3;
 		SetTextColor cExotic;
@@ -168,7 +168,7 @@ Style Common
 	}
 
 	
-	Func LowExoticMM ()
+	Func LowExoticMM
 	{
 		PlayAlertSound asUnique; PlayEffect Blue Temp; MinimapIcon 1 White Diamond;
 	}
@@ -416,38 +416,38 @@ Style Common
 # Waystones
 #------------------------------------
 
-	Func DecoMap1()
+	Func DecoMap1
 	{
 		SetBorderColor 0 0 0 255;
 		SetFontSize font.t2;
 	}
 
-	Func DecoMap2()
+	Func DecoMap2
 	{
 		SetBorderColor 0 0 0 255;
 		SetFontSize font.t3;
 	}
 
-	Func DecoMap3()
+	Func DecoMap3
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t3;
 	}
 
-	Func DecoMap4()
+	Func DecoMap4
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t3;
 	}
 
-	Func DecoMapOverleveled()
+	Func DecoMapOverleveled
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t4;
 		RemoveEffects();
 	}
 
-	Func MapSpecialHigh()
+	Func MapSpecialHigh
 	{
 		SetTextColor cMap1highAccent; SetBorderColor cMap1highAccent; SetBackgroundColor cMap1high; 
 		PlayEffect Red; 
@@ -455,7 +455,7 @@ Style Common
 		PlayAlertSound asHighMaps;
 	}
 	
-	Func MapSpecial()
+	Func MapSpecial
 	{
 		SetTextColor cMap1highAccent; SetBorderColor cMap1highAccent; SetBackgroundColor cMap2; 
 		PlayEffect Yellow; 
@@ -463,7 +463,7 @@ Style Common
 		PlayAlertSound asMaps;
 	}
 
-	Func Map1()
+	Func Map1
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
 		PlayEffect Yellow; 
@@ -471,7 +471,7 @@ Style Common
 		PlayAlertSound asHighMaps; 
 	}
 
-	Func Map2()
+	Func Map2
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
 		PlayEffect Yellow Temp; 
@@ -480,7 +480,7 @@ Style Common
 
 	}
 
-	Func Map3()
+	Func Map3
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
 		PlayEffect White Temp; 
@@ -488,7 +488,7 @@ Style Common
 		PlayAlertSound asMaps; 
 	}
 
-	Func Map4()
+	Func Map4
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
 		PlayEffect White Temp; 
@@ -496,7 +496,7 @@ Style Common
 		PlayAlertSound asMaps; 
 	}
 
-	Func MapVendor()
+	Func MapVendor
 	{
 		PlayEffect Yellow Temp; 
 		MinimapIcon 2 White mMaps;
@@ -711,12 +711,12 @@ Style Common
 		PlayAlertSound asUnique;
 	}
 
-	Func MarkMapUp()
+	Func MarkMapUp
 	{
 		SetBorderColor cMarkMapUpgrade;
 	}
 
-	Func MarkExotic()
+	Func MarkExotic
 	{
  		SetBorderColor cExotic;
 	}
