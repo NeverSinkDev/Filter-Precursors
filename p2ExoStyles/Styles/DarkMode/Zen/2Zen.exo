@@ -1,29 +1,29 @@
-Expand Common.FragA
+Expand FragA
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Common.FragB
+Expand FragB
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.FragC
-{
-    SetBackgroundColor NONE;
-    SetBorderColor NONE;
-}
-
-
-Expand Common.FragD
+Expand FragC
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Common.FragE
+
+Expand FragD
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+Expand FragE
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -33,34 +33,34 @@ Expand Common.FragE
 # Splinter
 #------------------------------------
 
-Expand Common.Splinter1
+Expand Splinter1
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Common.Splinter2
+Expand Splinter2
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Common.Splinter3
-{
-    SetBackgroundColor NONE;
-    SetBorderColor NONE;
-}
-
-
-Expand Common.Splinter4
+Expand Splinter3
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
 
-Expand Common.Splinter5
+Expand Splinter4
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+
+Expand Splinter5
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -70,56 +70,56 @@ Expand Common.Splinter5
 # CURRENCY
 #------------------------------------
 
-Expand Common.CurrTierA
+Expand CurrTierA
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Common.CurrTierB
+Expand CurrTierB
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.CurrTierC
+Expand CurrTierC
 {
     SetBorderColor NONE;
 }
 
-Expand Common.CurrTierD
+Expand CurrTierD
 {
     SetBorderColor NONE;
 }
 
-Expand Common.CurrTierE
+Expand CurrTierE
 {
     SetBorderColor NONE;
 }
 
-Expand Common.SupplyArtifact
+Expand SupplyArtifact
 {
     SetBorderColor NONE;
 }
 
-Expand Common.Supply1
+Expand Supply1
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Common.Supply2
+Expand Supply2
 {
     SetBorderColor NONE;
 }
 
-Expand Common.Supply2lvl
+Expand Supply2lvl
 {
     SetBorderColor NONE;
     SetTextColor cCurrTierD;
 }
 
-Expand Common.Supply3
+Expand Supply3
 {
     SetBorderColor NONE;
 }
@@ -129,25 +129,25 @@ Expand Common.Supply3
 # CURRENCY
 #------------------------------------
 
-Expand Common.UniqueA
+Expand UniqueA
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Common.UniqueX
+Expand UniqueX
 {
     Bordered(cUnique);
     SetBackgroundColor NONE;
 }
 
-Expand Common.UniqueB
+Expand UniqueB
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.UniqueC
+Expand UniqueC
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -157,53 +157,53 @@ Expand Common.UniqueC
 # Maps
 #------------------------------------
 
-Expand Common.DecoMap1
+Expand DecoMap1
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Common.DecoMap2
+Expand DecoMap2
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Common.MapSpecialHigh
+Expand MapSpecialHigh
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Common.MapSpecial
+Expand MapSpecial
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Common.Map1
+Expand Map1
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Common.Map2
+Expand Map2
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Common.Map3
+Expand Map3
 {
     SetBackgroundColor zenMapBackground;
 }
 
-Expand Common.Map4
+Expand Map4
 {
     SetBackgroundColor zenMapBackground;
 }
 
-Expand Common.MapVendor
+Expand MapVendor
 {
     SetBackgroundColor zenMapBackground;
 }
@@ -212,18 +212,18 @@ Expand Common.MapVendor
 # Misc
 #------------------------------------
 
-Expand Common.Exotic1
+Expand Exotic1
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.FlaskCharm1
+Expand FlaskCharm1
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
 }
 
-Expand Common.FlaskCharm2
+Expand FlaskCharm2
 {
     SetBorderColor NONE;
     SetBackgroundColor NONE;
@@ -233,7 +233,7 @@ Expand Common.FlaskCharm2
 # Others
 #------------------------------------
 
-Expand Common.Artifact
+Expand Artifact
 {
     SetFontSize font.t1;
     SetBackgroundColor cBlack;
@@ -242,7 +242,7 @@ Expand Common.Artifact
     PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
 }
 
-Expand Common.ArtifactLow
+Expand ArtifactLow
 {
     SetFontSize font.t1;
     SetBackgroundColor cBlack;
@@ -251,7 +251,7 @@ Expand Common.ArtifactLow
 	PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 1 Orange Pentagon;
 }
 
-Expand Common.MagicDecoratorRemover
+Expand MagicDecoratorRemover
 {
     SetBorderColor 0 0 0 0;
 }
@@ -260,18 +260,18 @@ Expand Common.MagicDecoratorRemover
 # Gems
 #------------------------------------
 
-Expand Common.Gems1
+Expand Gems1
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.Gems2
+Expand Gems2
 {
     SetBackgroundColor NONE;
     SetFontSize font.t3;
 }
 
-Expand Common.Gems3
+Expand Gems3
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -281,7 +281,7 @@ Expand Common.Gems3
 # Rares and Crafting Items
 #------------------------------------
 
-Expand Common.ValueTrinketRare
+Expand ValueTrinketRare
 {
     SetFontSize font.t2;
     SetBackgroundColor NONE;
@@ -289,21 +289,21 @@ Expand Common.ValueTrinketRare
     SetBorderColor cRareTrinkets;
 }
 
-Expand Common.ValueTrinketMagic
+Expand ValueTrinketMagic
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
     SetTextColor NONE;
 }
 
-Expand Common.ValueTrinketMagicLow
+Expand ValueTrinketMagicLow
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
     SetTextColor NONE;
 }
 
-Expand Common.trinketBase
+Expand trinketBase
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
@@ -314,50 +314,50 @@ Expand Common.trinketBase
 # GOLD
 #------------------------------------
 
-Expand Common.goldHuge
+Expand goldHuge
 {
     SetTextColor cWhite;
     SetBorderColor cWhite;
     SetBackgroundColor clear;
 }
 
-Expand Common.goldLarge
+Expand goldLarge
 {
     SetBorderColor NONE;
     SetBackgroundColor clear;
     SetTextColor cWhite;
 }
 
-Expand Common.goldMedium
+Expand goldMedium
 {
     SetBorderColor NONE;
     SetBackgroundColor clear;
     SetTextColor cGold;
 }
 
-Expand Common.goldSmall
+Expand goldSmall
 {
     SetBorderColor NONE;
     SetBackgroundColor clear;
     SetTextColor cGold;
 }
 
-Expand Common.MarkSalvage1
+Expand MarkSalvage1
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand Common.MarkSalvage2
+Expand MarkSalvage2
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand Common.MarkSalvage1lvl
+Expand MarkSalvage1lvl
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand Common.MarkSalvage2lvl
+Expand MarkSalvage2lvl
 {
     SetBorderColor cMarkSalvagable1;
 }
@@ -366,54 +366,54 @@ Expand Common.MarkSalvage2lvl
 # Disable Most Marks
 #------------------------------------
 
-Expand Common.markTopLevelBaseStrong
+Expand markTopLevelBaseStrong
 {
     Disable();
 }
 
-Expand Common.markTopLevelBase
-{
-    Disable();
-}
-
-
-Expand Common.regularBase
+Expand markTopLevelBase
 {
     Disable();
 }
 
 
-Expand Common.corrupt
+Expand regularBase
 {
     Disable();
 }
 
-Expand Common.Mark82
+
+Expand corrupt
 {
     Disable();
 }
 
-Expand Common.MarkMapUp
+Expand Mark82
 {
     Disable();
 }
 
-Expand Common.rRares1
+Expand MarkMapUp
+{
+    Disable();
+}
+
+Expand rRares1
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.rGearTrinket1
+Expand rGearTrinket1
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.rGearTrinket2
+Expand rGearTrinket2
 {
     SetBackgroundColor NONE;
 }
 
-Expand Common.rGearTrinket3
+Expand rGearTrinket3
 {
     SetBackgroundColor NONE;
 }
