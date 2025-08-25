@@ -1,28 +1,28 @@
-Expand FragA
+Expand Tiering_fragA
 {
     BrickBlack(cFragTierA);
 }
 
-Expand FragB
+Expand Tiering_fragB
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierB);
 }
 
-Expand FragC
+Expand Tiering_fragC
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierC);
 }
 
 
-Expand FragD
+Expand Tiering_fragD
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierD);
 }
 
-Expand FragE
+Expand Tiering_fragE
 {
     SetBackgroundColor NONE;
     Text(cFragTierE);
@@ -32,32 +32,32 @@ Expand FragE
 # Splinter
 #------------------------------------
 
-Expand Splinter1
+Expand Tiering_Splinter1
 {
     BrickBlack(cFragTierA);
 }
 
-Expand Splinter2
+Expand Tiering_Splinter2
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierB);
 }
 
-Expand Splinter3
+Expand Tiering_Splinter3
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierC);
 }
 
 
-Expand Splinter4
+Expand Tiering_Splinter4
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierD);
 }
 
 
-Expand Splinter5
+Expand Tiering_Splinter5
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierD);
@@ -67,36 +67,36 @@ Expand Splinter5
 # CURRENCY
 #------------------------------------
 
-Expand CurrTierA
+Expand Tiering_CurrencyA
 {
     BrickBlack(cCurrTierA);
 }
 
-Expand CurrTierB
+Expand Tiering_CurrencyB
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierB);
 }
 
-Expand CurrTierC
+Expand Tiering_CurrencyC
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierC);
 }
 
-Expand CurrTierD
+Expand Tiering_CurrencyD
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierD);
 }
 
-Expand CurrTierE
+Expand Tiering_CurrencyE
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierE);
 }
 
-Expand SupplyArtifact
+Expand tiering_specialArtifact
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierD);
@@ -106,17 +106,23 @@ Expand SupplyArtifact
 # CURRENCY
 #------------------------------------
 
-Expand UniqueA
+Expand Tiering_UniqueA
 {
     BrickBlack(cUnique);
 }
 
-Expand UniqueX
+Expand Tiering_UniqueX
 {
     BorderedGlow(cUnique, cUniqueGlow);
 }
 
-Expand UniqueB
+Expand Tiering_UniqueB
+{
+    SetBackgroundColor NONE;
+    Bordered(cUnique);
+}
+
+Expand tiering_uniqueBossDrop
 {
     SetBackgroundColor NONE;
     Bordered(cUnique);
@@ -126,51 +132,46 @@ Expand UniqueB
 # Maps
 #------------------------------------
 
-Expand DecoMap1
+Expand maps_deco1
 {
     SetBorderColor cWhite;
 }
 
-Expand DecoMap2
+Expand maps_deco2
 {
     SetBorderColor cWhite;
 }
 
-Expand MapSpecialHigh
+Expand Maps_SpecialB
 {
     SetBackgroundColor 120 50 120;
     Bordered(cWhite);
 }
 
-Expand MapSpecial
+Expand Maps_SpecialC
 {
     SetBackgroundColor NONE;
     Bordered(cWhite);
 }
 
-Expand Map1
+Expand maps_regularhighest
 {
     SetBackgroundColor 50 50 50;
     Bordered(cWhite);
 }
 
-Expand Map2
+Expand maps_regularhigh
 {
     SetBackgroundColor NONE;
     Bordered(cWhite);
 }
 
-Expand Map3
+Expand maps_regularmid
 {
     SetBackgroundColor NONE;
 }
 
-Expand Map4
-{
-    SetBackgroundColor NONE;
-}
-
-Expand MapVendor
+Expand maps_regularlow
 {
     SetBackgroundColor NONE;
 }
@@ -179,18 +180,18 @@ Expand MapVendor
 # Misc
 #------------------------------------
 
-Expand Exotic1
+Expand exotics_SpecialB
 {
     SetBackgroundColor cBlack;
 }
 
-Expand FlaskCharm1
+Expand typebased_flaskcharms1
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
 }
 
-Expand FlaskCharm2
+Expand typebased_flaskcharms2
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
