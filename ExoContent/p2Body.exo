@@ -128,26 +128,26 @@ Section HighModtierRare : Auto("idtier->rare"), Rarity Rare
 	Show gear1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
 	Show gear1c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
-	Show gear2a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
 
-	Show gear3a { %D5; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3c { %D4; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3a { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
 
 	## ID-Tier Jewellery (Rare)
 	Show j1a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
 	Show j1b { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
-	Show j1c { %D6; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
+	Show j1c { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
 
 	Show j2a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
 
-	Show j3a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
-	Show j3b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
-	Show j3c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
+	Show j3a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
 
 	Show anyRemaining5 { %D6; UnidentifiedItemTier >= 5; }
 	Show anyRemaining4 { %D5; UnidentifiedItemTier >= 4; }
@@ -156,30 +156,30 @@ Section HighModtierRare : Auto("idtier->rare"), Rarity Rare
 Section HighModtierMagic : Auto("idtier->magic"), Rarity Magic
 {
 	## ID-Tier Gear (Magic)
-	Show gear1a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear1b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear1c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
-	Show gear2a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2c { %D4; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2c { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
 
-	Show gear3a { %D5; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3b { %D4; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3c { %D3; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3a { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3b { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D3; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
 
 	## ID-Tier Jewellery (Magic)
-	Show j1a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
-	Show j1b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
-	Show j1c { %D6; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
+	Show j1a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
+	Show j1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
+	Show j1c { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
 
-	Show j2a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j2a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
 
-	Show j3a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
-	Show j3b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
-	Show j3c { %D4; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
+	Show j3a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
 
 	Show anyRemaining5 { %D5; UnidentifiedItemTier >= 5; }
 	Show anyRemaining4 { %D4; UnidentifiedItemTier >= 4; }
