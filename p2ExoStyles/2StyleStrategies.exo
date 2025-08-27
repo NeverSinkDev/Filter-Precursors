@@ -72,6 +72,11 @@ Style Common
 		SetBackgroundColor cAccentMinimal;
 	}
 
+	Func gear_Vendor
+	{
+		SetBackgroundColor cAccentVeryLow;
+	}	
+
 	Func typebased_flaskcharms1
 	{
 		SetBackgroundColor cAccentFlaskCharmGlow;
@@ -100,7 +105,7 @@ Style Common
 	Func gear_unstyled
 	{
 		Empty();
-	}	
+	}
 
 	Func misc_decoremovermagic
 	{
@@ -142,6 +147,13 @@ Style Common
 	{
 		SetFontSize font.t2;
 		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
+	}
+
+	Func exotics_IdentifiedMod
+	{
+		SetFontSize font.t2;
+		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticIdMod; 
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
 	}
 

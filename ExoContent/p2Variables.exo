@@ -25,6 +25,9 @@ var classes_2h = classes_2hattack + classes_2hcast;
 
 var classes_offhand = "Shields" "Foci" "Quivers" "Bucklers";
 
+var classes_socket1 = classes_armor_small + classes_1hattack + classes_1hcast + classes_offhand - "Quivers";
+var classes_socket2 = classes_2h + "Body Armours";
+
 var classes_nonJwlryEquip = classes_armor + classes_weapons + classes_offhand;
 var classes_jewellery = "Amulets" "Belts" "Rings";
 
@@ -63,7 +66,7 @@ var optimalLevel_flask = 82;
 
 var leveling.keylevels.threelinkEarly = 16;
 var leveling.keylevels.threelink = 28;
-var leveling.keylevels.firstZones = 4;
+var leveling.keylevels.firstZones = 3;
 var leveling.keylevels.start = 9;
 var leveling.keylevels.act1 = 16;
 var leveling.keylevels.act2 = 24;
@@ -106,3 +109,124 @@ var timeLostJewels = "Time-Lost Ruby" "Time-Lost Emerald" "Time-Lost Sapphire";
 var allCommonJewels = genericJewels + abyssJewels;
 
 var questLikeDrops = "Bronze Key" "Silver Key" "Gold Key";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## MODS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## STATS
+
+var statStr = "of the Titan" "of the Leviathan" "of the Goliath";
+var statDex = "of the Phantom" "of the Jaguar" "of the Leopard";
+var statInt = "of the Virtuoso" "of the Savant" "of the Sage";
+var statLife = "Athlete's" "Virile" "Rotund";
+var statMana = "Ultramarine" "Zaffre" "Blue";
+var suffixRarity = "of Windfall" "of Excavation" "of Archaeology";
+var prefixRarity = "Dragon's" "Pirate's" "Hoarder's";
+
+var resistOmni = "of the Span" "of the Rainbow" "of Variegation";
+var resistFire = "of Tzteosh" "of Magma" "of the Volcano";
+var resistCold = "of Haast" "of the Ice" "of the Polar Bear";
+var resistLight = "of Ephij" "of the Lightning" "of the Maelstrom";
+var resistChaos = "of Bameth" "of Exile" "of Expulsion";
+
+## ATTACK:CHEAT
+var wAtkProjectiles = "of Many" "of Splintering";
+var wAtkCrossbowExtraBolt = "of Bursting";
+
+## ATTACK:PREFIXES
+var wAtkPhysFlat = "Flaring" "Tempered" "Razor-sharp";
+var wAtkPhysPercent = "Merciless" "Tyrannical" "Cruel" "Bloodthirsty";
+var wAtkPhysHybrid = "Dictator's" "Emperor's" "Conqueror's";
+var wAtkFlatFire = "Carbonising" "Cremating" "Blasting";
+var wAtkFlatCold = "Crystalising" "Entombing" "Polar";
+var wAtkFlatLightning = "Vapourising" "Electrocuting" "Discharging";
+var wAtkEWD = "Devastating" "Overpowering" "Unleashed";
+
+## ATTACK:SUFFIXES
+var wAtkAccu = "Amazon's" "Ranger's";
+var wAtkCrit = "of Unmaking" "of Ruin" "of Calamity";
+var wAtkCritDmg = "of Destruction" "of Ferocity" "of Fury";
+var wAtkSpeed = "of Celebration" "of Infamy" "of Fame";
+
+var wAllSkillsMelee = "of War" "of Battle" "of Conflict" "of Dueling";
+var wAllSkillsRanged = "of the Sniper" "of the Marksman" "of the Sharpshooter";
+var wAllSkillsQuiver = "of the Fletcher" "of the Archer";
+
+## SPELL: PREFIXES
+var wCastSpellDamage = "Runic" "Glyphic" "Incanter's";
+var wCastFireDamage = "Pyromancer's" "Volcanic" "Magmatic";
+var wCastColdDamage = "Cryomancer's" "Crystalline" "Arctic";
+var wCastLightningDamage = "Electromancer's" "Ionising" "Smiting";
+var wCastChaosDamage = "Malevolent" "Twisted" "Vile";
+var wCastSpellPhys = "Torturer's" "Oppressor's" "Agonising";
+var wCastHybridSpell = "Lich's" "Archmage's" "Mage's";
+var wCastMana = "Blue" "Mazarine" "Chalybeous";
+var wCastAsFire = "Flamebound" "Infernal" "Zealot's";
+var wCastAsCold = "Frostbound" "Ruthless" "Malicious";
+var wCastAsLight = "Stormbound" "Electrifying" "Vorpal";
+
+var wCastAllSkillsSpell = "of the Wizard" "of the Sorcerer";
+var wCastAllSkillFire = "of Inferno" "of Immolation" "of Flames";
+var wCastAllSkillCold = "of Frostbite" "of Rime" "of Ice";
+var wCastAllSkillLight = "of Thunder" "of Voltage" "of Electricity";
+var wCastAllSkillChaos = "of Armageddon" "of Havoc" "of Ruin";
+var wCastAllSkillPhys = "of Grief" "of Desolation" "of Torment";
+
+var wCastSpeed = "of Finesse" "of Prestidigitation" "of Legerdemain";
+var wCastCritSpell = "of Unmaking" "of Ruin" "of Calamity";
+var wCastCritSpellDamage = "of Destruction" "of Ferocity" "of Fury";
+
+## MINION: PREFIXES
+
+var wMinionAuraFlatPhys = "Flaring" "Tempered" "Razor-sharp";
+var wMinionAuraFlatFire = "Cremating" "Blasting" "Incinerating";
+var wMinionAuraFlatCold = "Entombing" "Polar" "Glaciated";
+var wMinionAuraFlatLight = "Electrocuting" "Discharging" "Shocking";
+var wMinionAuraDamage = "Empowering" "Inspirational" "Motivating" "Persuasive";
+var wSpirit = "King's" "Prince's" "Duke's" "Count's";
+var wSpritHybrid = "Chancellor's" "Diplomat's" "Envoy's";
+
+## MINION: SUFFIXES
+
+var wMinionAuraAttackSpeed = "of Renown" "of Mastery";
+var wMinionAuraCastSpeed = "of Sortilege" "of Expertise";
+var wMinionAuraCritChance = "of Unmaking" "of Ruin";
+var wMinionAuraCritDamage = "of Destruction" "of Ferocity" "of Fury";
+
+var wAllSkillsMinion = "of the Slavedriver" "of the Overseer" "of the Despot";
+
+## AMULET
+
+var amuletSpirit = "Countess'" "Marchioness'" "Viscountess'";
+
+var amuletHighSkills = "of the Sharpshooter" "of Battle" "of the Overseer" "of the Sorcerer";
+var amuletAllAtributes = "of the Infinite" "of the Multiverse" "of the Universe";
+
+var amuletCastSpeed = "of Legerdemain" "of Sortilege" "of Expertise";
+var amuletCritChance = "of Unmaking" "of Ruin" "of Calamity";
+var amuletCritDamage = "of Destruction" "of Ferocity" "of Fury";
+var amuletSpellDamage = "Incanter's" "Occultist's" "Professor's";
+
+## MISC
+
+var bootsMovementSpeed = "Hellion's" "Cheetah's";
+var fociAllSkills = "of the Enchanter";
+var bodySpirit = "Queen's" "Princess'" "Duchess'";
+var glovesLevelOfSkills = "of Dueling";
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## SIMPLE CHASEMOD COMBOS
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+var xBootsChaseMods = bootsMovementSpeed[1];
+var xAmuletsChaseMods = amuletSpirit[1] + amuletHighSkills[1];
+var xBowChaseMods = wAtkProjectiles[1] + wAtkPhysPercent[1] + wAllSkillsRanged[1];
+var xSpearsChaseMods = wAtkPhysPercent[1] + wAtkPhysFlat[1] + wAtkAccu[1] + wAllSkillsRanged[1];
+var xQuarterStaffChaseMods = wAtkPhysPercent[1] + wAllSkillsMelee[1];
+var xSceptresChaseMods = wSpirit[1] + wAllSkillsMinion[1] + wMinionAuraDamage[1];
+var xMacesChaseMods = wAllSkillsMelee[1] + wAtkPhysPercent[1];
+
+var yCasterDamageCombo = wCastSpellDamage[1];
+var yCasterSpellLevels = wCastAllSkillsSpell[1] + wCastAllSkillFire[1] + wCastAllSkillCold[1] + wCastAllSkillLight[1] + wCastAllSkillChaos[1] + wCastAllSkillPhys[1];
+var xWandStaffChaseMods = yCasterDamageCombo + yCasterSpellLevels;

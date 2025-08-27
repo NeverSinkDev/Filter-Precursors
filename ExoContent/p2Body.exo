@@ -63,6 +63,42 @@ Section Artifacts : Auto("Artifact"), Rarity <= Rare, !exotics_artifactHigh
 }
 
 #===============================================================================================================
+# [[0200]] Exceptional Items
+#===============================================================================================================
+
+Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
+{
+	var qualityChancables = bases.chancing.a + bases.chancing.s + bases.chancing.any + bases.chancingExtra.exceptional;
+
+	Show ChancingOverQual { !itemProperty_chancea; %D6; Rarity Normal; Quality >= 25; BaseType == qualityChancables; }
+	Show ChancingOverSocket3 { !itemProperty_chancea; %D6; Rarity Normal; Sockets >= 3; Class == classes_socket2; BaseType == qualityChancables; }
+	Show ChancingOverSocket2 { !itemProperty_chancea; %D6; Rarity Normal; Sockets >= 2; Class == classes_socket1; BaseType == qualityChancables; }
+
+	Show armors1q1	{ !exotic.t1; %D6; Rarity <= Rare; Quality >= 27; BaseType == derived.general.unbiased.equip.t1; }
+	Show armors1q2	{ !exotic.t2; %D6; Rarity <= Rare; Quality >= 24; BaseType == derived.general.unbiased.equip.t1 + derived.general.unbiased.equip.t2; }
+
+	Show weapont1s3	{ !exotic.t1; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show weapont2s3	{ !exotic.t2; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show weapont1s2	{ !exotic.t1; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t1; }
+	Show weapont2s2	{ !exotic.t2; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t2; }
+}
+
+#===============================================================================================================
+# [[0200]] IDENTIFIED MODS: RECOMBINATOR MODS
+#===============================================================================================================
+
+Section IdMods : IdMods(), Clean(), Auto("ExoticMods"), !exotics_IdentifiedMod
+{
+	Show cmBoots { Class == "Boots"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
+	Show cmAmulets { Class == "Amulets"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
+	Show cmCasterWeapons { Class == "Wands" "Staves"; Rarity <= Rare; Mod >= 1 xWandStaffChaseMods; }
+	Show cmSceptres { Class == "Sceptres"; Rarity <= Rare; Mod >= 1 xSceptresChaseMods; }
+	Show cmBows { Class == "Bows" "Crossbows"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
+	Show cmSpears { Class == "Spears"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
+	Show cmMaces { Class == "Two Hand Maces" "Quarterstaves"; Rarity <= Rare; Mod >= 1 xMacesChaseMods; }
+}
+
+#===============================================================================================================
 # [[0200]] Exotic Item States
 #===============================================================================================================
 #!! Waypoint c3.exotic.state.hightier : "Exotic State - Exceptionally High Modtier"
@@ -81,10 +117,72 @@ Section HighModtier : Auto("exotic->others")
 	Show tier2magic { %D3; !gear_highlightDrop4; Rarity Magic; UnidentifiedItemTier = 2; Class == classes_equip; }
 }
 
-#!! Waypoint c3.exotic.state.all : "Exotic State - Double Corrupted, Overquality"
-Section OtherExotics : Auto("exotic->others"), Rarity <= Rare
+#===============================================================================================================
+# [[0200]] Exotic Item States
+#===============================================================================================================
+
+Section HighModtierRare : Auto("idtier->rare"), Rarity Rare
 {
-	Show OverQualityAny { !exotics_SpecialB; Quality >= 21; Corrupted False; }
+	## ID-Tier Gear (Rare)
+	Show gear1a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
+
+	Show gear2a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
+
+	Show gear3a { %D5; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D4; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
+
+	## ID-Tier Jewellery (Rare)
+	Show j1a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
+	Show j1b { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
+	Show j1c { %D6; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
+
+	Show j2a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
+
+	Show j3a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
+
+	Show anyRemaining5 { %D6; UnidentifiedItemTier >= 5; }
+	Show anyRemaining4 { %D5; UnidentifiedItemTier >= 4; }
+}
+
+Section HighModtierMagic : Auto("idtier->magic"), Rarity Magic
+{
+	## ID-Tier Gear (Magic)
+	Show gear1a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear1c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
+
+	Show gear2a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2c { %D4; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
+
+	Show gear3a { %D5; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3b { %D4; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D3; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
+
+	## ID-Tier Jewellery (Magic)
+	Show j1a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
+	Show j1b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
+	Show j1c { %D6; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
+
+	Show j2a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D6; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2c { %D5; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
+
+	Show j3a { %D6; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3b { %D5; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D4; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
+
+	Show anyRemaining5 { %D5; UnidentifiedItemTier >= 5; }
+	Show anyRemaining4 { %D4; UnidentifiedItemTier >= 4; }
 }
 
 #===============================================================================================================
@@ -153,7 +251,7 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 	#!! Waypoint c4.gear.salvagable : "Salvagable bases (Endgame)"
 
-	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG()
+	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UnidentifiedItemTier <= 2
 	{
 		# Double Quality Currencies
 		Show Quality2MartialAny { !itemProperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
@@ -249,30 +347,17 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 
 	#!! Waypoint c4.gear.jewellery : "Jewellery - Endgame Magic&Normal"
-	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean(), Class == "Rings" "Amulets"
+	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean(), Class == classes_jewellery
 	{
-		Show RingAmuT1idealLevel { %D6; !gear_highlightDrop2; TopMods(); BaseType == derived.rares.jwl.ringsamu.t1; }
-		Show RingAmuT2idealLevel { %D5; !gear_highlightDrop2; TopMods(); BaseType == derived.rares.jwl.ringsamu.t2; }
-		Show RingAmuT3idealLevel { %D3; !unknown_s3; TopMods(); BaseType == derived.rares.jwl.ringsamu.t3; }
+		Show jT1idealLevel { %D6; !gear_highlightDrop2; TopMods(); BaseType == derived.rares.jwl.all.t1; }
+		Show jT2idealLevel { %D5; !gear_highlightDrop2; TopMods(); BaseType == derived.rares.jwl.all.t2; }
+		Show jT3idealLevel { %D3; !unknown_s3; TopMods(); BaseType == derived.rares.jwl.all.t3; }
+		Show jT4idealLevel { %D3; !unknown_s3; TopMods(); BaseType == derived.rares.jwl.all.t4; }
 
-		Show RingAmuT1 { %D5; !gear_highlightDrop3;  BaseType == derived.rares.jwl.ringsamu.t1; }
-		Show RingAmuT2 { %D5; !gear_highlightDrop3;  BaseType == derived.rares.jwl.ringsamu.t2; }
-		Show RingAmuT3 { %D3; !unknown_s4; BaseType == derived.rares.jwl.ringsamu.t3; }
-	}
-
-	#------------------------------------
-	# [1234] Normal, Magic Crafting: Belts
-	#------------------------------------
-
-	Section Jewellery : Rarity <= Magic, Auto("Endgame->Jewellery"), EG(), Clean(), Class == "Belts"
-	{
-		Show BeltsT1idealLevel { %D5; !gear_highlightDrop3;  TopMods(); BaseType == derived.rares.jwl.belts.t1; }
-		Show BeltsT2idealLevel { %D5; !unknown_s3; TopMods(); BaseType == derived.rares.jwl.belts.t2; }
-		Show BeltsT3idealLevel { %D4; !unknown_s4; TopMods(); BaseType == derived.rares.jwl.belts.t3; }
-
-		Show BeltsT1  { %D4; !gear_highlightDrop3; BaseType == derived.rares.jwl.belts.t1; }
-		Show BeltsT2  { !unknown_s4; %D3; BaseType == derived.rares.jwl.belts.t2; }
-		ShowD BeltsT3 { !unknown_s4; %D2; BaseType == derived.rares.jwl.belts.t3; }
+		Show jT1 { %D5; !gear_highlightDrop3;  BaseType == derived.rares.jwl.all.t1; }
+		Show jT2 { %D5; !gear_highlightDrop3;  BaseType == derived.rares.jwl.all.t2; }
+		Show jT3 { %D3; !unknown_s4; BaseType == derived.rares.jwl.all.t3; }
+		Show jT3 { %D3; !unknown_s4; BaseType == derived.rares.jwl.all.t4; }
 	}
 
 	#------------------------------------
@@ -340,34 +425,20 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 #===============================================================================================================
 #!! Waypoint c6.rare.jewellery.all : "Rare Endgame Items - Amulets, Rings"
 
-	Section EndgameRareRingsAmulets82 : Class == "Rings" "Amulets", Auto("rr->amuringEG"), TopMods()
+	Section EndgameJewellery82 : Class == classes_jewellery, Auto("rr->jewelleryEG"), TopMods()
 	{
-		Show T1 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.ringsamu.t1; }
-		Show T2 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.ringsamu.t2; }
-		Show T3 { %D4; !gear_rareJewellery2; BaseType == derived.rares.jwl.ringsamu.t3; }
+		Show T1 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.all.t1; }
+		Show T2 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.all.t2; }
+		Show T3 { %D4; !gear_rareJewellery2; BaseType == derived.rares.jwl.all.t3; }
+		Show T4 { %D4; !gear_rareJewellery2; BaseType == derived.rares.jwl.all.t4; }
 	}
 
-	Section EndgameRareRingsAmulets : Class == "Rings" "Amulets", Auto("rr->amuring")
+	Section EndgameJewellery : Class == classes_jewellery, Auto("rr->jewellery")
 	{
-		Show T1 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.ringsamu.t1; }
-		Show T2 { %D5; !gear_rareJewellery1; BaseType == derived.rares.jwl.ringsamu.t2; }
-		Show T3 { %D4; !gear_rareJewellery2; BaseType == derived.rares.jwl.ringsamu.t3; }
-	}
-
-#!! Waypoint c6.rare.belts.all : "Rare Endgame Items - Belts"
-
-	Section EndgameRareBelts82 : Class == "Belts", Auto("rr->beltsEG"), TopMods()
-	{
-		Show T1 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.belts.t1; }
-		Show T2 { %D5; !gear_rareJewellery2; BaseType == derived.rares.jwl.belts.t2; }
-		Show T3 { %D4; !gear_rareJewellery3; BaseType == derived.rares.jwl.belts.t3; }
-	}
-
-	Section EndgameRareBelts : Class == "Belts", Auto("rr->belts")
-	{
-		Show T1 { %D5; !gear_rareJewellery1; BaseType == derived.rares.jwl.belts.t1; }
-		Show T2 { %D4; !gear_rareJewellery2; BaseType == derived.rares.jwl.belts.t2; }
-		Show T3 { %D4; !gear_rareJewellery3; BaseType == derived.rares.jwl.belts.t3; }
+		Show T1 { %D6; !gear_rareJewellery1; BaseType == derived.rares.jwl.all.t1; }
+		Show T2 { %D5; !gear_rareJewellery1; BaseType == derived.rares.jwl.all.t2; }
+		Show T3 { %D4; !gear_rareJewellery2; BaseType == derived.rares.jwl.all.t3; }
+		Show T4 { %D3; !gear_rareJewellery2; BaseType == derived.rares.jwl.all.t4; }
 	}
 
 #===============================================================================================================
@@ -820,6 +891,11 @@ Section Unique : Rarity Unique, Auto("uniques")
 # [5705] Multi-Unique bases.
 #------------------------------------
 	Show multispecialhigh { !Tiering_UniqueX; BaseType == uniques.generic.multispecialhigh; }
+
+	Show overQualityUniques	{ %D5; !Tiering_UniqueX; Quality >= 26; }
+	Show overSocketUniques	{ %D5; !Tiering_UniqueX; Class == classes_socket2; Sockets >= 3; }
+	Show overSocketUniques	{ %D5; !Tiering_UniqueX; Class == classes_socket1; Sockets >= 2; }
+
 	Show multispecial 	  { !Tiering_UniqueX; BaseType == uniques.generic.multispecial; }
 
 #------------------------------------
@@ -1015,7 +1091,7 @@ Section LevelingRareGear : Rarity Rare, LVL()
 	}
 
 #!! Waypoint c21.leveling.rares.armors : "Leveling - Rares - Armour Pieces"
-	Section ArmourTypes : Auto("Leveling->Rare->armours"), Class == classes_armor, !gear_rareEquip1
+	Section ArmourTypes : Auto("Leveling->Rare->armours"), Class == classes_armor_noshields, !gear_rareEquip1
 	{
 		Show AR			{ %D4; AR(); }
 		Show EV			{ %D4; EV(); }
@@ -1023,14 +1099,14 @@ Section LevelingRareGear : Rarity Rare, LVL()
 		Show AREV		{ %D4; AREV(); }
 		Show ARES		{ %D4; ARES(); }
 		Show EVES		{ %D4; EVES(); }
-		
-		Show AnythingEarly { %H5; AreaLevel < 16; }
 	}
 
 	Section WeaponTypes : Auto("Leveling->Rare->weapons"), !gear_rareEquip1
 	{
 		Show Wands				{ %D4; Class == "Wands"; }
 		Show Foci				{ %D4; Class == "Foci"; }
+		Show Shields			{ %D4; Class == "Shields"; }
+
 		Show Sceptres			{ %D4; Class == "Sceptres"; }
 		Show Staves				{ %D4; Class == "Staves"; }
 
@@ -1052,9 +1128,11 @@ Section LevelingRareGear : Rarity Rare, LVL()
 #------------------------------------
 #!! Waypoint c21.leveling.rares.low : "Leveling - Gear - Low Tier"
 
-	Section Others : Auto("Leveling->Rare->Remaining") Class == classes_equip, !gear_rareEquip2
+	Section Others : Auto("Leveling->Rare->Remaining") Class == classes_equip
 	{
-		Show Any { %H3; Empty(); }
+		Show AnythingAct1 { %H5; AreaLevel < leveling.keylevels.act1; !gear_rareEquip2; }
+		Show AnythingAct2 { %H4; AreaLevel < leveling.keylevels.act2; !gear_rareEquip2; }
+		Show Any { %H3; Empty(); !gear_rareEquip2; }
 	}
 }
 
@@ -1096,6 +1174,12 @@ Section LevelingMiscGear
 
 Section NormalMagic
 {
+	Section FirstLevels : Auto("Leveling->FirstLevels")
+	{
+		Show FirstAreasMagic 			{ %D5; !unknown_s4; AreaLevel <= leveling.keylevels.firstZones; Rarity Magic; }
+		Show FirstAreasNormal 			{ %D5; !gear_unstyled; AreaLevel <= leveling.keylevels.firstZones; Rarity Normal; }
+	}
+
 	Section ProgressiveHideRule : Auto("Leveling->progressivehide"), Rarity Normal, Class == classes_armor + classes_attack, !hiding_minimize
 	{
 		HideD normal1 { %RH1; DropLevel < 8; AreaLevel >= 22; }
@@ -1116,7 +1200,7 @@ Section NormalMagic
 		HideD magic6 { %RH2; DropLevel < 44; AreaLevel >= 60; }
 	}
 
-	Section ArmourTypes : Auto("Leveling->NormalMagic->armours"), Class == classes_armor_generic, Rarity <= Magic
+	Section ArmourTypes : Auto("Leveling->NormalMagic->armours"), Class == classes_armor_noshields, Rarity <= Magic
 	{
 		Show AR				{ !gear_unstyled; %D3; AR(); }
 		Show EV				{ !gear_unstyled; %D3; EV(); }
@@ -1130,6 +1214,8 @@ Section NormalMagic
 	{
 		Show Wands 			{ !gear_unstyled; %D3; Class == "Wands"; }
 		Show Foci 			{ !gear_unstyled; %D3; Class == "Foci"; }
+		Show Shields		{ !gear_unstyled; %D3; Class == "Shields"; }
+
 		Show Sceptres 		{ !gear_unstyled; %D3; Class == "Sceptres"; }
 		Show Staves 		{ !gear_unstyled; %D3; Class == "Staves"; }
 
@@ -1147,21 +1233,11 @@ Section NormalMagic
 	}
 }
 
-#------------------------------------
-# [6002] Others
-#------------------------------------
-
-Section OtherNormalMagics : Auto("Leveling->FirstLevels")
-{
-	Show FirstAreasMagic 			{ %D5; !unknown_s4; AreaLevel <= leveling.keylevels.firstZones; Rarity Magic; }
-	Show FirstAreasNormal 			{ %D5; !unknown_s4; AreaLevel <= 3; Rarity Normal; }
-}
-
 Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_equip, Rarity = Magic
 {
-	Show Rest 		 { !gear_unstyled; %D2; AreaLevel >= leveling.keylevels.act2; AreaLevel <= eglevel; }
-	Show Act2 		 { !gear_unstyled; %D4; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
-	Show Act1 		 { !gear_unstyled; %D4; AreaLevel >=leveling.keylevels.firstZones; AreaLevel <= leveling.keylevels.act1; }
+	Show Rest 		 { !gear_Vendor; %D2; AreaLevel >= leveling.keylevels.act2; AreaLevel <= eglevel; }
+	Show Act2 		 { !gear_Vendor; %D4; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
+	Show Act1 		 { !gear_Vendor; %D4; AreaLevel >=leveling.keylevels.firstZones; AreaLevel <= leveling.keylevels.act1; }
 }
 
 #!! Waypoint c22.hide.all : "HIDELAYER - Hide all known untiered items"
@@ -1172,7 +1248,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 
 Section HideLayerFinal : Class == classes_finalHider
 {
-	Show anyFinal { %D0; Auto("LowStrictnessShowLayer"); }
+	Show anyFinal { %D0; !gear_Vendor; Auto("LowStrictnessShowLayer"); }
 	Hide Final {  Auto("HideLayer");  }
 }
 
