@@ -65,6 +65,7 @@ Section Artifacts : Auto("Artifact"), Rarity <= Rare, !exotics_artifactHigh
 #===============================================================================================================
 # [[0200]] Exceptional Items
 #===============================================================================================================
+#!! Waypoint c3.exotic.state.exceptional : "Exotic State - Exceptional Items"
 
 Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 {
@@ -74,115 +75,106 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 	Show ChancingOverSocket3 { !itemProperty_chancea; %D6; Rarity Normal; Sockets >= 3; Class == classes_socket2; BaseType == qualityChancables; }
 	Show ChancingOverSocket2 { !itemProperty_chancea; %D6; Rarity Normal; Sockets >= 2; Class == classes_socket1; BaseType == qualityChancables; }
 
-	Show armors1q1	{ !exotic.t1; %D6; Rarity <= Rare; Quality >= 27; BaseType == derived.general.unbiased.equip.t1; }
-	Show armors1q2	{ !exotic.t2; %D6; Rarity <= Rare; Quality >= 24; BaseType == derived.general.unbiased.equip.t1 + derived.general.unbiased.equip.t2; }
+	Show armors1q1	{ !exotics_SpecialB; %D6; Rarity <= Rare; Quality >= 27; BaseType == derived.general.unbiased.equip.t1; }
+	Show armors1q2	{ !exotics_SpecialB; %D6; Rarity <= Rare; Quality >= 24; BaseType == derived.general.unbiased.equip.t1 + derived.general.unbiased.equip.t2; }
 
-	Show weapont1s3	{ !exotic.t1; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t1; }
-	Show weapont2s3	{ !exotic.t2; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show weapont1s2	{ !exotic.t1; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t1; }
-	Show weapont2s2	{ !exotic.t2; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show weapont1s3	{ !exotics_SpecialB; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show weapont2s3	{ !exotics_SpecialB; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show weapont1s2	{ !exotics_SpecialB; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t1; }
+	Show weapont2s2	{ !exotics_SpecialB; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t2; }
 }
 
 #===============================================================================================================
 # [[0200]] IDENTIFIED MODS: RECOMBINATOR MODS
 #===============================================================================================================
+#!! Waypoint c3.exotic.state.idmods : "Exotic State - Identified Mod Filtering"
 
-Section IdMods : IdMods(), Clean(), Auto("ExoticMods"), !exotics_IdentifiedMod
+Section IdMods : IdMods(), Clean(), Auto("ExoticMods"), Rarity <= Rare, !exotics_IdentifiedMod
 {
-	Show cmBoots { Class == "Boots"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
-	Show cmAmulets { Class == "Amulets"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
-	Show cmCasterWeapons { Class == "Wands" "Staves"; Rarity <= Rare; Mod >= 1 xWandStaffChaseMods; }
-	Show cmSceptres { Class == "Sceptres"; Rarity <= Rare; Mod >= 1 xSceptresChaseMods; }
-	Show cmBows { Class == "Bows" "Crossbows"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
-	Show cmSpears { Class == "Spears"; Rarity <= Rare; Mod >= 1 xBootsChaseMods; }
-	Show cmMaces { Class == "Two Hand Maces" "Quarterstaves"; Rarity <= Rare; Mod >= 1 xMacesChaseMods; }
+	Show cmBoots { Class == "Boots"; Mod >= 1 xBootsChaseMods; }
+	Show cmAmulets { Class == "Amulets"; Mod >= 1 xAmuletsChaseMods; }
+	Show cmCasterWeapons { Class == "Wands" "Staves"; Mod >= 1 xWandStaffChaseMods; }
+	Show cmSceptres { Class == "Sceptres"; Mod >= 1 xSceptresChaseMods; }
+	Show cmRanged { Class == "Bows" "Crossbows"; Mod >= 1 xRangedChaseMods; }
+	Show cmSpears { Class == "Spears"; Mod >= 1 xSpearsChaseMods; }
+	Show cm2Handed { Class == "Two Hand Maces" "Quarterstaves"; Mod >= 1 x2HandedChaseMods; }
 }
 
 #===============================================================================================================
-# [[0200]] Exotic Item States
+# [[0200]] High Unidentified Mod Tier
 #===============================================================================================================
-#!! Waypoint c3.exotic.state.hightier : "Exotic State - Exceptionally High Modtier"
+#!! Waypoint c3.exotic.state.hightier : "Exotic State - High Modtier"
 
-Section HighModtier : Auto("exotic->others")
-{
-	Show tier5rare { !exotics_SpecialB; Rarity Rare; UnidentifiedItemTier >= 5; Class == classes_equip; }
-	Show tier4rare { !gear_rareEquip1; !unknown_s2; !exotics_specialE; Rarity Rare; UnidentifiedItemTier = 4; Class == classes_equip; }
-	Show tier23rareTrinkets { %D4; !exotics_specialE; !gear_rareJewellery1; !unknown_s2; Rarity Rare; UnidentifiedItemTier >= 2; Class == classes_jewellery; }
-	Show tier3rare { %D4; !gear_rareEquip1; !unknown_s3; Rarity Rare; UnidentifiedItemTier = 3; Class == classes_equip; }
-	Show tier2rare { %D3; !gear_rareEquip1; Rarity Rare; UnidentifiedItemTier = 2; Class == classes_equip; }
-
-	Show tier5magic { !exotics_SpecialC; !unknown_s2; Rarity Magic; UnidentifiedItemTier >= 5; Class == classes_equip; }
-	Show tier4magic { !gear_highlightDrop2; !unknown_s2; !exotics_specialE; Rarity Magic; UnidentifiedItemTier = 4; Class == classes_equip; }
-	Show tier3magic { %D4; !gear_highlightDrop3; !unknown_s3; Rarity Magic; UnidentifiedItemTier = 3; Class == classes_equip; }
-	Show tier2magic { %D3; !gear_highlightDrop4; Rarity Magic; UnidentifiedItemTier = 2; Class == classes_equip; }
-}
-
-#===============================================================================================================
-# [[0200]] Exotic Item States
-#===============================================================================================================
+##------------------------------------
+## [1234] Unidentified Mod Tier: Rare
+##------------------------------------
 
 Section HighModtierRare : Auto("idtier->rare"), Rarity Rare
 {
 	## ID-Tier Gear (Rare)
-	Show gear1a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear1c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear4a { %D6; !exotics_SpecialB; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear3a { %D6; !gear_rareEquip1; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear2a { %D4; !gear_rareEquip1; UT >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
-	Show gear2a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear4b { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear3b { %D5; !gear_rareEquip1; UT >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D4; !gear_rareEquip1; UT >= 2; BaseType == derived.general.unbiased.equip.t2; }
 
-	Show gear3a { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3c { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear4c { %D5; !gear_rareEquip1; UT >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D4; !gear_rareEquip1; UT >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear2c { %D3; !gear_rareEquip1; UT >= 2; BaseType == derived.general.unbiased.equip.t3; }
 
 	## ID-Tier Jewellery (Rare)
-	Show j1a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
-	Show j1b { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
-	Show j1c { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
+	Show j4a { %D6; !exotics_SpecialB; UT >= 4; BaseType == derived.rares.jwl.all.t1; }
+	Show j3a { %D6; !exotics_SpecialB; UT >= 3; BaseType == derived.rares.jwl.all.t1; }
+	Show j2a { %D6; !gear_rareEquip1; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
 
-	Show j2a { %D6; !exotics_SpecialB; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j4b { %D6; !exotics_SpecialB; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j3b { %D6; !gear_rareEquip1; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D5; !gear_rareEquip1; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
 
-	Show j3a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
-	Show j3b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
-	Show j3c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
+	Show j4c { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D5; !gear_rareEquip1; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j2c { %D5; !gear_rareEquip1; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
-	Show anyRemaining5 { %D6; UnidentifiedItemTier >= 5; }
-	Show anyRemaining4 { %D5; UnidentifiedItemTier >= 4; }
+	Show anyRemaining5 { !gear_rareEquip1; %D6; UT >= 5; }
+	Show anyRemaining4 { !gear_rareEquip1; %D5; UT >= 4; }
 }
+
+##------------------------------------
+## [1234] Unidentified Mod Tier: Magic
+##------------------------------------
 
 Section HighModtierMagic : Auto("idtier->magic"), Rarity Magic
 {
 	## ID-Tier Gear (Magic)
-	Show gear1a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear1c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear4a { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear3a { %D5; !gear_rareEquip1; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear2a { %D4; !gear_rareEquip1; UT >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
-	Show gear2a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2c { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear4b { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear3b { %D5; !gear_rareEquip1; UT >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D4; !gear_rareEquip1; UT >= 2; BaseType == derived.general.unbiased.equip.t2; }
 
-	Show gear3a { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3b { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3c { %D3; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear4c { %D5; !gear_rareEquip1; UT >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D3; !gear_rareEquip1; UT >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear2c { %D3; !gear_rareEquip1; UT >= 2; BaseType == derived.general.unbiased.equip.t3; }
 
 	## ID-Tier Jewellery (Magic)
-	Show j1a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t1; }
-	Show j1b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t1; }
-	Show j1c { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t1; }
+	Show j4a { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.rares.jwl.all.t1; }
+	Show j3a { %D6; !gear_rareEquip1; UT >= 3; BaseType == derived.rares.jwl.all.t1; }
+	Show j2a { %D6; !gear_rareEquip1; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
 
-	Show j2a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2c { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j4b { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j3b { %D6; !gear_rareEquip1; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D5; !gear_rareEquip1; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
 
-	Show j3a { %D6; !gear_rareEquip1; UnidentifiedItemTier >= 4; BaseType == derived.rares.jwl.all.t3; }
-	Show j3b { %D5; !gear_rareEquip1; UnidentifiedItemTier >= 3; BaseType == derived.rares.jwl.all.t3; }
-	Show j3c { %D4; !gear_rareEquip1; UnidentifiedItemTier >= 2; BaseType == derived.rares.jwl.all.t3; }
+	Show j4c { %D6; !gear_rareEquip1; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D5; !gear_rareEquip1; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j2c { %D4; !gear_rareEquip1; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
-	Show anyRemaining5 { %D5; UnidentifiedItemTier >= 5; }
-	Show anyRemaining4 { %D4; UnidentifiedItemTier >= 4; }
+	Show anyRemaining5 { !gear_rareEquip1; %D6; UT >= 5; }
+	Show anyRemaining4 { !gear_rareEquip1; %D3; UT >= 4; }
 }
 
 #===============================================================================================================
@@ -251,7 +243,7 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 	#!! Waypoint c4.gear.salvagable : "Salvagable bases (Endgame)"
 
-	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UnidentifiedItemTier <= 2
+	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
 	{
 		# Double Quality Currencies
 		Show Quality2MartialAny { !itemProperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
@@ -277,13 +269,13 @@ Section EndgameCraftingBases : Clean()
 
 	Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG()
 	{
-		HideD HideWeaponsByType { !hiding_minimize; Class == classes_weapons + "Quivers"; UnidentifiedItemTier <= 2; }
-		HideD ArHider { !hiding_minimize; AR(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD EvHider { !hiding_minimize; EV(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD EsHider { !hiding_minimize; ES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD ArEvHider { !hiding_minimize; AREV(); Class == classes_armor;  UnidentifiedItemTier <= 2; }
-		HideD ArEsHider { !hiding_minimize; ARES(); Class == classes_armor;  UnidentifiedItemTier <= 2; }
-		HideD EvEsHider { !hiding_minimize; EVES(); Class == classes_armor;  UnidentifiedItemTier <= 2; }
+		HideD HideWeaponsByType { !hiding_minimize; Class == classes_weapons + "Quivers"; UT <= 2; }
+		HideD ArHider { !hiding_minimize; AR(); Class == classes_armor; UT <= 2; }
+		HideD EvHider { !hiding_minimize; EV(); Class == classes_armor; UT <= 2; }
+		HideD EsHider { !hiding_minimize; ES(); Class == classes_armor; UT <= 2; }
+		HideD ArEvHider { !hiding_minimize; AREV(); Class == classes_armor;  UT <= 2; }
+		HideD ArEsHider { !hiding_minimize; ARES(); Class == classes_armor;  UT <= 2; }
+		HideD EvEsHider { !hiding_minimize; EVES(); Class == classes_armor;  UT <= 2; }
 	}
 
 	#------------------------------------
@@ -337,7 +329,7 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 
 		# Matrix proceeds here. Best available bases
-		Show t1 		  { !gear_unstyled; EG(); %D4; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t1; }
+		Show t1 		  { !gear_unstyled; EG(); %D3; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t1; }
 		Show t2onLevel    { !gear_unstyled; EG(); %D3; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t2; AreaLevel <= 75;  }
 		Show t3onLevel 	  { !gear_unstyled; EG(); %D2; Class == classes_nonJwlryEquip; BaseType == derived.general.unbiased.equip.t3; AreaLevel <= 70; }
 	}
@@ -357,7 +349,7 @@ Section EndgameCraftingBases : Clean()
 		Show jT1 { %D5; !gear_highlightDrop3;  BaseType == derived.rares.jwl.all.t1; }
 		Show jT2 { %D5; !gear_highlightDrop3;  BaseType == derived.rares.jwl.all.t2; }
 		Show jT3 { %D3; !unknown_s4; BaseType == derived.rares.jwl.all.t3; }
-		Show jT3 { %D3; !unknown_s4; BaseType == derived.rares.jwl.all.t4; }
+		Show jT4 { %D3; !unknown_s4; BaseType == derived.rares.jwl.all.t4; }
 	}
 
 	#------------------------------------
@@ -449,13 +441,13 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 
 	Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare")
 	{
-		HideD HideWeaponsByType { !hiding_minimize; Class == classes_weapons + "Quivers"; UnidentifiedItemTier <= 2; }
-		HideD ArHider { !hiding_minimize; AR(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD EvHider { !hiding_minimize; EV(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD EsHider { !hiding_minimize; ES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD ArEvHider { !hiding_minimize; AREV(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD ArEsHider { !hiding_minimize; ARES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
-		HideD EvEsHider { !hiding_minimize; EVES(); Class == classes_armor; UnidentifiedItemTier <= 2; }
+		HideD HideWeaponsByType { !hiding_minimize; Class == classes_weapons + "Quivers"; UT <= 2; }
+		HideD ArHider { !hiding_minimize; AR(); Class == classes_armor; UT <= 2; }
+		HideD EvHider { !hiding_minimize; EV(); Class == classes_armor; UT <= 2; }
+		HideD EsHider { !hiding_minimize; ES(); Class == classes_armor; UT <= 2; }
+		HideD ArEvHider { !hiding_minimize; AREV(); Class == classes_armor; UT <= 2; }
+		HideD ArEsHider { !hiding_minimize; ARES(); Class == classes_armor; UT <= 2; }
+		HideD EvEsHider { !hiding_minimize; EVES(); Class == classes_armor; UT <= 2; }
 	}
 
 #===============================================================================================================
@@ -893,8 +885,8 @@ Section Unique : Rarity Unique, Auto("uniques")
 	Show multispecialhigh { !Tiering_UniqueX; BaseType == uniques.generic.multispecialhigh; }
 
 	Show overQualityUniques	{ %D5; !Tiering_UniqueX; Quality >= 26; }
-	Show overSocketUniques	{ %D5; !Tiering_UniqueX; Class == classes_socket2; Sockets >= 3; }
-	Show overSocketUniques	{ %D5; !Tiering_UniqueX; Class == classes_socket1; Sockets >= 2; }
+	Show overSocketUniques1	{ %D5; !Tiering_UniqueX; Class == classes_socket2; Sockets >= 3; }
+	Show overSocketUniques2	{ %D5; !Tiering_UniqueX; Class == classes_socket1; Sockets >= 2; }
 
 	Show multispecial 	  { !Tiering_UniqueX; BaseType == uniques.generic.multispecial; }
 
