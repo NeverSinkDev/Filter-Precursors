@@ -584,39 +584,39 @@ Section TrialRelics : Auto("relics->generic"), !exotics_SpecialD
 Section UncutGems : Auto("gems->uncut")
 {
 	# Level20
-	Show Spirit20 { !Tiering_TierS; BaseType == "Uncut Spirit Gem"; ItemLevel >= 20; }
-	Show Skill20  { !Tiering_TierS; BaseType == "Uncut Skill Gem"; ItemLevel >= 20; }
+	Show Spirit20 { !Tiering_TierS; BaseType "Uncut Spirit Gem"; GemLevel >= 20; }
+	Show Skill20  { !Tiering_TierS; BaseType "Uncut Skill Gem"; GemLevel >= 20; }
 
 	# Level19
-	Show Spirit19 { %H5; !typebased_gems1; BaseType == "Uncut Spirit Gem"; ItemLevel = 19; }
-	Show Skill19  { %H5; !typebased_gems1; BaseType == "Uncut Skill Gem"; ItemLevel = 19; }
+	Show Spirit19 { %H5; !typebased_gems1; BaseType "Uncut Spirit Gem"; GemLevel = 19; }
+	Show Skill19  { %H5; !typebased_gems1; BaseType "Uncut Skill Gem"; GemLevel = 19; }
 
 	# Spirit Gem Progression
-	Show SpiritGemProgression18 { %H4; !typebased_gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 18; AreaLevel <= 78; }
-	Show SpiritGemProgression17 { %H4; !typebased_gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 17; AreaLevel <= 76; }
-	Show SpiritGemProgression16 { %H4; !typebased_gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 16; AreaLevel <= 73; }
-	Show SpiritGemProgression15 { %H4; !typebased_gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 15; AreaLevel <= 69; }
-	Show SpiritGemProgression14 { %H4; !typebased_gems2; BaseType == "Uncut Spirit Gem"; ItemLevel = 14; AreaLevel <= 65; }
+	Show SpiritGemProgression18 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 18; AreaLevel <= 78; }
+	Show SpiritGemProgression17 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 17; AreaLevel <= 76; }
+	Show SpiritGemProgression16 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 16; AreaLevel <= 73; }
+	Show SpiritGemProgression15 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 15; AreaLevel <= 69; }
+	Show SpiritGemProgression14 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 14; AreaLevel <= 65; }
 
 	# Skill Gem Progression
-	Show SkillGemProgression18 { %H3; !typebased_gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 18; AreaLevel <= 78; }
-	Show SkillGemProgression17 { %H3; !typebased_gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 17; AreaLevel <= 76; }
-	Show SkillGemProgression16 { %H3; !typebased_gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 16; AreaLevel <= 73; }
-	Show SkillGemProgression15 { %H3; !typebased_gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 15; AreaLevel <= 69; }
-	Show SkillGemProgression14 { %H3; !typebased_gems2; BaseType == "Uncut Skill Gem"; ItemLevel = 14; AreaLevel <= 65; }
+	Show SkillGemProgression18 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 18; AreaLevel <= 78; }
+	Show SkillGemProgression17 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 17; AreaLevel <= 76; }
+	Show SkillGemProgression16 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 16; AreaLevel <= 73; }
+	Show SkillGemProgression15 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 15; AreaLevel <= 69; }
+	Show SkillGemProgression14 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 14; AreaLevel <= 65; }
 
 	# All gems during campaign with sounds
-	Show SpiritCampaign  { %H5; !typebased_gems2; BaseType == "Uncut Spirit Gem"; LVL(); }
-	Show SkillCampaign   { %H5; !typebased_gems2; BaseType == "Uncut Skill Gem"; LVL(); }
-	Show SupportCampaign { %H5; !typebased_gems2; BaseType == "Uncut Support Gem"; LVL(); }
+	Show SpiritCampaign  { %H5; !typebased_gems2; BaseType "Uncut Spirit Gem"; LVL(); }
+	Show SkillCampaign   { %H5; !typebased_gems2; BaseType "Uncut Skill Gem"; LVL(); }
+	Show SupportCampaign { %H5; !typebased_gems2; BaseType "Uncut Support Gem"; LVL(); }
 
 	# Lower highlight for lower level gems in maps
-	Show OtherSpiritEg  { %H2; !typebased_gems3; BaseType == "Uncut Spirit Gem"; EG(); }
-	Show OtherSkillEg   { %H2; !typebased_gems3; BaseType == "Uncut Skill Gem"; EG(); }
-	Show OtherSupportEg { %H3; !typebased_gems3; BaseType == "Uncut Support Gem"; EG(); }
+	Show OtherSpiritEg  { %H2; !typebased_gems3; BaseType "Uncut Spirit Gem"; EG(); }
+	Show OtherSkillEg   { %H2; !typebased_gems3; BaseType "Uncut Skill Gem"; EG(); }
+	Show OtherSupportEg { %H3; !typebased_gems3; BaseType "Uncut Support Gem"; EG(); }
 
 	# Hider for filterblade
-	Hide exHide { !hiding_minimize; BaseType == "Uncut Spirit Gem" "Uncut Support Gem" "Uncut Skill Gem";}
+	Hide exHide { !hiding_minimize; BaseType "Uncut Spirit Gem" "Uncut Support Gem" "Uncut Skill Gem";}
 }
 
 #!! Waypoint c8.gems.others : "Gems - Specific"
