@@ -71,9 +71,9 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 {
 	var qualityChancables = bases.chancing.a + bases.chancing.s + bases.chancing.any + bases.chancingExtra.exceptional;
 
-	Show ChancingOverQual { !itemproperty_achancing; %D6; Rarity Normal; Quality >= 25; BaseType == qualityChancables; }
-	Show ChancingOverSocket3 { !itemproperty_achancing; %D6; Rarity Normal; Sockets >= 3; Class == classes_socket2; BaseType == qualityChancables; }
-	Show ChancingOverSocket2 { !itemproperty_achancing; %D6; Rarity Normal; Sockets >= 2; Class == classes_socket1; BaseType == qualityChancables; }
+	Show ChancingOverQual { !itemproperty_achancing; %D6; Rarity Normal; Quality >= 27; BaseType == uniques.generic.t1 + uniques.generic.t2; }
+	Show ChancingOverSocket3 { !itemproperty_achancing; %D6; Rarity Normal; Sockets >= 3; Class == classes_socket2; BaseType == uniques.generic.t1 + uniques.generic.t2; }
+	Show ChancingOverSocket2 { !itemproperty_achancing; %D6; Rarity Normal; Sockets >= 2; Class == classes_socket1; BaseType == uniques.generic.t1 + uniques.generic.t2; }
 
 	Show overqual1q1	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 27; BaseType == derived.general.unbiased.equip.t1; }
 	Show overqual1q2	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 24; BaseType == derived.general.unbiased.equip.t1 + derived.general.unbiased.equip.t2; }
@@ -101,6 +101,30 @@ Section IdMods : IdMods(), Clean(), Auto("ExoticMods"), Rarity <= Rare, !exotics
 }
 
 #===============================================================================================================
+# [[0200]] Rare Item Decorators
+#===============================================================================================================
+#!! Waypoint c3.rare.decorator.all : "Rare Endgame Items - Decorators"
+
+Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
+{
+	Cont BasicRareDecorator { !utility_basicraredecorator; }
+
+	ContD LargeRares 	{ !gear_unstyled; Height >= 3; Width >= 2; Class == classes_equip; }
+	ContD MediumRares1 	{ !gear_unstyled; Height >= 3; Width = 1; Class == classes_equip; }
+	ContD MediumRares2 	{ !gear_unstyled; Height = 2; Width = 2; Class == classes_equip; }
+	Cont TinyRares 		{ !gear_decojewellery; Height = 1; Width <= 2; Class == classes_equip; }
+
+	ContD ILVL80 	  { !gear_unstyled; ItemLevel >= 80; Class == classes_equip; }
+	Cont ILVL82 	  { !itemproperty_level82; ItemLevel >= 82; Class == classes_equip; }
+
+	# Optional: caster weapons get their most important mods on 81
+	Cont ILVL81Caster { %D0; !itemproperty_level82; ItemLevel >= 81; Class == classes_cast; }
+
+	Cont CorruptedRares 		{ !exotics_corrupt; Corrupted True; AnyEnchantment False; Class == classes_equip; }
+	Cont CorruptedRaresImplicit { !exotics_corrupthigh; Corrupted True; AnyEnchantment True; Class == classes_equip; }
+}
+
+#===============================================================================================================
 # [[0200]] High Unidentified Mod Tier
 #===============================================================================================================
 #!! Waypoint c3.exotic.state.hightier : "Exotic State - High Modtier"
@@ -113,32 +137,32 @@ Section HighModtierRare : Auto("ut->rare"), Rarity Rare
 {
 	## ID-Tier Gear (Rare)
 	Show gear4a { %D6; !exotics_btier; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear3a { %D6; !gear_highlightedsize; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear3a { %D6; !exotics_ctier; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
 	Show gear2a { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
-	Show gear4b { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear4b { %D6; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
 	Show gear3b { %D5; !gear_highlightedsize; UT >= 3; BaseType == derived.general.unbiased.equip.t2; }
 	Show gear2b { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t2; }
 
-	Show gear4c { %D5; !gear_highlightedsize; UT >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear4c { %D5; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t3; }
 	Show gear3c { %D4; !gear_highlightedsize; UT >= 3; BaseType == derived.general.unbiased.equip.t3; }
 	Show gear2c { %D3; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t3; }
 
 	## ID-Tier Jewellery (Rare)
 	Show j4a { %D6; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t1; }
 	Show j3a { %D6; !exotics_btier; UT >= 3; BaseType == derived.rares.jwl.all.t1; }
-	Show j2a { %D6; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
+	Show j2a { %D6; !gear_tieredjewellery; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
 
 	Show j4b { %D6; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j3b { %D6; !gear_highlightedsize; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D5; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j3b { %D6; !gear_tieredjewellery; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D5; !gear_tieredjewellery; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
 
-	Show j4c { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
-	Show j3c { %D5; !gear_highlightedsize; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j4c { %D6; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D5; !gear_tieredjewellery; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
 	Show j2c { %D5; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
-	Show anyRemaining5 { !gear_highlightedsize; %D6; UT >= 5; }
-	Show anyRemaining4 { !gear_highlightedsize; %D5; UT >= 4; }
+	Show anyRemaining5 { !exotics_btier; %D6; UT >= 5; }
+	Show anyRemaining4 { !gear_tieredjewellery; %D5; UT >= 4; }
 }
 
 ##------------------------------------
@@ -148,33 +172,33 @@ Section HighModtierRare : Auto("ut->rare"), Rarity Rare
 Section HighModtierMagic : Auto("ut->magic"), Rarity Magic
 {
 	## ID-Tier Gear (Magic)
-	Show gear4a { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear3a { %D5; !gear_highlightedsize; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear2a { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear4a { %D6; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear3a { %D5; !exotics_ctier; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear2a { %D4; !gear_highlightdrop2; UT >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
-	Show gear4b { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear3b { %D5; !gear_highlightedsize; UT >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show gear2b { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear4b { %D6; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear3b { %D5; !gear_highlightdrop2; UT >= 3; BaseType == derived.general.unbiased.equip.t2; }
+	Show gear2b { %D4; !gear_highlightdrop2; UT >= 2; BaseType == derived.general.unbiased.equip.t2; }
 
-	Show gear4c { %D5; !gear_highlightedsize; UT >= 4; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear3c { %D3; !gear_highlightedsize; UT >= 3; BaseType == derived.general.unbiased.equip.t3; }
-	Show gear2c { %D3; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear4c { %D5; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear3c { %D3; !gear_highlightdrop2; UT >= 3; BaseType == derived.general.unbiased.equip.t3; }
+	Show gear2c { %D3; !gear_highlightdrop2; UT >= 2; BaseType == derived.general.unbiased.equip.t3; }
 
 	## ID-Tier Jewellery (Magic)
-	Show j4a { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.rares.jwl.all.t1; }
-	Show j3a { %D6; !gear_highlightedsize; UT >= 3; BaseType == derived.rares.jwl.all.t1; }
-	Show j2a { %D6; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
+	Show j4a { %D6; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t1; }
+	Show j3a { %D6; !exotics_ctier; UT >= 3; BaseType == derived.rares.jwl.all.t1; }
+	Show j2a { %D6; !gear_highlightdrop2; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
 
-	Show j4b { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j3b { %D6; !gear_highlightedsize; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D5; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j4b { %D6; !exotics_ctier; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j3b { %D6; !exotics_ctier; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D5; !gear_highlightdrop2; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
 
-	Show j4c { %D6; !gear_highlightedsize; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
-	Show j3c { %D5; !gear_highlightedsize; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
-	Show j2c { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
+	Show j4c { %D6; !exotics_ctier; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
+	Show j3c { %D5; !gear_highlightdrop2; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
+	Show j2c { %D4; !gear_highlightdrop2; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
-	Show anyRemaining5 { !gear_highlightedsize; %D6; UT >= 5; }
-	Show anyRemaining4 { !gear_highlightedsize; %D3; UT >= 4; }
+	Show anyRemaining5 { !exotics_ctier; %D6; UT >= 5; }
+	Show anyRemaining4 { !gear_highlightdrop2; %D3; UT >= 4; }
 }
 
 #===============================================================================================================
@@ -374,29 +398,6 @@ Section HideLayer1 : EG(), Rarity < Rare, Class == classes_equip + class_flaskli
 	Hide NormalMagicEndgame { Auto("HideLayer"); }
 }
 
-#===============================================================================================================
-# [[0200]] Rare Item Decorators
-#===============================================================================================================
-#!! Waypoint c6.rare.decorator.all : "Rare Endgame Items - Decorators"
-
-Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
-{
-	Cont BasicRareDecorator { !utility_basicraredecorator; }
-
-	ContD LargeRares 	{ !gear_unstyled; Height >= 3; Width >= 2; Class == classes_equip; }
-	ContD MediumRares1 	{ !gear_unstyled; Height >= 3; Width = 1; Class == classes_equip; }
-	ContD MediumRares2 	{ !gear_unstyled; Height = 2; Width = 2; Class == classes_equip; }
-	Cont TinyRares 		{ !gear_decojewellery; Height = 1; Width <= 2; Class == classes_equip; }
-
-	ContD ILVL80 	  { !gear_unstyled; ItemLevel >= 80; Class == classes_equip; }
-	Cont ILVL82 	  { !itemproperty_level82; ItemLevel >= 82; Class == classes_equip; }
-
-	# Optional: caster weapons get their most important mods on 81
-	Cont ILVL81Caster { %D0; !itemproperty_level82; ItemLevel >= 81; Class == classes_cast; }
-
-	Cont CorruptedRares 		{ !exotics_corrupt; Corrupted True; AnyEnchantment False; Class == classes_equip; }
-	Cont CorruptedRaresImplicit { !exotics_corrupthigh; Corrupted True; AnyEnchantment True; Class == classes_equip; }
-}
 
 Section EndgameRares : Rarity Rare, ItemLevel >= eglevel
 {
@@ -585,10 +586,10 @@ Section LineageGems : Auto("gems->lineage"), Class == "Support Gems" "Skill Gems
 {
 	Show s { !Apex_sTier; BaseType == gems.lineage.s; }
 	Show a { !uniques_a; BaseType == gems.lineage.a; }
-	Show b { !currency_b; BaseType == gems.lineage.b; }
-	Show c { %H6; !currency_c; BaseType == gems.lineage.c; }
-	Show d { %H5; !currency_d; BaseType == gems.lineage.d; }
-	Show e { %H4; !currency_e; BaseType == gems.lineage.e; }
+	Show b { !uniques_x; BaseType == gems.lineage.b; }
+	Show c { %H6; !uniques_x; BaseType == gems.lineage.c; }
+	Show d { %H5; !uniques_c; BaseType == gems.lineage.d; }
+	Show e { %H4; !uniques_c; BaseType == gems.lineage.e; }
 }
 
 Section UncutGems : Auto("gems->uncut")
@@ -894,9 +895,9 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 	Show multispecialhigh { !uniques_x; BaseType == uniques.generic.multispecialhigh; }
 
-	Show overQualityUniques	{ %D5; !uniques_x; Quality >= 26; }
-	Show overSocketUniques1	{ %D5; !uniques_x; Class == classes_socket2; Sockets >= 3; }
-	Show overSocketUniques2	{ %D5; !uniques_x; Class == classes_socket1; Sockets >= 2; }
+	Show overQualityUniques	{ %D5; !uniques_exceptional; Quality >= 26; }
+	Show overSocketUniques1	{ %D5; !uniques_exceptional; Class == classes_socket2; Sockets >= 3; }
+	Show overSocketUniques2	{ %D5; !uniques_exceptional; Class == classes_socket1; Sockets >= 2; }
 
 	Show multispecial 	  { !uniques_x; BaseType == uniques.generic.multispecial; }
 
@@ -930,7 +931,7 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_
 	Show t2 { %D6; !fragments_splinter2; StackSize >= stacksize.commonSplinters.t2; }
 	Show t3 { %D6; !fragments_splinter3; StackSize >= stacksize.commonSplinters.t3; }
 	Show t4 { %D6; !fragments_splinter4; StackSize >= stacksize.commonSplinters.t4; }
-	Show t5 { %HS5; !fragments_splinter5; Empty(); }
+	Show t5 { %D6; !fragments_splinter5; Empty(); }
 }
 
 Section FullFragments : Auto("fragments->generic")
@@ -1250,7 +1251,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 
 Section HideLayerFinal : Class == classes_finalHider
 {
-	Show anyFinal { %D0; !gear_vendor; Auto("LowStrictnessShowLayer"); }
+	Show anyFinal { %D0; !gear_vendor; !utility_highlight6; Auto("LowStrictnessShowLayer"); }
 	Hide Final {  Auto("HideLayer");  }
 }
 

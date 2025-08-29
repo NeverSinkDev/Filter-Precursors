@@ -74,7 +74,9 @@ Style Common
 
 	Func gear_vendor
 	{
+		SetBorderColor 0 0 0 0;
 		SetBackgroundColor cAccentVeryLow;
+		SetFontSize 30;
 	}	
 
 	Func typebased_flaskcharms
@@ -369,6 +371,14 @@ Style Common
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue mUnique;
 	}
 
+	Func uniques_exceptional
+	{
+		uniques_x();
+		SetBorderColor cExotic;
+		PlayEffect Purple;
+		MinimapIcon 0 Purple mUnique;
+	}
+
 	Func uniques_b
 	{
 		SetFontSize font.t2;
@@ -507,6 +517,16 @@ Style Common
 # Value Trinkets
 #------------------------------------
 
+	Func gear_tieredjewellery
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cRareTrinkets, cRareTrinketGlow);
+		SetTextColor 255 255 0 255;
+		PlayEffect Yellow;
+		MinimapIcon 1 Yellow mTrinkets;
+		PlayAlertSound asCurr;
+	}
+
 	Func gear_jewelrare
 	{
 		SetFontSize font.t2;
@@ -567,13 +587,13 @@ Style Common
 
 	Func gear_weakrare1
 	{
-		SetFontSize font.t4;
+		SetFontSize font.t5;
 		SetBackgroundColor cAccentRare2;
 	}
 
 	Func gear_weakrare2
 	{
-		SetFontSize font.t5;
+		SetFontSize font.t6;
 		SetBackgroundColor cAccentRare3;
 	}
 
