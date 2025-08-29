@@ -1,29 +1,34 @@
-Expand Tiering_fragA
+Expand fragments_a
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Tiering_fragB
+Expand fragments_b
 {
     SetBackgroundColor NONE;
 }
 
-Expand Tiering_fragC
-{
-    SetBackgroundColor NONE;
-    SetBorderColor NONE;
-}
-
-
-Expand Tiering_fragD
+Expand fragments_c
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Tiering_fragE
+Expand fragments_d
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+Expand fragments_fragdmuted
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+Expand fragments_e
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -33,34 +38,34 @@ Expand Tiering_fragE
 # Splinter
 #------------------------------------
 
-Expand Tiering_Splinter1
+Expand fragments_splinter1
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Tiering_Splinter2
+Expand fragments_splinter2
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Tiering_Splinter3
-{
-    SetBackgroundColor NONE;
-    SetBorderColor NONE;
-}
-
-
-Expand Tiering_Splinter4
+Expand fragments_splinter3
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
 
-Expand Tiering_Splinter5
+Expand fragments_splinter4
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+
+Expand fragments_splinter5
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -70,56 +75,56 @@ Expand Tiering_Splinter5
 # CURRENCY
 #------------------------------------
 
-Expand Tiering_CurrencyA
+Expand currency_a
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Tiering_CurrencyB
+Expand currency_b
 {
     SetBackgroundColor NONE;
 }
 
-Expand Tiering_CurrencyC
+Expand currency_c
 {
     SetBorderColor NONE;
 }
 
-Expand Tiering_CurrencyD
+Expand currency_d
 {
     SetBorderColor NONE;
 }
 
-Expand Tiering_CurrencyE
+Expand currency_e
 {
     SetBorderColor NONE;
 }
 
-Expand tiering_specialArtifact
+Expand currency_specialartifact
 {
     SetBorderColor NONE;
 }
 
-Expand Tiering_SupplyCurrency1
+Expand currency_supply1
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Tiering_SupplyCurrency2
+Expand currency_supply2
 {
     SetBorderColor NONE;
 }
 
-Expand Tiering_supplylvl2
+Expand currency_supplylvl2
 {
     SetBorderColor NONE;
     SetTextColor cCurrTierD;
 }
 
-Expand Tiering_SupplyCurrency3
+Expand currency_supply3
 {
     SetBorderColor NONE;
 }
@@ -129,30 +134,30 @@ Expand Tiering_SupplyCurrency3
 # CURRENCY
 #------------------------------------
 
-Expand Tiering_UniqueA
+Expand uniques_a
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Tiering_UniqueX
+Expand uniques_x
 {
     Bordered(cUnique);
     SetBackgroundColor NONE;
 }
 
-Expand Tiering_UniqueB
+Expand uniques_b
 {
     SetBackgroundColor NONE;
 }
 
-Expand tiering_uniqueBossDrop
+Expand uniques_xbossdrop
 {
     SetBackgroundColor NONE;
 }
 
-Expand Tiering_UniqueC
+Expand uniques_c
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -174,13 +179,13 @@ Expand maps_deco2
     Bordered(cWhite);
 }
 
-Expand Maps_SpecialB
+Expand maps_specialb
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Maps_SpecialC
+Expand maps_specialc
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
@@ -212,18 +217,18 @@ Expand maps_regularlow
 # Misc
 #------------------------------------
 
-Expand exotics_SpecialB
+Expand exotics_btier
 {
     SetBackgroundColor NONE;
 }
 
-Expand typebased_flaskcharms1
+Expand typebased_flaskcharms
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
 }
 
-Expand typebased_flaskcharms2
+Expand typebased_flaskcharms
 {
     SetBorderColor NONE;
     SetBackgroundColor NONE;
@@ -233,7 +238,7 @@ Expand typebased_flaskcharms2
 # Others
 #------------------------------------
 
-Expand exotics_artifactHigh
+Expand exotics_artifacthigh
 {
     SetFontSize font.t1;
     SetBackgroundColor cBlack;
@@ -242,7 +247,7 @@ Expand exotics_artifactHigh
     PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
 }
 
-Expand exotics_artifactLow
+Expand exotics_artifact
 {
     SetFontSize font.t1;
     SetBackgroundColor cBlack;
@@ -251,7 +256,7 @@ Expand exotics_artifactLow
 	PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 1 Orange Pentagon;
 }
 
-Expand misc_decoremovermagic
+Expand utility_decoremovermagic
 {
     SetBorderColor 0 0 0 0;
 }
@@ -281,7 +286,7 @@ Expand typebased_gems3
 # Rares and Crafting Items
 #------------------------------------
 
-Expand gear_jewelRare
+Expand gear_jewelrare
 {
     SetFontSize font.t2;
     SetBackgroundColor NONE;
@@ -289,14 +294,14 @@ Expand gear_jewelRare
     SetBorderColor cRareTrinkets;
 }
 
-Expand gear_jewelMagic
+Expand gear_jewelmagic
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
     SetTextColor NONE;
 }
 
-Expand gear_jewelMagicLow
+Expand gear_jewelmagiclow
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
@@ -342,22 +347,22 @@ Expand gold_pilesmall
     SetTextColor cGold;
 }
 
-Expand itemProperty_salvage1
+Expand itemproperty_salvage1
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand itemProperty_salvage2
+Expand itemproperty_salvage2
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand itemProperty_salvagelvl1
+Expand itemproperty_salvagelvl1
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand itemProperty_salvagelvl2
+Expand itemproperty_salvagelvl2
 {
     SetBorderColor cMarkSalvagable1;
 }
@@ -366,18 +371,18 @@ Expand itemProperty_salvagelvl2
 # Disable Most Marks
 #------------------------------------
 
-Expand itemProperty_toplevelbased2
+Expand itemproperty_toplevelbased2
 {
     Disable();
 }
 
-Expand itemProperty_toplevelbased1
+Expand itemproperty_toplevelbased1
 {
     Disable();
 }
 
 
-Expand itemProperty_regularGear
+Expand itemproperty_regulargear
 {
     Disable();
 }
@@ -388,7 +393,7 @@ Expand exotics_corrupt
     Disable();
 }
 
-Expand itemProperty_level82
+Expand itemproperty_level82
 {
     Disable();
 }
@@ -398,22 +403,22 @@ Expand maps_decotierupgrade
     Disable();
 }
 
-Expand gear_rareEquip1
+Expand gear_highlightedsize
 {
     SetBackgroundColor NONE;
 }
 
-Expand gear_rareJewellery1
+Expand gear_jewellery1
 {
     SetBackgroundColor NONE;
 }
 
-Expand gear_rareJewellery2
+Expand gear_jewellery2
 {
     SetBackgroundColor NONE;
 }
 
-Expand gear_rareJewellery3
+Expand gear_jewellery3
 {
     SetBackgroundColor NONE;
 }
