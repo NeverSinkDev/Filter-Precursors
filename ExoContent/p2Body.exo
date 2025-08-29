@@ -765,7 +765,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 Section CurrencyTiering : Auto("currency"), Class == class_currency
 {
 	Show s { !Apex_sTier; BaseType == currency.generic.s; }
-	Show a { !currency_a; BaseType == currency.generic.a + TEMPCURR; }
+	Show a { !currency_a; BaseType == currency.generic.a; }
 	Show b { !currency_b; BaseType == currency.generic.b; }
 	Show c { !currency_c; BaseType == currency.generic.c; }
 	Show d { %H5; !currency_d; BaseType == currency.generic.d; }
@@ -827,7 +827,7 @@ Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency
 Section CurrencyEssence : Auto("currency->essence"), Class == class_currency
 {
 	Show s { !Apex_sTier;     BaseType == currency.essence.s; }
-	Show a { !currency_a; BaseType == currency.essence.a + temp.essences; }
+	Show a { !currency_a; BaseType == currency.essence.a; }
 	Show b { !currency_b; BaseType == currency.essence.b; }
 	Show c { !currency_c; BaseType == currency.essence.c; }
 	Show d { %H6; !currency_d; BaseType == currency.essence.d; }
@@ -845,7 +845,7 @@ Section CurrencyEssence : Auto("currency->essence"), Class == class_currency
 Section CurrencyOmen : Auto("currency->omen"), Class == "Omen"
 {
 	Show s { !Apex_sTier;     BaseType == currency.omen.s; }
-	Show a { !currency_a; BaseType == currency.omen.a + TEMPOMEN; }
+	Show a { !currency_a; BaseType == currency.omen.a; }
 	Show b { !currency_b; BaseType == currency.omen.b; }
 	Show c { !currency_c; BaseType == currency.omen.c; }
 	Show d { !currency_d; BaseType == currency.omen.d; }

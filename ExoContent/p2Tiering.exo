@@ -76,7 +76,7 @@ var bases.general.meta.t4 = "Arrayed Focus" "Bladed Quarterstaff" "Bleak Crossbo
 ## MANUALLY MANAGED: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.leveling.rare = "Artificer's Orb" "Lesser Jeweller's Orb" "Regal Orb";
+var currency.leveling.rare = "Artificer's Orb" "Lesser Jeweller's Orb" "Regal Orb" "Gnawed Jawbone" "Gnawed Rib" "Gnawed Collarbone" "Lesser Essence of the Body" "Lesser Essence of the Mind" "Lesser Essence of Enhancement" "Lesser Essence of Abrasion" "Lesser Essence of Flames" "Lesser Essence of Ice" "Lesser Essence of Electricity" "Lesser Essence of Ruin" "Lesser Essence of Battle" "Lesser Essence of Sorcery" "Lesser Essence of Haste" "Lesser Essence of the Infinite" "Lesser Essence of Seeking" "Lesser Essence of Insulation" "Lesser Essence of Thawing" "Lesser Essence of Grounding" "Lesser Essence of Alacrity" "Lesser Essence of Opulence" "Lesser Essence of Command";
 var currency.leveling.magic = "Orb of Augmentation" "Orb of Transmutation";
 var currency.leveling.wisdom = "Scroll of Wisdom";
 
@@ -94,20 +94,18 @@ var bases.charms.all = "Amethyst Charm" "Antidote Charm" "Dousing Charm" "Golden
 ## {TIERLIST}: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var TEMPCURR = "Greater Chaos Orb" "Perfect Chaos Orb" "Hinekora's Lock" "Greater Orb of Transmutation" "Perfect Orb of Transmutation" "Greater Exalted Orb" "Perfect Exalted Orb" "Greater Regal Orb" "Perfect Regal Orb" "Greater Orb of Augmentation" "Perfect Orb of Augmentation" "Gnawed Jawbone" "Preserved Jawbone" "Ancient Jawbone" "Gnawed Rib" "Preserved Rib" "Ancient Rib" "Gnawed Collarbone" "Preserved Collarbone" "Ancient Collarbone" "Preserved Cranium" "Preserved Vertebrae";
-
-## DIVINE (TINK) ~55ex
-var currency.generic.s = "Albino Rhoa Feather" "Divine Orb" "Mirror of Kalandra" "Perfect Jeweller's Orb";
-## T2 CURRENCIES ~10ex
-var currency.generic.a = "Chaos Orb" "Fracturing Orb" "Orb of Annulment";
-## UBER-EX TIER ~3ex
-var currency.generic.b = "Exotic Coinage" "Orb of Chance";
+## DIVINE (TINK)
+var currency.generic.s = "Hinekora's Lock" "Perfect Exalted Orb" "Perfect Chaos Orb" "Albino Rhoa Feather" "Divine Orb" "Mirror of Kalandra" "Perfect Jeweller's Orb";
+## A TIER/T2 CURRENCIES
+var currency.generic.a = "Ancient Jawbone" "Ancient Rib" "Ancient Collarbone" "Perfect Regal Orb" "Greater Chaos Orb" "Fracturing Orb" "Orb of Annulment";
+## B TIER/T3 CURRENCIES
+var currency.generic.b = "Preserved Cranium" "Preserved Vertebrae" "Perfect Orb of Augmentation" "Greater Exalted Orb" "Greater Regal Orb" "Chaos Orb" "Exotic Coinage" "Gemcutter's Prism" "Orb of Chance" "Greater Jeweller's Orb" "Glassblower's Bauble";
 ## EX-TIER ~1ex
-var currency.generic.c = "Exalted Orb" "Gemcutter's Prism" "Glassblower's Bauble" "Greater Jeweller's Orb" "Orb of Alchemy" "Regal Orb" "Vaal Orb";
+var currency.generic.c = "Preserved Jawbone" "Preserved Rib" "Preserved Collarbone" "Gnawed Jawbone" "Gnawed Rib" "Gnawed Collarbone" "Greater Orb of Augmentation" "Perfect Orb of Transmutation" "Exalted Orb" "Orb of Alchemy" "Regal Orb" "Vaal Orb";
 ## SUB-EX TIER
-var currency.generic.d = "Armourer's Scrap" "Artificer's Orb" "Chance Shard" "Lesser Jeweller's Orb";
+var currency.generic.d = "Greater Orb of Transmutation" "Armourer's Scrap" "Blacksmith's Whetstone" "Artificer's Orb" "Chance Shard" "Lesser Jeweller's Orb";
 ## SUB-EX TIER
-var currency.generic.e = "Arcanist's Etcher" "Blacksmith's Whetstone";
+var currency.generic.e = "Arcanist's Etcher";
 
 ## SUPPLIES
 var currency.generic.supply1 = "Black Scythe Artifact" "Broken Circle Artifact" "Order Artifact" "Sun Artifact";
@@ -161,26 +159,22 @@ var currency.catalysts.e = BLANK;
 ## MANUALLY MANAGED: ESSENCES
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var temp.essences = "Lesser Essence of the Body" "Lesser Essence of the Mind" "Lesser Essence of Enhancement" "Lesser Essence of Abrasion" "Lesser Essence of Flames" "Lesser Essence of Ice" "Lesser Essence of Electricity" "Lesser Essence of Ruin" "Lesser Essence of Battle" "Lesser Essence of Sorcery" "Lesser Essence of Haste" "Lesser Essence of the Infinite" "Perfect Essence of the Body" "Perfect Essence of the Mind" "Perfect Essence of Enhancement" "Perfect Essence of Abrasion" "Perfect Essence of Flames" "Perfect Essence of Ice" "Perfect Essence of Electricity" "Perfect Essence of Ruin" "Perfect Essence of Battle" "Perfect Essence of Sorcery" "Perfect Essence of Haste" "Perfect Essence of the Infinite" "Lesser Essence of Seeking" "Essence of Seeking" "Greater Essence of Seeking" "Perfect Essence of Seeking" "Essence of the Abyss" "Lesser Essence of Insulation" "Essence of Insulation" "Greater Essence of Insulation" "Perfect Essence of Insulation" "Lesser Essence of Thawing" "Essence of Thawing" "Greater Essence of Thawing" "Perfect Essence of Thawing" "Lesser Essence of Grounding" "Essence of Grounding" "Greater Essence of Grounding" "Perfect Essence of Grounding" "Lesser Essence of Alacrity" "Essence of Alacrity" "Greater Essence of Alacrity" "Perfect Essence of Alacrity" "Lesser Essence of Opulence" "Essence of Opulence" "Greater Essence of Opulence" "Perfect Essence of Opulence" "Lesser Essence of Command" "Essence of Command" "Greater Essence of Command" "Perfect Essence of Command" "Greater Essence of the Infinite" "Essence of Abrasion" "Greater Essence of Abrasion";
-
 var currency.essence.s = "Essence of Delirium" "Essence of Horror" "Essence of Hysteria" "Essence of Insanity";
-var currency.essence.a = "Greater Essence of Battle" "Greater Essence of Electricity";
-var currency.essence.b = "Essence of Haste" "Greater Essence of Enhancement" "Greater Essence of Haste" "Greater Essence of Ruin" "Greater Essence of Sorcery";
-var currency.essence.c = "Essence of Battle" "Essence of Electricity" "Essence of Enhancement" "Essence of Flames" "Essence of Ice" "Essence of Ruin" "Essence of Sorcery" "Essence of the Body" "Essence of the Infinite" "Essence of the Mind" "Greater Essence of Flames" "Greater Essence of Ice" "Greater Essence of the Body" "Greater Essence of the Mind";
-var currency.essence.d = BLANK;
+var currency.essence.a =  "Perfect Essence of the Body" "Perfect Essence of the Mind" "Perfect Essence of Enhancement" "Perfect Essence of Abrasion" "Perfect Essence of Flames" "Perfect Essence of Ice" "Perfect Essence of Electricity" "Perfect Essence of Ruin" "Perfect Essence of Battle" "Perfect Essence of Sorcery" "Perfect Essence of Haste" "Perfect Essence of the Infinite" "Perfect Essence of Seeking" "Perfect Essence of Insulation" "Perfect Essence of Thawing" "Perfect Essence of Grounding" "Perfect Essence of Alacrity" "Perfect Essence of Opulence" "Perfect Essence of Command" "Essence of the Abyss";
+var currency.essence.b = "Greater Essence of Seeking" "Greater Essence of Insulation" "Greater Essence of Thawing" "Greater Essence of Grounding" "Greater Essence of Alacrity" "Greater Essence of Opulence" "Greater Essence of Command" "Greater Essence of the Infinite" "Greater Essence of Abrasion" "Greater Essence of Battle" "Greater Essence of Electricity" "Greater Essence of Enhancement" "Greater Essence of Haste" "Greater Essence of Ruin" "Greater Essence of Sorcery" "Greater Essence of Flames" "Greater Essence of Ice" "Greater Essence of the Body" "Greater Essence of the Mind";
+var currency.essence.c = "Essence of Seeking" "Essence of Insulation" "Essence of Thawing" "Essence of Grounding" "Essence of Alacrity" "Essence of Opulence" "Essence of Command" "Essence of Abrasion" "Essence of Haste" "Essence of Battle" "Essence of Electricity" "Essence of Enhancement" "Essence of Flames" "Essence of Ice" "Essence of Ruin" "Essence of Sorcery" "Essence of the Body" "Essence of the Infinite" "Essence of the Mind";
+var currency.essence.d = "Lesser Essence of the Body" "Lesser Essence of the Mind" "Lesser Essence of Enhancement" "Lesser Essence of Abrasion" "Lesser Essence of Flames" "Lesser Essence of Ice" "Lesser Essence of Electricity" "Lesser Essence of Ruin" "Lesser Essence of Battle" "Lesser Essence of Sorcery" "Lesser Essence of Haste" "Lesser Essence of the Infinite" "Lesser Essence of Seeking" "Lesser Essence of Insulation" "Lesser Essence of Thawing" "Lesser Essence of Grounding" "Lesser Essence of Alacrity" "Lesser Essence of Opulence" "Lesser Essence of Command";
 var currency.essence.e = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {TIERLIST}: OMEN (RITUAL CURRENCY)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var TEMPOMEN = "Omen of Homogenising Exaltation" "Omen of Homogenising Coronation" "Omen of Gambling" "Omen of Bartering" "Omen of Recombination" "Omen of the Blessed" "Omen of Chaotic Rarity" "Omen of Chaotic Monsters" "Omen of Chaotic Quantity" "Omen of Chance" "Omen of the Ancients" "Omen of Sanctification" "Omen of Dextral Crystallisation" "Omen of Sinistral Crystallisation" "Omen of Catalysing Exaltation" "Omen of Abyssal Echoes" "Omen of Putrefaction" "Omen of Light" "Omen of Sinistral Necromancy" "Omen of Dextral Necromancy" "Omen of the Sovereign" "Omen of the Liege" "Omen of the Blackblooded";
-
-var currency.omen.s = "Omen of Dextral Annulment" "Omen of Sinistral Annulment" "Omen of Sinistral Erasure" "Omen of Whittling";
-var currency.omen.a = "Omen of Dextral Erasure" "Omen of Secret Compartments" "Omen of the Hunt";
-var currency.omen.b = "Omen of Amelioration" "Omen of Answered Prayers" "Omen of Corruption" "Omen of Reinforcements";
-var currency.omen.c = "Omen of Dextral Exaltation" "Omen of Greater Exaltation" "Omen of Refreshment" "Omen of Resurgence" "Omen of Sinistral Exaltation";
-var currency.omen.d = BLANK;
+var currency.omen.s = "Omen of the Ancients" "Omen of Dextral Annulment" "Omen of Sinistral Annulment"  "Omen of Whittling";
+var currency.omen.a = "Omen of Chance" "Omen of Catalysing Exaltation" "Omen of Gambling" "Omen of Bartering" "Omen of Homogenising Exaltation" "Omen of Homogenising Coronation" "Omen of Dextral Crystallisation" "Omen of Sinistral Crystallisation" "Omen of Recombination" "Omen of Sanctification" "Omen of Sinistral Erasure" "Omen of Dextral Erasure" "Omen of Secret Compartments" "Omen of the Hunt";
+var currency.omen.b = "Omen of the Blessed" "Omen of Putrefaction" "Omen of Light" "Omen of Abyssal Echoes" "Omen of the Sovereign" "Omen of the Liege" "Omen of the Blackblooded" "Omen of Sinistral Necromancy" "Omen of Dextral Necromancy" "Omen of Chaotic Rarity" "Omen of Chaotic Monsters" "Omen of Chaotic Quantity" "Omen of Amelioration" "Omen of Answered Prayers" "Omen of Corruption" "Omen of Reinforcements";
+var currency.omen.c = "Omen of Dextral Exaltation" "Omen of Greater Exaltation" "Omen of Resurgence" "Omen of Sinistral Exaltation";
+var currency.omen.d = "Omen of Refreshment";
 var currency.omen.e = BLANK;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
