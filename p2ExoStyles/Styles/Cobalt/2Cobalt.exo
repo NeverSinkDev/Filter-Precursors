@@ -1,24 +1,29 @@
-Expand FragA
+Expand fragments_a
 {
     BrickWhite(cTierA);
 }
 
-Expand FragB
+Expand fragments_b
 {
     BrickWhite(cTierB);
 }
 
-Expand FragC
+Expand fragments_c
 {
     BrickWhite(cTierB);
 }
 
-Expand FragD
+Expand fragments_d
 {
     BrickWhite(cTierD);
 }
 
-Expand FragE
+Expand fragments_fragdmuted
+{
+    BrickWhite(cTierD);
+}
+
+Expand fragments_e
 {
     BrickWhite(cTierE);
 }
@@ -27,28 +32,28 @@ Expand FragE
 # Splinter
 #------------------------------------
 
-Expand Splinter1
+Expand fragments_splinter1
 {
     BrickWhite(cTierA);
 }
 
-Expand Splinter2
+Expand fragments_splinter2
 {
     BrickWhite(cTierB);
 }
 
-Expand Splinter3
+Expand fragments_splinter3
 {
     BrickWhite(cTierC);
 }
 
 
-Expand Splinter4
+Expand fragments_splinter4
 {
     BrickWhite(cTierD);
 }
 
-Expand Splinter5
+Expand fragments_splinter5
 {
     BrickWhite(cTierE);
 }
@@ -57,57 +62,57 @@ Expand Splinter5
 # CURRENCY
 #------------------------------------
 
-Expand CurrTierA
+Expand currency_a
 {
     BrickWhite(cTierA);
 }
 
-Expand CurrTierB
+Expand currency_b
 {
     BrickWhite(cTierB);
 }
 
-Expand CurrTierC
+Expand currency_c
 {
     BrickWhite(cTierB);
 }
 
-Expand CurrTierD
+Expand currency_d
 {
     BrickWhite(cTierD);
 }
 
-Expand CurrTierE
+Expand currency_e
 {
     BrickWhite(cTierE);
 }
 
-Expand SupplyArtifact
+Expand currency_specialartifact
 {
     BrickWhite(cTierD);
 }
 
-Expand SupplyArtifact
+Expand currency_specialartifact
 {
     BrickWhite(cTierD);
 }
 
-Expand Supply1
+Expand currency_supply1
 {
     BrickWhite(cTierD);
 }
 
-Expand Supply2
+Expand currency_supply2
 {
     BrickWhite(cTierE);
 }
 
-Expand Supply2lvl
+Expand currency_supplylvl2
 {
     BrickWhite(cTierE);
 }
 
-Expand Supply3
+Expand currency_supply3
 {
     Bordered(cTierE);
 }
@@ -116,22 +121,27 @@ Expand Supply3
 # UNIQUES
 #------------------------------------
 
-Expand UniqueA
+Expand uniques_a
 {
     BrickWhite(cTierA);
 }
 
-Expand UniqueX
+Expand uniques_x
 {
     BrickWhite(cUnique);
 }
 
-Expand UniqueB
+Expand uniques_b
 {
     BrickWhite(cTierB);
 }
 
-Expand UniqueC
+Expand uniques_xbossdrop
+{
+    BrickWhite(cTierB);
+}
+
+Expand uniques_c
 {
     BrickWhite(cTierD);
 }
@@ -140,51 +150,46 @@ Expand UniqueC
 # Maps
 #------------------------------------
 
-Expand DecoMap1
+Expand maps_deco1
 {
     SetBorderColor cWhite;
 }
 
-Expand DecoMap2
+Expand maps_deco2
 {
     SetBorderColor cWhite;
 }
 
-Expand MapSpecialHigh
+Expand maps_specialb
 {
     SetBackgroundColor 120 50 120;
     Bordered(cWhite);
 }
 
-Expand MapSpecial
+Expand maps_specialc
 {
     SetBackgroundColor NONE;
     Bordered(cWhite);
 }
 
-Expand Map1
+Expand maps_regularhighest
 {
     SetBackgroundColor 50 50 50;
     Bordered(cWhite);
 }
 
-Expand Map2
+Expand maps_regularhigh
 {
     SetBackgroundColor NONE;
     Bordered(cWhite);
 }
 
-Expand Map3
+Expand maps_regularmid
 {
     SetBackgroundColor NONE;
 }
 
-Expand Map4
-{
-    SetBackgroundColor NONE;
-}
-
-Expand MapVendor
+Expand maps_regularlow
 {
     SetBackgroundColor NONE;
 }
@@ -193,18 +198,18 @@ Expand MapVendor
 # Misc
 #------------------------------------
 
-Expand Exotic1
+Expand exotics_btier
 {
     SetBackgroundColor cBlack;
 }
 
-Expand FlaskCharm1
+Expand typebased_flaskcharms
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
 }
 
-Expand FlaskCharm2
+Expand typebased_flaskcharms
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;

@@ -1,29 +1,34 @@
-Expand FragA
+Expand fragments_a
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand FragB
+Expand fragments_b
 {
     SetBackgroundColor NONE;
 }
 
-Expand FragC
-{
-    SetBackgroundColor NONE;
-    SetBorderColor NONE;
-}
-
-
-Expand FragD
+Expand fragments_c
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand FragE
+Expand fragments_d
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+Expand fragments_fragdmuted
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+Expand fragments_e
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -33,34 +38,34 @@ Expand FragE
 # Splinter
 #------------------------------------
 
-Expand Splinter1
+Expand fragments_splinter1
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand Splinter2
+Expand fragments_splinter2
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Splinter3
-{
-    SetBackgroundColor NONE;
-    SetBorderColor NONE;
-}
-
-
-Expand Splinter4
+Expand fragments_splinter3
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
 
-Expand Splinter5
+Expand fragments_splinter4
+{
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+}
+
+
+Expand fragments_splinter5
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -70,56 +75,56 @@ Expand Splinter5
 # CURRENCY
 #------------------------------------
 
-Expand CurrTierA
+Expand currency_a
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand CurrTierB
+Expand currency_b
 {
     SetBackgroundColor NONE;
 }
 
-Expand CurrTierC
+Expand currency_c
 {
     SetBorderColor NONE;
 }
 
-Expand CurrTierD
+Expand currency_d
 {
     SetBorderColor NONE;
 }
 
-Expand CurrTierE
+Expand currency_e
 {
     SetBorderColor NONE;
 }
 
-Expand SupplyArtifact
+Expand currency_specialartifact
 {
     SetBorderColor NONE;
 }
 
-Expand Supply1
+Expand currency_supply1
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
 }
 
-Expand Supply2
+Expand currency_supply2
 {
     SetBorderColor NONE;
 }
 
-Expand Supply2lvl
+Expand currency_supplylvl2
 {
     SetBorderColor NONE;
     SetTextColor cCurrTierD;
 }
 
-Expand Supply3
+Expand currency_supply3
 {
     SetBorderColor NONE;
 }
@@ -129,25 +134,30 @@ Expand Supply3
 # CURRENCY
 #------------------------------------
 
-Expand UniqueA
+Expand uniques_a
 {
     SetBackgroundColor cBlack;
     Bordered(cCurrTierA);
     SetTextColor cCurrTierA;
 }
 
-Expand UniqueX
+Expand uniques_x
 {
     Bordered(cUnique);
     SetBackgroundColor NONE;
 }
 
-Expand UniqueB
+Expand uniques_b
 {
     SetBackgroundColor NONE;
 }
 
-Expand UniqueC
+Expand uniques_xbossdrop
+{
+    SetBackgroundColor NONE;
+}
+
+Expand uniques_c
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -157,53 +167,48 @@ Expand UniqueC
 # Maps
 #------------------------------------
 
-Expand DecoMap1
+Expand maps_deco1
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand DecoMap2
+Expand maps_deco2
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand MapSpecialHigh
+Expand maps_specialb
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand MapSpecial
+Expand maps_specialc
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Map1
+Expand maps_regularhighest
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Map2
+Expand maps_regularhigh
 {
     SetBackgroundColor zenMapBackground;
     Bordered(cWhite);
 }
 
-Expand Map3
+Expand maps_regularmid
 {
     SetBackgroundColor zenMapBackground;
 }
 
-Expand Map4
-{
-    SetBackgroundColor zenMapBackground;
-}
-
-Expand MapVendor
+Expand maps_regularlow
 {
     SetBackgroundColor zenMapBackground;
 }
@@ -212,18 +217,18 @@ Expand MapVendor
 # Misc
 #------------------------------------
 
-Expand Exotic1
+Expand exotics_btier
 {
     SetBackgroundColor NONE;
 }
 
-Expand FlaskCharm1
+Expand typebased_flaskcharms
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
 }
 
-Expand FlaskCharm2
+Expand typebased_flaskcharms
 {
     SetBorderColor NONE;
     SetBackgroundColor NONE;
@@ -233,7 +238,7 @@ Expand FlaskCharm2
 # Others
 #------------------------------------
 
-Expand Artifact
+Expand exotics_artifacthigh
 {
     SetFontSize font.t1;
     SetBackgroundColor cBlack;
@@ -242,7 +247,7 @@ Expand Artifact
     PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
 }
 
-Expand ArtifactLow
+Expand exotics_artifact
 {
     SetFontSize font.t1;
     SetBackgroundColor cBlack;
@@ -251,7 +256,7 @@ Expand ArtifactLow
 	PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 1 Orange Pentagon;
 }
 
-Expand MagicDecoratorRemover
+Expand utility_decoremovermagic
 {
     SetBorderColor 0 0 0 0;
 }
@@ -260,18 +265,18 @@ Expand MagicDecoratorRemover
 # Gems
 #------------------------------------
 
-Expand Gems1
+Expand typebased_gems1
 {
     SetBackgroundColor NONE;
 }
 
-Expand Gems2
+Expand typebased_gems2
 {
     SetBackgroundColor NONE;
     SetFontSize font.t3;
 }
 
-Expand Gems3
+Expand typebased_gems3
 {
     SetBackgroundColor NONE;
     SetBorderColor NONE;
@@ -281,7 +286,7 @@ Expand Gems3
 # Rares and Crafting Items
 #------------------------------------
 
-Expand ValueTrinketRare
+Expand gear_tieredjewellery
 {
     SetFontSize font.t2;
     SetBackgroundColor NONE;
@@ -289,21 +294,29 @@ Expand ValueTrinketRare
     SetBorderColor cRareTrinkets;
 }
 
-Expand ValueTrinketMagic
+Expand gear_jewelrare
+{
+    SetFontSize font.t2;
+    SetBackgroundColor NONE;
+    SetTextColor NONE;
+    SetBorderColor cRareTrinkets;
+}
+
+Expand gear_jewelmagic
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
     SetTextColor NONE;
 }
 
-Expand ValueTrinketMagicLow
+Expand gear_jewelmagiclow
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
     SetTextColor NONE;
 }
 
-Expand trinketBase
+Expand markup_trinketbase
 {
     SetBorderColor cMagicTrinkets;
     SetBackgroundColor NONE;
@@ -314,50 +327,50 @@ Expand trinketBase
 # GOLD
 #------------------------------------
 
-Expand goldHuge
+Expand gold_pilehuge
 {
     SetTextColor cWhite;
     SetBorderColor cWhite;
     SetBackgroundColor clear;
 }
 
-Expand goldLarge
+Expand gold_pilelarge
 {
     SetBorderColor NONE;
     SetBackgroundColor clear;
     SetTextColor cWhite;
 }
 
-Expand goldMedium
+Expand gold_pilemedium
 {
     SetBorderColor NONE;
     SetBackgroundColor clear;
     SetTextColor cGold;
 }
 
-Expand goldSmall
+Expand gold_pilesmall
 {
     SetBorderColor NONE;
     SetBackgroundColor clear;
     SetTextColor cGold;
 }
 
-Expand MarkSalvage1
+Expand itemproperty_salvage1
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand MarkSalvage2
+Expand itemproperty_salvage2
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand MarkSalvage1lvl
+Expand itemproperty_salvagelvl1
 {
     SetBorderColor cMarkSalvagable1;
 }
 
-Expand MarkSalvage2lvl
+Expand itemproperty_salvagelvl2
 {
     SetBorderColor cMarkSalvagable1;
 }
@@ -366,54 +379,54 @@ Expand MarkSalvage2lvl
 # Disable Most Marks
 #------------------------------------
 
-Expand markTopLevelBaseStrong
+Expand itemproperty_toplevelbased2
 {
     Disable();
 }
 
-Expand markTopLevelBase
-{
-    Disable();
-}
-
-
-Expand regularBase
+Expand itemproperty_toplevelbased1
 {
     Disable();
 }
 
 
-Expand corrupt
+Expand itemproperty_regulargear
 {
     Disable();
 }
 
-Expand Mark82
+
+Expand exotics_corrupt
 {
     Disable();
 }
 
-Expand MarkMapUp
+Expand itemproperty_level82
 {
     Disable();
 }
 
-Expand rRares1
+Expand maps_decotierupgrade
+{
+    Disable();
+}
+
+Expand gear_highlightedsize
 {
     SetBackgroundColor NONE;
 }
 
-Expand rGearTrinket1
+Expand gear_jewellery1
 {
     SetBackgroundColor NONE;
 }
 
-Expand rGearTrinket2
+Expand gear_jewellery2
 {
     SetBackgroundColor NONE;
 }
 
-Expand rGearTrinket3
+Expand gear_jewellery3
 {
     SetBackgroundColor NONE;
 }

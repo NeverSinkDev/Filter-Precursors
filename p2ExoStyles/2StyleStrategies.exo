@@ -36,14 +36,14 @@ Func RemoveEffects()
 
 Style Common
 {
-	Func tierS
+	Func Apex_sTier
 	{
 		SetTextColor cTierSAccent; SetBorderColor cTierSAccent; SetBackgroundColor cWhite; 
 		PlayAlertSound asS; PlayEffect Red; MinimapIcon 0 Red Star; 
 		SetFontSize 45;
 	}
 
-	Func QuestLike
+	Func typebased_quest
 	{
 		SetTextColor cQuestGreen;
 		PlayEffect Green;
@@ -52,58 +52,57 @@ Style Common
 		PlayAlertSound asUnique;
 	}
 
-	Func Artifact
+	Func exotics_artifacthigh
 	{
 		SetFontSize font.t2;
 		SetTextColor cArtifact; SetBorderColor cArtifact; SetBackgroundColor cArtifactGlow;
 		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 0 Orange Pentagon;
 	}
 
-	Func ArtifactLow
+	Func exotics_artifact
 	{
 		SetFontSize font.t3;
 		SetTextColor cArtifact; SetBorderColor cArtifact; SetBackgroundColor cBlack;
 		PlayAlertSound asUnique; PlayEffect Orange; MinimapIcon 1 Orange Pentagon;
 	}
 
-	Func Useless
+	Func utility_unremarkabledrop
 	{
 		SetFontSize font.t8;
 		SetBackgroundColor cAccentMinimal;
 	}
 
-	Func FlaskCharm1
+	Func gear_vendor
+	{
+		SetBorderColor 0 0 0 0;
+		SetBackgroundColor cAccentVeryLow;
+		SetFontSize 30;
+	}	
+
+	Func typebased_flaskcharms
 	{
 		SetBackgroundColor cAccentFlaskCharmGlow;
 		SetBorderColor cGrey;
 		SetFontSize font.t3;
 	}
 
-	Func FlaskCharm2
+	Func typebased_flaskcharms1high
 	{
 		SetBackgroundColor cAccentFlaskCharmGlow;
-		SetBorderColor cGrey;
-		SetFontSize font.t4;
+		SetBorderColor cRare82;
+		SetFontSize font.t3;
 	}
 
 #------------------------------------
 # Utility
 #------------------------------------
 
-	Func Vanilla()
+	Func gear_unstyled
 	{
 		Empty();
-	}	
-
-	Func RareDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
-		SetTextColor 255 255 119;
 	}
 
-	Func MagicDecoratorRemover ()
+	Func utility_decoremovermagic
 	{
 		SetFontSize 32;
 		SetTextColor 136 136 255;
@@ -112,7 +111,7 @@ Style Common
 		RemoveEffects();
 	}
 
-	Func NormalDecoratorRemover ()
+	Func utility_decoremovernormal
 	{
 		SetFontSize 32;
 		SetTextColor 200 200 200;
@@ -121,14 +120,14 @@ Style Common
 		RemoveEffects();
 	}
 
-	Func Shrink()
+	Func utility_minimize
 	{
 		SetFontSize 18;
 		SetBackgroundColor 0 0 0 0;
 		RemoveEffects();
 	}
 
-	Func Unknown()
+	Func utility_unknownitem
 	{
 		SetFontSize font.max;
 		SetTextColor 0 255 255 255; SetBorderColor 0 255 255 255; SetBackgroundColor 255 0 255 255;
@@ -139,28 +138,28 @@ Style Common
 # EXOTICS
 #------------------------------------
 
-	Func Exotic1h ()
-	{
-		SetFontSize font.t1;
-		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
-		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
-	}
-
-	Func Exotic1 ()
+	Func exotics_btier
 	{
 		SetFontSize font.t2;
 		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticGlow; 
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
 	}
 
-	Func Exotic2 ()
+	Func exotics_identifiedmod
+	{
+		SetFontSize font.t2;
+		SetTextColor cExotic; SetBorderColor cExotic; SetBackgroundColor cExoticIdMod; 
+		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 0 Blue Diamond;
+	}
+
+	Func exotics_ctier
 	{
 		SetFontSize font.t3;
 		SetTextColor cExotic;
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue Diamond;
 	}
 
-	Func Exotic3 ()
+	Func exotics_dtier
 	{
 		SetFontSize font.t3;
 		SetTextColor cExotic;
@@ -168,7 +167,7 @@ Style Common
 	}
 
 	
-	Func LowExoticMM ()
+	Func exotics_etier
 	{
 		PlayAlertSound asUnique; PlayEffect Blue Temp; MinimapIcon 1 White Diamond;
 	}
@@ -178,7 +177,7 @@ Style Common
 #------------------------------------
 
 	## Greater jeweller
-	Func CurrTierA
+	Func currency_a
 	{
 		SetFontSize font.t1;
 		BrickWhite(cCurrTierA);
@@ -186,7 +185,7 @@ Style Common
 	}
 
 	## Above Exalted Tier
-	Func CurrTierB
+	Func currency_b
 	{
 		SetFontSize font.t2;
 		BrickBlack(cCurrTierB);
@@ -194,7 +193,7 @@ Style Common
 	}
 
 	## Exalted
-	Func CurrTierC
+	Func currency_c
 	{
 		SetFontSize font.t2;
 		BrickBlack(cCurrTierC);
@@ -202,7 +201,7 @@ Style Common
 	}
 
 	## Below Exalted Tier ("Alchemy")
-	Func CurrTierD
+	Func currency_d
 	{
 		SetFontSize font.t3;
 		BrickBlack(cCurrTierD);
@@ -210,7 +209,7 @@ Style Common
 	}
 
 	## BelowBelow Exalted Tier ("Chrom")
-	Func CurrTierE
+	Func currency_e
 	{
 		SetFontSize font.t3;
 		Bordered(cCurrTierE);
@@ -222,7 +221,7 @@ Style Common
 #------------------------------------
 
 	# Artifact like
-	Func SupplyArtifact
+	Func currency_specialartifact
 	{ 
 		BorderedGlow(cSupplies1, cSuppliesGlow);
 		SetFontSize font.t3;
@@ -231,7 +230,7 @@ Style Common
 		PlayAlertSound asCurr;
 	}
 
-	Func Supply1
+	Func currency_supply1
 	{
 		BorderedGlow(cSupplies1, cSuppliesGlow);
 		SetFontSize font.t3;
@@ -239,28 +238,28 @@ Style Common
 	}
 
 	# Transmutes, Augments, Runes
-	Func Supply2
+	Func currency_supply2
 	{
 		Bordered(cSupplies2);
 		SetFontSize font.t4;
 	}
 
 	# Transmutes, Augments, Runes
-	Func Supply2lvl
+	Func currency_supplylvl2
 	{
 		Bordered(cSupplies2);
 		SetFontSize font.t4;
 	}
 
 	# Wisdom scrolls and transmute splinters
-	Func Supply3
+	Func currency_supply3
 	{
 		Bordered(cSupplies3);
 		SetFontSize font.t4;
 	}
 
 	# Wisdom scrolls and transmute splinters
-	Func SupplyPoor
+	Func currency_supply4
 	{
 		SetTextColor cSupplies3;
 		SetFontSize font.t5;
@@ -270,28 +269,28 @@ Style Common
 # FRAGMENT
 #------------------------------------
 
-	Func FragA
+	Func fragments_a
 	{
 		SetFontSize font.t1;
 		BrickWhite(cFragTierA);
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mFragment;
 	}
 
-	Func FragB
+	Func fragments_b
 	{
 		SetFontSize font.t2;
 		BrickBlack(cFragTierB);
 		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Yellow mFragment;
 	}
 
-	Func FragC
+	Func fragments_c
 	{
 		SetFontSize font.t2;
 		BrickBlack(cFragTierC);
 		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 1 White mFragment;
 	}
 
-	Func FragD
+	Func fragments_d
 	{
 		SetFontSize font.t3;
 		Bordered(cFragTierD);
@@ -299,7 +298,15 @@ Style Common
 		PlayAlertSound asCurr; PlayEffect Purple Temp; MinimapIcon 2 White mFragment;
 	}
 
-	Func FragE
+	Func fragments_fragdmuted
+	{
+		SetFontSize font.t3;
+		Bordered(cFragTierD);
+		SetBackgroundColor 50 0 75
+		PlayAlertSound NONE; PlayEffect Purple Temp; MinimapIcon 2 White mFragment;
+	}
+
+	Func fragments_e
 	{
 		SetFontSize font.t4;
 		Text(cFragTierE);
@@ -310,28 +317,28 @@ Style Common
 # Splinter
 #------------------------------------
 
-	Func Splinter1
+	Func fragments_splinter1
 	{
 		SetFontSize font.t1;
 		BrickWhite(cFragTierA);
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mSplinter;
 	}
 
-	Func Splinter2
+	Func fragments_splinter2
 	{
 		SetFontSize font.t1;
 		BrickBlack(cFragTierB);
 		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 0 Red mSplinter;
 	}
 
-	Func Splinter3
+	Func fragments_splinter3
 	{
 		SetFontSize font.t2;
 		BrickBlack(cFragTierC);
 		PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Orange mSplinter;
 	}
 
-	Func Splinter4
+	Func fragments_splinter4
 	{
 		SetFontSize font.t3;
 		Bordered(cFragTierD);
@@ -339,7 +346,7 @@ Style Common
 		PlayAlertSound asCurrLow; PlayEffect Purple Temp; MinimapIcon 1 Yellow mSplinter;
 	}
 
-	Func Splinter5
+	Func fragments_splinter5
 	{
 		SetFontSize font.t4;
 		Bordered(cFragTierD);
@@ -350,44 +357,54 @@ Style Common
 # UNIQUE
 #------------------------------------	
 
-	Func UniqueA
+	Func uniques_a
 	{
 		SetFontSize font.t1;
 		BrickWhite(cUnique);
 		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Yellow mUnique;
 	}
 
-	Func UniqueX
+	Func uniques_x
 	{
 		SetFontSize font.t2;
 		BrickBlack(cUnique);
 		PlayAlertSound asUnique; PlayEffect Blue; MinimapIcon 1 Blue mUnique;
 	}
 
-	Func UniqueB
+	Func uniques_exceptional
+	{
+		uniques_x();
+		SetBorderColor cExotic;
+		PlayEffect Purple;
+		MinimapIcon 0 Purple mUnique;
+	}
+
+	Func uniques_b
 	{
 		SetFontSize font.t2;
 		BorderedGlow(cUnique, cUniqueGlow);
 		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 1 Brown mUnique;
 	}
 
-	Func UniqueC
+	Func uniques_xbossdrop
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cUnique, cUniqueGlow);
+		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 2 Blue mUnique;
+	}
+
+	Func uniques_c
 	{
 		SetFontSize font.t3;
 		Text(cUnique);
 		PlayAlertSound asUnique; PlayEffect Brown; MinimapIcon 2 Brown mUnique;
 	}
 
-	Func ExoticMapIcon
-	{
-		MinimapIcon 2 Blue mUnique;
-	}
-
 #------------------------------------
 # Gems
 #------------------------------------
 
-	Func Gems1
+	Func typebased_gems1
 	{
 		BorderedGlow(cGems, cGemsGlow);
 		SetFontSize font.t2;
@@ -396,7 +413,7 @@ Style Common
 		PlayEffect Cyan;
 	}
 
-	Func Gems2
+	Func typebased_gems2
 	{
 		Bordered(cGems);
 		SetFontSize font.t2;
@@ -405,7 +422,7 @@ Style Common
 		PlayEffect Cyan;
 	}
 
-	Func Gems3
+	Func typebased_gems3
 	{
 		Bordered(cGems);
 		SetFontSize font.t5;
@@ -416,38 +433,38 @@ Style Common
 # Waystones
 #------------------------------------
 
-	Func DecoMap1()
+	Func maps_deco1
 	{
 		SetBorderColor 0 0 0 255;
 		SetFontSize font.t2;
 	}
 
-	Func DecoMap2()
+	Func maps_deco2
 	{
 		SetBorderColor 0 0 0 255;
 		SetFontSize font.t3;
 	}
 
-	Func DecoMap3()
+	Func maps_deco3
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t3;
 	}
 
-	Func DecoMap4()
+	Func maps_deco4
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t3;
 	}
 
-	Func DecoMapOverleveled()
+	Func maps_decooverlevel
 	{
 		SetBorderColor 200 200 200 255;
 		SetFontSize font.t4;
 		RemoveEffects();
 	}
 
-	Func MapSpecialHigh()
+	Func maps_specialb
 	{
 		SetTextColor cMap1highAccent; SetBorderColor cMap1highAccent; SetBackgroundColor cMap1high; 
 		PlayEffect Red; 
@@ -455,7 +472,7 @@ Style Common
 		PlayAlertSound asHighMaps;
 	}
 	
-	Func MapSpecial()
+	Func maps_specialc
 	{
 		SetTextColor cMap1highAccent; SetBorderColor cMap1highAccent; SetBackgroundColor cMap2; 
 		PlayEffect Yellow; 
@@ -463,7 +480,7 @@ Style Common
 		PlayAlertSound asMaps;
 	}
 
-	Func Map1()
+	Func maps_regularhighest
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap1; 
 		PlayEffect Yellow; 
@@ -471,7 +488,7 @@ Style Common
 		PlayAlertSound asHighMaps; 
 	}
 
-	Func Map2()
+	Func maps_regularhigh
 	{
 		SetTextColor cBlack; SetBorderColor NONE; SetBackgroundColor cMap2; 
 		PlayEffect Yellow Temp; 
@@ -480,7 +497,7 @@ Style Common
 
 	}
 
-	Func Map3()
+	Func maps_regularmid
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
 		PlayEffect White Temp; 
@@ -488,7 +505,7 @@ Style Common
 		PlayAlertSound asMaps; 
 	}
 
-	Func Map4()
+	Func maps_regularlow
 	{
 		SetBorderColor NONE; SetBackgroundColor cBlack; SetTextColor cWhite;
 		PlayEffect White Temp; 
@@ -496,19 +513,21 @@ Style Common
 		PlayAlertSound asMaps; 
 	}
 
-	Func MapVendor()
-	{
-		PlayEffect Yellow Temp; 
-		MinimapIcon 2 White mMaps;
-		SetBorderColor cRareTrinkets; SetBackgroundColor cBlack; SetTextColor cRareTrinkets;
-		SetFontSize font.t4;
-	}
-
 #------------------------------------
 # Value Trinkets
 #------------------------------------
 
-	Func ValueTrinketRare
+	Func gear_tieredjewellery
+	{
+		SetFontSize font.t2;
+		BorderedGlow(cRareTrinkets, cRareTrinketGlow);
+		SetTextColor 255 255 0 255;
+		PlayEffect Yellow;
+		MinimapIcon 1 Yellow mTrinkets;
+		PlayAlertSound asCurr;
+	}
+
+	Func gear_jewelrare
 	{
 		SetFontSize font.t2;
 		BorderedGlow(cRareTrinkets, cRareTrinketGlow);
@@ -517,7 +536,7 @@ Style Common
 		PlayAlertSound asCurr;
 	}
 
-	Func ValueTrinketMagic
+	Func gear_jewelmagic
 	{
 		SetFontSize font.t2;
 		BorderedGlow(cMagicTrinkets, cMagicTrinketGlow);
@@ -526,7 +545,7 @@ Style Common
 		PlayAlertSound asCurr;
 	}
 
-	Func ValueTrinketMagicLow
+	Func gear_jewelmagiclow
 	{
 		SetFontSize font.t4;
 		Bordered(cMagicTrinkets);
@@ -534,7 +553,7 @@ Style Common
 		MinimapIcon 2 Blue mTrinkets;
 	}
 
-	Func rGearTrinket1
+	Func gear_jewellery1
 	{
 		SetFontSize font.t2;
 		SetBackgroundColor cRareTrinketGlow;
@@ -542,7 +561,7 @@ Style Common
 		MinimapIcon 1 White mTrinkets;
 	}
 
-	Func rGearTrinket2
+	Func gear_jewellery2
 	{
 		SetFontSize font.t3;
 		SetBackgroundColor cBlack;
@@ -550,7 +569,7 @@ Style Common
 		MinimapIcon 1 White mTrinkets;
 	}
 
-	Func rGearTrinket3
+	Func gear_jewellery3
 	{
 		SetFontSize font.t4;
 		SetBackgroundColor cBlack;
@@ -560,21 +579,21 @@ Style Common
 # Rare Gear
 #------------------------------------
 
-	Func rRares1
+	Func gear_highlightedsize
 	{
 		SetFontSize font.t3;
 		SetBackgroundColor cBlack;
 	}
 
-	Func rRares2
+	Func gear_weakrare1
 	{
-		SetFontSize font.t4;
+		SetFontSize font.t5;
 		SetBackgroundColor cAccentRare2;
 	}
 
-	Func rRares3
+	Func gear_weakrare2
 	{
-		SetFontSize font.t5;
+		SetFontSize font.t6;
 		SetBackgroundColor cAccentRare3;
 	}
 
@@ -582,58 +601,58 @@ Style Common
 # Normal Bases (Crafting)
 #------------------------------------
 
-	Func markTopLevelBaseStrong
+	Func itemproperty_toplevelbased2
 	{
 		SetBorderColor cRare82;
 	}
 
-	Func markTopLevelBase
+	Func itemproperty_toplevelbased1
 	{
 		SetBorderColor cNormal82;
 	}
 
-	Func regularBase
+	Func itemproperty_regulargear
 	{
 		SetBackgroundColor cAccentUnremarkable;
 		SetBorderColor cBlack;
 	}
 
-	Func trinketBase
+	Func markup_trinketbase
 	{
 		SetBackgroundColor cMagicTrinketGlow;
 	}
 
-	Func mute
+	Func unknown_mute
 	{
 		PlayAlertSound NONE;
 	}
 
-	Func s1
+	Func utility_highlight1
 	{
 		SetFontSize font.t1;
 	}
 
-	Func s2
+	Func utility_highlight2
 	{
 		SetFontSize font.t2;
 	}
 
-	Func s3
+	Func utility_highlight3
 	{
 		SetFontSize font.t3;
 	}
 
-	Func s4
+	Func utility_highlight4
 	{
 		SetFontSize font.t4;
 	}
 
-	Func s5
+	Func utility_highlight5
 	{
 		SetFontSize font.t5;
 	}
 
-	Func s6
+	Func utility_highlight6
 	{
 		SetFontSize font.t6;
 	}
@@ -642,56 +661,57 @@ Style Common
 # Highlights (Mark)
 #------------------------------------
 
-	Func corrupt
+	Func exotics_corrupt
 	{
 		SetBorderColor cMarkCorrupt;
 	}
 
-	Func corruptHigh
+	Func exotics_corrupthigh
 	{
 		SetBorderColor cMarkCorruptHigh;
 	}
 
-	Func MarkBlack
+
+	Func utility_basicraredecorator
 	{
 		SetBorderColor cBlack;
 	}
 
-	Func Mark82
+	Func itemproperty_level82
 	{
 		SetTextColor cRare82;
 	}
 
-	Func MarkTrinket
+	Func gear_decojewellery
 	{
 		SetBorderColor cRareTrinkets;
 	}
 
-	Func MarkSalvage1
+	Func itemproperty_salvage1
 	{
 		SetBorderColor cMarkSalvagable1;
 		SetFontSize font.t4;
 	}
 
-	Func MarkSalvage2
+	Func itemproperty_salvage2
 	{
 		SetBorderColor cMarkSalvagable2;
 		SetFontSize font.t5;
 	}
 
-	Func MarkSalvage1lvl
+	Func itemproperty_salvagelvl1
 	{
 		SetBorderColor cMarkSalvagable1;
 		SetFontSize font.t3;
 	}
 
-	Func MarkSalvage2lvl
+	Func itemproperty_salvagelvl2
 	{
 		SetBorderColor cMarkSalvagable2;
 		SetFontSize font.t3;
 	}
 
-	Func MarkChanceA
+	Func itemproperty_achancing
 	{
 		SetBorderColor cMarkChancableHigh;
 		SetTextColor cMarkChancableHigh;
@@ -702,7 +722,7 @@ Style Common
 		PlayAlertSound asA;
 	}
 
-	Func MarkChance
+	Func itemproperty_bchancing
 	{
 		SetBorderColor cMarkChancable;
 		SetFontSize font.t3;
@@ -711,21 +731,33 @@ Style Common
 		PlayAlertSound asUnique;
 	}
 
-	Func MarkMapUp()
+	Func maps_decotierupgrade
 	{
 		SetBorderColor cMarkMapUpgrade;
 	}
 
-	Func MarkExotic()
+	Func gear_highlightdrop2
 	{
- 		SetBorderColor cExotic;
+		markup_trinketbase();
+		utility_highlight2();
+	}
+
+	Func gear_highlightdrop3
+	{
+		markup_trinketbase();
+		utility_highlight3();
+	}
+
+	Func gear_highlightdrop4
+	{
+		markup_trinketbase();
 	}
 
 #------------------------------------
 # GOLD
 #------------------------------------
 
-	Func goldHuge
+	Func gold_pilehuge
 	{
 		MinimapIcon 1 Yellow Cross;
 		SetTextColor cWhite;
@@ -735,7 +767,7 @@ Style Common
 		SetFontSize font.t3;
 	}
 
-	Func goldLarge
+	Func gold_pilelarge
 	{
 		MinimapIcon 1 White Cross;
 		SetTextColor cWhite;
@@ -743,14 +775,14 @@ Style Common
 		PlayEffect Orange Temp;
 	}
 
-	Func goldMedium
+	Func gold_pilemedium
 	{
 		SetTextColor cWhite;
 		SetBorderColor cWhite;
 		PlayEffect Orange Temp;
 	}
 
-	Func goldSmall
+	Func gold_pilesmall
 	{
 		SetTextColor cGold;
 		SetBorderColor cBlack;

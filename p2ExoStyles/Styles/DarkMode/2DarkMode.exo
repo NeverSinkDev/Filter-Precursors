@@ -1,28 +1,34 @@
-Expand FragA
+Expand fragments_a
 {
     BrickBlack(cFragTierA);
 }
 
-Expand FragB
+Expand fragments_b
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierB);
 }
 
-Expand FragC
+Expand fragments_c
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierC);
 }
 
 
-Expand FragD
+Expand fragments_d
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierD);
 }
 
-Expand FragE
+Expand fragments_fragdmuted
+{
+    SetBackgroundColor NONE;
+    Bordered(cFragTierD);
+}
+
+Expand fragments_e
 {
     SetBackgroundColor NONE;
     Text(cFragTierE);
@@ -32,32 +38,32 @@ Expand FragE
 # Splinter
 #------------------------------------
 
-Expand Splinter1
+Expand fragments_splinter1
 {
     BrickBlack(cFragTierA);
 }
 
-Expand Splinter2
+Expand fragments_splinter2
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierB);
 }
 
-Expand Splinter3
+Expand fragments_splinter3
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierC);
 }
 
 
-Expand Splinter4
+Expand fragments_splinter4
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierD);
 }
 
 
-Expand Splinter5
+Expand fragments_splinter5
 {
     SetBackgroundColor NONE;
     Bordered(cFragTierD);
@@ -67,36 +73,36 @@ Expand Splinter5
 # CURRENCY
 #------------------------------------
 
-Expand CurrTierA
+Expand currency_a
 {
     BrickBlack(cCurrTierA);
 }
 
-Expand CurrTierB
+Expand currency_b
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierB);
 }
 
-Expand CurrTierC
+Expand currency_c
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierC);
 }
 
-Expand CurrTierD
+Expand currency_d
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierD);
 }
 
-Expand CurrTierE
+Expand currency_e
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierE);
 }
 
-Expand SupplyArtifact
+Expand currency_specialartifact
 {
     SetBackgroundColor NONE;
     Bordered(cCurrTierD);
@@ -106,17 +112,23 @@ Expand SupplyArtifact
 # CURRENCY
 #------------------------------------
 
-Expand UniqueA
+Expand uniques_a
 {
     BrickBlack(cUnique);
 }
 
-Expand UniqueX
+Expand uniques_x
 {
     BorderedGlow(cUnique, cUniqueGlow);
 }
 
-Expand UniqueB
+Expand uniques_b
+{
+    SetBackgroundColor NONE;
+    Bordered(cUnique);
+}
+
+Expand uniques_xbossdrop
 {
     SetBackgroundColor NONE;
     Bordered(cUnique);
@@ -126,51 +138,46 @@ Expand UniqueB
 # Maps
 #------------------------------------
 
-Expand DecoMap1
+Expand maps_deco1
 {
     SetBorderColor cWhite;
 }
 
-Expand DecoMap2
+Expand maps_deco2
 {
     SetBorderColor cWhite;
 }
 
-Expand MapSpecialHigh
+Expand maps_specialb
 {
     SetBackgroundColor 120 50 120;
     Bordered(cWhite);
 }
 
-Expand MapSpecial
+Expand maps_specialc
 {
     SetBackgroundColor NONE;
     Bordered(cWhite);
 }
 
-Expand Map1
+Expand maps_regularhighest
 {
     SetBackgroundColor 50 50 50;
     Bordered(cWhite);
 }
 
-Expand Map2
+Expand maps_regularhigh
 {
     SetBackgroundColor NONE;
     Bordered(cWhite);
 }
 
-Expand Map3
+Expand maps_regularmid
 {
     SetBackgroundColor NONE;
 }
 
-Expand Map4
-{
-    SetBackgroundColor NONE;
-}
-
-Expand MapVendor
+Expand maps_regularlow
 {
     SetBackgroundColor NONE;
 }
@@ -179,18 +186,18 @@ Expand MapVendor
 # Misc
 #------------------------------------
 
-Expand Exotic1
+Expand exotics_btier
 {
     SetBackgroundColor cBlack;
 }
 
-Expand FlaskCharm1
+Expand typebased_flaskcharms
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
 }
 
-Expand FlaskCharm2
+Expand typebased_flaskcharms
 {
     SetBackgroundColor NONE;
     SetBorderColor cAccentFlaskCharmGlow;
