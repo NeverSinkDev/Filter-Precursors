@@ -103,7 +103,7 @@ Section IdMods : IdMods(), Clean(), Auto("ExoticMods"), Rarity <= Rare, !exotics
 #===============================================================================================================
 # [[0200]] Rare Item Decorators
 #===============================================================================================================
-#!! Waypoint c3.rare.decorator.all : "Rare Endgame Items - Decorators"
+#!! Waypoint c3.rare.decorator.all : "Normal-Rare items - including visual decorators"
 
 Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
 {
@@ -127,7 +127,7 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
 #===============================================================================================================
 # [[0200]] High Unidentified Mod Tier
 #===============================================================================================================
-#!! Waypoint c3.exotic.state.hightier : "Exotic State - High Modtier"
+#!! Waypoint c3.exotic.state.hightier : "Normal-Rare items with or without Mod Tier"
 
 ##------------------------------------
 ## [1234] Unidentified Mod Tier: Rare
@@ -265,7 +265,7 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 	# [1234] Salvagables
 	#------------------------------------
-	#!! Waypoint c4.gear.salvagable : "Salvagable bases (Endgame)"
+	#!! Waypoint c4.gear.salvagable : "Normal-Rare items, excluding High Tier & Chancing"
 
 	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
 	{
@@ -326,7 +326,7 @@ Section EndgameCraftingBases : Clean()
 
 	Section ExtraCraftingRules : Auto("Endgame->normalcraft->extra"), Rarity <= Magic
 	{
-		Show Wands { !itemproperty_toplevelbased1; %D5; ItemLevel >= 81; BaseType == "Siphoning Wand" "Attuned Wand" }
+		Show Wands { !itemproperty_toplevelbased1; %D3; ItemLevel >= 81; BaseType == derived.general.unbiased.wands.t1; }
 	}
 
 	#------------------------------------
@@ -368,12 +368,12 @@ Section EndgameCraftingBases : Clean()
 		Show jT1idealLevel { %D6; !gear_highlightdrop2; TopMods(); BaseType == derived.rares.jwl.all.t1; }
 		Show jT2idealLevel { %D5; !gear_highlightdrop2; TopMods(); BaseType == derived.rares.jwl.all.t2; }
 		Show jT3idealLevel { %D3; !utility_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t3; }
-		Show jT4idealLevel { %D3; !utility_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t4; }
+		Show jT4idealLevel { %D2; !utility_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t4; }
 
 		Show jT1 { %D5; !gear_highlightdrop3;  BaseType == derived.rares.jwl.all.t1; }
-		Show jT2 { %D5; !gear_highlightdrop3;  BaseType == derived.rares.jwl.all.t2; }
+		Show jT2 { %D4; !gear_highlightdrop3;  BaseType == derived.rares.jwl.all.t2; }
 		Show jT3 { %D3; !utility_highlight4; BaseType == derived.rares.jwl.all.t3; }
-		Show jT4 { %D3; !utility_highlight4; BaseType == derived.rares.jwl.all.t4; }
+		Show jT4 { %D2; !utility_highlight4; BaseType == derived.rares.jwl.all.t4; }
 	}
 
 	#------------------------------------
@@ -422,7 +422,7 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 	{
 		Show T1 { %D6; !gear_jewellery1; BaseType == derived.rares.jwl.all.t1; }
 		Show T2 { %D6; !gear_jewellery1; BaseType == derived.rares.jwl.all.t2; }
-		Show T3 { %D4; !gear_jewellery2; BaseType == derived.rares.jwl.all.t3; }
+		Show T3 { %D5; !gear_jewellery2; BaseType == derived.rares.jwl.all.t3; }
 		Show T4 { %D4; !gear_jewellery2; BaseType == derived.rares.jwl.all.t4; }
 	}
 
@@ -455,7 +455,7 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 # [[0200]] Endgame - Rare - Gear
 #===============================================================================================================
 
-#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (75ish+ gear)"
+#!! Waypoint c6.rare.t1.all : "Rare Endgame Items - T1 (75ish+ gear), no tier"
 
 	Section EndgameRareGear : Auto("rr")
 	{
@@ -463,26 +463,26 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 		Show T1_top 	{ %D5; !gear_highlightedsize; BaseType == derived.general.unbiased.equip.t1; TopMods(); }
 		Show T1_other  	{ %D4; !gear_highlightedsize; BaseType == derived.general.unbiased.equip.t1; ItemLevel <= 81;  }
 
-#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (70ish+ gear)"
+#!! Waypoint c6.rare.t2.all : "Rare Endgame Items - T2 (70ish+ gear), no tier"
 		
 		Show T2_top 	{ %D4; !gear_highlightedsize; BaseType == derived.general.unbiased.equip.t2; TopMods(); }
 		Show T2_a1  	{ %D3; !gear_weakrare1; BaseType == derived.general.unbiased.equip.t2; ItemLevel >= 75; ItemLevel <= 81; }
 		Show T2_other  	{ %D4; !gear_highlightedsize; BaseType == derived.general.unbiased.equip.t2; ItemLevel <= 74;  }
 
-#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (65ish+ gear)"
+#!! Waypoint c6.rare.t3.all : "Rare Endgame Items - T3 (65ish+ gear), no tier"
 
 		Show T3_top 	{ %D3; !gear_weakrare1; BaseType == derived.general.unbiased.equip.t3; TopMods(); }
 		Show T3_a1 		{ %D2; !gear_weakrare2; BaseType == derived.general.unbiased.equip.t3; ItemLevel >= 75; ItemLevel <= 81; }
 		Show T3_a2 		{ %D3; !gear_weakrare1; BaseType == derived.general.unbiased.equip.t3; ItemLevel >= 70; ItemLevel <= 74; }
 		Show T3_other 	{ %D4; !gear_highlightedsize; BaseType == derived.general.unbiased.equip.t3; ItemLevel <= 69;  }
 
-#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (55ish+ gear)"
+#!! Waypoint c6.rare.t4.all : "Rare Endgame Items - T4 (55ish+ gear), no tier"
 
 		Show T4_a1 		{ %D1; !gear_weakrare2; BaseType == derived.general.unbiased.equip.t4;  ItemLevel >= 75; }
 		Show T4_a2 		{ %D2; !gear_weakrare1; BaseType == derived.general.unbiased.equip.t4;  ItemLevel >= 70; ItemLevel <= 74; }
 		Show T4_other 	{ %D3; !gear_weakrare1; BaseType == derived.general.unbiased.equip.t4;  ItemLevel <= 69; }
 
-#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (lower)"
+#!! Waypoint c6.rare.t5.all : "Rare Endgame Items - T5 (lower), no tier"
 
 		Show T5_a1 		{ %D1; !gear_weakrare2; Class == classes_nonJwlryEquip; ItemLevel >= 75; }
 		Show T5_a2 		{ %D2; !gear_weakrare2; Class == classes_nonJwlryEquip; ItemLevel >= 70; ItemLevel <= 74; }
@@ -603,15 +603,15 @@ Section UncutGems : Auto("gems->uncut")
 	Show Skill19  { %H5; !typebased_gems1; BaseType "Uncut Skill Gem"; GemLevel = 19; }
 
 	# Spirit Gem Progression
-	Show SpiritGemProgression18 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 18; AreaLevel <= 78; }
-	Show SpiritGemProgression17 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 17; AreaLevel <= 76; }
+	Show SpiritGemProgression18 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 18; AreaLevel <= 79; }
+	Show SpiritGemProgression17 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 17; AreaLevel <= 77; }
 	Show SpiritGemProgression16 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 16; AreaLevel <= 73; }
 	Show SpiritGemProgression15 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 15; AreaLevel <= 69; }
 	Show SpiritGemProgression14 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 14; AreaLevel <= 65; }
 
 	# Skill Gem Progression
-	Show SkillGemProgression18 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 18; AreaLevel <= 78; }
-	Show SkillGemProgression17 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 17; AreaLevel <= 76; }
+	Show SkillGemProgression18 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 18; AreaLevel <= 79; }
+	Show SkillGemProgression17 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 17; AreaLevel <= 77; }
 	Show SkillGemProgression16 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 16; AreaLevel <= 73; }
 	Show SkillGemProgression15 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 15; AreaLevel <= 69; }
 	Show SkillGemProgression14 { %H3; !typebased_gems2; BaseType "Uncut Skill Gem"; GemLevel = 14; AreaLevel <= 65; }
@@ -620,6 +620,8 @@ Section UncutGems : Auto("gems->uncut")
 	Show SpiritCampaign  { %H5; !typebased_gems2; BaseType "Uncut Spirit Gem"; LVL(); }
 	Show SkillCampaign   { %H5; !typebased_gems2; BaseType "Uncut Skill Gem"; LVL(); }
 	Show SupportCampaign { %H5; !typebased_gems2; BaseType "Uncut Support Gem"; LVL(); }
+
+	Show SupportEarlyMaps { %H4; !typebased_gems2; BaseType "Uncut Support Gem"; AreaLevel <= 78; }
 
 	# Lower highlight for lower level gems in maps
 	Show OtherSpiritEg  { %H2; !typebased_gems3; BaseType "Uncut Spirit Gem"; EG(); }
