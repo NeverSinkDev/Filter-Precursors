@@ -125,6 +125,22 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
 }
 
 #===============================================================================================================
+# [[0200]] Normal, Magic, Rare Hiding Rules
+#===============================================================================================================
+#!! Waypoint c3.gear.any.hiding : "Normal, Magic, Rare Hiding Rules"
+
+Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG()
+{
+	HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; UT <= 2; }
+	HideD ArHider { !utility_minimize; AR(); Class == classes_armor; UT <= 2; }
+	HideD EvHider { !utility_minimize; EV(); Class == classes_armor; UT <= 2; }
+	HideD EsHider { !utility_minimize; ES(); Class == classes_armor; UT <= 2; }
+	HideD ArEvHider { !utility_minimize; AREV(); Class == classes_armor;  UT <= 2; }
+	HideD ArEsHider { !utility_minimize; ARES(); Class == classes_armor;  UT <= 2; }
+	HideD EvEsHider { !utility_minimize; EVES(); Class == classes_armor;  UT <= 2; }
+}
+
+#===============================================================================================================
 # [[0200]] High Unidentified Mod Tier
 #===============================================================================================================
 #!! Waypoint c3.exotic.state.hightier : "Normal-Rare items with or without Mod Tier"
@@ -285,21 +301,6 @@ Section EndgameCraftingBases : Clean()
 		Show SocketsLarge1 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
 		Show SocketsLarge2 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
 		Show SocketsSmall 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; }
-	}
-
-	#------------------------------------
-	# [1234] Custom Hiders
-	#------------------------------------
-
-	Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG()
-	{
-		HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; UT <= 2; }
-		HideD ArHider { !utility_minimize; AR(); Class == classes_armor; UT <= 2; }
-		HideD EvHider { !utility_minimize; EV(); Class == classes_armor; UT <= 2; }
-		HideD EsHider { !utility_minimize; ES(); Class == classes_armor; UT <= 2; }
-		HideD ArEvHider { !utility_minimize; AREV(); Class == classes_armor;  UT <= 2; }
-		HideD ArEsHider { !utility_minimize; ARES(); Class == classes_armor;  UT <= 2; }
-		HideD EvEsHider { !utility_minimize; EVES(); Class == classes_armor;  UT <= 2; }
 	}
 
 	#------------------------------------
