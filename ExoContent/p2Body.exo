@@ -54,7 +54,7 @@ Section QuestItemException : Auto("QuestlikeException"), !typebased_quest
 {
 	# Sanctum keys
 	Show QuestLike  { BaseType == questLikeDrops; }
-	Show QuestItems { Class == "Quest Items"; }
+	Show QuestItems { Class == "Quest Items" "Instance Local Items"; }
 }
 
 Section Artifacts : Auto("Artifact"), Rarity <= Rare, !exotics_artifacthigh
@@ -83,6 +83,19 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 	Show oversockt1s2	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t1; }
 	Show oversockt2s2	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t2; }
 }
+
+#------------------------------------
+# [1234] Crafting and Chancing Bases
+#------------------------------------
+
+#!! Waypoint c3.gear.chancing : "Chancing bases"
+Section Chancing : Clean(), Rarity Normal, Auto("Chancing")
+{
+	Show chanceS   { !Apex_sTier; BaseType == bases.chancing.s; }
+	Show chanceA   { !itemproperty_achancing;  BaseType == bases.chancing.a; }
+	Show chanceAny { %D2; !itemproperty_bchancing;   BaseType == bases.chancing.any; }
+}
+
 
 #===============================================================================================================
 # [[0200]] IDENTIFIED MODS: RECOMBINATOR MODS
@@ -127,17 +140,28 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
 #===============================================================================================================
 # [[0200]] Normal, Magic, Rare Hiding Rules
 #===============================================================================================================
-#!! Waypoint c3.gear.any.hiding : "Normal, Magic, Rare Hiding Rules"
-
-Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG()
+#!! Waypoint c3.gear.any.hiding : "Normal, Magic, Rare Hiding Rules, Except chancing"
+Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG(), Quality 0, Sockets 0, UT <= 2
 {
-	HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; UT <= 2; }
-	HideD ArHider { !utility_minimize; AR(); Class == classes_armor; UT <= 2; }
-	HideD EvHider { !utility_minimize; EV(); Class == classes_armor; UT <= 2; }
-	HideD EsHider { !utility_minimize; ES(); Class == classes_armor; UT <= 2; }
-	HideD ArEvHider { !utility_minimize; AREV(); Class == classes_armor;  UT <= 2; }
-	HideD ArEsHider { !utility_minimize; ARES(); Class == classes_armor;  UT <= 2; }
-	HideD EvEsHider { !utility_minimize; EVES(); Class == classes_armor;  UT <= 2; }
+	HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; }
+	HideD ArHider { !utility_minimize; AR(); Class == classes_armor; }
+	HideD EvHider { !utility_minimize; EV(); Class == classes_armor; }
+	HideD EsHider { !utility_minimize; ES(); Class == classes_armor; }
+	HideD ArEvHider { !utility_minimize; AREV(); Class == classes_armor; }
+	HideD ArEsHider { !utility_minimize; ARES(); Class == classes_armor; }
+	HideD EvEsHider { !utility_minimize; EVES(); Class == classes_armor; }
+}
+
+#!! Waypoint c3.gear.rare.hiding : "Rare Hiding Rules"
+Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare"), EG(), Quality 0, Sockets 0, UT <= 2
+{
+	HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; }
+	HideD ArHider { !utility_minimize; AR(); Class == classes_armor; }
+	HideD EvHider { !utility_minimize; EV(); Class == classes_armor; }
+	HideD EsHider { !utility_minimize; ES(); Class == classes_armor; }
+	HideD ArEvHider { !utility_minimize; AREV(); Class == classes_armor; }
+	HideD ArEsHider { !utility_minimize; ARES(); Class == classes_armor; }
+	HideD EvEsHider { !utility_minimize; EVES(); Class == classes_armor; }
 }
 
 #===============================================================================================================
@@ -218,31 +242,6 @@ Section HighModtierMagic : Auto("ut->magic"), Rarity Magic
 }
 
 #===============================================================================================================
-# [[0200]] Chancing Bases and Economy Selected Bases
-#===============================================================================================================
-
-##------------------------------------
-## [1234] Economy Based Crafting Bases
-##------------------------------------
-##
-##Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity <= Rare
-##{
-##	Show Any { !exotic.t1; BaseType == expensivebases.any; }
-##}
-
-#------------------------------------
-# [1234] Crafting and Chancing Bases
-#------------------------------------
-
-#!! Waypoint c3.gear.chancing : "Chancing bases"
-Section Chancing : Clean(), Rarity Normal, Auto("Chancing")
-{
-	Show chanceS   { !Apex_sTier; BaseType == bases.chancing.s; }
-	Show chanceA   { !itemproperty_achancing;  BaseType == bases.chancing.a; }
-	Show chanceAny { %D2; !itemproperty_bchancing;   BaseType == bases.chancing.any; }
-}
-
-#===============================================================================================================
 # [[0200]] Endgame Flasks
 #===============================================================================================================
 #!! Waypoint c3.flasks.endgame : "Flasks (Endgame)"
@@ -276,33 +275,42 @@ Section EndgameCharms : Auto("Endgame->Charms"), Rarity <= Magic, EG(), Clean(),
 # [[0200]] Normal and Magic Items: Endgame
 #===============================================================================================================
 
+##------------------------------------
+## [1234] Economy Based Crafting Bases
+##------------------------------------
+##
+##Section Valuable : Clean(), Auto("Crafting->Expensive"), ItemLevel >= 86, Rarity <= Rare
+##{
+##	Show Any { !exotic.t1; BaseType == expensivebases.any; }
+##}
+
+#------------------------------------
+# [1234] Salvagables
+#------------------------------------
+#!! Waypoint c4.gear.salvagable : "Normal-Rare items, excluding High Tier & Chancing"
+
+Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
+{
+	# Double Quality Currencies
+	Show Quality2MartialAny { !itemproperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
+	Show Quality2CasterAny  { !itemproperty_salvage1; %D3; Class == classes_cast; Quality >= 10; }
+	Show Quality2ArmorAny   { !itemproperty_salvage1; %D5; Class == classes_armor; Quality >= 10; }
+	Show Quality2Flask	    { !itemproperty_salvage1; %D4; Class == class_flasks; Quality >= 10; }
+
+	# Single Quality Currencies
+	Show QualityMartialAny { !itemproperty_salvage2; %D2; Class == classes_attack; Quality >= 1; }
+	Show QualityCasterAny  { !itemproperty_salvage2; %D2; Class == classes_cast; Quality >= 1; }
+	Show QualityArmorAny   { !itemproperty_salvage2; %D4; Class == classes_armor; Quality >= 1; }
+	Show QualityFlask	   { !itemproperty_salvage2; %D4; Class == class_flasks; Quality >= 1; }
+
+	# Artificer Scraps
+	Show SocketsLarge1 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
+	Show SocketsLarge2 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
+	Show SocketsSmall 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; }
+}
+
 Section EndgameCraftingBases : Clean()
 {
-	#------------------------------------
-	# [1234] Salvagables
-	#------------------------------------
-	#!! Waypoint c4.gear.salvagable : "Normal-Rare items, excluding High Tier & Chancing"
-
-	Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
-	{
-		# Double Quality Currencies
-		Show Quality2MartialAny { !itemproperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
-		Show Quality2CasterAny  { !itemproperty_salvage1; %D3; Class == classes_cast; Quality >= 10; }
-		Show Quality2ArmorAny   { !itemproperty_salvage1; %D5; Class == classes_armor; Quality >= 10; }
-		Show Quality2Flask	    { !itemproperty_salvage1; %D4; Class == class_flasks; Quality >= 10; }
-
-		# Single Quality Currencies
-		Show QualityMartialAny { !itemproperty_salvage2; %D2; Class == classes_attack; Quality >= 1; }
-		Show QualityCasterAny  { !itemproperty_salvage2; %D2; Class == classes_cast; Quality >= 1; }
-		Show QualityArmorAny   { !itemproperty_salvage2; %D4; Class == classes_armor; Quality >= 1; }
-		Show QualityFlask	   { !itemproperty_salvage2; %D4; Class == class_flasks; Quality >= 1; }
-
-		# Artificer Scraps
-		Show SocketsLarge1 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
-		Show SocketsLarge2 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
-		Show SocketsSmall 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; }
-	}
-
 	#------------------------------------
 	# [1234] Normal, Magic Crafting Decorators
 	#------------------------------------
@@ -399,7 +407,6 @@ Section HideLayer1 : EG(), Rarity < Rare, Class == classes_equip + class_flaskli
 	Hide NormalMagicEndgame { Auto("HideLayer"); }
 }
 
-
 Section EndgameRares : Rarity Rare, ItemLevel >= eglevel
 {
 
@@ -433,23 +440,6 @@ Section ConditionalRareHider : Auto("ConditionalHide")
 		Show T2 { %D5; !gear_jewellery1; BaseType == derived.rares.jwl.all.t2; }
 		Show T3 { %D4; !gear_jewellery2; BaseType == derived.rares.jwl.all.t3; }
 		Show T4 { %D3; !gear_jewellery2; BaseType == derived.rares.jwl.all.t4; }
-	}
-
-#===============================================================================================================
-# [[0200]] Endgame - Rare - Gear - Droplevel Hiding
-#===============================================================================================================
-
-#!! Waypoint c6.rare.drophiders : "Rare Endgame Items - Hide armor and weapon types easily"
-
-	Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare")
-	{
-		HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; UT <= 2; }
-		HideD ArHider { !utility_minimize; AR(); Class == classes_armor; UT <= 2; }
-		HideD EvHider { !utility_minimize; EV(); Class == classes_armor; UT <= 2; }
-		HideD EsHider { !utility_minimize; ES(); Class == classes_armor; UT <= 2; }
-		HideD ArEvHider { !utility_minimize; AREV(); Class == classes_armor; UT <= 2; }
-		HideD ArEsHider { !utility_minimize; ARES(); Class == classes_armor; UT <= 2; }
-		HideD EvEsHider { !utility_minimize; EVES(); Class == classes_armor; UT <= 2; }
 	}
 
 #===============================================================================================================
