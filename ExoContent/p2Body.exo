@@ -881,7 +881,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - T1, T2"
 
 	Show t1 { !Apex_sTier; BaseType == uniques.generic.t1; }
-	Show t2 { !uniques_a; BaseType == uniques.generic.t2 + uniques.generic.t2extra; }	
+	Show t2 { !uniques_a; BaseType == uniques.generic.t2; }	
 
 #------------------------------------
 # [5705] Multi-Unique bases.
@@ -892,7 +892,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 	Show overSocketUniques1	{ %D5; !uniques_exceptional; Class == classes_socket2; Sockets >= 3; }
 	Show overSocketUniques2	{ %D5; !uniques_exceptional; Class == classes_socket1; Sockets >= 2; }
 
-	Show multispecial 	  { !uniques_x; BaseType == uniques.generic.multispecial; }
+	Show multispecial 	  { !uniques_x; BaseType == uniques.generic.multispecial + uniques.generic.t2extra; }
 
 #------------------------------------
 # [5701] Low tier exceptions
