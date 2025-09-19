@@ -71,17 +71,18 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 {
 	var qualityChancables = bases.chancing.a + bases.chancing.s + bases.chancing.any + bases.chancingExtra.exceptional;
 
-	Show ChancingOverQual { !itemproperty_achancing; %D6; Rarity Normal; Quality >= 27; BaseType == uniques.generic.t1 + uniques.generic.t2; }
+	Show overqual1q1	{ !exotics_artifacthigh; %D6; Rarity <= Rare; Quality >= 27; BaseType == derived.general.unbiased.equip.t1; }
+
+	Show oversockt1s3	{ !exotics_artifacthigh; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show oversockt1s2	{ !exotics_artifacthigh; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t1; }
+
+	Show ChancingOverQual { !itemproperty_achancing; %D6; Rarity Normal; Quality >= 24; BaseType == uniques.generic.t1 + uniques.generic.t2; }
 	Show ChancingOverSocket3 { !itemproperty_achancing; %D6; Rarity Normal; Sockets >= 3; Class == classes_socket2; BaseType == uniques.generic.t1 + uniques.generic.t2; }
 	Show ChancingOverSocket2 { !itemproperty_achancing; %D6; Rarity Normal; Sockets >= 2; Class == classes_socket1; BaseType == uniques.generic.t1 + uniques.generic.t2; }
 
-	Show overqual1q1	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 27; BaseType == derived.general.unbiased.equip.t1; }
-	Show overqual1q2	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 24; BaseType == derived.general.unbiased.equip.t1 + derived.general.unbiased.equip.t2; }
-
-	Show oversockt1s3	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t1; }
-	Show oversockt2s3	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; BaseType == derived.general.unbiased.equip.t2; }
-	Show oversockt1s2	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t1; }
-	Show oversockt2s2	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; BaseType == derived.general.unbiased.equip.t2; }
+	Show oversockt2s3	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; }
+	Show oversockt2s2	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; }
+	Show overqual1q2	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 24; }
 }
 
 #------------------------------------
@@ -249,7 +250,7 @@ Section HighModtierMagic : Auto("ut->magic"), Rarity Magic
 Section EndgameFlasks : Auto("Endgame->Flasks"), Rarity <= Magic, EG(), Clean(), BaseType == bases.flask.lifemanaassorted
 {
 	Show TopLevelQualityFlasks { %D5; !itemproperty_toplevelbased2; !typebased_flaskcharms; ItemLevel >= 83; Quality > 10; }
-	Show TopLevelFlasks { %D4; !itemproperty_toplevelbased2; !typebased_flaskcharms; ItemLevel >= 83; }
+	Show TopLevelFlasks { %D5; !itemproperty_toplevelbased2; !typebased_flaskcharms; ItemLevel >= 83; }
 	Show EarlyMappingLifeMana { %D1; !typebased_flaskcharms; FromTo(eglevel, 67); Quality = 0; }
 }
 
@@ -578,9 +579,7 @@ Section LineageGems : Auto("gems->lineage"), Class == "Support Gems" "Skill Gems
 	Show s { !Apex_sTier; BaseType == gems.lineage.s; }
 	Show a { !uniques_a; BaseType == gems.lineage.a; }
 	Show b { !uniques_x; BaseType == gems.lineage.b; }
-	Show c { %H6; !uniques_x; BaseType == gems.lineage.c; }
-	Show d { %H5; !uniques_c; BaseType == gems.lineage.d; }
-	Show e { %H4; !uniques_c; BaseType == gems.lineage.e; }
+	Show c { %H6; !uniques_b; BaseType == gems.lineage.c; }
 }
 
 Section UncutGems : Auto("gems->uncut")
@@ -852,15 +851,16 @@ Section CurrencyOmen : Auto("currency->omen"), Class == "Omen"
 #===============================================================================================================
 # [[4900]] Misc Map Like
 #===============================================================================================================
-#!! Waypoint c10.fragments.special : "Special Keys - Pinnacle, Logbook"
+#!! Waypoint c10.fragments.special : "Special Keys - Pinnacle, Logbook, Calamity, RelicKeys"
 
 Section SpecialMapLike : Auto("maplike->special")
 {
-	Show vaultKeys { !exotics_artifacthigh; BaseType miscmap.vaultKeys; }
-	Show superkeys { !exotics_artifacthigh; Class == "Pinnacle Keys" }
+	Show vaultKeysRare { !fragments_a; BaseType == miscmap.vaultKeys; }
+	Show vaultKeys { !fragments_b; BaseType == miscmap.vaultKeysCommon; }
+	Show superkeys { !fragments_a; Class == "Pinnacle Keys" }
 
-	Show logbooksHigh  { !exotics_artifacthigh; Class == "Expedition Logbooks"; ItemLevel >= 77; }
-	Show logbooksLow   { !exotics_artifact; %HS5; Class == "Expedition Logbooks"; }
+	Show logbooksHigh  { !fragments_a; Class == "Expedition Logbooks"; ItemLevel >= 77; }
+	Show logbooksLow   { !fragments_a; Class == "Expedition Logbooks"; }
 }
 
 #===============================================================================================================
@@ -888,7 +888,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 	Show multispecialhigh { !uniques_x; BaseType == uniques.generic.multispecialhigh; }
 
-	Show overQualityUniques	{ %D5; !uniques_exceptional; Quality >= 26; }
+	Show overQualityUniques	{ %D5; !uniques_exceptional; Quality >= 24; }
 	Show overSocketUniques1	{ %D5; !uniques_exceptional; Class == classes_socket2; Sockets >= 3; }
 	Show overSocketUniques2	{ %D5; !uniques_exceptional; Class == classes_socket1; Sockets >= 2; }
 
@@ -929,6 +929,8 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_
 
 Section FullFragments : Auto("fragments->generic")
 {
+	Show exRareTablets { !fragments_a; BaseType == tabletsOnly; Rarity Rare; }
+
 	Show s { !Apex_sTier; BaseType == fragments.generic.s; }
 	Show a { !fragments_a; BaseType == fragments.generic.a; }
 	Show b { !fragments_b; BaseType == fragments.generic.b; }
