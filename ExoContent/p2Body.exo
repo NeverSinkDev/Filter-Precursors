@@ -563,7 +563,6 @@ Section Jewels : Class == "Jewels", Auto("jewels->generic")
 #===============================================================================================================
 #!! Waypoint c7.relics.generic.all : "Relics (Trial of the Sekhema)"
 
-# Relics currently are not hidable, due to an ingame limitation.
 Section TrialRelics : Auto("relics->generic"), !exotics_dtier
 {
 	Show Any { Rarity <= Magic; BaseType == bases.exotic.relics; }
@@ -897,7 +896,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 # [5701] Low tier exceptions
 #------------------------------------
-#!! Waypoint c11.uniques.t1 : "Tierlist - Uniques - Low Tier Uniques"
+#!! Waypoint c11.uniques.low : "Tierlist - Uniques - Low Tier Uniques"
 	Show earlyleague 	  { !uniques_b; BaseType == uniques.generic.earlyleague; }
 	Show corrupteduniques { !uniques_b; Corrupted True; AnyEnchantment True; Class == classes_equip; }
 
