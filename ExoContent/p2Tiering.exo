@@ -11,7 +11,7 @@
 
 var bases.chancing.s = BLANK;
 var bases.chancing.a = "Heavy Belt";
-var bases.chancing.any = "Silver Charm" "Viper Cap" "Martyr Crown";
+var bases.chancing.any = "Martyr Crown" "Silver Charm" "Viper Cap";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## {MATRIX-MANAGED} BASETYPES
@@ -75,7 +75,7 @@ var bases.general.meta.t4 = "Arrayed Focus" "Bladed Quarterstaff" "Bleak Crossbo
 ## MANUALLY MANAGED: CURRENCY
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var currency.leveling.rare = "Artificer's Orb" "Gnawed Collarbone" "Gnawed Jawbone" "Gnawed Rib" "Lesser Essence of Abrasion" "Lesser Essence of Alacrity" "Lesser Essence of Battle" "Lesser Essence of Command" "Lesser Essence of Electricity" "Lesser Essence of Enhancement" "Lesser Essence of Flames" "Lesser Essence of Grounding" "Lesser Essence of Haste" "Lesser Essence of Ice" "Lesser Essence of Insulation" "Lesser Essence of Opulence" "Lesser Essence of Ruin" "Lesser Essence of Seeking" "Lesser Essence of Sorcery" "Lesser Essence of Thawing" "Lesser Essence of the Body" "Lesser Essence of the Infinite" "Lesser Essence of the Mind" "Lesser Jeweller's Orb" "Regal Orb" "Greater Orb of Augmentation" "Greater Orb of Transmutation";
+var currency.leveling.rare = "Artificer's Orb" "Gnawed Collarbone" "Gnawed Jawbone" "Gnawed Rib" "Greater Orb of Augmentation" "Greater Orb of Transmutation" "Lesser Essence of Abrasion" "Lesser Essence of Alacrity" "Lesser Essence of Battle" "Lesser Essence of Command" "Lesser Essence of Electricity" "Lesser Essence of Enhancement" "Lesser Essence of Flames" "Lesser Essence of Grounding" "Lesser Essence of Haste" "Lesser Essence of Ice" "Lesser Essence of Insulation" "Lesser Essence of Opulence" "Lesser Essence of Ruin" "Lesser Essence of Seeking" "Lesser Essence of Sorcery" "Lesser Essence of Thawing" "Lesser Essence of the Body" "Lesser Essence of the Infinite" "Lesser Essence of the Mind" "Lesser Jeweller's Orb" "Regal Orb";
 var currency.leveling.magic = "Orb of Augmentation" "Orb of Transmutation";
 var currency.leveling.wisdom = "Scroll of Wisdom";
 
@@ -107,7 +107,7 @@ var currency.generic.d = "Armourer's Scrap" "Artificer's Orb" "Chance Shard" "Gl
 var currency.generic.e = "Arcanist's Etcher" "Blacksmith's Whetstone" "Lesser Jeweller's Orb";
 
 ## SUPPLIES
-var currency.generic.supply1 = "Exotic Coinage" "Black Scythe Artifact" "Broken Circle Artifact" "Order Artifact" "Sun Artifact";
+var currency.generic.supply1 = "Black Scythe Artifact" "Broken Circle Artifact" "Exotic Coinage" "Order Artifact" "Sun Artifact";
 var currency.generic.supply2 = "Alchemy Shard" "Artificer's Shard" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard";
 var currency.generic.supply3 = "Scroll of Wisdom" "Transmutation Shard";
 
@@ -117,9 +117,9 @@ var ignoredcurrencies = BLANK;
 ## {TIERLIST}: SOCKETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var socketables.generic.s = "Amanamu's Gaze" "Countess Seske's Rune of Archery" "Farrul's Rune of the Chase" "Fox Talisman" "Hedgewitch Assandra's Rune of Wisdom" "Rabbit Talisman" "Talisman of Ralakesh" "Talisman of Sirrius" "Thane Girt's Rune of Wildness" "Thane Leld's Rune of Spring";
-var socketables.generic.a = "Atmohua's Soul Core of Retreat" "Courtesan Mannan's Rune of Cruelty" "Saqawal's Rune of Memory" "Saqawal's Rune of the Sky" "Soul Core of Azcapa" "Soul Core of Jiquani" "Soul Core of Tacati" "Tecrod's Gaze" "The Greatwolf's Rune of Claws" "The Greatwolf's Rune of Willpower";
-var socketables.generic.b = "Cholotl's Soul Core of War" "Estazunti's Soul Core of Convalescence" "Fenumus' Rune of Agony" "Fenumus' Rune of Spinning" "Greater Rune of Tithing" "Kurgal's Gaze" "Lady Hestra's Rune of Winter" "Opiloti's Soul Core of Assault" "Primate Talisman" "Soul Core of Citaqualotl" "Soul Core of Quipolatl" "Talisman of Egrin" "Thane Myrk's Rune of Summer" "Ulaman's Gaze" "Xopec's Soul Core of Power";
+var socketables.generic.s = "Kurgal's Gaze" "Countess Seske's Rune of Archery" "Farrul's Rune of the Chase" "Fox Talisman" "Hedgewitch Assandra's Rune of Wisdom" "Rabbit Talisman" "Talisman of Ralakesh" "Talisman of Sirrius" "Thane Girt's Rune of Wildness" "Thane Leld's Rune of Spring";
+var socketables.generic.a = "Tecrod's Gaze" "Amanamu's Gaze" "Atmohua's Soul Core of Retreat" "Courtesan Mannan's Rune of Cruelty" "Saqawal's Rune of Memory" "Saqawal's Rune of the Sky" "Soul Core of Azcapa" "Soul Core of Jiquani" "Soul Core of Tacati" "The Greatwolf's Rune of Claws" "The Greatwolf's Rune of Willpower";
+var socketables.generic.b = "Cholotl's Soul Core of War" "Estazunti's Soul Core of Convalescence" "Fenumus' Rune of Agony" "Fenumus' Rune of Spinning" "Greater Rune of Tithing" "Lady Hestra's Rune of Winter" "Opiloti's Soul Core of Assault" "Primate Talisman" "Soul Core of Citaqualotl" "Soul Core of Quipolatl" "Talisman of Egrin" "Thane Myrk's Rune of Summer" "Ulaman's Gaze" "Xopec's Soul Core of Power";
 var socketables.generic.c = "Bear Talisman" "Boar Talisman" "Cat Talisman" "Citaqualotl's Soul Core of Foulness" "Craiceann's Rune of Recovery" "Craiceann's Rune of Warding" "Farrul's Rune of Grace" "Farrul's Rune of the Hunt" "Fenumus' Rune of Draining" "Greater Rune of Alacrity" "Greater Rune of Leadership" "Greater Rune of Nobility" "Guatelitzi's Soul Core of Endurance" "Hayoxi's Soul Core of Heatproofing" "Owl Talisman" "Ox Talisman" "Quipolatl's Soul Core of Flow" "Saqawal's Rune of Erosion" "Serpent Talisman" "Soul Core of Atmohua" "Soul Core of Cholotl" "Soul Core of Opiloti" "Soul Core of Puhuarte" "Soul Core of Ticaba" "Soul Core of Topotante" "Soul Core of Tzamoto" "Soul Core of Xopec" "Soul Core of Zalatl" "Soul Core of Zantipi" "Stag Talisman" "Tacati's Soul Core of Affliction" "Talisman of Eeshta" "Talisman of Grold" "Talisman of Maxarius" "Talisman of Thruldana" "Thane Grannell's Rune of Mastery" "Topotante's Soul Core of Dampening" "Tzamoto's Soul Core of Ferocity" "Uromoti's Soul Core of Attenuation" "Wolf Talisman" "Xipocado's Soul Core of Dominion" "Zalatl's Soul Core of Insulation";
 var socketables.generic.d = BLANK;
 var socketables.generic.e = BLANK;
@@ -180,12 +180,12 @@ var currency.omen.e = BLANK;
 ## {TIERLIST}: FRAGMENTS AND TABLETS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var tabletsOnly = "Breach Precursor Tablet" "Delirium Precursor Tablet" "Overseer Precursor Tablet" "Precursor Tablet" "Ritual Precursor Tablet" "Expedition Precursor Tablet";
+var tabletsOnly = "Breach Precursor Tablet" "Delirium Precursor Tablet" "Expedition Precursor Tablet" "Overseer Precursor Tablet" "Precursor Tablet" "Ritual Precursor Tablet";
 
 var fragments.generic.s = BLANK;
 var fragments.generic.a = "An Audience with the King" "Breachstone" "Cowardly Fate" "Deadly Fate" "Idol of Estazunti" "Kulemak's Invitation" "Simulacrum" "Victorious Fate";
 var fragments.generic.b = BLANK;
-var fragments.generic.c = "Breach Precursor Tablet" "Delirium Precursor Tablet" "Overseer Precursor Tablet" "Precursor Tablet" "Ritual Precursor Tablet" "Expedition Precursor Tablet";
+var fragments.generic.c = "Breach Precursor Tablet" "Delirium Precursor Tablet" "Expedition Precursor Tablet" "Overseer Precursor Tablet" "Precursor Tablet" "Ritual Precursor Tablet";
 var fragments.generic.d = BLANK;
 var fragments.generic.e = BLANK;
 
@@ -211,7 +211,7 @@ var divination.t5 = "The Terrible";
 var gems.lineage.s = "Atalui's Bloodletting" "Brutus' Brain" "Dialla's Desire" "Esh's Radiance" "Rakiata's Flow" "Rigwald's Ferocity" "Tul's Stillness" "Uhtred's Augury" "Uhtred's Omen" "Uul-Netol's Embrace";
 var gems.lineage.a = "Amanamu's Tithe" "Arbiter's Ignition" "Arjun's Medal" "Garukhan's Resolve" "Ixchel's Torment" "Kalisa's Crescendo" "Ratha's Assault" "Romira's Requital" "Uhtred's Exodus" "Xoph's Pyre";
 var gems.lineage.b = "Ahn's Citadel" "Ailith's Chimes" "Arakaali's Lust" "Atziri's Allure" "Doedre's Undoing" "Einhar's Beastrite" "Kaom's Madness" "Kulemak's Dominion" "Piety's Mercy" "Sione's Temper" "Tawhoa's Tending" "Tecrod's Revenge" "Uruk's Smelting" "Vilenta's Propulsion" "Zarokh's Refrain";
-var gems.lineage.c = "Kurgal's Leash" "Daresso's Passion" "Paquate's Pact" "Tacati's Ire" "Varashta's Blessing";
+var gems.lineage.c = "Daresso's Passion" "Kurgal's Leash" "Paquate's Pact" "Tacati's Ire" "Varashta's Blessing";
 var gems.lineage.d = BLANK;
 var gems.lineage.e = BLANK;
 
@@ -221,13 +221,13 @@ var gems.lineage.e = BLANK;
 
 var uniques.generic.earlyleague = BLANK;
 
-var uniques.generic.multispecialhigh = "Abyssal Signet" "Heavy Belt" "Jade Amulet" "Pearl Ring" "Ravenous Staff" "Stellar Amulet";
+var uniques.generic.multispecialhigh = "Heavy Belt" "Jade Amulet" "Pearl Ring" "Ravenous Staff" "Stellar Amulet";
 var uniques.generic.multispecial = "Amethyst Ring" "Bloodstone Amulet" "Crimson Amulet" "Crude Bow" "Fine Belt" "Furtive Wraps" "Gold Ring" "Lazuli Ring" "Sapphire Ring";
 
 var uniques.generic.t1 = "Amethyst Charm" "Armoured Cap" "Armoured Vest" "Artillery Bow" "Blacksteel Tower Shield" "Chain Tiara" "Conqueror Plate" "Desolate Crossbow" "Embroidered Gloves" "Emerald" "Face Mask" "Fine Bracers" "Golden Charm" "Helix Spear" "Heroic Armour" "Incense Relic" "Intricate Crest Shield" "Lattice Sandals" "Moulded Mitts" "Ornate Belt" "Ornate Gauntlets" "Primed Quiver" "Ring" "Sacred Focus" "Sapphire" "Shrine Sceptre" "Silver Charm" "Stone Charm" "Thawing Charm" "Timeless Jewel" "Time-Lost Diamond" "Ultimate Life Flask" "Utility Wraps" "Vase Relic" "Viper Cap";
 var uniques.generic.t2extra = "Breach Precursor Tablet" "Delirium Precursor Tablet" "Expedition Precursor Tablet" "Overseer Precursor Tablet" "Precursor Tablet" "Ritual Precursor Tablet";
 var uniques.generic.t2 = "Diamond" "Grand Regalia" "Ruby" "Spiral Wraps" "Torment Club" "Unset Ring";
-var uniques.generic.t3boss = "Closed Helm" "Crucible Tower Shield" "Grand Cuisses" "Grand Manchettes" "Grand Visage" "Omen Crest Shield" "Silk Robe" "Tribal Mask" "Ultimate Mana Flask" "Utility Belt" "Visceral Quiver" "Wide Belt" "Wyrm Quarterstaff";
+var uniques.generic.t3boss = "Abyssal Signet" "Closed Helm" "Crucible Tower Shield" "Grand Cuisses" "Grand Manchettes" "Grand Visage" "Omen Crest Shield" "Silk Robe" "Tribal Mask" "Ultimate Mana Flask" "Utility Belt" "Visceral Quiver" "Wide Belt" "Wyrm Quarterstaff";
 var uniques.generic.t3 = "Altar Robe" "Amphora Relic" "Antidote Charm" "Antler Focus" "Azure Amulet" "Bolstered Mitts" "Burnished Gauntlets" "Coffer Relic" "Corsair Cap" "Double Belt" "Dousing Charm" "Enlightened Robe" "Fanatic Bow" "Felt Cap" "Forked Spear" "Gargantuan Life Flask" "Garment" "Giant Maul" "Gold Circlet" "Grounding Charm" "Heavy Crown" "Heraldric Tower Shield" "Iron Greaves" "Jewelled Gloves" "Magus Tiara" "Martyr Crown" "Pelage Targe" "Prismatic Ring" "Rope Cuffs" "Ruby Charm" "Sapphire Charm" "Seal Relic" "Secured Leggings" "Smuggler Coat" "Solid Mask" "Spiked Club" "Spined Bracers" "Spired Greathelm" "Staunching Charm" "Stone Greaves" "Stone Tower Shield" "Tapestry Relic" "Topaz Charm" "Trimmed Greaves" "Velvet Cap" "Voodoo Focus" "Winged Spear" "Wrapped Greathelm";
 var uniques.generic.hideable = "Acrid Wand" "Aged Cuffs" "Amber Amulet" "Ancestral Mail" "Anchorite Garb" "Array Buckler" "Ashen Staff" "Assassin Garb" "Attuned Wand" "Barbed Spear" "Barricade Tower Shield" "Beaded Circlet" "Blazon Crest Shield" "Blunt Quiver" "Bone Raiment" "Bone Wand" "Braced Sabatons" "Braced Tower Shield" "Brimmed Helm" "Broadhead Quiver" "Bronze Greaves" "Chain Mail" "Champion Cuirass" "Chiming Staff" "Cleric Vestments" "Cloaked Mail" "Composite Bow" "Corvus Mantle" "Covered Sabatons" "Covert Hood" "Cowled Helm" "Crescent Quarterstaff" "Crescent Targe" "Crumbling Maul" "Crystal Focus" "Cultist Crown" "Cultist Greathammer" "Death Mask" "Decorated Helm" "Doubled Gauntlets" "Dualstring Bow" "Dyad Crossbow" "Effigial Tower Shield" "Elementalist Robe" "Elite Greathelm" "Emblem Crest Shield" "Embossed Boots" "Emerald Ring" "Engraved Focus" "Execratus Hammer" "Explorer Armour" "Feathered Robe" "Feathered Sandals" "Feathered Tiara" "Felled Greatclub" "Fierce Greathelm" "Fire Quiver" "Firm Bracers" "Forge Maul" "Full Plate" "Fur Plate" "Gauze Wraps" "Gelid Staff" "Gilded Vestments" "Gold Amulet" "Goldcast Cuffs" "Gothic Quarterstaff" "Guarded Helm" "Hardwood Spear" "Hardwood Targe" "Havoc Raiment" "Heavy Bow" "Hermit Garb" "Hewn Mask" "Hexer's Robe" "Hooded Mask" "Horned Crown" "Hunter Hood" "Hunting Shoes" "Hunting Spear" "Intricate Gloves" "Iron Buckler" "Iron Crown" "Iron Cuirass" "Iron Ring" "Ironclad Vestments" "Ironhead Spear" "Jade Tiara" "Jingling Crest Shield" "Keth Raiment" "Knight Armour" "Lace Hood" "Laced Boots" "Lamellar Mail" "Lapis Amulet" "Layered Gauntlets" "Leaden Greathammer" "Leather Buckler" "Leather Vest" "Leatherbound Hood" "Linen Belt" "Linen Wraps" "Lizardscale Boots" "Long Belt" "Long Quarterstaff" "Lunar Amulet" "Mail Belt" "Mail Sabatons" "Mail Vestments" "Makeshift Crossbow" "Marabout Garb" "Maraketh Cuirass" "Oak Greathammer" "Omen Sceptre" "Ornate Buckler" "Painted Tower Shield" "Pathfinder Coat" "Pauascale Gloves" "Permafrost Staff" "Pilgrim Vestments" "Plate Belt" "Plate Gauntlets" "Plated Buckler" "Plated Mace" "Plated Raiment" "Pointed Maul" "Pyrophyte Staff" "Quilted Vest" "Raider Plate" "Rampart Tower Shield" "Rattling Sceptre" "Rawhide Belt" "Recurve Bow" "Rhoahide Coat" "Ridged Buckler" "Ringmail Gauntlets" "Riveted Mitts" "Rogue Armour" "Rough Greaves" "Ruby Ring" "Rusted Cuirass" "Rusted Greathelm" "Sacral Quiver" "Sacrificial Mantle" "Scale Mail" "Scalper's Jacket" "Scout's Vest" "Sectioned Bracers" "Serpentscale Coat" "Shabby Hood" "Shaman Mantle" "Shielded Helm" "Shortbow" "Shrouded Vest" "Sigil Crest Shield" "Silk Slippers" "Siphoning Wand" "Slim Mace" "Smithing Hammer" "Solar Amulet" "Soldier Greathelm" "Sombre Gloves" "Spiked Buckler" "Spiritbone Crown" "Splintered Tower Shield" "Stacked Sabatons" "Steel Plate" "Steelpoint Quarterstaff" "Steeltoe Boots" "Stitched Gloves" "Straw Sandals" "Strider Vest" "Studded Greatclub" "Studded Vest" "Suede Bracers" "Tattered Robe" "Tempered Mitts" "Temple Maul" "Tense Crossbow" "Threaded Shoes" "Tideseer Mantle" "Titan Mitts" "Tonal Focus" "Topaz Ring" "Torn Gloves" "Totemic Greatclub" "Toxic Quiver" "Twig Circlet" "Twig Focus" "Vaal Cuirass" "Vagabond Armour" "Veiled Mask" "Velour Shoes" "Verisium Cuffs" "Vermeil Circlet" "Visored Helm" "Volatile Wand" "Voltaic Staff" "Votive Raiment" "War Spear" "Warpick" "Warrior Greathelm" "Waxed Jacket" "Wayfarer Jacket" "Wicker Tiara" "Withered Wand" "Wooden Buckler" "Wooden Club" "Woven Focus" "Wrapped Quarterstaff" "Wrapped Sandals" "Zealot Bow";
 
@@ -235,7 +235,7 @@ var uniques.generic.hideable = "Acrid Wand" "Aged Cuffs" "Amber Amulet" "Ancestr
 ## {DERIVED-MATRIX-MANAGED} DERIVED LISTS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-var derived.rares.jwl.all.t1 = "Amethyst Ring" "Breach Ring" "Prismatic Ring" "Solar Amulet";
+var derived.rares.jwl.all.t1 = "Amethyst Ring" "Breach Ring" "Pearlescent Amulet" "Prismatic Ring" "Solar Amulet";
 var derived.rares.jwl.all.t2 = "Amber Amulet" "Azure Amulet" "Bloodstone Amulet" "Gold Amulet" "Gold Ring" "Jade Amulet" "Lapis Amulet" "Lunar Amulet" "Pearl Ring" "Plate Belt" "Ruby Ring" "Sapphire Ring" "Stellar Amulet" "Topaz Ring" "Unset Ring" "Utility Belt";
 var derived.rares.jwl.all.t3 = "Crimson Amulet" "Double Belt" "Emerald Ring" "Fine Belt" "Heavy Belt" "Iron Ring" "Lazuli Ring" "Long Belt" "Rawhide Belt";
 var derived.rares.jwl.all.t4 = "Linen Belt" "Mail Belt" "Ornate Belt" "Wide Belt";
