@@ -919,11 +919,11 @@ Section Unique : Rarity Unique, Auto("uniques")
 
 Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_currency, BaseType == fragments.generic.splinters
 {
-	Show t1 { %D6; !fragments_splinter1; StackSize >= stacksize.commonSplinters.t1; }
-	Show t2 { %D6; !fragments_splinter2; StackSize >= stacksize.commonSplinters.t2; }
-	Show t3 { %D6; !fragments_splinter3; StackSize >= stacksize.commonSplinters.t3; }
-	Show t4 { %D6; !fragments_splinter4; StackSize >= stacksize.commonSplinters.t4; }
-	Show t5 { %D6; !fragments_splinter5; Empty(); }
+	Show t1 { %H6; !fragments_splinter1; StackSize >= stacksize.commonSplinters.t1; }
+	Show t2 { %H6; !fragments_splinter2; StackSize >= stacksize.commonSplinters.t2; }
+	Show t3 { %H6; !fragments_splinter3; StackSize >= stacksize.commonSplinters.t3; }
+	Show t4 { %H6; !fragments_splinter4; StackSize >= stacksize.commonSplinters.t4; }
+	Show t5 { %H6; !fragments_splinter5; Empty(); }
 }
 
 Section FullFragments : Auto("fragments->generic")
