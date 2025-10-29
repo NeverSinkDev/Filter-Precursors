@@ -537,6 +537,16 @@ Section SanctumRelics : Auto("artefact->sanctifiedrelics"), Rarity <= Rare
 	Show AnyRelic 			{ !G4; !exotic.t3; Class == "Relics"; }
 }
 
+#------------------------------------
+#   [1234] TEMP: Wombgifts
+#------------------------------------
+
+Section Brequel : Auto("exotic->wombgifts")
+{
+	Show wombgifts		{ !G4; !newleaguetier.t3; Class == "Wombgifts"; BaseType == bases.wombgifts.any; }
+	Show grafts		    { !G4; !newleaguetier.t3; Class == "Grafts"; BaseType == bases.grafts.any; }
+}
+
 #===============================================================================================================
 # [[0200]] Exotic Item Variations
 #===============================================================================================================
@@ -699,10 +709,10 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #------------------------------------
 #!! Waypoint c4.rare.breach.all : "Rare Endgame Items - Breach rings"
 
-	Section BreachRings : Class == "Rings", BaseType == "Breach Ring", Auto("rare->exotic->breachrings")
+	Section BreachRings : Class == "Rings", BaseType == bases.extoic.misc.breachring , Auto("rare->exotic->breachrings")
 	{
-		Show High { %HS3; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any  { %HS1; !G5; !exotic.t3; Empty(); }
+		Show High { %HS6; !G4; !exotic.t2; ItemLevel >= 82; }
+		Show Any  { %HS4; !G5; !exotic.t3; Empty(); }
 	}
 
 #!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans"
@@ -2358,7 +2368,7 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 #!! Waypoint c11.leveling.rares.low : "Leveling - Gear - Low Tier"
 
-	Section Vendorable : Auto("Leveling->Rare->Remaining") Class == classes_equip, !raredeco.t4equip
+	Section Vendorable : Auto("Leveling->Rare->Remaining"), Class == classes_equip, !raredeco.t4equip
 	{
 		Show ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
 		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; ItemLevel <= 68; }
