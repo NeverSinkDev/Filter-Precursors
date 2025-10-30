@@ -582,7 +582,7 @@ Section ExoticVariations : !exotic
 	{
 		Section AbyssJewelItems : SocketGroup "A", Auto("exotic->sockets")
 		{
-			Show AnyNonBelt { !GSH; !exotic.t2; Class == classes_nonJwlryEquip; }
+			Show AnyNonBelt { !GSH; !exotic.t2; Class == classes_nonJwlryEquipNoQuiv; }
 		}
 
 #------------------------------------
@@ -1398,7 +1398,7 @@ Section Maps : Class == "Maps", !Maps
 	#!! Waypoint c9.maps.special.t17 : "Maps - T17 purple tier maps"
 	Section T17Maps : Auto("maps->t17uber")
 	{
-		ShowD PreferredT17 { !G2; !maps.T1; MapTier >= 17; BaseType == maps.special.t17; }
+		ShowD PreferredT17 { %D6; !G2; !maps.T1; MapTier >= 17; BaseType == maps.special.t17; }
 		Show Any { !G2; !maps.T1; MapTier >= 17; }
 	}
 
@@ -1606,7 +1606,22 @@ Section MapFragments : Class == "Map Fragments" "Breachstones"
 }
 
 #===============================================================================================================
-# [[4900]] Currency - Exceptions - Leveling Currencies
+# [[4900]] Currency - Special
+#===============================================================================================================
+#!! Waypoint c9.currency.lifeforce : "Tierlist - Currency - Lifeforce"
+
+Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, !Currency
+{
+	Show t1lifeForce { %D9; StackSize >= 4000; !G1; !*t1exalted; BaseType == currency.lifeforce.any; }
+	Show t2lifeForce { %D8; StackSize >= 500;  !G2; !*t2divine; BaseType == currency.lifeforce.any; }
+	Show t3lifeForce { %D7; StackSize >= 250;  !G3; !*t3annul; BaseType == currency.lifeforce.any; }
+	Show t4lifeForce { %D6; StackSize >= 45;  !G4; !*t4chaos; BaseType == currency.lifeforce.any; }
+	Show t5lifeForce { %D6; StackSize >= 20;   !G4; !*t5alchemy; BaseType == currency.lifeforce.any; }
+	Show t6lifeForce { %H5; !G5H; !*t6chrom; BaseType == currency.lifeforce.any; }
+}
+
+#===============================================================================================================
+# [[4900]] Currency - Leveling Exceptions
 #===============================================================================================================
 #!! Waypoint c9.currency.leveling.all : "Tierlist - Currency - Leveling Stacked Currency"
 
@@ -1640,19 +1655,6 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 #===============================================================================================================
 # [[4800]] Currency - Exceptions - Stacked Currency
 #===============================================================================================================
-
-#------------------------------------
-# [4702] Harvest Life Force
-#------------------------------------
-Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, !Currency
-{
-	Show t1lifeForce { %D9; StackSize >= 4000; !G1; !*t1exalted; BaseType == currency.lifeforce.any; }
-	Show t2lifeForce { %D8; StackSize >= 500;  !G2; !*t2divine; BaseType == currency.lifeforce.any; }
-	Show t3lifeForce { %D7; StackSize >= 250;  !G3; !*t3annul; BaseType == currency.lifeforce.any; }
-	Show t4lifeForce { %D6; StackSize >= 45;  !G4; !*t4chaos; BaseType == currency.lifeforce.any; }
-	Show t5lifeForce { %D6; StackSize >= 20;   !G4; !*t5alchemy; BaseType == currency.lifeforce.any; }
-	Show t6lifeForce { %H5; !G5H; !*t6chrom; BaseType == currency.lifeforce.any; }
-}
 
 #------------------------------------
 # [4702] Supplies: High Stacking
@@ -2529,6 +2531,17 @@ Section WeaponProgression : Rarity Normal, Class == classes_weapons_melee classe
 	Show r13 { %H2; ProgressionRow(Normal, 60,56); }
 	Show r14 { %H2; ProgressionRow(Normal, 64,60); }
 	Show r15Bas { %H2; ProgressionRow(Normal, 68,64); }
+}
+
+#------------------------------------
+# [6002] Attack Wand Progression
+#------------------------------------
+
+Section WandProgression : Rarity Normal, Class == "Wands", Auto("Leveling->WandProgression"), !NoticeNM3, !GEX
+{
+	Show w1 { %H2; AreaLevel <= 24; BaseType == "Somatic Wand"; }
+	Show w2 { %H2; AreaLevel <= 50; BaseType == "Blasting Wand"; }
+	Show w3 { %H2; AreaLevel <= 67; BaseType == "Kinetic Wand"; }
 }
 
 #------------------------------------
