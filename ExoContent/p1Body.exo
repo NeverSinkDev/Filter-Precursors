@@ -335,6 +335,10 @@ Section IdModSection : IdMods, Auto("RareBlendID"), Rarity <= Rare, Clean(), !GS
 {
 	Show wCasterMin { %D5; Mod >= 3 wcast_top1; Class == classes_1hcast_shields; }
 	Show wSmallArmorsBlend { %D5; Mod >= 3 armors_blend; Class == classes_armor_small; }
+	Show wRingsBlend { %D5; Mod >= 3 rings_blend; Class == "Rings"; }
+	Show wAmuletsBlend { %D5; Mod >= 3 amulets_blend; Class == "Amulets"; }
+	Show wBeltsBlend { %D5; Mod >= 3 belts_blend; Class == "Belts"; }
+	Show wEleAttackBlend { %D5; Mod >= 3 weapons_blend; Class == classes_weapons_ele; }
 }
 
 #===============================================================================================================
@@ -353,7 +357,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 		## Tyrranical Physical Weapons
 		Show t1phys 	{ %D5; Mod >= 1 wdmg_pphys[1]; Class == classes_attack + "Wands"; }
 		## +1 to all global spell skill levels + convoking minion levels
-		Show t1caster 	{ %D5; Mod >= 1 wgems_alllevels_global + convokingLvl + wcast_top1; Class == classes_1hcast_shields; }
+		Show t1caster 	{ %D4; Mod >= 1 wgems_alllevels_global + convokingLvl + wcast_top1; Class == classes_1hcast_shields; }
 		## +2 proj ranged weapons
 		Show t1proj 	{ %D5; Mod >= 1 "of Many"; Class == classes_weapons_ranged; }
 		## plus one to all spell skills
@@ -411,6 +415,9 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 	Show weapont1q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	Show weapont2q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 24; }
 	
+	Show anyOverQualityHigh  { !GEX; !exotic.t3; %D3; Class == classes_equip; Quality >= 26; }
+	ShowD anyOverQuality     { !GEX; !exotic.t3; %D0; Class == classes_equip; Quality >= 21; }
+
 	ShowD PerfectionCrafting	 { !GEX; !exotic.t2; %D5; BaseDefencePercentile >= 99; Class == classes_armor; BaseType == craftingArmors; ItemLevel >= 84; }
 }
 
@@ -2164,6 +2171,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 
 	Show foulBorn { %D6; !GSH; !*t3; !SpecialNoB; !FoulUnique; Foulborn True; }
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
+	Show overQual { %D5; !GSH; !*t3; !SpecialNoB; Quality >= 27; }
 	Show 5link    { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
 
