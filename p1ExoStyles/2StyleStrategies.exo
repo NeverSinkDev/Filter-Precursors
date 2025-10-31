@@ -299,7 +299,12 @@ Style UniversalValueAccents
 
 	Func LevelCurrency()
 	{
-		SetFontSize font.t4; MinimapIcon 2 Grey Circle;
+		SetFontSize font.t4; MinimapIcon 2 Grey Circle; PlayAlertSound sounds.currency;
+	}
+
+	Func LevelCurrencyHigh()
+	{
+		SetFontSize font.t3; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
 	}	
 
 	Func LVLCaster()
@@ -350,6 +355,13 @@ Style UniversalValueAccents
 	Func EarlyUniques()
 	{
 		SetBackgroundColor unique.early.extra;
+	}
+
+	Func FoulUnique
+	{
+		SetBorderColor splinters.acc.t1;
+		MinimapIcon 1 Purple *;
+		PlayEffect Purple;
 	}
 
 	Func MercUniques()

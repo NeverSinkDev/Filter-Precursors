@@ -27,9 +27,10 @@ var classes_weapons_1hmelee = "Daggers" "Claws" "Thrusting One Hand Swords" "One
 var classes_weapons_2hmelee =  "Warstaves" "Two Hand Swords" "Two Hand Axes" "Two Hand Maces";
 
 var classes_weapons_ranged = "Wands" "Bows";
-var classes_weapons_ele = "Claws" "Wands" "Bows" "Thrusting One Hand Swords";
+var classes_weapons_ele = "Claws" "Wands" "Bows" "Daggers" "Thrusting One Hand Swords";
 
 var class_jewels = "Jewels" "Abyss Jewels";
+var classes_nonJwlryEquipNoQuiv = classes_armor + classes_weapons;
 var classes_nonJwlryEquip = classes_armor + classes_weapons + "Quivers";
 var classes_jewellery = "Amulets" "Belts" "Rings";
 var classes_trinkets = classes_jewellery + class_jewels;
@@ -55,7 +56,7 @@ var cTop83 = "Daggers" "Claws" "Thrusting One Hand Swords" "One Hand Swords" "On
 
 var classesInfluenced85 = "Body Armours" "Helmets" "Rings" "Amulets" "Wands" "Sceptres" "Quivers";
 
-var cInf1Shaper = "Rings" "Amulets" "Bows" "Gloves";
+var cInf1Shaper = "Rings" "Amulets" "Bows" "Gloves" "Wands";
 var cInf1Elder = "Rings" "Amulets" "Belts";
 var cInf1Crusader = "Rings" "Amulets" "Belts";
 var cInf1Hunter = "Rings" "Amulets" "Gloves" "Belts" "Boots" "Shields" "Quivers";
@@ -211,11 +212,14 @@ var ring_minion_life = "of the Taskmaster" "of the Overseer" "of the Rector";
 ##   {META} SHARED ARMOUR/JEWELERY ITEMS STATS
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+var aux_stats0 = str[2] + dex[2] + int[2] + res_chaos[2] + res_fire[2] + res_cold[2] + res_light[2] + res_omni[1];
 var aux_stats1 = str[3] + dex[3] + int[3] + res_chaos[3] + res_fire[3] + res_cold[3] + res_light[3] + res_omni[2];
 var aux_stats2 = str[4] + dex[4] + int[4] + res_chaos[4] + res_fire[4] + res_cold[4] + res_light[4] + res_omni[3];
 
 var aux_stats_rfocus1 = str[2] + dex[2] + int[2] + res_chaos[3] + res_fire[3] + res_cold[3] + res_light[3] + res_omni[2];
 var aux_stats_rfocus2 = str[2] + dex[2] + int[2] + res_chaos[4] + res_fire[4] + res_cold[4] + res_light[4] + res_omni[3];
+
+var aux_stats_high = str[1] + dex[1] + int[1] + res_chaos[2] + res_fire[2] + res_cold[2] + res_light[2] + res_omni[2];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} SMALL ITEM-DEFENSES (HELMET)
@@ -363,6 +367,8 @@ var xgloves_es_core = smallitem_es_defense_main2 + gloves_cheat;
 var xgloves_life_mix = xgloves_life_core + gloves_aux + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid + aux_all;
 var xgloves_es_mix = xgloves_es_core + gloves_aux + smallitem_es_defense_main2 + smallitem_es_defense2 + gloves_cheat + aux_all;
 
+var armors_blend = minionGems[1] + boots_movespeed[2] + suppress[2] + boots_life[1] + aux_stats_high + gloves_accu[1] + gloves_ias[1] + anyVeil;
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -413,6 +419,8 @@ var xattackele_Core = attele_base2 + attele_CheatMods;
 
 var xattackele_Conf = attele_base1 + attele_aux1 + attele_CheatMods + anyVeil;
 var xattackele_Norm = xattackele_Core + attele_base2 + attele_aux2 + attele_CheatMods + anyVeil;
+
+var weapons_blend = attele_base1 + attele_CheatMods + ws_attack_speed[1] + ws_attack_crit[1] + ws_critmulti[2] + ws_wed[1] + wdmg_pphys[1] + anyVeil;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} CASTER MODS
@@ -600,6 +608,10 @@ var casterPhys2 = wdot_phys[3] + "Lithomancer's";
 var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
 var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
 
+## CASTER - BLENDER
+
+var wcast_top1 = wcast_spell[2] + wgems_alllevels + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + casterCheatSafe + ws_cast_crit[1] + ws_cast_speed[1] + ws_critmulti[2] + wcast_hspell[1] + wdmg_fire[1] + wdmg_cold[1] + wdmg_light[1] + anyVeil;
+
 ## CASTER - CORE
 var casterCoreGeneral = casterCheatAll + wcast_spell[3];
 
@@ -729,6 +741,7 @@ var xamu_attack_mix = amu_aux_stats_full + acc_crit_dmg[4] + acc_crit_chance[2] 
 var xamu_singlecore = acc_life[3] + acc_fes[1] + amu_cheat + acc_crit_dmg[1] + acc_dot_mult[1] + acc_allat[1] + acc_pes[1];
 var xamu_multicore  = aux_all + acc_life[4] + acc_fes[3] + amu_cheat + acc_crit_dmg[2] + acc_dot_mult[2] + acc_allat[2] + acc_pes[2] + "of Bameth";
 
+var amulets_blend = acc_life[2] + acc_mana[1] + acc_fes[1] + acc_allat[1] + acc_recoup[1] + aux_stats0 + acc_cast_speed[1] + amu_cheat + acc_crit_dmg[1] + acc_dot_mult[1] +  acc_pes[1] + anyVeil;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## RINGS
@@ -751,6 +764,9 @@ var ring_minion_high = ring_minion_dmg[3] + ring_minion_ias[3] + ring_minion_msp
 var ring_minion_low = ring_minion_resist[1] + ring_minion_life[1];
 
 var xring_minion_mix = xring_core + ring_aux_stats_full + ring_minion_high + ring_minion_low;
+
+var rings_blend = acc_life[2] + acc_mana[1] + acc_fes[1] + acc_recoup[1] + aux_stats0 + acc_cast_speed[1] + acc_att_accu[1] + anyVeil;
+
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## BELTS
@@ -777,6 +793,8 @@ var belts_special_aux = belts_arm[3] + belts_flaskeffect + belts_flaskdur[2] + b
 
 var xbelt_mix = belts_cheat + belts_life + belts_es[1] + belts_aux + belts_special_aux + aux_all;
 var xbelt_core = belts_cheat + belts_life[2] + belts_es[1];
+
+var belts_blend = belts_life[1] + belts_mana[1] + belts_es[1] + belts_liferegen + aux_stats0 + belts_flaskdur[1] + belts_arm[1] + belts_wed[1] + anyVeil;
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} BLADE BLAST DAGGERS
