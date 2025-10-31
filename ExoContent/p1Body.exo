@@ -327,6 +327,17 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 }
 
 #===============================================================================================================
+# [[9999]] IDENTIFIED MOD FILTERING - DUAL MODS
+#===============================================================================================================
+#!! Waypoint c1.idmod.dualmod.all : "Identified Mods - Valuable Dual Mods"
+
+Section IdModSection : IdMods, Auto("RareBlendID"), Rarity <= Rare, Clean(), !GSH
+{
+	Show wCasterMin { %D5; Mod >= 3 wcast_top1; Class == classes_1hcast_shields; }
+	Show wSmallArmorsBlend { %D5; Mod >= 3 armors_blend; Class == classes_armor_small; }
+}
+
+#===============================================================================================================
 # [[9999]] IDENTIFIED MOD FILTERING - SINGLE MODS
 #===============================================================================================================
 #!! Waypoint c1.idmod.singlemod.all : "Identified Mods - Single Mods and low priority combinations"
@@ -339,12 +350,14 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 
 	Section TopValue : Rarity <= Rare, Clean()
 	{
+		## Tyrranical Physical Weapons
+		Show t1phys 	{ %D5; Mod >= 1 wdmg_pphys[1]; Class == classes_attack + "Wands"; }
 		## +1 to all global spell skill levels + convoking minion levels
-		Show t1caster 	{ %D5; Mod >= 1 wgems_alllevels_global + convokingLvl; Class == classes_1hcast_shields; }
+		Show t1caster 	{ %D5; Mod >= 1 wgems_alllevels_global + convokingLvl + wcast_top1; Class == classes_1hcast_shields; }
 		## +2 proj ranged weapons
 		Show t1proj 	{ %D5; Mod >= 1 "of Many"; Class == classes_weapons_ranged; }
 		## plus one to all spell skills
-		Show t1amu		{ %D6; Mod >= 1 "Exalter's"; Class == "Amulets"; }
+		Show t1amu		{ %D6; Mod >= 1 "Exalter's" + xr_amu1 + acc_dot_mult[1]; Class == "Amulets"; }
 		## plus 2 to minions helmet
 		Show t1minionHelm	{ %D5; Mod >= 1 minionGems[1]; Class == "Helmets"; }
 	}
@@ -353,19 +366,19 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #   [1234] Uncorrupted Mods
 #------------------------------------	
 
-## In these cases we're looking for a singe high mod
+	## In these cases we're looking for a singe high mod
 	Section HighHybridPure : Clean(), Rarity <= Rare
 	{
 		## +1 to all global elemental gems and DOT t1
 		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
 		## +1 to all arrows quivers
-		ShowD t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
+		Show t2quiver 		{ %D5; Mod >= 1 xr_quiver1; Class == "Quivers"; }
+		## Uncorrupted Suppression Gear from Dexterity Equip
+		Show t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == classes_armor_small; }
 		## +1 to all global elemental gems + spell damage t1
 		ShowD t2caster 		{ %D4; Mod >= 1 xr_caster1; Class == classes_1hcast_shields; }
 		## +2 to all maximum resists shield
 		ShowD t2shield		{ %D4; Mod >= 1 xr_shields1; Class == "Shields"; }
-		## Uncorrupted Suppression Gear from Dexterity Equip
-		ShowD t2suppress    { %D4; Mod >= 1 "of Nullification"; Class == classes_armor_small; }
 		## Uncorrupted Tyrranical weapons
 		ShowD t2purephys 	{ %D4; Mod >= 1 wdmg_pphys[1] + wdmg_hphys[1]; Class == classes_attack; }
 		## DOT Sceptres and Wands
@@ -551,6 +564,8 @@ Section SanctumRelics : Auto("artefact->sanctifiedrelics"), Rarity <= Rare
 
 Section Grafts : Auto("exotic->grafts"), Class == "Grafts", Rarity <= Rare
 {
+	ShowD exGraftHigh { !G2; !newleaguetier.t3; ItemLevel >= 82; BaseType == bases.grafts.anyEx; }
+
 	Show t2 { !G2; !newleaguetier.t1; BaseType == bases.grafts.t2; }
 	Show t3 { !G3; !newleaguetier.t2; BaseType == bases.grafts.t3; }
 	Show t4 { !G4; !newleaguetier.t3; BaseType == bases.grafts.t4; }
@@ -722,7 +737,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 	Section BreachRings : Class == "Rings", BaseType == bases.extoic.misc.breachring , Auto("rare->exotic->breachrings")
 	{
 		Show High { %HS6; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any  { %HS5; !G5; !exotic.t3; Empty(); }
+		Show Any  { %HS5; !G5; !exotic.t2; Empty(); }
 	}
 
 #!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans"
@@ -1924,6 +1939,8 @@ Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Cur
 
 Section Wombgifts : Auto("exotic->wombgifts"), Class == "Wombgifts"
 {
+	ShowD exGiftsHigh { !G2; !newleaguetier.t3; ItemLevel >= 82; BaseType == bases.wombgifts.anyEx; }
+
 	Show t2	{ !G2; !newleaguetier.t1; BaseType == bases.wombgifts.t2; }
 	Show t3	{ !G3; !newleaguetier.t2; BaseType == bases.wombgifts.t3; }
 	Show t4	{ !G4; !newleaguetier.t3; BaseType == bases.wombgifts.t4; }
@@ -2145,7 +2162,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	ShowD exDust2 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust3; }
 	ShowD exDust3 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust4; }
 
-	Show foulBorn { !GSH; !*t3; !SpecialNoB; !FoulUnique; Foulborn True; }
+	Show foulBorn { %D6; !GSH; !*t3; !SpecialNoB; !FoulUnique; Foulborn True; }
 	Show multispecial { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
 	Show 5link    { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
 	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }

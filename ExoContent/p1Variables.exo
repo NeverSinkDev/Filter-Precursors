@@ -218,6 +218,8 @@ var aux_stats2 = str[4] + dex[4] + int[4] + res_chaos[4] + res_fire[4] + res_col
 var aux_stats_rfocus1 = str[2] + dex[2] + int[2] + res_chaos[3] + res_fire[3] + res_cold[3] + res_light[3] + res_omni[2];
 var aux_stats_rfocus2 = str[2] + dex[2] + int[2] + res_chaos[4] + res_fire[4] + res_cold[4] + res_light[4] + res_omni[3];
 
+var aux_stats_high = str[1] + dex[1] + int[1] + res_chaos[2] + res_fire[2] + res_cold[2] + res_light[2] + res_omni[2];
+
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} SMALL ITEM-DEFENSES (HELMET)
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,6 +365,8 @@ var xgloves_es_core = smallitem_es_defense_main2 + gloves_cheat;
 
 var xgloves_life_mix = xgloves_life_core + gloves_aux + gloves_life[3] + gloves_cheat + combined_lifedefense_hybrid + aux_all;
 var xgloves_es_mix = xgloves_es_core + gloves_aux + smallitem_es_defense_main2 + smallitem_es_defense2 + gloves_cheat + aux_all;
+
+var armors_blend = minionGems[1] + boots_movespeed[2] + suppress[2] + boots_life[1] + aux_stats_high + gloves_accu[1] + gloves_ias[1];
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ##   {META} WEAPON MODS - ATTACK
@@ -600,6 +604,10 @@ var casterPhys2 = wdot_phys[3] + "Lithomancer's";
 
 var casterChaos1 = wdot_chaos[2] + "Mad Lord's";
 var casterChaos2 = wdot_chaos[3] + "Mad Lord's";
+
+## CASTER - BLENDER
+
+var wcast_top1 = wcast_spell[2] + wcast_fire[1] + wcast_cold[1] + wcast_light[1] + casterCheatSafe + ws_cast_crit[1] + ws_cast_speed[1] + ws_critmulti[1] + wcast_hspell[1] + wdmg_fire[1] + wdmg_cold[1] + wdmg_light[1];
 
 ## CASTER - CORE
 var casterCoreGeneral = casterCheatAll + wcast_spell[3];
