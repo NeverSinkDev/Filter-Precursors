@@ -437,13 +437,13 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare, Clean()
 	Show t1 	{ %D6; !G3; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt1gear; }
 
 	Show t2high { %D6; !G3; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt2gear; }
-	Show t2 	{ %D5; !GSH; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
+	Show t2 	{ %D4; !GSH; !exotic.t2; MemoryStrands >= 1;  BaseType == combinedt2gear; }
 
-	Show t3high { %D5; !GSH; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt3gear; }
-	Show t3 	{ %D4; !GSH; !exotic.t3; MemoryStrands >= 1;  BaseType == combinedt3gear; }
+	Show t3high { %D4; !GSH; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt3gear; }
+	Show t3 	{ %D3; !GSH; !exotic.t3; MemoryStrands >= 1;  BaseType == combinedt3gear; }
 
-	Show AnyHigh { %D4; !GSH; !exotic.t3; MemoryStrands >= 60; }
-	Show Any 	 { %D4; !GSH; !exotic.t3; MemoryStrands >= 1; }
+	Show AnyHigh { %D3; !GSH; !exotic.t3; MemoryStrands >= 60; }
+	Show Any 	 { %D3; !GSH; !exotic.t3; MemoryStrands >= 1; }
 }
 
 #===============================================================================================================
@@ -730,9 +730,9 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 	Section VeiledRares : Rarity Rare, ItemLevel >= 68, Auto("rare->exotic->veiled"), Identified True, Mod "Veil"
 	{
 		Show t1 	{ %D4; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
-		Show t2		{ %D4; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
+		Show t2		{ %D3; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
 		Show t3 	{ %D3; !G5;  !exotic.t3; BaseType == source.rares.eg.t3; }
-		Show t4 	{ %D3; !GSH; !exotic.t4; BaseType == source.rares.eg.t4; }
+		Show t4 	{ %D2; !GSH; !exotic.t4; BaseType == source.rares.eg.t4; }
 		Show Any 	{ %D2; !GSH; !exotic.t4; Empty(); }
 	}
 
@@ -743,8 +743,8 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section BreachRings : Class == "Rings", BaseType == bases.extoic.misc.breachring , Auto("rare->exotic->breachrings"), Rarity <= Rare
 	{
-		Show High { %HS6; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any  { %HS5; !G5; !exotic.t2; Empty(); }
+		Show High { %HS4; !G4; !exotic.t2; ItemLevel >= 82; }
+		Show Any  { %HS3; !G5; !exotic.t2; Empty(); }
 	}
 
 #!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans"
@@ -924,7 +924,7 @@ Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel 
 	Show OverQual2          { !G3; !exotic.t2; %D6; Clean(); ItemLevel >= 82; Quality >= 21; }
 	Show Tinc85  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 85; }
 	Show Tinc82  			{ !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; }
-	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D4; Empty(); }
+	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D3; Empty(); }
 }
 
 Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68, !utilflasks
