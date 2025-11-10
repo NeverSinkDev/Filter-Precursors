@@ -1763,7 +1763,7 @@ Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class == class_cu
 
 Section CurrencyCoinsHeist : Auto("currency->heist"), Class == class_currency
 {
-	Show HighStack { %H5; !G4; !Coins.Huge; StackSize >= 500; BaseType == "Rogue's Marker"; }
+	Show HighStack { %H5; !G4; !Coins.Huge; StackSize >= 400; BaseType == "Rogue's Marker"; }
 	Show Any { %H4; !G5; !Coins.Large; BaseType == "Rogue's Marker"; }
 	Hide exHide { !shrink; BaseType == "Rogue's Marker"; }
 }
