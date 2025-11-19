@@ -406,7 +406,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
 	Show QualChancing { !G3; !exotic.t1; %D6; Quality >= 27; BaseType == "Riveted Boots" "Steel Kite Shield"; }
 
-	var craftingArmors = derived.crafting.armors.t1 + derived.crafting.shields.t1 + derived.crafting.shields.t2;
+	var craftingArmors = derived.crafting.armors.t1 + derived.crafting.shields.t1 + derived.crafting.shields.t2 + bases.exotic.atlas.miscgear;
 	Show armors1q1	{ !G4; !exotic.t1; %D6; Quality >= 28; Class == classes_armor; BaseType == craftingArmors; }
 	Show armors1q2	{ !GEX; !exotic.t2; %D6; Quality >= 24; Class == classes_armor; BaseType == craftingArmors; }
 
@@ -415,6 +415,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 	Show weapont1q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	Show weapont2q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 24; }
 	
+	Show anyOverQualityPerf  { !GEX; !exotic.t2; %D5; Class == classes_equip; Quality >= 30; }
 	Show anyOverQualityHigh  { !GEX; !exotic.t3; %D3; Class == classes_equip; Quality >= 26; }
 	ShowD anyOverQuality     { !GEX; !exotic.t3; %D0; Class == classes_equip; Quality >= 21; }
 
