@@ -415,7 +415,7 @@ Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 	Show weapont1q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
 	Show weapont2q2 	 { !GEX; !exotic.t2; %D6; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 24; }
 	
-	Show anyOverQualityPerf  { !GEX; !exotic.t2; %D5; Class == classes_equip; Quality >= 30; }
+	Show anyOverQualityPerf  { !GEX; !exotic.t2; %D4; Class == classes_equip; Quality >= 30; }
 	Show anyOverQualityHigh  { !GEX; !exotic.t3; %D3; Class == classes_equip; Quality >= 26; }
 	ShowD anyOverQuality     { !GEX; !exotic.t3; %D0; Class == classes_equip; Quality >= 21; }
 
@@ -1641,7 +1641,6 @@ Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, B
 	Show t4lifeForce { %D6; StackSize >= 45; !G4; !*t4chaos; }
 	Show t5lifeForce { %D6; StackSize >= 20; !G4; !*t5alchemy; }
 	Show t6lifeForce { %H5; !G5H; !*t6chrom; }
-	Hide exHide 	 { !shrink; }
 }
 
 #===============================================================================================================
@@ -2071,6 +2070,7 @@ Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 {
 	HideD UntieredItems { !shrink; }
 	Hide scrollfragments { !shrink; BaseType == "Scroll Fragment"; }
+	Hide exLifeForce 	 { !shrink; BaseType == currency.lifeforce.any; }
 	Show restex { Empty(); }
 }
 
