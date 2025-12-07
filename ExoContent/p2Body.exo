@@ -5,7 +5,7 @@
 Func IdMods(){ Identified True; }
 Func Clean(){ Corrupted False; Mirrored False; }
 Func Typical(){ Quality = 0; Sockets <= 0; }
-Func LVL() { AreaLevel < eglevel; }
+Func LVL() { AreaLevel <= eglevelc; }
 Func EG() { AreaLevel >= eglevel }
 Func TopMods() { ItemLevel >= egTopMods; }
 Func FromTo(minItemLevel, maxArea) { ItemLevel >= minItemLevel; AreaLevel <= maxArea; }
@@ -28,8 +28,11 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 {
 	Show stack3 { %D6; !gold_pilehuge;  StackSize >= 5000; }
 	Show stack2 { %D6; !gold_pilelarge;  StackSize >= 2500; }
-	Show stack1 { %D5; !gold_pilemedium;  StackSize >= 500; }
-	Show stack1lvl { %D5; !gold_pilemedium; StackSize >= 250; LVL(); }
+	Show stack1 { %D5; !gold_pilemedium;  StackSize >= 650; }
+	
+	Show stack1lvl { %D5; !gold_pilemedium; StackSize >= 100; AreaLevel <= leveling.keylevels.act1; }
+	Show stack2lvl { %D5; !gold_pilemedium; StackSize >= 200; AreaLevel <= leveling.keylevels.act3; }
+	Show stack3lvl { %D5; !gold_pilemedium; StackSize >= 300; LVL(); }
 
 	Show any   { %H3; !gold_pilesmall; Empty(); }
 }
@@ -142,7 +145,7 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, EG()
 # [[0200]] Normal, Magic, Rare Hiding Rules
 #===============================================================================================================
 #!! Waypoint c3.gear.any.hiding : "Normal, Magic, Rare Hiding Rules, Except chancing"
-Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG(), Quality 0, Sockets 0, UT <= 2
+Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->crafting"), EG(), Quality 0, Sockets 0, UT <= 3
 {
 	HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; }
 	HideD ArHider { !utility_minimize; AR(); Class == classes_armor; }
@@ -154,7 +157,7 @@ Section ConditionalHiders : Rarity <= Magic, Auto("Endgame->conditionalhiders->c
 }
 
 #!! Waypoint c3.gear.rare.hiding : "Rare Hiding Rules"
-Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare"), EG(), Quality 0, Sockets 0, UT <= 2
+Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare"), EG(), Quality 0, Sockets 0, UT <= 3
 {
 	HideD HideWeaponsByType { !utility_minimize; Class == classes_weapons + "Quivers"; }
 	HideD ArHider { !utility_minimize; AR(); Class == classes_armor; }
@@ -174,7 +177,7 @@ Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare"
 ## [1234] Unidentified Mod Tier: Rare
 ##------------------------------------
 
-Section HighModtierRare : Auto("ut->rare"), Rarity Rare
+Section HighModtierRare : Auto("ut->rare"), Rarity Rare, AreaLevel >= eglevel
 {
 	## ID-Tier Gear (Rare)
 	Show gear4a { %D6; !exotics_btier; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
@@ -202,15 +205,17 @@ Section HighModtierRare : Auto("ut->rare"), Rarity Rare
 	Show j3c { %D5; !gear_tieredjewellery; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
 	Show j2c { %D5; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
-	Show anyRemaining5 { !exotics_btier; %D6; UT >= 5; Class == classes_equip; }
-	Show anyRemaining4 { !gear_tieredjewellery; %D5; UT >= 4; Class == classes_equip; }
+	Show anyRemaining5gear { !exotics_btier; %D5; UT >= 5; Class == classes_nonJwlryEquip; }
+	Show anyRemaining4gear { !gear_tieredjewellery; %D4; UT >= 4; Class == classes_nonJwlryEquip; }
+	Show anyRemaining5j { !exotics_btier; %D6; UT >= 5; Class == classes_jewellery; }
+	Show anyRemaining4j { !gear_tieredjewellery; %D6; UT >= 4; Class == classes_jewellery; }
 }
 
 ##------------------------------------
 ## [1234] Unidentified Mod Tier: Magic
 ##------------------------------------
 
-Section HighModtierMagic : Auto("ut->magic"), Rarity Magic
+Section HighModtierMagic : Auto("ut->magic"), Rarity Magic, AreaLevel >= eglevel
 {
 	## ID-Tier Gear (Magic)
 	Show gear4a { %D6; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
@@ -238,8 +243,10 @@ Section HighModtierMagic : Auto("ut->magic"), Rarity Magic
 	Show j3c { %D5; !gear_highlightdrop2; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
 	Show j2c { %D4; !gear_highlightdrop2; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
-	Show anyRemaining5 { !exotics_ctier; %D6; UT >= 5; Class == classes_equip; }
-	Show anyRemaining4 { !gear_highlightdrop2; %D3; UT >= 4; Class == classes_equip; }
+	Show anyRemaining5gear { !exotics_ctier; %D5; UT >= 5; Class == classes_nonJwlryEquip; }
+	Show anyRemaining4gear { !gear_highlightdrop2; %D4; UT >= 4; Class == classes_nonJwlryEquip; }
+	Show anyRemaining5j { !exotics_ctier; %D6; UT >= 5; Class == classes_jewellery; }
+	Show anyRemaining4j { !gear_highlightdrop2; %D6; UT >= 4; Class == classes_jewellery; }
 }
 
 #===============================================================================================================
@@ -296,18 +303,18 @@ Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
 	Show Quality2MartialAny { !itemproperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
 	Show Quality2CasterAny  { !itemproperty_salvage1; %D3; Class == classes_cast; Quality >= 10; }
 	Show Quality2ArmorAny   { !itemproperty_salvage1; %D5; Class == classes_armor; Quality >= 10; }
-	Show Quality2Flask	    { !itemproperty_salvage1; %D4; Class == class_flasks; Quality >= 10; }
+	Show Quality2Flask	    { !itemproperty_salvage1; %D4; Class == class_flasklikes; Quality >= 10; }
 
 	# Single Quality Currencies
 	Show QualityMartialAny { !itemproperty_salvage2; %D2; Class == classes_attack; Quality >= 1; }
 	Show QualityCasterAny  { !itemproperty_salvage2; %D2; Class == classes_cast; Quality >= 1; }
 	Show QualityArmorAny   { !itemproperty_salvage2; %D4; Class == classes_armor; Quality >= 1; }
-	Show QualityFlask	   { !itemproperty_salvage2; %D4; Class == class_flasks; Quality >= 1; }
+	Show QualityFlask	   { !itemproperty_salvage2; %D4; Class == class_flasklikes; Quality >= 1; }
 
 	# Artificer Scraps
-	Show SocketsLarge1 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
-	Show SocketsLarge2 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
-	Show SocketsSmall 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; }
+	Show SocketsSmall1 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 2; Width <= 2; }
+	Show SocketsSmall2 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 4; Width <= 1; }
+	Show SocketsOthers 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; }
 }
 
 Section EndgameCraftingBases : Clean()
@@ -500,9 +507,9 @@ Section SalvagableRares : Rarity Rare, Auto("Rare->Salvagable"), ItemLevel >= eg
 	Show QualityArmorAny   { !itemproperty_salvage2; %D4; Class == classes_armor; Quality >= 1; }
 
 	# Artificer Scraps
-	Show SocketsLarge1 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
-	Show SocketsLarge2 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; Height >= 4; }
-	Show SocketsSmall 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height < 3 }
+	Show SocketsSmall1 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 2; Width <= 2; }
+	Show SocketsSmall2 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 4; Width <= 1; }
+	Show SocketsOthers 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; }
 }
 
 #===============================================================================================================
@@ -952,8 +959,9 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 	
 
 	Show TrialKeySanctumTop 		 { %HS4; !fragments_c; BaseType == "Djinn Barya"; ItemLevel >= 80; }
-	Show TrialKeySanctumHigh 		 { %H4; !fragments_c; BaseType == "Djinn Barya"; ItemLevel >= 60; ItemLevel <= 79 }
-	Show TrialKeySanctumLow 		 { %HS2; !fragments_fragdmuted; BaseType == "Djinn Barya"; ItemLevel <= 59; }
+	Show TrialKeySanctum3 		 { %H4; !fragments_c; BaseType == "Djinn Barya"; ItemLevel >= 60; ItemLevel <= 79 }
+	Show TrialKeySanctum2 		 { %HS3; !fragments_fragdmuted; BaseType == "Djinn Barya"; ItemLevel >= 45; ItemLevel <= 59; }
+	Show TrialKeySanctum1 		 { %H2; !fragments_fragdmuted; BaseType == "Djinn Barya"; ItemLevel <= 44; }
 
 	Show TrialSpecial 			     { %HS5; !fragments_c; BaseType == "Test of Cunning Barya" "Test of Strength Barya" "Test of Time Barya" "Test of Will Barya"; }
 
@@ -984,18 +992,18 @@ Section SalvagableLeveling : Rarity <= Magic, Auto("Leveling->Salvagable"), LVL(
 	Show Quality2MartialAny { %D4; !itemproperty_salvagelvl1; Class == classes_attack; Quality >= 10; }
 	Show Quality2CasterAny  { %D4; !itemproperty_salvagelvl1; Class == classes_cast; Quality >= 10; }
 	Show Quality2ArmorAny   { %D5; !itemproperty_salvagelvl1; Class == classes_armor; Quality >= 10; }
-	Show Quality2Flask	    { %D5; !itemproperty_salvagelvl1; Class == class_flasks; Quality >= 10; }
+	Show Quality2Flask	    { %D5; !itemproperty_salvagelvl1; Class == class_flasklikes; Quality >= 10; }
 
 	# Single Quality Currencies
 	Show QualityMartialAny { %D4; !itemproperty_salvagelvl1; Class == classes_attack; Quality >= 1; }
 	Show QualityCasterAny  { %D4; !itemproperty_salvagelvl1; Class == classes_cast; Quality >= 1; }
 	Show QualityArmorAny   { %D4; !itemproperty_salvagelvl1; Class == classes_armor; Quality >= 1; }
-	Show QualityFlask	   { %D4; !itemproperty_salvagelvl1; Class == class_flasks; Quality >= 1; }
+	Show QualityFlask	   { %D4; !itemproperty_salvagelvl1; Class == class_flasklikes; Quality >= 1; }
 
 	# Artificer Scraps
-	Show SocketsLarge1 	   { !itemproperty_salvage2; %D3; Class == classes_equip; Sockets > 0; Height >= 3; Width >= 2; }
-	Show SocketsLarge2 	   { !itemproperty_salvage2; %D3; Class == classes_equip; Sockets > 0; Height >= 4; }
-	Show SocketsSmall 	   { %D3; !itemproperty_salvagelvl1; Class == classes_equip; Sockets > 0; Height < 3 }
+	Show SocketsSmall1 	   { !itemproperty_salvagelvl1; %D3; Class == classes_equip; Sockets > 0; Height <= 2; Width <= 2; }
+	Show SocketsSmall2 	   { !itemproperty_salvagelvl1; %D3; Class == classes_equip; Sockets > 0; Height <= 4; Width <= 1; }
+	Show SocketsOthers 	   { !itemproperty_salvage2; %D3; Class == classes_equip; Sockets > 0; }
 }
 
 #===============================================================================================================
@@ -1102,7 +1110,10 @@ Section LevelingRareGear : Rarity Rare, LVL()
 	{
 		Show Wands				{ %D4; Class == "Wands"; }
 		Show Foci				{ %D4; Class == "Foci"; }
-		Show Shields			{ %D4; Class == "Shields"; }
+
+		Show ShieldsAr			{ %D4; Class == "Shields"; BaseType "Tower Shield"; }
+		Show ShieldsArEv		{ %D4; Class == "Shields"; BaseType "Targe"; }
+		Show ShieldsArEs		{ %D4; Class == "Shields"; BaseType "Crest Shield" }
 
 		Show Sceptres			{ %D4; Class == "Sceptres"; }
 		Show Staves				{ %D4; Class == "Staves"; }
@@ -1171,10 +1182,9 @@ Section LevelingMiscGear
 
 Section NormalMagic
 {
-	Section FirstLevels : Auto("Leveling->FirstLevels")
+	Section FirstLevelsM : Auto("Leveling->FirstLevelsMagic")
 	{
-		Show FirstAreasMagic 			{ %D5; !utility_highlight4; AreaLevel <= leveling.keylevels.firstZones; Rarity Magic; }
-		Show FirstAreasNormal 			{ %D5; !gear_unstyled; AreaLevel <= leveling.keylevels.firstZones; Rarity Normal; }
+		Show Any    { %D5; !utility_highlight4; AreaLevel <= leveling.keylevels.firstZones; Rarity Magic; }
 	}
 
 	Section ProgressiveHideRule : Auto("Leveling->progressivehide"), Rarity Normal, Class == classes_armor + classes_attack, !utility_minimize
@@ -1211,7 +1221,10 @@ Section NormalMagic
 	{
 		Show Wands 			{ !gear_unstyled; %D3; Class == "Wands"; }
 		Show Foci 			{ !gear_unstyled; %D3; Class == "Foci"; }
-		Show Shields		{ !gear_unstyled; %D3; Class == "Shields"; }
+		
+		Show ShieldsAr		{ !gear_unstyled; %D3; Class == "Shields"; BaseType "Tower Shield"; }
+		Show ShieldsArEv	{ !gear_unstyled; %D3; Class == "Shields"; BaseType "Targe"; }
+		Show ShieldsArEs	{ !gear_unstyled; %D3; Class == "Shields"; BaseType "Crest Shield" }
 
 		Show Sceptres 		{ !gear_unstyled; %D3; Class == "Sceptres"; }
 		Show Staves 		{ !gear_unstyled; %D3; Class == "Staves"; }
@@ -1232,9 +1245,14 @@ Section NormalMagic
 
 Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_equip, Rarity = Magic
 {
-	Show Rest 		 { !gear_vendor; %D2; AreaLevel >= leveling.keylevels.act2; AreaLevel <= eglevel; }
+	Show Rest 		 { !gear_vendor; %D2; AreaLevel >= leveling.keylevels.act2; LVL(); }
 	Show Act2 		 { !gear_vendor; %D4; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
 	Show Act1 		 { !gear_vendor; %D4; AreaLevel >=leveling.keylevels.firstZones; AreaLevel <= leveling.keylevels.act1; }
+}
+
+Section FirstLevelsN : Auto("Leveling->FirstLevelsNormal")
+{
+	Show Any 	{ %D5; !gear_unstyled; AreaLevel <= leveling.keylevels.firstZones; Rarity Normal; }
 }
 
 #!! Waypoint c22.hide.all : "HIDELAYER - Hide all known untiered items"
