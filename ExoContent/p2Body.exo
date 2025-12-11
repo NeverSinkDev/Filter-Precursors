@@ -552,7 +552,7 @@ Section Socketables : Auto("sockets->general"), Class == "Augment"
 	Show SupplyLow 	 { %H3; !currency_supply2; BaseType == socketables.generic.exCommon2 + socketables.generic.exCommon3; }
 
 	Hide exHide { !utility_minimize; BaseType == socketables.generic.b + socketables.generic.c + socketables.generic.d + socketables.generic.e + allCommonRunes; }
-	Show restex { !utility_unknownitem; BaseType "Soul Core" "Rune" "Talisman"; }
+	Show restex { !utility_unknownitem; BaseType "Soul Core" "Rune" "Idol"; }
 }
 
 #===============================================================================================================
@@ -638,6 +638,9 @@ Section UncutGems : Auto("gems->uncut")
 
 Section Gems : Auto("gems"), Class == class_gems
 {
+	Show UpgradedGemsTwice { !Apex_sTier; TwiceCorrupted True; GemLevel > 20; Quality > 20; }
+	Show UpgradedGemsLevel { !exotics_btier; TwiceCorrupted True; }
+
 	Show any { !typebased_gems2; Empty(); }
 }
 
@@ -1140,6 +1143,7 @@ Section LevelingRareGear : Rarity Rare, LVL()
 		Show OneHandMaces		{ %D4; Class == "One Hand Maces"; }
 		Show TwoHandMaces		{ %D4; Class == "Two Hand Maces"; }
 
+		Show Talismans			{ %D4; Class == "Talismans"; }
 		Show Quarterstaves		{ %D4; Class == "Quarterstaves"; }
 	}
 
@@ -1251,6 +1255,7 @@ Section NormalMagic
 		Show OneHandMaces 	{ !gear_unstyled; %D3; Class == "One Hand Maces"; }
 		Show TwoHandMaces 	{ !gear_unstyled; %D3; Class == "Two Hand Maces"; }
 
+		Show Talismans 		{ !gear_unstyled; %D3; Class == "Talismans"; }
 		Show Quarterstaves 	{ !gear_unstyled; %D3; Class == "Quarterstaves"; }
 	}
 }
