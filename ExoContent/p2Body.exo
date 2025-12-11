@@ -88,6 +88,12 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 	Show overqual1q2	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 24; }
 }
 
+Section ExoticState : Auto("exotic->state")
+{
+	Show twiceCorruptedMagic { !exotics_btier; TwiceCorrupted True; Rarity Rare; }
+	Show twiceCorruptedRare { !exotics_ctier; TwiceCorrupted True; Rarity <= Magic;  }
+}
+
 #------------------------------------
 # [1234] Crafting and Chancing Bases
 #------------------------------------
@@ -206,7 +212,7 @@ Section HighModtierRare : Auto("ut->rare"), Rarity Rare, AreaLevel >= eglevel
 	Show j2c { %D5; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
 	Show anyRemaining5gear { !exotics_btier; %D5; UT >= 5; Class == classes_nonJwlryEquip; }
-	Show anyRemaining4gear { !gear_tieredjewellery; %D4; UT >= 4; Class == classes_nonJwlryEquip; }
+	Show anyRemaining4gear { !exotics_ctier; %D4; UT >= 4; Class == classes_nonJwlryEquip; }
 	Show anyRemaining5j { !exotics_btier; %D6; UT >= 5; Class == classes_jewellery; }
 	Show anyRemaining4j { !gear_tieredjewellery; %D6; UT >= 4; Class == classes_jewellery; }
 }
@@ -526,7 +532,7 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 #===============================================================================================================
 #!! Waypoint c7.miscgear.socketables : "Socketables - Runes and Soul Cores"
 
-Section Socketables : Auto("sockets->general"), Class == "Socketable"
+Section Socketables : Auto("sockets->general"), Class == "Augment"
 { 
 	var allPreferredRunes = socketables.generic.exCommonPref1 + socketables.generic.exCommonPref2 + socketables.generic.exCommonPref3;
 	var allCommonRunes = socketables.generic.exCommon1 + socketables.generic.exCommon2 + socketables.generic.exCommon3;
@@ -892,6 +898,9 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
+	Show twiceCorruptedUniques { !uniques_a; TwiceCorrupted True; }
+	Show vaalModUnique 		   { !uniques_a; HasVaalUniqueMod True; }
+
 	Show multispecialhigh { !uniques_x; BaseType == uniques.generic.multispecialhigh; }
 
 	Show overQualityUniques	{ %D5; !uniques_exceptional; Quality >= 24; }
@@ -910,6 +919,9 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
+
+	Show vaalTypeUniques { %D5; !uniques_b; IsVaalUnique True; }
+
 	Show t3boss { %H5; !uniques_xbossdrop; BaseType == uniques.generic.t3boss; }
 	Show t3 	{ %H5; !uniques_b; BaseType == uniques.generic.t3; }
 #------------------------------------
