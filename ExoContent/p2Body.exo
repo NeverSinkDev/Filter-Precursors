@@ -1159,8 +1159,8 @@ Section LevelingRareGear : Rarity Rare, LVL()
 
 	Section Others : Auto("Leveling->Rare->Remaining") Class == classes_equip
 	{
-		Show AnythingAct1 { %H5; AreaLevel <= leveling.keylevels.act1; !gear_weakrare1; }
-		Show AnythingAct2 { %H4; AreaLevel <= leveling.keylevels.act2; !gear_weakrare1; }
+		Show AnythingAct1 { %H5; AreaLevel <= leveling.keylevels.act1; !gear_weakrareLeveling1; }
+		Show AnythingAct2 { %H4; AreaLevel <= leveling.keylevels.act2; !gear_weakrareLeveling1; }
 		Show Any { %H3; Empty(); !gear_weakrare1; }
 	}
 }
