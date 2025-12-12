@@ -85,7 +85,7 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 
 	Show oversockt2s3	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket2; Sockets >= 3; }
 	Show oversockt2s2	{ !exotics_btier; %D6; Rarity <= Rare; Class == classes_socket1; Sockets >= 2; }
-	Show overqual1q2	{ !exotics_btier; %D6; Rarity <= Rare; Quality >= 24; }
+	Show overqual1q2	{ !exotics_ctier; %D6; Rarity <= Rare; Quality >= 21; }
 }
 
 Section ExoticState : Auto("exotic->state")
@@ -408,6 +408,11 @@ Section EndgameCraftingBases : Clean()
 		Cont MagicDecoratorRemover { !utility_decoremovermagic; Rarity Magic; }
 		Cont NormalDecoratorRemover { !utility_decoremovernormal; Rarity Normal; }
 	}
+}
+
+Section EventHighlight : Auto("Special->AlwaysShow"), Rarity <= Rare, Class == classes_equip
+{
+	Show Any { !exotics_dtier; AlwaysShow True; }
 }
 
 #===============================================================================================================
@@ -761,7 +766,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 {
 	Show rare 	  	   { %D5; !currency_d; !utility_highlight2; BaseType == currency.leveling.rare; }
 	Show magic    	   { %D4; !currency_supplylvl2; !utility_highlight2; BaseType == currency.leveling.magic; }
-	Show wisdomStart   { %D3; !currency_supply3; !utility_highlight3; AreaLevel < 17; BaseType == currency.leveling.wisdom; }
+	Show wisdomStart   { %D3; !currency_supply3; !utility_highlight3; AreaLevel <= 17; BaseType == currency.leveling.wisdom; }
 	Show wisdom   	   { %D3; !currency_supply4; BaseType == currency.leveling.wisdom; }
 }
 
@@ -906,7 +911,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 
 	Show multispecialhigh { !uniques_x; BaseType == uniques.generic.multispecialhigh; }
 
-	Show overQualityUniques	{ %D5; !uniques_exceptional; Quality >= 24; }
+	Show overQualityUniques	{ %D5; !uniques_exceptional; Quality >= 21; }
 	Show overSocketUniques1	{ %D5; !uniques_exceptional; Class == classes_socket2; Sockets >= 3; }
 	Show overSocketUniques2	{ %D5; !uniques_exceptional; Class == classes_socket1; Sockets >= 2; }
 
@@ -1154,8 +1159,8 @@ Section LevelingRareGear : Rarity Rare, LVL()
 
 	Section Others : Auto("Leveling->Rare->Remaining") Class == classes_equip
 	{
-		Show AnythingAct1 { %H5; AreaLevel < leveling.keylevels.act1; !gear_weakrare1; }
-		Show AnythingAct2 { %H4; AreaLevel < leveling.keylevels.act2; !gear_weakrare1; }
+		Show AnythingAct1 { %H5; AreaLevel <= leveling.keylevels.act1; !gear_weakrare1; }
+		Show AnythingAct2 { %H4; AreaLevel <= leveling.keylevels.act2; !gear_weakrare1; }
 		Show Any { %H3; Empty(); !gear_weakrare1; }
 	}
 }
