@@ -90,8 +90,8 @@ Section ExceptionalItems : Auto("exotic->exceptional"), Corrupted False
 
 Section ExoticState : Auto("exotic->state")
 {
-	Show twiceCorruptedMagic { !exotics_btier; TwiceCorrupted True; Rarity Rare; }
-	Show twiceCorruptedRare { !exotics_ctier; TwiceCorrupted True; Rarity <= Magic;  }
+	Show twiceCorruptedRare { !exotics_btier; TwiceCorrupted True; Rarity Rare; }
+	Show twiceCorruptedMagic { !exotics_ctier; TwiceCorrupted True; Rarity <= Magic;  }
 }
 
 #------------------------------------
@@ -120,7 +120,7 @@ Section IdMods : IdMods(), Clean(), Auto("ExoticMods"), Rarity <= Rare, !exotics
 	Show cmSceptres { Class == "Sceptres"; Mod >= 1 xSceptresChaseMods; }
 	Show cmRanged { Class == "Bows" "Crossbows"; Mod >= 1 xRangedChaseMods; }
 	Show cmSpears { Class == "Spears"; Mod >= 1 xSpearsChaseMods; }
-	Show cm2Handed { Class == "Two Hand Maces" "Quarterstaves"; Mod >= 1 x2HandedChaseMods; }
+	Show cm2Handed { Class == "Two Hand Maces" "Quarterstaves" "Talismans"; Mod >= 1 x2HandedChaseMods; }
 }
 
 #===============================================================================================================
@@ -950,7 +950,7 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_
 
 Section FullFragments : Auto("fragments->generic")
 {
-	Show exRareTablets { !fragments_a; BaseType == tabletsOnly; Rarity Rare; }
+	Show exRareTablets { !fragments_b; BaseType == tabletsOnly; Rarity Rare; }
 
 	Show s { !Apex_sTier; BaseType == fragments.generic.s; }
 	Show a { !fragments_a; BaseType == fragments.generic.a; }

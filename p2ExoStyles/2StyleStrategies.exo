@@ -19,6 +19,16 @@ Func BorderedGlow(accent, glow)
 	SetTextColor accent; SetBorderColor accent; SetBackgroundColor glow;
 }
 
+Func TextSimple(accent)
+{
+	SetTextColor accent; SetBorderColor NONE; SetBackgroundColor NONE;
+}
+
+Func BorderedPure(accent)
+{
+	SetTextColor accent; SetBorderColor accent; SetBackgroundColor NONE;
+}
+
 Func Bordered(accent)
 {
 	SetTextColor accent; SetBorderColor accent;
