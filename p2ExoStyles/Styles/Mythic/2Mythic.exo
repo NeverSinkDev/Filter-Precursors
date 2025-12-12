@@ -1,0 +1,448 @@
+#------------------------------------
+# CURRENCY
+#------------------------------------
+
+Func MapsTier
+{
+    BorderedPure(quest);
+    SetFontSize font.t3;
+    MinimapIcon 1 Pink Square; PlayAlertSound asMaps; PlayEffect Pink;
+}
+
+Func utilityHigh
+{
+    SetTextColor artifact; SetBorderColor artifact; SetBackgroundColor NONE;
+    SetFontSize font.t3;
+    MinimapIcon NONE; PlayAlertSound NONE; PlayEffect NONE;
+}
+
+Func utilityLow
+{
+    SetTextColor artifact; SetBorderColor NONE; SetBackgroundColor NONE;
+    MinimapIcon NONE; PlayAlertSound NONE; PlayEffect NONE;
+}
+
+Func goldA
+{
+    SetTextColor cGold; SetBorderColor cGold; SetBackgroundColor NONE;
+    SetFontSize font.t3;
+    MinimapIcon NONE; PlayAlertSound NONE; PlayEffect NONE;
+}
+
+Func goldB
+{
+    SetTextColor cGold; SetBorderColor NONE; SetBackgroundColor cAccentVeryLow;
+    MinimapIcon NONE; PlayAlertSound NONE; PlayEffect NONE;
+}
+
+Func specialDropA
+{
+    BorderedPure(cTierX);
+    PlayAlertSound asUnique; PlayEffect Cyan; MinimapIcon 0 Cyan Pentagon;
+}
+
+Func specialDropB
+{
+    BorderedPure(cTierX);
+    PlayAlertSound asUnique; PlayEffect Cyan; MinimapIcon 1 Cyan Pentagon;
+}
+
+Func specialDropC
+{
+    TextSimple(cTierX);
+    PlayEffect Cyan; MinimapIcon 2 Cyan Pentagon;
+}
+
+Func questVisual
+{
+    BorderedPure(quest);
+    PlayAlertSound asUnique; PlayEffect Pink; MinimapIcon 1 Pink Pentagon;
+}
+
+Func TierA
+{
+    BorderedPure(cCurrTierA);
+    PlayAlertSound asA; PlayEffect Orange; MinimapIcon 0 Orange Circle;
+}
+
+Func TierB
+{
+    BorderedPure(cCurrTierB);
+    PlayAlertSound asCurr; PlayEffect Purple; MinimapIcon 1 Purple Circle;
+}
+
+Func TierC
+{
+    BorderedPure(cCurrTierC);
+    PlayAlertSound asCurr; PlayEffect Blue; MinimapIcon 1 Blue Circle;
+}
+
+Func TierD
+{
+    BorderedPure(cCurrTierD);
+    PlayAlertSound asCurr; PlayEffect Green; MinimapIcon 2 Green Circle;
+}
+
+Func TierE
+{
+    TextSimple(cCurrTierE);
+    MinimapIcon NONE;
+    PlayAlertSound NONE;
+    PlayEffect NONE;
+}
+
+Expand currency_a
+{
+    TierA();
+}
+
+Expand currency_b
+{
+    TierB();
+}
+
+Expand currency_c
+{
+    TierC();
+}
+
+Expand currency_d
+{
+    TierD();
+}
+
+Expand currency_e
+{
+    TierE();
+}
+
+Expand currency_specialartifact
+{
+    TierC();
+}
+
+Expand currency_supply2
+{
+    TierD();
+    MinimapIcon NONE;
+    PlayAlertSound NONE;
+}
+
+Expand currency_supply3
+{
+    TierD();
+    MinimapIcon NONE;
+    PlayAlertSound NONE;
+}
+
+Expand currency_supply4
+{
+    TierE();
+    MinimapIcon NONE;
+    PlayAlertSound NONE;
+}
+
+Expand currency_supplylvl2
+{
+    TierD();
+    MinimapIcon NONE;
+    PlayAlertSound NONE;
+}
+
+Expand exotics_corrupthigh
+{
+    specialDropC();
+}
+
+Expand exotics_corrupt
+{
+    Disable;
+}
+
+#------------------------------------
+# FRAGMENT
+#------------------------------------
+
+Expand fragments_a
+{
+    TierA();
+}
+
+Expand fragments_b
+{
+    TierB();
+}
+
+Expand fragments_c
+{
+    TierC();
+}
+
+Expand fragments_d
+{
+    TierD();
+}
+
+Expand fragments_fragdmuted
+{
+    TierD();
+}
+
+Expand fragments_e
+{
+    TierE();
+}
+
+#------------------------------------
+# FRAGMENT
+#------------------------------------
+
+Expand fragments_splinter1
+{
+    TierB();
+}
+
+Expand fragments_splinter2
+{
+    TierB();
+}
+
+Expand fragments_splinter3
+{
+    TierC();
+}
+
+Expand fragments_splinter4
+{
+    TierD();
+}
+
+Expand fragments_splinter5
+{
+    TierD();
+}
+
+#------------------------------------
+# UNIQUES
+#------------------------------------
+
+Expand uniques_a
+{
+    currency_a();
+}
+
+Expand uniques_b
+{
+    currency_b();
+}
+
+Expand uniques_x
+{
+    specialDropB();
+}
+
+Expand uniques_exceptional
+{
+    specialDropA();
+}
+
+Expand uniques_xbossdrop
+{
+    specialDropC();
+}
+
+Expand uniques_c
+{
+    currency_c();
+}
+
+
+#------------------------------------
+# GOLD
+#------------------------------------
+
+Expand gold_pilehuge
+{
+    goldA();
+}
+
+Expand gold_pilelarge
+{
+    goldA();
+}
+
+Expand gold_pilemedium
+{
+    goldA();
+}
+
+Expand gold_pilesmall
+{
+    goldB();
+}
+
+
+#------------------------------------
+# MISC
+#------------------------------------
+
+Expand typebased_quest
+{
+    questVisual();
+}
+
+Expand utility_unknownitem
+{
+    questVisual();
+}
+
+Expand typebased_gems1
+{
+    currency_b();
+}
+
+Expand typebased_gems2
+{
+    currency_c();
+}
+
+Expand typebased_gems3
+{
+    currency_d();
+}
+
+Expand exotics_artifacthigh
+{
+    specialDropA();
+}
+
+Expand exotics_artifact
+{
+    specialDropB();
+}
+
+Expand exotics_btier
+{
+    specialDropB();
+}
+
+Expand exotics_identifiedmod
+{
+    specialDropB();
+}
+
+Expand exotics_ctier
+{
+    specialDropC();
+}
+
+Expand exotics_dtier
+{
+    specialDropC();
+}
+
+Expand itemproperty_achancing
+{
+    specialDropB();
+}
+
+Expand itemproperty_bchancing
+{
+    specialDropC();
+}
+
+#------------------------------------
+# MISC
+#------------------------------------
+
+Expand typebased_flaskcharms
+{
+    utilityLow();
+}
+
+Expand typebased_flaskcharms1high
+{
+    utilityLow();
+}
+
+Expand gear_jewelmagic
+{
+    specialDropC();
+}
+
+Expand gear_jewelmagiclow
+{
+    specialDropC();
+}
+
+Expand gear_jewelrare
+{
+    specialDropB();
+}
+
+Expand maps_regularhigh
+{
+    MapsTier();
+}
+
+Expand maps_regularmid
+{
+    MapsTier();
+}
+
+Expand maps_regularlow
+{
+    MapsTier();
+}
+
+Expand maps_regularhighest
+{
+    MapsTier();
+}
+
+Expand maps_specialb
+{
+    specialDropB();
+}
+
+Expand maps_specialc
+{
+    specialDropB();
+}
+
+#------------------------------------
+# Highlights (Mark)
+#------------------------------------
+
+Expand gear_decojewellery
+{
+    SetBorderColor cRareTrinkets;
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+    PlayAlertSound NONE;
+    MinimapIcon NONE;
+}
+
+Expand gear_highlightdrop2
+{
+    SetBorderColor cRareTrinkets;
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+    PlayAlertSound NONE;
+    MinimapIcon NONE;
+}
+
+Expand gear_highlightdrop3
+{
+    SetBorderColor cRareTrinkets;
+    SetBackgroundColor NONE;
+    SetBorderColor NONE;
+    PlayAlertSound NONE;
+    MinimapIcon NONE;
+}
+
+Expand itemproperty_level82
+{
+    SetBorderColor cRare82;
+    SetTextColor NONE;
+}
