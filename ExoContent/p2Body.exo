@@ -27,12 +27,12 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 Section Gold : Auto("Gold"), BaseType == "Gold"
 {
 	Show stack3 { %D6; !gold_pilehuge;  StackSize >= 5000; }
-	Show stack2 { %D6; !gold_pilelarge;  StackSize >= 2500; }
+	Show stack2 { %D6; !gold_pilelarge;  StackSize >= 2000; }
 	Show stack1 { %D5; !gold_pilemedium;  StackSize >= 650; }
 	
-	Show stack1lvl { %D5; !gold_pilemedium; StackSize >= 100; AreaLevel <= leveling.keylevels.act1; }
-	Show stack2lvl { %D5; !gold_pilemedium; StackSize >= 200; AreaLevel <= leveling.keylevels.act3; }
-	Show stack3lvl { %D5; !gold_pilemedium; StackSize >= 300; LVL(); }
+	Show stack1lvl { %D5; !gold_pilemedium; StackSize >= 125; AreaLevel <= leveling.keylevels.act1; }
+	Show stack2lvl { %D5; !gold_pilemedium; StackSize >= 250; AreaLevel <= leveling.keylevels.act3; }
+	Show stack3lvl { %D5; !gold_pilemedium; StackSize >= 400; LVL(); }
 
 	Show any   { %H3; !gold_pilesmall; Empty(); }
 }
@@ -360,7 +360,7 @@ Section EndgameCraftingBases : Clean()
 	Section NormalCrafting : Auto("Endgame->normalcraft->any"), Rarity <= Magic
 	{
 		# Best itemlevel bases (82)
-		Show  t1idealLevel  { !gear_unstyled; %D4; TopMods(); BaseType == derived.general.unbiased.equip.t1; }
+		Show  t1idealLevel  { !gear_unstyled; %D5; TopMods(); BaseType == derived.general.unbiased.equip.t1; }
 		Show  t2idealLevel  { !gear_unstyled; %D2; TopMods(); BaseType == derived.general.unbiased.equip.t2; }
 		ShowD t3idealLevel  { !gear_unstyled; TopMods(); BaseType == derived.general.unbiased.equip.t3; }
 
@@ -376,7 +376,7 @@ Section EndgameCraftingBases : Clean()
 	#------------------------------------
 
 		# Matrix proceeds here. Best available bases
-		Show t1 		  { !gear_unstyled; EG(); %D3; BaseType == derived.general.unbiased.equip.t1; }
+		Show t1 		  { !gear_unstyled; EG(); %D4; BaseType == derived.general.unbiased.equip.t1; }
 		Show t2onLevel    { !gear_unstyled; EG(); %D3; BaseType == derived.general.unbiased.equip.t2; AreaLevel <= 75;  }
 		Show t3onLevel 	  { !gear_unstyled; EG(); %D2; BaseType == derived.general.unbiased.equip.t3; AreaLevel <= 70; }
 	}
@@ -764,6 +764,7 @@ Section Waystones : Class == "Waystones"
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency"
 Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL()
 {
+	Show jewellers 	   { %D4; !currency_c; BaseType == currency.leveling.jewellers; }
 	Show rare 	  	   { %D5; !currency_d; !utility_highlight2; BaseType == currency.leveling.rare; }
 	Show magic    	   { %D4; !currency_supplylvl2; !utility_highlight2; BaseType == currency.leveling.magic; }
 	Show wisdomStart   { %D3; !currency_supply3; !utility_highlight3; AreaLevel <= 17; BaseType == currency.leveling.wisdom; }
