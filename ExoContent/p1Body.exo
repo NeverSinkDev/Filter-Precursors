@@ -1646,6 +1646,8 @@ Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, B
 	Show t4lifeForce { %D6; StackSize >= 45; !G4; !*t4chaos; }
 	Show t5lifeForce { %D6; StackSize >= 20; !G4; !*t5alchemy; }
 	Show t6lifeForce { %H5; !G5H; !*t6chrom; }
+
+	Hide exHide 	 { !shrink; BaseType == currency.lifeforce.any; }
 }
 
 #===============================================================================================================
@@ -2076,7 +2078,6 @@ Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 {
 	HideD UntieredItems { !shrink; }
 	Hide scrollfragments { !shrink; BaseType == "Scroll Fragment"; }
-	Hide exLifeForce 	 { !shrink; BaseType == currency.lifeforce.any; }
 	Show restex { Empty(); }
 }
 
