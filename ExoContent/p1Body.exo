@@ -1218,16 +1218,16 @@ Section Jewels : !jewels
 
 	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, !*cluster
 	{
-		Show Optimal1HighLarge	{ !G3; %D5; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum >= 12; }
-		Show OptimalHighLarge	{ !G3; %D5; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
+		Show Optimal1HighLarge	{ !G3; %D6; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum >= 12; }
+		Show OptimalHighLarge	{ !G3; %D6; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
 		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType == "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
 		Show Large 				{ !G4; %H3; !V4; BaseType == "Large Cluster Jewel"; }
 
-		Show OptimalHighMedium  { !G3; %D4; !V2; !High; BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
+		Show OptimalHighMedium  { !G3; %D6; !V2; !High; BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
 		Show HighMedium 	    { !G3; %D4; !V3; !High; BaseType == "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
 		Show Medium 		    { !G4; %H3; !V4; BaseType == "Medium Cluster Jewel"; }
 
-		Show HighSmall 			{ !G3; %D4; !V3; !High; BaseType == "Small Cluster Jewel"; ItemLevel >= 84; }
+		Show HighSmall 			{ !G3; %D6; !V3; !High; BaseType == "Small Cluster Jewel"; ItemLevel >= 84; }
 		Show Small 				{ !G4; %H3; !V4; BaseType == "Small Cluster Jewel"; }
 	}
 }
@@ -1372,7 +1372,7 @@ Section Gems : Class == class_gems
 }
 
 #===============================================================================================================
-# [[3900]] REPLICA UNIQUES
+# [[3900]] REPLICA AND FOULBORN UNIQUES
 #===============================================================================================================
 #!! Waypoint c9.replicas.all : "Tierlists - Replicas" : "Uniques"
 
@@ -1382,6 +1382,18 @@ Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 	Show t2 { %H8; !G2; BaseType == uniques.replicas.t2; }
 	Show multi { !G3; BaseType == uniques.replicas.multi; }
 	Show t3 { %H6; !G4; BaseType == uniques.replicas.t3; }
+
+	Show restex { Empty(); }
+}
+
+#!! Waypoint c9.foulborn.all : "Tierlists - Foulborn" : "Uniques"
+
+Section Foulborn : Auto("uniques->foulborn"), Foulborn True, Rarity Unique
+{
+	Show t1 { !G1; BaseType == uniques.foulborn.t1; }
+	Show t2 { %H8; !G2; BaseType == uniques.foulborn.t2; }
+	Show multi { !G3; BaseType == uniques.foulborn.multi; }
+	Show t3 { %H6; !G4; BaseType == uniques.foulborn.t3; }
 
 	Show restex { Empty(); }
 }
@@ -1898,6 +1910,8 @@ Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !C
 	Show t4 { !G5; %HS4; !*t5alchemy; BaseType == currency.essence.t4; }
 	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.essence.t5; }
 	Show t6 { !G5; %HS2; !*t8trans; BaseType == currency.essence.t6; }
+	
+	Hide exHide { !shrink; BaseType == currency.essence.t1 + currency.essence.t2 + currency.essence.t3 + currency.essence.t4 + currency.essence.t5 + currency.essence.t6; }
 	Show restex { BaseType "Essence of"; }
 }
 
@@ -1939,7 +1953,7 @@ Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Cur
 
 Section Wombgifts : Auto("exotic->wombgifts"), Class == "Wombgifts", !Currency
 {
-	# ShowD exGiftsHigh { !G3; !*t3annul; ItemLevel >= 82; BaseType == bases.wombgifts.anyEx; }
+	ShowD exGiftsHigh { !G3; !*t3annul; ItemLevel >= 82; BaseType == bases.wombgifts.anyEx; }
 
 	Show t2	{ !G1; !*t2divine; BaseType == bases.wombgifts.t2; }
 	Show t3	{ !G3; !*t3annul; %H7; BaseType == bases.wombgifts.t3; }

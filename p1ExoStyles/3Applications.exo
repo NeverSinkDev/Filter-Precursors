@@ -115,6 +115,8 @@ Style MainRules
 	## tierlists and Maps
 	Apply(tier.uniquereplica, Replicas => ReplicaTierList);
 	Apply(tier.uniquereplica, Replicas.jewels => ReplicaTierList.multi);
+	Apply(tier.uniquefoulborn, Foulborn => ReplicaTierList);
+	Apply(tier.uniquefoulborn, Foulborn.jewels => ReplicaTierList.multi);
 	Apply(tier.uniquemaps, UniqueMaps => UniqueMapStrat);
 	Apply(tier.newleague, NewLeagueTiers => NewLeagueTierStrat);
 	Apply(tier.newleague, $newleaguetier => NewLeagueTierStrat);
