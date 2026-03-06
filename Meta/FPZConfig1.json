@@ -7,10 +7,10 @@
     "CurrentLeagueName": "Keepers",
     "EarlyLeagueDays": 4,
     "LateLeagueDays": 21,
-    "UseOverrideFolder" : false,
-    "OverrideFolder" : "none",
+    "UseOverrideFolder" : true,
+    "OverrideFolder" : "2025-11-10",
     "PostProcBlacknessMode" : "yellow",
-    "LeagueStartDate": "2025-10-31",
+    "LeagueStartDate": "2026-03-05",
     "EventLeagueStartDate": "2026-01-29",
     "DebugMode": false,
     "DisableEcoTiering" : false,
@@ -18,13 +18,13 @@
     "OnPremUseStandardWhenLeagueIsDown": false,
     "IsPurgingInvalidatedItemsFromOverview" : true,
     "IsOnPremHc" : false,
-    "OnPremEventFilterSimulation" : true,
+    "OnPremEventFilterSimulation" : false,
     "EventNameSC" : "Phrecia+2.0",
     "EventNameHC" : "Hardcore+Phrecia+2.0",
     "OnPremDefaultWindowId" : 3,
     "OnPremAutoSuggestOnStart" : true,
     "EconomyOperations": [
-        "InfluencedSubtier", "ReplicaSubtier", "BreachSubtier", "FoulbornSubtier"
+        "InfluencedSubtier", "ReplicaSubtier", "FoulbornSubtier"
     ],
     "CurrencyModelTierlists": [
         "fragments",
@@ -33,8 +33,7 @@
         "currency.stackedthree",
         "currency.stackedsix",
         "fragments.generic",
-        "currency.stacked",
-        "breachstone"
+        "currency.stacked"
     ],
     "FullRetiering": [
         "jewels.cluster",
@@ -43,14 +42,14 @@
     ],
     "ExtraTieringSections": [
         "uniques.replicas",
+        "uniques.foulborn",
         "Influenced.Crusader",
         "Influenced.Warlord",
         "Influenced.Redeemer",
         "Influenced.Hunter",
         "Influenced.Shaper",
         "Influenced.Elder",
-        "expensivebases",
-        "breachstone"
+        "expensivebases"
     ],
     "AvoidTieringSections": [
         "basetypes"
@@ -180,7 +179,21 @@
         "currency.trial.tattoo": []
     },
     "RenamedTypes" : {
-
+        "Sweep":"Holy Sweep", 
+        "Lesser Multiple Projectiles Support":"Multiple Projectiles Support", 
+        "Breach Scarab":"Breach Scarab of the Hive", 
+        "Breach Scarab of Lordship":"Breach Scarab of Instability", 
+        "Breach Scarab of Splintering":"Breach Scarab of the Marshal", 
+        "Breach Scarab of Snares":"Breach Scarab of the Incensed Swarm", 
+        "Influencing Scarab of Conversion":"Influencing Scarab of Interference", 
+        "Expedition Scarab of the Skald":"Expedition Scarab of Infusion", 
+        "Legion Scarab of Command":"Legion Scarab of Treasures", 
+        "Abyss Scarab of Emptiness":"Abyss Scarab of Descending", 
+        "Betrayal Scarab of Perpetuation":"Betrayal Scarab of Unbreaking", 
+        "Scarab of Bisection":"Scarab of the Sinistral", 
+        "Scarab of Unity":"Scarab of the Dextral", 
+        "Grasping Voidstone":"Eldritch Voidstone", 
+        "Omniscient Voidstone":"Originator Voidstone"
     },
     "UniqueBaseTypeMigration": {
 
@@ -205,6 +218,12 @@
             "TierableSection": "currency.generic",
             "Filename": "currency",
             "Url": "Currency",
+            "Type": "ninjaEx"
+        },
+        {
+            "TierableSection": "currency.essence",
+            "Filename": "essences",
+            "Url": "Essence",
             "Type": "ninjaEx"
         },
         {
@@ -323,7 +342,7 @@
             "Type": "ninjaEx"
         },
         {
-            "TierableSection": "exotic.invitations",
+            "TierableSection": "fragments.generic",
             "Filename": "invitations",
             "Url": "Invitation",
             "Type": "ninjaItem"
@@ -363,13 +382,6 @@
     },
     {
       "FilterSection": "currency",
-      "SplitItem": "Horizon Shard",
-      "FullItem": "Orb of Horizons",
-      "SplinterCount": 20,
-      "EarlyLeagueBuff": 1.5
-    },
-    {
-      "FilterSection": "currency",
       "SplitItem": "Fracturing Shard",
       "FullItem": "Fracturing Orb",
       "SplinterCount": 20,
@@ -384,22 +396,8 @@
     },
     {
       "FilterSection": "currency",
-      "SplitItem": "Binding Shard",
-      "FullItem": "Orb of Binding",
-      "SplinterCount": 20,
-      "EarlyLeagueBuff": 1
-    },
-    {
-      "FilterSection": "currency",
       "SplitItem": "Regal Shard",
       "FullItem": "Regal Orb",
-      "SplinterCount": 20,
-      "EarlyLeagueBuff": 1
-    },
-    {
-      "FilterSection": "currency",
-      "SplitItem": "Harbinger's Shard",
-      "FullItem": "Harbinger's Orb",
       "SplinterCount": 20,
       "EarlyLeagueBuff": 1
     },
@@ -412,52 +410,10 @@
     },
     {
       "FilterSection": "currency",
-      "SplitItem": "Ancient Shard",
-      "FullItem": "Ancient Orb",
-      "SplinterCount": 20,
-      "EarlyLeagueBuff": 1
-    },
-    {
-      "FilterSection": "currency",
       "SplitItem": "Exalted Shard",
       "FullItem": "Exalted Orb",
       "SplinterCount": 20,
       "EarlyLeagueBuff": 1
-    },
-    {
-      "FilterSection": "fragments",
-      "SplitItem": "Splinter of Xoph",
-      "FullItem": "Xoph's Breachstone",
-      "SplinterCount": 80,
-      "EarlyLeagueBuff": 1.5
-    },
-    {
-      "FilterSection": "fragments",
-      "SplitItem": "Splinter of Esh",
-      "FullItem": "Esh's Breachstone",
-      "SplinterCount": 80,
-      "EarlyLeagueBuff": 1.5
-    },
-    {
-      "FilterSection": "fragments",
-      "SplitItem": "Splinter of Tul",
-      "FullItem": "Tul's Breachstone",
-      "SplinterCount": 80,
-      "EarlyLeagueBuff": 1.5
-    },
-    {
-      "FilterSection": "fragments",
-      "SplitItem": "Splinter of Uul-Netol",
-      "FullItem": "Uul-Netol's Breachstone",
-      "SplinterCount": 80,
-      "EarlyLeagueBuff": 1.5
-    },
-    {
-      "FilterSection": "fragments",
-      "SplitItem": "Splinter of Chayula",
-      "FullItem": "Chayula's Breachstone",
-      "SplinterCount": 80,
-      "EarlyLeagueBuff": 1.5
     },
     {
       "FilterSection": "fragments",
