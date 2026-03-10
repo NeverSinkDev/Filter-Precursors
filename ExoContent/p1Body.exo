@@ -539,8 +539,8 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show DelveFractured    { %D9; !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
 		Show Delve    { !GSH; %D8; !exotic.t2; Mod exotic_delve; Rarity <= Rare; };
 
-		Show MercenaryWeapons { !GSH; %D6; !exotic.t1; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
-		Show MercenaryOthers { !GSH; %D6; !exotic.t1; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
+		Show MercenaryWeapons { !GSH; %D5; !exotic.t2; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
+		Show MercenaryOthers { !GSH; %D5; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
 
 		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
 		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
@@ -1292,7 +1292,7 @@ Section Gems : Class == class_gems
 		Show anyExceptionalQual { !G2; !*P1; BaseType == anySpecialGems; Quality >= 10; }
 
 		Show t3 { %D6; !G3; !*P2; BaseType == gems.tiered.t3; }
-		Show t4 { %D5; !G4; !*P3; BaseType == gems.tiered.t4; }
+		Show t4 { %D5; !G4; !*P2; BaseType == gems.tiered.t4; }
 	}
 
 #------------------------------------
