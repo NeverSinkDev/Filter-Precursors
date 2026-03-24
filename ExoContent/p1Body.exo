@@ -134,10 +134,13 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
 
+	Show EcoTinkBases84 { %D9; !G1; !Currency.t1exalted; BaseType == bases.economy.tink; Clean(); ItemLevel >= 84; }
+	Show EcoTinkBases   { %D9; !G1; !Currency.t1exalted; BaseType == bases.economy.tink; Clean(); }
+
 	Show ExoticHeistBases 	  { %D9; !GSH; BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
 	Show ExoticRitualBases 	  { %D8; !GSH; BaseType == bases.exotic.ritual.any }
 	Show ExoticLakeKala 	  { %D9; !GSH; BaseType == bases.exotic.lakeKala.any }
-	Show ExoticExpeditionBases{ %D5; !GSH; BaseType == bases.exotic.expedition.any + "Iron Flask" }
+	Show ExoticExpeditionBases{ %D5; !GSH; BaseType == bases.exotic.expedition.any + "Iron Flask"; }
 	Show ExoticTalismanBases  { %D9; !GSH; $artefactex; BaseType == "Greatwolf Talisman" "Rot Head Talisman" }
 	Show ExoticBasesMisc 	  { %D9; !GSH; BaseType == "Grasping Mail"; }
 	Show ExoticUniqueBases	  { %D6; !GSH; BaseType == bases.exotic.misc.brickedUniques; }
@@ -1575,6 +1578,19 @@ Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research"
 }
 
 #===============================================================================================================
+# [[4900]] Misc Map Items
+#===============================================================================================================
+#!! Waypoint c10.relics.all : "Relic Keys, Itemized Leagues" : "Scarabs and Fragments"
+
+Section MiscMapSafe : Auto("MiscMapItemsExtra")
+{
+	Show RelicKeys { !G1; !Currency.t1exalted; BaseType == miscmap.keys; }
+	Show RelicKeysSafe { !G1; !Currency.t1exalted; Class == "Vault Keys"; }
+	Show ItemizedLeaguesIncursion { !G2; !fragments.t2; BaseType == "Chronicle of Atzoatl"; }
+	Show ItemizedLeaguesUltimatum { !G2; !fragments.t2; BaseType == "Inscribed Ultimatum"; }
+}
+
+#===============================================================================================================
 # [[4500]] Fragments
 #===============================================================================================================
 #!! Waypoint c9.fragments.all : "Tierlist - Fragments" : "Scarabs and Fragments"
@@ -1618,6 +1634,11 @@ Section MapFragments : Class == "Map Fragments" "Misc Map Items"
 		Show t5 { !G4; %HS3; BaseType == fragments.generic.t4; }
 		Show restex { Empty(); }
 	}
+}
+
+Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
+{
+	Show restex { !restex; Empty(); }
 }
 
 #===============================================================================================================
@@ -1819,8 +1840,8 @@ Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class == class_currency, 
 
 Section CurrencyDelveFossil : Auto("currency->fossil"), Class == class_currency + "Delve Stackable Socketable Currency", !Currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.fossil.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == currency.fossil.t2 + currency.resonator.t1; }
+	Show t1 { !G1; !*t1exalted; BaseType == currency.fossil.t1 + currency.resonator.t1; }
+	Show t2 { !G2; %H8; !*t2divine; BaseType == currency.fossil.t2; }
 	Show t3 { !G4; %HS5; !*t3annul; BaseType == currency.fossil.t3; }
 	Show t4 { !G5; %HS4; !*t4chaos; BaseType == currency.fossil.t4 + currency.resonator.t2; }
 	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.fossil.t5 + currency.resonator.t3; }
@@ -2186,24 +2207,6 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	Show hideable2 { !G5H; %H3; !*t5; BaseType == uniques.generic.hideable2; }
 	Show hideable  { !G5H; %H3; !*t5; BaseType == uniques.generic.hideable; }
 	Show restex { Empty(); }
-}
-
-#===============================================================================================================
-# [[4900]] Misc Map Items
-#===============================================================================================================
-#!! Waypoint c10.relics.all : "Relic Keys, Itemized Leagues" : "Scarabs and Fragments"
-
-Section MiscMapSafe : Auto("MiscMapItemsExtra")
-{
-	Show RelicKeys { !G1; !Currency.t1exalted; BaseType == miscmap.keys; }
-	Show RelicKeysSafe { !G1; !Currency.t1exalted; Class == "Vault Keys"; }
-	Show ItemizedLeaguesIncursion { !G2; !fragments.t2; BaseType == "Chronicle of Atzoatl"; }
-	Show ItemizedLeaguesUltimatum { !G2; !fragments.t2; BaseType == "Inscribed Ultimatum"; }
-}
-
-Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
-{
-	Show restex { !restex; Empty(); }
 }
 
 #===============================================================================================================
