@@ -454,7 +454,7 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare, Clean()
 {
 	var combinedt1gear = source.rares.eg.t1 + source.crafting.general.t1;
 	var combinedt2gear = source.rares.eg.t2 + source.crafting.general.t2 - combinedt1gear;
-	var combinedt3gear = source.rares.eg.t3 + source.crafting.general.t3 - combinedt2gear;
+	var combinedt3gear = source.rares.eg.t3 + source.crafting.general.t3 - combinedt2gear - combinedt1gear;
 
 	Show strandedFractured { %D8; !G2; !exotic.t1; MemoryStrands >= 1; FracturedItem True; }
 	Show strandedVeiled { %D8; !G2; !exotic.t1; MemoryStrands >= 1; Identified True; Mod "Veil"; }
