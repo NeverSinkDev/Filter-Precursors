@@ -324,6 +324,52 @@ Style Common
 	}
 
 #------------------------------------
+# NewLeague
+#------------------------------------
+
+	Func xeno_a
+	{
+		SetFontSize font.t1;
+		BrickWhite(cXenoA);
+		PlayAlertSound asA; PlayEffect Red; MinimapIcon 0 Red mNewLeague;
+	}
+
+	Func xeno_b
+	{
+		SetFontSize font.t2;
+		BrickBlack(cXenoB);
+		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 Yellow mNewLeague;
+	}
+
+	Func xeno_c
+	{
+		SetFontSize font.t2;
+		BrickBlack(cXenoC);
+		PlayAlertSound asCurr; PlayEffect Yellow; MinimapIcon 1 White mNewLeague;
+	}
+
+	Func xeno_d
+	{
+		SetFontSize font.t3;
+		Bordered(cXenoD);
+		PlayAlertSound asCurr; PlayEffect Yellow Temp; MinimapIcon 2 White mNewLeague;
+	}
+
+	Func xeno_fragdmuted
+	{
+		SetFontSize font.t3;
+		Bordered(cXenoD);
+		PlayAlertSound NONE; PlayEffect White Temp; MinimapIcon 2 White mNewLeague;
+	}
+
+	Func xeno_e
+	{
+		SetFontSize font.t4;
+		Text(cXenoE);
+		PlayEffect Purple Temp; MinimapIcon 2 Grey mNewLeague;
+	}
+
+#------------------------------------
 # Splinter
 #------------------------------------
 

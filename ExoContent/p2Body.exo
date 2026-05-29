@@ -29,8 +29,11 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 	Show stack3 { %D7; !gold_pilehuge;  StackSize >= 5000; }
 	Show stack2 { %D6; !gold_pilelarge;  StackSize >= 2000; }
 	Show stack1 { %D5; !gold_pilemedium;  StackSize >= 650; }
-	
-	Show stack1lvl { %D5; !gold_pilemedium; StackSize >= 125; AreaLevel <= leveling.keylevels.act1; }
+
+	Show stackxl1lvl { %D6; !gold_pilelarge; StackSize >= 500; AreaLevel <= leveling.keylevels.act2; }
+	Show stackxl2lvl { %D6; !gold_pilelarge; LVL(); StackSize >= 1000; }
+
+	Show stack1lvl { %D5; !gold_pilemedium; StackSize >= 100; AreaLevel <= leveling.keylevels.act1; }
 	Show stack2lvl { %D5; !gold_pilemedium; StackSize >= 250; AreaLevel <= leveling.keylevels.act3; }
 	Show stack3lvl { %D5; !gold_pilemedium; StackSize >= 400; LVL(); }
 
@@ -47,6 +50,9 @@ Section ExoticBases : Auto("ExoticBases")
 	# Currently contains mostly undroppable bases
 	Show SuperExoticBases { %D9; !exotics_btier; BaseType == bases.exotic.misc.t1; Rarity <= Rare; }
 	Show KalandraBases { %D8; !exotics_btier; BaseType == bases.exotic.kalandra.any; Rarity <= Rare; }
+
+	Show PseudoCrafts1 		{ %D8; !exotics_btier; BaseType == bases.exotic.pseudocrafts.t1; Rarity <= Rare; }
+	Show PseudoCrafts2 		{ %D8; !exotics_ctier; BaseType == bases.exotic.pseudocrafts.t2; Rarity <= Rare; }
 
 	# Currently contains breach rings
 	Show CommonExoticBasesHigh 	{ %D8; !gear_jewelmagic; BaseType == bases.exotic.misc.t2; Rarity <= Magic; TopMods(); }
@@ -299,31 +305,6 @@ Section EndgameCharms : Auto("Endgame->Charms"), Rarity <= Magic, EG(), Clean(),
 ##	Show Any { !exotic.t1; BaseType == expensivebases.any; }
 ##}
 
-#------------------------------------
-# [1234] Salvagables
-#------------------------------------
-#!! Waypoint c4.gear.salvagable : "Normal-Rare items, excluding High Tier & Chancing" : "SalvageMisc"
-
-Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
-{
-	# Double Quality Currencies
-	Show Quality2MartialAny { !itemproperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
-	Show Quality2CasterAny  { !itemproperty_salvage1; %D3; Class == classes_cast; Quality >= 10; }
-	Show Quality2ArmorAny   { !itemproperty_salvage1; %D5; Class == classes_armor; Quality >= 10; }
-	Show Quality2Flask	    { !itemproperty_salvage1; %D4; Class == class_flasklikes; Quality >= 10; }
-
-	# Single Quality Currencies
-	Show QualityMartialAny { !itemproperty_salvage2; %D2; Class == classes_attack; Quality >= 1; }
-	Show QualityCasterAny  { !itemproperty_salvage2; %D2; Class == classes_cast; Quality >= 1; }
-	Show QualityArmorAny   { !itemproperty_salvage2; %D4; Class == classes_armor; Quality >= 1; }
-	Show QualityFlask	   { !itemproperty_salvage2; %D4; Class == class_flasklikes; Quality >= 1; }
-
-	# Artificer Scraps
-	Show SocketsSmall1 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 2; Width <= 2; }
-	Show SocketsSmall2 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 4; Width <= 1; }
-	Show SocketsOthers 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; }
-}
-
 Section EndgameCraftingBases : Clean()
 {
 	#------------------------------------
@@ -409,6 +390,31 @@ Section EndgameCraftingBases : Clean()
 		Cont MagicDecoratorRemover { !utility_decoremovermagic; Rarity Magic; }
 		Cont NormalDecoratorRemover { !utility_decoremovernormal; Rarity Normal; }
 	}
+}
+
+#------------------------------------
+# [1234] Salvagables
+#------------------------------------
+#!! Waypoint c4.gear.salvagable : "Normal-Rare items, excluding High Tier & Chancing" : "SalvageMisc"
+
+Section Salvagable : Rarity <= Magic, Auto("Endgame->Salvagable"), EG(), UT <= 2
+{
+	# Double Quality Currencies
+	Show Quality2MartialAny { !itemproperty_salvage2; %D3; Class == classes_attack; Quality >= 10; }
+	Show Quality2CasterAny  { !itemproperty_salvage1; %D3; Class == classes_cast; Quality >= 10; }
+	Show Quality2ArmorAny   { !itemproperty_salvage1; %D5; Class == classes_armor; Quality >= 10; }
+	Show Quality2Flask	    { !itemproperty_salvage1; %D4; Class == class_flasklikes; Quality >= 10; }
+
+	# Single Quality Currencies
+	Show QualityMartialAny { !itemproperty_salvage2; %D2; Class == classes_attack; Quality >= 1; }
+	Show QualityCasterAny  { !itemproperty_salvage2; %D2; Class == classes_cast; Quality >= 1; }
+	Show QualityArmorAny   { !itemproperty_salvage2; %D4; Class == classes_armor; Quality >= 1; }
+	Show QualityFlask	   { !itemproperty_salvage2; %D4; Class == class_flasklikes; Quality >= 1; }
+
+	# Artificer Scraps
+	Show SocketsSmall1 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 2; Width <= 2; }
+	Show SocketsSmall2 	   { !itemproperty_salvage2; %D2; Class == classes_equip; Sockets > 0; Height <= 4; Width <= 1; }
+	Show SocketsOthers 	   { !itemproperty_salvage2; %D1; Class == classes_equip; Sockets > 0; }
 }
 
 Section EventHighlight : Auto("Special->AlwaysShow"), Rarity <= Rare, Class == classes_equip
@@ -762,6 +768,35 @@ Section Waystones : Class == "Waystones"
 }
 
 #===============================================================================================================
+# [[4900]] New League Unknown Items
+#===============================================================================================================
+
+Section XenoTiering : Auto("xenotiering")
+{
+	Show s { !Apex_sTier; BaseType == xeno.alpha.s; }
+	Show a { %H8; !xeno_a; BaseType == xeno.alpha.a; }
+	Show b { %H7; !xeno_b; BaseType == xeno.alpha.b; }
+	Show c { %H6; !xeno_c; BaseType == xeno.alpha.c; }
+	Show d { %H6; !xeno_d; BaseType == xeno.alpha.d; }
+	Show e { %H5; !xeno_e; BaseType == xeno.alpha.e; }
+
+	Hide exHide 	 { !utility_minimize; BaseType == xeno.alpha.s + xeno.alpha.a + xeno.alpha.b + xeno.alpha.c + xeno.alpha.d + xeno.alpha.e; }
+}
+
+Section AnyLegacy : Auto("legacytemp"), Class == "Augment"
+{
+	Show Any { !xeno_a; BaseType "Legacy of"; }
+}
+
+Section Verisium : Auto("verisium")
+{
+	Show Massive { !xeno_a; BaseType == "Verisium"; StackSize >= 1000; }
+	Show Huge { !xeno_b; BaseType == "Verisium"; StackSize >= 150; }
+	Show Large { !xeno_c; BaseType == "Verisium"; StackSize >= 30; }
+	Show Any { !xeno_d; BaseType == "Verisium"; }
+}
+
+#===============================================================================================================
 # [[4900]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency" : "Leveling"
@@ -959,8 +994,6 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_
 
 Section FullFragments : Auto("fragments->generic")
 {
-	Show exRareTablets { !fragments_b; BaseType == tabletsOnly; Rarity Rare; }
-
 	Show s { !Apex_sTier; BaseType == fragments.generic.s; }
 	Show a { !fragments_a; BaseType == fragments.generic.a; }
 	Show b { !fragments_b; BaseType == fragments.generic.b; }
@@ -984,6 +1017,7 @@ Section MiscMapSafe : Auto("MiscMapItemsExtra")
 
 	Show TrialKeySanctumTop 		 { %HS4; !fragments_c; BaseType == "Djinn Barya"; ItemLevel >= 80; }
 	Show TrialKeySanctum3 		 { %H4; !fragments_c; BaseType == "Djinn Barya"; ItemLevel >= 60; ItemLevel <= 79 }
+	
 	Show TrialKeySanctum2 		 { %HS3; !fragments_fragdmuted; BaseType == "Djinn Barya"; ItemLevel >= 45; ItemLevel <= 59; }
 	Show TrialKeySanctum1 		 { %H2; !fragments_fragdmuted; BaseType == "Djinn Barya"; ItemLevel <= 44; }
 
@@ -1117,6 +1151,8 @@ Section LevelingRareGear : Rarity Rare, LVL()
 	Section Universal : Auto("Leveling->Rare->universal")
 	{
 		Show Jewellery  { !gear_jewellery1; %D6; Class == classes_jewellery; }
+		Show higherTier4 { !exotics_btier; %D6; UT >= 4; Class == classes_equip; }
+		Show higherTier3 { !exotics_ctier; %D4; UT >= 3; Class == classes_equip; }
 	}
 
 #!! Waypoint c21.leveling.rares.armors : "Leveling - Rares - Armour Pieces" : "Leveling"
