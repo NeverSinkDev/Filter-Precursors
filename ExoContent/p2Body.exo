@@ -51,6 +51,9 @@ Section ExoticBases : Auto("ExoticBases")
 	Show SuperExoticBases { %D9; !exotics_btier; BaseType == bases.exotic.misc.t1; Rarity <= Rare; }
 	Show KalandraBases { %D8; !exotics_btier; BaseType == bases.exotic.kalandra.any; Rarity <= Rare; }
 
+	Show PseudoCrafts1 		{ %D8; !exotics_btier; BaseType == bases.exotic.pseudocrafts.t1; Rarity <= Rare; }
+	Show PseudoCrafts2 		{ %D8; !exotics_ctier; BaseType == bases.exotic.pseudocrafts.t2; Rarity <= Rare; }
+
 	# Currently contains breach rings
 	Show CommonExoticBasesHigh 	{ %D8; !gear_jewelmagic; BaseType == bases.exotic.misc.t2; Rarity <= Magic; TopMods(); }
 	Show CommonExoticBases 		{ %D4; !gear_jewelmagiclow; BaseType == bases.exotic.misc.t2; Rarity <= Magic; }
@@ -762,6 +765,35 @@ Section Waystones : Class == "Waystones"
 		Hide exHide { !utility_minimize; Rarity <= Rare; WaystoneTier <= 15; }
 		Show restex { !utility_unknownitem; Empty(); }
 	}
+}
+
+#===============================================================================================================
+# [[4900]] New League Unknown Items
+#===============================================================================================================
+
+Section XenoTiering : Auto("xenotiering")
+{
+	Show s { !Apex_sTier; BaseType == xeno.alpha.s; }
+	Show a { %H8; !xeno_a; BaseType == xeno.alpha.a; }
+	Show b { %H7; !xeno_b; BaseType == xeno.alpha.b; }
+	Show c { %H6; !xeno_c; BaseType == xeno.alpha.c; }
+	Show d { %H6; !xeno_d; BaseType == xeno.alpha.d; }
+	Show e { %H5; !xeno_e; BaseType == xeno.alpha.e; }
+
+	Hide exHide 	 { !utility_minimize; BaseType == xeno.alpha.s + xeno.alpha.a + xeno.alpha.b + xeno.alpha.c + xeno.alpha.d + xeno.alpha.e; }
+}
+
+Section AnyLegacy : Auto("legacytemp"), Class == "Augment"
+{
+	Show Any { !xeno_a; BaseType "Legacy of"; }
+}
+
+Section Verisium : Auto("verisium")
+{
+	Show Massive { !xeno_a; BaseType == "Verisium"; StackSize >= 1000; }
+	Show Huge { !xeno_b; BaseType == "Verisium"; StackSize >= 150; }
+	Show Large { !xeno_c; BaseType == "Verisium"; StackSize >= 30; }
+	Show Any { !xeno_d; BaseType == "Verisium"; }
 }
 
 #===============================================================================================================
