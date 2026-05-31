@@ -540,6 +540,35 @@ Section HideLayer2 : EG(), Rarity Rare, Class == classes_equip
 }
 
 #===============================================================================================================
+# [[4900]] New League Unknown Items
+#===============================================================================================================
+
+Section XenoTiering : Auto("xenotiering")
+{
+	Show s { !Apex_sTier; BaseType == xeno.alpha.s; }
+	Show a { %H8; !xeno_a; BaseType == xeno.alpha.a; }
+	Show b { %H7; !xeno_b; BaseType == xeno.alpha.b; }
+	Show c { %H6; !xeno_c; BaseType == xeno.alpha.c; }
+	Show d { %H6; !xeno_d; BaseType == xeno.alpha.d; }
+	Show e { %H5; !xeno_e; BaseType == xeno.alpha.e; }
+
+	Hide exHide 	 { !utility_minimize; BaseType == xeno.alpha.s + xeno.alpha.a + xeno.alpha.b + xeno.alpha.c + xeno.alpha.d + xeno.alpha.e; }
+}
+
+Section AnyLegacy : Auto("legacytemp"), Class == "Augment"
+{
+	Show Any { !xeno_a; BaseType "Legacy of"; }
+}
+
+Section Verisium : Auto("verisium")
+{
+	Show Massive { !xeno_a; BaseType == "Verisium"; StackSize >= 1000; }
+	Show Huge { !xeno_b; BaseType == "Verisium"; StackSize >= 150; }
+	Show Large { !xeno_c; BaseType == "Verisium"; StackSize >= 30; }
+	Show Any { !xeno_d; BaseType == "Verisium"; }
+}
+
+#===============================================================================================================
 # [[0200]] Socketables - Runes and Soul Cores
 #===============================================================================================================
 #!! Waypoint c7.miscgear.socketables : "Socketables - Runes and Soul Cores" : "Socketables"
@@ -765,35 +794,6 @@ Section Waystones : Class == "Waystones"
 		Hide exHide { !utility_minimize; Rarity <= Rare; WaystoneTier <= 15; }
 		Show restex { !utility_unknownitem; Empty(); }
 	}
-}
-
-#===============================================================================================================
-# [[4900]] New League Unknown Items
-#===============================================================================================================
-
-Section XenoTiering : Auto("xenotiering")
-{
-	Show s { !Apex_sTier; BaseType == xeno.alpha.s; }
-	Show a { %H8; !xeno_a; BaseType == xeno.alpha.a; }
-	Show b { %H7; !xeno_b; BaseType == xeno.alpha.b; }
-	Show c { %H6; !xeno_c; BaseType == xeno.alpha.c; }
-	Show d { %H6; !xeno_d; BaseType == xeno.alpha.d; }
-	Show e { %H5; !xeno_e; BaseType == xeno.alpha.e; }
-
-	Hide exHide 	 { !utility_minimize; BaseType == xeno.alpha.s + xeno.alpha.a + xeno.alpha.b + xeno.alpha.c + xeno.alpha.d + xeno.alpha.e; }
-}
-
-Section AnyLegacy : Auto("legacytemp"), Class == "Augment"
-{
-	Show Any { !xeno_a; BaseType "Legacy of"; }
-}
-
-Section Verisium : Auto("verisium")
-{
-	Show Massive { !xeno_a; BaseType == "Verisium"; StackSize >= 1000; }
-	Show Huge { !xeno_b; BaseType == "Verisium"; StackSize >= 150; }
-	Show Large { !xeno_c; BaseType == "Verisium"; StackSize >= 30; }
-	Show Any { !xeno_d; BaseType == "Verisium"; }
 }
 
 #===============================================================================================================
