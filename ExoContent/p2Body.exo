@@ -664,12 +664,12 @@ Section UncutGems : Auto("gems->uncut")
 	Show SkillCampaign   { %H5; !typebased_gems2; BaseType "Uncut Skill Gem"; LVL(); }
 	Show SupportCampaign { %H5; !typebased_gems2; BaseType "Uncut Support Gem"; LVL(); }
 
-	Show SupportEarlyMaps { %H4; !typebased_gems2; BaseType "Uncut Support Gem"; AreaLevel <= 78; }
+	Show SupportEarlyMaps { %H5; !typebased_gems2; BaseType "Uncut Support Gem"; AreaLevel <= 78; }
 
 	# Lower highlight for lower level gems in maps
 	Show OtherSpiritEg  { %H2; !typebased_gems3; BaseType "Uncut Spirit Gem"; EG(); }
 	Show OtherSkillEg   { %H2; !typebased_gems3; BaseType "Uncut Skill Gem"; EG(); }
-	Show OtherSupportEg { %H3; !typebased_gems3; BaseType "Uncut Support Gem"; EG(); }
+	Show OtherSupportEg { %H4; !typebased_gems3; BaseType "Uncut Support Gem"; EG(); }
 
 	# Hider for filterblade
 	Hide exHide { !utility_minimize; BaseType "Uncut Spirit Gem" "Uncut Support Gem" "Uncut Skill Gem";}
