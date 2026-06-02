@@ -4,8 +4,8 @@
     "FilterName": "NeverSink's filter 2",
     "FilterVersion": "0.8.0",
     "LeagueType": "tmpstandard",
-    "CurrentLeagueName": "Runes",
-    "EarlyLeagueDays": 5,
+    "CurrentLeagueName": "Runes of Aldur",
+    "EarlyLeagueDays": 3,
     "LateLeagueDays": 15,
     "UseOverrideFolder" : false,
     "OverrideFolder" : "2025-12-29",
@@ -25,7 +25,7 @@
     "OnPremAutoSuggestOnStart" : true,
     "ScoutLeagueName" : "Runes%20of%20Aldur",
     "EconomyOperations": [
-        
+        "RuneforgedEx"
     ],
     "CurrencyModelTierlists": [
         "fragments",
@@ -207,118 +207,130 @@
         "Amanamu's Gaze": "socketables.generic",
         "Tecrod's Gaze": "socketables.generic",
         "Kurgal's Gaze": "socketables.generic",
-        "Ulaman's Gaze": "socketables.generic"
+        "Ulaman's Gaze": "socketables.generic",
+
+        "Cryptic Key" : "xeno.alpha"
     },
     "FileRequestData": [
         {
             "TierableSection": "currency.generic",
             "Filename": "currency",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=currency",
-            "Type": "scout"
+            "Url": "Currency",
+            "Type": "ninjaEx"
         },
         {
-            "TierableSection": "currency.generic",
-            "Filename": "extras.abyssBones",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=abyss",
-            "Type": "scout"
-        },
-        {
-            "TierableSection": "currency.generic",
-            "Filename": "extras.incursion",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=incursion",
-            "Type": "scout"
-        },
-        {
-            "TierableSection": "socketables.generic",
-            "Filename": "sockets.cores",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=ultimatum",
-            "Type": "scout"
-        },
-        {
-            "TierableSection": "socketables.generic",
-            "Filename": "sockets.idol",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=idol",
-            "Type": "scout"
-        },
-        {
-            "TierableSection": "currency.catalysts",
-            "Filename": "currency.catalysts",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=breach",
-            "Type": "scout"
-        },
-        {
-            "TierableSection": "currency.emotions",
-            "Filename": "currency.emotions",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=delirium",
-            "Type": "scout"
+            "TierableSection": "fragments.generic",
+            "Filename": "fragments.generic",
+            "Url": "Fragments",
+            "Type": "ninjaEx"
         },
         {
             "TierableSection": "currency.essence",
             "Filename": "currency.essence",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=essences",
-            "Type": "scout"
-        },
-        {
-            "TierableSection": "currency.omen",
-            "Filename": "currency.omen",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=ritual",
-            "Type": "scout"
+            "Url": "Essences",
+            "Type": "ninjaEx"
         },
         {
             "TierableSection": "socketables.generic",
             "Filename": "sockets.runes",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=runes",
-            "Type": "scout"
-        },
-
-        {
-            "TierableSection": "fragments.generic",
-            "Filename": "fragments.generic",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=fragments",
-            "Type": "scout"
-        },
-
-        {
-            "TierableSection": "uniques.generic",
-            "Filename": "uniques.armour",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Uniques/ByCategory?Category=armour",
-            "Type": "scout"
+            "Url": "Runes",
+            "Type": "ninjaEx"
         },
         {
-            "TierableSection": "uniques.generic",
-            "Filename": "uniques.accessory",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Uniques/ByCategory?Category=accessory",
-            "Type": "scout"
+            "TierableSection": "socketables.generic",
+            "Filename": "sockets.cores",
+            "Url": "SoulCores",
+            "Type": "ninjaEx"
         },
         {
-            "TierableSection": "uniques.generic",
-            "Filename": "uniques.flask",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Uniques/ByCategory?Category=flask",
-            "Type": "scout"
+            "TierableSection": "socketables.generic",
+            "Filename": "sockets.idol",
+            "Url": "Idols",
+            "Type": "ninjaEx"
         },
         {
-            "TierableSection": "uniques.generic",
-            "Filename": "uniques.sanctum",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Uniques/ByCategory?Category=sanctum",
-            "Type": "scout"
+            "TierableSection": "currency.catalysts",
+            "Filename": "currency.catalysts",
+            "Url": "Breach",
+            "Type": "ninjaEx"
         },
         {
-            "TierableSection": "uniques.generic",
-            "Filename": "uniques.weapon",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Uniques/ByCategory?Category=weapon",
-            "Type": "scout"
+            "TierableSection": "currency.emotions",
+            "Filename": "currency.emotions",
+            "Url": "Delirium",
+            "Type": "ninjaEx"
         },
         {
-            "TierableSection": "uniques.generic",
-            "Filename": "uniques.jewel",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Uniques/ByCategory?Category=jewel",
-            "Type": "scout"
+            "TierableSection": "currency.omen",
+            "Filename": "currency.omen",
+            "Url": "Ritual",
+            "Type": "ninjaEx"
+        },
+        {
+            "TierableSection": "currency.generic",
+            "Filename": "extras.abyssBones",
+            "Url": "Abyss",
+            "Type": "ninjaEx"
         },
         {
             "TierableSection": "gems.lineage",
             "Filename": "gems.lineage",
-            "Url": "https://poe2scout.com/api/poe2/Leagues/{league}/Currencies/ByCategory?Category=lineagesupportgems",
-            "Type": "scout"
+            "Url": "LineageSupportGems",
+            "Type": "ninjaEx"
+        },
+        {
+            "TierableSection": "xeno.alpha",
+            "Filename": "xeno.alpha",
+            "Url": "Verisium",
+            "Type": "ninjaEx"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.weapon",
+            "Url": "UniqueWeapons",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.armour",
+            "Url": "UniqueArmours",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.accessory",
+            "Url": "UniqueAccessories",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.flask",
+            "Url": "UniqueFlasks",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.charm",
+            "Url": "UniqueCharms",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.jewel",
+            "Url": "UniqueJewels",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.map",
+            "Url": "UniqueMaps",
+            "Type": "ninjaItem"
+        },
+        {
+            "TierableSection": "uniques.generic",
+            "Filename": "uniques.sanctum",
+            "Url": "UniqueSanctumRelics",
+            "Type": "ninjaItem"
         }
     ],
     "SplinterEconomyRules" : [],
