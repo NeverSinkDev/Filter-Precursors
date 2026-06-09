@@ -793,6 +793,26 @@ Style Common
 		PlayAlertSound asUnique;
 	}
 
+	Func itemproperty_aecocraft
+	{
+		SetBorderColor cMarkEcoCraftHigh;
+		SetTextColor cMarkEcoCraftHigh;
+		SetBackgroundColor cMarkEcoCraftGlow;
+		SetFontSize font.t1;
+		MinimapIcon 0 Red mExotic;
+		PlayEffect Red;
+		PlayAlertSound asA;
+	}
+
+	Func itemproperty_becocraft
+	{
+		SetBorderColor cMarkEcoCraft;
+		SetFontSize font.t3;
+		MinimapIcon 1 Yellow mExotic;
+		PlayEffect Yellow Temp;
+		PlayAlertSound asUnique;
+	}
+
 	Func maps_decotierupgrade
 	{
 		SetBorderColor cMarkMapUpgrade;

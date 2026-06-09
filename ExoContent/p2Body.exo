@@ -181,6 +181,20 @@ Section ConditionalHiders : Rarity Rare, Auto("Endgame->conditionalhiders->rare"
 }
 
 #===============================================================================================================
+# [[0200]] Economy Crafting Bases
+#===============================================================================================================
+#!! Waypoint c3.exotic.state.ecocraft : "High Value Crafting Bases" : "Crafting"
+
+Section EconomyBasedCraftingRules : Auto("Endgame->normalcraft->economy"), Rarity == Normal, Clean()
+{
+	Show group1t1 { %D9; !itemproperty_aecocraft; ItemLevel >= 82; BaseType == bases.ecocraft.group1.t1; }
+	Show group1t2 { %D7; !itemproperty_becocraft; ItemLevel >= 82; BaseType == bases.ecocraft.group1.t2; }
+
+	## ShowD group2t1 { %D7; !itemproperty_achancing; ItemLevel >= 79; BaseType == bases.ecocraft.group2.t1; }
+	Show group2t2 { %D6; !itemproperty_becocraft; ItemLevel >= 79; BaseType == bases.ecocraft.group2.t2 + bases.ecocraft.group2.t1; }
+}
+
+#===============================================================================================================
 # [[0200]] High Unidentified Mod Tier
 #===============================================================================================================
 #!! Waypoint c3.exotic.state.hightier : "Rare items with Mod Tier" : "ModTierRare"
@@ -667,9 +681,9 @@ Section UncutGems : Auto("gems->uncut")
 	Show SupportEarlyMaps { %H5; !typebased_gems2; BaseType "Uncut Support Gem"; AreaLevel <= 78; }
 
 	# Lower highlight for lower level gems in maps
-	Show OtherSpiritEg  { %H2; !typebased_gems3; BaseType "Uncut Spirit Gem"; EG(); }
-	Show OtherSkillEg   { %H2; !typebased_gems3; BaseType "Uncut Skill Gem"; EG(); }
-	Show OtherSupportEg { %H4; !typebased_gems3; BaseType "Uncut Support Gem"; EG(); }
+	Show OtherSpiritEg  { %H4; !typebased_gems3; BaseType "Uncut Spirit Gem"; EG(); }
+	Show OtherSkillEg   { %H3; !typebased_gems3; BaseType "Uncut Skill Gem"; EG(); }
+	Show OtherSupportEg { %H6; !typebased_gems3; BaseType "Uncut Support Gem"; EG(); }
 
 	# Hider for filterblade
 	Hide exHide { !utility_minimize; BaseType "Uncut Spirit Gem" "Uncut Support Gem" "Uncut Skill Gem";}
@@ -918,8 +932,7 @@ Section SpecialMapLike : Auto("maplike->special")
 	Show vaultKeys { !fragments_b; BaseType == miscmap.vaultKeysCommon; }
 	Show superkeys { !fragments_a; Class == "Pinnacle Keys" }
 
-	Show logbooksHigh  { !fragments_a; Class == "Expedition Logbooks"; ItemLevel >= 77; }
-	Show logbooksLow   { %H6; !fragments_a; Class == "Expedition Logbooks"; }
+	Show logbooksHigh  { !Apex_sTier; Class == "Expedition Logbook"; }
 }
 
 #===============================================================================================================
@@ -961,6 +974,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 #!! Waypoint c11.uniques.low : "Tierlist - Uniques - Low Tier Uniques" : "Uniques"
 	Show earlyleague 	  { %H6; !uniques_b; BaseType == uniques.generic.earlyleague; }
+	ShowD recipeUniqueRings { %D5; Class == "Rings"; }
 	Show corrupteduniques { !uniques_b; Corrupted True; AnyEnchantment True; Class == classes_equip; }
 
 #------------------------------------
