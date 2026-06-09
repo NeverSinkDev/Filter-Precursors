@@ -576,10 +576,10 @@ Section AnyLegacy : Auto("legacytemp"), Class == "Augment"
 
 Section Verisium : Auto("verisium")
 {
-	Show Massive { !xeno_a; BaseType == "Verisium"; StackSize >= 1000; }
-	Show Huge { !xeno_b; BaseType == "Verisium"; StackSize >= 150; }
-	Show Large { !xeno_c; BaseType == "Verisium"; StackSize >= 30; }
-	Show Any { !xeno_d; BaseType == "Verisium"; }
+	Show Massive { %H8; !xeno_b; BaseType == "Verisium"; StackSize >= 1000; }
+	Show Huge { %H7; !xeno_c; BaseType == "Verisium"; StackSize >= 150; }
+	Show Large { %H6; !xeno_d; BaseType == "Verisium"; StackSize >= 30; }
+	Show Any { %H5; !xeno_d; BaseType == "Verisium"; }
 }
 
 #===============================================================================================================
@@ -974,7 +974,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 #!! Waypoint c11.uniques.low : "Tierlist - Uniques - Low Tier Uniques" : "Uniques"
 	Show earlyleague 	  { %H6; !uniques_b; BaseType == uniques.generic.earlyleague; }
-	ShowD recipeUniqueRings { %D5; Class == "Rings"; }
+	Show loreweaverecipe { %D5; !uniques_b; Class == "Rings"; }
 	Show corrupteduniques { !uniques_b; Corrupted True; AnyEnchantment True; Class == classes_equip; }
 
 #------------------------------------

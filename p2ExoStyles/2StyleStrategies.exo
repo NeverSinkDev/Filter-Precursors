@@ -796,7 +796,7 @@ Style Common
 	Func itemproperty_aecocraft
 	{
 		SetBorderColor cMarkEcoCraftHigh;
-		SetTextColor cMarkEcoCraftHigh;
+		SetTextColor cWhite;
 		SetBackgroundColor cMarkEcoCraftGlow;
 		SetFontSize font.t1;
 		MinimapIcon 0 Red mExotic;
@@ -807,9 +807,10 @@ Style Common
 	Func itemproperty_becocraft
 	{
 		SetBorderColor cMarkEcoCraft;
+		SetBackgroundColor cBlack; 
 		SetFontSize font.t3;
 		MinimapIcon 1 Yellow mExotic;
-		PlayEffect Yellow Temp;
+		PlayEffect Yellow;
 		PlayAlertSound asUnique;
 	}
 
