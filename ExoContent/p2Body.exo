@@ -656,8 +656,8 @@ Section UncutGems : Auto("gems->uncut")
 	Show Skill20  { !Apex_sTier; BaseType "Uncut Skill Gem"; GemLevel >= 20; }
 
 	# Level19
-	Show Spirit19 { %H5; !typebased_gems1; BaseType "Uncut Spirit Gem"; GemLevel = 19; }
-	Show Skill19  { %H5; !typebased_gems1; BaseType "Uncut Skill Gem"; GemLevel = 19; }
+	Show Spirit19 { %H6; !typebased_gems1; BaseType "Uncut Spirit Gem"; GemLevel = 19; }
+	Show Skill19  { %H6; !typebased_gems1; BaseType "Uncut Skill Gem"; GemLevel = 19; }
 
 	# Spirit Gem Progression
 	Show SpiritGemProgression18 { %H4; !typebased_gems2; BaseType "Uncut Spirit Gem"; GemLevel = 18; AreaLevel <= 79; }
@@ -1063,7 +1063,7 @@ Section SalvagableLeveling : Rarity <= Magic, Auto("Leveling->Salvagable"), LVL(
 	# Double Quality Currencies
 	Show Quality2MartialAny { %D4; !itemproperty_salvagelvl1; Class == classes_attack; Quality >= 10; }
 	Show Quality2CasterAny  { %D4; !itemproperty_salvagelvl1; Class == classes_cast; Quality >= 10; }
-	Show Quality2ArmorAny   { %D5; !itemproperty_salvagelvl1; Class == classes_armor; Quality >= 10; }
+	Show Quality2ArmorAny   { %D4; !itemproperty_salvagelvl1; Class == classes_armor; Quality >= 10; }
 	Show Quality2Flask	    { %D5; !itemproperty_salvagelvl1; Class == class_flasklikes; Quality >= 10; }
 
 	# Single Quality Currencies
