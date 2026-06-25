@@ -190,8 +190,11 @@ Section EconomyBasedCraftingRules : Auto("Endgame->normalcraft->economy"), Rarit
 	Show group1t1 { %D9; !itemproperty_aecocraft; ItemLevel >= 82; BaseType == bases.ecocraft.group1.t1; }
 	Show group1t2 { %D7; !itemproperty_becocraft; ItemLevel >= 82; BaseType == bases.ecocraft.group1.t2; }
 
+	Show group2t1 { %D9; !itemproperty_aecocraft; ItemLevel >= 81; BaseType == bases.ecocraft.group2.t1; }
+	Show group2t2 { %D7; !itemproperty_becocraft; ItemLevel >= 81; BaseType == bases.ecocraft.group2.t2; }
+
 	## ShowD group2t1 { %D7; !itemproperty_achancing; ItemLevel >= 79; BaseType == bases.ecocraft.group2.t1; }
-	Show group2t2 { %D6; !itemproperty_becocraft; ItemLevel >= 79; BaseType == bases.ecocraft.group2.t2 + bases.ecocraft.group2.t1; }
+	Show group3t2 { %D6; !itemproperty_becocraft; ItemLevel >= 79; BaseType == bases.ecocraft.group3.t2 + bases.ecocraft.group3.t1; }
 }
 
 #===============================================================================================================
@@ -837,10 +840,9 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency
 	Show d { %H5; !currency_d; BaseType == currency.generic.d; }
 	Show e { %H3; !currency_e; BaseType == currency.generic.e; }
 
-	# Artifacts and special drops
-	Show ArtifactLike { %H7; !currency_specialartifact; BaseType == currency.generic.supply1; }
+	## Show ArtifactLike { %H7; !currency_specialartifact; BaseType == currency.generic.supply1; }
 
-	Show SupplyMagic 	 { %H3; !currency_supply2; BaseType == currency.generic.supply2; }
+	Show SupplyMagic 	 { %H2; !currency_supply2; BaseType == currency.generic.supply2; }
 	Show SuppliesLow 	 { %H1; !currency_supply4; BaseType == currency.generic.supply3; }
 	
 	Hide exHide 	 { !utility_minimize; BaseType == currency.generic.b + currency.generic.c + currency.generic.d + currency.generic.e + currency.generic.supply1 + currency.generic.supply2 + currency.generic.supply3; }
