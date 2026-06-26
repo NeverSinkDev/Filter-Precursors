@@ -349,7 +349,7 @@ Section EndgameCraftingBases : Clean()
 
 	Section ExtraCraftingRules : Auto("Endgame->normalcraft->extra"), Rarity <= Magic
 	{
-		Show Wands { !itemproperty_toplevelbased1; %D3; ItemLevel >= 81; BaseType == derived.general.unbiased.wands.t1; }
+		Show Wands { !itemproperty_toplevelbased1; %D3; ItemLevel >= 81; BaseType == derived.general.unbiased.wands.t1; Class == classes_cast; }
 	}
 
 	#------------------------------------
