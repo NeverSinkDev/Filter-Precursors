@@ -191,7 +191,7 @@ Section EconomyBasedCraftingRules : Auto("Endgame->normalcraft->economy"), Rarit
 	Show group1t2 { %D7; !itemproperty_becocraft; ItemLevel >= 82; BaseType == bases.ecocraft.group1.t2; }
 
 	Show group2t1 { %D9; !itemproperty_aecocraft; ItemLevel >= 81; BaseType == bases.ecocraft.group2.t1; }
-	Show group2t2 { %D7; !itemproperty_becocraft; ItemLevel >= 81; BaseType == bases.ecocraft.group2.t2; }
+	Show group2t2 { %D6; !itemproperty_becocraft; ItemLevel >= 81; BaseType == bases.ecocraft.group2.t2; }
 
 	## ShowD group2t1 { %D7; !itemproperty_achancing; ItemLevel >= 79; BaseType == bases.ecocraft.group2.t1; }
 	Show group3t2 { %D6; !itemproperty_becocraft; ItemLevel >= 79; BaseType == bases.ecocraft.group3.t2 + bases.ecocraft.group3.t1; }
@@ -210,7 +210,7 @@ Section HighModtierRare : Auto("ut->rare"), Rarity Rare, AreaLevel >= eglevel
 {
 	## ID-Tier Gear (Rare)
 	Show gear4a { %D7; !exotics_btier; UT >= 4; BaseType == derived.general.unbiased.equip.t1; }
-	Show gear3a { %D6; !exotics_ctier; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
+	Show gear3a { %D5; !exotics_ctier; UT >= 3; BaseType == derived.general.unbiased.equip.t1; }
 	Show gear2a { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.general.unbiased.equip.t1; }
 
 	Show gear4b { %D6; !exotics_ctier; UT >= 4; BaseType == derived.general.unbiased.equip.t2; }
@@ -226,13 +226,13 @@ Section HighModtierRare : Auto("ut->rare"), Rarity Rare, AreaLevel >= eglevel
 	Show j3a { %D7; !exotics_btier; UT >= 3; BaseType == derived.rares.jwl.all.t1; }
 	Show j2a { %D6; !gear_tieredjewellery; UT >= 2; BaseType == derived.rares.jwl.all.t1; }
 
-	Show j4b { %D8; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
-	Show j3b { %D7; !gear_tieredjewellery; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
-	Show j2b { %D5; !gear_tieredjewellery; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
+	Show j4b { %D6; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t2; }
+	Show j3b { %D5; !gear_tieredjewellery; UT >= 3; BaseType == derived.rares.jwl.all.t2; }
+	Show j2b { %D4; !gear_tieredjewellery; UT >= 2; BaseType == derived.rares.jwl.all.t2; }
 
 	Show j4c { %D6; !exotics_btier; UT >= 4; BaseType == derived.rares.jwl.all.t3; }
 	Show j3c { %D5; !gear_tieredjewellery; UT >= 3; BaseType == derived.rares.jwl.all.t3; }
-	Show j2c { %D5; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
+	Show j2c { %D4; !gear_highlightedsize; UT >= 2; BaseType == derived.rares.jwl.all.t3; }
 
 	Show anyRemaining5gear { !exotics_btier; %D5; UT >= 5; Class == classes_nonJwlryEquip; }
 	Show anyRemaining4gear { !exotics_ctier; %D4; UT >= 4; Class == classes_nonJwlryEquip; }
@@ -276,7 +276,7 @@ Section HighModtierMagic : Auto("ut->magic"), Rarity Magic, AreaLevel >= eglevel
 	Show anyRemaining5gear { !exotics_ctier; %D5; UT >= 5; Class == classes_nonJwlryEquip; }
 	Show anyRemaining4gear { !gear_highlightdrop2; %D4; UT >= 4; Class == classes_nonJwlryEquip; }
 	Show anyRemaining5j { !exotics_ctier; %D6; UT >= 5; Class == classes_jewellery; }
-	Show anyRemaining4j { !gear_highlightdrop2; %D6; UT >= 4; Class == classes_jewellery; }
+	Show anyRemaining4j { !gear_highlightdrop2; %D5; UT >= 4; Class == classes_jewellery; }
 }
 
 #===============================================================================================================
@@ -566,8 +566,8 @@ Section XenoTiering : Auto("xenotiering")
 	Show a { %H8; !xeno_a; BaseType == xeno.alpha.a; }
 	Show b { %H7; !xeno_b; BaseType == xeno.alpha.b; }
 	Show c { %H6; !xeno_c; BaseType == xeno.alpha.c; }
-	Show d { %H6; !xeno_d; BaseType == xeno.alpha.d; }
-	Show e { %H5; !xeno_e; BaseType == xeno.alpha.e; }
+	Show d { %H5; !xeno_d; BaseType == xeno.alpha.d; }
+	Show e { %H4; !xeno_e; BaseType == xeno.alpha.e; }
 
 	Hide exHide 	 { !utility_minimize; BaseType == xeno.alpha.s + xeno.alpha.a + xeno.alpha.b + xeno.alpha.c + xeno.alpha.d + xeno.alpha.e; }
 }
