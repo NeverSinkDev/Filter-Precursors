@@ -767,11 +767,12 @@ Section Waystones : Class == "Waystones"
 
 #!! Waypoint c9.waystone.decorators.special : "Waystones - Special Cases" : "Maps"
 
+		Show corrupted8high { !maps_specialb; Corrupted True; WaystoneTier >= 14; HasExplicitMod >= 7 "a" "o" "e" "u" "i" "y"; }
+		
 		Show enchanted1     { !maps_specialb; AnyEnchantment True; WaystoneTier >= 14; }
 		Show enchanted2  	{ %D5; !maps_specialc; AnyEnchantment True; WaystoneTier >= 11; WaystoneTier <= 13; }
 		Show enchanted34  	{ %D4; !maps_specialc; AnyEnchantment True; WaystoneTier >= 1;  WaystoneTier <= 10; }
 
-		Show corrupted8high { !maps_specialb; Corrupted True; WaystoneTier >= 14; HasExplicitMod >=8 "a" "o" "e" "u" "i" "y"; }
 		Show corrupted8 { %H4; !maps_specialc; Corrupted True; HasExplicitMod >=7 "a" "o" "e" "u" "i" "y"; }
 
 #------------------------------------
