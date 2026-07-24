@@ -755,6 +755,8 @@ var ring_aux_stats_full = acc_unset_levels[1] + aux_all + aux_stats2 + acc_manar
 var ring_ias = "of Skill";
 var ring_pdmg = "of Flames" "of Rime" "of Voltage";
 var ring_joker = "of Bameth" "of Puhuarte" "Xopec's" "of Guatelitzi" "Guatelitzi's";
+var ring_lightRad = "of Radiance";
+
 
 var xring_core = ring_joker + acc_cheat + acc_life[3] + acc_fes[2];
 
@@ -768,6 +770,8 @@ var xring_minion_mix = xring_core + ring_aux_stats_full + ring_minion_high + rin
 
 var rings_blend = acc_life[2] + acc_mana[1] + acc_fes[1] + acc_recoup[1] + aux_stats0 + acc_cast_speed[1] + acc_att_accu[1] + anyVeil;
 
+var xring_light_core = ring_joker + acc_cheat + acc_life[3] + ring_lightRad;
+var xring_light_aux = xring_light_core + acc_unset_levels[1] + aux_all + aux_stats2 + acc_manaregen[2] + acc_recoup[1] + aux_stats0 + acc_cast_speed[1] + acc_recoup[2] + anyVeil + "of the Comet";
 
 ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## BELTS

@@ -283,6 +283,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 	{
 		Show Ring_Caster { %D5; Mod xring_core; Mod >= 4 xring_cast_mix; Mod = 0 z_bad_liferoll; }
 		Show Ring_Attack { %D5; Mod xring_core; Mod >= 4 xring_attack_mix; Mod = 0 z_bad_liferoll; }
+		Show Ring_Light { %D5; Mod >= 2 xring_light_core; Mod >= 4 xring_light_aux; }
 		Show Ring_Minion { %D5; BaseType == "Bone Ring"; Mod >= 2 ring_minion_high; Mod >= 4 xring_minion_mix; Mod = 0 z_bad_liferoll; }
 	}
 #------------------------------------
