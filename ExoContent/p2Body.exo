@@ -818,7 +818,7 @@ Section Waystones : Class == "Waystones"
 # [[4900]] Currency - Exceptions - Leveling Currencies
 #===============================================================================================================
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency" : "Leveling"
-Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, LVL()
+Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_curr_pure, LVL()
 {
 	Show jewellers 	   { %D4; !currency_c; BaseType == currency.leveling.jewellers; }
 	Show rare 	  	   { %D5; !currency_d; !utility_highlight2; BaseType == currency.leveling.rare; }
@@ -858,7 +858,7 @@ Section CurrencyTiering : Auto("currency"), Class == class_currency
 #------------------------------------
 #!! Waypoint c9.currency.emotions.all : "Tierlist - Distilled Emotions (Delirium)" : "Currency"
 
-Section CurrencyEmotions : Auto("currency->emotions"), Class == class_currency
+Section CurrencyEmotions : Auto("currency->emotions"), Class == class_curr_pure
 {
 	Show s { !Apex_sTier;     BaseType == currency.emotions.s; }
 	Show a { %H8; !currency_a; BaseType == currency.emotions.a; }
@@ -875,7 +875,7 @@ Section CurrencyEmotions : Auto("currency->emotions"), Class == class_currency
 #------------------------------------
 #!! Waypoint c9.currency.catalysts.all : "Tierlist - Catalysts (Breach)" : "Currency"
 
-Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency
+Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_curr_pure
 {
 	Show s { !Apex_sTier;     BaseType == currency.catalysts.s; }
 	Show a { %H8; !currency_a; BaseType == currency.catalysts.a; }
@@ -893,7 +893,7 @@ Section CurrencyCatalysts : Auto("currency->catalysts"), Class == class_currency
 #------------------------------------
 #!! Waypoint c9.currency.essences.all : "Tierlist - Essences" : "Currency"
 
-Section CurrencyEssence : Auto("currency->essence"), Class == class_currency
+Section CurrencyEssence : Auto("currency->essence"), Class == class_curr_pure
 {
 	Show s { !Apex_sTier;     BaseType == currency.essence.s; }
 	Show a { %H8; !currency_a; BaseType == currency.essence.a; }
@@ -1000,7 +1000,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #===============================================================================================================
 #!! Waypoint c10.fragments.most : "Fragments and Splinters" : "Fragments"
 
-Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_currency, BaseType == fragments.generic.splinters
+Section CurrencySplinterSimulacrum : Auto("currency->splinter"), Class == class_curr_pure, BaseType == fragments.generic.splinters
 {
 	Show t1 { %H6; !fragments_splinter1; StackSize >= stacksize.commonSplinters.t1; }
 	Show t2 { %H6; !fragments_splinter2; StackSize >= stacksize.commonSplinters.t2; }
