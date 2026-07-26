@@ -95,8 +95,8 @@ Section Influenced : Auto("influenced->all"), Rarity Rare
 	# Second grade bases
 	Show t2high    { !SF40; !G3; %D4; BaseType == influencedItems3; ItemLevel >= 84; AnyInfluence(); }
 	# Low strictness 86 rule
-	Show any86 { !SF40; !G3; %D4; ItemLevel >= 86; AnyInfluence(); }
-	Show any   { !SF40; !G3; %D3; AnyInfluence(); }
+	Show any86 { !SF40; !G3; %D4; ItemLevel >= 86; AnyInfluence(); Class == classes_equip; }
+	Show any   { !SF40; !G3; %D3; AnyInfluence(); Class == classes_equip; }
 }
 
 #===============================================================================================================
