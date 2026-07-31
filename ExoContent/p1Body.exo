@@ -598,8 +598,8 @@ Section ExoticVariations : !exotic
 			Show DoubleCorruptedJwlry { !GSH; %D8; !exotic.t2; !corruptstrong; Rarity Rare; CorruptedMods >= 2; Class == classes_doubleCorruptTargetsRare; }
 			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; !corruptstrong; Rarity Rare; CorruptedMods >= 2; Empty(); }
 #!! Waypoint c2.exotic.singlecorrupted.all : "SpecialGear - Single corrupted rare items with implicits"
-			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Class == "Quivers"; ItemLevel >= 80; }
-			Show SingleCorruptedItems { !GS; %D5; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Class == "Rings"; ItemLevel >= 75; }
+			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Rarity <= Rare; Class == "Quivers"; ItemLevel >= 80; }
+			Show SingleCorruptedItems { !GS; %D5; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Rarity <= Rare; Class == "Rings"; ItemLevel >= 75; }
 	}
 #------------------------------------
 #   [1234] Abyss Jeweled Rares
