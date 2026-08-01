@@ -1662,10 +1662,10 @@ Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, B
 
 Section DeadManSulphur : Auto("currency->deadmansulphur"), Class == class_currency, BaseType == "Dead Man's Sulphur", !Currency
 {
-	Show t1 { StackSize >= 10000; !G1; !*t1exalted;  }
+	Show t1 { StackSize >= 20000; !G1; !*t1exalted;  }
 	Show t2 { %D8; StackSize >= 5000; !G2; !*t2divine; }
-	Show t3 { %D7; StackSize >= 1000; !G3; !*t3annul; }
-	Show t4 { %D6; StackSize >= 250; !G4; !*t4chaos; }
+	Show t3 { %D7; StackSize >= 1500; !G3; !*t3annul; }
+	Show t4 { %D6; StackSize >= 200; !G4; !*t4chaos; }
 	Show t5 { %D6; StackSize >= 100; !G4; !*t5alchemy; }
 	Show t6 { %H5; !G5H; !*t6chrom; }
 }
