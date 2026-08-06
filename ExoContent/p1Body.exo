@@ -717,6 +717,15 @@ Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 6
 	Cont CorruptedRaresImplicit { !*corruptimpl; Corrupted True; CorruptedMods >= 1; Class == classes_equip; }
 }
 
+#!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans" : "Gear - Exotic"
+
+Section Talismans : Class == "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68, Rarity <= Rare
+{
+	Show T1 { %H5; !G3; !exotic.t2; BaseType == source.rares.talisman.t1; }
+	Show T2 { %H5; !G3; !exotic.t3; BaseType == source.rares.talisman.t2; }
+	Show T3 { %H5; !G4; !exotic.t3; BaseType == source.rares.talisman.t3; }
+}
+
 ## Visualizes items dropped by necropolis crafting by using the arealevel
 Section CraftingItemHighlight : Rarity Rare, AreaLevel 1, ItemLevel >= 4, Identified True, Auto("rare->utility->droppeditems"), Class == classes_equip
 {
@@ -748,15 +757,6 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 	{
 		Show High { %HS6; !G4; !exotic.t2; ItemLevel >= 82; }
 		Show Any  { %HS5; !G5; !exotic.t2; Empty(); }
-	}
-
-#!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans" : "Gear - Exotic"
-
-	Section Talismans : Class == "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68
-	{
-		Show T1 { %H5; !G3; !exotic.t2; BaseType == source.rares.talisman.t1; }
-		Show T2 { %H5; !G3; !exotic.t3; BaseType == source.rares.talisman.t2; }
-		Show T3 { %H5; !G4; !exotic.t3; BaseType == source.rares.talisman.t3; }
 	}
 
 #------------------------------------
@@ -1510,14 +1510,14 @@ Section Maps : Class == "Maps", !Maps
 #!! Waypoint c9.maps.generic.t16 : "Maps - t14-t16 - high reds" : "Maps"
 
 		Show maps_a_t16 { !GM1; !*z1; MapTier >= 16; }
-		Show maps_a_t15 { %H7; !GM1; !*z1; MapTier = 15; }
-		Show maps_a_t14 { %H6; !GM1; !*z1; MapTier = 14; }
+		Show maps_a_t15 { %H5; !GM1; !*z1; MapTier = 15; }
+		Show maps_a_t14 { %H5; !GM1; !*z1; MapTier = 14; }
 
 #!! Waypoint c9.maps.generic.t14 : "Maps - t11-t13 - low reds" : "Maps"
 
-		Show maps_b_t13 { !GM2; %H5; !*z2; MapTier = 13; }
-		Show maps_b_t12 { !GM2; %H5; !*z2; MapTier = 12; }
-		Show maps_b_t11 { !GM2; %H5; !*z2; MapTier = 11; }
+		Show maps_b_t13 { !GM2; %H4; !*z2; MapTier = 13; }
+		Show maps_b_t12 { !GM2; %H4; !*z2; MapTier = 12; }
+		Show maps_b_t11 { !GM2; %H4; !*z2; MapTier = 11; }
 
 #!! Waypoint c9.maps.generic.t10 : "Maps - t6-t10 - yellow maps" : "Maps"
 
