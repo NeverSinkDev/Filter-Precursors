@@ -549,6 +549,8 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show MercenaryOthers { !GSH; %D5; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
 
 		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
+		Show EssenceShieldDropOnly  { !GSH; %D5; !exotic.t3; Class == "Shields"; Mod "Essences"; };
+
 		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
 		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
