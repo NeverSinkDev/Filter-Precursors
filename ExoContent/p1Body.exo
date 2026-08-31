@@ -430,7 +430,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 
 Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
-	Show QualChancing { !G3; !exotic.t1; %D9; Quality >= 26; BaseType == "Riveted Boots" "Steel Kite Shield"; }
+	Show QualChancing { !G3; !exotic.t1; %D9; Quality >= 28; BaseType == "Riveted Boots" "Steel Kite Shield"; }
 
 	var craftingArmors = derived.crafting.armors.t1 + derived.crafting.shields.t1 + derived.crafting.shields.t2 + bases.exotic.atlas.miscgear;
 	Show armors1q1	{ !G1; !exotic.t1; %D9; Quality >= 28; Class == classes_armor; BaseType == craftingArmors; }
@@ -545,8 +545,8 @@ Section IdModSectionSpecial : IdMods, !exotic
 		Show DelveFractured    { %D9; !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
 		Show Delve    { !GSH; %D8; !exotic.t2; Mod exotic_delve; Rarity <= Rare; };
 
-		Show MercenaryWeapons { !GSH; %D5; !exotic.t2; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
-		Show MercenaryOthers { !GSH; %D5; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons; };
+		Show MercenaryOthers { !GSH; %D5; !exotic.t2; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
+		Show MercenaryWeapons { !GSH; %D5; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons_infamous; };
 
 		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
 
@@ -659,6 +659,8 @@ Section ExoticVariations : !exotic
 
 Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 {
+	## ShowD 4Offcolors { %D4; !GS; !exotic.t3; Class == classes_fourSocketPlus; Sockets >= 4; Sockets <= 1W; }
+
 	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel >= 2; AreaLevel <= 67; }
 	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
 	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 68; }
@@ -1562,14 +1564,14 @@ Section Charts : Auto("Charts"), Class == "Chart", !newleaguetier
 
 Section HeistContracts : Auto("Heist->Contract"), Class == "Contracts"
 {
-	Show Enchanted  { !GSH; !exotic.t2; AnyEnchantment True; Rarity <= Rare; }
+	Show Enchanted  { !GSH; !exotic.t2; %H7; BaseType == Heist.Contract.Handpicked; AnyEnchantment True; Rarity <= Rare; }
 	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; Rarity <= Rare; }
 	Hide exHide { !shrink; }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class == "Blueprints"
 {
-	Show Enchanted  { !GSH; !exotic.t1; AnyEnchantment True; Rarity <= Rare; }
+	Show Enchanted  { !GSH; !exotic.t1; %H9; AnyEnchantment True; Rarity <= Rare; }
 	Show HandPicked { !exomap.high; !G4; BaseType == Heist.Blueprint.Handpicked; }
 	Show Any { %H8; !exomap.high; !G4; Empty(); }
 }
@@ -1619,19 +1621,12 @@ Section MapFragments : Class == "Map Fragments" "Misc Map Items"
 	}
 
 #------------------------------------
-# [4701] Exceptions
-#------------------------------------
-	Section StackedFragments : Auto("Fragments->stacked")
-	{
-		Show t3 { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
-	}
-
-#------------------------------------
 # [4702] Regular Fragment Tiering
 #------------------------------------
 	Section FragsGeneric : Auto("Fragments")
 	{
 		Show t1 { !G1; BaseType == fragments.generic.t1; }
+		Show t3stackedex { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
 		Show t2 { %H8; !G2; BaseType == fragments.generic.t2; }
 		Show t4 { %H7; !G3; BaseType == fragments.generic.t3; }
 		Show t5 { !G4; %HS3; BaseType == fragments.generic.t4; }
@@ -2008,20 +2003,20 @@ Section Wombgifts : Auto("exotic->wombgifts"), Class == "Wombgifts", !Currency
 
 Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class == class_currency, !currency
 {
-	Show t1	{ %D6;  !G1; !*t1exalted; StackSize >= 80; BaseType == fragments.generic.t1splinters; }
-	Show t2	{ %D6;  !G2; !*t2divine; StackSize >= 25; BaseType == fragments.generic.t1splinters; }
-	Show t3	{ %D6;  !G3; !*t3annul; StackSize >= 10; BaseType == fragments.generic.t1splinters; }
+	Show t1	{ %D6;  !G1; !*t2divine; StackSize >= 80; BaseType == fragments.generic.t1splinters; }
+	Show t2	{ %D6;  !G2; !*t3annul; StackSize >= 25; BaseType == fragments.generic.t1splinters; }
+	Show t3	{ %D6;  !G3; !*t4chaos; StackSize >= 10; BaseType == fragments.generic.t1splinters; }
 	Show t4	{ %DS6;  !G3; !*t4chaos;  StackSize >= 5; BaseType == fragments.generic.t1splinters; }
-	Show t5	{ %D6; !G3; !*t5alchemy;  StackSize >= 2; BaseType == fragments.generic.t1splinters; }
+	Show t5	{ %DS5; !G3; !*t5alchemy;  StackSize >= 2; BaseType == fragments.generic.t1splinters; }
 }
 
 Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class == class_currency, !currency
 {
-	Show t1	{ %D5;   !G1; !*t2divine; StackSize >= 66; BaseType == fragments.generic.t2splinters; }
-	Show t2	{ %D5;   !G2; !*t3annul; StackSize >= 25; BaseType == fragments.generic.t2splinters; }
+	Show t1	{ %D5;   !G1; !*t3annul; StackSize >= 66; BaseType == fragments.generic.t2splinters; }
+	Show t2	{ %D5;   !G2; !*t4chaos; StackSize >= 25; BaseType == fragments.generic.t2splinters; }
 	Show t3	{ %D5;   !G3; !*t4chaos; StackSize >= 10; BaseType == fragments.generic.t2splinters; }
-	Show t4	{ %DS6;  !G4; !*t5alchemy; StackSize >= 5; BaseType == fragments.generic.t2splinters; }
-	Show t5	{ %D5;  !G4; !*t5alchemy; StackSize >= 2; BaseType == fragments.generic.t2splinters; }
+	Show t4	{ %DS5;  !G4; !*t5alchemy; StackSize >= 5; BaseType == fragments.generic.t2splinters; }
+	Show t5	{ %DS4;  !G4; !*t5alchemy; StackSize >= 2; BaseType == fragments.generic.t2splinters; }
 }
 
 #------------------------------------
@@ -2166,7 +2161,7 @@ Section Unique : Rarity Unique, Auto("uniques"), !unique
 	
 	Show exRationalJewel  { !G1; !*t1; BaseType == "Cobalt Jewel"; SynthesisedItem True; }
 	Show exSynth  { !G2; !*t2; BaseType == uniques.exceptions.synthRings; SynthesisedItem True; }
-	Show ex6link  { !G1; !*t1; LinkedSockets 6; }
+	Show ex6link  { !G1; !*t2; LinkedSockets 6; }
 
 	Show 4xabyssHelmet  { !G1; !*t1; Sockets >= "AAAA"; BaseType == "Bone Circlet" }
 	Show 3xabyss  { !G1; !*t1; Sockets >= "AAA"; BaseType == "Carnal Armour" }
