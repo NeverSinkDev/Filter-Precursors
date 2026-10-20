@@ -1,86 +1,75 @@
-Expand RaresJewellery.T1
+# Theme overrides: only the themes whose look differs from the default
+Expand currency_portal
 {
-    SetTextColor sBlack;
-    SetBorderColor sBlack;
+    SetTextColor lowvaluecurrency;
 }
 
-Expand RaresJewellery.T2
+Expand currency_portalleveling
 {
-    SetTextColor sBlack;
-    SetBorderColor sBlack;
+    SetTextColor lowvaluecurrency;
 }
 
-Expand RaresJewellery.T3
+Expand currency_portalstack
 {
-    SetTextColor sBlack;
-    SetBorderColor sBlack;
+    BorderedGlow(lowvaluecurrency, sBlack);
 }
 
-Expand t1uni.T1
+Expand currency_t9
+{
+    Bordered(lowvaluecurrency);
+}
+
+Expand currency_wisdom
+{
+    SetTextColor lowvaluecurrency;
+}
+
+Expand currency_wisdomleveling
+{
+    SetTextColor lowvaluecurrency;
+}
+
+Expand currency_wisdomstack
+{
+    BorderedGlow(lowvaluecurrency, sBlack);
+}
+
+Expand exotics_talismant3
+{
+    SetTextColor sBlack;
+}
+
+Expand rares_jewelleryt1
+{
+    Bordered(sBlack);
+}
+
+Expand rares_jewelleryt2
+{
+    Bordered(sBlack);
+}
+
+Expand rares_jewelleryt3
+{
+    Bordered(sBlack);
+}
+
+Expand uniques_heist
+{
+    SetBackgroundColor uniquest2;
+}
+
+Expand uniques_t1
 {
     SetTextColor uniquest2;
 }
 
-Expand t2uni.Any
+Expand uniques_t2
 {
-   var acc = uniquest2;
+    SetBackgroundColor uniquest2;
 }
 
-Expand t9armour : PatternBlack
+Expand uniques_t2corrupt
 {
-    SetBorderColor lowvaluecurrency;
-    SetTextColor lowvaluecurrency;
-}
-
-Expand tportHigh
-{
-    SetTextColor lowvaluecurrency;
-    SetBackgroundColor sBlack;
-    SetBorderColor lowvaluecurrency;
-}
-
-Expand twisdHigh
-{
-    SetTextColor lowvaluecurrency;
-    SetBackgroundColor sBlack;
-    SetBorderColor lowvaluecurrency;
-}
-
-Expand tportal
-{
-    SetTextColor lowvaluecurrency;
-}
-
-Expand twisdom
-{
-    SetTextColor lowvaluecurrency;
-}
-
-Expand UniqueMapStrat
-{
-    Func T2()
-    {
-        SetBackgroundColor uniquest2;
-    }
-}
-
-Expand Sentinel.stalker
-{
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
-}
-
-Expand Sentinel.pandemonium
-{
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
-}
-
-Expand Sentinel.apex
-{
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
+    SetBackgroundColor uniquest2;
 }

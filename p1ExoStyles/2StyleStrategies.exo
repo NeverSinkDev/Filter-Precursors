@@ -1,6 +1,44 @@
 #------------------------------------
-# Global Strategies
+# Patterns
 #------------------------------------
+
+# Shared looks, named like the PoE2 ones. Theme Funcs and variant Expand blocks call them with the palette variables as arguments, so a palette edit still reaches every rule.
+# An Expand block runs after the Func it extends: a command set there wins over the one the pattern call set.
+
+Func BrickBlack(accent)
+{
+	SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor accent;
+}
+
+Func BrickWhite(accent)
+{
+	SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor accent;
+}
+
+Func BorderedGlow(accent, glow)
+{
+	SetTextColor accent; SetBorderColor accent; SetBackgroundColor glow;
+}
+
+Func Bordered(accent)
+{
+	SetTextColor accent; SetBorderColor accent;
+}
+
+Func ApexEffects()
+{
+	PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon;
+}
+
+Func SpecialGearEffects(mapsize)
+{
+	PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon mapsize exoticgear.cmap Diamond;
+}
+
+Func RecipeEffects()
+{
+	PlayAlertSound sounds.currency; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap Hexagon;
+}
 
 # This rule is applied to every single rule in the filter first.
 Style UniversalPreProc
@@ -10,9 +48,6 @@ Style UniversalPreProc
 		SetBorderColor 0 0 0;
 	}
 }
-
-# Global strategies can be applied to any section
-# Even if they miss the parent tag
 
 Style UniversalHideLayer
 {
@@ -28,32 +63,8 @@ Style UniversalHideLayer
 	}
 }
 
-# Universal value accents, allow quickly giving an item a certain map icon, beam color and some other simple properties, while presiving the styles set by other rules
-
 Style UniversalValueAccents
 {
-	Func newitemmidvalue ()
-	{
-		TX league.new.acc;
-		BD league.new.acc;
-		BG league.new.background;
-		MM 1 league.color league.icon;
-		PlayAlertSound sounds.currency;
-		Beam league.color;
-		SetFontSize font.t3;
-	}
-
-	Func newitemhighvalue ()
-	{
-		TX league.new.acc;
-		BD league.new.acc;
-		BG league.new.background;
-		MM 0 league.color league.icon;
-		PlayAlertSound sounds.currency;
-		Beam league.color;
-		SetFontSize font.t2;
-	}
-
 	Func restex ()
 	{ 
 		SetFontSize font.max; 
@@ -61,1803 +72,1406 @@ Style UniversalValueAccents
 		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon; 
 	}
 
-	Func 6linklow ()
-	{
-		var icon = Diamond;
-
-		SetBackgroundColor sixLink.acc;
-		SetTextColor sBlack;
-		SetBorderColor sBlack;
-
-		PlayAlertSound sounds.t2;
-		SetFontSize font.max;
-		PlayEffect Red; 
-		MinimapIcon 1 Red icon;
-	}
-
-	Func 6linkhigh ()
-	{
-		var icon = Diamond;
-
-		SetBackgroundColor sixLink.acc;
-		SetTextColor sWhite;
-		SetBorderColor sWhite;
-
-		PlayAlertSound sounds.t2;
-		SetFontSize font.max;
-		PlayEffect Red; 
-		MinimapIcon 0 Red icon;
-	}
-
-	Func V1 ()
-	{
-		PlayAlertSound sounds.t1;
-		SetFontSize font.max;
-		PlayEffect Red; 
-		MinimapIcon 0 Red Star;
-	}
-
-	Func VF1 ()
-	{
-		PlayAlertSound sounds.t2;
-		SetFontSize font.max;
-		PlayEffect Red; 
-		MinimapIcon 0 Red Star;
-	}
-
-	Func V2 ()
-	{
-		SetFontSize font.t2;
-		PlayEffect Yellow; MinimapIcon 1 Yellow *;
-	}
-
-	Func V3 ()
-	{
-		SetFontSize font.t3;
-		PlayEffect White; MinimapIcon 2 White *;
-	}
-
-	Func V4 ()
-	{
-		PlayEffect Grey Temp; MinimapIcon 2 Grey *;
-	}
-
-	Func Chancing ()
-	{
-		SetTextColor sWhite; SetFontSize font.t6; SetBorderColor chancing.acc;
-	}
-
-	Func High()
-	{
-		SetBorderColor accent.high.tx;
-	}
-
-	Func Medium()
-	{
-		SetBorderColor accent.medium.tx;
-	}
-
-	Func TierTwoColors()
-	{
-		SetBackgroundColor accent.high.tx;
-		SetTextColor 255 255 255 255;
-		SetBorderColor 255 255 255 255;
-	}
-
-	Func TopTierColors()
-	{
-		SetBorderColor accent.high.tx;
-		SetBackgroundColor 255 255 255 255;
-		SetBorderColor accent.high.tx;
-	}
-
-	Func highvalueidmod()
-	{
-		SetBackgroundColor idmodbackground;
-	}
-
-	Func brightrare()
-	{
-		SetTextColor 255 165 0 255;
-	}
-
-	Func Special ()
-	{
-		SetBorderColor exoticgear.tx;
-		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
-	}
-
-	Func SpecialNoMM ()
-	{
-		SetBorderColor exoticgear.tx; PlayEffect exoticgear.cray;
-	}
-
-	Func SpecialNoB ()
-	{
-		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
-	}
-
-	Func SpecialNoBHigh ()
-	{
-		PlayEffect exoticgear.crayhigh; MinimapIcon * exoticgear.cmaphigh *;
-	}
-
-
-	Func SpecialB ()
-	{
-		SetBorderColor exoticgear.tx;
-	}
-
-	Func UniqueSound ()
-	{
-		PlayAlertSound sounds.unique;
-	}
-
-	Func tiny()
-	{
-		SetBorderColor accent.rare.tiny;
-	}
-
-	Func Corrupt ()
-	{
-		SetBorderColor accent.corrupt.tx;
-		PlayEffect exoticgear.cray; MinimapIcon * exoticgear.cmap *;
-	}
-
-	Func CorruptStrong ()
-	{
-		SetBorderColor accent.corruptimpl.tx;
-	}
-
-	Func AnimatedWeapon()
-	{
-		SetBorderColor 230 0 0 255;
-		SetFontSize font.min;
-		SetBackgroundColor 0 0 0 100;
-	}
-
-	Func Maximize()
-	{
-		SetFontSize font.t3;
-	}
-
-	Func PerfectInfluenced()
-	{
-		SetFontSize font.t1;
-		SetBorderColor accent.perfection;
-		MinimapIcon 0 Red Moon;
-	}
-	
-	Func BestRolls()
-	{
-		SetFontSize font.t3;
-		PlayAlertSound sounds.unique;
-		PlayEffect Purple;
-		SetBackgroundColor 
-		SetBorderColor accent.perfection;
-		MinimapIcon 0 Purple Moon;
-		SetTextColor accent.rare.ilvl86;
-	}
-
-	Func Shrink()
-	{
-		SetFontSize font.t6; RemoveEffects();
-	}
-
-	Func LevelFlaskHigh()
-	{
-		SetFontSize font.t3; MinimapIcon 1 Yellow Raindrop; PlayAlertSound sounds.currency;
-	}
-
-	Func LevelFlask()
-	{
-		SetFontSize font.t4; MinimapIcon 2 Grey Raindrop;
-	}
-
-	Func LifeFlask()
-	{
-		SetBorderColor flasks.life.acc;
-		SetFontSize font.t5;
-	}
-
 	Func ClearBorder()
 	{
 		SetBorderColor NONE;
 	}
 
-	Func ManaFlask()
+}
+
+# Themes: one Func per look. 
+# The body rule carries exactly one !category_name mark, Apply(accents, ALL => Common) resolves it
+
+Style Common
+{
+
+#------------------------------------
+# CRAFTING
+#------------------------------------
+
+	Func crafting_early
 	{
-		SetBorderColor flasks.mana.acc;
-		SetFontSize font.t5;
+		SetBorderColor accent.notice.low;
 	}
 
-	Func SF45()
+	Func crafting_t1
+	{
+		SetBorderColor accent.level.i86;
+	}
+
+	Func crafting_t2
+	{
+		SetBorderColor accent.level.i84;
+	}
+
+
+#------------------------------------
+# CURRENCY
+#------------------------------------
+
+	Func currency_coinshuge
+	{
+		SetFontSize font.t3;
+		BorderedGlow(coins.acc, coins.extra);
+		PlayEffect Orange;
+	}
+
+	Func currency_coinslarge
 	{
 		SetFontSize font.t4;
+		BorderedGlow(coins.acc, sBlack);
+		PlayEffect Orange Temp;
 	}
 
-	Func SF40()
+	Func currency_lvlchance
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t5alchemy);
+		PlayAlertSound sounds.currency; PlayEffect White; MinimapIcon 1 Grey Circle;
+	}
+
+	Func currency_lvlchaos
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t4chaos);
+		PlayAlertSound sounds.currency; PlayEffect White; MinimapIcon 1 Grey Circle;
+	}
+
+	Func currency_lvlessence
+	{
+		SetFontSize font.t4;
+		BrickBlack(currency.acc.t5alchemy);
+		PlayAlertSound sounds.currency; PlayEffect White; MinimapIcon 2 Grey Circle;
+	}
+
+	Func currency_portal
 	{
 		SetFontSize font.t5;
+		SetBorderColor currency.acc.tportal; SetBackgroundColor sBlack;
 	}
 
-	Func SF35()
+	Func currency_portalleveling
 	{
-		SetFontSize font.t6;
+		SetFontSize font.t3;
+		SetBorderColor currency.acc.tportal; SetBackgroundColor sBlack;
 	}
 
-	Func SF30()
+	Func currency_portalstack
 	{
-		SetFontSize font.t7;
+		SetFontSize 45;
+		SetBorderColor currency.acc.tportal.high; SetBackgroundColor currency.extra.tportal;
 	}
 
-	Func HybridFlask
+	Func currency_t1
 	{
-		SetBorderColor flasks.hybrid.acc;
+		SetFontSize font.max;
+		BorderedGlow(currency.acc.t1, tier.t1.base);
+		ApexEffects();
+	}
+
+	Func currency_t2
+	{
+		SetFontSize font.t2;
+		BrickWhite(currency.acc.t2divine);
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red icon;
+	}
+
+	Func currency_t3
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t3annul);
+		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow icon;
+	}
+
+	Func currency_t4
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t4chaos);
+		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White icon;
+	}
+
+	Func currency_t5
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t5alchemy);
+		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White icon;
+	}
+
+	Func currency_t6
+	{
+		SetFontSize font.t4;
+		BrickBlack(currency.acc.t6chrom);
+		PlayAlertSound 2 300; PlayEffect Grey; MinimapIcon 2 Grey Circle;
+	}
+
+	Func currency_t7
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t7chance);
+	}
+
+	Func currency_t8
+	{
+		SetFontSize 45;
+		BorderedGlow(currency.acc.t8trans, sBlack);
+	}
+
+	Func currency_t9
+	{
 		SetFontSize font.t5;
+		BorderedGlow(currency.acc.t9armour, sBlack);
 	}
 
-	Func LevelCurrency()
+	Func currency_wisdom
 	{
-		SetFontSize font.t4; MinimapIcon 2 Grey Circle; PlayAlertSound sounds.currency;
+		SetFontSize font.t5;
+		SetBorderColor currency.acc.twisdom; SetBackgroundColor sBlack;
 	}
 
-	Func LevelCurrencyHigh()
+	Func currency_wisdomleveling
 	{
-		SetFontSize font.t3; MinimapIcon 1 Grey Circle; PlayAlertSound sounds.currency;
-	}	
-
-	Func LVLCaster()
-	{
-		SetBorderColor accent.leveling.caster;
-		SetBackgroundColor accent.leveling.bg.caster;
+		SetFontSize font.t3;
+		SetBorderColor currency.acc.twisdom; SetBackgroundColor sBlack;
 	}
 
-	Func LVLMinion()
+	Func currency_wisdomstack
 	{
-		SetBorderColor accent.leveling.minion;
-		SetBackgroundColor accent.leveling.bg.minion;
+		SetFontSize 45;
+		SetBorderColor currency.acc.twisdom.high; SetBackgroundColor currency.extra.twisdom;
 	}
 
-	Func LVLMelee1()
-	{
-		SetBorderColor accent.leveling.melee1;
-		SetBackgroundColor accent.leveling.bg.melee1;
-	}
 
-	Func LVLMelee2()
-	{
-		SetBorderColor accent.leveling.melee2;
-		SetBackgroundColor accent.leveling.bg.melee2;
-	}
+#------------------------------------
+# DECO
+#------------------------------------
 
-	Func LVLArcher()
+	Func deco_bluemedium
 	{
-		SetBorderColor accent.leveling.archer;
-		SetBackgroundColor accent.leveling.bg.archer;
-	}
-
-	Func FourLink()
-	{
-		SetBorderColor accent.leveling.fourlink;
-		SetBackgroundColor sBlack;
-		PlayEffect Grey;
-		MinimapIcon 2 Grey Diamond;
-	}
-
-	Func ThreeLink()
-	{
-		SetBorderColor accent.leveling.threelink;
-		SetBackgroundColor sBlack;
-		PlayEffect Grey Temp;
-	}
-
-	Func EarlyUniques()
-	{
-		SetBackgroundColor unique.early.extra;
-	}
-
-	Func FoulUnique
-	{
-		SetBorderColor splinters.acc.t1;
-		MinimapIcon 1 Purple *;
-		PlayEffect Purple;
-	}
-
-	Func MercUniques()
-	{
-		SetBackgroundColor unique.early.extra;
-		SetBorderColor unique.merc.extra;
-	}
-
-	Func DustUniques()
-	{
-		SetBackgroundColor unique.early.extra;
-		MinimapIcon 1 Purple *;
-		PlayEffect Purple;
-	}
-
-	Func NoticeNM0 ()
-	{
-		SetBackgroundColor sBlack;
-		SetBorderColor exoticgear.tx;
-	}
-
-	Func NoticeNM1 ()
-	{
-		SetBackgroundColor sBlack;
-		SetBorderColor sWhite;
-	}
-
-	Func NoticeNM2 ()
-	{
-		SetBackgroundColor sBlack;
 		SetBorderColor accent.notice.low;
 	}
 
-	Func NoticeNM3 ()
-	{
-		SetTextColor 180 180 180;
-		SetBackgroundColor accent.low.base;
-	}
-
-	Func Low ()
-	{
-		SetBackgroundColor accent.low.base;
-		SetBorderColor accent.notice.low;
-	}
-
-	
-	Func NoticeHigh()
+	Func deco_bluetiny
 	{
 		SetBorderColor accent.notice.high;
 	}
 
-	Func NoticeLow()
+	Func deco_rarecorrupt
 	{
-		SetBorderColor accent.notice.low;
+		SetBorderColor accent.corrupt.tx;
 	}
 
-	Func Notice()
+	Func deco_rarefourlink
 	{
-		SetBorderColor accent.notice;
+		SetBorderColor accent.leveling.fourlink;
 	}
 
-	Func QuestLike()
+	Func deco_rareilvl
 	{
-		SetBorderColor questlike.tx.acc;
-		SetTextColor questlike.tx.acc;
-		PlayEffect Green;
-		SetFontSize font.t4;
-		SetBackgroundColor sBlack;
-		MinimapIcon 0 Green Pentagon;
-		PlayAlertSound sounds.unique;
+		SetTextColor accent.rare.ilvl86; SetBorderColor NONE;
 	}
 
-	Func QuestLite()
+	Func deco_rareilvl68
 	{
-		SetBorderColor sBlack;
-		SetTextColor questlike.tx.acc;
-		PlayEffect Green;
-		SetFontSize font.t4;
-		SetBackgroundColor sBlack;
-		MinimapIcon 1 Green Pentagon;
-		PlayAlertSound sounds.unique;
+		SetBorderColor NONE;
 	}
-}
+
+	Func deco_rareilvl75
+	{
+		SetTextColor accent.rare.ilvl75; SetBorderColor NONE;
+	}
+
+	Func deco_rareimplicit
+	{
+		SetBorderColor accent.corruptimpl.tx;
+	}
+
+	Func deco_rarelarge
+	{
+		SetBorderColor accent.rare.large;
+	}
+
+	Func deco_raremedium
+	{
+		SetBorderColor accent.rare.medium;
+	}
+
+	Func deco_raretiny
+	{
+		SetBorderColor accent.rare.tiny;
+	}
+
 
 #------------------------------------
-# Universal Strategies
+# DIVINATION
 #------------------------------------
 
-# Exotic gear has some special properties, such as mods
-# Rare types, corruptions, synthesised state etc
-
-Style UniversalExotic
-{
-	var icon = Diamond;
-
-	Func T1 ()
-	{
-		SetFontSize font.t2;
-		Colors(exoticgear.tx, exoticgear.tx, exoticgear.extra);
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 0 exoticgear.cmap icon;
-	}
-
-	Func T2 ()
+	Func divination_new
 	{
 		SetFontSize font.t3;
-		Colors(exoticgear.tx, exoticgear.tx, sBlack);
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 1 exoticgear.cmap icon;
+		BrickBlack(divi.acc.tnew);
+		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Triangle;
 	}
 
-	Func T3 ()
+	Func divination_t1
+	{
+		SetFontSize font.max;
+		BorderedGlow(divi.acc.t1, tier.t1.base);
+		ApexEffects();
+	}
+
+	Func divination_t2
+	{
+		SetFontSize font.t2;
+		BrickWhite(divi.acc.t2);
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Triangle;
+	}
+
+	Func divination_t3
+	{
+		SetFontSize font.t3;
+		BrickBlack(divi.acc.t3);
+		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Triangle;
+	}
+
+	Func divination_t4
+	{
+		SetFontSize font.t3;
+		BrickBlack(divi.acc.t4);
+		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White Triangle;
+	}
+
+	Func divination_t5
+	{
+		SetFontSize font.t6;
+		BorderedGlow(divi.acc.t5, sBlack);
+	}
+
+	Func divination_t5c
+	{
+		SetFontSize font.t4;
+		BorderedGlow(divi.acc.t5, sBlack);
+		PlayAlertSound sound;
+	}
+
+
+#------------------------------------
+# EXOTICS
+#------------------------------------
+
+	Func exotics_corruptt2
+	{
+		SetFontSize font.t3;
+		SetTextColor exoticgear.tx; SetBorderColor accent.corruptimpl.tx; SetBackgroundColor sBlack;
+		SpecialGearEffects(1);
+	}
+
+	Func exotics_corruptt3
+	{
+		SetFontSize font.t4;
+		SetBorderColor accent.corruptimpl.tx;
+		SpecialGearEffects(2);
+	}
+
+	Func exotics_corruptt4
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.corruptimpl.tx;
+		PlayEffect exoticgear.cray Temp;
+	}
+
+	Func exotics_t1
+	{
+		SetFontSize font.t2;
+		BorderedGlow(exoticgear.tx, exoticgear.extra);
+		SpecialGearEffects(0);
+	}
+
+	Func exotics_t2
+	{
+		SetFontSize 45;
+		BorderedGlow(exoticgear.tx, sBlack);
+		SpecialGearEffects(1);
+	}
+
+	Func exotics_t3
 	{
 		SetFontSize font.t4;
 		SetBorderColor exoticgear.tx;
-		PlayAlertSound exoticgear.sound; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap icon;
+		PlayAlertSound 3 300; PlayEffect exoticgear.cray; MinimapIcon 2 exoticgear.cmap Diamond;
 	}
 
-	Func T4 ()
+	Func exotics_t4
 	{
 		SetFontSize font.t5;
 		SetBorderColor exoticgear.tx.low;
 		PlayEffect exoticgear.cray Temp;
 	}
-}
 
-Style DecoratorRemoverStrategy
-{
-	Func RareDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
-		SetTextColor 255 255 119;
-	}
-
-	Func MagicDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
-	}
-
-	Func NormalDecoratorRemover ()
-	{
-		SetFontSize 32;
-		SetBorderColor 0 0 0 255;
-		SetBackgroundColor 0 0 0 240;
-	}
-}
-
-#------------------------------------
-# Styling Pieces
-#------------------------------------
-
-Style PatternGlow
-{
-	var fsize = font.t4;
-	var msize = 1;
-	var acc = tier.error;
-	var base = tier.error.low;
-	var cmap = Yellow;
-	var cray = Yellow;
-	
-	Func Any () 
-	{
-		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-Style PatternHighWhite
-{
-	var fsize = font.t2;
-	var msize = 0;
-	var acc = tier.error;
-	var base = sWhite;
-	var cmap = Red;
-	var cray = Red;
-	var sound = sounds.t2;
-	
-	Func Any () 
-	{ 
-		SetFontSize fsize;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-Style PatternLowWhite
-{
-	var fsize = font.t5;
-	var msize = 0;
-	var acc = tier.error;
-	var base = sWhite;
-	var cmap = White;
-	var cray = White;
-	var sound = sounds.currency;
-	
-	Func Any () 
-	{ 
-		SetFontSize fsize;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-Style PatternBlack
-{
-	var fsize = font.t4;
-	var msize = 2;
-	var acc = tier.error;
-	var base = sBlack;
-	var cmap = White;
-	var cray = White;
-	
-	Func Any () 
-	{ 
-		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-Style PatternInverseBlack
-{
-	var fsize = font.t3;
-	var msize = 1;
-	var acc = tier.error;
-	var base = sBlack;
-	var cmap = Yellow;
-	var cray = Yellow;
-	
-	Func Any () 
-	{ 
-		SetFontSize fsize;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sound; PlayEffect cray; MinimapIcon msize cmap icon; 
-	}
-}
-
-Style T1
-{
-	var acc = tier.t1.acc;
-	var base = tier.t1.base;
-	var fsize = font.max;
-
-	Func T1 () 
-	{ 
-		SetFontSize fsize;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap tier.t1.icon; 
-	}
-}
-
-Style T2GlowPiece
-{
-	Func T2 () 
-	{ 
-		var acc = tier.t2.acc;
-		var base = tier.t2.extra;
-
-		SetFontSize font.t2;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
-	}
-}
-
-Style T2RedPiece
-{
-	Func T2 () 
-	{ 
-		var acc = tier.t2.acc;
-		var base = tier.t2.base;
-
-		SetFontSize font.t2;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap icon; 
-	}
-}
-
-Style T2YellowPiece
-{
-	Func T2 () 
-	{ 
-		var acc = tier.t2.acc;
-		var base = tier.t2.base;
-
-		SetFontSize font.t2;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
-	}
-}
-
-Style T3YellowPiece
-{
-	Func T3 () 
-	{ 
-		var acc = tier.t3.acc;
-		var base = tier.t3.base;
-
-		SetFontSize font.t3;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
-	}
-}
-
-## Exception for Fragments and similary shaped sections
-Style T3YellowGlowPiece
-{
-	Func T3 () 
-	{ 
-		var acc = tier.t3.acc;
-		var extra = tier.t3.base;
-
-		SetFontSize font.t3;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor extra; 
-		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
-	}
-}
-
-Style T3WhitePiece
-{
-	Func T3 () 
-	{
-		var acc = tier.t3.acc;
-		var base = tier.t3.base;
-
-		SetFontSize font.t4;
-		SetTextColor base; SetBorderColor base; SetBackgroundColor acc; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap icon; 
-	}
-}
-
-Style T3BlackPiece
-{
-	Func T3 () 
-	{
-		var acc = tier.t3.acc;
-		var base = sBlack;
-
-		SetFontSize font.t4;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sound; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap icon; 
-	}
-}
-
-Style T4BlackPiece
-{
-	Func T4 () 
-	{
-		var acc = tier.t4.acc;
-		var base = sBlack;
-
-		SetFontSize font.t4;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
-	}
-}
-
-Style T4WhitePieceNoBG
-{
-	Func T4 () 
-	{ 
-		var acc = tier.t4.acc;
-		var base = sBlack;
-		SetFontSize font.t4;
-		SetTextColor acc; SetBorderColor acc; SetBackgroundColor base; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
-	}
-}
-
-Style T4BlackPieceLow
-{
-	Func T4 () 
-	{ 
-		var lowacc = tier.t5.acc;
-		var base = sBlack;
-		SetFontSize font.t4;
-		SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor lowacc; 
-		PlayAlertSound sound; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap icon; 
-	}
-}
-
-Style T5
-{
-	Func T5 () 
-	{
-		var acc = tier.t5.acc;
-		SetFontSize font.t5;
-		SetTextColor acc;
-		PlayEffect tier.t5.cray Temp;
-	}
-}
-
-Style T6
-{
-	Func T6 () 
-	{
-		var acc = tier.t5.acc;
-		SetFontSize font.t5;
-		SetTextColor acc;
-		PlayEffect tier.t5.cray Temp;
-	}
-}
-
-Style T5low
-{
-	Func T5 () 
-	{
-		var lowacc = tier.t5.acc;
-		SetFontSize font.t4;
-		SetTextColor lowacc
-		SetBorderColor lowacc;
-		PlayEffect tier.t5.cray Temp;
-		MinimapIcon 2 tier.t4.cmap icon; 
-	}
-}
-
-Style T6low
-{
-	Func T6 () 
-	{
-		var lowacc = tier.t5.acc;
-		SetFontSize font.t4;
-		SetTextColor lowacc;
-	}
-}
-
-Style TMulti
-{
-	Func Multi()
-	{
-		var base = tier.special.base;
-		var acc = tier.special.acc;
-		var extra = exoticgear.tx;
-
-		SetFontSize font.t3;
-		SetTextColor acc; SetBorderColor extra; SetBackgroundColor base; 
-		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize exoticgear.cmap icon; 
-	}
-}
-
-#------------------------------------
-# Derived Strategies
-#------------------------------------
-
-#------------------------------------
-# Rares
-#------------------------------------
-
-Style RaresJewellery
-{
-	Func T1 ()
-	{
-		SetFontSize font.t3;
-		SetBackgroundColor rares.jewellery.t1;
-		SetBorderColor NONE;
-	}
-
-	Func T2 ()
+	Func exotics_talismant2
 	{
 		SetFontSize font.t4;
-		SetBackgroundColor rares.jewellery.t2;
-		SetBorderColor NONE;
+		BorderedGlow(exoticgear.tx, sBlack);
+		SpecialGearEffects(2);
 	}
 
-	Func T3 ()
+	Func exotics_talismant3
 	{
-		SetFontSize font.t5;
-		SetBackgroundColor rares.jewellery.t3;
-		SetBorderColor NONE;
-	}
-}
-
-Style RaresArmoursWeapons
-{	
-	Func T1 ()
-	{
-		SetFontSize font.t5;
-		SetBackgroundColor rares.generic.t1;
-		SetBorderColor NONE;
+		SetFontSize font.t4;
+		SetBorderColor exoticgear.tx; SetBackgroundColor rares.jewellery.t3;
+		SpecialGearEffects(2);
 	}
 
-	Func T2 ()
-	{
-		SetFontSize font.t5;
-		SetBackgroundColor rares.generic.t2;
-		SetBorderColor NONE;
-	}
-
-	Func T3 ()
-	{
-		SetBackgroundColor rares.generic.t3;
-		SetFontSize font.t6;
-		SetBorderColor NONE;
-	}
-
-	Func T4 ()
-	{
-		SetBackgroundColor rares.generic.t4;
-		SetFontSize font.t6;
-		SetBorderColor NONE;
-	}
-}
-
-Style EndgameRareDecorators
-{
-	Func large()
-	{
-		SetBorderColor accent.rare.large;
-	}
-
-	Func medium()
-	{
-		SetBorderColor accent.rare.medium;
-	}
-
-	Func tiny()
-	{
-		SetBorderColor accent.rare.tiny;
-	}
-
-	Func fourlinkedrare()
-	{
-		SetBorderColor accent.leveling.fourlink;
-	}
-
-	Func highgear()
-	{
-		SetBorderColor accent.rare.highgear;
-	}
-
-	Func ilvl86()
-	{
-		SetTextColor accent.rare.ilvl86; SetBorderColor NONE;
-	}
-
-	Func ilvl84()
-	{
-		SetTextColor accent.rare.ilvl84; SetBorderColor NONE;
-	}
-
-	Func ilvl75()
-	{
-		SetTextColor accent.rare.ilvl75; SetBorderColor NONE;
-	}
-
-	Func ilvl68()
-	{
-		SetBorderColor NONE;
-	}
-
-	Func corrupt()
-	{
-		SetBorderColor accent.corrupt.tx;
-	}
-
-	Func corruptimpl()
-	{
-		SetBorderColor accent.corruptimpl.tx;
-	}
-}
-
-#------------------------------------
-# Item Specific Strategies
-#------------------------------------
-
-# Artefacts are items that are almost always useful/worth something
-# These usually drop from very specific locations/spots, but are still nice drops
-Style Artefact
-{
-	var icon = Pentagon;
-
-	Func T1 ()
+	Func exotics_top
 	{
 		SetFontSize font.t2;
-		SetTextColor artefact.tx; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
-		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap icon;
-	}
-}
-
-Style RecipeStrategy
-{
-	var icon = Hexagon;
-
-	Func T1() 
-	{ 
-		SetFontSize font.t3;
-		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
-		PlayAlertSound sounds.currency; PlayEffect recipe.cray; MinimapIcon 2 recipe.cmap icon; 
+		BorderedGlow(exoticgear.tx, idmodbackground);
+		SpecialGearEffects(0);
 	}
 
-	Func TS1() 
-	{ 
-		SetFontSize font.t4;
-		SetTextColor sWhite; SetBorderColor sWhite; SetBackgroundColor recipe.t1.acc; 
-		PlayEffect recipe.cray Temp;
-	}
 
-	Func T2() 
-	{ 
+#------------------------------------
+# FLASKS
+#------------------------------------
+
+	Func flasks_qualityhigh
+	{
 		SetFontSize font.t5;
 		SetTextColor sBlack; SetBorderColor recipe.extra; SetBackgroundColor recipe.t2.acc;
 	}
 
-	Func t3() 
-	{ 
-		SetFontSize font.t6;
-		SetTextColor sBlack; SetBorderColor sBlack; SetBackgroundColor recipe.t2.acc;
-	}
-
-	Func accent()
-	{
-		SetBorderColor recipe.t1.acc;
-	}
-}
-
-Style JewelStrategy
-{
-	var icon = Diamond;
-
-	Func cluster () 
-	{ 
-		SetFontSize font.t3;
-		SetTextColor jewel.cluster.tx; SetBorderColor jewel.cluster.tx; SetBackgroundColor jewel.cluster.extra;
-		PlayAlertSound sounds.currency; PlayEffect tier.t2.cray; MinimapIcon 1 tier.t2.cmap Pentagon; 
-	}
-
-	Func rare () 
-	{ 
-		SetFontSize font.t4;
-		SetTextColor jewel.rare.tx; SetBorderColor jewel.rare.tx; SetBackgroundColor jewel.rare.extra; 
-		PlayEffect tier.t5.cray; MinimapIcon 2 Grey icon;
-	}
-
-	Func magic () 
-	{ 
-		SetFontSize font.t5;
-		SetTextColor jewel.magic.tx; SetBorderColor jewel.magic.tx; SetBackgroundColor jewel.magic.extra;
-	}
-}
-
-Style CraftSpecialStrategy
-{
-	Func I86 () 
-	{ 
-		SetFontSize font.t2;  MinimapIcon 2 Blue Diamond;
-		PlayEffect Blue;
-		SetBorderColor accent.level.i86.high;
-	}
-
-	Func I84 () 
-	{ 
-		SetFontSize font.t4;  MinimapIcon 2 White Diamond;
-		PlayEffect White;
-		SetBorderColor accent.level.i84.high;
-	}
-
-	Func ANY () 
-	{ 
-		SetFontSize font.t4;  MinimapIcon 2 Grey Diamond;
-		PlayEffect Grey;
-		SetBorderColor accent.notice.high;
-	}
-}
-
-Style CraftGeneralStrategy
-{
-	Func I86 () 
-	{ 
-		SetBorderColor accent.level.i86;
-	}
-
-	Func I84 () 
-	{ 
-		SetBorderColor accent.level.i84;
-	}
-
-	Func ANY () 
-	{ 
-		SetBorderColor accent.notice.low;
-	}
-
-	SetFontSize NONE;
-}
-
-Style HeistFollowerGearStrategy
-{
-	var icon = Raindrop;
-
-	Func t1highlevel ()
-	{
-		SetFontSize font.t2;
-		SetTextColor accent.rare.ilvl84;
-		SetBorderColor accent.heist;
-		SetBackgroundColor rares.generic.t1;
-
-		PlayEffect Yellow;
-		MinimapIcon 1 Yellow icon;
-		PlayAlertSound sounds.unique;
-	}
-	Func T1 ()
-	{
-		SetFontSize font.t3;
-		SetBorderColor accent.heist;
-		SetBackgroundColor rares.generic.t1;
-
-		PlayEffect White;
-		MinimapIcon 1 White icon;
-	}
-	Func T2 ()
+	Func flasks_qualitymax
 	{
 		SetFontSize font.t4;
-		SetBorderColor accent.heist.low;
-		SetBackgroundColor rares.generic.t2;
-
-		PlayEffect Grey;
-		MinimapIcon 1 Grey icon;
+		BrickWhite(recipe.t1.acc);
+		PlayEffect recipe.cray Temp;
 	}
-	Func t3any ()
+
+	Func flasks_utilitycorrupt
+	{
+		SetFontSize font.t4;
+		SetBorderColor accent.corrupt.tx; SetBackgroundColor 25 100 75;
+		PlayEffect Grey Temp;
+	}
+
+	Func flasks_utilityt1
+	{
+		SetFontSize font.t4;
+		BorderedGlow(50 200 125, 25 100 75);
+		PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
+	}
+
+	Func flasks_utilityt2
+	{
+		SetFontSize font.t4;
+		SetBorderColor 50 200 125; SetBackgroundColor 25 100 75;
+		PlayEffect Grey Temp;
+	}
+
+	Func flasks_utilityt3
 	{
 		SetFontSize font.t5;
-		SetBorderColor accent.heist.low;
-		SetBackgroundColor rares.generic.t2;
-
-		PlayEffect Grey;
-		MinimapIcon 2 Grey icon;
+		SetBorderColor sBlack; SetBackgroundColor 25 100 75;
+		PlayEffect Grey Temp;
 	}
 
-	PlayAlertSound sounds.unique;
-}
 
-Style GemStrategy : T1
-{
-	var icon = Triangle;
-	var altBg = artefact.extra;	
+#------------------------------------
+# FRAGMENTS
+#------------------------------------
 
-	Func T1()
+	Func fragments_t1
 	{
-		var acc = gems.t1;
+		SetFontSize font.max;
+		BorderedGlow(fragment.tx.high, tier.t1.base);
+		ApexEffects();
 	}
 
-	# Used for special cases, such as alt quality, awakened gems etc.
-	Func P1()
+	Func fragments_t2
 	{
 		SetFontSize font.t2;
-		SetBackgroundColor altBg; SetTextColor gems.high; SetBorderColor artefact.tx;
-		PlayAlertSound sounds.t2; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cray icon;
+		BorderedGlow(tier.t2.base, fragment.tx.high);
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap Hexagon;
 	}
 
-	# 19/20 gems + empower/enlighten
-	Func P2 ()
+	Func fragments_t3
 	{
-		BD gems.high; TX gems.high; BG gems.base;
-		SetFontSize font.t2;
-		Sound sounds.currency; 
-		Beam tier.t4.cray; 
-		MM 1 tier.t3.cmap icon;
-	}
-
-	# high qual gems
-	Func P3 ()
-	{
-		BD gems.norm; TX gems.norm;
 		SetFontSize font.t3;
-		Sound sounds.currency;
-		Beam tier.t5.cray; 
-		MM 1 tier.t4.cmap icon;
+		BorderedGlow(tier.t3.base, fragment.tx.high);
+		PlayAlertSound sounds.currency; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Hexagon;
 	}
 
-	# high qual gems
-	Func P3S ()
+	Func fragments_t4
 	{
-		BD questlike.tx.acc; TX gems.norm;
 		SetFontSize font.t4;
-		Sound sounds.currency;
-		Beam tier.t5.cray; 
-		MM 1 Green icon;
+		BrickBlack(fragment.tx);
+		PlayAlertSound sounds.currency; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap Hexagon;
 	}
 
-	# low qual/vaal gems
-	Func P4 ()
+	Func fragments_t5
 	{
-		BD gems.low; TX gems.norm;
 		SetFontSize font.t4;
-		MM 1 tier.t5.cmap icon;
-		Beam tier.t5.cray Temp;
+		Bordered(fragment.tx);
+		PlayEffect tier.t5.cray Temp; MinimapIcon 2 tier.t4.cmap Hexagon;
 	}
 
-	# trash gems
-	Func P5 ()
+	Func fragments_t6
 	{
-		TX gems.low;
+		SetFontSize font.t4;
+		SetTextColor fragment.tx; SetBorderColor 0 0 0;
+	}
+
+
+#------------------------------------
+# GEMS
+#------------------------------------
+
+	Func gems_firstzone
+	{
+		SetFontSize font.t4;
+		SetBorderColor 0 0 0;
+	}
+
+	Func gems_leveling
+	{
+		SetFontSize font.t5;
+		SetBorderColor 0 0 0;
+	}
+
+	Func gems_plusone
+	{
+		SetFontSize font.t4;
+		SetTextColor gems.norm; SetBorderColor questlike.tx.acc;
+		PlayAlertSound sounds.currency; PlayEffect tier.t5.cray; MinimapIcon 1 Green Triangle;
+	}
+
+	Func gems_rest
+	{
 		SetFontSize font.t7;
+		SetTextColor gems.low; SetBorderColor 0 0 0;
 	}
 
-	# Leveling specific gem rules
-	Func Leveling()
+	Func gems_t1
+	{
+		SetFontSize font.max;
+		BorderedGlow(gems.t1, tier.t1.base);
+		ApexEffects();
+	}
+
+	Func gems_t2
+	{
+		SetFontSize font.t2;
+		SetTextColor gems.high; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
+		PlayAlertSound sounds.t2; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cray Triangle;
+	}
+
+	Func gems_t3
+	{
+		SetFontSize font.t2;
+		BorderedGlow(gems.high, gems.base);
+		PlayAlertSound sounds.currency; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t3.cmap Triangle;
+	}
+
+	Func gems_t4
+	{
+		SetFontSize font.t3;
+		Bordered(gems.norm);
+		PlayAlertSound sounds.currency; PlayEffect tier.t5.cray; MinimapIcon 1 tier.t4.cmap Triangle;
+	}
+
+	Func gems_t5
+	{
+		SetFontSize font.t4;
+		SetTextColor gems.norm; SetBorderColor gems.low;
+		PlayEffect tier.t5.cray Temp; MinimapIcon 1 tier.t5.cmap Triangle;
+	}
+
+	Func gems_vaal
+	{
+		SetFontSize font.t6;
+		SetBorderColor 0 0 0; SetBackgroundColor 55 0 0 255;
+	}
+
+	Func gems_vaalleveling
+	{
+		SetFontSize font.t4;
+		SetBorderColor 0 0 0; SetBackgroundColor 55 0 0 255;
+		MinimapIcon 2 White Triangle;
+	}
+
+
+#------------------------------------
+# GOLD
+#------------------------------------
+
+	Func gold_huge
+	{
+		SetFontSize font.t3;
+		BorderedGlow(gold.huge, sBlack);
+		PlayAlertSound sounds.currency; PlayEffect Orange; MinimapIcon 1 Yellow Cross;
+	}
+
+	Func gold_large
+	{
+		SetFontSize font.t4;
+		BrickWhite(sBlack);
+		PlayEffect Orange Temp; MinimapIcon 1 White Cross;
+	}
+
+	Func gold_medium
 	{
 		SetFontSize font.t5;
+		BrickWhite(sBlack);
+		MinimapIcon 2 Grey Cross;
 	}
 
-	Func VaalGem()
+	Func gold_small
 	{
-		SetBackgroundColor 55 0 0 255;
 		SetFontSize font.t6;
+		SetTextColor gold.acc; SetBorderColor sBlack; SetBackgroundColor accent.low.base;
+		MinimapIcon 2 Grey Cross;
 	}
 
-	Func VaalLvl()
-	{
-		SetFontSize font.t4;
-		SetBackgroundColor 55 0 0 255;
-		MinimapIcon 2 White icon;
-	}
-
-	Func FirstLevel()
-	{
-		SetFontSize font.t4;
-	}
-}
 
 #------------------------------------
-# Map Tier Pieces
+# HEIST
 #------------------------------------
 
-Style GeneralMapProgressionStrategy
-{
-	Func NoteAcc()
+	Func heist_geart1
+	{
+		SetFontSize font.t3;
+		SetBorderColor accent.heist; SetBackgroundColor rares.generic.t1;
+		PlayAlertSound sounds.unique; PlayEffect White; MinimapIcon 1 White Raindrop;
+	}
+
+	Func heist_geart1high
+	{
+		SetFontSize font.t2;
+		SetTextColor accent.rare.ilvl84; SetBorderColor accent.heist; SetBackgroundColor rares.generic.t1;
+		PlayAlertSound sounds.unique; PlayEffect Yellow; MinimapIcon 1 Yellow Raindrop;
+	}
+
+	Func heist_geart2
+	{
+		SetFontSize font.t4;
+		SetBorderColor accent.heist.low; SetBackgroundColor rares.generic.t2;
+		PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 1 Grey Raindrop;
+	}
+
+	Func heist_geart3
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.heist.low; SetBackgroundColor rares.generic.t2;
+		PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey Raindrop;
+	}
+
+
+#------------------------------------
+# HIDE
+#------------------------------------
+
+	Func hide_layer
+	{
+		SetFontSize font.min;
+		SetBorderColor 0 0 0 0; SetBackgroundColor 0 0 0 0;
+		DisableDropSound True;
+	}
+
+	Func hide_shrunk
+	{
+		SetFontSize font.t6;
+		SetBorderColor 0 0 0;
+	}
+
+
+#------------------------------------
+# IDMODS
+#------------------------------------
+
+	Func idmods_high
+	{
+		SetFontSize font.t3;
+		BorderedGlow(exoticgear.tx, idmodbackground);
+		PlayAlertSound exoticgear.sound; PlayEffect Purple; MinimapIcon 1 Purple Diamond;
+	}
+
+	Func idmods_medium
+	{
+		SetFontSize font.t3;
+		BorderedGlow(exoticgear.tx, sBlack);
+		PlayAlertSound exoticgear.sound; PlayEffect Purple; MinimapIcon 1 Purple Diamond;
+	}
+
+	Func idmods_veilt1
+	{
+		SetFontSize font.t3;
+		BorderedGlow(exoticgear.tx, idmodbackground);
+		SpecialGearEffects(1);
+	}
+
+	Func idmods_veilt2
+	{
+		SetFontSize font.t4;
+		BorderedGlow(exoticgear.tx, idmodbackground);
+		SpecialGearEffects(2);
+	}
+
+
+#------------------------------------
+# INFLUENCED
+#------------------------------------
+
+	Func influenced_t1
+	{
+		SetFontSize font.t5;
+		BorderedGlow(tier.t2.base, influenced.gear.t2);
+		PlayAlertSound sounds.unique; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Diamond;
+	}
+
+	Func influenced_t2
+	{
+		SetFontSize font.t5;
+		BrickWhite(influenced.gear.t3);
+		PlayEffect Blue Temp;
+	}
+
+
+#------------------------------------
+# JEWELS
+#------------------------------------
+
+	Func jewels_blue
+	{
+		SetFontSize font.t5;
+		BorderedGlow(jewel.magic.tx, jewel.magic.extra);
+	}
+
+	Func jewels_bluehigh
+	{
+		SetFontSize font.t5;
+		SetTextColor jewel.magic.tx; SetBorderColor accent.medium.tx; SetBackgroundColor jewel.magic.extra;
+	}
+
+	Func jewels_blueveryhigh
+	{
+		SetFontSize font.t5;
+		SetTextColor jewel.magic.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.magic.extra;
+	}
+
+	Func jewels_cluster
+	{
+		SetFontSize font.t3;
+		BorderedGlow(jewel.cluster.tx, jewel.cluster.extra);
+		PlayAlertSound sounds.currency; PlayEffect Grey Temp; MinimapIcon 2 Grey Pentagon;
+	}
+
+	Func jewels_clusterhigh
+	{
+		SetFontSize font.t3;
+		SetTextColor jewel.cluster.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.cluster.extra;
+		PlayAlertSound sounds.currency; PlayEffect White; MinimapIcon 2 White Pentagon;
+	}
+
+	Func jewels_clusteroptimal
+	{
+		SetFontSize font.t2;
+		SetTextColor jewel.cluster.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.cluster.extra;
+		PlayAlertSound sounds.currency; PlayEffect Yellow; MinimapIcon 1 Yellow Pentagon;
+	}
+
+	Func jewels_clustert1
+	{
+		SetFontSize font.max;
+		SetTextColor jewel.cluster.tx; SetBorderColor accent.high.tx; SetBackgroundColor 255 255 255 255;
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Star;
+	}
+
+	Func jewels_clustert2
+	{
+		SetFontSize font.t2;
+		BorderedGlow(255 255 255 255, accent.high.tx);
+		PlayAlertSound sounds.currency; PlayEffect Yellow; MinimapIcon 1 Yellow Pentagon;
+	}
+
+	Func jewels_rare
+	{
+		SetFontSize font.t4;
+		BorderedGlow(jewel.rare.tx, jewel.rare.extra);
+		PlayEffect tier.t5.cray; MinimapIcon 2 Grey Diamond;
+	}
+
+	Func jewels_rarehigh
+	{
+		SetFontSize font.t4;
+		SetTextColor jewel.rare.tx; SetBorderColor accent.medium.tx; SetBackgroundColor jewel.rare.extra;
+		PlayEffect tier.t5.cray; MinimapIcon 2 Grey Diamond;
+	}
+
+	Func jewels_rareveryhigh
+	{
+		SetFontSize font.t4;
+		SetTextColor jewel.rare.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.rare.extra;
+		PlayEffect tier.t5.cray; MinimapIcon 2 Grey Diamond;
+	}
+
+	Func jewels_special
+	{
+		SetFontSize font.t5;
+		SetTextColor jewel.magic.tx; SetBorderColor exoticgear.tx; SetBackgroundColor jewel.magic.extra;
+		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray;
+	}
+
+	Func jewels_specialcorrupt
+	{
+		SetFontSize font.t4;
+		SetTextColor jewel.rare.tx; SetBorderColor exoticgear.tx; SetBackgroundColor jewel.rare.extra;
+		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Diamond;
+	}
+
+
+#------------------------------------
+# LEAGUE
+#------------------------------------
+
+	Func league_t2
+	{
+		SetFontSize font.t2;
+		BorderedGlow(tier.t2.base, league.new.tierlist);
+		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap Moon;
+	}
+
+	Func league_t3
+	{
+		SetFontSize font.t3;
+		BorderedGlow(tier.t3.base, league.new.tierlist);
+		PlayAlertSound sounds.currency; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Moon;
+	}
+
+	Func league_t4
+	{
+		SetFontSize font.t4;
+		BorderedGlow(league.new.tierlist, sBlack);
+		PlayAlertSound sounds.currency; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap Moon;
+	}
+
+
+#------------------------------------
+# LEVELING
+#------------------------------------
+
+	Func leveling_3link
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.threelink; SetBackgroundColor sBlack;
+		PlayEffect Grey Temp;
+	}
+
+	Func leveling_4link
+	{
+		SetFontSize font.t4;
+		SetBorderColor accent.leveling.fourlink; SetBackgroundColor sBlack;
+		PlayEffect Grey; MinimapIcon 2 Grey Diamond;
+	}
+
+	Func leveling_act1
+	{
+		SetFontSize font.t5;
+		SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+	}
+
+	Func leveling_act2
+	{
+		SetFontSize font.t6;
+		SetBorderColor accent.notice.low; SetBackgroundColor sBlack;
+	}
+
+	Func leveling_blueearly
+	{
+		SetFontSize font.t6;
+		SetBorderColor NONE;
+	}
+
+	Func leveling_casterweapon
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.threelink; SetBackgroundColor sBlack;
+		PlayEffect Grey Temp;
+	}
+
+	Func leveling_firstareas
+	{
+		SetFontSize font.t6;
+		SetTextColor 180 180 180; SetBorderColor 0 0 0; SetBackgroundColor accent.low.base;
+	}
+
+	Func leveling_hybridflask
+	{
+		SetFontSize font.t5;
+		SetBorderColor flasks.hybrid.acc;
+	}
+
+	Func leveling_jewellery
+	{
+		SetFontSize font.t5;
+		SetBorderColor sWhite; SetBackgroundColor sBlack;
+	}
+
+	Func leveling_lifeflask
+	{
+		SetFontSize font.t5;
+		SetBorderColor flasks.life.acc;
+	}
+
+	Func leveling_manaflask
+	{
+		SetFontSize font.t5;
+		SetBorderColor flasks.mana.acc;
+	}
+
+	Func leveling_miniongear
+	{
+		SetFontSize font.t6;
+		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
+	}
+
+	Func leveling_otheracts
+	{
+		SetFontSize font.t6;
+		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
+	}
+
+	Func leveling_progression
+	{
+		SetTextColor 180 180 180; SetBorderColor 0 0 0; SetBackgroundColor accent.low.base;
+	}
+
+	Func leveling_qualityflask
+	{
+		SetFontSize font.t6;
+		BrickBlack(recipe.t2.acc);
+	}
+
+	Func leveling_quicksilver
+	{
+		SetFontSize font.t3;
+		BorderedGlow(50 200 125, 25 100 75);
+		PlayAlertSound sounds.currency; PlayEffect Grey; MinimapIcon 1 Yellow Raindrop;
+	}
+
+	Func leveling_rarearcher
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.archer; SetBackgroundColor accent.leveling.bg.archer;
+	}
+
+	Func leveling_rarearmour
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.notice.high; SetBackgroundColor rares.generic.t1;
+	}
+
+	Func leveling_rarebodyshield
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t2;
+	}
+
+	Func leveling_rarecaster
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.caster; SetBackgroundColor accent.leveling.bg.caster;
+	}
+
+	Func leveling_raremelee1h
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.melee1; SetBackgroundColor accent.leveling.bg.melee1;
+	}
+
+	Func leveling_raremelee2h
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.melee2; SetBackgroundColor accent.leveling.bg.melee2;
+	}
+
+	Func leveling_rareminion
+	{
+		SetFontSize font.t5;
+		SetBorderColor accent.leveling.minion; SetBackgroundColor accent.leveling.bg.minion;
+	}
+
+	Func leveling_rareunderlevel
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t4;
+	}
+
+	Func leveling_rgb
+	{
+		SetFontSize font.t5;
+		BrickWhite(recipe.t1.acc);
+		RecipeEffects();
+	}
+
+	Func leveling_utilityflask
+	{
+		SetFontSize font.t4;
+		SetBorderColor 50 200 125; SetBackgroundColor 25 100 75;
+		PlayEffect Grey Temp; MinimapIcon 2 Grey Raindrop;
+	}
+
+
+#------------------------------------
+# LINKS
+#------------------------------------
+
+	Func links_5linkleveling
+	{
+		SetFontSize font.t2;
+		BorderedGlow(exoticgear.tx, sBlack);
+		PlayAlertSound exoticgear.sound; PlayEffect Yellow; MinimapIcon 1 Yellow Diamond;
+	}
+
+	Func links_6link
+	{
+		SetFontSize font.max;
+		BrickBlack(sixLink.acc);
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 1 Red Diamond;
+	}
+
+	Func links_6linkhigh
+	{
+		SetFontSize font.max;
+		BrickWhite(sixLink.acc);
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Diamond;
+	}
+
+	Func links_recipe
+	{
+		SetFontSize font.t3;
+		BrickWhite(recipe.t1.acc);
+		RecipeEffects();
+	}
+
+	Func links_recipespecial
+	{
+		SetFontSize font.t3;
+		SetTextColor sWhite; SetBorderColor exoticgear.tx; SetBackgroundColor recipe.t1.acc;
+		PlayAlertSound sounds.currency; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Hexagon;
+	}
+
+	Func links_rgbrecipe
+	{
+		SetFontSize font.t4;
+		BrickWhite(recipe.t1.acc);
+		RecipeEffects();
+	}
+
+
+#------------------------------------
+# MAPLIKE
+#------------------------------------
+
+	Func maplike_contract
+	{
+		SetFontSize font.t4;
+		BorderedGlow(heist.contracts.acc, sBlack);
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White UpsideDownHouse;
+	}
+
+	Func maplike_high
+	{
+		SetFontSize font.t4;
+		BorderedGlow(heist.blueprints.acc, heist.blueprints.base);
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Yellow UpsideDownHouse;
+	}
+
+
+#------------------------------------
+# MAPS
+#------------------------------------
+
+	Func maps_decoimplicit
 	{
 		SetBorderColor maps.note.acc;
 	}
 
-	Func SpecialHigh()
-	{
-		SetFontSize font.t1;
-		SetTextColor maps.special.acc; SetBorderColor maps.special.acc; SetBackgroundColor maps.special.extra; 
-		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square; 
-	}
-
-	Func SpecialLow()
-	{
-		SetFontSize font.t2;
-		SetTextColor maps.special.acc; SetBorderColor maps.special.acc; SetBackgroundColor maps.special.low.extra; 
-		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 1 Purple Square; 
-	}
-
-	Func Z1()
-	{
-		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z1.acc; 
-		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
-		SetFontSize font.t2;
-	}
-
-	Func Z2()
-	{
-		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z2.acc; 
-		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square; 
-		SetFontSize font.t2;
-	}
-
-	Func Z3()
-	{
-		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
-		SetFontSize sWhite;
-		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square; 
-		SetFontSize font.t3;
-	}
-
-	Func Z4()
-	{
-		SetBorderColor NONE; SetBackgroundColor sBlack; SetTextColor sWhite;
-		SetFontSize sWhite;
-		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square; 
-		SetFontSize font.t3;
-	}
-
-	Func deco_mapup()
+	Func maps_decoupgrade
 	{
 		SetBorderColor accent.maps.upgrade;
 	}
 
-	Func deco_map_zone12()
+	Func maps_decozonehigh
+	{
+		SetBorderColor 200 200 200 255;
+	}
+
+	Func maps_decozonelow
 	{
 		SetBorderColor 0 0 0 255;
 	}
 
-	Func deco_map_zone34()
+	Func maps_high
 	{
-		SetBorderColor 200 200 200 255;
-	}
-}
-
-#------------------------------------
-# Tiering Marking Strat
-#------------------------------------
-
-Style LowerValueTiering
-{
-	var icon = "Diamond";
-	var acc = 255 0 0 255;
-	var extra = 0 0 0 255;
-
-	Func LT1()
-	{
-		Colors(acc, acc, extra);
-		LVHL1();
+		SetFontSize font.t2;
+		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z2.acc;
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square;
 	}
 
-	Func LT2()
+	Func maps_highest
 	{
-		SetBorderColor acc;
-		SetBackgroundColor extra;
-		LVHL2();
+		SetFontSize font.t2;
+		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z1.acc;
+		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square;
 	}
 
-	Func LT2C()
+	Func maps_low
 	{
-		SetBorderColor accent.corrupt.tx;
-		SetBackgroundColor extra;
-		LVHL2();
-	}
-
-	Func LT3()
-	{
-		SetBorderColor sBlack;
-		SetBackgroundColor extra;
-		LVHL2();
-	}
-}
-
-#------------------------------------
-# Currency Tiering
-#------------------------------------
-
-Style Sentinel
-{
-	Func stalker ()
-	{
-		BD league.sentinel.acc.stalker;
-		BG league.playerequippable;
-		MM 1 league.color league.icon;
-		PlayAlertSound sounds.currency;
-		Beam league.color;
-		SetFontSize font.t4;
-	}
-
-	Func pandemonium ()
-	{
-		BD league.sentinel.acc.pandemonium;
-		BG league.playerequippable;
-		MM 1 league.color league.icon;
-		PlayAlertSound sounds.currency;
-		Beam league.color;
-		SetFontSize font.t4;
-	}
-
-	Func apex ()
-	{
-		BD league.sentinel.acc.apex;
-		BG league.playerequippable;
-		MM 1 league.color league.icon;
-		PlayAlertSound sounds.currency;
-		Beam league.color;
-		SetFontSize font.t4;
-	}
-}
-
-Style Gold
-{
-	Func Huge ()
-	{
-		MinimapIcon 1 Yellow Cross;
-		PlayAlertSound sounds.currency;
-		Colors( gold.huge, gold.huge, sBlack);
-		PlayEffect Orange;
 		SetFontSize font.t3;
+		SetTextColor sWhite; SetBorderColor NONE; SetBackgroundColor sBlack;
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square;
 	}
 
-	Func Large ()
+	Func maps_mid
 	{
-		MinimapIcon 1 White Cross;
-		Colors( sWhite, sWhite, sBlack);
-		PlayEffect Orange Temp;
+		SetFontSize font.t3;
+		SetTextColor sWhite; SetBorderColor NONE; SetBackgroundColor sBlack;
+		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square;
+	}
+
+	Func maps_special
+	{
+		SetFontSize font.t2;
+		BorderedGlow(maps.special.acc, maps.special.low.extra);
+		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 1 Purple Square;
+	}
+
+	Func maps_specialhigh
+	{
+		SetFontSize font.t1;
+		BorderedGlow(maps.special.acc, maps.special.extra);
+		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square;
+	}
+
+	Func maps_top
+	{
+		SetFontSize font.max;
+		BorderedGlow(maps.influenced, tier.t1.base);
+		PlayAlertSound sounds.t2; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cmap Square;
+	}
+
+
+#------------------------------------
+# RARES
+#------------------------------------
+
+	Func rares_droppeditems
+	{
 		SetFontSize font.t4;
+		SetBorderColor 0 0 0;
 	}
 
-	Func Medium ()
+	Func rares_earlyendgame
 	{
-		MinimapIcon 2 Grey Cross;
+		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
+	}
+
+	Func rares_eldritch
+	{
 		SetFontSize font.t5;
-		SetTextColor sWhite;
-		SetBorderColor sWhite;
-		SetBackgroundColor sBlack;
+		BrickWhite(influenced.gear.t3);
+		PlayEffect Blue Temp;
 	}
 
-	Func Small ()
+	Func rares_jewelleryt1
 	{
-		MinimapIcon 2 Grey Cross;
-		SetTextColor gold.acc;
-		SetBorderColor sBlack;
+		SetFontSize 45;
+		SetBorderColor NONE; SetBackgroundColor rares.jewellery.t1;
+	}
+
+	Func rares_jewelleryt2
+	{
+		SetFontSize font.t4;
+		SetBorderColor NONE; SetBackgroundColor rares.jewellery.t2;
+	}
+
+	Func rares_jewelleryt3
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor rares.jewellery.t3;
+	}
+
+	Func rares_t12
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t1;
+	}
+
+	Func rares_t3
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t2;
+	}
+
+	Func rares_t4
+	{
 		SetFontSize font.t6;
-		SetBackgroundColor accent.low.base;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t3;
 	}
-}
 
-Style Coins
-{
-	Func Huge ()
+	Func rares_t5
 	{
-		Colors( coins.acc, coins.acc, coins.extra);
-		PlayEffect Orange;
+		SetFontSize font.t6;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t4;
+	}
+
+
+#------------------------------------
+# SPECIAL
+#------------------------------------
+
+	Func special_animateweapon
+	{
+		SetFontSize font.min;
+		SetBorderColor 230 0 0 255; SetBackgroundColor 0 0 0 100;
+	}
+
+	Func special_artefact
+	{
+		SetFontSize font.t2;
+		BorderedGlow(artefact.tx, artefact.extra);
+		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap Pentagon;
+	}
+
+	Func special_chancing
+	{
+		SetFontSize font.t6;
+		SetTextColor sWhite; SetBorderColor chancing.acc;
+	}
+
+	Func special_quest
+	{
+		SetFontSize font.t4;
+		BorderedGlow(questlike.tx.acc, sBlack);
+		PlayAlertSound sounds.unique; PlayEffect Green; MinimapIcon 0 Green Pentagon;
+	}
+
+	Func special_restex
+	{
+		SetFontSize font.max;
+		BorderedGlow(tier.error, tier.error.low);
+		PlayAlertSound sounds.unique; PlayEffect tier.error.cray; MinimapIcon 0 tier.error.cmap icon;
+	}
+
+
+#------------------------------------
+# SPLINTER
+#------------------------------------
+
+	Func splinter_t1
+	{
 		SetFontSize font.t3;
+		SetTextColor splinters.text; SetBorderColor splinters.acc.t1; SetBackgroundColor splinters.extra;
+		PlayAlertSound sounds.currency; PlayEffect Purple Temp; MinimapIcon 1 Grey Kite;
 	}
 
-	Func Large ()
+	Func splinter_t1exalted
 	{
-		Colors( coins.acc, coins.acc, sBlack);
-		PlayEffect Orange Temp;
+		SetFontSize font.max;
+		BorderedGlow(currency.acc.t1, tier.t1.base);
+		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 Red Kite;
+	}
+
+	Func splinter_t2divine
+	{
+		SetFontSize font.t2;
+		BrickWhite(currency.acc.t2divine);
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Kite;
+	}
+
+	Func splinter_t3
+	{
+		SetFontSize font.t5;
+		SetTextColor splinters.text; SetBorderColor splinters.acc.t3; SetBackgroundColor splinters.extra;
+		PlayEffect Purple Temp; MinimapIcon 2 Grey Kite;
+	}
+
+	Func splinter_t3annul
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t3annul);
+		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Kite;
+	}
+
+	Func splinter_t4chaos
+	{
+		SetFontSize font.t3;
+		BrickBlack(currency.acc.t4chaos);
+		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White Kite;
+	}
+
+	Func splinter_t5
+	{
+		SetFontSize font.t3;
+		SetTextColor splinters.text; SetBorderColor splinters.acc.t2; SetBackgroundColor splinters.extra;
+		PlayAlertSound sounds.currency; PlayEffect Purple Temp; MinimapIcon 2 Grey Kite;
+	}
+
+
+#------------------------------------
+# UNIQUES
+#------------------------------------
+
+	Func uniques_dust
+	{
+		SetFontSize font.t4;
+		BorderedGlow(unique.tx, unique.early.extra);
+		PlayAlertSound sounds.unique; PlayEffect Purple; MinimapIcon 1 Purple Star;
+	}
+
+	Func uniques_earlyleague
+	{
+		SetFontSize font.t4;
+		BorderedGlow(unique.tx, unique.early.extra);
+		PlayAlertSound sounds.unique; PlayEffect Brown; MinimapIcon 2 Brown Star;
+	}
+
+	Func uniques_foulborn
+	{
+		SetFontSize font.t3;
+		SetTextColor sBlack; SetBorderColor splinters.acc.t1; SetBackgroundColor unique.tx;
+		PlayAlertSound sound; PlayEffect Purple; MinimapIcon 1 Purple Star;
+	}
+
+	Func uniques_heist
+	{
+		SetFontSize font.t2;
+		BorderedGlow(tier.t2.base, unique.tx);
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Star;
+	}
+
+	Func uniques_replicamulti
+	{
+		SetFontSize font.t3;
+		SetTextColor sBlack; SetBorderColor exoticgear.tx; SetBackgroundColor unique.tx;
+		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize Blue Star;
+	}
+
+	Func uniques_replicat1
+	{
+		SetFontSize font.max;
+		BorderedGlow(unique.tx, tier.t1.base);
+		ApexEffects();
+	}
+
+	Func uniques_replicat2
+	{
+		SetFontSize font.t2;
+		BorderedGlow(tier.t2.base, unique.tx);
+		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Star;
+	}
+
+	Func uniques_replicat3
+	{
+		SetFontSize font.t4;
+		BorderedGlow(tier.t3.base, unique.tx);
+		PlayAlertSound sounds.unique; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap Star;
+	}
+
+	Func uniques_t1
+	{
+		SetFontSize font.max;
+		BorderedGlow(unique.tx, tier.t1.base);
+		ApexEffects();
+	}
+
+	Func uniques_t2
+	{
+		SetFontSize font.t2;
+		BrickWhite(unique.tx);
+		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Yellow Star;
+	}
+
+	Func uniques_t2corrupt
+	{
+		SetFontSize font.t2;
+		SetTextColor sWhite; SetBorderColor accent.corrupt.tx; SetBackgroundColor unique.tx;
+		PlayAlertSound sounds.t2; PlayEffect exoticgear.cray; MinimapIcon 0 Blue Star;
+	}
+
+	Func uniques_t3
+	{
+		SetFontSize font.t3;
+		BrickBlack(unique.tx);
+		PlayAlertSound sound; PlayEffect exoticgear.cray; MinimapIcon 1 Blue Star;
+	}
+
+	Func uniques_t3special
+	{
+		SetFontSize font.t3;
+		SetTextColor sBlack; SetBorderColor exoticgear.tx; SetBackgroundColor unique.tx;
+		PlayAlertSound sound; PlayEffect exoticgear.cray; MinimapIcon 1 Blue Star;
+	}
+
+	Func uniques_t4
+	{
+		SetFontSize font.t4;
+		BorderedGlow(unique.tx, unique.extra);
+		PlayAlertSound sounds.unique; PlayEffect Brown; MinimapIcon 2 Brown Star;
+	}
+
+	Func uniques_t4boss
+	{
+		SetFontSize font.t4;
+		BorderedGlow(unique.tx, unique.extra);
+		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Star;
+	}
+
+	Func uniques_t4corrupt
+	{
+		SetFontSize font.t4;
+		SetTextColor unique.tx; SetBorderColor accent.corrupt.tx; SetBackgroundColor unique.extra;
+		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Star;
+	}
+
+	Func uniques_t4special
+	{
+		SetFontSize font.t4;
+		SetTextColor unique.tx; SetBorderColor exoticgear.tx; SetBackgroundColor unique.extra;
+		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Star;
+	}
+
+	Func uniques_t5
+	{
+		SetFontSize font.t5;
+		BorderedGlow(unique.tx, sBlack);
+		PlayAlertSound sounds.unique; PlayEffect Brown; MinimapIcon 2 Brown Star;
+	}
+
+	Func uniques_vinktar
+	{
+		SetFontSize font.t3;
+		BrickBlack(unique.tx);
+		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Brown Star;
+	}
+
+	Func SF45
+	{
 		SetFontSize font.t4;
 	}
 
-	Func Medium ()
+	Func SF40
 	{
 		SetFontSize font.t5;
-		SetTextColor coins.acc;
-		SetBorderColor coins.extra;
-		PlayEffect Orange Temp;
 	}
 
-	Func Small ()
+	## stays 40 in the styles that drop SF45 to 35 (Elder)
+	Func SF45T3
 	{
-		SetTextColor coins.extra;
-		SetBorderColor coins.extra;
-		PlayEffect Orange Temp;
+		SetFontSize font.t3;
+	}
+
+	Func SF35
+	{
 		SetFontSize font.t6;
 	}
-}
-
-#------------------------------------
-# Currency Tiering
-#------------------------------------
-
-Style t1exalted : T1
-{
-	var acc = currency.acc.t1; 
-	var icon = Star;
-}
-
-Style t2divine : PatternHighWhite
-{
-	var acc = currency.acc.t2divine; 
-	var msize = 0;
-	var cmap = Red;
-	var cray = Red;
-}
-
-Style t3annul : PatternInverseBlack
-{
-	var acc = currency.acc.t3annul; 
-	var msize = 1;
-	var cmap = Yellow;
-	var cray = Yellow;
-}
-
-Style t4chaos : PatternInverseBlack
-{
-	Func Any()
-	{
-		var acc = currency.acc.t4chaos; 
-		var msize = 2;
-		var cmap = White;
-		var cray = White;
-		SetFontSize font.t3;
-	}
-}
-
-Style t5alchemy : PatternInverseBlack
-{
-	var acc = currency.acc.t5alchemy; 
-	var msize = 2;
-	var cmap = White;
-	var cray = White;
-	var fsize = font.t3;
-}
-
-Style t6chrom : PatternInverseBlack
-{
-	var acc = currency.acc.t6chrom; 
-	var msize = 2;
-	var cmap = Grey;
-	var cray = Grey;
-	var fsize = font.t4;
-}
-
-Style t7chance : PatternInverseBlack
-{
-	var acc = currency.acc.t7chance; 
-
-	Func Any()
-	{ 
-		RemoveEffects();
-	}
-}
-
-Style t8trans : PatternBlack
-{
-	var acc = currency.acc.t8trans; 
-	var base = sBlack;
-
-	Func Any()
-	{ 
-		RemoveEffects();
-	}
-}
-
-Style t9armour : PatternBlack
-{
-	var acc = currency.acc.t9armour; 
-	var fsize = font.t5;
-	var base = sBlack;
-
-	Func Any()
-	{ 
-		RemoveEffects();
-	}
-}
-
-Style tportal
-{
-	Func Any()
-	{ 
-		SetFontSize font.t5;
-		SetBorderColor currency.acc.tportal;
-		SetBackgroundColor sBlack;
-	}
-}
-
-Style twisdom
-{
-	Func Any()
-	{ 
-		SetFontSize font.t5;
-		SetBorderColor currency.acc.twisdom;
-		SetBackgroundColor sBlack;
-		RemoveEffects();
-	}
-}
-
-Style tportHigh
-{
-	Func Any()
-	{ 
-		SetFontSize font.t4;
-		SetBorderColor currency.acc.tportal.high;
-		SetBackgroundColor currency.extra.tportal;
-		RemoveEffects();
-	}
-}
-
-Style twisdHigh
-{
-	Func Any()
-	{ 
-		SetFontSize font.t4;
-		SetBorderColor currency.acc.twisdom.high;
-		SetBackgroundColor currency.extra.twisdom;
-		RemoveEffects();
-	}
-}
-
-#------------------------------------
-# Currency Tiering
-#------------------------------------
-
-Style t1divi : T1
-{
-	Func T1()
-	{ 
-		var acc = divi.acc.t1; 
-		var icon = Star;
-	}
-}
-
-Style t2divi : PatternHighWhite
-{
-	Func Any()
-	{ 
-		var acc = divi.acc.t2; 
-		var icon = Triangle;
-	}
-}
-
-Style t3divi : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = divi.acc.t3; 
-		var icon = Triangle;
-		var msize = 1;
-	}
-}
-
-Style t4divi : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = divi.acc.t4; 
-		var icon = Triangle;
-		var cmap = White;
-		var cray = White;
-		var msize = 2;
-		SetFontSize font.t3;
-	}
-}
-
-Style t5divi : PatternBlack
-{
-	Func Any()
-	{ 
-		var acc = divi.acc.t5; 
-		PlayEffect NONE; MM NONE;
-		SetFontSize font.t4;
-		SetBackgroundColor sBlack;
-	}
-}
-
-Style tnewdivi : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = divi.acc.tnew; 
-		var icon = Triangle;
-		var msize = 1;
-	}
-}
-
-#------------------------------------
-# Splinter Tiering
-#------------------------------------
-
-Style SplinterStrategy
-{
-	var icon = Kite;
-	var sound = sounds.currency;
-
-	Func Stylize()
-	{
-		MM * * icon;
-	}
-
-	Func T1
-	{
-		Colors(splinters.text, splinters.acc.t1, splinters.extra);
-		SetFontSize font.t3;
-		MinimapIcon 1 Grey icon;
-		PlayAlertSound sound;
-		PlayEffect Purple Temp;
-	}
-
-	Func T2
-	{
-		Colors(splinters.text, splinters.acc.t2, splinters.extra);
-		SetFontSize font.t3;
-		MinimapIcon 2 Grey icon;
-		PlayAlertSound sound;
-		PlayEffect Purple Temp;
-	}
-
-	Func T3
-	{
-		Colors(splinters.text, splinters.acc.t3, splinters.extra);
-		SetFontSize font.t5;
-		MinimapIcon 2 Grey icon;
-		PlayEffect Purple Temp;
-	}
-}
-
-#------------------------------------
-# Unique Tiering
-#------------------------------------
-
-Style t1uni : T1
-{
-	Func T1()
-	{ 
-		var acc = unique.tx;
-		var icon = Star;
-	}
-}
-
-Style t2uni : PatternHighWhite
-{
-	Func Any()
-	{ 
-		var acc = unique.tx;
-		var icon = Star;
-		var msize = 0;
-		var sound = sounds.t2;
-		var cmap = Yellow;
-	}
-}
-
-Style HarbyUnique : PatternHighWhite
-{
-	Func Any()
-	{ 
-		var acc = unique.beachhead.acc;
-		var icon = Star;
-		var msize = 0;
-		var sound = sounds.t2;
-		var cmap = Blue;
-	}
-}
-
-Style t3uni : PatternInverseBlack
-{
-	Func Any()
-	{ 
-		var acc = unique.tx;
-		var icon = Star;
-		var cmap = Blue;
-		var msize = 1;
-		MM msize Brown Star;		
-	}
-}
-
-Style t4uni : PatternGlow
-{
-	Func Any()
-	{ 
-		var acc = unique.tx; 
-		var base = unique.extra;
-		var icon = Star;
-		var cmap = Brown;
-		var cray = Brown;
-		var msize = 2;
-		var sound = sounds.unique;
-	}
-}
-
-Style t5uni : PatternBlack
-{
-	Func Any()
-	{ 
-		var acc = unique.tx; 
-		var icon = Star;
-		var cmap = Brown;
-		var cray = Brown;
-		var msize = 2;
-		var sound = sounds.unique;
-		SetFontSize font.t5;
-	}
-}
-
-#------------------------------------
-# Finalizing Strategies
-#------------------------------------
-
-Style InfluencedVariant : T1, T2YellowPiece
-{
-	var icon = Diamond;
-	var tier.t1.icon = Diamond;
-	var sounds.t1 = sounds.unique;
-	var sounds.t2 = sounds.unique;
-
-	Func T1()
-	{ 
-		var acc = influenced.gear.t1; 
-	}
-
-	Func T2()
-	{ 
-		var acc = influenced.gear.t2; 
-	}
-}
-
-Style InfluencedRandom : PatternLowWhite
-{
-	var icon = Diamond;
-	var sound = NONE;
-	var acc = influenced.gear.t3;
-	var cmap = NONE;
-	var cray = Blue Temp;
-}
-
-# purple highlight for general identified mod items
-Style IdModsMulti : UniversalExotic
-{
-	var exoticgear.cmap = Purple;
-	var exoticgear.cray = Purple;
-	var icon = Diamond;
-}
-
-Style UtilityFlasksStrategy : LowerValueTiering
-{
-	var icon = "Diamond";
-	var acc = 50 200 125;
-	var extra = 25 100 75;
-}
-
-#------------------------------------
-# Derived Strategies - True Tierlists
-#------------------------------------
-
-Style InvitationTierList : T1, T2RedPiece, T3YellowPiece
-{
-	var sound = sounds.unique;
-	var icon = Pentagon;
-	var acc = fragment.tx;
-}
-
-Style ReplicaTierList : T1, T2YellowPiece, TMulti, T3WhitePiece
-{
-	var sound = sounds.unique;
-	var icon = Star;
-	var acc = unique.tx;
-
-	Func Multi()
-	{
-		var base = unique.tx;
-		var acc = sBlack;
-		var exoticgear.cmap = Blue;
-		var extra = exoticgear.tx;
-	}
-}
-
-Style UniqueMapStrat : T1, T2YellowPiece, T3WhitePiece, T4WhitePieceNoBG
-{
-	var sound = sounds.unique;
-	var icon = Star;
-	var tier.t4.cmap = Brown;
-	var tier.t4.cray = Brown;
-	var acc = unique.tx;
-}
-
-Style NewLeagueTierStrat : T1, T2RedPiece, T3YellowPiece, T4WhitePieceNoBG, T5
-{
-	var sound = sounds.currency;
-	var icon = Moon;
-	var acc = league.new.tierlist;
-}
-
-Style FragmentTierStrat : T1, T2RedPiece, T3YellowPiece, T4BlackPieceLow, T5low, T6low
-{
-	var sound = sounds.currency;
-	var icon = Hexagon;
-	var acc = fragment.tx.high;
-	var lowacc = fragment.tx;
-}
-
-Style FragmentExceptions : T1
-{
-	var acc = sBlack;
-	var sound = sounds.currency;
-	var icon = Hexagon;
-}
-
-#------------------------------------
-# Derived Strategies - Mapping
-#------------------------------------
-
-Style ExoticFragments : T3WhitePiece
-{
-	var sound = sounds.unique;
-	var icon = Hexagon;
-	var acc = fragment.tx;
-
-	Func Offerings : T3 ()
-	{
-		MinimapIcon 2 White *;
-	}
-
-	Func OfferingsUpgraded : T3 ()
-	{
-		MinimapIcon 1 Yellow *; PlayEffect Yellow;
-	}
-}
-
-Style InfluencedMapsStrategy : T1
-{
-	var acc = maps.influenced;
-	var sounds.t1 = sounds.t2;
-	var tier.t1.icon = Square;
-}
-
-Style HeistMapLike : PatternBlack
-{
-	var icon = UpsideDownHouse;
-	var sound = sounds.maps;
-	var acc = heist.contracts.acc;
-}
-
-Style HeistMapLikeHigh : PatternGlow
-{
-	var icon = UpsideDownHouse;
-	var sound = sounds.maps.high;
-	var acc = heist.blueprints.acc;
-	var base = heist.blueprints.base;
 }

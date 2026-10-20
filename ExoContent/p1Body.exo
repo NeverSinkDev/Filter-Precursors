@@ -15,8 +15,8 @@ Func AnyInfluence() { HasInfluence Crusader Elder Hunter Redeemer Shaper Warlord
 
 Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 {
-	Show hightier { %D8; !G2; !6linkhigh; Clean(); BaseType == bases.sixlink.valuable.t1; ItemLevel >= 75; }
-	Show others   { %D5; !G3; !6linklow; Empty(); }
+	Show hightier { !links_6linkhigh; !G2; %D8; Clean(); BaseType == bases.sixlink.valuable.t1; ItemLevel >= 75; }
+	Show others   { !links_6link; !G3; %D5; Empty(); }
 }
 
 #===============================================================================================================
@@ -27,13 +27,13 @@ Section 6Links : Auto("6L"), LinkedSockets 6, Rarity <= Rare
 
 Section Gold : Auto("Gold"), BaseType == "Gold"
 {
-	Show stack3 { %H7; !G64; !gold.huge; StackSize >= 3001; }
-	Show stack2 { %H6; !G5;  !gold.large; StackSize >= 500; }
-	Show stack1 { %H5; !G6H; !gold.medium; StackSize >= 150; }
+	Show stack3 { !gold_huge; !G6; %H7; StackSize >= 3001; }
+	Show stack2 { !gold_large; !G5; %H6;  StackSize >= 500; }
+	Show stack1 { !gold_medium; !G6H; %H5; StackSize >= 150; }
 	
-	Show stacklvl1 { %H5; !G5; !gold.medium; StackSize >= 50; AreaLevel <= 68; }
+	Show stacklvl1 { !gold_medium; !G5; %H5; StackSize >= 50; AreaLevel <= 68; }
 	
-	Show anyOther   { %H4; !G6H; !gold.small; Empty(); }
+	Show anyOther   { !gold_small; !G6H; %H4; Empty(); }
 }
 
 #===============================================================================================================
@@ -48,14 +48,14 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 
 Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps"
 {	
-	HideD ZanaCorruptHider { !GEX; !Shrink; ZanaMemory True; Rarity <= Magic; Corrupted True; }
+	HideD ZanaCorruptHider { !hide_shrunk; !GEX; !Shrink; ZanaMemory True; Rarity <= Magic; Corrupted True; }
 
-	Show ZanaMap { %H8; !G2; !maps.T1; ZanaMemory True; Rarity <= Rare; MapTier >= 14; }
-	Show ZanaMapLow { %H6; !G3; !maps.SpecialLow; ZanaMemory True; Rarity <= Rare; }
+	Show ZanaMap { !maps_top; !G2; %H8; ZanaMemory True; Rarity <= Rare; MapTier >= 14; }
+	Show ZanaMapLow { !maps_special; !G3; %H6; ZanaMemory True; Rarity <= Rare; }
 
-	## Show InfShaper { %H7; !G2; !maps.T1; HasInfluence Shaper; Rarity <= Rare; MapTier >= 14; }
-	Show InfElder { %H7; !G2; !maps.T1; HasInfluence Elder; Rarity <= Rare; MapTier >= 14; }
-	Show InfConquerors { %H8; !G2; !maps.T1; HasInfluence Crusader Hunter Redeemer Warlord; Rarity <= Rare; }
+	## Show InfShaper { !G2; %H7; HasInfluence Shaper; Rarity <= Rare; MapTier >= 14; }
+	Show InfElder { !maps_top; !G2; %H7; HasInfluence Elder; Rarity <= Rare; MapTier >= 16; }
+	Show InfConquerors { !maps_top; !G2; %H8; HasInfluence Crusader Hunter Redeemer Warlord; Rarity <= Rare; }
 }
 
 #------------------------------------
@@ -71,32 +71,32 @@ Section Influenced : Auto("influenced->all"), Rarity Rare
 	var influencedItems3 = source.rares.eg.t2 + source.crafting.general.t2 - influencedItems2 - influencedItems1;
 
 	# Selected exclusive bases
-	Show t1exotic { !SF45; !G2; %D9; BaseType == influencedItems1; AnyInfluence(); }
+	Show t1exotic { !influenced_t1; !SF45; !G2; %D9; BaseType == influencedItems1; AnyInfluence(); }
 	# Selected top tier bases
-	Show t1top { !SF45; !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
+	Show t1top { !influenced_t1; !SF45; !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
 
 	## BaseType filtering
-	Show t1basesCrusader 		 	 { !SF40; !G3; %D4; BaseType == Influenced.Crusader.t12; HasInfluence Crusader; ItemLevel >= 82; }
-	Show t1basesWarlord 		 	 { !SF40; !G3; %D4; BaseType == Influenced.Warlord.t12; HasInfluence Warlord; ItemLevel >= 82; }
-	Show t1basesRedeemer 		 	 { !SF40; !G3; %D4; BaseType == Influenced.Redeemer.t12; HasInfluence Redeemer; ItemLevel >= 82; }
-	Show t1basesHunter 			 	 { !SF40; !G3; %D4; BaseType == Influenced.Hunter.t12; HasInfluence Hunter; ItemLevel >= 82; }
-	Show t1basesShaper 			 	 { !SF40; !G3; %D4; BaseType == Influenced.Shaper.t12; HasInfluence Shaper; ItemLevel >= 82; }
-	Show t1basesElder 			 	 { !SF40; !G3; %D4; BaseType == Influenced.Elder.t12; HasInfluence Elder; ItemLevel >= 82; }
+	Show t1basesCrusader 		 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Crusader.t12; HasInfluence Crusader; ItemLevel >= 82; }
+	Show t1basesWarlord 		 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Warlord.t12; HasInfluence Warlord; ItemLevel >= 82; }
+	Show t1basesRedeemer 		 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Redeemer.t12; HasInfluence Redeemer; ItemLevel >= 82; }
+	Show t1basesHunter 			 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Hunter.t12; HasInfluence Hunter; ItemLevel >= 82; }
+	Show t1basesShaper 			 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Shaper.t12; HasInfluence Shaper; ItemLevel >= 82; }
+	Show t1basesElder 			 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Elder.t12; HasInfluence Elder; ItemLevel >= 82; }
 
 	## Class-based filtering
-	Show t2classesCrusader 		 	 { !SF40; !G3; %D4; Class == cInf1Crusader; HasInfluence Crusader; ItemLevel >= 80; }
-	Show t2classesWarlord 		 	 { !SF40; !G3; %D4; Class == cInf1Warlord; HasInfluence Warlord; ItemLevel >= 80; }
-	Show t2classesRedeemer 		 	 { !SF40; !G3; %D4; Class == cInf1Redeemer; HasInfluence Redeemer; ItemLevel >= 80; }
-	Show t2classesHunter 			 { !SF40; !G3; %D4; Class == cInf1Hunter; HasInfluence Hunter; ItemLevel >= 80; }
-	Show t2classesShaper 			 { !SF40; !G3; %D4; Class == cInf1Shaper; HasInfluence Shaper; ItemLevel >= 80; }
-	Show t2classesElder 			 { !SF40; !G3; %D4; Class == cInf1Elder; HasInfluence Elder; ItemLevel >= 80; }
-	Show t2classesInfluencedShared 	 { !SF40; !G3; %D4; Class == classesInfluenced85; AnyInfluence(); ItemLevel >= 85; }
+	Show t2classesCrusader 		 	 { !influenced_t2; !G3; %D4; Class == cInf1Crusader; HasInfluence Crusader; ItemLevel >= 80; }
+	Show t2classesWarlord 		 	 { !influenced_t2; !G3; %D4; Class == cInf1Warlord; HasInfluence Warlord; ItemLevel >= 80; }
+	Show t2classesRedeemer 		 	 { !influenced_t2; !G3; %D4; Class == cInf1Redeemer; HasInfluence Redeemer; ItemLevel >= 80; }
+	Show t2classesHunter 			 { !influenced_t2; !G3; %D4; Class == cInf1Hunter; HasInfluence Hunter; ItemLevel >= 80; }
+	Show t2classesShaper 			 { !influenced_t2; !G3; %D4; Class == cInf1Shaper; HasInfluence Shaper; ItemLevel >= 80; }
+	Show t2classesElder 			 { !influenced_t2; !G3; %D4; Class == cInf1Elder; HasInfluence Elder; ItemLevel >= 80; }
+	Show t2classesInfluencedShared 	 { !influenced_t2; !G3; %D4; Class == classesInfluenced85; AnyInfluence(); ItemLevel >= 85; }
 
 	# Second grade bases
-	Show t2high    { !SF40; !G3; %D4; BaseType == influencedItems3; ItemLevel >= 84; AnyInfluence(); }
+	Show t2high    { !influenced_t2; !G3; %D4; BaseType == influencedItems3; ItemLevel >= 84; AnyInfluence(); }
 	# Low strictness 86 rule
-	Show any86 { !SF40; !G3; %D4; ItemLevel >= 86; AnyInfluence(); Class == classes_equip; }
-	Show any   { !SF40; !G3; %D3; AnyInfluence(); Class == classes_equip; }
+	Show any86 { !influenced_t2; !G3; %D4; ItemLevel >= 86; AnyInfluence(); Class == classes_equip; }
+	Show any   { !influenced_t2; !G3; %D3; AnyInfluence(); Class == classes_equip; }
 }
 
 #===============================================================================================================
@@ -111,14 +111,14 @@ Section Eldritch : Rarity <= Rare
 
 	Section Exarch : Auto("rare->exarch")
 	{
-		Show AnyHigh { !G3;  %D3; HasSearingExarchImplicit >= 1; BaseType == eldritchBases; }
-		ShowD Any 	  { !GI; %D0; HasSearingExarchImplicit >= 1; }
+		Show AnyHigh { !influenced_t2; !G3;  %D3; HasSearingExarchImplicit >= 1; BaseType == eldritchBases; }
+		ShowD Any 	  { !influenced_t2; !GI; %D0; HasSearingExarchImplicit >= 1; }
 	}
 
 	Section Eater : Auto("rare->eater")
 	{
-		Show AnyHigh { !G3;  %D3; HasEaterOfWorldsImplicit >= 1; BaseType == eldritchBases; }
-		ShowD Any 	  { !GI; %D0; HasEaterOfWorldsImplicit >= 1; }
+		Show AnyHigh { !influenced_t2; !G3;  %D3; HasEaterOfWorldsImplicit >= 1; BaseType == eldritchBases; }
+		ShowD Any 	  { !influenced_t2; !GI; %D0; HasEaterOfWorldsImplicit >= 1; }
 	}
 }
 
@@ -134,30 +134,30 @@ Section ExoticBases : Auto("ExoticBases"), Rarity <= Rare
 {
 	## TODO: == and + together mess up parsing
 
-	Show EcoTinkBases84 { %D9; !G1; !Currency.t1exalted; BaseType == bases.economy.tink; Clean(); ItemLevel >= 84; }
-	Show EcoTinkBases   { %D9; !G2; !Currency.t2divine; BaseType == bases.economy.tink; Clean(); }
+	Show EcoTinkBases84 { !currency_t1; !G1; %D9; BaseType == bases.economy.tink; Clean(); ItemLevel >= 84; }
+	Show EcoTinkBases   { !currency_t2; !G2; %D9; BaseType == bases.economy.tink; Clean(); }
 
-	Show ExoticHeistBases 	  { %D9; !GSH; BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
-	Show ExoticRitualBases 	  { %D8; !GSH; BaseType == bases.exotic.ritual.any }
-	Show ExoticLakeKala 	  { %D9; !GSH; BaseType == bases.exotic.lakeKala.any }
-	Show ExoticExpeditionBases{ %D8; !GSH; BaseType == bases.exotic.expedition.any + "Iron Flask" }
-	Show ExoticTalismanBases  { %D9; !GSH; $artefactex; BaseType == "Greatwolf Talisman"; }
-	Show ExoticBasesMisc 	  { %D9; !GSH; BaseType == "Grasping Mail"; }
-	Show ExoticUniqueBases	  { %D6; !GSH; BaseType == bases.exotic.misc.brickedUniques; }
+	Show ExoticHeistBases 	  { !exotics_t1; !GSH; %D9; BaseType == bases.exotic.heist.lower bases.exotic.heist.higher }
+	Show ExoticRitualBases 	  { !exotics_t1; !GSH; %D8; BaseType == bases.exotic.ritual.any }
+	Show ExoticLakeKala 	  { !exotics_t1; !GSH; %D9; BaseType == bases.exotic.lakeKala.any }
+	Show ExoticExpeditionBases{ !exotics_t1; !GSH; %D8; BaseType == bases.exotic.expedition.any + "Iron Flask" }
+	Show ExoticTalismanBases  { !exotics_t1; !GSH; %D9; $artefactex; BaseType == "Greatwolf Talisman"; }
+	Show ExoticBasesMisc 	  { !exotics_t1; !GSH; %D9; BaseType == "Grasping Mail"; }
+	Show ExoticUniqueBases	  { !exotics_t1; !GSH; %D6; BaseType == bases.exotic.misc.brickedUniques; }
 }
 
 #!! Waypoint c1.exotic.exclusivebases : "Exotic - Stygian, Cord Belts, Sarificial Garbs" : "Gear - Exotic"
 
-Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !exotic
+Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean()
 {
-	Show ExoticMirageBases { !GSH; !exotic.t1; %D9; BaseType == "Cord Belt"; }
-	Show StygianMirage	   { !GSH, !exotic.t1; !highvalueidmod; %D9; BaseType == "Stygian Vise"; Identified True; HasExplicitMod "Abyssal"; }
-	Show Stygian86		   { !GSH; !exotic.t1; %D8; BaseType == "Stygian Vise"; ItemLevel >= 86; }
-	Show Stygian		   { !GSH; !exotic.t2; %D5; BaseType == "Stygian Vise"; }
+	Show ExoticMirageBases { !exotics_t1; !GSH; %D9; BaseType == "Cord Belt"; }
+	Show StygianMirage	   { !exotics_top; !GSH; %D9; BaseType == "Stygian Vise"; Identified True; HasExplicitMod "Abyssal"; }
+	Show Stygian86		   { !exotics_t1; !GSH; %D8; BaseType == "Stygian Vise"; ItemLevel >= 86; }
+	Show Stygian		   { !exotics_t2; !GSH; %D5; BaseType == "Stygian Vise"; }
 	
-	Show ExoticSacrificial { !GSH; !exotic.t2; %D6; BaseType == "Sacrificial Garb"; }
+	Show ExoticSacrificial { !exotics_t2; !GSH; %D6; BaseType == "Sacrificial Garb"; }
 
-	Show ExoticPearl { !GSH; !exotic.t3; %D5; BaseType == "Pearlescent Amulet"; }
+	Show ExoticPearl { !exotics_t3; !GSH; %D5; BaseType == "Pearlescent Amulet"; }
 }
 
 #===============================================================================================================
@@ -168,12 +168,12 @@ Section ExoticBasesLower : Auto("ExoticBasesLower"), Rarity <= Rare, Clean(), !e
 var t1veiled = "Elreon's Veiled";
 var t2veiled = "Leo's Veiled" "Rin's Veiled" "Vagan's Veiled" "Vorici's Veiled" "Gravicius' Veiled" "Guff's Veiled" "Haku's" "It That Fled's Veiled" "Korell's Veiled" "of Aisling's Veil" "of Cameria's Veil" "of Hillock's Veil" "of Janus' Veil" "of Jorgin's Veil" "Riker" "Tora's Veiled";
 
-Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalueidmod 
+Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH 
 {
 #------------------------------------
 #   [1234] Physical
 #------------------------------------
-	Section Weapons : Class == classes_attack, DropLevel >= 50, Mod xattackphys_Core
+	Section Weapons : Class == classes_attack, DropLevel >= 50, Mod xattackphys_Core, !idmods_high
 	{
 		Show Weapon_Phys     { %D5; Mod >= 3 xattackphys_Conf; Mod = 0 zbad_phys_attack; }
 		Show Weapon_PhysPure { %D5; Mod >= 2 xattackphys_Conf; Mod = 0 zbad_phys_attack; Clean(); }
@@ -181,7 +181,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Elemental
 #------------------------------------
-	Section FastEleWeapons : BaseType == bases.crafting.components.quickweapons.t1, Mod xattackele_Core
+	Section FastEleWeapons : BaseType == bases.crafting.components.quickweapons.t1, Mod xattackele_Core, !idmods_high
 	{
 		Show Weapon_Ele 	{ %D5; Mod >= 4 xattackele_Norm; Mod = 0 zbad_ele_attack; }
 		Show Weapon_ElePure { %D5; Mod >= 3 xattackele_Norm; Mod = 0 zbad_ele_attack; Clean(); }
@@ -191,12 +191,12 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section FastEleWeapons : Class == classes_bladeBlast, Clean()
 	{
-		Show BladeBlast_2core 	{ %D4; Mod >=2 xbladeBlast_core; Mod >= 4 xbladeBlast_aux; }
+		Show BladeBlast_2core 	{ !idmods_high; %D4; Mod >=2 xbladeBlast_core; Mod >= 4 xbladeBlast_aux; }
 	}
 #------------------------------------
 #   [1234] Gembased
 #------------------------------------
-	Section GemLevels
+	Section GemLevels : !idmods_high
 	{
 		Show Gem_Bow 	{ %D5; Class == "Bows"; Mod >=2 wgems_locallevelbow + ws_dot[1]; Clean(); }
 		Show Gem_Caster { %D7; Class == classes_1hcast; Mod >=2 w_cheatmods + convokingLvl + w_temple_Caster + wgems_alllevels_global + wgems_alllevels_global; }
@@ -205,7 +205,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Caster
 #------------------------------------
-	Section CasterSpecialized : Class == classes_1hcast
+	Section CasterSpecialized : Class == classes_1hcast, !idmods_high
 	{
 		Show Caster_FireWeaponT2  { %D5; Mod casterFireCore; Mod >= 4 xcaster_firedmg_norm; Mod = 0 z_bad_caster; }
 		Show Caster_ColdWeaponT2  { %D5; Mod casterColdCore; Mod >= 4 xcaster_colddmg_norm; Mod = 0 z_bad_caster; }
@@ -216,7 +216,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 
 	Section CasterMinion : BaseType == "Convoking Wand" "Convening Wand" "Calling Wand"
 	{
-		Show MinionWand { %D5; Mod minionCore; Mod >= 4 mwAux; }
+		Show MinionWand { !idmods_high; %D5; Mod minionCore; Mod >= 4 mwAux; }
 	}
 
 #------------------------------------
@@ -224,12 +224,12 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 	Section Spellslinger : Class == "Wands"
 	{
-		Show Caster_SlingerT2 { %D5; Mod slingerBase1; Mod >= 4 xslinger_default_conf; }
+		Show Caster_SlingerT2 { !idmods_high; %D5; Mod slingerBase1; Mod >= 4 xslinger_default_conf; }
 	}
 #------------------------------------
 #   [1234] Helmets
 #------------------------------------
-	Section Helmets : Class == "Helmets"
+	Section Helmets : Class == "Helmets", !idmods_high
 	{
 		Show Helmet_Life_based { %D5; Mod xhelmet_life_core; Mod >= 4 xhelmet_life_mix; Mod = 0 z_bad_armor_life; Clean(); }
 		Show Helmet_ES_based   { %D4; Mod >= 2 xhelmet_es_core; Mod >= 4 xhelmet_es_mix; Mod = 0 z_bad_armor_es; Clean(); }
@@ -237,7 +237,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Boots
 #------------------------------------
-	Section Boots : Class == "Boots"
+	Section Boots : Class == "Boots", !idmods_high
 	{
 		Show Boots_Life_based { %D5; Mod xboots_life_core; Mod >= 4 xboots_life_mix; Mod = 0 zbad_boots_life; }
 		Show Boots_ES_based   { %D4; Mod xboots_es_core; Mod >= 4 xboots_es_mix; Mod = 0 zbad_boots_es + zbad_boots_life; Clean(); }
@@ -245,7 +245,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Gloves
 #------------------------------------
-	Section Gloves : Class == "Gloves"
+	Section Gloves : Class == "Gloves", !idmods_high
 	{
 		Show Gloves_Life_based { %D5; Mod xgloves_life_core; Mod >= 4 xgloves_life_mix; Mod = 0 z_bad_armor_life; }
 		Show Gloves_ES_based   { %D5; Mod >= 2 xgloves_es_core; Mod >= 4 xgloves_es_mix; Mod = 0 zbad_boots_es; Clean(); }
@@ -253,7 +253,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Shields
 #------------------------------------			
-	Section Shields : Class == "Shields"
+	Section Shields : Class == "Shields", !idmods_high
 	{
 		Show Shield_ESFocus   		{ %D5; Mod >= 2 xshield_es_core; Mod >= 4 xshield_es_mix; Mod = 0 z_bad_bigarmor_es; }
 		Show Shield_DefenseFocus    { %D5; Mod >= 2 xshield_defense_core; Mod >= 4 xshield_defense_mix; DropLevel >= 55; }
@@ -263,7 +263,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Amulets
 #------------------------------------
-	Section Amulets : Class == "Amulets"
+	Section Amulets : Class == "Amulets", !idmods_high
 	{
 		Show Amu_exalter { %D5; Mod "Exalter's"; }
 
@@ -279,7 +279,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Rings
 #------------------------------------
-	Section Rings : Class == "Rings"
+	Section Rings : Class == "Rings", !idmods_high
 	{
 		Show Ring_Caster { %D5; Mod xring_core; Mod >= 4 xring_cast_mix; Mod = 0 z_bad_liferoll; }
 		Show Ring_Attack { %D5; Mod xring_core; Mod >= 4 xring_attack_mix; Mod = 0 z_bad_liferoll; }
@@ -289,7 +289,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Quivers
 #------------------------------------	
-	Section Quivers : Class == "Quivers"
+	Section Quivers : Class == "Quivers", !idmods_high
 	{
 		Show Quiv_Hit { %D5; Mod >= 2 xquiver_core_mods; Mod >= 4 xquiver_mix_hit; Mod = 0 z_bad_liferoll; }
 		Show Quiv_Dot { %D5; Mod >= 2 xquiver_core_mods; Mod >= 4 xquiver_mix_dot; Mod = 0 z_bad_liferoll; }
@@ -297,7 +297,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] Body Armours
 #------------------------------------	
-	Section Body : Class == "Body Armours", DropLevel >= 55, Clean()
+	Section Body : Class == "Body Armours", DropLevel >= 55, Clean(), !idmods_high
 	{
 		Show Body_Life 		  { %D4; Mod xbody_core_life; Mod >= 5 xbody_aux_life; Mod = 0 z_bad_bigarmor_life; }
 		Show Body_Defense 	  { %D4; Mod >= 2 xbody_core_defense; Mod >= 4 xbody_aux_life; }
@@ -309,12 +309,12 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------	
 	Section Belts : Class == "Belts"
 	{
-		Show Belt_General {  %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; Mod = 0 z_bad_liferoll; }
+		Show Belt_General {  !idmods_high; %D5; Mod xbelt_core; Mod >= 4 xbelt_mix; Mod = 0 z_bad_liferoll; }
 	}
 #------------------------------------
 #   [1234] Jewels
 #------------------------------------	
-	Section Jewels : Class == class_jewels
+	Section Jewels : Class == class_jewels, !idmods_high
 	{
 		Show IdJewel_Minion 	{ %D7; Mod >= 2 xJwl_minion_core; Mod >= 3 xJwl_minion_mix; BaseType == genericJewels; }
 		Show IdJewel_DOT 		{ %D7; Mod >= 1 xJwl_dot_core; Mod = 1 jwl_dot_unique; Mod >= 3 xJwl_dot_mix; BaseType == genericJewels; }
@@ -330,10 +330,10 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #------------------------------------
 #   [1234] ID Mod exceptions - override id mod matching section
 #------------------------------------
-	Section IDModExceptions : Rarity "Rare", IdMods, !exotic
+	Section IDModExceptions : Rarity "Rare", IdMods
 	{
-		Show t1veil     { %D3; !GSH; !exotic.t2; Mod t1veiled; }
-		Show t2veil     { %D0; !GSH; !exotic.t3; Mod t2veiled; }
+		Show t1veil     { !idmods_veilt1; !GSH; %D3; Mod t1veiled; }
+		Show t2veil     { !idmods_veilt2; !GSH; %D0; Mod t2veiled; }
 	}
 }
 
@@ -342,7 +342,7 @@ Section IdModSection : IdMods(), Rarity "Rare", Auto("RareID"), !GSH, !highvalue
 #===============================================================================================================
 #!! Waypoint c1.idmod.dualmod.all : "Identified Mods - Valuable Dual Mods" : "Gear - Exotic"
 
-Section IdModSection : IdMods, Auto("RareBlendID"), Rarity <= Rare, Clean(), !GSH
+Section IdModSection : IdMods, Auto("RareBlendID"), Rarity <= Rare, Clean(), !idmods_medium, !GSH
 {
 	Show wCasterMin { %D5; Mod >= 3 wcast_top1; Class == classes_1hcast_shields; }
 	Show wSmallArmorsBlend { %D5; Mod >= 3 armors_blend; Class == classes_armor_small; }
@@ -363,7 +363,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #   [1234] Top Value
 #------------------------------------	
 
-	Section TopValue : Rarity <= Rare, Clean()
+	Section TopValue : Rarity <= Rare, Clean(), !idmods_medium
 	{
 		## Tyrranical Physical Weapons
 		Show t1phys 	{ %D5; Mod >= 1 wdmg_pphys[1]; Class == classes_attack + "Wands"; }
@@ -382,7 +382,7 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #------------------------------------	
 
 	## In these cases we're looking for a singe high mod
-	Section HighHybridPure : Clean(), Rarity <= Rare
+	Section HighHybridPure : Clean(), Rarity <= Rare, !idmods_medium
 	{
 		## +1 to all global elemental gems and DOT t1
 		Show t2amu			{ %D5; Mod >= 1 xr_amu1; Class == "Amulets"; }
@@ -407,15 +407,15 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 #   [1234] Flasks and Tinctures
 #------------------------------------		
 
-	Section FlaskAndTincture : Clean()
+	Section FlaskAndTincture : Clean(), !idmods_high
 	{
-		Show bleedLifeFlask { %D5; !GSH; !highvalueidmod; BaseType == "Divine Life Flask" "Eternal Life Flask"; Mod >= 2 flask_life_suffix + flask_life_prefix; }
+		Show bleedLifeFlask { !GSH; %D5; BaseType == "Divine Life Flask" "Eternal Life Flask"; Mod >= 2 flask_life_suffix + flask_life_prefix; }
 		
-		Show doubleModUtilFlask { %D6; !GSH; !highvalueidmod; BaseType == bases.flask.utilityassorted; Mod >= 2 flask_util_suffix + flask_util_prefix; }
-		Show singleModUtilFlask { %D3; !GSH; !highvalueidmod; BaseType == bases.flask.utilityassorted; Mod >= 1 flask_util_suffix + flask_util_prefix; }
+		Show doubleModUtilFlask { !GSH; %D6; BaseType == bases.flask.utilityassorted; Mod >= 2 flask_util_suffix + flask_util_prefix; }
+		Show singleModUtilFlask { !GSH; %D3; BaseType == bases.flask.utilityassorted; Mod >= 1 flask_util_suffix + flask_util_prefix; }
 		
-		Show doubleModTincture { %D6; !GSH; !highvalueidmod; BaseType == bases.tinctures.t1; Mod >= 2 tincture_suffix + tincture_prefix; }
-		Show singleModTincture { %D4; !GSH; !highvalueidmod; BaseType == bases.tinctures.t1; Mod >= 1 tincture_suffix + tincture_prefix; }
+		Show doubleModTincture { !GSH; %D6; BaseType == bases.tinctures.t1; Mod >= 2 tincture_suffix + tincture_prefix; }
+		Show singleModTincture { !GSH; %D4; BaseType == bases.tinctures.t1; Mod >= 1 tincture_suffix + tincture_prefix; }
 	}
 }
 
@@ -430,22 +430,22 @@ Section IdModSection : IdMods, Auto("MagicID"), !GSH
 
 Section EndgamePerfectionItems : Auto("Crafting->QualityPerfection"), Clean()
 {
-	Show QualChancing { !G3; !exotic.t1; %D9; Quality >= 28; BaseType == "Riveted Boots" "Steel Kite Shield"; }
+	Show QualChancing { !exotics_t1; !G3; %D9; Quality >= 28; BaseType == "Riveted Boots" "Steel Kite Shield"; }
 
 	var craftingArmors = derived.crafting.armors.t1 + derived.crafting.shields.t1 + derived.crafting.shields.t2 + bases.exotic.atlas.miscgear;
-	Show armors1q1	{ !G1; !exotic.t1; %D9; Quality >= 28; Class == classes_armor; BaseType == craftingArmors; }
-	Show armors1q2	{ !G2; !exotic.t2; %D8; Quality >= 24; Class == classes_armor; BaseType == craftingArmors; }
+	Show armors1q1	{ !exotics_t1; !G1; %D9; Quality >= 28; Class == classes_armor; BaseType == craftingArmors; }
+	Show armors1q2	{ !exotics_t2; !G2; %D8; Quality >= 24; Class == classes_armor; BaseType == craftingArmors; }
 
-	Show weapont1q1 	 { !GEX; !exotic.t1; %D9; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 28; }
-	Show weapont2q1 	 { !GEX; !exotic.t2; %D8; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 28; }
-	Show weapont1q2 	 { !GEX; !exotic.t2; %D8; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
-	Show weapont2q2 	 { !GEX; !exotic.t2; %D7; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 24; }
+	Show weapont1q1 	 { !exotics_t1; !GEX; %D9; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 28; }
+	Show weapont2q1 	 { !exotics_t2; !GEX; %D8; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 28; }
+	Show weapont1q2 	 { !exotics_t2; !GEX; %D8; BaseType == derived.crafting.weapons.t1 + derived.crafting.weapons.t2; ItemLevel >= 83; Quality >= 24; }
+	Show weapont2q2 	 { !exotics_t2; !GEX; %D7; BaseType == derived.crafting.weapons.t3; ItemLevel >= 83; Quality >= 24; }
 	
-	Show anyOverQualityPerf  { !GEX; !exotic.t2; %D4; Class == classes_equip; Quality >= 30; }
-	Show anyOverQualityHigh  { !GEX; !exotic.t3; %D3; Class == classes_equip; Quality >= 26; }
-	ShowD anyOverQuality     { !GEX; !exotic.t3; %D0; Class == classes_equip; Quality >= 21; }
+	Show anyOverQualityPerf  { !exotics_t2; !GEX; %D4; Class == classes_equip; Quality >= 30; }
+	Show anyOverQualityHigh  { !exotics_t3; !GEX; %D3; Class == classes_equip; Quality >= 26; }
+	ShowD anyOverQuality     { !exotics_t3; !GEX; %D0; Class == classes_equip; Quality >= 21; }
 
-	ShowD PerfectionCrafting	 { !GEX; !exotic.t2; %D5; BaseDefencePercentile >= 99; Class == classes_armor; BaseType == craftingArmors; ItemLevel >= 84; }
+	ShowD PerfectionCrafting	 { !exotics_t2; !GEX; %D5; BaseDefencePercentile >= 99; Class == classes_armor; BaseType == craftingArmors; ItemLevel >= 84; }
 }
 
 #------------------------------------
@@ -459,20 +459,20 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare, Clean()
 	var combinedt2gear = source.rares.eg.t2 + source.crafting.general.t2 - combinedt1gear;
 	var combinedt3gear = source.rares.eg.t3 + source.crafting.general.t3 - combinedt2gear - combinedt1gear;
 
-	Show strandedFractured { %D8; !G2; !exotic.t1; MemoryStrands >= 1; FracturedItem True; }
-	Show strandedVeiled { %D8; !G2; !exotic.t1; MemoryStrands >= 1; Identified True; Mod "Veil"; }
+	Show strandedFractured { !exotics_t1; !G2; %D8; MemoryStrands >= 1; FracturedItem True; }
+	Show strandedVeiled { !exotics_t1; !G2; %D8; MemoryStrands >= 1; Identified True; Mod "Veil"; }
 
-	Show t1high { %D8; !G3; !exotic.t1; MemoryStrands >= 60; BaseType == combinedt1gear; }
-	Show t1 	{ %D6; !G3; !exotic.t2; MemoryStrands >= 15;  BaseType == combinedt1gear; }
+	Show t1high { !exotics_t1; !G3; %D8; MemoryStrands >= 60; BaseType == combinedt1gear; }
+	Show t1 	{ !exotics_t2; !G3; %D6; MemoryStrands >= 15;  BaseType == combinedt1gear; }
 
-	Show t2high { %D5; !G3; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt2gear; }
-	Show t2 	{ %D4; !GSH; !exotic.t3; MemoryStrands >= 20;  BaseType == combinedt2gear; }
+	Show t2high { !exotics_t2; !G3; %D5; MemoryStrands >= 60; BaseType == combinedt2gear; }
+	Show t2 	{ !exotics_t3; !GSH; %D4; MemoryStrands >= 20;  BaseType == combinedt2gear; }
 
-	Show t3high { %D4; !GSH; !exotic.t2; MemoryStrands >= 60; BaseType == combinedt3gear; }
-	Show t3 	{ %D2; !GSH; !exotic.t3; MemoryStrands >= 25;  BaseType == combinedt3gear; }
+	Show t3high { !exotics_t2; !GSH; %D4; MemoryStrands >= 60; BaseType == combinedt3gear; }
+	Show t3 	{ !exotics_t3; !GSH; %D2; MemoryStrands >= 25;  BaseType == combinedt3gear; }
 
-	Show AnyHigh { %D3; !GSH; !exotic.t2; MemoryStrands >= 70; }
-	Show Any 	 { %D2; !GSH; !exotic.t4; MemoryStrands >= 1; }
+	Show AnyHigh { !exotics_t2; !GSH; %D3; MemoryStrands >= 70; }
+	Show Any 	 { !exotics_t4; !GSH; %D2; MemoryStrands >= 1; }
 }
 
 #===============================================================================================================
@@ -480,11 +480,11 @@ Section MemoryStrandEquip : Auto("gear->memorystrand"), Rarity <= Rare, Clean()
 #===============================================================================================================
 #!! Waypoint c1.idmod.corruptedmod : "Identified Mods - Items with corrupted implicits" : "Gear - Exotic"
 
-Section IdModCorrupted : IdMods, Corrupted True, CorruptedMods 1, Auto("CorruptedID"), !exotic
+Section IdModCorrupted : IdMods, Corrupted True, CorruptedMods 1, Auto("CorruptedID"), !exotics_corruptt2
 {
-	Show Gloves_Life_based { %D4; !exotic.t2; !corruptstrong; !GS; Class == "Gloves"; Mod >= 1 xgloves_life_core; Mod >= 3 xgloves_life_mix; }
-	Show Quiv_Hit { %D4; !exotic.t2; !corruptstrong; !GS; Class == "Quivers"; Mod >= 1 xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_hit; }
-	Show Quiv_Dot { %D4; !exotic.t2; !corruptstrong; !GS; Class == "Quivers"; Mod >= 1 xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_dot; }
+	Show Gloves_Life_based { !GS; %D4; Class == "Gloves"; Mod >= 1 xgloves_life_core; Mod >= 3 xgloves_life_mix; }
+	Show Quiv_Hit { !GS; %D4; Class == "Quivers"; Mod >= 1 xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_hit; }
+	Show Quiv_Dot { !GS; %D4; Class == "Quivers"; Mod >= 1 xquiver_core_mods; ItemLevel >= 80; Mod >= 3 xquiver_mix_dot; }
 }
 
 #===============================================================================================================
@@ -498,7 +498,7 @@ var exotic_warband = "Betrayer's" "Brinerot" "Deceiver's" "Mutewind" "Redblade" 
 var exotic_bestiary_t1 = "of Farrul" "of Fenumus";
 var exotic_bestiary_t2 = "of Craiceann" "of Saqawal";
 
-Section IdModSectionSpecial : IdMods, !exotic
+Section IdModSectionSpecial : IdMods
 {
 	Section Rare : Rarity "Rare", Auto("ExoticMods")
 	{
@@ -507,51 +507,51 @@ Section IdModSectionSpecial : IdMods, !exotic
 #------------------------------------
 #!! Waypoint c1.idmod.veil.all : "Identified Mods - Low priority veiled items (not member specific)" : "Gear - Regular Rares"
 
-		Show FracturedVeiled { %D8; !GSH; !exotic.t2; Clean(); Mod "Veil"; FracturedItem True; }
-		Show FracturedIncursion { %D7; !GSH; !exotic.t3; Clean(); Mod exotic_incursion; FracturedItem True; }
-		Show DuoVeil    { %D4; !GSH; !exotic.t3; Clean(); Mod "Veiled"; Mod "of the Veil"; }
+		Show FracturedVeiled { !exotics_t2; !GSH; %D8; Clean(); Mod "Veil"; FracturedItem True; }
+		Show FracturedIncursion { !exotics_t3; !GSH; %D7; Clean(); Mod exotic_incursion; FracturedItem True; }
+		Show DuoVeil    { !exotics_t3; !GSH; %D4; Clean(); Mod "Veiled"; Mod "of the Veil"; }
 
 #------------------------------------
 #   [1234] Incursion/Temple Mods
 #------------------------------------
 #!! Waypoint c1.idmod.league.all : "Identified Mods - Incursion mod filtering" : "Gear - Exotic"
 
-		Show IncursionSpeedTraps { !GSH; %D5; !exotic.t2; Mod "Matatl's"; Class == "Boots"; }
-		Show IncursionCaster     { !GSH; %D5; !exotic.t2; Mod "Matatl's" "Tacati" "Topotante's"; Class == classes_cast_all; }
-		Show IncursionElemental  { !GSH; %D5; !exotic.t2; Mod "Topotante's"; Class == classes_weapons_ele; }
-		Show IncursionJwlry		 { !GSH; %D5; !exotic.t2; Mod exotic_incursion; Class == classes_jewellery; }
-		Show IncursionGloveHelm  { !GSH; %D5; !exotic.t2; Mod "Puhuarte" "Topotante"; Class == "Gloves" "Helmets"; }
-		Show IncursionAttack     { !GSH; %D5; !exotic.t2; Mod "of Tacati" "Tacati's"; Class == classes_attack; }
-		Show IncursionLifeChest  { !GSH; %D4; !exotic.t2; Mod "Guatelitzi's"; Class == "Body Armours"; }
-		Show IncursionMinion     { !GSH; %D4; !exotic.t2; Mod "Citaqualotl's"; Class == classes_cast + classes_1hattack; }
-		Show IncursionMagic		 { !GS;  %D4; !exotic.t3; Mod exotic_incursion; Rarity Magic; }
-		Show IncursionRandom     { !GS;  %D2; !exotic.t3; Mod exotic_incursion; }
+		Show IncursionSpeedTraps { !exotics_t2; !GSH; %D5; Mod "Matatl's"; Class == "Boots"; }
+		Show IncursionCaster     { !exotics_t2; !GSH; %D5; Mod "Matatl's" "Tacati" "Topotante's"; Class == classes_cast_all; }
+		Show IncursionElemental  { !exotics_t2; !GSH; %D5; Mod "Topotante's"; Class == classes_weapons_ele; }
+		Show IncursionJwlry		 { !exotics_t2; !GSH; %D5; Mod exotic_incursion; Class == classes_jewellery; }
+		Show IncursionGloveHelm  { !exotics_t2; !GSH; %D5; Mod "Puhuarte" "Topotante"; Class == "Gloves" "Helmets"; }
+		Show IncursionAttack     { !exotics_t2; !GSH; %D5; Mod "of Tacati" "Tacati's"; Class == classes_attack; }
+		Show IncursionLifeChest  { !exotics_t2; !GSH; %D4; Mod "Guatelitzi's"; Class == "Body Armours"; }
+		Show IncursionMinion     { !exotics_t2; !GSH; %D4; Mod "Citaqualotl's"; Class == classes_cast + classes_1hattack; }
+		Show IncursionMagic		 { !exotics_t3; !GS;  %D4; Mod exotic_incursion; Rarity Magic; }
+		Show IncursionRandom     { !exotics_t3; !GS;  %D2; Mod exotic_incursion; }
 
 #------------------------------------
 #   [1234] Necropolis
 #------------------------------------
 
-		Show NecropolisCraft { %D8; !GSH; !exotic.t2; Mod "Haunted" "of Haunting"; }
+		Show NecropolisCraft { !exotics_t2; !GSH; %D8; Mod "Haunted" "of Haunting"; }
 
 #------------------------------------
 #   [1234] Bestiary
 #------------------------------------
-		Show BestiaryValuable { !GSH; %D5; !exotic.t2; Mod exotic_bestiary_t1 }
-		Show BestiaryOther    { !GSH; %D4; !exotic.t3; Mod exotic_bestiary_t2 }
+		Show BestiaryValuable { !exotics_t2; !GSH; %D5; Mod exotic_bestiary_t1 }
+		Show BestiaryOther    { !exotics_t3; !GSH; %D4; Mod exotic_bestiary_t2 }
 
 #------------------------------------
 #   [1234] Other
 #------------------------------------
-		Show DelveFractured    { %D9; !GSH; !exotic.t1; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
-		Show Delve    { !GSH; %D8; !exotic.t2; Mod exotic_delve; Rarity <= Rare; };
+		Show DelveFractured    { !exotics_t1; !GSH; %D9; Mod exotic_delve; FracturedItem True; Rarity <= Rare; };
+		Show Delve    { !exotics_t2; !GSH; %D8; Mod exotic_delve; Rarity <= Rare; };
 
-		Show MercenaryOthers { !GSH; %D5; !exotic.t2; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
-		Show MercenaryWeapons { !GSH; %D5; !exotic.t2; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons_infamous; };
+		Show MercenaryOthers { !exotics_t2; !GSH; %D5; Mod mercMod; Rarity <= Rare; Class == classes_equipNoWeapons; };
+		Show MercenaryWeapons { !exotics_t2; !GSH; %D5; Mod mercModWeapon; Rarity <= Rare; Class == classes_weapons_infamous; };
 
-		Show Warband  { !GS;  %D3; !exotic.t3; Mod exotic_warband; Rarity <= Rare; };
+		Show Warband  { !exotics_t3; !GS;  %D3; Mod exotic_warband; Rarity <= Rare; };
 
-		Show Essence  { !GSH; %D2; !exotic.t4; Mod "of the Essence" "Essences" };
-		Show Crafting { !GS;  %D1; !exotic.t4; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
+		Show Essence  { !exotics_t4; !GSH; %D2; Mod "of the Essence" "Essences" };
+		Show Crafting { !exotics_t4; !GS;  %D1; Mod "of Crafting" "of Spellcraft" "of Weaponcraft" };
 	}
 }
 
@@ -560,7 +560,7 @@ Section IdModSectionSpecial : IdMods, !exotic
 #===============================================================================================================
 #!! Waypoint c2.exotic.artefacts.all : "Exotic - Voidstones, Quest Items, Trinkets, Fishing items, Pieces" : "Gear - Exotic"
 
-Section ArtefactItemClasses : Auto("artefact->misc")
+Section ArtefactItemClasses : Auto("artefact->misc"), !special_artefact
 {	
 	Show AnyImbued { !G3; Imbued True; }
 	Show AnySynth   { !G3; SynthesisedItem True; Rarity <= Rare; }
@@ -570,7 +570,7 @@ Section ArtefactItemClasses : Auto("artefact->misc")
 	Show Pieces { !G3; Rarity "Unique"; Class == "Pieces"; }
 }
 
-Section QuestItemException : Auto("QuestlikeException")
+Section QuestItemException : Auto("QuestlikeException"), !special_quest
 {
 	Show QuestHeist { !QuestLike; BaseType "Contract:"; Class == "Quest Items"; }
 	Show QuestItems { !QuestLike; Class == "Pantheon Souls" "Quest Items" "Cursed Ducat"; }
@@ -581,26 +581,26 @@ Section QuestItemException : Auto("QuestlikeException")
 #------------------------------------	
 Section SanctumRelics : Auto("artefact->sanctifiedrelics"), Rarity <= Rare
 {
-	Show SelectedRelics		{ %H9; !G3; !exotic.t2; Class == "Relics"; BaseType == exotic.sanctum.relics; }
-	Show AnyRelic 			{ %H6; !G4; !exotic.t3; Class == "Relics"; }
+	Show SelectedRelics		{ !exotics_t2; !G3; %H9; Class == "Relics"; BaseType == exotic.sanctum.relics; }
+	Show AnyRelic 			{ !exotics_t3; !G4; %H6; Class == "Relics"; }
 }
 
 #===============================================================================================================
 # [[0200]] Exotic Item Variations
 #===============================================================================================================
 #!! Waypoint c2.exotic.doublecorrupted.all : "SpecialGear - Double corrupted rare items" : "Gear - Exotic"
-Section ExoticVariations : !exotic
+Section ExoticVariations
 {	
 #------------------------------------
 #   [1234] Double and Single Corruptions
 #------------------------------------	
 	Section RExoticVariations : Corrupted True, Auto("exotic->corruptions")
 	{
-			Show DoubleCorruptedJwlry { !GSH; %D8; !exotic.t2; !corruptstrong; Rarity Rare; CorruptedMods >= 2; Class == classes_doubleCorruptTargetsRare; }
-			Show DoubleCorruptedAny   { !GS;  %D5; !exotic.t3; !corruptstrong; Rarity Rare; CorruptedMods >= 2; Empty(); }
+			Show DoubleCorruptedJwlry { !exotics_corruptt2; !GSH; %D8; Rarity Rare; CorruptedMods >= 2; Class == classes_doubleCorruptTargetsRare; }
+			Show DoubleCorruptedAny   { !exotics_corruptt3; !GS;  %D5; Rarity Rare; CorruptedMods >= 2; Empty(); }
 #!! Waypoint c2.exotic.singlecorrupted.all : "SpecialGear - Single corrupted rare items with implicits"
-			Show SingleCorruptedQuivers { !GS; %D3; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Rarity <= Rare; Class == "Quivers"; ItemLevel >= 80; }
-			Show SingleCorruptedItems { !GS; %D5; !exotic.t4; !corruptstrong; CorruptedMods >= 1; Rarity <= Rare; Class == "Rings"; ItemLevel >= 75; }
+			Show SingleCorruptedQuivers { !exotics_corruptt4; !GS; %D2; CorruptedMods >= 1; Rarity <= Rare; Class == "Quivers"; ItemLevel >= 80; }
+			Show SingleCorruptedItems { !exotics_corruptt4; !GS; %D5; CorruptedMods >= 1; Rarity <= Rare; Class == "Rings"; ItemLevel >= 75; }
 	}
 #------------------------------------
 #   [1234] Abyss Jeweled Rares
@@ -611,7 +611,7 @@ Section ExoticVariations : !exotic
 	{
 		Section AbyssJewelItems : SocketGroup "A", Auto("exotic->sockets")
 		{
-			Show AnyNonBelt { !GSH; !exotic.t2; Class == classes_nonJwlryEquipNoQuiv; }
+			Show AnyNonBelt { !exotics_t2; !GSH; Class == classes_nonJwlryEquipNoQuiv; }
 		}
 
 #------------------------------------
@@ -620,11 +620,11 @@ Section ExoticVariations : !exotic
 #!! Waypoint c2.exotic.fractured.all : "SpecialGear - All fractured items" : "Gear - Fractured and Synthesised"
 		Section Fractured : FracturedItem True, Auto("exotic->fractured"), Clean()
 		{
-			Show FractT1 { !GSH; %D5; !exotic.t2; BaseType == bases.crafting.fractured.t1; }
-			Show FractT2 { !GS;  %D4; !exotic.t3; BaseType == bases.crafting.fractured.t2; }
-			Show FractT3 { !GS;  %D2; !exotic.t3; BaseType == bases.crafting.fractured.t3; }
-			Show FractSpecial  { !GS;  %D6; !exotic.t2; Class == classes_fracturedExotic; }
-			Show FractOthers { !GS;  %D2; !exotic.t4; }
+			Show FractT1 { !exotics_t2; !GSH; %D5; BaseType == bases.crafting.fractured.t1; }
+			Show FractT2 { !exotics_t3; !GS;  %D4; BaseType == bases.crafting.fractured.t2; }
+			Show FractT3 { !exotics_t3; !GS;  %D2; BaseType == bases.crafting.fractured.t3; }
+			Show FractSpecial  { !exotics_t2; !GS;  %D6; Class == classes_fracturedExotic; }
+			Show FractOthers { !exotics_t4; !GS;  %D2; }
 		}
 #------------------------------------
 #   [1234] Enchanted
@@ -633,9 +633,9 @@ Section ExoticVariations : !exotic
 
 		Section EnchantedMisc : AnyEnchantment True, Auto("exotic->enchanted")
 		{
-			Show Exotic      { !GSH; %D9; !exotic.t1; Class == classes_exoticEnch; }
-			Show AnointedAmulets   { !GSH; %D7; !exotic.t2; Class == "Amulets"; BaseType == bases.generic.amulets.all; Clean(); }
-			Show AnointedRings     { !GSH; %D3; !exotic.t3; Class == "Rings"; Clean(); }
+			Show Exotic      { !exotics_t1; !GSH; %D9; Class == classes_exoticEnch; }
+			Show AnointedAmulets   { !exotics_t2; !GSH; %D7; Class == "Amulets"; BaseType == bases.generic.amulets.all; Clean(); }
+			Show AnointedRings     { !exotics_t3; !GSH; %D3; Class == "Rings"; Clean(); }
 		}
 #------------------------------------
 #   [1234] Crucible
@@ -643,7 +643,7 @@ Section ExoticVariations : !exotic
 #!! Waypoint c2.exotic.others : "SpecialGear - Others exotic items" : "Gear - Exotic"
 		Section Crucible : HasCruciblePassiveTree True, Auto("exotic->crucible")
 		{
-			Show CrucibleAny   { !GS;  %D3; !exotic.t3; Empty(); }
+			Show CrucibleAny   { !exotics_t3; !GS;  %D3; Empty(); }
 		}
 	}
 }
@@ -657,21 +657,21 @@ Section ExoticVariations : !exotic
 # [1234] Link Based
 #------------------------------------
 
-Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
+Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks")
 {
-	## ShowD 4Offcolors { %D4; !GS; !exotic.t3; Class == classes_fourSocketPlus; Sockets >= 4; Sockets <= 1W; }
+	## ShowD 4Offcolors { !GS; %D4; Class == classes_fourSocketPlus; Sockets >= 4; Sockets <= 1W; }
 
-	Show 5LinksLeveling	{ %D4; !G3; !V2; !exotic.t2; LinkedSockets >= 5; AreaLevel >= 2; AreaLevel <= 67; }
-	Show 5Link6Sockets	{ %D4; !G5H; !*t1; !special; Sockets >= 6; LinkedSockets >= 5; }
-	Show 5Links			{ %D3; !GS; !exotic.t3; LinkedSockets >= 5; AreaLevel >= 68; }
+	Show 5LinksLeveling	{ !links_5linkleveling; !G3; %D4; LinkedSockets >= 5; AreaLevel >= 2; AreaLevel <= 67; }
+	Show 5Link6Sockets	{ !links_recipespecial; !G5H; %D4; Sockets >= 6; LinkedSockets >= 5; }
+	Show 5Links			{ !exotics_t3; !GS; %D3; LinkedSockets >= 5; AreaLevel >= 68; }
 
-	Show RGBSmall1	{ !G5H; %D5; !*t1; SocketGroup "RGB"; Width 2; Height 2; }
-	Show RGBSmall2	{ !G5H; %D5; !*t1; SocketGroup "RGB"; Width 1; Height <=4; }
-	Show RGBLarge	{ !G5H; %D3; !*t1; SocketGroup "RGB"; Width 2; Height 4; }
-	Show RGBMedium	{ !G5H; %D4; !*t1; SocketGroup "RGB"; Width 2; Height 3; }
+	Show RGBSmall1	{ !links_recipe; !G5H; %D5; SocketGroup "RGB"; Width 2; Height 2; }
+	Show RGBSmall2	{ !links_recipe; !G5H; %D5; SocketGroup "RGB"; Width 1; Height <=4; }
+	Show RGBLarge	{ !links_recipe; !G5H; %D3; SocketGroup "RGB"; Width 2; Height 4; }
+	Show RGBMedium	{ !links_recipe; !G5H; %D4; SocketGroup "RGB"; Width 2; Height 3; }
 
-	Show 6Sockets4H		{ %D3;  !G5H;  !*t1; Sockets >= 6; Height = 4; }
-	Show 6Sockets		{ %DS3; !G5H; !*t1; Sockets >= 6; Height = 3; }
+	Show 6Sockets4H		{ !links_recipe; !G5H;  %D3;  Sockets >= 6; Height = 4; }
+	Show 6Sockets		{ !links_recipe; !G5H; %DS3; Sockets >= 6; Height = 3; }
 }
 
 #===============================================================================================================
@@ -683,12 +683,12 @@ Section SocketsLinks : Rarity <= Rare, Auto("SocketsLinks"), !recipe
 # [1234] Expensive Atlas 86 Bases - matched by economy
 #------------------------------------
 
-Section Valuable : Clean(), Auto("Crafting->Expensive"), Rarity <= Rare
+Section Valuable : Clean(), Auto("Crafting->Expensive"), Rarity <= Rare, !exotics_t1
 {
-	Show Any86 { !GSH; !exotic.t1; %D5; BaseType == expensivebases.any86; ItemLevel >= 86; }
-	Show Any85 { !GSH; !exotic.t1; %D5; BaseType == expensivebases.any85; ItemLevel >= 85; }
-	Show Any84 { !GSH; !exotic.t1; %D5; BaseType == expensivebases.any84; ItemLevel >= 84; }
-	Show Any83 { !GSH; !exotic.t1; %D4; BaseType == expensivebases.any83; ItemLevel >= 83; }
+	Show Any86 { !GSH; %D5; BaseType == expensivebases.any86; ItemLevel >= 86; }
+	Show Any85 { !GSH; %D5; BaseType == expensivebases.any85; ItemLevel >= 85; }
+	Show Any84 { !GSH; %D5; BaseType == expensivebases.any84; ItemLevel >= 84; }
+	Show Any83 { !GSH; %D4; BaseType == expensivebases.any83; ItemLevel >= 83; }
 }
 
 #===============================================================================================================
@@ -699,40 +699,40 @@ Section Valuable : Clean(), Auto("Crafting->Expensive"), Rarity <= Rare
 #------------------------------------
 # [[0200]] Endgame - Rare - Decorators
 #------------------------------------
-Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, !raredeco, !GEX
+Section RareDecorators : Auto("Decorators->rareeg"), Rarity Rare, ItemLevel >= 68, !GEX
 {
-	Cont LargeRares 	{ !*large; Height >= 3; Width >= 2; Class == classes_equip; }
-	Cont MediumRares1 	{ !*medium; Height >= 3; Width = 1; Class == classes_equip; }
-	Cont MediumRares2 	{ !*medium; Height = 2; Width = 2; Class == classes_equip; }
-	Cont TinyRares 		{ !*tiny; Height = 1; Width <= 2; Class == classes_equip; }
+	Cont LargeRares 	{ !deco_rarelarge; Height >= 3; Width >= 2; Class == classes_equip; }
+	Cont MediumRares1 	{ !deco_raremedium; Height >= 3; Width = 1; Class == classes_equip; }
+	Cont MediumRares2 	{ !deco_raremedium; Height = 2; Width = 2; Class == classes_equip; }
+	Cont TinyRares 		{ !deco_raretiny; Height = 1; Width <= 2; Class == classes_equip; }
 
-	ContD ILVL68 { !*ilvl68; ItemLevel >= 68; Class == classes_equip; }
-	ContD ILVL75 { !*ilvl75; ItemLevel >= 75; Class == classes_equip; }
+	ContD ILVL68 { !deco_rareilvl68; ItemLevel >= 68; Class == classes_equip; }
+	ContD ILVL75 { !deco_rareilvl75; ItemLevel >= 75; Class == classes_equip; }
 
-	Cont FourLinkedRares 	{ !*fourlinkedrare; LinkedSockets >= 4; Class == classes_equip; }
+	Cont FourLinkedRares 	{ !deco_rarefourlink; LinkedSockets >= 4; Class == classes_equip; }
 
-	Cont TopILVL83 { !*ilvl86; ItemLevel >= 83; Class == cTop83; }
-	Cont TopILVL84 { !*ilvl86; ItemLevel >= 84; Class == cTop84; }
-	Cont TopILVL85 { !*ilvl86; ItemLevel >= 85; Class == cTop85; }
-	Cont TopILVL86 { !*ilvl86; ItemLevel >= 86; Class == cTop86; }
+	Cont TopILVL83 { !deco_rareilvl; ItemLevel >= 83; Class == cTop83; }
+	Cont TopILVL84 { !deco_rareilvl; ItemLevel >= 84; Class == cTop84; }
+	Cont TopILVL85 { !deco_rareilvl; ItemLevel >= 85; Class == cTop85; }
+	Cont TopILVL86 { !deco_rareilvl; ItemLevel >= 86; Class == cTop86; }
 	
-	Cont CorruptedRares { !*corrupt; Corrupted True; CorruptedMods 0; Class == classes_equip; }
-	Cont CorruptedRaresImplicit { !*corruptimpl; Corrupted True; CorruptedMods >= 1; Class == classes_equip; }
+	Cont CorruptedRares { !deco_rarecorrupt; Corrupted True; CorruptedMods 0; Class == classes_equip; }
+	Cont CorruptedRaresImplicit { !deco_rareimplicit; Corrupted True; CorruptedMods >= 1; Class == classes_equip; }
 }
 
 #!! Waypoint c4.rare.talisman.all : "Rare Endgame Items - Talismans" : "Gear - Exotic"
 
 Section Talismans : Class == "Amulets", AnyEnchantment True, Auto("rare->exotic->talisman"), ItemLevel >= 68, Rarity <= Rare
 {
-	Show T1 { %H5; !G3; !exotic.t2; BaseType == source.rares.talisman.t1; }
-	Show T2 { %H5; !G3; !exotic.t3; BaseType == source.rares.talisman.t2; }
-	Show T3 { %H5; !G4; !exotic.t3; BaseType == source.rares.talisman.t3; }
+	Show T1 { !exotics_t2; !G3; %H5; BaseType == source.rares.talisman.t1; }
+	Show T2 { !exotics_talismant2; !G3; %H5; BaseType == source.rares.talisman.t2; }
+	Show T3 { !exotics_talismant3; !G4; %H5; BaseType == source.rares.talisman.t3; }
 }
 
 ## Visualizes items dropped by necropolis crafting by using the arealevel
 Section CraftingItemHighlight : Rarity Rare, AreaLevel 1, ItemLevel >= 4, Identified True, Auto("rare->utility->droppeditems"), Class == classes_equip
 {
-	ShowD Any  { !GR1; !SF45; Empty(); }
+	ShowD Any  { !rares_droppeditems; !GR1; Empty(); }
 }
 
 Section EndgameRares : Rarity Rare, ItemLevel >= 68
@@ -744,11 +744,11 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section VeiledRares : Rarity Rare, ItemLevel >= 68, Auto("rare->exotic->veiled"), Identified True, Mod "Veil"
 	{
-		Show t1 	{ %D4; !G3;  !exotic.t2; BaseType == source.rares.eg.t1; }
-		Show t2		{ %D3; !G4;  !exotic.t3; BaseType == source.rares.eg.t2; }
-		Show t3 	{ %D3; !G5;  !exotic.t3; BaseType == source.rares.eg.t3; }
-		Show t4 	{ %D2; !GSH; !exotic.t4; BaseType == source.rares.eg.t4; }
-		Show Any 	{ %D1; !GSH; !exotic.t4; Empty(); }
+		Show t1 	{ !exotics_t2; !G3; %D4;  BaseType == source.rares.eg.t1; }
+		Show t2		{ !exotics_t3; !G4; %D3;  BaseType == source.rares.eg.t2; }
+		Show t3 	{ !exotics_t3; !G5; %D3;  BaseType == source.rares.eg.t3; }
+		Show t4 	{ !exotics_t4; !GSH; %D2; BaseType == source.rares.eg.t4; }
+		Show Any 	{ !exotics_t4; !GSH; %D1; Empty(); }
 	}
 
 #------------------------------------
@@ -756,10 +756,10 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 #------------------------------------
 #!! Waypoint c4.rare.breach.all : "Rare Endgame Items - Breach rings" : "Gear - Exotic"
 
-	Section BreachRings : Class == "Rings", BaseType == bases.extoic.misc.breachring , Auto("rare->exotic->breachrings"), Rarity <= Rare
+	Section BreachRings : Class == "Rings", BaseType == bases.extoic.misc.breachring, Auto("rare->exotic->breachrings"), Rarity <= Rare, !exotics_t2
 	{
-		Show High { %HS6; !G4; !exotic.t2; ItemLevel >= 82; }
-		Show Any  { %HS5; !G5; !exotic.t2; Empty(); }
+		Show High { !G4; %HS6; ItemLevel >= 82; }
+		Show Any  { !G5; %HS5; Empty(); }
 	}
 
 #------------------------------------
@@ -769,12 +769,12 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section OptionalRare : Auto("RareOptional")
 	{
-		HideD IdHider { !GEX; !Shrink; Identified True; Class == classes_equip; }
+		HideD IdHider { !hide_shrunk; !GEX; !Shrink; Identified True; Class == classes_equip; }
 	}
 
 #!! Waypoint c4.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
 
-Section ConditionalRareHider : Auto("HideLayer")
+Section ConditionalRareHider : Auto("HideLayer"), !hide_shrunk
 {
 	Hide CorruptedRares { !shrink; Corrupted True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
 	Hide MirroredRares { !shrink; Mirrored True; CorruptedMods 0; Identified False; Class == classes_nonJwlryEquip; }
@@ -787,17 +787,17 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareRingsAmulets : Class == "Rings" "Amulets", Auto("rr->amuring")
 	{
-		Show T1 { !GRJ1; %D4; BaseType == derived.rares.amurings.t1; }
-		Show T2 { !GRJ2; %D3; BaseType == derived.rares.amurings.t2; }
-		Show T3 { !GRJ3; %D2; BaseType == derived.rares.amurings.t3; }
+		Show T1 { !rares_jewelleryt1; !GRJ1; %D4; BaseType == derived.rares.amurings.t1; }
+		Show T2 { !rares_jewelleryt2; !GRJ2; %D3; BaseType == derived.rares.amurings.t2; }
+		Show T3 { !rares_jewelleryt3; !GRJ3; %D2; BaseType == derived.rares.amurings.t3; }
 	}
 
 #!! Waypoint c4.rare.belts.all : "Rare Endgame Items - Belts" : "Gear - Regular Rares"
 	Section EndgameRareBelts : Class == "Belts", Auto("rr->belts")
 	{
-		Show T1 { !GRJ1; %D4; BaseType == derived.rares.belts.t1; }
-		Show T2 { !GRJ2; %D3; BaseType == derived.rares.belts.t2; }
-		Show T3 { !GRJ3; %D2; BaseType == derived.rares.belts.t3; }
+		Show T1 { !rares_jewelleryt1; !GRJ1; %D4; BaseType == derived.rares.belts.t1; }
+		Show T2 { !rares_jewelleryt2; !GRJ2; %D3; BaseType == derived.rares.belts.t2; }
+		Show T3 { !rares_jewelleryt3; !GRJ3; %D2; BaseType == derived.rares.belts.t3; }
 	}
 
 #------------------------------------
@@ -806,7 +806,7 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 #!! Waypoint c4.rare.drophiders : "Rare Endgame Items - Hide low items on high levels" : "Gear - Regular Rares"
 
-	Section HideLayerRareRuleIncremental : Auto("HideLayer")
+	Section HideLayerRareRuleIncremental : Auto("HideLayer"), !hide_layer
 	{
 		Hide RRIHide1 { %RH3; AreaLevel >= 82; DropLevel < 75; Class == classes_armor_noshields; }
 		Hide RRIHide2 { %RH2; AreaLevel >= 80; DropLevel < 60; Class == classes_armor_noshields; }
@@ -822,23 +822,23 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 	Section EndgameRareGear : Auto("rr")
 	{
-		Show T1 { !GR1; %D4; BaseType == derived.rares.gear.t1; }
+		Show T1 { !rares_t12; !GR1; %D4; BaseType == derived.rares.gear.t1; }
 
 #!! Waypoint c4.rare.t2.all : "Rare Endgame Items - T2" : "Gear - Regular Rares"
 		
-		Show T2 { !GR1; %D3; BaseType == derived.rares.gear.t2; }
+		Show T2 { !rares_t12; !GR1; %D3; BaseType == derived.rares.gear.t2; }
 
 #!! Waypoint c4.rare.idhandling.all :  "Rare Endgame Items - Identified Item Handling" : "Gear - Regular Rares"
 
-		Show IdentifiedItemHandling { %D0; !GS; !exotic.t4; Identified True; Clean(); Class == classes_equip; }
+		Show IdentifiedItemHandling { !exotics_t4; !GS; %D0; Identified True; Clean(); Class == classes_equip; }
 
 #!! Waypoint c4.rare.t3.all : "Rare Endgame Items - t3" : "Gear - Regular Rares"
 
-		Show T3 { !GR2; %D2; BaseType == derived.rares.gear.t3; }
+		Show T3 { !rares_t3; !GR2; %D2; BaseType == derived.rares.gear.t3; }
 
 #!! Waypoint c4.rare.t4.all : "Rare Endgame Items - T4" : "Gear - Regular Rares"
 
-		Show T4 { !GR3; %D1; BaseType == derived.rares.gear.t4; }
+		Show T4 { !rares_t4; !GR3; %D1; BaseType == derived.rares.gear.t4; }
 	}
 }
 
@@ -855,38 +855,38 @@ Section ConditionalRareHider : Auto("HideLayer")
 
 Section EarlyEndgameCrafting : Auto("normalcraft->extra"), Rarity <= Magic, AreaLevel <= 75, AreaLevel >= 68, Clean()
 {
-	ShowD EarlyCraftOptional { !GEX; !craftgeneral.ANY; %D0; BaseType == bases.crafting.early; }
-	Show EarlyEndgame4Link { %D1; !GEX; !Low; LinkedSockets >= 4; Rarity <= Rare; Class == classes_armor_noshields; }
+	ShowD EarlyCraftOptional { !crafting_early; !GEX; %D0; BaseType == bases.crafting.early; }
+	Show EarlyEndgame4Link { !rares_earlyendgame; !GEX; %D1; LinkedSockets >= 4; Rarity <= Rare; Class == classes_armor_noshields; }
 }
 
 #------------------------------------
 # [1234] Crafting Matrix
 #------------------------------------
-Section EndgameCraftingBases : Clean(), !craftgeneral
+Section EndgameCraftingBases : Clean()
 {
 	#!! Waypoint c5.gear.crafting86.all : "Crafting Bases - High level basetypes - ILVL86" : "Gear - Crafting Bases"
 
 	Section CraftingBases : Auto("crafting->generalgear"), Rarity <= Rare
 	{
 		# Level 86 crafting bases
-		Show t1_86 { !G3;  %D5; !craftgeneral.I86; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t1; }
-		Show t2_86 { !GEX; %D4; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t2; }
-		Show t3_86 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t3; }
+		Show t1_86 { !crafting_t1; !G3;  %D5; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t1; }
+		Show t2_86 { !crafting_t2; !GEX; %D4; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t2; }
+		Show t3_86 { !crafting_t2; !GEX; %D3; ItemLevel >= 86; BaseType == derived.crafting.levelgroup86.t3; }
 
 		# Level 85 crafting bases
-		Show t1_85 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t1; }
-		Show t2_85 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t2; }
-		Show t3_85 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t3; }
+		Show t1_85 { !crafting_t1; !G3;  %D4; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t1; }
+		Show t2_85 { !crafting_t2; !GEX; %D3; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t2; }
+		Show t3_85 { !crafting_t2; !GEX; %D2; ItemLevel >= 85; BaseType == derived.crafting.levelgroup85.t3; }
 
 		# Level 84 crafting bases
-		Show t1_84 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t1; }
-		Show t2_84 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t2; }
-		Show t3_84 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t3; }
+		Show t1_84 { !crafting_t1; !G3;  %D4; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t1; }
+		Show t2_84 { !crafting_t2; !GEX; %D3; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t2; }
+		Show t3_84 { !crafting_t2; !GEX; %D2; ItemLevel >= 84; BaseType == derived.crafting.levelgroup84.t3; }
 
 		# Level 83 crafting bases
-		Show t1_83 { !G3;  %D4; !craftgeneral.I86; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t1; }
-		Show t2_83 { !GEX; %D3; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t2; }
-		Show t3_83 { !GEX; %D2; !craftgeneral.I84; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t3; }
+		Show t1_83 { !crafting_t1; !G3;  %D4; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t1; }
+		Show t2_83 { !crafting_t2; !GEX; %D3; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t2; }
+		Show t3_83 { !crafting_t2; !GEX; %D2; ItemLevel >= 83; BaseType == derived.crafting.levelgroup83.t3; }
 	}
 }
 
@@ -895,7 +895,7 @@ Section EndgameCraftingBases : Clean(), !craftgeneral
 #===============================================================================================================
 #!! Waypoint c5.chancing : "Chancing bases" : "Recipes and Linked Gear"
 
-Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
+Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !special_chancing, !GEX
 {
 	Show hh { %D1; BaseType == bases.chancing.higher; }
 	Show t2 { %D1; BaseType == bases.chancing.any; }
@@ -907,16 +907,16 @@ Section Chancing : Clean(), Rarity Normal, Auto("chancing"), !chancing, !GEX
 
 #!! Waypoint c6.flasks.all : "Endgame Flasks - All non-unique" : "Flasks and Tinctures"
 
-Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures", !utilflasks
+Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel >= 68, Class == "Tinctures"
 {
-	Show OverQual1          { !G2; !exotic.t1; %D9; Clean(); ItemLevel >= 82; Quality >= 26; }
-	Show OverQual2          { !G3; !exotic.t2; %D8; Clean(); ItemLevel >= 82; Quality >= 21; }
-	Show Tinc85  			{ !G4; !utilflasks.LT2; !SF45; %D5; ItemLevel >= 85; }
-	Show Tinc82  			{ !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; }
-	Show Any  				{ !G4; !utilflasks.LT3; !SF45; %D3; Empty(); }
+	Show OverQual1          { !exotics_t1; !G2; %D9; Clean(); ItemLevel >= 82; Quality >= 26; }
+	Show OverQual2          { !exotics_t2; !G3; %D8; Clean(); ItemLevel >= 82; Quality >= 21; }
+	Show Tinc85  			{ !flasks_utilityt2; !G4; %D5; ItemLevel >= 85; }
+	Show Tinc82  			{ !flasks_utilityt3; !SF45; !G4; %D4; ItemLevel >= 82; }
+	Show Any  				{ !flasks_utilityt3; !SF45; !G4; %D3; Empty(); }
 }
 
-Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68, !utilflasks
+Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 {
 #------------------------------------
 # [2701] Endgame Flasks
@@ -924,20 +924,20 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	
 	Section OverQualityFlasks : !GEX
 	{
-		Show OverQualCorrupted  { !G3; !utilflasks.LT2C; !SF45; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show OverQualUtil1  { !G2; !exotic.t1; %D9; Clean(); ItemLevel >= 84; Quality >= 26; Class == class_utilFlasks; }
-		Show OverQualUtil2  { !G4; !exotic.t2; %D8; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show OverQualLife1  { !G3; !exotic.t1; %D6; Clean(); ItemLevel >= 82; Quality >= 30; BaseType == bases.flask.lifemanaassorted; }
-		Show OverQualLife2  { !G4; !exotic.t2; %D5; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualCorrupted  { !flasks_utilitycorrupt; !G3; %D4; Corrupted True; Quality >= 30; Rarity Magic; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show OverQualUtil1  { !exotics_t1; !G2; %D9; Clean(); ItemLevel >= 84; Quality >= 26; Class == class_utilFlasks; }
+		Show OverQualUtil2  { !exotics_t2; !G4; %D8; Clean(); ItemLevel >= 82; Quality >= 21; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show OverQualLife1  { !exotics_t1; !G3; %D6; Clean(); ItemLevel >= 82; Quality >= 30; BaseType == bases.flask.lifemanaassorted; }
+		Show OverQualLife2  { !exotics_t2; !G4; %D5; Clean(); ItemLevel >= 82; Quality >= 21; BaseType == bases.flask.lifemanaassorted; }
 	}
 
 	#!! Waypoint c6.flasks.eg : "Endgame Flasks - High level utility and life flasks" : "Flasks and Tinctures"
 	Section SuperEndgameFlasks : Clean(), !GEX
 	{
-		Show Utility85  { !G3; !utilflasks.LT1; !SF45; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show Utility84  { !G4; !utilflasks.LT2; !SF45; %D4; ItemLevel >= 84; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show Utility82  { !G4; !utilflasks.LT3; !SF45; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
-		Show LifeMana82 { !G5; !recipe.t2; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
+		Show Utility85  { !flasks_utilityt1; !G3; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show Utility84  { !flasks_utilityt2; !G4; %D4; ItemLevel >= 84; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
+		Show Utility82  { !flasks_utilityt3; !SF45; !G4; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
+		Show LifeMana82 { !flasks_qualityhigh; !G5; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
 	}
 #------------------------------------
 # [2701] Quality High
@@ -945,7 +945,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 	#!! Waypoint c6.flasks.others : "Endgame Flasks - Other flasks" : "Flasks and Tinctures"
 	Section 20QualEndgameFlasks : Quality >= 20, Rarity Normal, !G5
 	{
-		Show Any20QualFlask { %D2; !recipe.ts1; Class == class_flasks; }
+		Show Any20QualFlask { !flasks_qualitymax; %D2; Class == class_flasks; }
 	}
 
 #------------------------------------
@@ -953,23 +953,23 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #------------------------------------
 	Section QualityEndgameFlasks
 	{
-		ShowD QualityHigh { %D1; !G6H; !recipe.t2; Class == class_flasklikes; Quality >= 10; AreaLevel <= 77; }
-		ShowD QualityLow  { %D0; !G6; !recipe.t3; Class == class_flasklikes; Quality >= 1; AreaLevel <= 77; }
+		ShowD QualityHigh { !flasks_qualityhigh; !G6H; %D1; Class == class_flasklikes; Quality >= 10; AreaLevel <= 77; }
+		ShowD QualityLow  { !leveling_qualityflask; !G6; %D0; Class == class_flasklikes; Quality >= 1; AreaLevel <= 77; }
 	}
 #------------------------------------
 # [2701] Utility flasks
 #------------------------------------
-	Section UtilityEndgameFlasks : Clean()
+	Section UtilityEndgameFlasks : Clean(), !flasks_utilityt3
 	{
-		Show EarlyMappingFlasks { %D4; !G4; !utilflasks.LT3; !SF45; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
-		Show AnyUtility 	{ %D3; !G4; !utilflasks.LT3; Class == class_utilFlasks; AreaLevel >= 68; }
+		Show EarlyMappingFlasks { !G4; !SF45; %D4; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
+		Show AnyUtility 	{ !G4; %D3; Class == class_utilFlasks; AreaLevel >= 68; }
 	}
 #------------------------------------
 # [2705] Early mapping life/mana/utility flasks
 #------------------------------------
 	Section EarlyMappingLifeManaFlasks : BaseType == bases.flask.lifemanaassorted, Clean()
 	{
-		Show EarlyMappingLifeMana { %D2; !G7H; !Low; AreaLevel <= 70; }
+		Show EarlyMappingLifeMana { !rares_earlyendgame; !G7H; %D2; AreaLevel <= 70; }
 	}
 }
 
@@ -978,7 +978,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68,
 #===============================================================================================================
 #!! Waypoint c6.misc.others : "SpecialGear - Overquality items and optional animated weapon module" : "Gear - Exotic"
 
-Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
+Section AnimatedWeapons : Auto("AnimatedWeapons"), !special_animateweapon, !GEX
 {
 	ShowD normalmelee  { Rarity Normal; Class == classes_weapons_melee;}
 	ShowD normalranged { Rarity Normal; Class == classes_weapons_ranged;}
@@ -992,14 +992,14 @@ Section AnimatedWeapons : Auto("AnimatedWeapons"), !AnimatedWeapon, !GEX
 #------------------------------------
 #!! Waypoint c6.recipes.rgb.all : "Recipes - Endgame chromatic recipes (normal and magic RGBs)" : "Recipes and Linked Gear"
 
-Section RGBendgame : SocketGroup "RGB", Rarity <= Rare, AreaLevel >= 68, AreaLevel <= 83, Auto("EndgameRGB"), !recipe
+Section RGBendgame : SocketGroup "RGB", Rarity <= Rare, AreaLevel >= 68, AreaLevel <= 83, Auto("EndgameRGB"), !links_recipe
 {
 	# Legacy RBG rules, will be deleted once confirmed no longer important
 
-	ShowD RGBSmall1	{ !G6H; %D5; !*t1; !SF45; Width 2; Height 2; }
-	ShowD RGBSmall2	{ !G6H; %D5; !*t1; !SF45; Width 1; Height <=4; }
-	ShowD RGBLarge	{ !G6;  %D4; !*t1; !SF45; Width 2; Height 4; }
-	ShowD RGBMedium	{ !G6;  %D4; !*t1; !SF45; Width 2; Height 3; }
+	ShowD RGBSmall1	{ !G6H; %D5; Width 2; Height 2; }
+	ShowD RGBSmall2	{ !G6H; %D5; Width 1; Height <=4; }
+	ShowD RGBLarge	{ !G6;  %D4; Width 2; Height 4; }
+	ShowD RGBMedium	{ !G6;  %D4; Width 2; Height 3; }
 }
 
 #------------------------------------
@@ -1009,7 +1009,7 @@ Section RGBendgame : SocketGroup "RGB", Rarity <= Rare, AreaLevel >= 68, AreaLev
 
 Section EndgameRareGear : Auto("rr"), Rarity Rare, ItemLevel >= 68
 {
-	Show t5 { !GR4; %D1; Class == classes_nonJwlryEquip; }
+	Show t5 { !rares_t5; !GR4; %D1; Class == classes_nonJwlryEquip; }
 }
 
 #===============================================================================================================
@@ -1017,7 +1017,7 @@ Section EndgameRareGear : Auto("rr"), Rarity Rare, ItemLevel >= 68
 #===============================================================================================================
 #!! Waypoint c6.hidelayer.endgame : "HIDELAYER - all endgame and magic and normal items"
 
-Section HideLayer : Auto("HideLayer")
+Section HideLayer : Auto("HideLayer"), !hide_layer
 {
 	Hide NormalMagicEndgame { AreaLevel >= 68; Rarity < Rare; Class == classes_equip + class_utilFlasks; }
 	Hide RaresEndgame { ItemLevel >= 68; Rarity Rare; Class == classes_equip; }
@@ -1028,30 +1028,30 @@ Section HideLayer : Auto("HideLayer")
 #===============================================================================================================
 #!! Waypoint c7.jewels.identified : "Jewels - Identified with interesting mods" : "Jewels and Cluster Jewels"
 
-Section Jewels : !jewels
+Section Jewels
 {
 #------------------------------------
 # [1234] Special Cases
 #------------------------------------
 
-	Section SpecialJewels : Auto("jewels->special"), !UniqueSound, !GS
+	Section SpecialJewels : Auto("jewels->special"), !GS
 	{
 		## Any rare corrupted, normal or abyss jewel (2x corruptions are handled above)
-		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1, !*rare
+		Section CorruptedJewels : Corrupted True, Rarity Rare, CorruptedMods >= 1
 		{
-			Show 1modcorrupted { !Special; %D4; BaseType == allCommonJewels; }
+			Show 1modcorrupted { !jewels_specialcorrupt; %D4; BaseType == allCommonJewels; }
 		}
 
 		## Heist dropped 1-mod magic jewels with useful mods
 		Section IdedUncorruptedJewels : Identified True, Rarity <= Rare, BaseType == genericJewels;
 		{
-			Show 1moduncorrupted { !exotic.t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent" "Expediting"; }
+			Show 1moduncorrupted { !exotics_t3; %D4; HasExplicitMod "Shimmering" "Vivid" "Stalwart" "Resplendent" "Expediting"; }
 		}
 
 		## Adorned class magic corrupted modded jewels
-		Section AdornedJewels : Rarity Magic, CorruptedMods >= 1, !*magic
+		Section AdornedJewels : Rarity Magic, CorruptedMods >= 1, !GI
 		{
-			Show Any { !SpecialNoMM; %D3; Corrupted True; BaseType == genericJewels; }
+			Show Any { !jewels_special; %D3; Corrupted True; BaseType == genericJewels; }
 		}
 	}
 
@@ -1059,10 +1059,10 @@ Section Jewels : !jewels
 # [1234] Leveling Exceptions
 #------------------------------------
 #!! Waypoint c7.jewels.leveling : "Jewels - Leveling Overrides" : "Jewels and Cluster Jewels"
-	Section JewelsLeveling : Auto("jewels->leveling"), ItemLevel <= 67, Rarity <= Magic
+	Section JewelsLeveling : Auto("jewels->leveling"), ItemLevel <= 67, Rarity <= Magic, !jewels_blue
 	{
-		Show Abyss 		{ !*magic; !SF45; %D3; BaseType == abyssJewels; }
-		Show Generic 	{ !*magic; !SF45; %D3; BaseType == genericJewels; }
+		Show Abyss 		{ !GI; %D3; !SF45; BaseType == abyssJewels; }
+		Show Generic 	{ !GI; %D3; !SF45; BaseType == genericJewels; }
 	}
 
 #------------------------------------
@@ -1071,17 +1071,17 @@ Section Jewels : !jewels
 #!! Waypoint c7.jewels.abyss.all : "Jewels - Abyss Jewels" : "Jewels and Cluster Jewels"
 	Section AbyssJewels : Class == "Abyss Jewels", Auto("jewels->abyss")
 	{
-		Show ExtraModCorruptedAbyssJewel { %H7; !G3; !exotic.t2; Rarity Rare; Corrupted True; Mod >=5 "a" "e" "i" "o" "u" "y"; }
+		Show ExtraModCorruptedAbyssJewel { !exotics_t2; !G3; %H7; Rarity Rare; Corrupted True; Mod >=5 "a" "e" "i" "o" "u" "y"; }
 
-		Show CorruptedAbyssJewel { %H5; !G4; !*rare; !High; Rarity Rare; Corrupted True; }
+		Show CorruptedAbyssJewel { !jewels_rareveryhigh; !G4; %H5; Rarity Rare; Corrupted True; }
 
-		Show VeryHighRare  { %H5;  !G4;  !*rare;  !High; Rarity Rare; ItemLevel >= 86; }
-		Show VeryHighMagic { %HS4;  !G4;  !*magic; !High; Rarity <= Magic; ItemLevel >= 86; }
+		Show VeryHighRare  { !jewels_rareveryhigh; !G4;  %H5;  Rarity Rare; ItemLevel >= 86; }
+		Show VeryHighMagic { !jewels_blueveryhigh; !G4; !GI;  %HS4;  Rarity <= Magic; ItemLevel >= 86; }
 		
-		Show HighRare      { %HS4;  !G5H; !*rare;  !Medium; Rarity Rare; ItemLevel >= 82; }
-		Show HighMagic     { %HS3; !G6H; !*magic; !Medium; Rarity <= Magic; ItemLevel >= 82; }
-		Show AnyRare       { %HS3; !G5H; !*rare;  Rarity Rare; }
-		Show AnyMagic      { %H2;  !G6H; !*magic; Rarity <= Magic; }
+		Show HighRare      { !jewels_rarehigh; !G5H;  %HS4; Rarity Rare; ItemLevel >= 82; }
+		Show HighMagic     { !jewels_bluehigh; !G6H; !GI; %HS3; Rarity <= Magic; ItemLevel >= 82; }
+		Show AnyRare       { !jewels_rare; !G5H; %HS3; Rarity Rare; }
+		Show AnyMagic      { !jewels_blue; !G6H; !GI;  %H2; Rarity <= Magic; }
 	}
 #------------------------------------
 # [1234] Generic Jewels
@@ -1089,8 +1089,8 @@ Section Jewels : !jewels
 #!! Waypoint c7.jewels.generic.all : "Jewels - Generic Jewels"
 	Section GenericJewels : BaseType == genericJewels, Auto("jewels->generic")
 	{
-		Show AnyRare  { %HS3; !G5H; !*rare; !V4; Rarity Rare; }
-		Show AnyMagic { %H2; !G6H; !*magic; Rarity <= Magic; }
+		Show AnyRare  { !jewels_rare; !G5H; %HS3; Rarity Rare; }
+		Show AnyMagic { !jewels_blue; !G6H; !GI; %H2; Rarity <= Magic; }
 	}
 
 #------------------------------------
@@ -1098,9 +1098,9 @@ Section Jewels : !jewels
 #------------------------------------
 #!! Waypoint c7.jewels.cluster.all : "Jewels - Cluster - Economy-Based-Tiering" : "Jewels and Cluster Jewels"
 
-	Section ClusterJewelsEconomy : Auto("jewels->clustereco"), Rarity <= Rare, !*cluster
+	Section ClusterJewelsEconomy : Auto("jewels->clustereco"), Rarity <= Rare
 	{
-		Section T1clusterjewels : !G2, !VF1, !High, !TopTierColors
+		Section T1clusterjewels : !jewels_clustert1, !G2
 		{
 			## Large N12 T1
 			Show N12_I84_T1 { BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode == jewels.cluster.N12_I84_T1; }
@@ -1148,7 +1148,7 @@ Section Jewels : !jewels
 			Show N2_I68_T1 { BaseType == "Small Cluster Jewel"; ItemLevel >= 68; ItemLevel <= 74; EnchantmentPassiveNum = 2; EnchantmentPassiveNode == jewels.cluster.N2_I68_T1; }
 		}
 
-		Section T2clusterjewels : !G3, !V2, !High, !TierTwoColors
+		Section T2clusterjewels : !jewels_clustert2, !G3
 		{
 			## Large N12 T2
 			Show N12_I84_T2 { %D8; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum = 12; EnchantmentPassiveNode == jewels.cluster.N12_I84_T2; }
@@ -1202,19 +1202,19 @@ Section Jewels : !jewels
 # [1234] Cluster Jewels: Random
 #------------------------------------
 
-	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare, !*cluster
+	Section ClusterJewels : Auto("jewels->cluster"), Rarity <= Rare
 	{
-		Show Optimal1HighLarge	{ !G3; %D6; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum >= 12; }
-		Show OptimalHighLarge	{ !G3; %D6; !V2; !High; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
-		Show HighLarge 			{ !G3; %D4; !V3; !High; BaseType == "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
-		Show Large 				{ !G4; %H3; !V4; BaseType == "Large Cluster Jewel"; }
+		Show Optimal1HighLarge	{ !jewels_clusteroptimal; !G3; %D6; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum >= 12; }
+		Show OptimalHighLarge	{ !jewels_clusteroptimal; !G3; %D6; BaseType == "Large Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 8; }
+		Show HighLarge 			{ !jewels_clusterhigh; !G3; %D4; BaseType == "Large Cluster Jewel"; EnchantmentPassiveNum <= 8; }
+		Show Large 				{ !jewels_cluster; !G4; %H3; BaseType == "Large Cluster Jewel"; }
 
-		Show OptimalHighMedium  { !G3; %D6; !V2; !High; BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
-		Show HighMedium 	    { !G3; %D4; !V3; !High; BaseType == "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
-		Show Medium 		    { !G4; %H3; !V4; BaseType == "Medium Cluster Jewel"; }
+		Show OptimalHighMedium  { !jewels_clusteroptimal; !G3; %D6; BaseType == "Medium Cluster Jewel"; ItemLevel >= 84; EnchantmentPassiveNum <= 5; }
+		Show HighMedium 	    { !jewels_clusterhigh; !G3; %D4; BaseType == "Medium Cluster Jewel"; EnchantmentPassiveNum <= 5; }
+		Show Medium 		    { !jewels_cluster; !G4; %H3; BaseType == "Medium Cluster Jewel"; }
 
-		Show HighSmall 			{ !G3; %D6; !V3; !High; BaseType == "Small Cluster Jewel"; ItemLevel >= 84; }
-		Show Small 				{ !G4; %H3; !V4; BaseType == "Small Cluster Jewel"; }
+		Show HighSmall 			{ !jewels_clusterhigh; !G3; %D6; BaseType == "Small Cluster Jewel"; ItemLevel >= 84; }
+		Show Small 				{ !jewels_cluster; !G4; %H3; BaseType == "Small Cluster Jewel"; }
 	}
 }
 
@@ -1230,40 +1230,40 @@ Section HeistFollowerGear : Rarity <= Rare
 #------------------------------------
 	Section HeistCloak : Class == "Heist Cloaks", Auto("Heist->Cloak")
 	{
-		Show t1highlevel { !G3; %HS5; BaseType == bases.heist.cloak.t1; ItemLevel >= levels_t1_heist_cloak; }
-		Show t1 { !G3; %H5; BaseType == bases.heist.cloak.t1; }
-		Show t2 { !G4; %H4; BaseType == bases.heist.cloak.t2; }
-		Show t3any { !G5; %H3; Empty(); }
+		Show t1highlevel { !heist_geart1high; !G3; %HS5; BaseType == bases.heist.cloak.t1; ItemLevel >= levels_t1_heist_cloak; }
+		Show t1 { !heist_geart1; !G3; %H5; BaseType == bases.heist.cloak.t1; }
+		Show t2 { !heist_geart2; !G4; %H4; BaseType == bases.heist.cloak.t2; }
+		Show t3any { !heist_geart3; !G5; %H3; Empty(); }
 	}
 #------------------------------------
 # [3002] Heist Brooch
 #------------------------------------
 	Section HeistBrooch : Class == "Heist Brooches", Auto("Heist->Brooch")
 	{
-		Show t1highlevel { !G3; %HS5;  BaseType == bases.heist.brooch.t1; ItemLevel >= levels_t1_heist_brooch; }
-		Show t1 { !G3; %H5;  BaseType == bases.heist.brooch.t1; }
-		Show t2 { !G4; %H4;  BaseType == bases.heist.brooch.t2; }
-		Show t3any { !G5; %H3;  Empty(); }
+		Show t1highlevel { !heist_geart1high; !G3; %HS5;  BaseType == bases.heist.brooch.t1; ItemLevel >= levels_t1_heist_brooch; }
+		Show t1 { !heist_geart1; !G3; %H5;  BaseType == bases.heist.brooch.t1; }
+		Show t2 { !heist_geart2; !G4; %H4;  BaseType == bases.heist.brooch.t2; }
+		Show t3any { !heist_geart3; !G5; %H3;  Empty(); }
 	}
 #------------------------------------
 # [3003] Heist Gear
 #------------------------------------
 	Section HeistGear : Class == "Heist Gear", Auto("Heist->Gear")
 	{
-		Show t1highlevel { !G3; %HS5;  BaseType == bases.heist.gear.t1; ItemLevel >= levels_t1_heist_gear; }
-		Show t1 { !G3; %H5;  BaseType == bases.heist.gear.t1; }
-		Show t2 { !G4; %H4;  BaseType == bases.heist.gear.t2; }
-		Show t3any { !G5; %H3;  Empty(); }
+		Show t1highlevel { !heist_geart1high; !G3; %HS5;  BaseType == bases.heist.gear.t1; ItemLevel >= levels_t1_heist_gear; }
+		Show t1 { !heist_geart1; !G3; %H5;  BaseType == bases.heist.gear.t1; }
+		Show t2 { !heist_geart2; !G4; %H4;  BaseType == bases.heist.gear.t2; }
+		Show t3any { !heist_geart3; !G5; %H3;  Empty(); }
 	}
 #------------------------------------
 # [3004] Heist Tool
 #------------------------------------
 	Section HeistTools : Class == "Heist Tools", Auto("Heist->Tool")
 	{
-		Show t1highlevel { !G3; %HS5; BaseType == bases.heist.tool.t1; ItemLevel >= levels_t1_heist_tool; }
-		Show t1 { !G3; %H5; BaseType == bases.heist.tool.t1; }
-		Show t2 { !G4; %H4; BaseType == bases.heist.tool.t2; }
-		Show t3any { !G5; %H3; Empty(); }
+		Show t1highlevel { !heist_geart1high; !G3; %HS5; BaseType == bases.heist.tool.t1; ItemLevel >= levels_t1_heist_tool; }
+		Show t1 { !heist_geart1; !G3; %H5; BaseType == bases.heist.tool.t1; }
+		Show t2 { !heist_geart2; !G4; %H4; BaseType == bases.heist.tool.t2; }
+		Show t3any { !heist_geart3; !G5; %H3; Empty(); }
 	}
 }
 
@@ -1279,39 +1279,39 @@ Section Gems : Class == class_gems
 #------------------------------------
 #!! Waypoint c8.gems.empowerclass : "Gem Rules - Empower Class" : "Gems"
 
-	Section GemsExceptional : Auto("gems->exceptional"), !Gems
+	Section GemsExceptional : Auto("gems->exceptional")
 	{
 		var anySpecialGems = gems.tiered.t1 + gems.tiered.t2 + gems.tiered.t3 + gems.tiered.t4 - "Portal";
 
-		Show highExceptionalBadCorrupt  { !G2; !*P1; BaseType == gems.tiered.t1 + gems.tiered.t2; Quality <= 20; GemLevel <= 3; Corrupted True; }
+		Show highExceptionalBadCorrupt  { !gems_t2; !G2; BaseType == gems.tiered.t1 + gems.tiered.t2; Quality <= 20; GemLevel <= 3; Corrupted True; }
 
-		Show t1 { !G1; !*T1; BaseType == gems.tiered.t1; }
-		Show t2 { %D8; !G2; !*P1; BaseType == gems.tiered.t2; }
+		Show t1 { !gems_t1; !G1; BaseType == gems.tiered.t1; }
+		Show t2 { !gems_t2; !G2; %H8; BaseType == gems.tiered.t2; }
 
-		Show anyExceptionalLvl  { !G2; !*P1; BaseType == anySpecialGems; GemLevel >= 2; }
-		Show anyExceptionalQual { !G2; !*P1; BaseType == anySpecialGems; Quality >= 10; }
+		Show anyExceptionalLvl  { !gems_t2; !G2; BaseType == anySpecialGems; GemLevel >= 2; }
+		Show anyExceptionalQual { !gems_t2; !G2; BaseType == anySpecialGems; Quality >= 10; }
 
-		Show t3 { %D6; !G3; !*P2; BaseType == gems.tiered.t3; }
-		Show t4 { %D5; !G4; !*P2; BaseType == gems.tiered.t4; }
+		Show t3 { !gems_t3; !G3; %H6; BaseType == gems.tiered.t3; }
+		Show t4 { !gems_t3; !G4; %H5; BaseType == gems.tiered.t4; }
 	}
 
 #------------------------------------
 # [3901] Economy based leveled, quality and vaal gem rules
 #------------------------------------
-	Section GemsEcoGrowth : Auto("gems->special"), !Gems
+	Section GemsEcoGrowth : Auto("gems->special"), !gems_t2
 	{
-		Show AltAny { !G2; !*P1; TransfiguredGem True; }
+		Show AltAny { !G2; TransfiguredGem True; }
 		
-		Show 2020z 	{ %D8; !G3; !*P1; Quality >= 20; GemLevel >= 20; BaseType == gems.t2_2020z; Corrupted False; }
-		Show xx20z 	{ %D8; !G3; !*P1; Quality >= 19; BaseType == gems.t2_xx20z; Corrupted False; }
-		Show 2120 	{ %D8; !G3; !*P1; Quality >= 20; GemLevel >= 21; BaseType == gems.t2_2120 }
-		Show 2023 	{ %D8; !G3; !*P1; Quality >= 23; GemLevel >= 20; BaseType == gems.t2_2023 }
-		Show 2123any { %D9; !G3; !*P1; Quality >= 23; GemLevel >= 21; }
-		Show xx23 	{ %D8; !G3; !*P1; Quality >= 23; BaseType == gems.t2_xx23 }
-		Show 21xx 	{ %D8; !G3; !*P1; GemLevel >= 21; BaseType == gems.t2_21xx }
+		Show 2020z 	{ !G3; %D8; Quality >= 20; GemLevel >= 20; BaseType == gems.t2_2020z; Corrupted False; }
+		Show xx20z 	{ !G3; %D8; Quality >= 19; BaseType == gems.t2_xx20z; Corrupted False; }
+		Show 2120 	{ !G3; %D8; Quality >= 20; GemLevel >= 21; BaseType == gems.t2_2120 }
+		Show 2023 	{ !G3; %D8; Quality >= 23; GemLevel >= 20; BaseType == gems.t2_2023 }
+		Show 2123any { !G3; %D9; Quality >= 23; GemLevel >= 21; }
+		Show xx23 	{ !G3; %D8; Quality >= 23; BaseType == gems.t2_xx23 }
+		Show 21xx 	{ !G3; %D8; GemLevel >= 21; BaseType == gems.t2_21xx }
 
 		## Quality Vaal gems worth leveling
-		Show Vaal20 { %D6; !G2; !*P1; Quality >= 20; BaseType == gems.t2_2020vaal }
+		Show Vaal20 { !G2; %D6; Quality >= 20; BaseType == gems.t2_2020vaal }
 	}
 
 #------------------------------------
@@ -1319,41 +1319,41 @@ Section Gems : Class == class_gems
 #------------------------------------
 #!! Waypoint c8.gems.qualityandlevel : "Gem Rules - Quality and Leveled versions" : "Gems"
 
-	Section GemsGeneric : Auto("gems->generic"), !Gems
+	Section GemsGeneric : Auto("gems->generic")
 	{
-		Show LT1 { %D7; !G3; !*P2; GemLevel >= 21 }
-		Show QT1 { %D7; !G3; !*P2; Quality >= 23 }
+		Show LT1 { !gems_t3; !G3; %D7; GemLevel >= 21 }
+		Show QT1 { !gems_t3; !G3; %D7; Quality >= 23 }
 
-		Show ex6lvlgems { !G3; !*P2; BaseType == gems.untiered.sixlevelgems; GemLevel >= 6; }
+		Show ex6lvlgems { !gems_t3; !G3; BaseType == gems.untiered.sixlevelgems; GemLevel >= 6; }
 
-		ShowD PlusOneGemCold  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.cold ; }
-		ShowD PlusOneGemFire  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.fire ; }
-		ShowD PlusOneGemLight { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.light ; }
-		ShowD PlusOneGemChaos { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.chaos ; }
-		ShowD PlusOneGemPhys  { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.phys ; }
-		ShowD PlusOneGemMinion { !G4; !*P3S; Quality >= 5; BaseType == gems.plusone.minion ; }
+		ShowD PlusOneGemCold  { !gems_plusone; !G4; Quality >= 5; BaseType == gems.plusone.cold ; }
+		ShowD PlusOneGemFire  { !gems_plusone; !G4; Quality >= 5; BaseType == gems.plusone.fire ; }
+		ShowD PlusOneGemLight { !gems_plusone; !G4; Quality >= 5; BaseType == gems.plusone.light ; }
+		ShowD PlusOneGemChaos { !gems_plusone; !G4; Quality >= 5; BaseType == gems.plusone.chaos ; }
+		ShowD PlusOneGemPhys  { !gems_plusone; !G4; Quality >= 5; BaseType == gems.plusone.phys ; }
+		ShowD PlusOneGemMinion { !gems_plusone; !G4; Quality >= 5; BaseType == gems.plusone.minion ; }
 
-		Cont DecoGemsVaalBgDrop { !GEX; !*VaalGem; BaseType "Vaal"; }
+		Cont DecoGemsVaalBgDrop { !gems_vaal; !GEX; BaseType "Vaal"; }
 
-		Show QT2 { !G3; %D5; !*P2; Quality >= 20 }
-		Show LT2 { !G4; %D5; !*P3; GemLevel >= 20 }
+		Show QT2 { !gems_t3; !G3; %D5; Quality >= 20 }
+		Show LT2 { !gems_t4; !G4; %D5; GemLevel >= 20 }
 
-		Show QT3 { !G4; %D4; !*P3; Quality >= 13 }
-		Show LT3 { !G5; %D3; !*P4; GemLevel >= 18 }
+		Show QT3 { !gems_t4; !G4; %D4; Quality >= 13 }
+		Show LT3 { !gems_t5; !G5; %D3; GemLevel >= 18 }
 
-		Show QT4Lvl { %D4; !G5; !*P3; Quality >= 1; AreaLevel >= 2; AreaLevel <= 67 }	
-		Show QT4 { %D3; !G5; !*P4; Quality >= 1; }	
-		ShowD LT4 { %D0; !G6; !*P4; GemLevel >= 2; }
+		Show QT4Lvl { !gems_t4; !G5; %D4; Quality >= 1; AreaLevel >= 2; AreaLevel <= 67 }	
+		Show QT4 { !gems_t5; !G5; %D3; Quality >= 1; }	
+		ShowD LT4 { !gems_t5; !G6; %D0; GemLevel >= 2; }
 
 #!! Waypoint c8.gems.low : "Gem Rules - First Zones, Leveling, Vaal" : "Gems"
 
-		Show  FirstZone    { !GS; !*FirstLevel; AreaLevel 1; Quality = 0; GemLevel = 1; BaseType == gems.exleveling.one; }
-		Show  LevelingVaal { %H4; !G4; !*VaalLvl; AreaLevel >= 2; AreaLevel <= 67; BaseType "Vaal"; }
-		Show  Leveling     { %H2; !G6; !*Leveling;  AreaLevel >= 2; AreaLevel <= 67; }
+		Show  FirstZone    { !gems_firstzone; !GS; AreaLevel 1; Quality = 0; GemLevel = 1; BaseType == gems.exleveling.one; }
+		Show  LevelingVaal { !gems_vaalleveling; !G4; %H4; AreaLevel >= 2; AreaLevel <= 67; BaseType "Vaal"; }
+		Show  Leveling     { !gems_leveling; !G6; %H2; AreaLevel >= 2; AreaLevel <= 67; }
 
-		Show CorruptedVaalAny { %D3; !G6H; !*VaalGem; BaseType "Vaal"; }
+		Show CorruptedVaalAny { !gems_vaal; !G6H; %D3; BaseType "Vaal"; }
 
-		Show any { %H0; !G7; !*P5; Empty(); }
+		Show any { !gems_rest; !G7; %H0; Empty(); }
 	}
 }
 
@@ -1364,24 +1364,24 @@ Section Gems : Class == class_gems
 
 Section Replicas : Auto("uniques->replicas"), Replica True, Rarity Unique
 {
-	Show t1 { !G1; BaseType == uniques.replicas.t1; }
-	Show t2 { %H8; !G2; BaseType == uniques.replicas.t2; }
-	Show multi { !G3; BaseType == uniques.replicas.multi; }
-	Show t3 { %H6; !G4; BaseType == uniques.replicas.t3; }
+	Show t1 { !uniques_t1; !G1; BaseType == uniques.replicas.t1; }
+	Show t2 { !uniques_replicat2; !G2; %H8; BaseType == uniques.replicas.t2; }
+	Show multi { !uniques_replicamulti; !G3; BaseType == uniques.replicas.multi; }
+	Show t3 { !uniques_replicat3; !G4; %H6; BaseType == uniques.replicas.t3; }
 
-	Show restex { Empty(); }
+	Show restex { !special_restex; Empty(); }
 }
 
 #!! Waypoint c9.foulborn.all : "Tierlists - Foulborn" : "Uniques"
 
 Section Foulborn : Auto("uniques->foulborn"), Foulborn True, Rarity Unique
 {
-	Show t1 { !G1; BaseType == uniques.foulborn.t1; }
-	Show t2 { %H8; !G2; BaseType == uniques.foulborn.t2; }
-	Show multi { !G3; BaseType == uniques.foulborn.multi; }
-	Show t3 { %H6; !G4; BaseType == uniques.foulborn.t3; }
+	Show t1 { !uniques_t1; !G1; BaseType == uniques.foulborn.t1; }
+	Show t2 { !uniques_replicat2; !G2; %H8; BaseType == uniques.foulborn.t2; }
+	Show multi { !uniques_replicamulti; !G3; BaseType == uniques.foulborn.multi; }
+	Show t3 { !uniques_replicat3; !G4; %H6; BaseType == uniques.foulborn.t3; }
 
-	Show restex { Empty(); }
+	Show restex { !special_restex; Empty(); }
 }
 
 #===============================================================================================================
@@ -1393,30 +1393,30 @@ Section Foulborn : Auto("uniques->foulborn"), Foulborn True, Rarity Unique
 #------------------------------------
 # [4402] Unique Maps
 #------------------------------------
-Section UniqueMaps : Class == "Maps", Rarity Unique, Auto("uniques->maps"), !unique
+Section UniqueMaps : Class == "Maps", Rarity Unique, Auto("uniques->maps")
 {
 	#!! Waypoint c9.maps.unique.all : "Maps - Unique Tierlists" : "Uniques"
 
 	## Show t1 { !G1; BaseType == uniques.maps.t1; }
 	## Show t2 { !G2; BaseType == uniques.maps.t2; }
-	Show multispecialCorrupted { %H8; !GSH; !*t3; !SpecialNoB; Corrupted True; }
-	Show multispecial { %H8; !GSH; !*t3; !SpecialNoB; Corrupted False; }
+	Show multispecialCorrupted { !uniques_t3; !GSH; %H8; Corrupted True; }
+	Show multispecial { !uniques_t3; !GSH; %H8; Corrupted False; }
 	## Show t3 { !G3; %H5; BaseType == uniques.maps.t3; }
 	## Show t4 { !G4; %H4; BaseType == uniques.maps.t4; }
-	Show restex { Empty(); }
+	Show restex { !special_restex; Empty(); }
 }
 
-Section Maps : Class == "Maps", !Maps
+Section Maps : Class == "Maps"
 {
 #------------------------------------
 # [4405] SpecialMaps
 #------------------------------------
 	#!! Waypoint c9.maps.special.t17 : "Maps - Exceptional Types" : "Maps"
-	Section ExoticMapTypes : Auto("maps->nightmare")
+	Section ExoticMapTypes : Auto("maps->nightmare"), !maps_top
 	{
-		Show ValdoMaps { %D8; !G2; !maps.T1; BaseType == "Valdo Map"; }
-		Show NightmareMaps { %D9; !G2; !maps.T1; BaseType == "Nightmare Map"; }
-		Show ShaperGuardianMaps { %D7; !G2; !maps.T1; BaseType == "Shaper Guardian Map"; }
+		Show ValdoMaps { !G2; %D8; BaseType == "Valdo Map"; }
+		Show NightmareMaps { !G2; %D9; BaseType == "Nightmare Map"; }
+		Show ShaperGuardianMaps { !G2; %D7; BaseType == "Shaper Guardian Map"; }
 	}
 
 #------------------------------------
@@ -1425,9 +1425,9 @@ Section Maps : Class == "Maps", !Maps
 #!! Waypoint c9.maps.special.all : "Maps - Blighted, Enchanted, Delirium maps" : "Maps"
 	Section BlightedMaps : Auto("maps->blighted")
 	{
-		Show uber { !G2; !*SpecialHigh; UberBlightedMap True; }
-		Show t1  { !G2; !*SpecialHigh; MapTier >= Maps.Blighted.HighTier; BlightedMap True; }
-		Show Any { %H5; !G3; !*SpecialLow; BlightedMap True; }
+		Show uber { !maps_specialhigh; !G2; UberBlightedMap True; }
+		Show t1  { !maps_specialhigh; !G2; MapTier >= Maps.Blighted.HighTier; BlightedMap True; }
+		Show Any { !maps_special; !G3; %H5; BlightedMap True; }
 	}
 
 #------------------------------------
@@ -1436,30 +1436,30 @@ Section Maps : Class == "Maps", !Maps
 
 	Section VaalTemple : BaseType == "Vaal Temple Map", MapTier >= 16, Auto("maps->vaaltemple")
 	{
-		Show Any { !G2; !maps.T1; Empty(); }
+		Show Any { !maps_top; !G2; Empty(); }
 	}
 
 	Section SpecialCorruptedMaps : Auto("maps->corruptedspecial")
 	{
-		Show mod8 { !G2; !*SpecialHigh; Corrupted True; Identified True; Mod >=8 "a" "e" "i" "o" "u" "y"; }
+		Show mod8 { !maps_specialhigh; !G2; Corrupted True; Identified True; Mod >=8 "a" "e" "i" "o" "u" "y"; }
 	}
 
 	Section EnchantedMaps : AnyEnchantment True, Auto("maps->enchanted")
 	{
-		Show t1  { %D6; !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
-		Show Any { %D5; !G4; !*SpecialLow; Empty(); }
+		Show t1  { !maps_specialhigh; !G3; %D6; MapTier >= Maps.Enchanted.HighTier }
+		Show Any { !maps_special; !G4; %D5; Empty(); }
 	}
 
 	Section MapsWithCorruptedMods : Auto("maps->corruptedimplicit"), CorruptedMods >= 1
 	{
-		ShowD t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier; Rarity Rare; }
-		ShowD Any { %D6; !G4; !*SpecialLow; Empty(); }
+		ShowD t1  { !maps_specialhigh; !G3; MapTier >= Maps.Enchanted.HighTier; Rarity Rare; }
+		ShowD Any { !maps_special; !G4; %D6; Empty(); }
 	}
 
 	Section ImplicitModMaps : HasImplicitMod True, Auto("maps->implicitmod")
 	{
-		ShowD t1  { !G3; !*SpecialHigh; MapTier >= Maps.Enchanted.HighTier }
-		ShowD Any { %D6; !G4; !*SpecialLow; Empty(); }
+		ShowD t1  { !maps_specialhigh; !G3; MapTier >= Maps.Enchanted.HighTier }
+		ShowD Any { !maps_special; !G4; %D6; Empty(); }
 	}
 
 #===============================================================================================================
@@ -1468,7 +1468,7 @@ Section Maps : Class == "Maps", !Maps
 
 #!! Waypoint c9.maps.generic.specialcases : "Maps - generic - optional special cases" : "Maps"
 
-	Section MapHiders : Auto("maphiders")
+	Section MapHiders : Auto("maphiders"), !hide_shrunk
 	{		
 		HideD corruptedMapHider { !shrink; Corrupted True; Rarity <= Magic; }
 		HideD mirroredMapHider { !shrink; Mirrored True; Rarity <= Magic; }
@@ -1482,30 +1482,30 @@ Section Maps : Class == "Maps", !Maps
 
 	Section GenericMaps : Auto("maps")
 	{		
-		Cont deco_zone1general { !GEX; !*deco_map_zone12; MapTier >= 14; }
-		Cont deco_zone2general { !GEX; !*deco_map_zone12; MapTier >= 11; MapTier <= 13; }
-		Cont deco_zone3general { !GEX; !*deco_map_zone34; MapTier >= 6; MapTier <= 10; }
-		Cont deco_zone4general { !GEX; !*deco_map_zone34; MapTier >= 1; MapTier <= 5; }
+		Cont deco_zone1general { !maps_decozonelow; !GEX; MapTier >= 14; }
+		Cont deco_zone2general { !maps_decozonelow; !GEX; MapTier >= 11; MapTier <= 13; }
+		Cont deco_zone3general { !maps_decozonehigh; !GEX; MapTier >= 6; MapTier <= 10; }
+		Cont deco_zone4general { !maps_decozonehigh; !GEX; MapTier >= 1; MapTier <= 5; }
 
-		Cont deco_mapup_t16 { !GEX; MapTier >= 16; AreaLevel < 83; }
-		Cont deco_mapup_t15 { !GEX; MapTier >= 15; AreaLevel < 82; }
-		Cont deco_mapup_t14 { !GEX; MapTier >= 14; AreaLevel < 81; }
-		Cont deco_mapup_t13 { %D4; !GEX; MapTier >= 13; AreaLevel < 80; }
-		Cont deco_mapup_t12 { %D4; !GEX; MapTier >= 12; AreaLevel < 79; }
-		Cont deco_mapup_t11 { %D4; !GEX; MapTier >= 11; AreaLevel < 78; }
-		Cont deco_mapup_t10 { %D3; !GEX; MapTier >= 10; AreaLevel < 77; }
-		Cont deco_mapup_t9  { %D3; !GEX; MapTier >= 9; AreaLevel < 76; }
-		Cont deco_mapup_t8  { %D3; !GEX; MapTier >= 8; AreaLevel < 75; }
-		Cont deco_mapup_t7  { %D3; !GEX; MapTier >= 7; AreaLevel < 74; }
-		Cont deco_mapup_t6  { %D3; !GEX; MapTier >= 6; AreaLevel < 73; }
-		Cont deco_mapup_t5  { %D3; !GEX; MapTier >= 5; AreaLevel < 72; }
-		Cont deco_mapup_t4  { %D3; !GEX; MapTier >= 4; AreaLevel < 71; }
-		Cont deco_mapup_t3  { %D3; !GEX; MapTier >= 3; AreaLevel < 70; }
-		Cont deco_mapup_t2  { %D3; !GEX; MapTier >= 2; AreaLevel < 69; }
-		Cont deco_mapup_t1  { %D3; !GEX; MapTier >= 1; AreaLevel < 68; }
+		Cont deco_mapup_t16 { !maps_decoupgrade; !GEX; MapTier >= 16; AreaLevel < 83; }
+		Cont deco_mapup_t15 { !maps_decoupgrade; !GEX; MapTier >= 15; AreaLevel < 82; }
+		Cont deco_mapup_t14 { !maps_decoupgrade; !GEX; MapTier >= 14; AreaLevel < 81; }
+		Cont deco_mapup_t13 { !maps_decoupgrade; !GEX; %D4; MapTier >= 13; AreaLevel < 80; }
+		Cont deco_mapup_t12 { !maps_decoupgrade; !GEX; %D4; MapTier >= 12; AreaLevel < 79; }
+		Cont deco_mapup_t11 { !maps_decoupgrade; !GEX; %D4; MapTier >= 11; AreaLevel < 78; }
+		Cont deco_mapup_t10 { !maps_decoupgrade; !GEX; %D3; MapTier >= 10; AreaLevel < 77; }
+		Cont deco_mapup_t9  { !maps_decoupgrade; !GEX; %D3; MapTier >= 9; AreaLevel < 76; }
+		Cont deco_mapup_t8  { !maps_decoupgrade; !GEX; %D3; MapTier >= 8; AreaLevel < 75; }
+		Cont deco_mapup_t7  { !maps_decoupgrade; !GEX; %D3; MapTier >= 7; AreaLevel < 74; }
+		Cont deco_mapup_t6  { !maps_decoupgrade; !GEX; %D3; MapTier >= 6; AreaLevel < 73; }
+		Cont deco_mapup_t5  { !maps_decoupgrade; !GEX; %D3; MapTier >= 5; AreaLevel < 72; }
+		Cont deco_mapup_t4  { !maps_decoupgrade; !GEX; %D3; MapTier >= 4; AreaLevel < 71; }
+		Cont deco_mapup_t3  { !maps_decoupgrade; !GEX; %D3; MapTier >= 3; AreaLevel < 70; }
+		Cont deco_mapup_t2  { !maps_decoupgrade; !GEX; %D3; MapTier >= 2; AreaLevel < 69; }
+		Cont deco_mapup_t1  { !maps_decoupgrade; !GEX; %D3; MapTier >= 1; AreaLevel < 68; }
 
-		Cont decor_implicit  	{ HasImplicitMod True; !GEX; !*NoteAcc; }
-		Cont deco_corruptedMod  { CorruptedMods >= 1; !GEX;  !*NoteAcc; }
+		Cont decor_implicit  	{ !maps_decoimplicit; !GEX; HasImplicitMod True; }
+		Cont deco_corruptedMod  { !maps_decoimplicit; !GEX; CorruptedMods >= 1;  }
 
 #------------------------------------
 # [4403] Map progression
@@ -1513,33 +1513,33 @@ Section Maps : Class == "Maps", !Maps
 
 #!! Waypoint c9.maps.generic.t16 : "Maps - t14-t16 - high reds" : "Maps"
 
-		Show maps_a_t16 { !GM1; !*z1; MapTier >= 16; }
-		Show maps_a_t15 { %H5; !GM1; !*z1; MapTier = 15; }
-		Show maps_a_t14 { %H5; !GM1; !*z1; MapTier = 14; }
+		Show maps_a_t16 { !maps_highest; !GM1; MapTier >= 16; }
+		Show maps_a_t15 { !maps_highest; !GM1; %H5; MapTier = 15; }
+		Show maps_a_t14 { !maps_highest; !GM1; %H5; MapTier = 14; }
 
 #!! Waypoint c9.maps.generic.t14 : "Maps - t11-t13 - low reds" : "Maps"
 
-		Show maps_b_t13 { !GM2; %H4; !*z2; MapTier = 13; }
-		Show maps_b_t12 { !GM2; %H4; !*z2; MapTier = 12; }
-		Show maps_b_t11 { !GM2; %H4; !*z2; MapTier = 11; }
+		Show maps_b_t13 { !maps_high; !GM2; %H4; MapTier = 13; }
+		Show maps_b_t12 { !maps_high; !GM2; %H4; MapTier = 12; }
+		Show maps_b_t11 { !maps_high; !GM2; %H4; MapTier = 11; }
 
 #!! Waypoint c9.maps.generic.t10 : "Maps - t6-t10 - yellow maps" : "Maps"
 
-		Show maps_c_t10 { !GM3; %H4; !*z3; MapTier = 10; }
-		Show maps_c_t9  { !GM3; %H4; !*z3; MapTier = 9; }
-		Show maps_c_t8  { !GM3; %H4; !*z3; MapTier = 8; }
-		Show maps_c_t7  { !GM3; %H4; !*z3; MapTier = 7; }
-		Show maps_c_t6  { !GM3; %H4; !*z3; MapTier = 6; }
+		Show maps_c_t10 { !maps_mid; !GM3; %H4; MapTier = 10; }
+		Show maps_c_t9  { !maps_mid; !GM3; %H4; MapTier = 9; }
+		Show maps_c_t8  { !maps_mid; !GM3; %H4; MapTier = 8; }
+		Show maps_c_t7  { !maps_mid; !GM3; %H4; MapTier = 7; }
+		Show maps_c_t6  { !maps_mid; !GM3; %H4; MapTier = 6; }
 
 #!! Waypoint c9.maps.generic.t5 : "maps - T1-T5 - white maps" : "Maps"
 
-		Show maps_d_t5  { !GM4; %H4; !*z4; MapTier = 5; }
-		Show maps_d_t4  { !GM4; %H4; !*z4; MapTier = 4; }
-		Show maps_d_t3  { !GM4; %H4; !*z4; MapTier = 3; }
-		Show maps_d_t2  { !GM4; %H4; !*z4; MapTier = 2; }
-		Show maps_d_t1  { !GM4; %H4; !*z4; MapTier = 1; }
+		Show maps_d_t5  { !maps_low; !GM4; %H4; MapTier = 5; }
+		Show maps_d_t4  { !maps_low; !GM4; %H4; MapTier = 4; }
+		Show maps_d_t3  { !maps_low; !GM4; %H4; MapTier = 3; }
+		Show maps_d_t2  { !maps_low; !GM4; %H4; MapTier = 2; }
+		Show maps_d_t1  { !maps_low; !GM4; %H4; MapTier = 1; }
 
-		Show restex { Empty(); }
+		Show restex { !special_restex; Empty(); }
 	}
 }
 
@@ -1550,37 +1550,37 @@ Section Maps : Class == "Maps", !Maps
 
 Section HeistUniqueMapLike : Rarity Unique, Class == "Blueprints" "Contracts", Auto("Uniques->Heist")
 {
-	Show Any { !G4; Empty(); }
+	Show Any { !uniques_replicat2; !G4; Empty(); }
 }
 
 Section Logbooks : Auto("Expedition->Logbook"), BaseType == "Expedition Logbook"
 {
-	Show Any { !exomap.high; !G2; Empty(); }
+	Show Any { !maplike_high; !G2; Empty(); }
 }
 
-Section Charts : Auto("Charts"), Class == "Chart", !newleaguetier
+Section Charts : Auto("Charts"), Class == "Chart"
 {
-	Show Any { !G3; !newleaguetier.t3; Rarity <= Rare; }
+	Show Any { !league_t3; !G3; Rarity <= Rare; }
 }
 
 Section HeistContracts : Auto("Heist->Contract"), Class == "Contracts"
 {
-	Show Enchanted  { !GSH; !exotic.t2; %H7; BaseType == Heist.Contract.Handpicked; AnyEnchantment True; Rarity <= Rare; }
-	Show HandPicked { !G5; !exomap.low; %H5; BaseType == Heist.Contract.Handpicked; Rarity <= Rare; }
-	Hide exHide { !shrink; }
+	Show Enchanted  { !exotics_t2; !GSH; %H7; BaseType == Heist.Contract.Handpicked; AnyEnchantment True; Rarity <= Rare; }
+	Show HandPicked { !maplike_contract; !G5; %H5; BaseType == Heist.Contract.Handpicked; Rarity <= Rare; }
+	Hide exHide { !hide_shrunk; !shrink; }
 }
 
 Section HeistBlueprint : Auto("Heist->Blueprint"), Class == "Blueprints"
 {
-	Show Enchanted  { !GSH; !exotic.t1; %H9; AnyEnchantment True; Rarity <= Rare; }
-	Show HandPicked { !exomap.high; !G4; BaseType == Heist.Blueprint.Handpicked; }
-	Show Any { %H8; !exomap.high; !G4; Empty(); }
+	Show Enchanted  { !exotics_t1; !GSH; %H9; AnyEnchantment True; Rarity <= Rare; }
+	Show HandPicked { !maplike_high; !G4; BaseType == Heist.Blueprint.Handpicked; }
+	Show Any { !maplike_high; !G4; %H8; Empty(); }
 }
 
-Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research"
+Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research", !maplike_high
 {
-	Show ILVL83 { %H8; ItemLevel >= 83; !exomap.high; !G2; Empty(); }
-	Show Any { %H6; !exomap.high; !G2; Empty(); }
+	Show ILVL83 { !G2; %H8; ItemLevel >= 83; Empty(); }
+	Show Any { !G2; %H6; Empty(); }
 }
 
 #===============================================================================================================
@@ -1590,10 +1590,10 @@ Section Sanctum : Auto("ExoticMap->Sanctum"), Class == "Sanctum Research"
 
 Section MiscMapSafe : Auto("MiscMapItemsExtra")
 {
-	Show RelicKeys { !G1; !Currency.t1exalted; BaseType == miscmap.keys; }
-	Show RelicKeysSafe { !G1; !Currency.t1exalted; Class == "Vault Keys"; }
-	Show ItemizedLeaguesIncursion { !G2; !fragments.t2; BaseType == "Chronicle of Atzoatl"; }
-	Show ItemizedLeaguesUltimatum { !G2; !fragments.t2; BaseType == "Inscribed Ultimatum"; }
+	Show RelicKeys { !currency_t1; !G1; BaseType == miscmap.keys; }
+	Show RelicKeysSafe { !currency_t1; !G1; Class == "Vault Keys"; }
+	Show ItemizedLeaguesIncursion { !fragments_t2; !G2; BaseType == "Chronicle of Atzoatl"; }
+	Show ItemizedLeaguesUltimatum { !fragments_t2; !G2; BaseType == "Inscribed Ultimatum"; }
 }
 
 #===============================================================================================================
@@ -1609,16 +1609,16 @@ Section MapFragments : Class == "Map Fragments" "Misc Map Items"
 #------------------------------------
 	Section Scarabs : Auto("Fragments->scarabs")
 	{
-		Show t1 { !G1; BaseType == fragments.scarabs.t1; }
-		Show t2 { %H8; !G2; BaseType == fragments.scarabs.t2; }
+		Show t1 { !fragments_t1; !G1; BaseType == fragments.scarabs.t1; }
+		Show t2 { !fragments_t2; !G2; %H8; BaseType == fragments.scarabs.t2; }
 		
-		Show t3stackedEx { %D7; !G3; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
+		Show t3stackedEx { !fragments_t3; !G3; %D7; BaseType == fragments.scarabs.t4 + fragments.scarabs.t5 + fragments.scarabs.t6; StackSize >= 3; }
 		
-		Show t3 { !G3; %HS6; BaseType == fragments.scarabs.t3 + fragments.scarabs.tnewx; }
-		Show t4 { !G4; %H5; BaseType == fragments.scarabs.t4; }
-		Show t5 { !G5; %HS4; BaseType == fragments.scarabs.t5; }
-		Show t6 { !G5; %HS3; BaseType == fragments.scarabs.t6; }
-		Show restex { BaseType "Scarab"; }
+		Show t3 { !fragments_t3; !G3; %HS6; BaseType == fragments.scarabs.t3 + fragments.scarabs.tnewx; }
+		Show t4 { !fragments_t4; !G4; %H5; BaseType == fragments.scarabs.t4; }
+		Show t5 { !fragments_t5; !G5; %HS4; BaseType == fragments.scarabs.t5; }
+		Show t6 { !fragments_t6; !G5; %HS3; BaseType == fragments.scarabs.t6; }
+		Show restex { !special_restex; BaseType "Scarab"; }
 	}
 
 #------------------------------------
@@ -1626,18 +1626,18 @@ Section MapFragments : Class == "Map Fragments" "Misc Map Items"
 #------------------------------------
 	Section FragsGeneric : Auto("Fragments")
 	{
-		Show t1 { !G1; BaseType == fragments.generic.t1; }
-		Show t3stackedex { !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
-		Show t2 { %H8; !G2; BaseType == fragments.generic.t2; }
-		Show t4 { %H7; !G3; BaseType == fragments.generic.t3; }
-		Show t5 { !G4; %HS3; BaseType == fragments.generic.t4; }
-		Show restex { Empty(); }
+		Show t1 { !fragments_t1; !G1; BaseType == fragments.generic.t1; }
+		Show t3stackedex { !fragments_t3; !G3; %DS3; BaseType == fragments.generic.t4; StackSize >= 3; }
+		Show t2 { !fragments_t2; !G2; %H8; BaseType == fragments.generic.t2; }
+		Show t4 { !fragments_t4; !G3; %H7; BaseType == fragments.generic.t3; }
+		Show t5 { !fragments_t5; !G4; %HS3; BaseType == fragments.generic.t4; }
+		Show restex { !special_restex; Empty(); }
 	}
 }
 
 Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 {
-	Show restex { !restex; Empty(); }
+	Show restex { !special_restex; !restex; Empty(); }
 }
 
 #===============================================================================================================
@@ -1645,26 +1645,26 @@ Section MiscMapItems : Class == "Misc Map Items", Auto("MiscMapItems")
 #===============================================================================================================
 #!! Waypoint c9.currency.lifeforce : "Tierlist - Currency - Lifeforce" : "Currency and Currency-Likes"
 
-Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, BaseType == currency.lifeforce.any, !Currency
+Section HarvestLifeForce : Auto("currency->harvest"), Class == class_currency, BaseType == currency.lifeforce.any
 {
-	Show t1lifeForce { %D9; StackSize >= 4000; !G1; !*t1exalted;  }
-	Show t2lifeForce { %D8; StackSize >= 500; !G2; !*t2divine; }
-	Show t3lifeForce { %D7; StackSize >= 250; !G3; !*t3annul; }
-	Show t4lifeForce { %D6; StackSize >= 45; !G4; !*t4chaos; }
-	Show t5lifeForce { %D6; StackSize >= 20; !G4; !*t5alchemy; }
-	Show t6lifeForce { %H5; !G5H; !*t6chrom; }
+	Show t1lifeForce { !currency_t1; !G1; %D9; StackSize >= 4000; }
+	Show t2lifeForce { !currency_t2; !G2; %D8; StackSize >= 500; }
+	Show t3lifeForce { !currency_t3; !G3; %D7; StackSize >= 250; }
+	Show t4lifeForce { !currency_t4; !G4; %D6; StackSize >= 45; }
+	Show t5lifeForce { !currency_t5; !G4; %D6; StackSize >= 20; }
+	Show t6lifeForce { !currency_t6; !G5H; %H5; }
 
-	Hide exHide 	 { !shrink; BaseType == currency.lifeforce.any; }
+	Hide exHide 	 { !hide_shrunk; !shrink; BaseType == currency.lifeforce.any; }
 }
 
-Section DeadManSulphur : Auto("currency->deadmansulphur"), Class == class_currency, BaseType == "Dead Man's Sulphur", !Currency
+Section DeadManSulphur : Auto("currency->deadmansulphur"), Class == class_currency, BaseType == "Dead Man's Sulphur"
 {
-	Show t1 { StackSize >= 20000; !G1; !*t1exalted;  }
-	Show t2 { %D8; StackSize >= 5000; !G2; !*t2divine; }
-	Show t3 { %D7; StackSize >= 1500; !G3; !*t3annul; }
-	Show t4 { %D6; StackSize >= 200; !G4; !*t4chaos; }
-	Show t5 { %D6; StackSize >= 100; !G4; !*t5alchemy; }
-	Show t6 { %H5; !G5H; !*t6chrom; }
+	Show t1 { !currency_t1; !G1; StackSize >= 20000; }
+	Show t2 { !currency_t2; !G2; %D8; StackSize >= 5000; }
+	Show t3 { !currency_t3; !G3; %D7; StackSize >= 1500; }
+	Show t4 { !currency_t4; !G4; %D6; StackSize >= 200; }
+	Show t5 { !currency_t5; !G4; %D6; StackSize >= 100; }
+	Show t6 { !currency_t6; !G5H; %H5; }
 }
 
 #===============================================================================================================
@@ -1672,31 +1672,31 @@ Section DeadManSulphur : Auto("currency->deadmansulphur"), Class == class_curren
 #===============================================================================================================
 #!! Waypoint c9.currency.leveling.all : "Tierlist - Currency - Leveling Stacked Currency" : "Leveling"
 
-Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class == class_currency, AreaLevel <= 67, !Currency
+Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class == class_currency, AreaLevel <= 67
 {
-	Show t2chance   { %D4; !G3; !*t5alchemy; !Maximize; !LevelCurrencyHigh; StackSize >= 3; BaseType == currency.leveling.t2gemCurrencyHigh; }
-	Show t3trans 	{ %D4; !G3; !G4; !*t6chrom !Maximize; !LevelCurrency; StackSize >= 3; BaseType == currency.leveling.t3gemCurrency; }
-	Show t4misc     { %D4; !G5H; !G4; !*t6chrom; !Maximize; !LevelCurrency; StackSize >= 3; BaseType == currency.leveling.t4quality; }
-	Show t5aug      { %D4; !G5H; !*t8trans; !Maximize; StackSize >= 3; BaseType == currency.leveling.t5aug; }
+	Show t2chance   { !currency_lvlchance; !G3; %D4; StackSize >= 3; BaseType == currency.leveling.t2gemCurrencyHigh; }
+	Show t3trans 	{ !currency_t6; !G3; !G4; %D4; StackSize >= 3; BaseType == currency.leveling.t3gemCurrency; }
+	Show t4misc     { !currency_t6; !G5H; !G4; %D4; StackSize >= 3; BaseType == currency.leveling.t4quality; }
+	Show t5aug      { !currency_t8; !G5H; %D4; StackSize >= 3; BaseType == currency.leveling.t5aug; }
 
-	Show portal   { %D4; !G5; !*tportHigh; !Maximize; StackSize >= 2; BaseType == currency.leveling.portal; }
-	Show wisdom   { %D3; !G5; !*twisdHigh; !Maximize; StackSize >= 2; BaseType == currency.leveling.wisdom; }
+	Show portal   { !currency_portalstack; !SF45T3; !G5; %D4; StackSize >= 2; BaseType == currency.leveling.portal; }
+	Show wisdom   { !currency_wisdomstack; !SF45T3; !G5; %D3; StackSize >= 2; BaseType == currency.leveling.wisdom; }
 }
 
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency" : "Leveling"
-Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, AreaLevel <= 67, !Currency
+Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency, AreaLevel <= 67
 {
-	Show essences { %D5; !G3;  !*t5alchemy; !Maximize; !LevelCurrency; BaseType currency.leveling.essences; }
-	Show t1binding  { %D5; !G3;  !*t4chaos; !Maximize; !LevelCurrencyHigh; BaseType == currency.leveling.t1binding; }
+	Show essences { !currency_lvlessence; !G3; %D5;  BaseType currency.leveling.essences; }
+	Show t1binding  { !currency_lvlchaos; !G3; %D5;  BaseType == currency.leveling.t1binding; }
 
-	Show t2chance     { %D4; !G3;  !*t5alchemy; !Maximize; !LevelCurrencyHigh; BaseType == currency.leveling.t2gemCurrencyHigh; }
-	Show t3transEarly { %D4; !G3;  !*t6chrom; !Maximize; !LevelCurrency; BaseType == currency.leveling.t3gemCurrency; AreaLevel <= leveling.keylevels.act3; }
-	Show t3trans 	  { %D4; !G5H; !*t8trans; !Maximize; BaseType == currency.leveling.t3gemCurrency; }
-	Show t4misc       { %D4; !G5;  !*t6chrom; !Maximize; !LevelCurrency; BaseType == currency.leveling.t4quality; }
-	Show t5aug        { %D4; !G5;  !*t8trans; !Maximize; BaseType == currency.leveling.t5aug; }
+	Show t2chance     { !currency_lvlchance; !G3; %D4;  BaseType == currency.leveling.t2gemCurrencyHigh; }
+	Show t3transEarly { !currency_t6; !G3; %D4;  BaseType == currency.leveling.t3gemCurrency; AreaLevel <= leveling.keylevels.act3; }
+	Show t3trans 	  { !currency_t8; !G5H; %D4; BaseType == currency.leveling.t3gemCurrency; }
+	Show t4misc       { !currency_t6; !G5; %D4;  BaseType == currency.leveling.t4quality; }
+	Show t5aug        { !currency_t8; !G5; %D4;  BaseType == currency.leveling.t5aug; }
 
-	Show portal   { %D4; !G6H; !*tportal; !Maximize; BaseType == currency.leveling.portal; }
-	Show wisdom   { %D3; !G6H; !*twisdom; !Maximize; BaseType == currency.leveling.wisdom; }
+	Show portal   { !currency_portalleveling; !G6H; %D4; BaseType == currency.leveling.portal; }
+	Show wisdom   { !currency_wisdomleveling; !G6H; %D3; BaseType == currency.leveling.wisdom; }
 }
 
 #===============================================================================================================
@@ -1708,76 +1708,76 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_currency
 #------------------------------------
 #!! Waypoint c9.currency.stacked.all : "Tierlist - Currency - Endgame Stacked" : "Currency and Currency-Likes"
 
-Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class == class_currency, !currency
+Section StackedSuppliesHigh : Auto("Currency->StackedSuppliesHigh"), Class == class_currency
 {	
 	## Whetstones, augments and transmutes
-	Show t1	{ %DS4; !*t5alchemy; !G4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
-	Show t2	{ %DS3; !*t7chance; !G5H;  StackSize >= 5; BaseType == currency.stacked.supplies.higher; }
-	Show t3	{ %D3;  !*t7chance; !G6H;  StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
+	Show t1	{ !currency_t5; !G4; %DS4; StackSize >= 10; BaseType == currency.stacked.supplies.higher; }
+	Show t2	{ !currency_t7; !G5H; %DS3;  StackSize >= 5; BaseType == currency.stacked.supplies.higher; }
+	Show t3	{ !currency_t7; !G6H;  %D3;  StackSize >= 3; BaseType == currency.stacked.supplies.higher; }
 }
 
 #------------------------------------
 # [4702] Supplies: Low Stacking
 #------------------------------------
 
-Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class == class_currency, !currency
+Section StackedSuppliesLow : Auto("Currency->StackedSuppliesLow"), Class == class_currency
 {	
 	## Armourers
-	Show t1	{ %DS4; !G4;  !*t6chrom;   StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
-	Show t2	{ %DS3; !G5H; !*t7chance;  StackSize >= 5; BaseType == currency.stacked.supplies.lower; }
-	Show t3	{ %D3; !G5;   !*t8trans;    StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
+	Show t1	{ !currency_t6; !G4; %DS4;  StackSize >= 10; BaseType == currency.stacked.supplies.lower; }
+	Show t2	{ !currency_t7; !G5H; %DS3; StackSize >= 5; BaseType == currency.stacked.supplies.lower; }
+	Show t3	{ !currency_t8; !G5; %D3;   StackSize >= 3; BaseType == currency.stacked.supplies.lower; }
 }
 
 #------------------------------------
 # [4702] Supplies: Portal Stacking
 #------------------------------------
 
-Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class == class_currency, !currency
+Section StackedSuppliesPortal : Auto("Currency->StackedSuppliesPortal"), Class == class_currency
 {	
-	Show t1	{ %DS4; !G5; !*tportHigh;  StackSize >= 10; BaseType == currency.stacked.supplies.portal; }
-	Show t2	{ %D3; !G5;  !*tportHigh;   StackSize >= 5; BaseType == currency.stacked.supplies.portal; }
-	Show t3	{ %D2; !G6H; !*tportal;    StackSize >= 3; BaseType == currency.stacked.supplies.portal; }
+	Show t1	{ !currency_portalstack; !G5; %DS4; StackSize >= 10; BaseType == currency.stacked.supplies.portal; }
+	Show t2	{ !currency_portalstack; !G5; %D3;  StackSize >= 5; BaseType == currency.stacked.supplies.portal; }
+	Show t3	{ !currency_portal; !G6H; %D2; StackSize >= 3; BaseType == currency.stacked.supplies.portal; }
 }
 
 #------------------------------------
 # [4702] Supplies: Wisdom Stacking
 #------------------------------------
 
-Section StackedCurrencyWisdom : Auto("Currency->StackedSuppliesWisdom"), Class == class_currency, !currency
+Section StackedCurrencyWisdom : Auto("Currency->StackedSuppliesWisdom"), Class == class_currency
 {	
-	Show t1	{ %DS4; !*twisdHigh; !G5;  StackSize >= 10; BaseType == currency.stacked.supplies.wisdom; }
-	Show t2	{ %D3; !*twisdHigh; !G5;   StackSize >= 5; BaseType == currency.stacked.supplies.wisdom; }
-	Show t3	{ %D2; !*twisdom; !G6H;    StackSize >= 3; BaseType == currency.stacked.supplies.wisdom; }
+	Show t1	{ !currency_wisdomstack; !G5; %DS4;  StackSize >= 10; BaseType == currency.stacked.supplies.wisdom; }
+	Show t2	{ !currency_wisdomstack; !G5; %D3;   StackSize >= 5; BaseType == currency.stacked.supplies.wisdom; }
+	Show t3	{ !currency_wisdom; !G6H; %D2;    StackSize >= 3; BaseType == currency.stacked.supplies.wisdom; }
 }
 
 #------------------------------------
 # [4702] Stacked Currencies: 6x
 #------------------------------------
 
-Section StackedCurrencySix : Auto("Currency->StackedSix"), Class == class_currency, StackSize >= 6, !currency
+Section StackedCurrencySix : Auto("Currency->StackedSix"), Class == class_currency, StackSize >= 6
 {
-	Show t1	{ !G1; %D9; !*t1exalted; BaseType == currency.stackedSix.t1 + currency.stackedSixStatic.t1; }
-	Show t2	{ !G2; %D8; !*t2divine; BaseType == currency.stackedSix.t2 + currency.stackedSixStatic.t2; }
-	Show t3	{ !G3; %D7; !*t3annul; BaseType == currency.stackedSix.t3 + currency.stackedSixStatic.t3 ; }
-	Show t4	{ !G3; %D6; !*t4chaos; BaseType == currency.stackedSix.t4 + currency.stackedSixStatic.t4; }
-	Show t5	{ !G4; %DS4; !*t5alchemy; BaseType == currency.stackedSix.t5 + currency.stackedSixStatic.t5; }
-	Show t6	{ !G4; %DS3; !*t6chrom; BaseType == currency.stackedSix.t6 + currency.stackedSixStatic.t6; }
-	Show t7	{ !G5; %DS2; !*t7chance; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
+	Show t1	{ !currency_t1; !G1; %D9; BaseType == currency.stackedSix.t1 + currency.stackedSixStatic.t1; }
+	Show t2	{ !currency_t2; !G2; %D8; BaseType == currency.stackedSix.t2 + currency.stackedSixStatic.t2; }
+	Show t3	{ !currency_t3; !G3; %D7; BaseType == currency.stackedSix.t3 + currency.stackedSixStatic.t3 ; }
+	Show t4	{ !currency_t4; !G3; %D6; BaseType == currency.stackedSix.t4 + currency.stackedSixStatic.t4; }
+	Show t5	{ !currency_t5; !G4; %DS4; BaseType == currency.stackedSix.t5 + currency.stackedSixStatic.t5; }
+	Show t6	{ !currency_t6; !G4; %DS3; BaseType == currency.stackedSix.t6 + currency.stackedSixStatic.t6; }
+	Show t7	{ !currency_t7; !G5; %DS2; BaseType == currency.stackedSix.t7 + currency.stackedSixStatic.t7; }
 }
 
 #------------------------------------
 # [4702] Stacked Currencies: 3x
 #------------------------------------
 
-Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class == class_currency, StackSize >= 3, !currency
+Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class == class_currency, StackSize >= 3
 {
-	Show t1	{ !G1; %D9; !*t1exalted; BaseType == currency.stackedThree.t1 + currency.stackedThreeStatic.t1; }
-	Show t2	{ !G2; %D8; !*t2divine; BaseType == currency.stackedThree.t2 + currency.stackedThreeStatic.t2; }
-	Show t3	{ !G3; %D7; !*t3annul; BaseType == currency.stackedThree.t3 + currency.stackedThreeStatic.t3; }
-	Show t4	{ !G3; %D6; !*t4chaos; BaseType == currency.stackedThree.t4 + currency.stackedThreeStatic.t4; }
-	Show t5	{ !G4; %DS4; !*t5alchemy; BaseType == currency.stackedThree.t5 + currency.stackedThreeStatic.t5; }
-	Show t6	{ !G4; %DS3; !*t6chrom; BaseType == currency.stackedThree.t6 + currency.stackedThreeStatic.t6; }
-	Show t7	{ !G5; %DS2; !*t7chance; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
+	Show t1	{ !currency_t1; !G1; %D9; BaseType == currency.stackedThree.t1 + currency.stackedThreeStatic.t1; }
+	Show t2	{ !currency_t2; !G2; %D8; BaseType == currency.stackedThree.t2 + currency.stackedThreeStatic.t2; }
+	Show t3	{ !currency_t3; !G3; %D7; BaseType == currency.stackedThree.t3 + currency.stackedThreeStatic.t3; }
+	Show t4	{ !currency_t4; !G3; %D6; BaseType == currency.stackedThree.t4 + currency.stackedThreeStatic.t4; }
+	Show t5	{ !currency_t5; !G4; %DS4; BaseType == currency.stackedThree.t5 + currency.stackedThreeStatic.t5; }
+	Show t6	{ !currency_t6; !G4; %DS3; BaseType == currency.stackedThree.t6 + currency.stackedThreeStatic.t6; }
+	Show t7	{ !currency_t7; !G5; %DS2; BaseType == currency.stackedThree.t7 + currency.stackedThreeStatic.t7; }
 }
 
 #!! Waypoint c9.currency.heistcoins : "Tierlist - Currency - Heist Coins" : "Heist, Expedition, Sanctum"
@@ -1788,14 +1788,14 @@ Section StackedCurrencyThree : Auto("Currency->StackedThree"), Class == class_cu
 
 Section CurrencyCoinsHeist : Auto("currency->heist"), Class == class_currency
 {
-	Show HighStack { %H5; !G4; !Coins.Huge; StackSize >= 400; BaseType == "Rogue's Marker"; }
-	Show Any { %H4; !G5; !Coins.Large; BaseType == "Rogue's Marker"; }
-	Hide exHide { !shrink; BaseType == "Rogue's Marker"; }
+	Show HighStack { !currency_coinshuge; !G4; %H5; StackSize >= 400; BaseType == "Rogue's Marker"; }
+	Show Any { !currency_coinslarge; !G5; %H4; BaseType == "Rogue's Marker"; }
+	Hide exHide { !hide_shrunk; !shrink; BaseType == "Rogue's Marker"; }
 }
 
-Section LeagueExclusiveCurrency : Auto("currency->leagueExclusive"), !newleaguetier
+Section LeagueExclusiveCurrency : Auto("currency->leagueExclusive")
 {
-	Show SilverCoin { !newleaguetier.t3; !G3; BaseType == "Silver Coin"; }
+	Show SilverCoin { !league_t3; !G3; BaseType == "Silver Coin"; }
 }
 
 #===============================================================================================================
@@ -1803,19 +1803,19 @@ Section LeagueExclusiveCurrency : Auto("currency->leagueExclusive"), !newleaguet
 #===============================================================================================================
 #!! Waypoint c9.currency.single : "Tierlist - Currency - General" : "Currency and Currency-Likes"
 
-Section CurrencyTiering : Auto("Currency"), Class == class_currency, !Currency
+Section CurrencyTiering : Auto("Currency"), Class == class_currency
 {
-	Show t1exalted 	{ !G1; !*t1exalted; BaseType == currency.generic.t1; }
-	Show t2divine 	{ !G2; %H8; !*t2divine; BaseType == currency.generic.t2divine + currency.tnew; }
-	Show t3annul 	{ !G3; %H7; !*t3annul; BaseType == currency.generic.t3annul; }
-	Show t4chaos 	{ !G4; %H6; !*t4chaos; BaseType == currency.generic.t4chaos; }
-	Show t5alchemy 	{ !G4;  %HS4; !*t5alchemy; BaseType == currency.generic.t5alchemy ; }
-	Show t6chrom 	{ !G5H; %HS3; !*t6chrom; BaseType == currency.generic.t6chrom; }
-	Show t7chance 	{ !G5;  %HS2; !*t7chance; BaseType == currency.generic.t7chance; }
-	Show t8trans 	{ !G6H; %HS1; !*t8trans; BaseType == currency.generic.t8trans; }
-	Show t9armour 	{ !G6H; %H1; !*t9armour; BaseType == currency.generic.t9armour; }
-	Show tportal 	{ !G6;  %H1; !*tportal; BaseType == currency.generic.tportal; }
-	Show twisdom 	{ !G6;  %H1; !*twisdom; BaseType == currency.generic.twisdom; }
+	Show t1exalted 	{ !currency_t1; !G1; BaseType == currency.generic.t1; }
+	Show t2divine 	{ !currency_t2; !G2; %H8; BaseType == currency.generic.t2divine + currency.tnew; }
+	Show t3annul 	{ !currency_t3; !G3; %H7; BaseType == currency.generic.t3annul; }
+	Show t4chaos 	{ !currency_t4; !G4; %H6; BaseType == currency.generic.t4chaos; }
+	Show t5alchemy 	{ !currency_t5; !G4;  %HS4; BaseType == currency.generic.t5alchemy ; }
+	Show t6chrom 	{ !currency_t6; !G5H; %HS3; BaseType == currency.generic.t6chrom; }
+	Show t7chance 	{ !currency_t7; !G5;  %HS2; BaseType == currency.generic.t7chance; }
+	Show t8trans 	{ !currency_t8; !G6H; %HS1; BaseType == currency.generic.t8trans; }
+	Show t9armour 	{ !currency_t9; !G6H; %H1; BaseType == currency.generic.t9armour; }
+	Show tportal 	{ !currency_portal; !G6;  %H1; BaseType == currency.generic.tportal; }
+	Show twisdom 	{ !currency_wisdom; !G6;  %H1; BaseType == currency.generic.twisdom; }
 }
 
 #===============================================================================================================
@@ -1827,24 +1827,24 @@ Section CurrencyTiering : Auto("Currency"), Class == class_currency, !Currency
 #------------------------------------
 #!! Waypoint c9.currency.vials.all : "Tierlist - Currency - Vials" : "Currency and Currency-Likes"
 
-Section CurrencyVials : Auto("vials"), Class == class_currency, !Currency
+Section CurrencyVials : Auto("vials"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.vials.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == currency.vials.t2; }
-	Show t3 { !G4; %HS4; !*t4chaos; BaseType == currency.vials.t3; }
-	Show restex { BaseType "Vial of"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.vials.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.vials.t2; }
+	Show t3 { !currency_t4; !G4; %HS4; BaseType == currency.vials.t3; }
+	Show restex { !special_restex; BaseType "Vial of"; }
 }
 
 #------------------------------------
 # [5104] Delirum Orbs
 #------------------------------------
 #!! Waypoint c9.currency.delirium.all : "Tierlist - Currency - Delirium Orbs" : "Currency and Currency-Likes"
-Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class == class_currency, !Currency
+Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.deliriumorb.t1; }
-	Show t2 { %H8; !G2; !*t2divine; BaseType == currency.deliriumorb.t2; }
-	Show t3 { %H7; !G4; !*t4chaos; BaseType == currency.deliriumorb.t3; }
-	Show restex { BaseType "Delirium Orb"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.deliriumorb.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.deliriumorb.t2; }
+	Show t3 { !currency_t4; !G4; %H7; BaseType == currency.deliriumorb.t3; }
+	Show restex { !special_restex; BaseType "Delirium Orb"; }
 }
 
 #------------------------------------
@@ -1852,15 +1852,15 @@ Section DeliriumOrbs : Auto("currency->deliriumorbs"), Class == class_currency, 
 #------------------------------------
 #!! Waypoint c9.currency.fossils.all : "Tierlist - Fossils and Resonators" : "Currency and Currency-Likes"
 
-Section CurrencyDelveFossil : Auto("currency->fossil"), Class == class_currency + "Delve Stackable Socketable Currency", !Currency
+Section CurrencyDelveFossil : Auto("currency->fossil"), Class == class_currency + "Delve Stackable Socketable Currency"
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.fossil.t1 + currency.resonator.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == currency.fossil.t2; }
-	Show t3 { !G4; %HS5; !*t3annul; BaseType == currency.fossil.t3; }
-	Show t4 { !G5; %HS4; !*t4chaos; BaseType == currency.fossil.t4 + currency.resonator.t2; }
-	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.fossil.t5 + currency.resonator.t3; }
-	Hide exHide { !shrink; BaseType == currency.resonator.t1 + currency.resonator.t2 + currency.resonator.t3 + currency.fossil.t1 + currency.fossil.t2 + currency.fossil.t3 + currency.fossil.t4  + currency.fossil.t5; }
-	Show restex { BaseType "Fossil" "Resonator"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.fossil.t1 + currency.resonator.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.fossil.t2; }
+	Show t3 { !currency_t3; !G4; %HS5; BaseType == currency.fossil.t3; }
+	Show t4 { !currency_t4; !G5; %HS4; BaseType == currency.fossil.t4 + currency.resonator.t2; }
+	Show t5 { !currency_t6; !G5; %HS3; BaseType == currency.fossil.t5 + currency.resonator.t3; }
+	Hide exHide { !hide_shrunk; !shrink; BaseType == currency.resonator.t1 + currency.resonator.t2 + currency.resonator.t3 + currency.fossil.t1 + currency.fossil.t2 + currency.fossil.t3 + currency.fossil.t4  + currency.fossil.t5; }
+	Show restex { !special_restex; BaseType "Fossil" "Resonator"; }
 }
 
 #------------------------------------
@@ -1868,15 +1868,15 @@ Section CurrencyDelveFossil : Auto("currency->fossil"), Class == class_currency 
 #------------------------------------
 #!! Waypoint c9.currency.ducats.all : "Tierlist - Allflame Ducats" : "Currency and Currency-Likes"
 
-Section CurrencyDucats : Auto("currency->ducats"), Class == class_currency, !Currency
+Section CurrencyDucats : Auto("currency->ducats"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.ducats.t1; }
-	Show t2 { !G2; %H9; !*t2divine; BaseType == currency.ducats.t2; }
-	Show t3 { !G4; %H8; !*t3annul; BaseType == currency.ducats.t3; }
-	Show t4 { !G5; %H7; !*t4chaos; BaseType == currency.ducats.t4; }
-	Show t5 { !G5; %H5; !*t6chrom; BaseType == currency.ducats.t5; }
-	Hide exHide { !shrink; BaseType == currency.ducats.t1 + currency.ducats.t2 + currency.ducats.t3 + currency.ducats.t4 + currency.ducats.t5; }
-	Show restex { BaseType "Ducat"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.ducats.t1; }
+	Show t2 { !currency_t2; !G2; %H9; BaseType == currency.ducats.t2; }
+	Show t3 { !currency_t3; !G4; %H8; BaseType == currency.ducats.t3; }
+	Show t4 { !currency_t4; !G5; %H7; BaseType == currency.ducats.t4; }
+	Show t5 { !currency_t6; !G5; %H5; BaseType == currency.ducats.t5; }
+	Hide exHide { !hide_shrunk; !shrink; BaseType == currency.ducats.t1 + currency.ducats.t2 + currency.ducats.t3 + currency.ducats.t4 + currency.ducats.t5; }
+	Show restex { !special_restex; BaseType "Ducat"; }
 }
 
 #------------------------------------
@@ -1884,15 +1884,15 @@ Section CurrencyDucats : Auto("currency->ducats"), Class == class_currency, !Cur
 #------------------------------------
 #!! Waypoint c9.currency.oils.all : "Tierlist - Oils" : "Currency and Currency-Likes"
 
-Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Currency
+Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.oil.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == currency.oil.t2; }
-	Show t3 { !G4; %HS5; !*t3annul; BaseType == currency.oil.t3; }
-	Show t4 { !G5; %HS4; !*t4chaos; BaseType == currency.oil.t4; }
-	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.oil.t5; }
-	Hide exHide { !shrink; BaseType == currency.oil.t1 + currency.oil.t2 + currency.oil.t3 + currency.oil.t4  + currency.oil.t5; }
-	Show restex { BaseType "Oil"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.oil.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.oil.t2; }
+	Show t3 { !currency_t3; !G4; %HS5; BaseType == currency.oil.t3; }
+	Show t4 { !currency_t4; !G5; %HS4; BaseType == currency.oil.t4; }
+	Show t5 { !currency_t6; !G5; %HS3; BaseType == currency.oil.t5; }
+	Hide exHide { !hide_shrunk; !shrink; BaseType == currency.oil.t1 + currency.oil.t2 + currency.oil.t3 + currency.oil.t4  + currency.oil.t5; }
+	Show restex { !special_restex; BaseType "Oil"; }
 }
 
 #------------------------------------
@@ -1900,28 +1900,28 @@ Section CurrencyBlightOils : Auto("currency->oil"), Class == class_currency, !Cu
 #------------------------------------
 #!! Waypoint c9.runes.all : "Tierlist - Runes and Corpses" : "Currency and Currency-Likes"
 
-Section SettlerRunes : Auto("runesGrafts"), Class == class_currency, !Currency
+Section SettlerRunes : Auto("runesGrafts"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == runegrafts.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == runegrafts.t2; }
-	Show t3 { !G4; %HS6; !*t3annul; BaseType == runegrafts.t3; }
-	Show t4 { !G5; %HS5; !*t4chaos; BaseType == runegrafts.t4; }
-	Show t5 { !G5; %HS3; !*t6chrom; BaseType == runegrafts.t5; }
-	Show restex { BaseType "Runegraft"; }
+	Show t1 { !currency_t1; !G1; BaseType == runegrafts.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == runegrafts.t2; }
+	Show t3 { !currency_t3; !G4; %HS6; BaseType == runegrafts.t3; }
+	Show t4 { !currency_t4; !G5; %HS5; BaseType == runegrafts.t4; }
+	Show t5 { !currency_t6; !G5; %HS3; BaseType == runegrafts.t5; }
+	Show restex { !special_restex; BaseType "Runegraft"; }
 }
 
 #------------------------------------
 # [5104] Corpses
 #------------------------------------
 
-Section Corpses : Auto("corpses"), Class == "Corpses", !Currency
+Section Corpses : Auto("corpses"), Class == "Corpses"
 {
-	Show t1 { !G1; !*t1exalted; BaseType == corpses.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == corpses.t2; }
-	Show t3 { !G4; %HS5; !*t3annul; BaseType == corpses.t3; }
-	Show t4 { !G5; %HS4; !*t4chaos; BaseType == corpses.t4; }
-	Show t5 { !G5; %HS3; !*t6chrom; BaseType == corpses.t5; }
-	Show restex { Empty(); }
+	Show t1 { !currency_t1; !G1; BaseType == corpses.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == corpses.t2; }
+	Show t3 { !currency_t3; !G4; %HS5; BaseType == corpses.t3; }
+	Show t4 { !currency_t4; !G5; %HS4; BaseType == corpses.t4; }
+	Show t5 { !currency_t6; !G5; %HS3; BaseType == corpses.t5; }
+	Show restex { !special_restex; Empty(); }
 }
 
 #------------------------------------
@@ -1929,71 +1929,71 @@ Section Corpses : Auto("corpses"), Class == "Corpses", !Currency
 #------------------------------------
 #!! Waypoint c9.currency.essences.all : "Tierlist - Essences, Omen, Tattoos" : "Currency and Currency-Likes"
 
-Section CurrencyEssence : Auto("currency->essence"), Class == class_currency, !Currency
+Section CurrencyEssence : Auto("currency->essence"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.essence.t1; }
-	Show t2 { !G2; %H8; !*t2divine; BaseType == currency.essence.t2; }
-	Show t3 { !G4; %HS5; !*t4chaos; BaseType == currency.essence.t3; }
-	Show t4 { !G5; %HS4; !*t5alchemy; BaseType == currency.essence.t4; }
-	Show t5 { !G5; %HS3; !*t6chrom; BaseType == currency.essence.t5; }
-	Show t6 { !G5; %HS2; !*t8trans; BaseType == currency.essence.t6; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.essence.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.essence.t2; }
+	Show t3 { !currency_t4; !G4; %HS5; BaseType == currency.essence.t3; }
+	Show t4 { !currency_t5; !G5; %HS4; BaseType == currency.essence.t4; }
+	Show t5 { !currency_t6; !G5; %HS3; BaseType == currency.essence.t5; }
+	Show t6 { !currency_t8; !G5; %HS2; BaseType == currency.essence.t6; }
 	
-	Hide exHide { !shrink; BaseType == currency.essence.t1 + currency.essence.t2 + currency.essence.t3 + currency.essence.t4 + currency.essence.t5 + currency.essence.t6; }
-	Show restex { BaseType "Essence of"; }
+	Hide exHide { !hide_shrunk; !shrink; BaseType == currency.essence.t1 + currency.essence.t2 + currency.essence.t3 + currency.essence.t4 + currency.essence.t5 + currency.essence.t6; }
+	Show restex { !special_restex; BaseType "Essence of"; }
 }
 
 #------------------------------------
 # [5104] Ritual
 #------------------------------------
 
-Section CurrencyOmen : Auto("currency->trial->omen"), Class == class_currency, !Currency
+Section CurrencyOmen : Auto("currency->trial->omen"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.omen.t1; }
-	Show t2 { !G2; !*t2divine; %H8; BaseType == currency.omen.t2; }
-	Show t3 { !G3; !*t3annul; %H7; BaseType == currency.omen.t3; }
-	Show t4 { !G4; !*t4chaos; %H5; BaseType == currency.omen.t4; }
-	Show t5 { !G5; !*t6chrom; %HS3; BaseType == currency.omen.t5; }
-	Show restex { BaseType "Omen of"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.omen.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.omen.t2; }
+	Show t3 { !currency_t3; !G3; %H7; BaseType == currency.omen.t3; }
+	Show t4 { !currency_t4; !G4; %H5; BaseType == currency.omen.t4; }
+	Show t5 { !currency_t6; !G5; %HS3; BaseType == currency.omen.t5; }
+	Show restex { !special_restex; BaseType "Omen of"; }
 }
 
 #------------------------------------
 # [5104] Trial of the Ancestors
 #------------------------------------
 
-Section CurrencyTrialTattoo : Auto("currency->trial->tattoo"), Class == class_currency, !Currency
+Section CurrencyTrialTattoo : Auto("currency->trial->tattoo"), Class == class_currency
 {
-	Show t1 { !G1; !*t1exalted; BaseType == currency.trial.tattoo.t1; }
-	Show t2 { !G2; !*t2divine; %H8; BaseType == currency.trial.tattoo.t2; }
-	Show t3 { !G3; !*t3annul; %H7; BaseType == currency.trial.tattoo.t3; }
-	Show t4 { !G4; !*t4chaos; %H6; BaseType == currency.trial.tattoo.t4; }
-	Show restex { BaseType "Tattoo of"; }
+	Show t1 { !currency_t1; !G1; BaseType == currency.trial.tattoo.t1; }
+	Show t2 { !currency_t2; !G2; %H8; BaseType == currency.trial.tattoo.t2; }
+	Show t3 { !currency_t3; !G3; %H7; BaseType == currency.trial.tattoo.t3; }
+	Show t4 { !currency_t4; !G4; %H6; BaseType == currency.trial.tattoo.t4; }
+	Show restex { !special_restex; BaseType "Tattoo of"; }
 }
 
 #------------------------------------
 # [5104] Currency with a state - scrying orbs, lens, imprints
 #------------------------------------
 
-Section CurrencyExotic : Auto("currency->others"), Class == class_currency, !Currency
+Section CurrencyExotic : Auto("currency->others"), Class == class_currency
 {
-	Show miscHigh { !G2; !*t2divine; BaseType == currency.exotic.misc1; }
-	Show miscLow { !G3; !*t3annul; BaseType == currency.exotic.misc2; }
+	Show miscHigh { !currency_t2; !G2; BaseType == currency.exotic.misc1; }
+	Show miscLow { !currency_t3; !G3; BaseType == currency.exotic.misc2; }
 }
 
 #------------------------------------
 # [5104] Wombgifts
 #------------------------------------
 
-Section Wombgifts : Auto("exotic->wombgifts"), Class == "Wombgifts", !Currency
+Section Wombgifts : Auto("exotic->wombgifts"), Class == "Wombgifts"
 {
 	## Wombgifts that are very expensive at level 84 (if any)
-	Show t2ilvl84	{ !G1; !*t2divine; ItemLevel >= 84; BaseType == bases.wombgifts.t2lvl84; }
+	Show t2ilvl84	{ !currency_t2; !G1; ItemLevel >= 84; BaseType == bases.wombgifts.t2lvl84; }
 	## Wombgifts that are very expensive BELOW itemlevel 69 (if any)
-	Show t2ilvl68 { !G1; !*t2divine; ItemLevel <= 68; BaseType == bases.wombgifts.t2lvl68; }
+	Show t2ilvl68 { !currency_t2; !G1; ItemLevel <= 68; BaseType == bases.wombgifts.t2lvl68; }
 
-	Show t2	{ !G1; !*t2divine; BaseType == bases.wombgifts.t2; }
-	Show t3	{ !G3; !*t3annul; %H8; BaseType == bases.wombgifts.t3; }
-	Show t4	{ !G4; !*t4chaos; %H6; BaseType == bases.wombgifts.t4; }
-	Show t5	{ !G5; !*t6chrom; %H4; BaseType == bases.wombgifts.t5; }
+	Show t2	{ !currency_t2; !G1; BaseType == bases.wombgifts.t2; }
+	Show t3	{ !currency_t3; !G3; %H8; BaseType == bases.wombgifts.t3; }
+	Show t4	{ !currency_t4; !G4; %H6; BaseType == bases.wombgifts.t4; }
+	Show t5	{ !currency_t6; !G5; %H4; BaseType == bases.wombgifts.t5; }
 }
 
 #===============================================================================================================
@@ -2005,32 +2005,32 @@ Section Wombgifts : Auto("exotic->wombgifts"), Class == "Wombgifts", !Currency
 #------------------------------------
 #!! Waypoint c9.splinters.all : "Tierlist - Splinters" : "Scarabs and Fragments"
 
-Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class == class_currency, !currency
+Section StackedCurrencySplintersHigh : Auto("Currency->StackedSplintersHigh"), Class == class_currency
 {
-	Show t1	{ %D6;  !G1; !*t2divine; StackSize >= 80; BaseType == fragments.generic.t1splinters; }
-	Show t2	{ %D6;  !G2; !*t3annul; StackSize >= 25; BaseType == fragments.generic.t1splinters; }
-	Show t3	{ %D6;  !G3; !*t4chaos; StackSize >= 10; BaseType == fragments.generic.t1splinters; }
-	Show t4	{ %DS6;  !G3; !*t4chaos;  StackSize >= 5; BaseType == fragments.generic.t1splinters; }
-	Show t5	{ %DS5; !G3; !*t5alchemy;  StackSize >= 2; BaseType == fragments.generic.t1splinters; }
+	Show t1	{ !currency_t2; !G1;  %D6; StackSize >= 80; BaseType == fragments.generic.t1splinters; }
+	Show t2	{ !currency_t3; !G2;  %D6; StackSize >= 25; BaseType == fragments.generic.t1splinters; }
+	Show t3	{ !currency_t4; !G3;  %D6; StackSize >= 10; BaseType == fragments.generic.t1splinters; }
+	Show t4	{ !currency_t4; !G3;  %DS6; StackSize >= 5; BaseType == fragments.generic.t1splinters; }
+	Show t5	{ !currency_t5; !G3; %DS5; StackSize >= 2; BaseType == fragments.generic.t1splinters; }
 }
 
-Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class == class_currency, !currency
+Section StackedCurrencySplintersLow : Auto("Currency->StackedSplintersLow"), Class == class_currency
 {
-	Show t1	{ %D5;   !G1; !*t3annul; StackSize >= 66; BaseType == fragments.generic.t2splinters; }
-	Show t2	{ %D5;   !G2; !*t4chaos; StackSize >= 25; BaseType == fragments.generic.t2splinters; }
-	Show t3	{ %D5;   !G3; !*t4chaos; StackSize >= 10; BaseType == fragments.generic.t2splinters; }
-	Show t4	{ %DS5;  !G4; !*t5alchemy; StackSize >= 5; BaseType == fragments.generic.t2splinters; }
-	Show t5	{ %DS4;  !G4; !*t5alchemy; StackSize >= 2; BaseType == fragments.generic.t2splinters; }
+	Show t1	{ !currency_t3; !G1;   %D5; StackSize >= 66; BaseType == fragments.generic.t2splinters; }
+	Show t2	{ !currency_t4; !G2;   %D5; StackSize >= 25; BaseType == fragments.generic.t2splinters; }
+	Show t3	{ !currency_t4; !G3;   %D5; StackSize >= 10; BaseType == fragments.generic.t2splinters; }
+	Show t4	{ !currency_t5; !G4;  %DS5; StackSize >= 5; BaseType == fragments.generic.t2splinters; }
+	Show t5	{ !currency_t5; !G4;  %DS4; StackSize >= 2; BaseType == fragments.generic.t2splinters; }
 }
 
 #------------------------------------
 # [5112] Breach and Legion Splinters - single
 #------------------------------------
 
-Section CurrencySplintersRegular : Auto("currency->splinter"), Class == class_currency, !Splinters
+Section CurrencySplintersRegular : Auto("currency->splinter"), Class == class_currency
 {
-	Show t1 { %HS4; !G4; !*t1; BaseType == fragments.generic.t1splinters; }
-	Show t3 { %HS3; !G5; !*t3; BaseType == fragments.generic.t2splinters; }
+	Show t1 { !splinter_t1; !G4; %HS4; BaseType == fragments.generic.t1splinters; }
+	Show t3 { !splinter_t3; !G5; %HS3; BaseType == fragments.generic.t2splinters; }
 }
 
 #------------------------------------
@@ -2039,20 +2039,20 @@ Section CurrencySplintersRegular : Auto("currency->splinter"), Class == class_cu
 
 Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Class == class_currency, BaseType == "Simulacrum Splinter"
 {
-	Show t1 { %D6; !G1; !Currency.t1exalted; !Splinters.Stylize; StackSize >= stacksize.simulacrum.t1; }
-	Show t2 { %D6; !G2; !Currency.t2divine; !Splinters.Stylize;  StackSize >= stacksize.simulacrum.t2; }
-	Show t3 { %D6; !G3; !Currency.t3annul; !Splinters.Stylize; StackSize >= stacksize.simulacrum.t3; }
-	Show t4 { %D6; !G4; !Currency.t4chaos; !Splinters.Stylize; StackSize >= stacksize.simulacrum.t4; }
-	Show t5 { %H4; !G5; Empty(); !Splinters.t2 }
+	Show t1 { !splinter_t1exalted; !G1; %D6; StackSize >= stacksize.simulacrum.t1; }
+	Show t2 { !splinter_t2divine; !G2; %D6; StackSize >= stacksize.simulacrum.t2; }
+	Show t3 { !splinter_t3annul; !G3; %D6; StackSize >= stacksize.simulacrum.t3; }
+	Show t4 { !splinter_t4chaos; !G4; %D6; StackSize >= stacksize.simulacrum.t4; }
+	Show t5 { !splinter_t5; !G5; %H4; Empty(); }
 }
 
 ##------------------------------------
 ## [5112] Other Splinters
 ##------------------------------------
-## Section CurrencySplintersOthers : Auto("currency->splinter->other"), !currency
+## Section CurrencySplintersOthers : Auto("currency->splinter->other")
 ## {
-## 	Show t2 { !G2; !Currency.t2divine; BaseType == "Crescent Splinter"; }
-## 	Show t4 { %D5; !G4; !Currency.t4chaos; BaseType == "Ritual Splinter"; }
+## 	Show t2 { !G2; BaseType == "Crescent Splinter"; }
+## 	Show t4 { !G4; %D5; BaseType == "Ritual Splinter"; }
 ## }
 
 #===============================================================================================================
@@ -2060,24 +2060,24 @@ Section CurrencySplinterSimulacrum : Auto("currency->splinter->simulacrum"), Cla
 #===============================================================================================================
 #!! Waypoint c9.divination.all : "Tierlist - Cards - All" : "Divination Cards"
 
-Section DivinationCards : Auto("divination"), Class == "Divination Cards", !divi
+Section DivinationCards : Auto("divination"), Class == "Divination Cards"
 {
-	Show exCustomStack { !G1; !*t1; StackSize >= 3; BaseType == divination.exCustomStack; }
+	Show exCustomStack { !divination_t1; !G1; StackSize >= 3; BaseType == divination.exCustomStack; }
 
-	Show t1 	{ !G1; !*t1;	BaseType == divination.t1; }
-	Show t2 	{ %H8; !G2; !*t2;	BaseType == divination.t2; }
-	Show t3 	{ %HS6; !G3;!*t3;	BaseType == divination.t3; }
+	Show t1 	{ !divination_t1; !G1; BaseType == divination.t1; }
+	Show t2 	{ !divination_t2; !G2; %H8; BaseType == divination.t2; }
+	Show t3 	{ !divination_t3; !G3; %HS6;BaseType == divination.t3; }
 
-	Show tnew 	{ !G3; !*tnew;	BaseType == divination.tnew; }
+	Show tnew 	{ !divination_new; !G3; BaseType == divination.tnew; }
 	#!! Waypoint c9.divination.t4 : "Tierlist - Cards - T4, T4c and lower" : "Divination Cards"
-	Show t4c 	{ %HS4; !G4; !*t4;	BaseType == divination.t4c; }
+	Show t4c 	{ !divination_t4; !G4; %HS4; BaseType == divination.t4c; }
 
-	Show exStack { %D4; !G5H; !*t4; StackSize >= 3; }
+	Show exStack { !divination_t4; !G5H; %D4; StackSize >= 3; }
 
-	Show t5c 	{ %HS2; !G5; !*t5;	BaseType == divination.t5c; }
-	Show t4 	{ %HS3; !G5H; !*t4;	BaseType == divination.t4; }
-	Show t5 	{ %H0; !G6; !*t5; !Shrink;	BaseType == divination.t5; }
-	Show restex { Empty(); }
+	Show t5c 	{ !divination_t5c; !G5; %HS2; BaseType == divination.t5c; }
+	Show t4 	{ !divination_t4; !G5H; %HS3; BaseType == divination.t4; }
+	Show t5 	{ !divination_t5; !G6; %H0; !Shrink;	BaseType == divination.t5; }
+	Show restex { !special_restex; Empty(); }
 }
 
 #===============================================================================================================
@@ -2086,9 +2086,9 @@ Section DivinationCards : Auto("divination"), Class == "Divination Cards", !divi
 
 Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 {
-	HideD UntieredItems { !shrink; }
-	Hide scrollfragments { !shrink; BaseType == "Scroll Fragment"; }
-	Show restex { Empty(); }
+	HideD UntieredItems { !hide_shrunk; !shrink; }
+	Hide scrollfragments { !hide_shrunk; !shrink; BaseType == "Scroll Fragment"; }
+	Show restex { !special_restex; Empty(); }
 }
 
 #===============================================================================================================
@@ -2099,50 +2099,50 @@ Section CurrencyRemaining : Class == class_currency, Auto("Currency")
 
 Section HeistTarget : Class == "Heist Targets", Auto("HeistTarget")
 {
-	Show Any { !QuestLike; Empty(); }
+	Show Any { !special_quest; !QuestLike; Empty(); }
 }
 
 #===============================================================================================================
 # [[4900]] Enshrouded Items
 #===============================================================================================================
 
-Section Enshrouded : Auto("enshrouded"), !unique
+Section Enshrouded : Auto("enshrouded")
 {
-	Show EnshroudedGear : { !G2; !*t2; BaseType == enshrouded.any; }
+	Show EnshroudedGear : { !uniques_t2; !G2; BaseType == enshrouded.any; }
 }
 
 #===============================================================================================================
 # [[4900]] Idols (Event Leagues Only)
 #===============================================================================================================
 
-Section EventIdols : Auto("event->idols"), !newleaguetier
+Section EventIdols : Auto("event->idols")
 {
 	# 1x3 Idols
-	Show MinorRare  	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Minor Idol"; } 
-	Show MinorMagic 	{ %H4; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Minor Idol"; } 
+	Show MinorRare  	{ !league_t3; !G3; %H6; Rarity Rare; BaseType == "Minor Idol"; } 
+	Show MinorMagic 	{ !league_t4; !G4; %H4; Rarity Magic; BaseType == "Minor Idol"; } 
 
 	# 1x2 Idols
-	Show KamasanRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Kamasan Idol"; } 
-	Show KamasanMagic 	{ %H4; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Kamasan Idol"; } 
+	Show KamasanRare 	{ !league_t3; !G3; %H6; Rarity Rare; BaseType == "Kamasan Idol"; } 
+	Show KamasanMagic 	{ !league_t4; !G4; %H4; Rarity Magic; BaseType == "Kamasan Idol"; } 
 
 	# 1x3 Idols
-	Show TotemicRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Totemic Idol"; } 
-	Show TotemicMagic 	{ %H4; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Totemic Idol"; } 
+	Show TotemicRare 	{ !league_t3; !G3; %H6; Rarity Rare; BaseType == "Totemic Idol"; } 
+	Show TotemicMagic 	{ !league_t4; !G4; %H4; Rarity Magic; BaseType == "Totemic Idol"; } 
 
 	# 2x1 Idols
-	Show NobleRare 		{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Noble Idol"; } 
-	Show NobleMagic 	{ %H4; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Noble Idol"; } 
+	Show NobleRare 		{ !league_t3; !G3; %H6; Rarity Rare; BaseType == "Noble Idol"; } 
+	Show NobleMagic 	{ !league_t4; !G4; %H4; Rarity Magic; BaseType == "Noble Idol"; } 
 
 	# 3x1 Idols
-	Show BurialRare 	{ %H6; !G3; !newleaguetier.t3; Rarity Rare; BaseType == "Burial Idol"; } 
-	Show BurialMagic 	{ %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Burial Idol"; } 
+	Show BurialRare 	{ !league_t3; !G3; %H6; Rarity Rare; BaseType == "Burial Idol"; } 
+	Show BurialMagic 	{ !league_t4; !G4; %H5; Rarity Magic; BaseType == "Burial Idol"; } 
 
 	# 2x2 Idols
-	Show ConquerorRare 	{ %H6; !G3; !newleaguetier.t2; Rarity Rare; BaseType == "Conqueror Idol"; } 
-	Show ConquerorMagic { %H5; !G4; !newleaguetier.t4; Rarity Magic; BaseType == "Conqueror Idol"; } 
+	Show ConquerorRare 	{ !league_t2; !G3; %H6; Rarity Rare; BaseType == "Conqueror Idol"; } 
+	Show ConquerorMagic { !league_t4; !G4; %H5; Rarity Magic; BaseType == "Conqueror Idol"; } 
 
 	# These should not exist
-	Show NormalIdols { !exotic.t2; !GSH; Rarity Normal; Class == "Idols"; }
+	Show NormalIdols { !exotics_t2; !GSH; Rarity Normal; Class == "Idols"; }
 }
 
 #===============================================================================================================
@@ -2150,94 +2150,94 @@ Section EventIdols : Auto("event->idols"), !newleaguetier
 #===============================================================================================================
 #!! Waypoint c10.uniques.all : "Tierlist - Uniques - All Tiering + Exceptions" : "Uniques"
 
-Section Unique : Rarity Unique, Auto("uniques"), !unique
+Section Unique : Rarity Unique, Auto("uniques")
 {
 
 #------------------------------------
 # [5701] Exceptions #1
 #------------------------------------
-	Show exUberImpresence { !G1; !*t1; BaseType == "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
+	Show exUberImpresence { !uniques_t1; !G1; BaseType == "Onyx Amulet"; HasInfluence "Shaper"; HasInfluence "Elder"; }
 
-	Show exKaom { %H8; !G2; !*t2; BaseType == "Glorious Plate"; Sockets < 1; }
-## 	Show exSquire { !G1; !*t1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
-	Show exTabula { !G2; !*t2; BaseType == "Simple Robe"; LinkedSockets 6; }
-	Show exForgeSword { !G1; !*t1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
+	Show exKaom { !uniques_t2; !G2; %H8; BaseType == "Glorious Plate"; Sockets < 1; }
+## 	Show exSquire { !G1; BaseType == "Elegant Round Shield"; Sockets >= "3WWW"; }
+	Show exTabula { !uniques_t2; !G2; BaseType == "Simple Robe"; LinkedSockets 6; }
+	Show exForgeSword { !uniques_t1; !G1; BaseType == "Infernal Sword"; HasInfluence "Shaper" "Elder"; }
 	
-	Show exRationalJewel  { !G1; !*t1; BaseType == "Cobalt Jewel"; SynthesisedItem True; }
-	Show exSynth  { !G2; !*t2; BaseType == uniques.exceptions.synthRings; SynthesisedItem True; }
-	Show ex6link  { !G1; !*t2; LinkedSockets 6; }
+	Show exRationalJewel  { !uniques_t1; !G1; BaseType == "Cobalt Jewel"; SynthesisedItem True; }
+	Show exSynth  { !uniques_t2; !G2; BaseType == uniques.exceptions.synthRings; SynthesisedItem True; }
+	Show ex6link  { !uniques_t2; !G1; LinkedSockets 6; }
 
-	Show 4xabyssHelmet  { !G1; !*t1; Sockets >= "AAAA"; BaseType == "Bone Circlet" }
-	Show 3xabyss  { !G1; !*t1; Sockets >= "AAA"; BaseType == "Carnal Armour" }
+	Show 4xabyssHelmet  { !uniques_t1; !G1; Sockets >= "AAAA"; BaseType == "Bone Circlet" }
+	Show 3xabyss  { !uniques_t1; !G1; Sockets >= "AAA"; BaseType == "Carnal Armour" }
 
 #------------------------------------
 # [5702] Tier 1 and 2 uniques
 #------------------------------------
 #!! Waypoint c10.uniques.t1 : "Tierlist - Uniques - All tiering" : "Uniques"
 
-	Show t1 { !G1; !*t1; BaseType == uniques.generic.t1; }
-	Show t2 { %H8; !G2; !*t2; BaseType == uniques.generic.t2; }	
+	Show t1 { !uniques_t1; !G1; BaseType == uniques.generic.t1; }
+	Show t2 { !uniques_t2; !G2; %H8; BaseType == uniques.generic.t2; }	
 #------------------------------------
 # [5703] Exceptions #2
 #------------------------------------
 #!! Waypoint c10.uniques.undert1t2 : "Tierlist - Uniques - All tiering, except T1 and T2" : "Uniques"
 
-	Show Vestige			{ %D9; !GSH; !*t3; !SpecialNoB; !FoulUnique; Vestigial True; }
-	Show exUniqueIdols		{ !GSH; !*t3; !SpecialNoB; Class == "Idols"; }
-	Show 2xcorrupteduniques { !G2; !*t2; !Corrupt; Corrupted True; CorruptedMods >= 2; }
-	Show 2xabyss 			{ !G2; !*t2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
-	Show exCrucibleUnique 	{ !GSH; !*t3; !SpecialNoB; HasCruciblePassiveTree True; }
+	Show Vestige			{ !uniques_foulborn; !GSH; %D9; Vestigial True; }
+	Show exUniqueIdols		{ !uniques_t3; !GSH; Class == "Idols"; }
+	Show 2xcorrupteduniques { !uniques_t2corrupt; !G2; Corrupted True; CorruptedMods >= 2; }
+	Show 2xabyss 			{ !uniques_t2; !G2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
+	Show exCrucibleUnique 	{ !uniques_t3; !GSH; HasCruciblePassiveTree True; }
 
 #------------------------------------
 # [5705] Multi-Unique bases.
 #------------------------------------
 
-	Show multispecialhigh { !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecialhigh; }
+	Show multispecialhigh { !uniques_t3; !GSH; BaseType == uniques.generic.multispecialhigh; }
 
-	ShowD exDust1 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust1 + uniques.ex.dust2; }
-	ShowD exDust2 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust3; }
-	ShowD exDust3 { !G3; !*t4; !DustUniques; BaseType == uniques.ex.dust4; }
+	ShowD exDust1 { !uniques_dust; !G3; BaseType == uniques.ex.dust1 + uniques.ex.dust2; }
+	ShowD exDust2 { !uniques_dust; !G3; BaseType == uniques.ex.dust3; }
+	ShowD exDust3 { !uniques_dust; !G3; BaseType == uniques.ex.dust4; }
 
-	Show foulBorn { %D9; !GSH; !*t3; !SpecialNoB; !FoulUnique; Foulborn True; }
-	Show multispecial { %H7; !GSH; !*t3; !SpecialNoB; BaseType == uniques.generic.multispecial; }
-	Show overQual { %D5; !GSH; !*t3; !SpecialNoB; Quality >= 27; }
-	Show 5link    { %D4; !GSH; !*t3; !SpecialNoB; LinkedSockets 5; }
-	Show 6S 	  { %D4; !GSH; !*t4; !special; Sockets >= 6 }
+	Show foulBorn { !uniques_foulborn; !GSH; %D9; Foulborn True; }
+	Show multispecial { !uniques_t3; !GSH; %H7; BaseType == uniques.generic.multispecial; }
+	Show overQual { !uniques_t3; !GSH; %D5; Quality >= 27; }
+	Show 5link    { !uniques_t4special; !GSH; %D4; LinkedSockets 5; }
+	Show 6S 	  { !uniques_t4special; !GSH; %D3; Sockets >= 6 }
 
 #------------------------------------
 # [5701] Low tier exceptions
 #------------------------------------
 #!! Waypoint c10.uniques.low : "Tierlist - Uniques - C Tier, Boss-Tier and lower" : "Uniques"
 
-	Show earlyleague { !G3; %H5; !*t4; !EarlyUniques; BaseType == uniques.generic.earlyleague; }
-	ShowD recipeUniqueRings { !G5H; !*t4; !special; Class == "Rings"; }
-	## Show mercUniques { !G3; %H5; !*t4; !MercUniques; BaseType == uniques.generic.mercUniques; }
+	Show earlyleague { !uniques_earlyleague; !G3; %H5; BaseType == uniques.generic.earlyleague; }
+	ShowD recipeUniqueRings { !uniques_t4special; !G5H; Class == "Rings"; }
+	## Show mercUniques { !G3; %H5; BaseType == uniques.generic.mercUniques; }
 	
-	Show exjewelscorrupted    { !GSH; !*t3; !special; BaseType == genericJewels; CorruptedMods = 0; Corrupted True; }
-	Show exjewels    		  { !GSH; !*t2; BaseType == uniques.jewels; }
+	Show exjewelscorrupted    { !uniques_t3special; !GSH; BaseType == genericJewels; CorruptedMods = 0; Corrupted True; }
+	Show exjewels    		  { !uniques_t2; !GSH; BaseType == uniques.jewels; }
 	
-	ShowD highvinktar { !G3; !*t3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
+	ShowD highvinktar { !uniques_vinktar; !G3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	
-	Show  corrupteduniques { !G4; !*t4; %D5; !Corrupt; Corrupted True; CorruptedMods >= 1; Class == classes_corrupted; }
+	Show  corrupteduniques { !uniques_t4corrupt; !G4; %D5; Corrupted True; CorruptedMods >= 1; Class == classes_corrupted; }
 
 #------------------------------------
 # [5708] Tier 3 uniques 
 #------------------------------------	
-	Show t3boss {  !G4; %H5; !*t4; !SpecialNoB; BaseType == uniques.generic.t3boss; }
-	Show t3 	{  !G4; %H4; !*t4; BaseType == uniques.generic.t3; }
+	Show t3boss {  !uniques_t4boss; !G4; %H5; BaseType == uniques.generic.t3boss; }
+	Show t3 	{  !uniques_t4; !G4; %H4; BaseType == uniques.generic.t3; }
 #------------------------------------
 # [5709] Tier 4 uniques
 #------------------------------------	
-	Show hideable2 { !G5H; %H3; !*t5; BaseType == uniques.generic.hideable2; }
-	Show hideable  { !G5H; %H3; !*t5; BaseType == uniques.generic.hideable; }
-	Show restex { Empty(); }
+	Show hideable2 { !uniques_t5; !G5H; %H3; BaseType == uniques.generic.hideable2; }
+	Show hideable  { !uniques_t5; !G5H; %H3; BaseType == uniques.generic.hideable; }
+	Show restex { !special_restex; Empty(); }
 }
 
 #===============================================================================================================
 # [[4900]] Questlike-Items2
 #===============================================================================================================
 
-Section Questlike : Auto("Questlike")
+Section Questlike : Auto("Questlike"), !special_quest
 {
 	Show Invitations { !QuestLike; BaseType "Maven's"; }
 	Show LabyrinthConsumable { !QuestLike; Class == "Labyrinth Trinkets" "Labyrinth Items"; }
@@ -2249,7 +2249,7 @@ Section Questlike : Auto("Questlike")
 #===============================================================================================================
 #!! Waypoint c11.leveling.all : "Leveling - ALL rules" : "Leveling"
 
-Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == "Life Flasks" "Mana Flasks"
+Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == "Life Flasks" "Mana Flasks", !hide_layer
 {
 	Hide OutdatedLevelFlaskA { AreaLevel >= 15; BaseType "Large" "Medium" "Small"; }
 	Hide OutdatedLevelFlaskB { AreaLevel >= 30; BaseType "Grand" "Greater"; }
@@ -2266,21 +2266,21 @@ Func FlaskHighlight(level, b){ AreaLevel <= level; BaseType b; }
 
 Section LevelingUtilityFlasks : Auto("Leveling->flasks->utility")
 {
-	Show Quicksilver 		{ !G3; !utilflasks.LT1; !LevelFlaskHigh; BaseType == "Quicksilver Flask"; }
-	Show AsortedUtility 	{ !G4; !utilflasks.LT2; !LevelFlask; BaseType == bases.flask.utilityassorted; }
-	Show Any 				{ !G5; %H3; !utilflasks.LT3; Class == class_utilFlasks; }
+	Show Quicksilver 		{ !leveling_quicksilver; !G3; BaseType == "Quicksilver Flask"; }
+	Show AsortedUtility 	{ !leveling_utilityflask; !G4; BaseType == bases.flask.utilityassorted; }
+	Show Any 				{ !flasks_utilityt3; !G5; %H3; Class == class_utilFlasks; }
 }
 
 Section LevelingQualityFlasks : Auto("Leveling->flasks->quality"), Class == class_flasklikes
 {
-	Show max  { !G5; %D3; !recipe.ts1; Quality >= 20; Rarity <= Normal; }
-	Show high { !G6; %D1; !recipe.t2; Quality >= 14; Rarity <= Magic; }
-	Show any  { !G7; %D0; !recipe.t3; Quality >= 1; Rarity <= Magic; }
+	Show max  { !flasks_qualitymax; !G5; %D3; Quality >= 20; Rarity <= Normal; }
+	Show high { !flasks_qualityhigh; !G6; %D1; Quality >= 14; Rarity <= Magic; }
+	Show any  { !leveling_qualityflask; !G7; %D0; Quality >= 1; Rarity <= Magic; }
 }
 
 Section LevelingTinctures : Auto("Leveling->tincture"), Class == "Tinctures", ItemLevel <= 67
 {
-	Show Any 				{ !G4; !utilflasks.LT2; !LevelFlask; Empty(); }
+	Show Any 				{ !leveling_utilityflask; !G4; Empty(); }
 }
 
 #===============================================================================================================
@@ -2292,7 +2292,7 @@ Section LevelingTinctures : Auto("Leveling->tincture"), Class == "Tinctures", It
 #------------------------------------
 #!! Waypoint c11.leveling.lifeflasks : "Leveling - life and mana flasks" : "Leveling"
 
-Section LevelingHybridFlasks : Class == "Hybrid Flasks", Auto("Leveling->Flasks->Hybrid"), !HybridFlask, !G6H
+Section LevelingHybridFlasks : Class == "Hybrid Flasks", Auto("Leveling->Flasks->Hybrid"), !leveling_hybridflask, !G6H
 {
 	Show t1 { %H2; FlaskHighlight(20, "Small");}
 	Show t2 { %H2; FlaskHighlight(30, "Medium");}
@@ -2305,7 +2305,7 @@ Section LevelingHybridFlasks : Class == "Hybrid Flasks", Auto("Leveling->Flasks-
 #------------------------------------
 # [6002] Life flasks
 #------------------------------------
-Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Life"), !LifeFlask, !G6H
+Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Life"), !leveling_lifeflask, !G6H
 {
 	Show t1  { FlaskHighlight(9, "Small");}
 	Show t2  { FlaskHighlight(13, "Medium");}
@@ -2324,7 +2324,7 @@ Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Lif
 #------------------------------------
 # [6002] Mana flasks
 #------------------------------------
-Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Mana"), !ManaFlask, !G6H
+Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Mana"), !leveling_manaflask, !G6H
 {
 	Show t1 {FlaskHighlight(9, "Small");}
 	Show t2 {FlaskHighlight(13, "Medium");}
@@ -2351,7 +2351,7 @@ Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Man
 
 Section LevelingLinksAndSockets : ItemLevel <= 67, Auto("Leveling->Rare->SocketsLinks"), Rarity Rare, !G5
 {
-	Show 4linkrares 			{ %D4; !SF45; !FourLink; LinkedSockets >= 4; } 
+	Show 4linkrares 			{ !leveling_4link; %D4; LinkedSockets >= 4; } 
 }
 
 #------------------------------------
@@ -2360,9 +2360,9 @@ Section LevelingLinksAndSockets : ItemLevel <= 67, Auto("Leveling->Rare->Sockets
 
 Section Exotics : Auto("Leveling->Rare->Exotics"), Rarity <= Rare, ItemLevel <= 67
 {
-	Show MovementBootsHigh { %D5; !GSH; !exotic.t2; !SF45; Class == "Boots"; Mod "Cheetah's" "Gazelle's" "Stallion's"; }
-	Show MovementBootsLow { %D5; !GSH; !exotic.t2; !SF45; Class == "Boots"; Mod "Sprinter's" "Runner's"; AreaLevel <= 40; }
-	Show AnyVeiled 	{ %D4; !GSH; !exotic.t3; !SF45; Identified True; Mod "Veil"; }
+	Show MovementBootsHigh { !exotics_t2; !GSH; %D5; Class == "Boots"; Mod "Cheetah's" "Gazelle's" "Stallion's"; }
+	Show MovementBootsLow { !exotics_t2; !GSH; %D5; Class == "Boots"; Mod "Sprinter's" "Runner's"; AreaLevel <= 40; }
+	Show AnyVeiled 	{ !exotics_t3; !GSH; %D4; Identified True; Mod "Veil"; }
 }
 
 #------------------------------------
@@ -2370,12 +2370,12 @@ Section Exotics : Auto("Leveling->Rare->Exotics"), Rarity <= Rare, ItemLevel <= 
 #------------------------------------
 #!! Waypoint c11.leveling.decorators.all : "Leveling - Rares - Decorators" : "Leveling"
 
-Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), Rarity Rare, ItemLevel <= 67, !raredeco, !GEX
+Section LevelingRareDecorator : Auto("Decorators->Leveling->Rare"), Rarity Rare, ItemLevel <= 67, !GEX
 {
-	Cont LargeRares 	{ !*large; Height >= 3; Width >= 2; }
-	Cont MediumRares1 	{ !*medium; Height >= 3; Width = 1; }
-	Cont MediumRares2 	{ !*medium; Height = 2; Width = 2; }
-	Cont TinyRares 		{ !*tiny; Height = 1; Width <= 2; }
+	Cont LargeRares 	{ !deco_rarelarge; Height >= 3; Width >= 2; }
+	Cont MediumRares1 	{ !deco_raremedium; Height >= 3; Width = 1; }
+	Cont MediumRares2 	{ !deco_raremedium; Height = 2; Width = 2; }
+	Cont TinyRares 		{ !deco_raretiny; Height = 1; Width <= 2; }
 }
 
 #------------------------------------
@@ -2387,49 +2387,49 @@ Section LevelingRareGear : Rarity Rare
 #!! Waypoint c11.leveling.rares.minions : "Leveling - Rares - Minion Items" : "Leveling"
 	Section Minion : Auto("Leveling->Rare->minion"), !GR2
 	{
-		Show General { %D4; !LVLMinion; !SF40; BaseType == "Bone Ring" "Calling Wand" "Convening Wand" "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
+		Show General { !leveling_rareminion; %D4; BaseType == "Bone Ring" "Calling Wand" "Convening Wand" "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
 	}
 
 #!! Waypoint c11.leveling.rares.trinkets : "Leveling - Rares - Belts, Rings, Amulets" : "Leveling"
-	Section Universal : Auto("Leveling->Rare->universal") !raredeco.t1jewellery, !GRJ1
+	Section Universal : Auto("Leveling->Rare->universal"), !GRJ1
 	{
-		Show Jewellery  { %D5; !SF45; Class == classes_jewellery; }
+		Show Jewellery  { !rares_jewelleryt1; %D5; Class == classes_jewellery; }
 	}
 
 #!! Waypoint c11.leveling.rares.armors : "Leveling - Rares - Armour Pieces" : "Leveling"
 	Section Armour : Auto("Leveling->Rare->armours"), !GR1
 	{
-		Show BootsFocus { %D4; !raredeco.t1equip; !SF45; !noticehigh; Class == "Boots"; }
-		Show General 	{ %D4; !raredeco.t1equip; !SF40; !noticehigh; Class == classes_armor_small; }
-		Show BodyArmours{ %D4; !raredeco.t2equip; !SF40; Class == "Body Armours"; }
-		Show Shields 	{ %D4; !raredeco.t2equip; !SF40; Class == "Shields"; }
-		Show Quivers 	{ %D4; !LVLArcher; !SF40; Class == "Quivers"; }
+		Show BootsFocus { !leveling_rarearmour; !SF45; %D4; Class == "Boots"; }
+		Show General 	{ !leveling_rarearmour; %D4; Class == classes_armor_small; }
+		Show BodyArmours{ !leveling_rarebodyshield; %D4; Class == "Body Armours"; }
+		Show Shields 	{ !leveling_rarebodyshield; %D4; Class == "Shields"; }
+		Show Quivers 	{ !leveling_rarearcher; %D4; Class == "Quivers"; }
 	}
 
 #------------------------------------
 # [6002] Rares - Caster
 #------------------------------------
 #!! Waypoint c11.leveling.rares.caster : "Leveling - Rares - Caster" : "Leveling"
-	Section Caster : Auto("Leveling->Rare->caster"), !LVLCaster, !GR2
+	Section Caster : Auto("Leveling->Rare->caster"), !leveling_rarecaster, !GR2
 	{
-		Show EarlyLevels { %D4; !LVLCaster; !SF40; Class == classes_cast; ItemLevel <= 16; }
-		Show General     { %D4; !LVLCaster; !SF40; Class == classes_cast; }
+		Show EarlyLevels { %D4; Class == classes_cast; ItemLevel <= 16; }
+		Show General     { %D4; Class == classes_cast; }
 	}
 
 #------------------------------------
 # [6002] Rares - Archer
 #------------------------------------
 #!! Waypoint c11.leveling.rares.archer : "Leveling - Gear - Archer" : "Leveling"
-	Section Archer : Auto("Leveling->Rare->archer"), Class == "Bows", !GR2
+	Section Archer : Auto("Leveling->Rare->archer"), Class == "Bows", !leveling_rarearcher, !GR2
 	{
-		Show l1 { %D4; !LVLArcher; !SF40; AreaLevel <= 25 }
-		Show l2 { %D4; !LVLArcher; !SF40; AreaLevel <= 30; DropLevel >= 10; }
-		Show l3 { %D4; !LVLArcher; !SF40; AreaLevel <= 35; DropLevel >= 15; }
-		Show l4 { %D4; !LVLArcher; !SF40; AreaLevel <= 45; DropLevel >= 20; }
-		Show l5 { %D4; !LVLArcher; !SF40; AreaLevel <= 55; DropLevel >= 25; }
-		Show l6 { %D4; !LVLArcher; !SF40; AreaLevel <= 60; DropLevel >= 30; }
-		Show l7 { %D4; !LVLArcher; !SF40; AreaLevel <= 65; DropLevel >= 35; }
-		Show l8 { %D4; !LVLArcher; !SF40; AreaLevel <= 70; DropLevel >= 40; }
+		Show l1 { %D4; AreaLevel <= 25 }
+		Show l2 { %D4; AreaLevel <= 30; DropLevel >= 10; }
+		Show l3 { %D4; AreaLevel <= 35; DropLevel >= 15; }
+		Show l4 { %D4; AreaLevel <= 45; DropLevel >= 20; }
+		Show l5 { %D4; AreaLevel <= 55; DropLevel >= 25; }
+		Show l6 { %D4; AreaLevel <= 60; DropLevel >= 30; }
+		Show l7 { %D4; AreaLevel <= 65; DropLevel >= 35; }
+		Show l8 { %D4; AreaLevel <= 70; DropLevel >= 40; }
 	}
 
 #------------------------------------
@@ -2437,28 +2437,28 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 #!! Waypoint c11.leveling.rares.melee : "Leveling - Gear - Melee" : "Leveling"
 
-	Section Melee2H : Auto("Leveling->Rare->melee2h"), Class == classes_weapons_2hmelee, !GR2
+	Section Melee2H : Auto("Leveling->Rare->melee2h"), Class == classes_weapons_2hmelee, !leveling_raremelee2h, !GR2
 	{
-		Show l1 { %D4; !LVLMelee2; !SF40; AreaLevel <= 25 }
-		Show l2 { %D4; !LVLMelee2; !SF40; AreaLevel <= 30; DropLevel >= 10; }
-		Show l3 { %D4; !LVLMelee2; !SF40; AreaLevel <= 35; DropLevel >= 15; }
-		Show l4 { %D4; !LVLMelee2; !SF40; AreaLevel <= 45; DropLevel >= 20; }
-		Show l5 { %D4; !LVLMelee2; !SF40; AreaLevel <= 55; DropLevel >= 25; }
-		Show l6 { %D4; !LVLMelee2; !SF40; AreaLevel <= 60; DropLevel >= 30; }
-		Show l7 { %D4; !LVLMelee2; !SF40; AreaLevel <= 65; DropLevel >= 35; }
-		Show l8 { %D4; !LVLMelee2; !SF40; AreaLevel <= 70; DropLevel >= 40; }
+		Show l1 { %D4; AreaLevel <= 25 }
+		Show l2 { %D4; AreaLevel <= 30; DropLevel >= 10; }
+		Show l3 { %D4; AreaLevel <= 35; DropLevel >= 15; }
+		Show l4 { %D4; AreaLevel <= 45; DropLevel >= 20; }
+		Show l5 { %D4; AreaLevel <= 55; DropLevel >= 25; }
+		Show l6 { %D4; AreaLevel <= 60; DropLevel >= 30; }
+		Show l7 { %D4; AreaLevel <= 65; DropLevel >= 35; }
+		Show l8 { %D4; AreaLevel <= 70; DropLevel >= 40; }
 	}
 
-	Section Melee1H : Auto("Leveling->Rare->melee1h"), Class == classes_weapons_1hmelee, !GR2
+	Section Melee1H : Auto("Leveling->Rare->melee1h"), Class == classes_weapons_1hmelee, !leveling_raremelee1h, !GR2
 	{
-		Show l1 { %D4; !LVLMelee1; !SF40; AreaLevel <= 25 }
-		Show l2 { %D4; !LVLMelee1; !SF40; AreaLevel <= 30; DropLevel >= 10; }
-		Show l3 { %D4; !LVLMelee1; !SF40; AreaLevel <= 35; DropLevel >= 15; }
-		Show l4 { %D4; !LVLMelee1; !SF40; AreaLevel <= 45; DropLevel >= 20; }
-		Show l5 { %D4; !LVLMelee1; !SF40; AreaLevel <= 55; DropLevel >= 25; }
-		Show l6 { %D4; !LVLMelee1; !SF40; AreaLevel <= 60; DropLevel >= 30; }
-		Show l7 { %D4; !LVLMelee1; !SF40; AreaLevel <= 65; DropLevel >= 35; }
-		Show l8 { %D4; !LVLMelee1; !SF40; AreaLevel <= 70; DropLevel >= 40; }
+		Show l1 { %D4; AreaLevel <= 25 }
+		Show l2 { %D4; AreaLevel <= 30; DropLevel >= 10; }
+		Show l3 { %D4; AreaLevel <= 35; DropLevel >= 15; }
+		Show l4 { %D4; AreaLevel <= 45; DropLevel >= 20; }
+		Show l5 { %D4; AreaLevel <= 55; DropLevel >= 25; }
+		Show l6 { %D4; AreaLevel <= 60; DropLevel >= 30; }
+		Show l7 { %D4; AreaLevel <= 65; DropLevel >= 35; }
+		Show l8 { %D4; AreaLevel <= 70; DropLevel >= 40; }
 	}
 
 #------------------------------------
@@ -2466,13 +2466,13 @@ Section LevelingRareGear : Rarity Rare
 #------------------------------------
 #!! Waypoint c11.leveling.rares.low : "Leveling - Gear - Low Tier" : "Leveling"
 
-	Section Vendorable : Auto("Leveling->Rare->Remaining"), Class == classes_equip, !raredeco.t4equip
+	Section Vendorable : Auto("Leveling->Rare->Remaining"), Class == classes_equip, !leveling_rareunderlevel
 	{
-		ShowD ChromaticRares { %D3; !G5; !SF40; !Recipes.Accent; SocketGroup "RGB"; }
-		Show UnderLevel68 { %D2; !GR3; !SF40; AreaLevel >=42; ItemLevel <= 68; }
-		Show UnderLevel42 { %D2; !GR3; !SF40; AreaLevel >=24; ItemLevel <= 44; }
-		Show UnderLevel24 { %D2; !GR3; !SF40; AreaLevel >=16; ItemLevel <= 26; }
-		Show UnderLevel16 { %D3; !GR3; !SF40; AreaLevel >=1;  ItemLevel <= 18; }
+		ShowD ChromaticRares { !G5; %D3; SocketGroup "RGB"; }
+		Show UnderLevel68 { !GR3; %D2; AreaLevel >=42; ItemLevel <= 68; }
+		Show UnderLevel42 { !GR3; %D2; AreaLevel >=24; ItemLevel <= 44; }
+		Show UnderLevel24 { !GR3; %D2; AreaLevel >=16; ItemLevel <= 26; }
+		Show UnderLevel16 { !GR3; %D3; AreaLevel >=1;  ItemLevel <= 18; }
 	}
 }
 
@@ -2488,57 +2488,57 @@ Section LevelingMiscGear : Rarity <= Magic
 {
 	Section FourLinkedGear : LinkedSockets >= 4, Auto("Leveling->NormalMagic->4L"), !G5
 	{
-		Show General { %D4; !SF45; !FourLink; Empty(); }
+		Show General { !leveling_4link; %D4; Empty(); }
 	}
 
 #!! Waypoint c11.leveling.rgb.all : "Leveling - Linked - RGB Recipe" : "Leveling"
 	Section Chromatic : Auto("Leveling->NormalMagic->RGB"), SocketGroup "RGB", !G5
 	{
-		ShowD RGBSmall1	{ %D5; !Recipe.t1; !SF45; Width 2; Height 2; }
-		ShowD RGBSmall2	{ %D5; !Recipe.t1; !SF45; Width 1; Height <=4; }
-		ShowD RGBLarge	{ %D4; !Recipe.t1; !SF40; Width 2; Height 4; }
-		ShowD RGBMedium	{ %D4; !Recipe.t1; !SF40; Width 2; Height 3; }
+		ShowD RGBSmall1	{ !links_recipe; %D5; Width 2; Height 2; }
+		ShowD RGBSmall2	{ !links_recipe; %D5; Width 1; Height <=4; }
+		ShowD RGBLarge	{ !leveling_rgb; %D4; Width 2; Height 4; }
+		ShowD RGBMedium	{ !leveling_rgb; %D4; Width 2; Height 3; }
 	}
 
 #!! Waypoint c11.leveling.3linked.all : "Leveling - Linked - 3links" : "Leveling"
-	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L"), !G6H, !GLVL1
+	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L"), !leveling_3link, !G6H
 	{
-		Show EarlyThreeLinks 	{ %D3; !ThreeLink; !SF40; AreaLevel <= leveling.keylevels.threelinkEarly; }
-		Show General 			{ %D2; !ThreeLink; !SF35; AreaLevel <= leveling.keylevels.threelink; }
+		Show EarlyThreeLinks 	{ %D3; AreaLevel <= leveling.keylevels.threelinkEarly; }
+		Show General 			{ !SF35; %D2; AreaLevel <= leveling.keylevels.threelink; }
 	}
 
 #!! Waypoint c11.leveling.act12.all : "Leveling - Normal and Magic - Act1, Act2 special gear" : "Leveling"
 
-	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1"), !G6H, !GLVL1
+	Section Act1 : AreaLevel <= leveling.keylevels.act1, Auto("Leveling->NormalMagic->act1"), !G6H
 	{
-		Show CasterWeapons { %D4; !LVLCaster; !ThreeLink; !SF40; Sockets >= 3; Class == "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
-		Show CasterCraftRings { %D4; !NoticeNM0; !SF40; BaseType == leveling.bases.act1.craftrings; }
-		Show General { %D4; !NoticeNM0; !SF40; BaseType == leveling.bases.act1.general; }
-		Show Boots { %D4; !NoticeNM0; !SF40; Rarity Magic; Class == "Boots"; }
-		Show Quivers { %D4; !LVLArcher; !SF40; Class == "Quivers" }
-		Show Physical { %D4; !NoticeNM0; !SF40; BaseType == "Rustic Sash" "Iron Ring"; }
-		Show Jewellery { %D4; !NoticeNM1; !SF40; Class == classes_jewellery; }
+		Show CasterWeapons { !leveling_casterweapon; %D4; Sockets >= 3; Class == "Wands" "Sceptres"; Rarity Magic; AreaLevel <= leveling.keylevels.act1; }
+		Show CasterCraftRings { !leveling_act1; %D4; BaseType == leveling.bases.act1.craftrings; }
+		Show General { !leveling_act1; %D4; BaseType == leveling.bases.act1.general; }
+		Show Boots { !leveling_act1; %D4; Rarity Magic; Class == "Boots"; }
+		Show Quivers { !leveling_rarearcher; %D4; Class == "Quivers" }
+		Show Physical { !leveling_act1; %D4; BaseType == "Rustic Sash" "Iron Ring"; }
+		Show Jewellery { !leveling_jewellery; %D4; Class == classes_jewellery; }
 	}
 	
-	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2"), !G6, !GLVL2
+	Section Act2 : AreaLevel >= leveling.keylevels.act1, AreaLevel <= leveling.keylevels.act2, Auto("Leveling->NormalMagic->act2"), !leveling_act2, !G6
 	{
-		Show CasterCraftRings { %D3; !NoticeNM2; !SF35; BaseType == leveling.bases.act1.craftrings; }
-		Show Physical { %D3; !NoticeNM2; !SF35; BaseType == "Rustic Sash"; }
+		Show CasterCraftRings { %D3; BaseType == leveling.bases.act1.craftrings; }
+		Show Physical { %D3; BaseType == "Rustic Sash"; }
 	}
 
 #!! Waypoint c11.leveling.actlater.all : "Leveling - Normal and Magic - Later Acts" : "Leveling"
 
-	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), !low, !G7, !GLVL2
+	Section LaterActs : Auto("Leveling->NormalMagic->otheracts"), !leveling_otheracts, !G7
 	{
-		Show HighPhysQuivers { %D2; !NoticeNM2; !SF35; BaseType == leveling.bases.quivers.best; }
-		Show FireResistGear  { %D2; !NoticeNM2; !SF35; BaseType == "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
-		Show GeneralCrafting { %D2; !NoticeNM2; !SF35; AreaLevel >= leveling.keylevels.act2; BaseType == leveling.bases.generalcrafting; }
+		Show HighPhysQuivers { %D2; BaseType == leveling.bases.quivers.best; }
+		Show FireResistGear  { %D2; BaseType == "Ruby Ring"; AreaLevel >= leveling.keylevels.act2; AreaLevel <= leveling.keylevels.act6 }
+		Show GeneralCrafting { %D2; AreaLevel >= leveling.keylevels.act2; BaseType == leveling.bases.generalcrafting; }
 	}
 
-	Section MinionItems : Auto("Leveling->NormalMagic->minion"), !low, !G7, !GLVL2
+	Section MinionItems : Auto("Leveling->NormalMagic->minion"), !leveling_otheracts, !G7
 	{
-		Show  MinionGear      { %D2; !NoticeNM2; !LVLMinion; !SF35; BaseType == "Convoking Wand" "Calling Wand" "Convening Wand" "Bone Ring"; }
-		ShowD MinionShields  { !NoticeNM2; !LVLMinion; !SF35; BaseType == "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
+		Show  MinionGear      { %D2; BaseType == "Convoking Wand" "Calling Wand" "Convening Wand" "Bone Ring"; }
+		ShowD MinionShields  { BaseType == "Bone Spirit Shield" "Ivory Spirit Shield" "Fossilised Spirit Shield"; }
 	}
 }
 
@@ -2549,9 +2549,9 @@ Section LevelingMiscGear : Rarity <= Magic
 
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
-	Show EarlyBodyArmours	{ %H2; !GEX; !NoticeNM3; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class == "Body Armours"; }
-	Show ThreeSocketedGear 	{ %H3; !G6H; !NoticeNM2; !SF40; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields" "Wands" "Sceptres"; }
-	Show FirstAreas 		{ %H3; !G7; !NoticeNM3;  !SF35; AreaLevel <= 4; Rarity Normal; }
+	Show EarlyBodyArmours	{ !leveling_progression; !GEX; %H2; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class == "Body Armours"; }
+	Show ThreeSocketedGear 	{ !leveling_act2; !SF40; !G6H; %H3; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields" "Wands" "Sceptres"; }
+	Show FirstAreas 		{ !leveling_firstareas; !G7; %H3; AreaLevel <= 4; Rarity Normal; }
 }
 
 #------------------------------------
@@ -2561,7 +2561,7 @@ Section FirstLevels : Auto("Leveling->FirstLevels")
 
 Func ProgressionRow (rar, il, dl){ ItemLevel <= il; DropLevel >= dl; Rarity <= rar; Sockets >= 3; }
 
-Section WeaponProgression : Rarity Normal, Class == classes_weapons_melee classes_weapons_ranged, Auto("Leveling->WeaponProgression"), !NoticeNM3, !GEX
+Section WeaponProgression : Rarity Normal, Class == classes_weapons_melee classes_weapons_ranged, Auto("Leveling->WeaponProgression"), !leveling_progression, !GEX
 {
 	Show r01 { %H2; ProgressionRow(Normal, 9,5); }
 	Show r02 { %H2; ProgressionRow(Normal, 15,11); }
@@ -2584,7 +2584,7 @@ Section WeaponProgression : Rarity Normal, Class == classes_weapons_melee classe
 # [6002] Attack Wand Progression
 #------------------------------------
 
-Section WandProgression : Rarity Normal, Class == "Wands", Auto("Leveling->WandProgression"), !NoticeNM3, !GEX
+Section WandProgression : Rarity Normal, Class == "Wands", Auto("Leveling->WandProgression"), !leveling_progression, !GEX
 {
 	Show w1 { %H2; AreaLevel <= 24; BaseType == "Somatic Wand"; }
 	Show w2 { %H2; AreaLevel <= 50; BaseType == "Blasting Wand"; }
@@ -2597,27 +2597,27 @@ Section WandProgression : Rarity Normal, Class == "Wands", Auto("Leveling->WandP
 
 Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), ItemLevel <= 67, Rarity = Magic, !GEX
 {
-	Cont Medium1 { !NoticeLow;  Height >= 3; Width = 1; }
-	Cont Medium2 { !NoticeLow;  Height = 2; Width = 2; }
-	Cont NoticeEarly { !NoticeLow; AreaLevel <= leveling.keylevels.start; }
-	Cont Tiny 	 { !NoticeHigh; Height = 1; Width <= 2; }
+	Cont Medium1 { !deco_bluemedium; Height >= 3; Width = 1; }
+	Cont Medium2 { !deco_bluemedium; Height = 2; Width = 2; }
+	Cont NoticeEarly { !deco_bluemedium; AreaLevel <= leveling.keylevels.start; }
+	Cont Tiny 	 { !deco_bluetiny; Height = 1; Width <= 2; }
 }
 
 #!! Waypoint c11.leveling.magicvendor.all : "Leveling - Normal and Magic - Magic Vendor Items" : "Leveling"
 
 Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_equip, Rarity = Magic, !G7
 {
-	Section HideLayerMagicLeveling
+	Section HideLayerMagicLeveling : !hide_layer
 	{
 		Hide LargeMagicBlocker  { AreaLevel >= leveling.keylevels.act1; Height >= 3; Width >= 2 }
 		Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height > 1; }
 	}
 
 	Show Rest 		 { %H1; !ClearBorder; AreaLevel >= leveling.keylevels.act3; AreaLevel <= 67; }
-	Show Act2 		 { %H2; !ClearBorder; !SF35; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
-	Show Act1 		 { %H3; !ClearBorder; !SF35; AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
-	Show UntilMudFlats { %H3; !ClearBorder; !SF40; AreaLevel <= leveling.keylevels.firstZones; }
-	Show FirstLevels   { %H3; !ClearBorder; !SF40; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
+	Show Act2 		 { !leveling_blueearly; %H2; !ClearBorder; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
+	Show Act1 		 { !leveling_blueearly; %H3; !ClearBorder; AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
+	Show UntilMudFlats { !leveling_blueearly; !SF40; %H3; !ClearBorder; AreaLevel <= leveling.keylevels.firstZones; }
+	Show FirstLevels   { !leveling_blueearly; !SF40; %H3; !ClearBorder; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
 }
 
 #!! Waypoint c12.hide.all : "HIDELAYER - Hide all known untiered items"
@@ -2628,7 +2628,7 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 
 Section HideLayerFinal : Auto("HideLayer")
 {
-	Hide Final { Class classes_finalHider; }
+	Hide Final { !hide_layer; Class classes_finalHider; }
 }
 
 #------------------------------------
@@ -2643,5 +2643,5 @@ Section HideLayerFinal : Auto("HideLayer")
 
 Section AnyRemaining : Auto("AnyRemaining")
 {
-	Show restex { Empty(); }
+	Show restex { !special_restex; Empty(); }
 }

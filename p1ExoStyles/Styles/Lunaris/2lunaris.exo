@@ -1,187 +1,284 @@
-## CURRENCY ADJUSTMENTS
-Expand t3annul : PatternGlow
+# Theme overrides: only the themes whose look differs from the default
+Expand currency_lvlchance
 {
-    var base = currency.acc.t3extra;
+    BorderedGlow(currency.acc.t5alchemy, currency.acc.t45extra);
 }
 
-Expand t4chaos : PatternGlow
+Expand currency_lvlchaos
 {
-    var base = currency.acc.t45extra;
+    BorderedGlow(currency.acc.t4chaos, currency.acc.t45extra);
 }
 
-Expand t5alchemy : PatternBlack
+Expand currency_lvlessence
 {
-    var base = currency.acc.t45extra;
+    BorderedGlow(currency.acc.t5alchemy, currency.acc.t45extra);
 }
 
-Expand t6chrom : PatternBlack
+Expand currency_portalstack
 {
-    Empty();
+    SetFontSize 40;
 }
 
-Expand t7chance : PatternBlack
+Expand currency_t3
 {
-    Empty();
+    SetFontSize font.t4;
+    BorderedGlow(currency.acc.t3annul, currency.acc.t3extra);
 }
 
-Expand t9armour : PatternBlack
+Expand currency_t4
 {
-    SetBorderColor currency.acc.t9armour;
+    BorderedGlow(currency.acc.t4chaos, currency.acc.t45extra);
+}
+
+Expand currency_t5
+{
+    BorderedGlow(currency.acc.t5alchemy, currency.acc.t45extra);
+}
+
+Expand currency_t6
+{
+    BorderedGlow(currency.acc.t6chrom, sBlack);
+}
+
+Expand currency_t7
+{
+    SetFontSize font.t4;
+    BorderedGlow(currency.acc.t7chance, sBlack);
+}
+
+Expand currency_t8
+{
+    SetFontSize 40;
+}
+
+Expand currency_t9
+{
     SetTextColor NONE;
 }
 
-## LUNARIS DISABLES MOST DECORATORS
-Expand EndgameRareDecorators
+Expand currency_wisdomstack
+{
+    SetFontSize 40;
+}
+
+Expand deco_rarecorrupt
 {
     Disable;
 }
 
-## SIMPLIFIED RARE HIGHLIGHT
-Expand RaresJewellery.T1
+Expand deco_rarefourlink
 {
-    SetBorderColor rares.jewellery.border.t1;
+    Disable;
+}
+
+Expand deco_rareilvl
+{
+    Disable;
+}
+
+Expand deco_rareimplicit
+{
+    Disable;
+}
+
+Expand deco_rarelarge
+{
+    Disable;
+}
+
+Expand deco_raremedium
+{
+    Disable;
+}
+
+Expand deco_raretiny
+{
+    Disable;
+}
+
+Expand divination_t3
+{
+    BorderedGlow(divi.acc.t3, divi.acc.t3base);
+}
+
+Expand divination_t4
+{
+    BorderedGlow(divi.acc.t4, sBlack);
+}
+
+Expand divination_t5
+{
+    SetBorderColor sBlack;
+}
+
+Expand divination_t5c
+{
+    SetBorderColor sBlack;
+    SetFontSize NONE;
+}
+
+Expand exotics_t2
+{
+    SetFontSize 40;
+}
+
+Expand exotics_talismant3
+{
     SetTextColor rares.jewellery.text;
 }
 
-Expand RaresJewellery.T2
+Expand flasks_qualityhigh
 {
-    SetBorderColor rares.jewellery.border.t2;
-    SetTextColor rares.jewellery.text;
+    SetTextColor NONE;
 }
 
-Expand RaresJewellery.T3
+Expand fragments_t1
 {
-    SetBorderColor rares.jewellery.border.t3;
-    SetTextColor rares.jewellery.text;
+    Bordered(fragment.tx);
 }
 
-Expand RaresArmoursWeapons.T1
+Expand fragments_t2
 {
-    SetBorderColor 100 100 100 255;
+    SetBackgroundColor fragment.tx;
 }
 
-Expand RaresArmoursWeapons.T2
+Expand fragments_t3
+{
+    BorderedGlow(fragment.tx, fragment.acc.t3glow);
+}
+
+Expand fragments_t4
+{
+    BorderedGlow(fragment.tx, sBlack);
+}
+
+Expand fragments_t5
+{
+    SetFontSize font.t5;
+    SetBorderColor 0 0 0;
+    MinimapIcon NONE;
+}
+
+Expand fragments_t6
+{
+    SetFontSize font.t5;
+    PlayEffect tier.t5.cray Temp;
+}
+
+Expand influenced_t1
+{
+    BorderedGlow(influenced.gear.t2, influenced.extra);
+}
+
+Expand influenced_t2
+{
+    BorderedGlow(influenced.gear.t3, sBlack);
+}
+
+Expand league_t2
+{
+    BorderedGlow(fragment.tx, tier.t2.extra);
+    MinimapIcon 0 tier.t2.cmap Cross;
+}
+
+Expand league_t3
+{
+    SetFontSize font.t4;
+    BorderedGlow(fragment.tx, sBlack);
+    MinimapIcon 1 tier.t3.cmap Cross;
+}
+
+Expand league_t4
+{
+    Bordered(fragment.tx);
+    MinimapIcon 2 tier.t4.cmap Cross;
+}
+
+Expand leveling_qualityflask
+{
+    SetTextColor NONE;
+}
+
+Expand leveling_rarebodyshield
 {
     SetBorderColor 50 50 50 255;
 }
 
-Expand RaresArmoursWeapons.T3
+Expand leveling_rareunderlevel
 {
     SetBorderColor 0 0 0 255;
 }
 
-Expand RaresArmoursWeapons.T4
+Expand maps_decoupgrade
+{
+    Disable;
+}
+
+Expand rares_eldritch
+{
+    SetFontSize font.t4;
+    BorderedGlow(influenced.gear.t3, sBlack);
+}
+
+Expand rares_jewelleryt1
+{
+    SetFontSize 40;
+    SetTextColor rares.jewellery.text; SetBorderColor rares.jewellery.border.t1;
+}
+
+Expand rares_jewelleryt2
+{
+    SetTextColor rares.jewellery.text; SetBorderColor rares.jewellery.border.t2;
+}
+
+Expand rares_jewelleryt3
+{
+    SetTextColor rares.jewellery.text; SetBorderColor rares.jewellery.border.t3;
+}
+
+Expand rares_t12
+{
+    SetBorderColor 100 100 100 255;
+}
+
+Expand rares_t3
+{
+    SetBorderColor 50 50 50 255;
+}
+
+Expand rares_t4
 {
     SetBorderColor 0 0 0 255;
 }
 
-## RESTORE GREY RECIPES
-Expand RecipeStrategy.T2
+Expand rares_t5
 {
-    SetTextColor NONE;
+    SetBorderColor 0 0 0 255;
 }
 
-Expand RecipeStrategy.T3
+Expand splinter_t1
 {
-    SetTextColor NONE;
+    Bordered(splinters.acc.any);
 }
 
-## Divination cards follow the glow pattern
-Expand t3divi : PatternGlow
+Expand splinter_t3
 {
-    var base = divi.acc.t3base;
-    SetFontSize font.t3;
-}
-
-Expand t4divi : PatternBlack
-{
-    Empty();
-}
-
-Expand t5divi
-{
-    SetFontSize NONE;
-    SetBorderColor sBlack;
-}
-
-## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
-Expand NewLeagueTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
-{
-	var sound = sounds.currency;
-	var icon = Cross;
-	var acc = fragment.tx;
-    var extra = fragment.acc.t3glow;
-}
-
-Expand FragmentTierStrat : T1, T2RedPiece, T3YellowGlowPiece, T4WhitePieceNoBG, T5, T6
-{
-	var sound = sounds.currency;
-	var icon = Hexagon;
-	var acc = fragment.tx;
-    var extra = fragment.acc.t3glow;
-}
-
-Expand ExoticFragments : T3YellowGlowPiece
-{
-    var extra = fragment.acc.t3glow;
-}
-
-Expand InvitationTierList : T1, T2RedPiece, T3YellowPiece
-{
-    var extra = fragment.acc.t3glow;
-}
-
-## We hard override the splinter colors
-Expand SplinterStrategy.T1
-{
-    SetTextColor splinters.acc.any;
-    SetBorderColor splinters.acc.any;
-    SetBackgroundColor splinters.extra;
-}
-
-Expand SplinterStrategy.T2
-{
-    SetTextColor splinters.acc.any;
-    SetBorderColor splinters.acc.any;
-    SetBackgroundColor sBlack;
-}
-
-Expand SplinterStrategy.T3
-{
-    SetTextColor splinters.acc.any;
-    SetBorderColor sBlack;
+    SetTextColor splinters.acc.any; SetBorderColor sBlack;
     SetBackgroundColor NONE;
 }
 
-## Influenced items adjustments
-Expand InfluencedRandom : PatternBlack
+Expand splinter_t3annul
 {
-    Empty();
+    SetFontSize font.t4;
+    BorderedGlow(currency.acc.t3annul, currency.acc.t3extra);
 }
 
-Expand InfluencedVariant.T2
+Expand splinter_t4chaos
 {
-    SetTextColor influenced.gear.t2;
-    SetBorderColor influenced.gear.t2;
-    SetBackgroundColor influenced.extra;
+    BorderedGlow(currency.acc.t4chaos, currency.acc.t45extra);
 }
 
-Expand CraftSpecialStrategy.I86
+Expand splinter_t5
 {
-    SetBorderColor crafting.border.t1;
-}
-
-Expand CraftSpecialStrategy.I84
-{
-    SetBorderColor crafting.border.t1;
-}
-
-Expand CraftSpecialStrategy.ANY
-{
-    SetBorderColor crafting.border.t2;
-}
-
-Expand GeneralMapProgressionStrategy.deco_mapup
-{
-    Disable;
+    BorderedGlow(splinters.acc.any, sBlack);
 }

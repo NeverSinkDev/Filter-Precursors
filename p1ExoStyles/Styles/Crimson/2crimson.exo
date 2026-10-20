@@ -1,139 +1,141 @@
-## Currency Adjustments
-
-Expand t3annul
-{
-    SetTextColor sWhite;
-    SetBorderColor sWhite;
-}
-
-Expand t4chaos
-{
-    SetTextColor textgrey;
-    SetBorderColor textgrey;
-}
-
-Expand t5alchemy
-{
-    SetTextColor textgrey;
-    SetBorderColor textgrey;
-}
-
-Expand t6chrom
-{
-    SetTextColor genericcurrency;
-    SetBorderColor genericcurrency;
-    SetBackgroundColor sBlack;
-}
-
-Expand t7chance
-{
-    SetTextColor genericcurrency;
-    SetBorderColor genericcurrency;
-    SetBackgroundColor sBlack;
-}
-
-Expand t9armour
+# Theme overrides: only the themes whose look differs from the default
+Expand crafting_early
 {
     SetBackgroundColor curr_lowtrans;
 }
 
-Expand tportal
+Expand currency_lvlchance
+{
+    Bordered(textgrey);
+}
+
+Expand currency_lvlchaos
+{
+    Bordered(textgrey);
+}
+
+Expand currency_lvlessence
+{
+    Bordered(textgrey);
+}
+
+Expand currency_portal
 {
     SetBackgroundColor curr_lowtrans;
 }
 
-Expand twisdom
+Expand currency_portalleveling
 {
     SetBackgroundColor curr_lowtrans;
 }
 
-Expand tportHigh
+Expand currency_t3
 {
-    SetBackgroundColor currency.extra.tportal;
+    Bordered(sWhite);
 }
 
-Expand twisdHigh
+Expand currency_t4
 {
-    SetBackgroundColor currency.extra.twisdom;
+    Bordered(textgrey);
 }
 
-
-Expand t8trans
+Expand currency_t5
 {
-    SetTextColor genericcurrency;
-    SetBorderColor sBlack;
-    SetBackgroundColor sBlack;
+    Bordered(textgrey);
 }
 
-## RARE DECORATORS
-Expand EndgameRareDecorators.large
+Expand currency_t6
+{
+    BorderedGlow(genericcurrency, sBlack);
+}
+
+Expand currency_t7
+{
+    BorderedGlow(genericcurrency, sBlack);
+}
+
+Expand currency_t8
+{
+    SetTextColor genericcurrency; SetBorderColor sBlack;
+}
+
+Expand currency_t9
+{
+    SetBackgroundColor curr_lowtrans;
+}
+
+Expand currency_wisdom
+{
+    SetBackgroundColor curr_lowtrans;
+}
+
+Expand currency_wisdomleveling
+{
+    SetBackgroundColor curr_lowtrans;
+}
+
+Expand deco_rarelarge
 {
     Disable;
 }
 
-Expand EndgameRareDecorators.medium
+Expand deco_raremedium
 {
     Disable;
 }
 
-Expand RaresJewellery
+Expand flasks_qualityhigh
+{
+    Bordered(recipe_tx);
+}
+
+Expand leveling_qualityflask
+{
+    Bordered(recipe_tx);
+}
+
+Expand rares_jewelleryt2
 {
     SetFontSize 45;
 }
 
-Expand RaresArmoursWeapons
+Expand rares_jewelleryt3
+{
+    SetFontSize 45;
+}
+
+Expand rares_t12
+{
+    SetFontSize 40;
+    SetBorderColor sWhite;
+}
+
+Expand rares_t3
 {
     SetFontSize 40;
 }
 
-Expand RaresArmoursWeapons.T1
+Expand rares_t4
 {
-    SetBorderColor sWhite;
+    SetFontSize 40;
 }
 
-## Crafting and Misc
+Expand rares_t5
+{
+    SetFontSize 40;
+}
 
-Expand CraftGeneralStrategy.ANY
+Expand special_chancing
 {
     SetBackgroundColor curr_lowtrans;
 }
 
-Expand UniversalValueAccents.Chancing
+Expand splinter_t3annul
 {
-    SetBackgroundColor curr_lowtrans;
+    Bordered(sWhite);
 }
 
-## Recipe adjustments
-
-Expand RecipeStrategy.T2
+Expand splinter_t4chaos
 {
-    SetTextColor recipe_tx;
-    SetBorderColor recipe_tx;
-}
-
-Expand RecipeStrategy.T3
-{
-    SetTextColor recipe_tx;
-    SetBorderColor recipe_tx;
-}
-
-Expand Sentinel.stalker
-{
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
-}
-
-Expand Sentinel.pandemonium
-{
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
-}
-
-Expand Sentinel.apex
-{
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
+    Bordered(textgrey);
 }

@@ -1,77 +1,70 @@
-Expand t9armour : PatternBlack
-{
-    SetBorderColor currency.acc.t9armour;
-    SetTextColor currency.acc.low;
-}
-
-Expand tportal
+# Theme overrides: only the themes whose look differs from the default
+Expand currency_portal
 {
     SetTextColor currency.acc.low;
 }
 
-Expand twisdom
+Expand currency_portalleveling
 {
     SetTextColor currency.acc.low;
 }
 
-## SIMPLIFIED RARE HIGHLIGHT
-Expand RaresJewellery.T1
+Expand currency_t9
 {
-    SetTextColor sBlack;
-    SetBorderColor sBlack;
+    SetTextColor currency.acc.low;
 }
 
-Expand RaresJewellery.T2
+Expand currency_wisdom
 {
-    SetTextColor sBlack;
-    SetBorderColor sBlack;
+    SetTextColor currency.acc.low;
 }
 
-Expand RaresJewellery.T3
+Expand currency_wisdomleveling
 {
-    SetTextColor sBlack;
-    SetBorderColor sBlack;
+    SetTextColor currency.acc.low;
 }
 
-## remove inherent recipe text color, since we're using a strong
-## purple background
-Expand RecipeStrategy.T2
+Expand exotics_talismant3
+{
+    SetTextColor sBlack;
+}
+
+Expand flasks_qualityhigh
 {
     SetTextColor NONE;
 }
 
-Expand RecipeStrategy.T3
+Expand influenced_t2
 {
     SetTextColor NONE;
 }
 
-Expand GeneralMapProgressionStrategy.deco_mapup
+Expand leveling_qualityflask
+{
+    SetTextColor NONE;
+}
+
+Expand maps_decoupgrade
 {
     Disable;
 }
 
-Expand InfluencedRandom : PatternLowWhite
+Expand rares_eldritch
 {
     SetTextColor NONE;
 }
 
-Expand Sentinel.stalker
+Expand rares_jewelleryt1
 {
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
+    Bordered(sBlack);
 }
 
-Expand Sentinel.pandemonium
+Expand rares_jewelleryt2
 {
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
+    Bordered(sBlack);
 }
 
-Expand Sentinel.apex
+Expand rares_jewelleryt3
 {
-    BG league.playerequippable;
-    BD sBlack;
-    SetTextColor sBlack;
+    Bordered(sBlack);
 }

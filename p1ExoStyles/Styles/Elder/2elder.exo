@@ -1,436 +1,519 @@
-## CURRENCY ADJUSTMENTS
-
-Expand t2divine
+# Theme overrides: only the themes whose look differs from the default
+Expand currency_lvlchance
 {
-    SetBackgroundColor currency.extra.t2divine;
-    SetBorderColor currency.acc.t2divine;
-    SetTextColor currency.acc.t2divine;
+    BorderedGlow(currency.acc.t5alchemy, sBlack);
 }
 
-Expand t3annul
+Expand currency_lvlchaos
 {
-    SetBackgroundColor sBlack;
-    SetBorderColor currency.acc.t3annul;
-    SetTextColor currency.acc.t3annul;
+    BorderedGlow(currency.acc.t4chaos, sBlack);
 }
 
-Expand t4chaos
+Expand currency_lvlessence
 {
-    SetBackgroundColor sBlack;
-    SetBorderColor currency.acc.t4chaos;
-    SetTextColor currency.acc.t4chaos;
+    BorderedGlow(currency.acc.t5alchemy, sBlack);
 }
 
-Expand t5alchemy
+Expand currency_portal
 {
-    SetBackgroundColor sBlack;
-    SetBorderColor currency.acc.t5alchemy;
-    SetTextColor currency.acc.t5alchemy;
+    SetBorderColor NONE; SetBackgroundColor NONE;
 }
 
-Expand t6chrom
+Expand currency_portalleveling
 {
-    SetFontSize 35;
-    SetBackgroundColor sBlack;
-    SetBorderColor currency.acc.t6chrom;
-    SetTextColor currency.acc.t6chrom;
+    SetBorderColor NONE; SetBackgroundColor NONE;
 }
 
-Expand t7chance
+Expand currency_portalstack
 {
-    SetFontSize 35;
-    SetBackgroundColor sBlack;
-    SetBorderColor currency.acc.t7chance;
-    SetTextColor currency.acc.t7chance;
-}
-
-Expand t8trans
-{
-    SetBackgroundColor sBlack;
+    SetFontSize font.t4;
     SetBorderColor currency.acc.t8trans;
-    SetTextColor currency.acc.t8trans;
-}
-
-Expand t9armour
-{
-    SetBorderColor NONE;
-    SetTextColor NONE;
     SetBackgroundColor NONE;
 }
 
-Expand tportal
+Expand currency_t2
 {
-    SetBorderColor NONE;
-    SetTextColor NONE;
-    SetBackgroundColor NONE;
+    BorderedGlow(currency.acc.t2divine, currency.extra.t2divine);
 }
 
-Expand twisdom
+Expand currency_t3
 {
-    SetBorderColor NONE;
-    SetTextColor NONE;
-    SetBackgroundColor NONE;
+    BorderedGlow(currency.acc.t3annul, sBlack);
 }
 
-Expand tportHigh
+Expand currency_t4
 {
-    SetBorderColor currency.acc.t8trans;
-    SetTextColor NONE;
-    SetBackgroundColor NONE;
+    BorderedGlow(currency.acc.t4chaos, sBlack);
 }
 
-Expand twisdHigh
+Expand currency_t5
 {
-    SetBorderColor currency.acc.t8trans;
-    SetTextColor NONE;
-    SetBackgroundColor NONE;
+    BorderedGlow(currency.acc.t5alchemy, sBlack);
 }
 
-## ELDER DISABLES MOST DECORATORS
-Expand EndgameRareDecorators
+Expand currency_t6
 {
-    Disable;
-}
-
-Expand GeneralMapProgressionStrategy.deco_map_zone12
-{
-    Disable;
-}
-
-Expand GeneralMapProgressionStrategy.deco_map_zone34
-{
-    Disable;
-}
-
-Expand GeneralMapProgressionStrategy.deco_mapup
-{
-    Disable;
-}
-
-## ELDER SIMPLIFIES DIVINATION CARD HIGHLIGHT
-Expand t2divi
-{
-    SetTextColor divi.acc.t3;
-    SetBorderColor divi.acc.t3;
-    SetBackgroundColor divi.extra.t2;
-}
-
-Expand t3divi
-{
-    SetTextColor divi.acc.t3;
-    SetBorderColor divi.acc.t3;
-    SetBackgroundColor sBlack;
-}
-
-Expand t4divi
-{
-    SetTextColor divi.acc.t4;
-    SetBorderColor divi.acc.t4;
-    SetBackgroundColor sBlack;
-}
-
-Expand t5divi
-{
-    SetBorderColor NONE;
-    SetTextColor divi.acc.t5;
-    SetBackgroundColor NONE;
-    SetFontSize NONE;
-}
-
-## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
-Expand FragmentTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5, T6
-{
-	var sound = sounds.currency;
-	var icon = Hexagon;
-	var acc = fragment.tx;
-    var extra = fragment.acc.t3glow;
-}
-
-## VASTLY SIMPLIFIED FRAGMENT HIGHLIGHT
-Expand NewLeagueTierStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece, T5
-{
-	var sound = sounds.currency;
-	var icon = Cross;
-	var acc = fragment.tx;
-    var extra = fragment.acc.t3glow;
-}
-
-Expand ExoticFragments : T3BlackPiece
-{
-    var extra = fragment.acc.t3glow;
-}
-
-Expand InvitationTierList : T1, T2GlowPiece, T3BlackPiece
-{
-    var extra = fragment.acc.t3glow;
-}
-
-## SIMPLIFIED RARE HIGHLIGHT
-Expand RaresJewellery.T1
-{
-    SetBorderColor rares.jewellery.text;
-    SetTextColor rares.jewellery.text;
-    SetBackgroundColor sBlack;
     SetFontSize 35;
+    BorderedGlow(currency.acc.t6chrom, sBlack);
 }
 
-Expand RaresJewellery.T2
+Expand currency_t7
 {
-    SetBorderColor rares.jewellery.text;
-    SetTextColor rares.jewellery.text;
-    SetBackgroundColor sBlack;
     SetFontSize 35;
+    BorderedGlow(currency.acc.t7chance, sBlack);
 }
 
-Expand RaresJewellery.T3
+Expand currency_t8
 {
-    SetBorderColor rares.jewellery.text;
-    SetTextColor rares.jewellery.text;
-    SetBackgroundColor rares.low.acc;
-    SetFontSize NONE;
+    SetFontSize font.t4;
 }
 
-Expand RaresArmoursWeapons.T1
+Expand currency_t9
 {
-    SetBorderColor rares.notice;
-    SetBackgroundColor sBlack;
-    SetFontSize NONE;
+    SetTextColor NONE; SetBorderColor NONE; SetBackgroundColor NONE;
 }
 
-Expand RaresArmoursWeapons.T2
+Expand currency_wisdom
 {
-    SetBorderColor rares.notice;
-    SetBackgroundColor sBlack;
-    SetFontSize NONE;
+    SetBorderColor NONE; SetBackgroundColor NONE;
 }
 
-Expand RaresArmoursWeapons.T3
+Expand currency_wisdomleveling
 {
-    SetBorderColor 0 0 0 255;
-    SetBackgroundColor rares.low.acc;
-    SetFontSize NONE;
+    SetBorderColor NONE; SetBackgroundColor NONE;
 }
 
-Expand RaresArmoursWeapons.T4
+Expand currency_wisdomstack
 {
-    SetBorderColor 0 0 0 255;
-    SetBackgroundColor rares.low.acc;
-    SetFontSize NONE;
-}
-
-## RESTORE GREY RECIPES
-Expand RecipeStrategy.T1
-{
-    SetTextColor recipe.acc;
-    SetBorderColor recipe.acc;
-    SetFontSize 40;
-    SetBackgroundColor sBlack;
-}
-
-Expand RecipeStrategy.TS1
-{
-    SetTextColor recipe.acc;
-    SetBorderColor recipe.acc;
-    SetFontSize 40;
-    SetBackgroundColor sBlack;
-}
-
-## RESTORE GREY RECIPES
-Expand RecipeStrategy.T2
-{
-    SetTextColor recipe.acc;
-    SetBorderColor recipe.acc;
-    SetFontSize 32;
+    SetFontSize font.t4;
+    SetBorderColor currency.acc.t8trans;
     SetBackgroundColor NONE;
 }
 
-Expand RecipeStrategy.T3
+Expand deco_rarecorrupt
 {
-    SetTextColor recipe.acc;
-    SetBorderColor recipe.acc;
-    SetFontSize 32;
-    SetBackgroundColor NONE;
+    Disable;
 }
 
-## Uniques - we change the strategies
-Expand t2uni
+Expand deco_rarefourlink
 {
-    SetBackgroundColor unique.extra;
-    SetBorderColor unique.tx;
-    SetTextColor unique.tx;
-    SetFontSize font.t1;
+    Disable;
 }
 
-Expand t3uni
+Expand deco_rareilvl
 {
-    SetBorderColor exoticgear.tx;
-    SetTextColor unique.tx;
-    SetBackgroundColor sBlack;
+    Disable;
+}
+
+Expand deco_rareimplicit
+{
+    Disable;
+}
+
+Expand deco_rarelarge
+{
+    Disable;
+}
+
+Expand deco_raremedium
+{
+    Disable;
+}
+
+Expand deco_raretiny
+{
+    Disable;
+}
+
+Expand divination_t2
+{
+    BorderedGlow(divi.acc.t3, divi.extra.t2);
+}
+
+Expand divination_t3
+{
+    BorderedGlow(divi.acc.t3, sBlack);
+}
+
+Expand divination_t4
+{
+    BorderedGlow(divi.acc.t4, sBlack);
+}
+
+Expand divination_t5
+{
+    SetBorderColor NONE; SetBackgroundColor NONE;
+}
+
+Expand divination_t5c
+{
+    SetFontSize NONE; SetBorderColor NONE; SetBackgroundColor NONE;
+}
+
+Expand exotics_t2
+{
     SetFontSize font.t3;
 }
 
-Expand t4uni
+Expand exotics_talismant3
 {
-    SetTextColor unique.tx;
-    SetBorderColor unique.tx;
-    SetBackgroundColor sBlack;
-    SetFontSize font.t3;
+    SetTextColor rares.jewellery.text; SetBackgroundColor rares.low.acc;
 }
 
-Expand t5uni
+Expand flasks_qualityhigh
 {
-    SetTextColor unique.tx;
-    SetBorderColor sBlack;
-    SetBackgroundColor sBlack;
-}
-
-## Unique Map Strat
-
-Expand UniqueMapStrat : T1, T2GlowPiece, T3BlackPiece, T4BlackPiece
-{
-	var sound = sounds.unique;
-	var icon = Star;
-	var tier.t4.cmap = Brown;
-	var tier.t4.cray = Brown;
-	var acc = unique.tx;
-}
-
-## We hard override the splinter colors
-Expand SplinterStrategy.T1
-{
-    SetTextColor splinters.acc.any;
-    SetBorderColor splinters.acc.any;
-    SetBackgroundColor sBlack;
-    SetFontSize 40;
-}
-
-Expand SplinterStrategy.T2
-{
-    SetTextColor splinters.acc.any;
-    SetBorderColor sBlack;
-    SetBackgroundColor sBlack;
-    SetFontSize 35;
-}
-
-Expand SplinterStrategy.T3
-{
-    SetTextColor splinters.acc.any;
-    SetBorderColor sBlack;
-    SetBackgroundColor NONE;
-    SetFontSize 35;
-}
-
-## Influenced items adjustments
-Expand InfluencedRandom : PatternBlack
-{
-    Empty();
-    SetBorderColor sBlack;
+    SetFontSize 32;
+    Bordered(recipe.acc);
     SetBackgroundColor NONE;
 }
 
-Expand InfluencedVariant.T2
-{
-    SetTextColor influenced.gear.t2;
-    SetBorderColor influenced.gear.t2;
-    SetBackgroundColor sBlack;
-}
-
-## Crafting adjustments
-Expand CraftSpecialStrategy.I86
-{
-    SetBorderColor crafting.border.t1;
-}
-
-Expand CraftSpecialStrategy.I84
-{
-    SetBorderColor crafting.border.t1;
-}
-
-Expand CraftSpecialStrategy.ANY
-{
-    SetBorderColor crafting.border.t2;
-}
-
-Expand GeneralMapProgressionStrategy.deco_mapup
-{
-    Disable;
-}
-
-## Maps adjustments
-
-Expand InfluencedMapsStrategy
-{
-    SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.special.extra
-}
-
-
-Expand GeneralMapProgressionStrategy.SpecialHigh
-{
-    SetFontSize 45;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.special.extra
-}
-
-Expand GeneralMapProgressionStrategy.SpecialLow
+Expand flasks_qualitymax
 {
     SetFontSize 40;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.special.extra
+    BorderedGlow(recipe.acc, sBlack);
 }
 
-Expand GeneralMapProgressionStrategy.Z1
+Expand fragments_t1
 {
-    SetFontSize 40;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.z1.acc;
+    Bordered(fragment.tx);
 }
 
-Expand GeneralMapProgressionStrategy.Z2
+Expand fragments_t2
 {
-    SetFontSize 40;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.z2.acc;
+    BorderedGlow(fragment.tx, tier.t2.extra);
 }
 
-Expand GeneralMapProgressionStrategy.Z3
+Expand fragments_t3
 {
-    SetFontSize 40;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.z3;
+    SetFontSize font.t4;
+    BorderedGlow(fragment.tx, sBlack);
 }
 
-Expand GeneralMapProgressionStrategy.Z4
+Expand fragments_t4
 {
-    SetFontSize 40;
-    SetBorderColor sWhite;
-    SetTextColor sWhite;
-    SetBackgroundColor maps.z4;
+    BorderedGlow(fragment.tx, sBlack);
 }
 
-## Disable lowest tier crafting
-
-Expand CraftGeneralStrategy.ANY
-{
-    Disable();
-}
-
-Expand Coins.Small
+Expand fragments_t5
 {
     SetFontSize font.t5;
-    SetTextColor coins.acc;
-    SetBorderColor coins.extra;
-    PlayEffect Orange Temp;
+    SetBorderColor 0 0 0;
+    MinimapIcon NONE;
 }
 
-Expand HeistMapLikeHigh
+Expand fragments_t6
+{
+    SetFontSize font.t5;
+    PlayEffect tier.t5.cray Temp;
+}
+
+Expand influenced_t1
+{
+    BorderedGlow(influenced.gear.t2, sBlack);
+}
+
+Expand influenced_t2
+{
+    SetTextColor influenced.gear.t3; SetBorderColor sBlack;
+    SetBackgroundColor NONE;
+}
+
+Expand league_t2
+{
+    BorderedGlow(fragment.tx, tier.t2.extra);
+    MinimapIcon 0 tier.t2.cmap Cross;
+}
+
+Expand league_t3
+{
+    SetFontSize font.t4;
+    BorderedGlow(fragment.tx, sBlack);
+    MinimapIcon 1 tier.t3.cmap Cross;
+}
+
+Expand league_t4
+{
+    Bordered(fragment.tx);
+    MinimapIcon 2 tier.t4.cmap Cross;
+}
+
+Expand leveling_3link
+{
+    SetFontSize 32;
+}
+
+Expand leveling_act2
+{
+    SetFontSize 32;
+}
+
+Expand leveling_blueearly
+{
+    SetFontSize 32;
+}
+
+Expand leveling_qualityflask
+{
+    SetFontSize 32;
+    Bordered(recipe.acc);
+    SetBackgroundColor NONE;
+}
+
+Expand leveling_rarearmour
+{
+    SetBackgroundColor sBlack;
+}
+
+Expand leveling_rarebodyshield
+{
+    SetBorderColor rares.notice; SetBackgroundColor sBlack;
+}
+
+Expand leveling_rareunderlevel
+{
+    SetBorderColor 0 0 0 255; SetBackgroundColor rares.low.acc;
+}
+
+Expand leveling_rgb
+{
+    BorderedGlow(recipe.acc, sBlack);
+}
+
+Expand links_recipe
 {
     SetFontSize 40;
+    BorderedGlow(recipe.acc, sBlack);
+}
+
+Expand links_recipespecial
+{
+    SetFontSize 40;
+    SetTextColor recipe.acc; SetBackgroundColor sBlack;
+}
+
+Expand links_rgbrecipe
+{
+    BorderedGlow(recipe.acc, sBlack);
+}
+
+Expand maplike_high
+{
+    SetFontSize 40;
+}
+
+Expand maps_decoupgrade
+{
+    Disable;
+}
+
+Expand maps_decozonehigh
+{
+    Disable;
+}
+
+Expand maps_decozonelow
+{
+    Disable;
+}
+
+Expand maps_high
+{
+    SetFontSize 40;
+    Bordered(sWhite);
+}
+
+Expand maps_highest
+{
+    SetFontSize 40;
+    Bordered(sWhite);
+}
+
+Expand maps_low
+{
+    SetFontSize 40;
+    SetBorderColor sWhite; SetBackgroundColor maps.z4;
+}
+
+Expand maps_mid
+{
+    SetFontSize 40;
+    SetBorderColor sWhite; SetBackgroundColor maps.z3;
+}
+
+Expand maps_special
+{
+    SetFontSize 40;
+    BrickWhite(maps.special.extra);
+}
+
+Expand maps_specialhigh
+{
+    SetFontSize 45;
+    Bordered(sWhite);
+}
+
+Expand maps_top
+{
+    SetFontSize 45;
+    BrickWhite(maps.special.extra);
+}
+
+Expand rares_eldritch
+{
+    SetFontSize font.t4;
+    SetTextColor influenced.gear.t3; SetBorderColor sBlack;
+    SetBackgroundColor NONE;
+}
+
+Expand rares_jewelleryt1
+{
+    SetFontSize 35;
+    BorderedGlow(rares.jewellery.text, sBlack);
+}
+
+Expand rares_jewelleryt2
+{
+    SetFontSize 35;
+    BorderedGlow(rares.jewellery.text, sBlack);
+}
+
+Expand rares_jewelleryt3
+{
+    BorderedGlow(rares.jewellery.text, rares.low.acc);
+    SetFontSize NONE;
+}
+
+Expand rares_t12
+{
+    SetBorderColor rares.notice; SetBackgroundColor sBlack;
+    SetFontSize NONE;
+}
+
+Expand rares_t3
+{
+    SetBorderColor rares.notice; SetBackgroundColor sBlack;
+    SetFontSize NONE;
+}
+
+Expand rares_t4
+{
+    SetBorderColor 0 0 0 255; SetBackgroundColor rares.low.acc;
+    SetFontSize NONE;
+}
+
+Expand rares_t5
+{
+    SetBorderColor 0 0 0 255; SetBackgroundColor rares.low.acc;
+    SetFontSize NONE;
+}
+
+Expand splinter_t1
+{
+    SetFontSize 40;
+    BorderedGlow(splinters.acc.any, sBlack);
+}
+
+Expand splinter_t2divine
+{
+    BorderedGlow(currency.acc.t2divine, currency.extra.t2divine);
+}
+
+Expand splinter_t3
+{
+    SetFontSize 35;
+    SetTextColor splinters.acc.any; SetBorderColor sBlack;
+    SetBackgroundColor NONE;
+}
+
+Expand splinter_t3annul
+{
+    BorderedGlow(currency.acc.t3annul, sBlack);
+}
+
+Expand splinter_t4chaos
+{
+    BorderedGlow(currency.acc.t4chaos, sBlack);
+}
+
+Expand splinter_t5
+{
+    SetFontSize 35;
+    SetTextColor splinters.acc.any; SetBorderColor sBlack; SetBackgroundColor sBlack;
+}
+
+Expand uniques_dust
+{
+    SetFontSize font.t3;
+}
+
+Expand uniques_earlyleague
+{
+    SetFontSize font.t3;
+}
+
+Expand uniques_foulborn
+{
+    SetTextColor unique.tx; SetBackgroundColor sBlack;
+}
+
+Expand uniques_heist
+{
+    BorderedGlow(unique.tx, tier.t2.extra);
+    PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap Star;
+}
+
+Expand uniques_t2
+{
+    SetFontSize font.t1;
+    BorderedGlow(unique.tx, unique.extra);
+}
+
+Expand uniques_t2corrupt
+{
+    SetFontSize font.t1;
+    SetTextColor unique.tx; SetBackgroundColor unique.extra;
+}
+
+Expand uniques_t3
+{
+    SetTextColor unique.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
+}
+
+Expand uniques_t3special
+{
+    SetTextColor unique.tx; SetBackgroundColor sBlack;
+}
+
+Expand uniques_t4
+{
+    SetFontSize font.t3;
+    SetBackgroundColor sBlack;
+}
+
+Expand uniques_t4boss
+{
+    SetFontSize font.t3;
+    SetBackgroundColor sBlack;
+}
+
+Expand uniques_t4corrupt
+{
+    SetFontSize font.t3;
+    SetBackgroundColor sBlack;
+}
+
+Expand uniques_t4special
+{
+    SetFontSize font.t3;
+    SetBackgroundColor sBlack;
+}
+
+Expand uniques_t5
+{
+    SetBorderColor sBlack;
+}
+
+Expand uniques_vinktar
+{
+    SetTextColor unique.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
 }
