@@ -2182,7 +2182,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 #------------------------------------
 #!! Waypoint c10.uniques.undert1t2 : "Tierlist - Uniques - All tiering, except T1 and T2" : "Uniques"
 
-	Show Vestige			{ !uniques_foulborn; !GSH; %D9; Vestigial True; }
+	Show Vestige			{ !uniques_replicamulti; !GSH; %D9; Vestigial True; }
 	Show exUniqueIdols		{ !uniques_t3; !GSH; Class == "Idols"; }
 	Show 2xcorrupteduniques { !uniques_t2corrupt; !G2; Corrupted True; CorruptedMods >= 2; }
 	Show 2xabyss 			{ !uniques_t2; !G2; Sockets >= "AA"; BaseType == uniques.exceptions.abyssSocketUniques; }
@@ -2198,7 +2198,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 	ShowD exDust2 { !uniques_dust; !G3; BaseType == uniques.ex.dust3; }
 	ShowD exDust3 { !uniques_dust; !G3; BaseType == uniques.ex.dust4; }
 
-	Show foulBorn { !uniques_foulborn; !GSH; %D9; Foulborn True; }
+	Show foulBorn { !uniques_replicamulti; !GSH; %D9; Foulborn True; }
 	Show multispecial { !uniques_t3; !GSH; %H7; BaseType == uniques.generic.multispecial; }
 	Show overQual { !uniques_t3; !GSH; %D5; Quality >= 27; }
 	Show 5link    { !uniques_t4special; !GSH; %D4; LinkedSockets 5; }
@@ -2216,7 +2216,7 @@ Section Unique : Rarity Unique, Auto("uniques")
 	Show exjewelscorrupted    { !uniques_t3special; !GSH; BaseType == genericJewels; CorruptedMods = 0; Corrupted True; }
 	Show exjewels    		  { !uniques_t2; !GSH; BaseType == uniques.jewels; }
 	
-	ShowD highvinktar { !uniques_vinktar; !G3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
+	ShowD highvinktar { !uniques_earlyleague; !G3; BaseType == "Imperial Staff"; ItemLevel >= 82; }
 	
 	Show  corrupteduniques { !uniques_t4corrupt; !G4; %D5; Corrupted True; CorruptedMods >= 1; Class == classes_corrupted; }
 
