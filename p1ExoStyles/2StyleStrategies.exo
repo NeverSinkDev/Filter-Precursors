@@ -109,14 +109,14 @@ Style Common
 # CURRENCY
 #------------------------------------
 
-	Func currency_coinshuge
+	Func currency_heist1
 	{
 		SetFontSize font.t3;
 		BorderedGlow(coins.acc, coins.extra);
 		PlayEffect Orange;
 	}
 
-	Func currency_coinslarge
+	Func currency_heist2
 	{
 		SetFontSize font.t4;
 		BorderedGlow(coins.acc, sBlack);
@@ -162,61 +162,61 @@ Style Common
 		SetBorderColor currency.acc.tportal.high; SetBackgroundColor currency.extra.tportal;
 	}
 
-	Func currency_t1
+	Func apex_scurr
 	{
 		SetFontSize font.max;
 		BorderedGlow(currency.acc.t1, tier.t1.base);
 		ApexEffects();
 	}
 
-	Func currency_t2
+	Func currency_a
 	{
 		SetFontSize font.t2;
 		BrickWhite(currency.acc.t2divine);
 		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red icon;
 	}
 
-	Func currency_t3
+	Func currency_b
 	{
 		SetFontSize font.t3;
 		BrickBlack(currency.acc.t3annul);
 		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow icon;
 	}
 
-	Func currency_t4
+	Func currency_c
 	{
 		SetFontSize font.t3;
 		BrickBlack(currency.acc.t4chaos);
 		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White icon;
 	}
 
-	Func currency_t5
+	Func currency_d
 	{
 		SetFontSize font.t3;
 		BrickBlack(currency.acc.t5alchemy);
 		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White icon;
 	}
 
-	Func currency_t6
+	Func currency_e
 	{
 		SetFontSize font.t4;
 		BrickBlack(currency.acc.t6chrom);
 		PlayAlertSound 2 300; PlayEffect Grey; MinimapIcon 2 Grey Circle;
 	}
 
-	Func currency_t7
+	Func currency_supply1
 	{
 		SetFontSize font.t3;
 		BrickBlack(currency.acc.t7chance);
 	}
 
-	Func currency_t8
+	Func currency_supply2
 	{
 		SetFontSize 45;
 		BorderedGlow(currency.acc.t8trans, sBlack);
 	}
 
-	Func currency_t9
+	Func currency_supply3
 	{
 		SetFontSize font.t5;
 		BorderedGlow(currency.acc.t9armour, sBlack);
@@ -228,13 +228,13 @@ Style Common
 		SetBorderColor currency.acc.twisdom; SetBackgroundColor sBlack;
 	}
 
-	Func currency_wisdomleveling
+	Func currency_wisdomlvl
 	{
 		SetFontSize font.t3;
 		SetBorderColor currency.acc.twisdom; SetBackgroundColor sBlack;
 	}
 
-	Func currency_wisdomstack
+	Func currency_wisdommany
 	{
 		SetFontSize 45;
 		SetBorderColor currency.acc.twisdom.high; SetBackgroundColor currency.extra.twisdom;
@@ -255,17 +255,17 @@ Style Common
 		SetBorderColor accent.notice.high;
 	}
 
-	Func deco_rarecorrupt
+	Func deco_rarecorr
 	{
 		SetBorderColor accent.corrupt.tx;
 	}
 
-	Func deco_rarefourlink
+	Func deco_rare4l
 	{
 		SetBorderColor accent.leveling.fourlink;
 	}
 
-	Func deco_rareilvl
+	Func deco_rareilvltop
 	{
 		SetTextColor accent.rare.ilvl86; SetBorderColor NONE;
 	}
@@ -280,7 +280,7 @@ Style Common
 		SetTextColor accent.rare.ilvl75; SetBorderColor NONE;
 	}
 
-	Func deco_rareimplicit
+	Func deco_rarecorrimp
 	{
 		SetBorderColor accent.corruptimpl.tx;
 	}
@@ -312,41 +312,41 @@ Style Common
 		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Triangle;
 	}
 
-	Func divination_t1
+	Func apex_sdiv
 	{
 		SetFontSize font.max;
 		BorderedGlow(divi.acc.t1, tier.t1.base);
 		ApexEffects();
 	}
 
-	Func divination_t2
+	Func divination_a
 	{
 		SetFontSize font.t2;
 		BrickWhite(divi.acc.t2);
 		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Triangle;
 	}
 
-	Func divination_t3
+	Func divination_b
 	{
 		SetFontSize font.t3;
 		BrickBlack(divi.acc.t3);
 		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Triangle;
 	}
 
-	Func divination_t4
+	Func divination_c
 	{
 		SetFontSize font.t3;
 		BrickBlack(divi.acc.t4);
 		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White Triangle;
 	}
 
-	Func divination_t5
+	Func divination_d
 	{
 		SetFontSize font.t6;
 		BorderedGlow(divi.acc.t5, sBlack);
 	}
 
-	Func divination_t5c
+	Func divination_dcurr
 	{
 		SetFontSize font.t4;
 		BorderedGlow(divi.acc.t5, sBlack);
@@ -358,21 +358,21 @@ Style Common
 # EXOTICS
 #------------------------------------
 
-	Func exotics_corruptt2
+	Func exotics_t1corr
 	{
 		SetFontSize font.t3;
 		SetTextColor exoticgear.tx; SetBorderColor accent.corruptimpl.tx; SetBackgroundColor sBlack;
 		SpecialGearEffects(1);
 	}
 
-	Func exotics_corruptt3
+	Func exotics_t2corr
 	{
 		SetFontSize font.t4;
 		SetBorderColor accent.corruptimpl.tx;
 		SpecialGearEffects(2);
 	}
 
-	Func exotics_corruptt4
+	Func exotics_t3corr
 	{
 		SetFontSize font.t5;
 		SetBorderColor accent.corruptimpl.tx;
@@ -433,41 +433,41 @@ Style Common
 # FLASKS
 #------------------------------------
 
-	Func flasks_qualityhigh
+	Func flasks_qhigh
 	{
 		SetFontSize font.t5;
 		SetTextColor sBlack; SetBorderColor recipe.extra; SetBackgroundColor recipe.t2.acc;
 	}
 
-	Func flasks_qualitymax
+	Func flasks_qmax
 	{
 		SetFontSize font.t4;
 		BrickWhite(recipe.t1.acc);
 		PlayEffect recipe.cray Temp;
 	}
 
-	Func flasks_utilitycorrupt
+	Func flasks_utilcorr
 	{
 		SetFontSize font.t4;
 		SetBorderColor accent.corrupt.tx; SetBackgroundColor 25 100 75;
 		PlayEffect Grey Temp;
 	}
 
-	Func flasks_utilityt1
+	Func flasks_t1util
 	{
 		SetFontSize font.t4;
 		BorderedGlow(50 200 125, 25 100 75);
 		PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
 	}
 
-	Func flasks_utilityt2
+	Func flasks_t2util
 	{
 		SetFontSize font.t4;
 		SetBorderColor 50 200 125; SetBackgroundColor 25 100 75;
 		PlayEffect Grey Temp;
 	}
 
-	Func flasks_utilityt3
+	Func flasks_t3util
 	{
 		SetFontSize font.t5;
 		SetBorderColor sBlack; SetBackgroundColor 25 100 75;
@@ -479,42 +479,42 @@ Style Common
 # FRAGMENTS
 #------------------------------------
 
-	Func fragments_t1
+	Func apex_sfrag
 	{
 		SetFontSize font.max;
 		BorderedGlow(fragment.tx.high, tier.t1.base);
 		ApexEffects();
 	}
 
-	Func fragments_t2
+	Func fragments_a
 	{
 		SetFontSize font.t2;
 		BorderedGlow(tier.t2.base, fragment.tx.high);
 		PlayAlertSound sounds.t2; PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap Hexagon;
 	}
 
-	Func fragments_t3
+	Func fragments_b
 	{
 		SetFontSize font.t3;
 		BorderedGlow(tier.t3.base, fragment.tx.high);
 		PlayAlertSound sounds.currency; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Hexagon;
 	}
 
-	Func fragments_t4
+	Func fragments_c
 	{
 		SetFontSize font.t4;
 		BrickBlack(fragment.tx);
 		PlayAlertSound sounds.currency; PlayEffect tier.t4.cray; MinimapIcon 2 tier.t4.cmap Hexagon;
 	}
 
-	Func fragments_t5
+	Func fragments_d
 	{
 		SetFontSize font.t4;
 		Bordered(fragment.tx);
 		PlayEffect tier.t5.cray Temp; MinimapIcon 2 tier.t4.cmap Hexagon;
 	}
 
-	Func fragments_t6
+	Func fragments_e
 	{
 		SetFontSize font.t4;
 		SetTextColor fragment.tx; SetBorderColor 0 0 0;
@@ -550,35 +550,35 @@ Style Common
 		SetTextColor gems.low; SetBorderColor 0 0 0;
 	}
 
-	Func gems_t1
+	Func apex_sgem
 	{
 		SetFontSize font.max;
 		BorderedGlow(gems.t1, tier.t1.base);
 		ApexEffects();
 	}
 
-	Func gems_t2
+	Func gems_a
 	{
 		SetFontSize font.t2;
 		SetTextColor gems.high; SetBorderColor artefact.tx; SetBackgroundColor artefact.extra;
 		PlayAlertSound sounds.t2; PlayEffect tier.t1.cray; MinimapIcon 0 tier.t1.cray Triangle;
 	}
 
-	Func gems_t3
+	Func gems_b
 	{
 		SetFontSize font.t2;
 		BorderedGlow(gems.high, gems.base);
 		PlayAlertSound sounds.currency; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t3.cmap Triangle;
 	}
 
-	Func gems_t4
+	Func gems_c
 	{
 		SetFontSize font.t3;
 		Bordered(gems.norm);
 		PlayAlertSound sounds.currency; PlayEffect tier.t5.cray; MinimapIcon 1 tier.t4.cmap Triangle;
 	}
 
-	Func gems_t5
+	Func gems_d
 	{
 		SetFontSize font.t4;
 		SetTextColor gems.norm; SetBorderColor gems.low;
@@ -591,7 +591,7 @@ Style Common
 		SetBorderColor 0 0 0; SetBackgroundColor 55 0 0 255;
 	}
 
-	Func gems_vaalleveling
+	Func gems_vaallvl
 	{
 		SetFontSize font.t4;
 		SetBorderColor 0 0 0; SetBackgroundColor 55 0 0 255;
@@ -636,28 +636,28 @@ Style Common
 # HEIST
 #------------------------------------
 
-	Func heist_geart1
+	Func heist_t2
 	{
 		SetFontSize font.t3;
 		SetBorderColor accent.heist; SetBackgroundColor rares.generic.t1;
 		PlayAlertSound sounds.unique; PlayEffect White; MinimapIcon 1 White Raindrop;
 	}
 
-	Func heist_geart1high
+	Func heist_t1
 	{
 		SetFontSize font.t2;
 		SetTextColor accent.rare.ilvl84; SetBorderColor accent.heist; SetBackgroundColor rares.generic.t1;
 		PlayAlertSound sounds.unique; PlayEffect Yellow; MinimapIcon 1 Yellow Raindrop;
 	}
 
-	Func heist_geart2
+	Func heist_t3
 	{
 		SetFontSize font.t4;
 		SetBorderColor accent.heist.low; SetBackgroundColor rares.generic.t2;
 		PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 1 Grey Raindrop;
 	}
 
-	Func heist_geart3
+	Func heist_t4
 	{
 		SetFontSize font.t5;
 		SetBorderColor accent.heist.low; SetBackgroundColor rares.generic.t2;
@@ -669,14 +669,14 @@ Style Common
 # HIDE
 #------------------------------------
 
-	Func hide_layer
+	Func utility_layer
 	{
 		SetFontSize font.min;
 		SetBorderColor 0 0 0 0; SetBackgroundColor 0 0 0 0;
 		DisableDropSound True;
 	}
 
-	Func hide_shrunk
+	Func utility_shrunk
 	{
 		SetFontSize font.t6;
 		SetBorderColor 0 0 0;
@@ -739,53 +739,53 @@ Style Common
 # JEWELS
 #------------------------------------
 
-	Func jewels_blue
+	Func jewels_abysslvl
 	{
 		SetFontSize font.t5;
 		BorderedGlow(jewel.magic.tx, jewel.magic.extra);
 	}
 
-	Func jewels_bluehigh
+	Func jewels_abyss2
 	{
 		SetFontSize font.t5;
 		SetTextColor jewel.magic.tx; SetBorderColor accent.medium.tx; SetBackgroundColor jewel.magic.extra;
 	}
 
-	Func jewels_blueveryhigh
+	Func jewels_abyss1
 	{
 		SetFontSize font.t5;
 		SetTextColor jewel.magic.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.magic.extra;
 	}
 
-	Func jewels_cluster
+	Func jewels_t5
 	{
 		SetFontSize font.t3;
 		BorderedGlow(jewel.cluster.tx, jewel.cluster.extra);
 		PlayAlertSound sounds.currency; PlayEffect Grey Temp; MinimapIcon 2 Grey Pentagon;
 	}
 
-	Func jewels_clusterhigh
+	Func jewels_t4
 	{
 		SetFontSize font.t3;
 		SetTextColor jewel.cluster.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.cluster.extra;
 		PlayAlertSound sounds.currency; PlayEffect White; MinimapIcon 2 White Pentagon;
 	}
 
-	Func jewels_clusteroptimal
+	Func jewels_t3
 	{
 		SetFontSize font.t2;
 		SetTextColor jewel.cluster.tx; SetBorderColor accent.high.tx; SetBackgroundColor jewel.cluster.extra;
 		PlayAlertSound sounds.currency; PlayEffect Yellow; MinimapIcon 1 Yellow Pentagon;
 	}
 
-	Func jewels_clustert1
+	Func apex_sjewel
 	{
 		SetFontSize font.max;
 		SetTextColor jewel.cluster.tx; SetBorderColor accent.high.tx; SetBackgroundColor 255 255 255 255;
 		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Star;
 	}
 
-	Func jewels_clustert2
+	Func jewels_t2
 	{
 		SetFontSize font.t2;
 		BorderedGlow(255 255 255 255, accent.high.tx);
@@ -858,14 +858,14 @@ Style Common
 # LEVELING
 #------------------------------------
 
-	Func leveling_3link
+	Func leveling_3l
 	{
 		SetFontSize font.t5;
 		SetBorderColor accent.leveling.threelink; SetBackgroundColor sBlack;
 		PlayEffect Grey Temp;
 	}
 
-	Func leveling_4link
+	Func leveling_4l
 	{
 		SetFontSize font.t4;
 		SetBorderColor accent.leveling.fourlink; SetBackgroundColor sBlack;
@@ -878,13 +878,13 @@ Style Common
 		SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
 	}
 
-	Func leveling_act2
+	Func lvlmisc_act2
 	{
 		SetFontSize font.t6;
 		SetBorderColor accent.notice.low; SetBackgroundColor sBlack;
 	}
 
-	Func leveling_blueearly
+	Func lvlmisc_blueearly
 	{
 		SetFontSize font.t6;
 		SetBorderColor NONE;
@@ -897,7 +897,7 @@ Style Common
 		PlayEffect Grey Temp;
 	}
 
-	Func leveling_firstareas
+	Func lvlmisc_firstareas
 	{
 		SetFontSize font.t6;
 		SetTextColor 180 180 180; SetBorderColor 0 0 0; SetBackgroundColor accent.low.base;
@@ -933,13 +933,13 @@ Style Common
 		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
 	}
 
-	Func leveling_otheracts
+	Func lvlmisc_otheracts
 	{
 		SetFontSize font.t6;
 		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
 	}
 
-	Func leveling_progression
+	Func lvlmisc_progression
 	{
 		SetTextColor 180 180 180; SetBorderColor 0 0 0; SetBackgroundColor accent.low.base;
 	}
@@ -963,16 +963,22 @@ Style Common
 		SetBorderColor accent.leveling.archer; SetBackgroundColor accent.leveling.bg.archer;
 	}
 
-	Func leveling_rarearmour
+	Func lvlmisc_rarearmour
 	{
 		SetFontSize font.t5;
 		SetBorderColor accent.notice.high; SetBackgroundColor rares.generic.t1;
 	}
 
-	Func leveling_rarebodyshield
+	Func lvlmisc_rarebodyshield
 	{
 		SetFontSize font.t5;
 		SetBorderColor NONE; SetBackgroundColor rares.generic.t2;
+	}
+
+	Func lvlmisc_rareunderlevel
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor rares.generic.t4;
 	}
 
 	Func leveling_rarecaster
@@ -999,12 +1005,6 @@ Style Common
 		SetBorderColor accent.leveling.minion; SetBackgroundColor accent.leveling.bg.minion;
 	}
 
-	Func leveling_rareunderlevel
-	{
-		SetFontSize font.t5;
-		SetBorderColor NONE; SetBackgroundColor rares.generic.t4;
-	}
-
 	Func leveling_rgb
 	{
 		SetFontSize font.t5;
@@ -1024,21 +1024,21 @@ Style Common
 # LINKS
 #------------------------------------
 
-	Func links_5linkleveling
+	Func leveling_5l
 	{
 		SetFontSize font.t2;
 		BorderedGlow(exoticgear.tx, sBlack);
 		PlayAlertSound exoticgear.sound; PlayEffect Yellow; MinimapIcon 1 Yellow Diamond;
 	}
 
-	Func links_6link
+	Func links_6lt2
 	{
 		SetFontSize font.max;
 		BrickBlack(sixLink.acc);
 		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 1 Red Diamond;
 	}
 
-	Func links_6linkhigh
+	Func links_6lt1
 	{
 		SetFontSize font.max;
 		BrickWhite(sixLink.acc);
@@ -1052,7 +1052,7 @@ Style Common
 		RecipeEffects();
 	}
 
-	Func links_recipespecial
+	Func links_6s5l
 	{
 		SetFontSize font.t3;
 		SetTextColor sWhite; SetBorderColor exoticgear.tx; SetBackgroundColor recipe.t1.acc;
@@ -1071,14 +1071,14 @@ Style Common
 # MAPLIKE
 #------------------------------------
 
-	Func maplike_contract
+	Func maplike_t2
 	{
 		SetFontSize font.t4;
 		BorderedGlow(heist.contracts.acc, sBlack);
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White UpsideDownHouse;
 	}
 
-	Func maplike_high
+	Func maplike_t1
 	{
 		SetFontSize font.t4;
 		BorderedGlow(heist.blueprints.acc, heist.blueprints.base);
@@ -1110,49 +1110,49 @@ Style Common
 		SetBorderColor 0 0 0 255;
 	}
 
-	Func maps_high
+	Func maps_t3
 	{
 		SetFontSize font.t2;
 		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z2.acc;
 		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square;
 	}
 
-	Func maps_highest
+	Func maps_t2
 	{
 		SetFontSize font.t2;
 		SetTextColor sBlack; SetBorderColor NONE; SetBackgroundColor maps.z1.acc;
 		PlayAlertSound sounds.maps.high; PlayEffect Yellow; MinimapIcon 1 Red Square;
 	}
 
-	Func maps_low
+	Func maps_t5
 	{
 		SetFontSize font.t3;
 		SetTextColor sWhite; SetBorderColor NONE; SetBackgroundColor sBlack;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 2 White Square;
 	}
 
-	Func maps_mid
+	Func maps_t4
 	{
 		SetFontSize font.t3;
 		SetTextColor sWhite; SetBorderColor NONE; SetBackgroundColor sBlack;
 		PlayAlertSound sounds.maps; PlayEffect White; MinimapIcon 1 Yellow Square;
 	}
 
-	Func maps_special
+	Func maps_t2exotic
 	{
 		SetFontSize font.t2;
 		BorderedGlow(maps.special.acc, maps.special.low.extra);
 		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 1 Purple Square;
 	}
 
-	Func maps_specialhigh
+	Func maps_t1exotic
 	{
 		SetFontSize font.t1;
 		BorderedGlow(maps.special.acc, maps.special.extra);
 		PlayAlertSound sounds.maps.high; PlayEffect Purple; MinimapIcon 0 Purple Square;
 	}
 
-	Func maps_top
+	Func maps_t1
 	{
 		SetFontSize font.max;
 		BorderedGlow(maps.influenced, tier.t1.base);
@@ -1164,15 +1164,10 @@ Style Common
 # RARES
 #------------------------------------
 
-	Func rares_droppeditems
+	Func utility_droppeditems
 	{
 		SetFontSize font.t4;
 		SetBorderColor 0 0 0;
-	}
-
-	Func rares_earlyendgame
-	{
-		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
 	}
 
 	Func rares_eldritch
@@ -1182,19 +1177,19 @@ Style Common
 		PlayEffect Blue Temp;
 	}
 
-	Func rares_jewelleryt1
+	Func rares_t1jwlr
 	{
 		SetFontSize 45;
 		SetBorderColor NONE; SetBackgroundColor rares.jewellery.t1;
 	}
 
-	Func rares_jewelleryt2
+	Func rares_t2jwlr
 	{
 		SetFontSize font.t4;
 		SetBorderColor NONE; SetBackgroundColor rares.jewellery.t2;
 	}
 
-	Func rares_jewelleryt3
+	Func rares_t3jwlr
 	{
 		SetFontSize font.t5;
 		SetBorderColor NONE; SetBackgroundColor rares.jewellery.t3;
@@ -1229,33 +1224,33 @@ Style Common
 # SPECIAL
 #------------------------------------
 
-	Func special_animateweapon
+	Func utility_aw
 	{
 		SetFontSize font.min;
 		SetBorderColor 230 0 0 255; SetBackgroundColor 0 0 0 100;
 	}
 
-	Func special_artefact
+	Func exotics_artefact
 	{
 		SetFontSize font.t2;
 		BorderedGlow(artefact.tx, artefact.extra);
 		PlayAlertSound artefact.sound; PlayEffect artefact.cray; MinimapIcon 0 artefact.cmap Pentagon;
 	}
 
-	Func special_chancing
+	Func crafting_chance
 	{
 		SetFontSize font.t6;
 		SetTextColor sWhite; SetBorderColor chancing.acc;
 	}
 
-	Func special_quest
+	Func utility_quest
 	{
 		SetFontSize font.t4;
 		BorderedGlow(questlike.tx.acc, sBlack);
 		PlayAlertSound sounds.unique; PlayEffect Green; MinimapIcon 0 Green Pentagon;
 	}
 
-	Func special_restex
+	Func utility_restex
 	{
 		SetFontSize font.max;
 		BorderedGlow(tier.error, tier.error.low);
@@ -1267,49 +1262,49 @@ Style Common
 # SPLINTER
 #------------------------------------
 
-	Func splinter_t1
+	Func splinter_t1single
 	{
 		SetFontSize font.t3;
 		SetTextColor splinters.text; SetBorderColor splinters.acc.t1; SetBackgroundColor splinters.extra;
 		PlayAlertSound sounds.currency; PlayEffect Purple Temp; MinimapIcon 1 Grey Kite;
 	}
 
-	Func splinter_t1exalted
+	Func splinter_t1
 	{
 		SetFontSize font.max;
 		BorderedGlow(currency.acc.t1, tier.t1.base);
 		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 Red Kite;
 	}
 
-	Func splinter_t2divine
+	Func splinter_t2
 	{
 		SetFontSize font.t2;
 		BrickWhite(currency.acc.t2divine);
 		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Kite;
 	}
 
-	Func splinter_t3
+	Func splinter_t3single
 	{
 		SetFontSize font.t5;
 		SetTextColor splinters.text; SetBorderColor splinters.acc.t3; SetBackgroundColor splinters.extra;
 		PlayEffect Purple Temp; MinimapIcon 2 Grey Kite;
 	}
 
-	Func splinter_t3annul
+	Func splinter_t3
 	{
 		SetFontSize font.t3;
 		BrickBlack(currency.acc.t3annul);
 		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Kite;
 	}
 
-	Func splinter_t4chaos
+	Func splinter_t4
 	{
 		SetFontSize font.t3;
 		BrickBlack(currency.acc.t4chaos);
 		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White Kite;
 	}
 
-	Func splinter_t5
+	Func splinter_t2single
 	{
 		SetFontSize font.t3;
 		SetTextColor splinters.text; SetBorderColor splinters.acc.t2; SetBackgroundColor splinters.extra;
@@ -1321,14 +1316,14 @@ Style Common
 # UNIQUES
 #------------------------------------
 
-	Func uniques_dust
+	Func uniques_specdust
 	{
 		SetFontSize font.t4;
 		BorderedGlow(unique.tx, unique.early.extra);
 		PlayAlertSound sounds.unique; PlayEffect Purple; MinimapIcon 1 Purple Star;
 	}
 
-	Func uniques_earlyleague
+	Func uniques_specearly
 	{
 		SetFontSize font.t4;
 		BorderedGlow(unique.tx, unique.early.extra);
@@ -1349,7 +1344,7 @@ Style Common
 		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Star;
 	}
 
-	Func uniques_replicamulti
+	Func uniques_specmulti2
 	{
 		SetFontSize font.t3;
 		SetTextColor sBlack; SetBorderColor exoticgear.tx; SetBackgroundColor unique.tx;
@@ -1377,70 +1372,70 @@ Style Common
 		PlayAlertSound sounds.unique; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap Star;
 	}
 
-	Func uniques_t1
+	Func apex_sunique
 	{
 		SetFontSize font.max;
 		BorderedGlow(unique.tx, tier.t1.base);
 		ApexEffects();
 	}
 
-	Func uniques_t2
+	Func uniques_a
 	{
 		SetFontSize font.t2;
 		BrickWhite(unique.tx);
 		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Yellow Star;
 	}
 
-	Func uniques_t2corrupt
+	Func uniques_spec2xcorr
 	{
 		SetFontSize font.t2;
 		SetTextColor sWhite; SetBorderColor accent.corrupt.tx; SetBackgroundColor unique.tx;
 		PlayAlertSound sounds.t2; PlayEffect exoticgear.cray; MinimapIcon 0 Blue Star;
 	}
 
-	Func uniques_t3
+	Func uniques_specmulti1
 	{
 		SetFontSize font.t3;
 		BrickBlack(unique.tx);
 		PlayAlertSound sound; PlayEffect exoticgear.cray; MinimapIcon 1 Blue Star;
 	}
 
-	Func uniques_t3special
+	Func uniques_specjewelcorr
 	{
 		SetFontSize font.t3;
 		SetTextColor sBlack; SetBorderColor exoticgear.tx; SetBackgroundColor unique.tx;
 		PlayAlertSound sound; PlayEffect exoticgear.cray; MinimapIcon 1 Blue Star;
 	}
 
-	Func uniques_t4
+	Func uniques_b
 	{
 		SetFontSize font.t4;
 		BorderedGlow(unique.tx, unique.extra);
 		PlayAlertSound sounds.unique; PlayEffect Brown; MinimapIcon 2 Brown Star;
 	}
 
-	Func uniques_t4boss
+	Func uniques_specboss
 	{
 		SetFontSize font.t4;
 		BorderedGlow(unique.tx, unique.extra);
 		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Star;
 	}
 
-	Func uniques_t4corrupt
+	Func uniques_spec1xcorr
 	{
 		SetFontSize font.t4;
 		SetTextColor unique.tx; SetBorderColor accent.corrupt.tx; SetBackgroundColor unique.extra;
 		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Star;
 	}
 
-	Func uniques_t4special
+	Func uniques_spec5l
 	{
 		SetFontSize font.t4;
 		SetTextColor unique.tx; SetBorderColor exoticgear.tx; SetBackgroundColor unique.extra;
 		PlayAlertSound sounds.unique; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Star;
 	}
 
-	Func uniques_t5
+	Func uniques_c
 	{
 		SetFontSize font.t5;
 		BorderedGlow(unique.tx, sBlack);
