@@ -722,7 +722,7 @@ Style Common
 
 	Func influenced_t1
 	{
-		SetFontSize font.t5;
+		SetFontSize font.t4;
 		BorderedGlow(tier.t2.base, influenced.gear.t2);
 		PlayAlertSound sounds.unique; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Diamond;
 	}
@@ -865,6 +865,13 @@ Style Common
 		PlayEffect Grey Temp;
 	}
 
+	Func leveling_3llow
+	{
+		SetFontSize font.t6;
+		SetBorderColor accent.leveling.threelink; SetBackgroundColor sBlack;
+		PlayEffect Grey Temp;
+	}
+
 	Func leveling_4l
 	{
 		SetFontSize font.t4;
@@ -887,7 +894,13 @@ Style Common
 	Func lvlmisc_blueearly
 	{
 		SetFontSize font.t6;
-		SetBorderColor NONE;
+		SetBorderColor NONE; SetBackgroundColor accent.low.base;
+	}
+
+	Func lvlmisc_bluefirstzones
+	{
+		SetFontSize font.t5;
+		SetBorderColor NONE; SetBackgroundColor accent.low.base;
 	}
 
 	Func leveling_casterweapon
@@ -899,8 +912,8 @@ Style Common
 
 	Func lvlmisc_firstareas
 	{
-		SetFontSize font.t6;
-		SetTextColor 180 180 180; SetBorderColor 0 0 0; SetBackgroundColor accent.low.base;
+		SetFontSize font.t5;
+		SetTextColor 180 180 180; SetBorderColor 0 0 0 0; SetBackgroundColor accent.low.base;
 	}
 
 	Func leveling_hybridflask
@@ -927,15 +940,15 @@ Style Common
 		SetBorderColor flasks.mana.acc;
 	}
 
-	Func leveling_miniongear
+	Func lvlmisc_otheracts
 	{
 		SetFontSize font.t6;
 		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
 	}
 
-	Func lvlmisc_otheracts
+	Func lvlmisc_3socketearly
 	{
-		SetFontSize font.t6;
+		SetFontSize font.t5;
 		SetBorderColor accent.notice.low; SetBackgroundColor accent.low.base;
 	}
 
@@ -961,6 +974,12 @@ Style Common
 	{
 		SetFontSize font.t5;
 		SetBorderColor accent.leveling.archer; SetBackgroundColor accent.leveling.bg.archer;
+	}
+
+	Func lvlmisc_rarearmourhigh
+	{
+		SetFontSize font.t4;
+		SetBorderColor accent.notice.high; SetBackgroundColor rares.generic.t1;
 	}
 
 	Func lvlmisc_rarearmour

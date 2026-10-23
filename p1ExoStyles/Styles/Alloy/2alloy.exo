@@ -337,12 +337,6 @@ Expand leveling_casterweapon
     SetTextColor rares.base.text;
 }
 
-Expand leveling_miniongear
-{
-    SetFontSize 45;
-    SetTextColor rares.base.text;
-}
-
 Expand leveling_qualityflask
 {
     BorderedGlow(150 150 150 255, rares.bg);
@@ -352,6 +346,11 @@ Expand leveling_rarearcher
 {
     SetFontSize 45;
     BorderedGlow(rares.base.text, rares.bg);
+}
+
+Expand lvlmisc_rarearmourhigh
+{
+    SetTextColor rares.base.text; SetBackgroundColor rares.bg;
 }
 
 Expand lvlmisc_rarearmour

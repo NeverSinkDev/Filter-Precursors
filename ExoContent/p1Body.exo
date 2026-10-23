@@ -71,9 +71,9 @@ Section Influenced : Auto("influenced->all"), Rarity Rare
 	var influencedItems3 = source.rares.eg.t2 + source.crafting.general.t2 - influencedItems2 - influencedItems1;
 
 	# Selected exclusive bases
-	Show t1exotic { !influenced_t1; !SF45; !G2; %D9; BaseType == influencedItems1; AnyInfluence(); }
+	Show t1exotic { !influenced_t1; !G2; %D9; BaseType == influencedItems1; AnyInfluence(); }
 	# Selected top tier bases
-	Show t1top { !influenced_t1; !SF45; !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
+	Show t1top { !influenced_t1; !G2; %D5; BaseType == influencedItems2; AnyInfluence(); }
 
 	## BaseType filtering
 	Show t1basesCrusader 		 	 { !influenced_t1; !G3; %D4; BaseType == Influenced.Crusader.t12; HasInfluence Crusader; ItemLevel >= 82; }
@@ -912,8 +912,8 @@ Section EndgameTinctures : Auto("EndgameTinctures"), Rarity <= Magic, AreaLevel 
 	Show OverQual1          { !exotics_t1; !G2; %D9; Clean(); ItemLevel >= 82; Quality >= 26; }
 	Show OverQual2          { !exotics_t2; !G3; %D8; Clean(); ItemLevel >= 82; Quality >= 21; }
 	Show Tinc85  			{ !flasks_t2util; !G4; %D5; ItemLevel >= 85; }
-	Show Tinc82  			{ !flasks_t3util; !SF45; !G4; %D4; ItemLevel >= 82; }
-	Show Any  				{ !flasks_t3util; !SF45; !G4; %D3; Empty(); }
+	Show Tinc82  			{ !flasks_t3util; !G4; %D4; ItemLevel >= 82; }
+	Show Any  				{ !flasks_t3util; !G4; %D3; Empty(); }
 }
 
 Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
@@ -936,7 +936,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 	{
 		Show Utility85  { !flasks_t1util; !G3; %D5; ItemLevel >= 85; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
 		Show Utility84  { !flasks_t2util; !G4; %D4; ItemLevel >= 84; Class == class_utilFlasks; BaseType == bases.flask.utilityassorted; }
-		Show Utility82  { !flasks_t3util; !SF45; !G4; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
+		Show Utility82  { !flasks_t3util; !G4; %D4; ItemLevel >= 82; Class == class_utilFlasks; }
 		Show LifeMana82 { !flasks_qhigh; !G5; %D3; ItemLevel >= 82; Quality >= 10; BaseType == bases.flask.lifemanaassorted; Class == class_lifemanaflasks; }
 	}
 #------------------------------------
@@ -961,7 +961,7 @@ Section EndgameFlasks : Auto("EndgameFlasks"), Rarity <= Magic, AreaLevel >= 68
 #------------------------------------
 	Section UtilityEndgameFlasks : Clean(), !flasks_t3util
 	{
-		Show EarlyMappingFlasks { !G4; !SF45; %D4; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
+		Show EarlyMappingFlasks { !G4; %D4; Class == class_utilFlasks; AreaLevel >= 68; AreaLevel <= 75;  }
 		Show AnyUtility 	{ !G4; %D3; Class == class_utilFlasks; AreaLevel >= 68; }
 	}
 #------------------------------------
@@ -1061,8 +1061,8 @@ Section Jewels
 #!! Waypoint c7.jewels.leveling : "Jewels - Leveling Overrides" : "Jewels and Cluster Jewels"
 	Section JewelsLeveling : Auto("jewels->leveling"), ItemLevel <= 67, Rarity <= Magic, !jewels_abysslvl
 	{
-		Show Abyss 		{ !GI; %D3; !SF45; BaseType == abyssJewels; }
-		Show Generic 	{ !GI; %D3; !SF45; BaseType == genericJewels; }
+		Show Abyss 		{ !GI; %D3; BaseType == abyssJewels; }
+		Show Generic 	{ !GI; %D3; BaseType == genericJewels; }
 	}
 
 #------------------------------------
@@ -1679,8 +1679,8 @@ Section LevelingStackedCurrencies : Auto("Currency->LevelingStacked"), Class == 
 	Show t4misc     { !currency_e; !G5H; !G4; %D4; StackSize >= 3; BaseType == currency.leveling.t4quality; }
 	Show t5aug      { !currency_supply2; !G5H; %D4; StackSize >= 3; BaseType == currency.leveling.t5aug; }
 
-	Show portal   { !currency_portalstack; !SF45T3; !G5; %D4; StackSize >= 2; BaseType == currency.leveling.portal; }
-	Show wisdom   { !currency_wisdommany; !SF45T3; !G5; %D3; StackSize >= 2; BaseType == currency.leveling.wisdom; }
+	Show portal   { !currency_portalstack; !G5; %D4; StackSize >= 2; BaseType == currency.leveling.portal; }
+	Show wisdom   { !currency_wisdommany; !G5; %D3; StackSize >= 2; BaseType == currency.leveling.wisdom; }
 }
 
 #!! Waypoint c9.currency.leveling.nonstacked : "Tierlist - Currency - Leveling Currency" : "Leveling"
@@ -2399,7 +2399,7 @@ Section LevelingRareGear : Rarity Rare
 #!! Waypoint c11.leveling.rares.armors : "Leveling - Rares - Armour Pieces" : "Leveling"
 	Section Armour : Auto("Leveling->Rare->armours"), !GR1
 	{
-		Show BootsFocus { !lvlmisc_rarearmour; !SF45; %D4; Class == "Boots"; }
+		Show BootsFocus { !lvlmisc_rarearmourhigh; %D4; Class == "Boots"; }
 		Show General 	{ !lvlmisc_rarearmour; %D4; Class == classes_armor_small; }
 		Show BodyArmours{ !lvlmisc_rarebodyshield; %D4; Class == "Body Armours"; }
 		Show Shields 	{ !lvlmisc_rarebodyshield; %D4; Class == "Shields"; }
@@ -2501,10 +2501,10 @@ Section LevelingMiscGear : Rarity <= Magic
 	}
 
 #!! Waypoint c11.leveling.3linked.all : "Leveling - Linked - 3links" : "Leveling"
-	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L"), !leveling_3l, !G6H
+	Section ThreeLinkedGear : LinkedSockets >= 3, Auto("Leveling->NormalMagic->3L"), !G6H
 	{
-		Show EarlyThreeLinks 	{ %D3; AreaLevel <= leveling.keylevels.threelinkEarly; }
-		Show General 			{ !SF35; %D2; AreaLevel <= leveling.keylevels.threelink; }
+		Show EarlyThreeLinks 	{ !leveling_3l; %D3; AreaLevel <= leveling.keylevels.threelinkEarly; }
+		Show General 			{ !leveling_3llow; %D2; AreaLevel <= leveling.keylevels.threelink; }
 	}
 
 #!! Waypoint c11.leveling.act12.all : "Leveling - Normal and Magic - Act1, Act2 special gear" : "Leveling"
@@ -2550,7 +2550,7 @@ Section LevelingMiscGear : Rarity <= Magic
 Section FirstLevels : Auto("Leveling->FirstLevels")
 {
 	Show EarlyBodyArmours	{ !lvlmisc_progression; !GEX; %H2; AreaLevel >= 2; AreaLevel <= leveling.keylevels.start; Rarity Normal; Class == "Body Armours"; }
-	Show ThreeSocketedGear 	{ !lvlmisc_otheracts; !SF40; !G6H; %H3; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields" "Wands" "Sceptres"; }
+	Show ThreeSocketedGear 	{ !lvlmisc_3socketearly; !G6H; %H3; Rarity <= Magic; Sockets >= 3; AreaLevel <= leveling.keylevels.start; Class == "Boots" "Gloves" "Helmets" "Shields" "Wands" "Sceptres"; }
 	Show FirstAreas 		{ !lvlmisc_firstareas; !G7; %H3; AreaLevel <= 4; Rarity Normal; }
 }
 
@@ -2613,11 +2613,11 @@ Section MagicItemsMisc : Auto("Leveling->Magic->Remaining"), Class == classes_eq
 		Hide MediumMagicBlocker { AreaLevel >= leveling.keylevels.act2; Height > 1; }
 	}
 
-	Show Rest 		 { %H1; !ClearBorder; AreaLevel >= leveling.keylevels.act3; AreaLevel <= 67; }
-	Show Act2 		 { !lvlmisc_blueearly; %H2; !ClearBorder; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
-	Show Act1 		 { !lvlmisc_blueearly; %H3; !ClearBorder; AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
-	Show UntilMudFlats { !lvlmisc_blueearly; !SF40; %H3; !ClearBorder; AreaLevel <= leveling.keylevels.firstZones; }
-	Show FirstLevels   { !lvlmisc_blueearly; !SF40; %H3; !ClearBorder; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
+	Show Rest 		 { !ClearBorder; %H1; AreaLevel >= leveling.keylevels.act3; AreaLevel <= 67; }
+	Show Act2 		 { !lvlmisc_blueearly; !ClearBorder; %H2; AreaLevel >=leveling.keylevels.act1; AreaLevel <= leveling.keylevels.act2 ; }
+	Show Act1 		 { !lvlmisc_blueearly; !ClearBorder; %H3; AreaLevel >=leveling.keylevels.start;  AreaLevel <= leveling.keylevels.act1; }
+	Show UntilMudFlats { !lvlmisc_bluefirstzones; !ClearBorder; %H3; AreaLevel <= leveling.keylevels.firstZones; }
+	Show FirstLevels   { !lvlmisc_bluefirstzones; !ClearBorder; %H3; AreaLevel >=1; AreaLevel <= leveling.keylevels.start; }
 }
 
 #!! Waypoint c12.hide.all : "HIDELAYER - Hide all known untiered items"
