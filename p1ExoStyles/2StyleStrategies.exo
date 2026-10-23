@@ -407,27 +407,6 @@ Style Common
 		PlayEffect exoticgear.cray Temp;
 	}
 
-	Func exotics_talismant2
-	{
-		SetFontSize font.t4;
-		BorderedGlow(exoticgear.tx, sBlack);
-		SpecialGearEffects(2);
-	}
-
-	Func exotics_talismant3
-	{
-		SetFontSize font.t4;
-		SetBorderColor exoticgear.tx; SetBackgroundColor rares.jewellery.t3;
-		SpecialGearEffects(2);
-	}
-
-	Func exotics_top
-	{
-		SetFontSize font.t2;
-		BorderedGlow(exoticgear.tx, idmodbackground);
-		SpecialGearEffects(0);
-	}
-
 
 #------------------------------------
 # FLASKS
@@ -701,20 +680,6 @@ Style Common
 		PlayAlertSound exoticgear.sound; PlayEffect Purple; MinimapIcon 1 Purple Diamond;
 	}
 
-	Func idmods_veilt1
-	{
-		SetFontSize font.t3;
-		BorderedGlow(exoticgear.tx, idmodbackground);
-		SpecialGearEffects(1);
-	}
-
-	Func idmods_veilt2
-	{
-		SetFontSize font.t4;
-		BorderedGlow(exoticgear.tx, idmodbackground);
-		SpecialGearEffects(2);
-	}
-
 
 #------------------------------------
 # INFLUENCED
@@ -885,12 +850,6 @@ Style Common
 		SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
 	}
 
-	Func lvlmisc_act2
-	{
-		SetFontSize font.t6;
-		SetBorderColor accent.notice.low; SetBackgroundColor sBlack;
-	}
-
 	Func lvlmisc_blueearly
 	{
 		SetFontSize font.t6;
@@ -912,7 +871,7 @@ Style Common
 
 	Func lvlmisc_firstareas
 	{
-		SetFontSize font.t5;
+		SetFontSize font.t6;
 		SetTextColor 180 180 180; SetBorderColor 0 0 0 0; SetBackgroundColor accent.low.base;
 	}
 
@@ -1078,13 +1037,6 @@ Style Common
 		PlayAlertSound sounds.currency; PlayEffect exoticgear.cray; MinimapIcon 2 Blue Hexagon;
 	}
 
-	Func links_rgbrecipe
-	{
-		SetFontSize font.t4;
-		BrickWhite(recipe.t1.acc);
-		RecipeEffects();
-	}
-
 
 #------------------------------------
 # MAPLIKE
@@ -1189,13 +1141,6 @@ Style Common
 		SetBorderColor 0 0 0;
 	}
 
-	Func rares_eldritch
-	{
-		SetFontSize font.t5;
-		BrickWhite(influenced.gear.t3);
-		PlayEffect Blue Temp;
-	}
-
 	Func rares_t1jwlr
 	{
 		SetFontSize 45;
@@ -1288,39 +1233,11 @@ Style Common
 		PlayAlertSound sounds.currency; PlayEffect Purple Temp; MinimapIcon 1 Grey Kite;
 	}
 
-	Func splinter_t1
-	{
-		SetFontSize font.max;
-		BorderedGlow(currency.acc.t1, tier.t1.base);
-		PlayAlertSound sounds.t1; PlayEffect tier.t1.cray; MinimapIcon 0 Red Kite;
-	}
-
-	Func splinter_t2
-	{
-		SetFontSize font.t2;
-		BrickWhite(currency.acc.t2divine);
-		PlayAlertSound sounds.t2; PlayEffect Red; MinimapIcon 0 Red Kite;
-	}
-
 	Func splinter_t3single
 	{
 		SetFontSize font.t5;
 		SetTextColor splinters.text; SetBorderColor splinters.acc.t3; SetBackgroundColor splinters.extra;
 		PlayEffect Purple Temp; MinimapIcon 2 Grey Kite;
-	}
-
-	Func splinter_t3
-	{
-		SetFontSize font.t3;
-		BrickBlack(currency.acc.t3annul);
-		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Yellow Kite;
-	}
-
-	Func splinter_t4
-	{
-		SetFontSize font.t3;
-		BrickBlack(currency.acc.t4chaos);
-		PlayAlertSound sound; PlayEffect White; MinimapIcon 2 White Kite;
 	}
 
 	Func splinter_t2single
@@ -1349,46 +1266,11 @@ Style Common
 		PlayAlertSound sounds.unique; PlayEffect Brown; MinimapIcon 2 Brown Star;
 	}
 
-	Func uniques_foulborn
-	{
-		SetFontSize font.t3;
-		SetTextColor sBlack; SetBorderColor splinters.acc.t1; SetBackgroundColor unique.tx;
-		PlayAlertSound sound; PlayEffect Purple; MinimapIcon 1 Purple Star;
-	}
-
-	Func uniques_heist
-	{
-		SetFontSize font.t2;
-		BorderedGlow(tier.t2.base, unique.tx);
-		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Star;
-	}
-
 	Func uniques_specmulti2
 	{
 		SetFontSize font.t3;
 		SetTextColor sBlack; SetBorderColor exoticgear.tx; SetBackgroundColor unique.tx;
 		PlayAlertSound tier.special.sound; PlayEffect exoticgear.cray; MinimapIcon tier.t3.iconsize Blue Star;
-	}
-
-	Func uniques_replicat1
-	{
-		SetFontSize font.max;
-		BorderedGlow(unique.tx, tier.t1.base);
-		ApexEffects();
-	}
-
-	Func uniques_replicat2
-	{
-		SetFontSize font.t2;
-		BorderedGlow(tier.t2.base, unique.tx);
-		PlayAlertSound sounds.t2; PlayEffect tier.t3.cray; MinimapIcon 1 tier.t3.cmap Star;
-	}
-
-	Func uniques_replicat3
-	{
-		SetFontSize font.t4;
-		BorderedGlow(tier.t3.base, unique.tx);
-		PlayAlertSound sounds.unique; PlayEffect tier.t4.cray; MinimapIcon 1 tier.t4.cmap Star;
 	}
 
 	Func apex_sunique
@@ -1459,33 +1341,5 @@ Style Common
 		SetFontSize font.t5;
 		BorderedGlow(unique.tx, sBlack);
 		PlayAlertSound sounds.unique; PlayEffect Brown; MinimapIcon 2 Brown Star;
-	}
-
-	Func uniques_vinktar
-	{
-		SetFontSize font.t3;
-		BrickBlack(unique.tx);
-		PlayAlertSound sound; PlayEffect Yellow; MinimapIcon 1 Brown Star;
-	}
-
-	Func SF45
-	{
-		SetFontSize font.t4;
-	}
-
-	Func SF40
-	{
-		SetFontSize font.t5;
-	}
-
-	## stays 40 in the styles that drop SF45 to 35 (Elder)
-	Func SF45T3
-	{
-		SetFontSize font.t3;
-	}
-
-	Func SF35
-	{
-		SetFontSize font.t6;
 	}
 }

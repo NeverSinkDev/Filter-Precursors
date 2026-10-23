@@ -2,31 +2,9 @@
 # Common Functions
 #------------------------------------
 
-Func Colors(a,b,c)
-{
-    SetTextColor a;
-    SetBorderColor b;
-    SetBackgroundColor c;
-}
-
 Func RemoveEffects()
 {
     PlayAlertSound NONE; MM NONE; PlayEffect NONE;
-}
-
-Func LVHL1()
-{
-    SetFontSize font.t4; PlayAlertSound sounds.unique; PlayEffect Grey; MinimapIcon 2 Grey icon;
-}
-
-Func LVHL2()
-{
-    SetFontSize font.t5; PlayEffect Grey Temp;
-}
-
-Func LVHL3()
-{
-    SetFontSize font.t5;
 }
 
 
@@ -69,8 +47,6 @@ var sound = sounds.currency;
 # Standards - Beams and Map Icon Colors
 #------------------------------------
 
-var accent.perfection = 176 0 198 255;
-
 var tier.t1.icon = Star;	# sometimes differs
 var tier.t1.cray  = Red;
 var tier.t1.cmap = Red;		
@@ -91,8 +67,6 @@ var tier.t5.cray  = Grey;
 
 var exoticgear.cmap = Blue;
 var exoticgear.cray = Blue;
-var exoticgear.cmaphigh = Purple;
-var exoticgear.crayhigh = Purple;
 
 var tier.error.cmap = Pink;
 var tier.error.cray = Pink;
@@ -136,7 +110,6 @@ var flasks.hybrid.acc = 100 0 100;
 
 var flasks.utility.t1.acc = 50 200 125 255;
 var flasks.utility.t2.acc = sBlack;
-var flasks.utility.base = 25 100 75;
 
 var rares.jewellery.t1 = 0 80 30 255;
 var rares.jewellery.t2 = 0 40 10 255;
@@ -158,7 +131,6 @@ var maps.z2.acc = 200 200 200 255;
 var maps.z3 = NONE;
 var maps.z4 = NONE;
 
-var influenced.gear.t1 = 50 130 165 255;
 var influenced.gear.t2 = 20 110 220;
 var influenced.gear.t3 = 50 130 165;
 
@@ -182,25 +154,13 @@ var heist.blueprints.base = 40 0 30 255;
 
 var questlike.tx.acc = 74 230 58 255;
 
-var league.new.background = 37 57 58 255;
-var league.new.acc = 67 240 255 255;
-
 var league.new.tierlist = 120 200 160 255;
-
-var league.playerequippable = 33 0 64 255;
 
 var sixLink.acc = 200 0 0 255;
 
 # var league.sentinel.acc.stalker = 255 34 34 255;  
 # var league.sentinel.acc.pandemonium = 0 233 255 255;
 # var league.sentinel.acc.apex = 255 199 0 255;
-
-var league.sentinel.acc.stalker = 150 0 255 255;
-var league.sentinel.acc.pandemonium = 150 0 255 255;
-var league.sentinel.acc.apex = 150 0 255 255;
-
-var league.icon = Circle;
-var league.color = Cyan;
 
 #------------------------------------
 # Standards - Tierlists
@@ -209,28 +169,20 @@ var league.color = Cyan;
 var tier.error = 255 0 255 255;
 var tier.error.low = 100 0 100 255;
 
-var tier.t1.acc = sRed;		# differs
 var tier.t1.base = sWhite;
 
-var tier.t2.acc = tier.t1.acc;
 var tier.t2.base = sWhite;		# differs
 
 var tier.t2.extra = 40 12 12 255;
 
-var tier.t3.acc = tier.t1.acc;
 var tier.t3.base = sBlack;		# differs
-var tier.t3.sound = sounds.unique;
 var tier.t3.iconsize = 1;
 
-var tier.special.acc = tier.t3.acc;
-var tier.special.base = tier.t3.base;
 var tier.special.sound = sounds.unique;
 
 #------------------------------------
 # Variables - Accents
 #------------------------------------
-
-var accent.special.tx = exoticgear.tx;
 
 var accent.high.tx = 240 100 0 255;
 var accent.medium.tx = 200 120 0 220;
@@ -262,8 +214,6 @@ var accent.rare.ilvl75 = 245 190 0 255;
 
 var accent.maps.upgrade = 220 50 0 255;
 
-var accent.rare.highgear = 120 255 100 255;
-
 var accent.leveling.fourlink = 0 140 240 255;
 var accent.leveling.threelink = 0 120 120 255;
 var accent.leveling.caster = 50 50 150 255;
@@ -284,14 +234,11 @@ var idmodbackground = 47 0 74 255;
 # Variables - Tier Subtypes
 #------------------------------------
 
-var fragment.sound = sounds.currency;
-
 ## var fragment.tx.old = 159 15 213 255;
 
 var fragment.tx.high = 180 0 255 255;
 var fragment.tx = 175 120 230 240;
 
-var unique.sound = sounds.unique;
 var unique.tx = 175 96 37 255;
 var unique.extra = 53 13 13 255;
 
@@ -333,6 +280,4 @@ var divi.acc.t2 = 0 20 180 255;
 var divi.acc.t1 = 0 0 255 255;
 var divi.acc.tnew = 40 255 217;
 
-var unique.beachhead.acc = 37 105 175 255;
 var unique.early.extra = 10 30 45 255;
-var unique.merc.extra = 0 240 190 255;

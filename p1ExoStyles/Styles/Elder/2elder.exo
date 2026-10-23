@@ -155,11 +155,6 @@ Expand exotics_t2
     SetFontSize font.t3;
 }
 
-Expand exotics_talismant3
-{
-    SetTextColor rares.jewellery.text; SetBackgroundColor rares.low.acc;
-}
-
 Expand flasks_qhigh
 {
     SetFontSize 32;
@@ -247,11 +242,6 @@ Expand leveling_3llow
     SetFontSize 32;
 }
 
-Expand lvlmisc_act2
-{
-    SetFontSize 32;
-}
-
 Expand lvlmisc_blueearly
 {
     SetFontSize 32;
@@ -299,11 +289,6 @@ Expand links_6s5l
 {
     SetFontSize 40;
     SetTextColor recipe.acc; SetBackgroundColor sBlack;
-}
-
-Expand links_rgbrecipe
-{
-    BorderedGlow(recipe.acc, sBlack);
 }
 
 Expand maplike_t1
@@ -368,13 +353,6 @@ Expand maps_t1
     BrickWhite(maps.special.extra);
 }
 
-Expand rares_eldritch
-{
-    SetFontSize font.t4;
-    SetTextColor influenced.gear.t3; SetBorderColor sBlack;
-    SetBackgroundColor NONE;
-}
-
 Expand rares_t1jwlr
 {
     SetFontSize 35;
@@ -423,26 +401,11 @@ Expand splinter_t1single
     BorderedGlow(splinters.acc.any, sBlack);
 }
 
-Expand splinter_t2
-{
-    BorderedGlow(currency.acc.t2divine, currency.extra.t2divine);
-}
-
 Expand splinter_t3single
 {
     SetFontSize 35;
     SetTextColor splinters.acc.any; SetBorderColor sBlack;
     SetBackgroundColor NONE;
-}
-
-Expand splinter_t3
-{
-    BorderedGlow(currency.acc.t3annul, sBlack);
-}
-
-Expand splinter_t4
-{
-    BorderedGlow(currency.acc.t4chaos, sBlack);
 }
 
 Expand splinter_t2single
@@ -459,17 +422,6 @@ Expand uniques_specdust
 Expand uniques_specearly
 {
     SetFontSize font.t3;
-}
-
-Expand uniques_foulborn
-{
-    SetTextColor unique.tx; SetBackgroundColor sBlack;
-}
-
-Expand uniques_heist
-{
-    BorderedGlow(unique.tx, tier.t2.extra);
-    PlayEffect tier.t2.cray; MinimapIcon 0 tier.t2.cmap Star;
 }
 
 Expand uniques_a
@@ -521,9 +473,4 @@ Expand uniques_spec5l
 Expand uniques_c
 {
     SetBorderColor sBlack;
-}
-
-Expand uniques_vinktar
-{
-    SetTextColor unique.tx; SetBorderColor exoticgear.tx; SetBackgroundColor sBlack;
 }

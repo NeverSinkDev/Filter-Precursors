@@ -48,7 +48,7 @@ Section Gold : Auto("Gold"), BaseType == "Gold"
 
 Section InfluencedMaps : Auto("maps->influenced"), Class == "Maps"
 {	
-	HideD ZanaCorruptHider { !utility_shrunk; !GEX; !Shrink; ZanaMemory True; Rarity <= Magic; Corrupted True; }
+	HideD ZanaCorruptHider { !utility_shrunk; !Shrink; ZanaMemory True; Rarity <= Magic; Corrupted True; }
 
 	Show ZanaMap { !maps_t1; !G2; %H8; ZanaMemory True; Rarity <= Rare; MapTier >= 14; }
 	Show ZanaMapLow { !maps_t2exotic; !G3; %H6; ZanaMemory True; Rarity <= Rare; }
@@ -769,7 +769,7 @@ Section EndgameRares : Rarity Rare, ItemLevel >= 68
 
 	Section OptionalRare : Auto("RareOptional")
 	{
-		HideD IdHider { !utility_shrunk; !GEX; !Shrink; Identified True; Class == classes_equip; }
+		HideD IdHider { !utility_shrunk; !Shrink; Identified True; Class == classes_equip; }
 	}
 
 #!! Waypoint c4.rare.corrupthider : "Hide rare corrupted unidentified gear with no implicits"
