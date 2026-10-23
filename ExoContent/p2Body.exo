@@ -389,13 +389,13 @@ Section EndgameCraftingBases : Clean()
 	{
 		Show jT1idealLevel { %D7; !gear_highlightdrop2; TopMods(); BaseType == derived.rares.jwl.all.t1; }
 		Show jT2idealLevel { %D5; !gear_highlightdrop2; TopMods(); BaseType == derived.rares.jwl.all.t2; }
-		Show jT3idealLevel { %D3; !utility_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t3; }
-		Show jT4idealLevel { %D2; !utility_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t4; }
+		Show jT3idealLevel { %D3; !gear_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t3; }
+		Show jT4idealLevel { %D2; !gear_highlight3; TopMods(); BaseType == derived.rares.jwl.all.t4; }
 
 		Show jT1 { %D5; !gear_highlightdrop3;  BaseType == derived.rares.jwl.all.t1; }
 		Show jT2 { %D4; !gear_highlightdrop3;  BaseType == derived.rares.jwl.all.t2; }
-		Show jT3 { %D3; !utility_highlight4; BaseType == derived.rares.jwl.all.t3; }
-		Show jT4 { %D2; !utility_highlight4; BaseType == derived.rares.jwl.all.t4; }
+		Show jT3 { %D3; !gear_highlight4; BaseType == derived.rares.jwl.all.t3; }
+		Show jT4 { %D2; !gear_highlight4; BaseType == derived.rares.jwl.all.t4; }
 	}
 
 	#------------------------------------
@@ -823,7 +823,7 @@ Section LevelingCurrencies : Auto("Currency->Leveling"), Class == class_curr_pur
 	Show jewellers 	   { %D4; !currency_c; BaseType == currency.leveling.jewellers; }
 	Show rare 	  	   { %D5; !currency_d; !utility_highlight2; BaseType == currency.leveling.rare; }
 	Show magic    	   { %D4; !currency_supplylvl2; !utility_highlight2; BaseType == currency.leveling.magic; }
-	Show wisdomStart   { %D3; !currency_supply3; !utility_highlight3; AreaLevel <= 17; BaseType == currency.leveling.wisdom; }
+	Show wisdomStart   { %D3; !currency_supply3; !gear_highlight3; AreaLevel <= 17; BaseType == currency.leveling.wisdom; }
 	Show wisdom   	   { %D3; !currency_supply4; BaseType == currency.leveling.wisdom; }
 }
 
@@ -1104,7 +1104,7 @@ Section HideLayer3 : Auto("HideLayer"), Quality 0, Class == class_flasks
 #------------------------------------
 #!! Waypoint c20.leveling.flasks.progression : "Leveling - Flask Progression" : "Leveling"
 
-Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Life"), !typebased_flaskcharms, !utility_highlight3
+Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Life"), !typebased_flaskcharms, !gear_highlight3
 {
 	Show t1  { FlaskHighlight(9,  "Medium");}
 	Show t2  { FlaskHighlight(15, "Greater");}
@@ -1119,7 +1119,7 @@ Section LevelingLifeFlasks : Class == "Life Flasks", Auto("Leveling->Flasks->Lif
 #------------------------------------
 # [6002] Mana flasks
 #------------------------------------
-Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Mana"), !typebased_flaskcharms, !utility_highlight3
+Section LevelingManaFlasks : Class == "Mana Flasks", Auto("Leveling->Flasks->Mana"), !typebased_flaskcharms, !gear_highlight3
 {
 	Show t1  { FlaskHighlight(9,  "Medium");}
 	Show t2  { FlaskHighlight(15, "Greater");}
@@ -1233,11 +1233,11 @@ Section LevelingRareGear : Rarity Rare, LVL()
 
 Section LevelingMagicDecorator : Auto("Decorators->Leveling->Magic"), Rarity = Magic
 {
-	Cont LargeMagic  { !utility_highlight4; LVL(); Height >= 3; Width >= 2; }
-	Cont Medium1 	 { !utility_highlight4; LVL(); Height >= 3; Width = 1; }
-	Cont Medium2 	 { !utility_highlight4; LVL(); Height = 2; Width = 2; }
-	Cont NoticeEarly { !utility_highlight3; AreaLevel <= leveling.keylevels.start; }
-	Cont Tiny 	 	 { !utility_highlight3; LVL(); Height = 1; Width <= 2; }
+	Cont LargeMagic  { !gear_highlight4; LVL(); Height >= 3; Width >= 2; }
+	Cont Medium1 	 { !gear_highlight4; LVL(); Height >= 3; Width = 1; }
+	Cont Medium2 	 { !gear_highlight4; LVL(); Height = 2; Width = 2; }
+	Cont NoticeEarly { !gear_highlight3; AreaLevel <= leveling.keylevels.start; }
+	Cont Tiny 	 	 { !gear_highlight3; LVL(); Height = 1; Width <= 2; }
 }
 
 #------------------------------------
@@ -1262,7 +1262,7 @@ Section NormalMagic
 {
 	Section FirstLevelsM : Auto("Leveling->FirstLevelsMagic")
 	{
-		Show Any    { %D5; !utility_highlight4; AreaLevel <= leveling.keylevels.firstZones; Rarity Magic; }
+		Show Any    { %D5; !gear_highlight4; AreaLevel <= leveling.keylevels.firstZones; Rarity Magic; }
 	}
 
 	Section ProgressiveHideRule : Auto("Leveling->progressivehide"), Rarity Normal, Class == classes_armor + classes_attack, !utility_minimize
